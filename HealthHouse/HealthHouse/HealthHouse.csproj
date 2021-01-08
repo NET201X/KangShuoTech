@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8706503A-9934-4A8D-9B92-B1455DFBBB54}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HealthHouse</RootNamespace>
+    <AssemblyName>HealthHouse</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\WinUIProjects\PadPlatform\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.AcroPDFLib">
+      <HintPath>..\..\Library\AxInterop.AcroPDFLib.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector Net 6.9.6\Assemblies\v4.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NPinyin, Version=0.2.4588.20158, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Library\NPinyin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.96.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Library\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChItems.cs" />
+    <Compile Include="ECGShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ECGShow.designer.cs">
+      <DependentUpon>ECGShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExamQueryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExamQueryForm.Designer.cs">
+      <DependentUpon>ExamQueryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GuideQueryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GuideQueryForm.Designer.cs">
+      <DependentUpon>GuideQueryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HealthAssessExamenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HealthAssessExamenForm.Designer.cs">
+      <DependentUpon>HealthAssessExamenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HealthAssessFactory.cs" />
+    <Compile Include="HealthAssessForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HealthAssessForm.Designer.cs">
+      <DependentUpon>HealthAssessForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HealthAssessSetExForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HealthAssessSetExForm.Designer.cs">
+      <DependentUpon>HealthAssessSetExForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HealthBCHAO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HealthBCHAO.Designer.cs">
+      <DependentUpon>HealthBCHAO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HealthECG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HealthECG.Designer.cs">
+      <DependentUpon>HealthECG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HealthGuideFactory.cs" />
+    <Compile Include="HealthGuideForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HealthGuideForm.Designer.cs">
+      <DependentUpon>HealthGuideForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HealthOldMedEX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HealthBoneForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HealthBoneForm.Designer.cs">
+      <DependentUpon>HealthBoneForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HealthLungForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HealthLungForm.Designer.cs">
+      <DependentUpon>HealthLungForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HealthMedicalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HealthMedicalForm.Designer.cs">
+      <DependentUpon>HealthMedicalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HealthVascularForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HealthVascularForm.Designer.cs">
+      <DependentUpon>HealthVascularForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoryData.Designer.cs">
+      <DependentUpon>HistoryData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OldPeopleInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhysicalAssistCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhysicalAssistCheck.Designer.cs">
+      <DependentUpon>PhysicalAssistCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhysicalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhysicalQueryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhysicalQueryForm.Designer.cs">
+      <DependentUpon>PhysicalQueryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueryInfoFactory.cs" />
+    <Compile Include="ReportShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportShow.designer.cs">
+      <DependentUpon>ReportShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HealthHouseFactory.cs" />
+    <Compile Include="HealthHouseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HealthHouseForm.Designer.cs">
+      <DependentUpon>HealthHouseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFormUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScoreJudge.cs" />
+    <EmbeddedResource Include="ECGShow.resx">
+      <DependentUpon>ECGShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExamQueryForm.resx">
+      <DependentUpon>ExamQueryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GuideQueryForm.resx">
+      <DependentUpon>GuideQueryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HealthAssessExamenForm.resx">
+      <DependentUpon>HealthAssessExamenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HealthAssessForm.resx">
+      <DependentUpon>HealthAssessForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HealthAssessSetExForm.resx">
+      <DependentUpon>HealthAssessSetExForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HealthBCHAO.resx">
+      <DependentUpon>HealthBCHAO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HealthECG.resx">
+      <DependentUpon>HealthECG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HealthGuideForm.resx">
+      <DependentUpon>HealthGuideForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HealthOldMedEX.resx">
+      <DependentUpon>HealthOldMedEX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HealthBoneForm.resx">
+      <DependentUpon>HealthBoneForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HealthLungForm.resx">
+      <DependentUpon>HealthLungForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HealthMedicalForm.resx">
+      <DependentUpon>HealthMedicalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HealthVascularForm.resx">
+      <DependentUpon>HealthVascularForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoryData.resx">
+      <DependentUpon>HistoryData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OldPeopleInfoForm.resx">
+      <DependentUpon>OldPeopleInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhysicalAssistCheck.resx">
+      <DependentUpon>PhysicalAssistCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhysicalQueryForm.resx">
+      <DependentUpon>PhysicalQueryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportShow.resx">
+      <DependentUpon>ReportShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HealthHouseForm.resx">
+      <DependentUpon>HealthHouseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFormUserControl.resx">
+      <DependentUpon>MainFormUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\健康体检.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Assess.png" />
+    <Content Include="Resources\Button2.png" />
+    <Content Include="Resources\B超.png" />
+    <Content Include="Resources\check.png" />
+    <None Include="Resources\骨密度.png" />
+    <None Include="Resources\肺功能.png" />
+    <None Include="Resources\心血管.png" />
+    <None Include="Resources\normer_png.png" />
+    <None Include="Resources\medPhy.png" />
+    <Content Include="Resources\健康问询.png" />
+    <Content Include="Resources\心电.png" />
+    <Content Include="Resources\远程诊疗.PNG" />
+    <None Include="Resources\health.png" />
+    <Content Include="Resources\健康指导.PNG" />
+    <Content Include="Resources\健康查询.PNG" />
+    <Content Include="Resources\健康评估.PNG" />
+    <Content Include="Resources\报告打印.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataAccessProjects\BLL\BLL.csproj">
+      <Project>{88db6cea-c1d8-4ca8-8920-d84facd56af9}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataAccessProjects\Model\Model.csproj">
+      <Project>{cf316d09-eead-4e9f-aef5-be10e341cab7}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemFrameworksProjects\Utilities.CommonControl\Utilities.CommonControl.csproj">
+      <Project>{87d63522-d4d3-401a-b734-ef0b3f5767a4}</Project>
+      <Name>Utilities.CommonControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemFrameworksProjects\Utilities.CommonUI\Utilities.CommonUI.csproj">
+      <Project>{A4B7A3CC-4D00-4770-AF42-C6BF17F401ED}</Project>
+      <Name>Utilities.CommonUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemFrameworksProjects\Utilities.Common\Utilities.Common.csproj">
+      <Project>{8f302c1f-01d0-4d2f-a921-07927adb3b9c}</Project>
+      <Name>Utilities.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemFrameworksProjects\Utilities.MySQLHelper\Utilities.MySQLHelper.csproj">
+      <Project>{f53e47a2-10c9-4616-a324-bfc822910846}</Project>
+      <Name>Utilities.MySQLHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WinUIProjects\TypeBUI\TypeBUI.csproj">
+      <Project>{4E8B674D-FB68-42C6-A1A6-A79664E29AB8}</Project>
+      <Name>TypeBUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

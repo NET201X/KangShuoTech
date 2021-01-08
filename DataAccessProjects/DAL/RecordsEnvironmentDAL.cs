@@ -1,0 +1,302 @@
+namespace KangShuoTech.DataAccessProjects.DAL
+{
+    using KangShuoTech.Utilities.MySQLHelper;
+    using KangShuoTech.DataAccessProjects.Model;
+    using System;
+    using System.Data;
+    using MySql.Data.MySqlClient;
+    using System.Text;
+
+    public class RecordsEnvironmentDAL
+    {
+        public int Add(RecordsEnvironmentModel model)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("insert into tbl_recordsenvironment(");
+            builder.Append("RecordID,IDCardNo,BlowMeasure,FuelType,DrinkWater,Toilet,LiveStockRail,SignDate)");
+            builder.Append(" values (");
+            builder.Append("@RecordID,@IDCardNo,@BlowMeasure,@FuelType,@DrinkWater,@Toilet,@LiveStockRail,@SignDate)");
+            builder.Append(";select @@IDENTITY");
+            MySqlParameter[] cmdParms = new MySqlParameter[]
+            {
+                new MySqlParameter("@RecordID", MySqlDbType.String, 17), 
+                new MySqlParameter("@IDCardNo", MySqlDbType.String, 21), 
+                new MySqlParameter("@BlowMeasure", MySqlDbType.String, 1), 
+                new MySqlParameter("@FuelType", MySqlDbType.String, 1), 
+                new MySqlParameter("@DrinkWater", MySqlDbType.String, 1), 
+                new MySqlParameter("@Toilet", MySqlDbType.String, 1),
+                new MySqlParameter("@LiveStockRail", MySqlDbType.String, 1),
+                new MySqlParameter("@SignDate",MySqlDbType.Date)
+            };
+            cmdParms[0].Value = model.RecordID;
+            cmdParms[1].Value = model.IDCardNo;
+            cmdParms[2].Value = model.BlowMeasure;
+            cmdParms[3].Value = model.FuelType;
+            cmdParms[4].Value = model.DrinkWater;
+            cmdParms[5].Value = model.Toilet;
+            cmdParms[6].Value = model.LiveStockRail;
+            cmdParms[7].Value = model.SignDate;
+            object single = MySQLHelper.GetSingle(builder.ToString(), cmdParms);
+            if (single == null)
+            {
+                return 0;
+            }
+            return Convert.ToInt32(single);
+        }
+        public int AddServer(RecordsEnvironmentModel model)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("insert into tbl_recordsenvironment(");
+            builder.Append("RecordID,IDCardNo,BlowMeasure,FuelType,DrinkWater,Toilet,LiveStockRail,SignDate)");
+            builder.Append(" values (");
+            builder.Append("@RecordID,@IDCardNo,@BlowMeasure,@FuelType,@DrinkWater,@Toilet,@LiveStockRail,@SignDate)");
+            builder.Append(";select @@IDENTITY");
+            MySqlParameter[] cmdParms = new MySqlParameter[]
+            {
+                new MySqlParameter("@RecordID", MySqlDbType.String, 17), 
+                new MySqlParameter("@IDCardNo", MySqlDbType.String, 21), 
+                new MySqlParameter("@BlowMeasure", MySqlDbType.String, 1), 
+                new MySqlParameter("@FuelType", MySqlDbType.String, 1), 
+                new MySqlParameter("@DrinkWater", MySqlDbType.String, 1), 
+                new MySqlParameter("@Toilet", MySqlDbType.String, 1),
+                new MySqlParameter("@LiveStockRail", MySqlDbType.String, 1),
+                new MySqlParameter("@SignDate",MySqlDbType.Date)
+            };
+            cmdParms[0].Value = model.RecordID;
+            cmdParms[1].Value = model.IDCardNo;
+            cmdParms[2].Value = model.BlowMeasure;
+            cmdParms[3].Value = model.FuelType;
+            cmdParms[4].Value = model.DrinkWater;
+            cmdParms[5].Value = model.Toilet;
+            cmdParms[6].Value = model.LiveStockRail;
+            cmdParms[7].Value = model.SignDate;
+            object single = MySQLHelper.GetSingleServer(builder.ToString(), cmdParms);
+            if (single == null)
+            {
+                return 0;
+            }
+            return Convert.ToInt32(single);
+        }
+
+        public RecordsEnvironmentModel DataRowToModel(DataRow row)
+        {
+            RecordsEnvironmentModel recordsEnvironmentModel = new RecordsEnvironmentModel();
+            if (row != null)
+            {
+                if (((row["ID"] != null) && (row["ID"] != DBNull.Value)) && (row["ID"].ToString() != ""))
+                {
+                    recordsEnvironmentModel.ID = int.Parse(row["ID"].ToString());
+                }
+                if ((row["RecordID"] != null) && (row["RecordID"] != DBNull.Value))
+                {
+                    recordsEnvironmentModel.RecordID = row["RecordID"].ToString();
+                }
+                if ((row["IDCardNo"] != null) && (row["IDCardNo"] != DBNull.Value))
+                {
+                    recordsEnvironmentModel.IDCardNo = row["IDCardNo"].ToString();
+                }
+                if ((row["BlowMeasure"] != null) && (row["BlowMeasure"] != DBNull.Value))
+                {
+                    recordsEnvironmentModel.BlowMeasure = row["BlowMeasure"].ToString();
+                }
+                if ((row["FuelType"] != null) && (row["FuelType"] != DBNull.Value))
+                {
+                    recordsEnvironmentModel.FuelType = row["FuelType"].ToString();
+                }
+                if ((row["DrinkWater"] != null) && (row["DrinkWater"] != DBNull.Value))
+                {
+                    recordsEnvironmentModel.DrinkWater = row["DrinkWater"].ToString();
+                }
+                if ((row["Toilet"] != null) && (row["Toilet"] != DBNull.Value))
+                {
+                    recordsEnvironmentModel.Toilet = row["Toilet"].ToString();
+                }
+                if ((row["LiveStockRail"] != null) && (row["LiveStockRail"] != DBNull.Value))
+                {
+                    recordsEnvironmentModel.LiveStockRail = row["LiveStockRail"].ToString();
+                }
+                if (((row["SignDate"] != null) && (row["SignDate"] != DBNull.Value)) && (row["SignDate"].ToString() != ""))
+                {
+                    recordsEnvironmentModel.SignDate = new DateTime?(DateTime.Parse(row["SignDate"].ToString()));
+                }
+            }
+            return recordsEnvironmentModel;
+        }
+
+        public bool Delete(int ID)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("delete from tbl_recordsenvironment ");
+            builder.Append(" where ID=@ID");
+            MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
+            cmdParms[0].Value = ID;
+            return (MySQLHelper.ExecuteSql(builder.ToString(), cmdParms) > 0);
+        }
+
+        public bool DeleteList(string IDlist)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("delete from tbl_recordsenvironment ");
+            builder.Append(" where ID in (" + IDlist + ")  ");
+            return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
+        }
+
+        public bool Exists(int ID)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("select count(1) from tbl_recordsenvironment");
+            builder.Append(" where ID=@ID");
+            MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
+            cmdParms[0].Value = ID;
+            return MySQLHelper.Exists(builder.ToString(), cmdParms);
+        }
+
+        public DataSet GetList(string strWhere)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("select ID,RecordID,IDCardNo,BlowMeasure,FuelType,DrinkWater,Toilet,LiveStockRail,SignDate ");
+            builder.Append(" FROM tbl_recordsenvironment ");
+            if (strWhere.Trim() != "")
+            {
+                builder.Append(" where " + strWhere);
+            }
+            return MySQLHelper.Query(builder.ToString());
+        }
+
+        public DataSet GetListByPage(string strWhere, string orderby, int startIndex, int endIndex)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("SELECT * FROM ( ");
+            builder.Append(" SELECT ROW_NUMBER() OVER (");
+            if (!string.IsNullOrEmpty(orderby.Trim()))
+            {
+                builder.Append(" order by T." + orderby);
+            }
+            else
+            {
+                builder.Append(" order by T.ID desc");
+            }
+            builder.Append(")AS Row, T.*  from tbl_recordsenvironment T ");
+            if (!string.IsNullOrEmpty(strWhere.Trim()))
+            {
+                builder.Append(" WHERE " + strWhere);
+            }
+            builder.Append(" ) TT");
+            builder.AppendFormat(" WHERE TT.Row between {0} and {1}", startIndex, endIndex);
+            return MySQLHelper.Query(builder.ToString());
+        }
+
+        public int GetMaxId()
+        {
+            return MySQLHelper.GetMaxID("ID", "tbl_recordsenvironment");
+        }
+
+        public RecordsEnvironmentModel GetModel(string IDCardNo)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("select  ID,RecordID,IDCardNo,BlowMeasure,FuelType,DrinkWater,Toilet,LiveStockRail,SignDate from tbl_recordsenvironment ");
+            builder.Append(" where IDCardNo=@IDCardNo");
+            MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
+            cmdParms[0].Value = IDCardNo;
+            new RecordsEnvironmentModel();
+            DataSet set = MySQLHelper.Query(builder.ToString(), cmdParms);
+            if (set.Tables[0].Rows.Count > 0)
+            {
+                return this.DataRowToModel(set.Tables[0].Rows[0]);
+            }
+            return null;
+        }
+
+        public int GetRecordCount(string strWhere)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("select count(1) FROM tbl_recordsenvironment ");
+            if (strWhere.Trim() != "")
+            {
+                builder.Append(" where " + strWhere);
+            }
+            object single = MySQLHelper.GetSingle(builder.ToString());
+            if (single == null)
+            {
+                return 0;
+            }
+            return Convert.ToInt32(single);
+        }
+
+        public bool Update(RecordsEnvironmentModel model)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("update tbl_recordsenvironment set ");
+            builder.Append("RecordID=@RecordID,");
+            builder.Append("IDCardNo=@IDCardNo,");
+            builder.Append("BlowMeasure=@BlowMeasure,");
+            builder.Append("FuelType=@FuelType,");
+            builder.Append("DrinkWater=@DrinkWater,");
+            builder.Append("Toilet=@Toilet,");
+            builder.Append("LiveStockRail=@LiveStockRail,");
+            builder.Append("SignDate=@SignDate ");
+            builder.Append(" where ID=@ID");
+            MySqlParameter[] cmdParms = new MySqlParameter[]
+            {
+                new MySqlParameter("@RecordID", MySqlDbType.String, 17),
+                new MySqlParameter("@IDCardNo", MySqlDbType.String, 21), 
+                new MySqlParameter("@BlowMeasure", MySqlDbType.String, 1), 
+                new MySqlParameter("@FuelType", MySqlDbType.String, 1),
+                new MySqlParameter("@DrinkWater", MySqlDbType.String, 1), 
+                new MySqlParameter("@Toilet", MySqlDbType.String, 1),
+                new MySqlParameter("@LiveStockRail", MySqlDbType.String, 1),
+                new MySqlParameter("@SignDate",MySqlDbType.Date),
+                new MySqlParameter("@ID", MySqlDbType.Int32, 8)
+            };
+            cmdParms[0].Value = model.RecordID;
+            cmdParms[1].Value = model.IDCardNo;
+            cmdParms[2].Value = model.BlowMeasure;
+            cmdParms[3].Value = model.FuelType;
+            cmdParms[4].Value = model.DrinkWater;
+            cmdParms[5].Value = model.Toilet;
+            cmdParms[6].Value = model.LiveStockRail;
+            cmdParms[7].Value=model.SignDate;
+            cmdParms[8].Value = model.ID;
+            return (MySQLHelper.ExecuteSql(builder.ToString(), cmdParms) > 0);
+        }
+
+        public bool UpdateServer(RecordsEnvironmentModel model)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("update tbl_recordsenvironment set ");
+            builder.Append("RecordID=@RecordID,");
+            builder.Append("IDCardNo=@IDCardNo,");
+            builder.Append("BlowMeasure=@BlowMeasure,");
+            builder.Append("FuelType=@FuelType,");
+            builder.Append("DrinkWater=@DrinkWater,");
+            builder.Append("Toilet=@Toilet,");
+            builder.Append("LiveStockRail=@LiveStockRail");
+            builder.Append("SignDate=@SignDate ");
+            builder.Append(" where IDCardNo=@IDCardNo");
+            MySqlParameter[] cmdParms = new MySqlParameter[]
+            {
+                new MySqlParameter("@RecordID", MySqlDbType.String, 17),
+                new MySqlParameter("@IDCardNo", MySqlDbType.String, 21), 
+                new MySqlParameter("@BlowMeasure", MySqlDbType.String, 1), 
+                new MySqlParameter("@FuelType", MySqlDbType.String, 1),
+                new MySqlParameter("@DrinkWater", MySqlDbType.String, 1), 
+                new MySqlParameter("@Toilet", MySqlDbType.String, 1),
+                new MySqlParameter("@LiveStockRail", MySqlDbType.String, 1),
+                new MySqlParameter("@SignDate",MySqlDbType.Date)
+                //new MySqlParameter("@ID", MySqlDbType.Int32, 8)
+            };
+            cmdParms[0].Value = model.RecordID;
+            cmdParms[1].Value = model.IDCardNo;
+            cmdParms[2].Value = model.BlowMeasure;
+            cmdParms[3].Value = model.FuelType;
+            cmdParms[4].Value = model.DrinkWater;
+            cmdParms[5].Value = model.Toilet;
+            cmdParms[6].Value = model.LiveStockRail;
+            cmdParms[7].Value = model.SignDate;
+            //cmdParms[7].Value = model.ID;
+            return (MySQLHelper.ExecuteSqlServer(builder.ToString(), cmdParms) > 0);
+        }
+
+    }
+}
+

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3192E0D6-7BA1-443E-98F8-7DA6AA54A533}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Utilities.BlueToothTools</RootNamespace>
+    <AssemblyName>Utilities.BlueToothTools</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\WinUIProjects\PadPlatform\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="InTheHand\Net\BluetoothAuthenticationMethod.cs" />
+    <Compile Include="InTheHand\Net\BluetoothAuthenticationRequirements.cs" />
+    <Compile Include="InTheHand\Net\BluetoothIoCapability.cs" />
+    <Compile Include="InTheHand\Net\BLUETOOTH_AUTHENTICATE_RESPONSE__NUMERIC_COMPARISON_PASSKEY_INFO.cs" />
+    <Compile Include="InTheHand\Net\BLUETOOTH_AUTHENTICATE_RESPONSE__OOB_DATA_INFO.cs" />
+    <Compile Include="InTheHand\Net\BLUETOOTH_AUTHENTICATE_RESPONSE__PIN_INFO.cs" />
+    <Compile Include="InTheHand\Net\BLUETOOTH_AUTHENTICATION_CALLBACK_PARAMS.cs" />
+    <Compile Include="InTheHand\Net\BLUETOOTH_OOB_DATA_INFO.cs" />
+    <Compile Include="InTheHand\Net\BLUETOOTH_PIN_INFO.cs" />
+    <Compile Include="MsBluetooth\BluetoothAuthenticationRegistrationHandle.cs" />
+    <Compile Include="MsBluetooth\BluetoothError.cs" />
+    <Compile Include="MsBluetooth\BluetoothServices.cs" />
+    <Compile Include="MsBluetooth\BLUETOOTH_DEVICE_INFO.cs" />
+    <Compile Include="MsBluetooth\NativeMethods.cs" />
+    <Compile Include="MsBluetooth\WindowsRadioHandle.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utilities.Common\Utilities.Common.csproj">
+      <Project>{8F302C1F-01D0-4D2F-A921-07927ADB3B9C}</Project>
+      <Name>Utilities.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

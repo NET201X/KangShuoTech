@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9335DB17-CFFB-4C95-AE99-B23E1DE7AE7E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QinCSoft.CommomDataAccessProjects.CommonDAL</RootNamespace>
+    <AssemblyName>CommonDAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FirebirdSql.Data.FirebirdClient, Version=2.5.1.0, Culture=neutral, PublicKeyToken=3750abcc3150b00c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Library\FirebirdSql.Data.FirebirdClient.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\..\..\QinCSoftMini\Library\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnomalyRangeBussiness.cs" />
+    <Compile Include="BiochemicalAssessSetDAL.cs" />
+    <Compile Include="BioDetailAssessSetDAL.cs" />
+    <Compile Include="BloodAssessSetDAL.cs" />
+    <Compile Include="BMIAssessSetDAL.cs" />
+    <Compile Include="ChronicDiadetesVisitDAL.cs" />
+    <Compile Include="ChronicDrugConditionDAL.cs" />
+    <Compile Include="ChronicHypertensionVisitDAL.cs" />
+    <Compile Include="ChronicLungerVisitDAL.cs" />
+    <Compile Include="CodeBaseDAL.cs" />
+    <Compile Include="AccessClassDAL.cs" />
+    <Compile Include="CommonClassDAL.cs" />
+    <Compile Include="DataUploadSqliteDAL.cs" />
+    <Compile Include="DeviceInfoDAL.cs" />
+    <Compile Include="DeviceInfoSqliteDAL.cs" />
+    <Compile Include="FingerPrintDAL.cs" />
+    <Compile Include="FutianInterDAL.cs" />
+    <Compile Include="HealthGuidanceBussiness.cs" />
+    <Compile Include="KidsDAL.cs" />
+    <Compile Include="QCMiniBusiness.cs" />
+    <Compile Include="OlderMedicineCnDAL.cs" />
+    <Compile Include="OlderMedicineResultDAL.cs" />
+    <Compile Include="OlderSelfCareabilityDAL.cs" />
+    <Compile Include="OldGlolmyAndIntelligenceDAL.cs" />
+    <Compile Include="OldMedGuideDAL.cs" />
+    <Compile Include="OldSelfSqliteDAL.cs" />
+    <Compile Include="OtherAssessSetDAL.cs" />
+    <Compile Include="PrintALLDAL.cs" />
+    <Compile Include="PrintDAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecordsAssessmentGuideDAL.cs" />
+    <Compile Include="RecordsAssistCheckDAL.cs" />
+    <Compile Include="RecordsBaseInfoDAL.cs" />
+    <Compile Include="RecordsCustomerBaseInfoDAL.cs" />
+    <Compile Include="RecordsEcgDAL.cs" />
+    <Compile Include="RecordsEnvironmentDAL.cs" />
+    <Compile Include="RecordsFamilyBedHistoryDAL.cs" />
+    <Compile Include="RecordsFamilyHistoryInfoDAL.cs" />
+    <Compile Include="RecordsGeneralConditionDAL.cs" />
+    <Compile Include="RecordsHealthConditionDAL.cs" />
+    <Compile Include="RecordsHealthQuestionDAL.cs" />
+    <Compile Include="RecordsHospitalHistoryDAL.cs" />
+    <Compile Include="RecordsIllnessHistoryInfoDAL.cs" />
+    <Compile Include="RecordsInoculationHistoryDAL.cs" />
+    <Compile Include="RecordsLifeStyleDAL.cs" />
+    <Compile Include="RecordsMedicationDAL.cs" />
+    <Compile Include="RecordsMedicationSqliteDAL.cs" />
+    <Compile Include="RecordsMedicineCnDAL.cs" />
+    <Compile Include="RecordsMedicineResultDAL.cs" />
+    <Compile Include="RecordsMedicineResultSqliteDAL.cs" />
+    <Compile Include="RecordsMediPhysDistDAL.cs" />
+    <Compile Include="RecordsPhysicalExamDAL.cs" />
+    <Compile Include="RecordsSelfcareabilityDAL.cs" />
+    <Compile Include="RecordsVisceraFunctionDAL.cs" />
+    <Compile Include="RecordsxqDAL.cs" />
+    <Compile Include="ReportDetailDAL.cs" />
+    <Compile Include="RequireDAL.cs" />
+    <Compile Include="SugarAssessSetDAL.cs" />
+    <Compile Include="SysOrgTownDAL.cs" />
+    <Compile Include="SysPreinstallBussiness.cs" />
+    <Compile Include="WaistlineAssessSetDAL.cs" />
+    <Compile Include="XinJiangSeparationSqliteDAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CommomSystemFrameworksProjects\CommomUtilities.Common\CommomUtilities.Common.csproj">
+      <Project>{eec93d34-ccb4-48c5-a343-0199a860f4dd}</Project>
+      <Name>CommomUtilities.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CommomSystemFrameworksProjects\CommonUtilities.SQL\CommonUtilities.SQL.csproj">
+      <Project>{e0609cd5-afad-4558-b305-227ccaa768fb}</Project>
+      <Name>CommonUtilities.SQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonModel\CommonModel.csproj">
+      <Project>{0735C456-1380-4BFA-9601-C652AA50D340}</Project>
+      <Name>CommonModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

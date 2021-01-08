@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>local</ProjectType>
+    <ProjectVersion>7.10.377</ProjectVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1248CD0E-1886-47C2-B4EE-4EF2AAA88282}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <AssemblyName>PhotoGraph</AssemblyName>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>..\PadPlatform\bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Reference Include="AxInterop.HWPenSignLib">
+      <HintPath>..\..\Library\AxInterop.HWPenSignLib.dll</HintPath>
+    </Reference>
+    <Reference Include="dshow">
+      <HintPath>..\..\Library\dshow.DLL</HintPath>
+    </Reference>
+    <Reference Include="Interop.HWPenSignLib">
+      <HintPath>..\..\Library\Interop.HWPenSignLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global.cs" />
+    <Compile Include="MainItemUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainItemUserControl.Designer.cs">
+      <DependentUpon>MainItemUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="motion\Camera.cs" />
+    <Compile Include="motion\CameraWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PhotoGraph\FrmCamera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhotoGraph\FrmCameraB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhotoGraph\PhotoListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhotoGraph\PhotoListForm.designer.cs">
+      <DependentUpon>PhotoListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="QueryInfoFactory.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="VideoSource\ByteArrayUtils.cs" />
+    <Compile Include="VideoSource\CameraEventHandler.cs" />
+    <Compile Include="VideoSource\CameraEventArgs.cs" />
+    <Compile Include="VideoSource\IVideoSource.cs" />
+    <Compile Include="VideoSource\CaptureDevice.cs" />
+    <Compile Include="VideoSource\JPEGStream.cs" />
+    <Compile Include="VideoSource\MJPEGStream.cs" />
+    <Compile Include="VideoSource\VideoFileSource.cs" />
+    <Compile Include="VideoSource\VideoStream.cs" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainItemUserControl.resx">
+      <DependentUpon>MainItemUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhotoGraph\FrmCamera.resx">
+      <DependentUpon>FrmCamera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhotoGraph\FrmCameraB.resx">
+      <DependentUpon>FrmCameraB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhotoGraph\PhotoListForm.resx">
+      <DependentUpon>PhotoListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnqingdanchaxun01.png" />
+    <Content Include="logo.ico" />
+    <Content Include="Resources\小边底.png" />
+    <Content Include="Resources\拍取照片.png" />
+    <None Include="Resources\清单查询.png" />
+    <Content Include="Resources\清单查询小.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CommomDataAccessProjects\CommonBLL\CommonBLL.csproj">
+      <Project>{34e85712-fa76-42ae-bb3b-67bf3de38e24}</Project>
+      <Name>CommonBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CommomDataAccessProjects\CommonModel\CommonModel.csproj">
+      <Project>{0735c456-1380-4bfa-9601-c652aa50d340}</Project>
+      <Name>CommonModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CommomSystemFrameworksProjects\CommomUtilities.Common\CommomUtilities.Common.csproj">
+      <Project>{eec93d34-ccb4-48c5-a343-0199a860f4dd}</Project>
+      <Name>CommomUtilities.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemFrameworksProjects\Utilities.CommonControl\Utilities.CommonControl.csproj">
+      <Project>{87d63522-d4d3-401a-b734-ef0b3f5767a4}</Project>
+      <Name>Utilities.CommonControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemFrameworksProjects\Utilities.CommonUI\Utilities.CommonUI.csproj">
+      <Project>{a4b7a3cc-4d00-4770-af42-c6bf17f401ed}</Project>
+      <Name>Utilities.CommonUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{87D63522-D4D3-401A-B734-EF0B3F5767A4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QinCSoft.Utilities.CommonControl</RootNamespace>
+    <AssemblyName>Utilities.CommonControl</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Femiani.Forms.UI">
+      <HintPath>..\..\Library\Femiani.Forms.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BarCode.cs" />
+    <Compile Include="ClsGetDevInfo.cs" />
+    <Compile Include="ClsMsgWindow.cs" />
+    <Compile Include="CMoreChange.cs" />
+    <Compile Include="CMoreIllness.cs" />
+    <Compile Include="CombinUploadData.cs" />
+    <Compile Include="CommonSettings.cs" />
+    <Compile Include="ControlMove.cs" />
+    <Compile Include="COPYDATASTRUCT.cs" />
+    <Compile Include="CSelectItem.cs" />
+    <Compile Include="CSingleItem.cs" />
+    <Compile Include="DoseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DoseVisitUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DoseVisitUserControl.Designer.cs">
+      <DependentUpon>DoseVisitUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FangYiUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FrameUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HealthAssessment.cs" />
+    <Compile Include="InputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputExForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mediphydist1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mediphydist1.Designer.cs">
+      <DependentUpon>Mediphydist1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mediphydist2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mediphydist2.Designer.cs">
+      <DependentUpon>Mediphydist2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mediphydist3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mediphydist3.Designer.cs">
+      <DependentUpon>Mediphydist3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mediphydist4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mediphydist4.Designer.cs">
+      <DependentUpon>Mediphydist4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mediphydist5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mediphydist5.Designer.cs">
+      <DependentUpon>Mediphydist5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OlderCnAndResult.cs" />
+    <Compile Include="ScoreJudge.cs" />
+    <Compile Include="SelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlbTools.cs" />
+    <Compile Include="InputRangeDec.cs" />
+    <Compile Include="InputRangeStr.cs" />
+    <Compile Include="JustSingleItem.cs" />
+    <Compile Include="LoneCheckbox.cs" />
+    <Compile Include="ManyCheckboxs.cs" />
+    <Compile Include="ManyRadionButtons.cs" />
+    <Compile Include="MoreChangeUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MoveControl.cs" />
+    <Compile Include="OtherDisease.cs" />
+    <Compile Include="PrintConfig.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="Ruler.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SelectItem.cs" />
+    <Compile Include="ShijianUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShijianUserControl.designer.cs">
+      <DependentUpon>ShijianUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleBindingManager!1.cs" />
+    <Compile Include="SingleItemUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SingleItemT!1.cs" />
+    <Compile Include="DiseaseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DuWuUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IllnessHisUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MoreIllnessUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OtherIllnessUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="USB.cs" />
+    <Compile Include="USBControllerDevice.cs" />
+    <Compile Include="YesNoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="YesNoControl.designer.cs">
+      <DependentUpon>YesNoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YongYaoQKUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="YongYaoQKUserControlYC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ZhuYuanUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DoseUserControl.resx">
+      <DependentUpon>DoseUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoseVisitUserControl.resx">
+      <DependentUpon>DoseVisitUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FangYiUserControl.resx">
+      <DependentUpon>FangYiUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputForm.resx">
+      <DependentUpon>InputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputExForm.resx">
+      <DependentUpon>InputExForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mediphydist1.resx">
+      <DependentUpon>Mediphydist1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mediphydist2.resx">
+      <DependentUpon>Mediphydist2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mediphydist3.resx">
+      <DependentUpon>Mediphydist3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mediphydist4.resx">
+      <DependentUpon>Mediphydist4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mediphydist5.resx">
+      <DependentUpon>Mediphydist5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageForm.resx">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectForm.resx">
+      <DependentUpon>SelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoreChangeUserControl.resx">
+      <DependentUpon>MoreChangeUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShijianUserControl.resx">
+      <DependentUpon>ShijianUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleItemUserControl.resx">
+      <DependentUpon>SingleItemUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiseaseUserControl.resx">
+      <DependentUpon>DiseaseUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DuWuUserControl.resx">
+      <DependentUpon>DuWuUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IllnessHisUserControl.resx">
+      <DependentUpon>IllnessHisUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoreIllnessUserControl.resx">
+      <DependentUpon>MoreIllnessUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherIllnessUserControl.resx">
+      <DependentUpon>OtherIllnessUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YesNoControl.resx">
+      <DependentUpon>YesNoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YongYaoQKUserControl.resx">
+      <DependentUpon>YongYaoQKUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YongYaoQKUserControlYC.resx">
+      <DependentUpon>YongYaoQKUserControlYC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZhuYuanUserControl.resx">
+      <DependentUpon>ZhuYuanUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\picSaved_Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataAccessProjects\BLL\BLL.csproj">
+      <Project>{88db6cea-c1d8-4ca8-8920-d84facd56af9}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataAccessProjects\Model\Model.csproj">
+      <Project>{cf316d09-eead-4e9f-aef5-be10e341cab7}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities.Common\Utilities.Common.csproj">
+      <Project>{8f302c1f-01d0-4d2f-a921-07927adb3b9c}</Project>
+      <Name>Utilities.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

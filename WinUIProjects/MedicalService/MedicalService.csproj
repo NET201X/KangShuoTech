@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3F1825F7-2268-4E31-89B5-FB59BF412A4E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MedicalService</RootNamespace>
+    <AssemblyName>MedicalService</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\PadPlatform\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Utilities.Common">
+      <HintPath>..\..\Library\Utilities.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConsulateModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsulateModify.Designer.cs">
+      <DependentUpon>ConsulateModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consulation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulation.designer.cs">
+      <DependentUpon>Consulation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsulationFactory.cs" />
+    <Compile Include="ModifyFactory.cs" />
+    <Compile Include="DataListSeachFactory.cs" />
+    <Compile Include="DataListSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataListSearch.Designer.cs">
+      <DependentUpon>DataListSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainItemUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReceiveTreat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceiveTreat.designer.cs">
+      <DependentUpon>ReceiveTreat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReceiveTreatFactory.cs" />
+    <Compile Include="ReceiveTreatModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceiveTreatModify.Designer.cs">
+      <DependentUpon>ReceiveTreatModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Referral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Referral.designer.cs">
+      <DependentUpon>Referral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReferralFactory.cs" />
+    <Compile Include="ReferralModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReferralModify.Designer.cs">
+      <DependentUpon>ReferralModify.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ConsulateModify.resx">
+      <DependentUpon>ConsulateModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulation.resx">
+      <DependentUpon>Consulation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataListSearch.resx">
+      <DependentUpon>DataListSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainItemUserControl.resx">
+      <DependentUpon>MainItemUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceiveTreat.resx">
+      <DependentUpon>ReceiveTreat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceiveTreatModify.resx">
+      <DependentUpon>ReceiveTreatModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Referral.resx">
+      <DependentUpon>Referral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReferralModify.resx">
+      <DependentUpon>ReferralModify.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataAccessProjects\BLL\BLL.csproj">
+      <Project>{88db6cea-c1d8-4ca8-8920-d84facd56af9}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataAccessProjects\Model\Model.csproj">
+      <Project>{cf316d09-eead-4e9f-aef5-be10e341cab7}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemFrameworksProjects\Utilities.CommonControl\Utilities.CommonControl.csproj">
+      <Project>{87d63522-d4d3-401a-b734-ef0b3f5767a4}</Project>
+      <Name>Utilities.CommonControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemFrameworksProjects\Utilities.CommonTools\Utilities.CommonTools.csproj">
+      <Project>{b309e324-c5eb-4c31-96cf-5e578ac11cb3}</Project>
+      <Name>Utilities.CommonTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemFrameworksProjects\Utilities.CommonUI\Utilities.CommonUI.csproj">
+      <Project>{A4B7A3CC-4D00-4770-AF42-C6BF17F401ED}</Project>
+      <Name>Utilities.CommonUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\列表查询.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnhuizhen00.png" />
+    <None Include="Resources\btnhuizhen01.png" />
+    <None Include="Resources\btnjiezhen00.png" />
+    <None Include="Resources\btnjiezhen01.png" />
+    <None Include="Resources\btnzhuanzhen00.png" />
+    <None Include="Resources\btnzhuanzhen01.png" />
+    <Content Include="logo.ico" />
+    <Content Include="Resources\会诊.png" />
+    <Content Include="Resources\双向转诊.png" />
+    <Content Include="Resources\接诊.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

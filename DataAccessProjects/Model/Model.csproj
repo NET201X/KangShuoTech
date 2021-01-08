@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CF316D09-EEAD-4E9F-AEF5-BE10E341CAB7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Model</RootNamespace>
+    <AssemblyName>Model</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\WinUIProjects\PadPlatform\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BTypeModel.cs" />
+    <Compile Include="ChronicLungerFirstVisitModel.cs" />
+    <Compile Include="ChronicLungerVisitModel.cs" />
+    <Compile Include="DataModel.cs" />
+    <Compile Include="DataUploadModel.cs" />
+    <Compile Include="HealthAssessExamModel.cs" />
+    <Compile Include="HealthAssessModel.cs" />
+    <Compile Include="HealthHouseBCHAOModel.cs" />
+    <Compile Include="HealthHouseEcgModel.cs" />
+    <Compile Include="HealthHouseGuideModel.cs" />
+    <Compile Include="HealthHouseMedicineCnModel.cs" />
+    <Compile Include="HealthHouseMedicineResultModel.cs" />
+    <Compile Include="HealthHouseMediPhyModel.cs" />
+    <Compile Include="HealthHouseModel.cs" />
+    <Compile Include="HealthHousePhysicalAssistCheckModel.cs" />
+    <Compile Include="HealthOverviewSetModel.cs" />
+    <Compile Include="HealthRecordsinfoModel.cs" />
+    <Compile Include="HealthSelfCareabilityModel.cs" />
+    <Compile Include="HHBoneModel.cs" />
+    <Compile Include="HHCardiovascularModel.cs" />
+    <Compile Include="HHLungModel.cs" />
+    <Compile Include="OldMedGuideModel.cs" />
+    <Compile Include="OldSelfSqliteModel.cs" />
+    <Compile Include="PrintModel.cs" />
+    <Compile Include="RecordsManageMentModel.cs" />
+    <Compile Include="ConsulationBaseInfoModel.cs" />
+    <Compile Include="ConsulationDoctorsModel.cs" />
+    <Compile Include="miniPadModel.cs" />
+    <Compile Include="ReceiveTreatBaseInfoModel.cs" />
+    <Compile Include="RecordsChdStrokeReportModel.cs" />
+    <Compile Include="RecordsEcgModel.cs" />
+    <Compile Include="RecordsHyperFoodsModel.cs" />
+    <Compile Include="RecordsHyperSurveyModel.cs" />
+    <Compile Include="RecordsMedicineCnModel.cs" />
+    <Compile Include="RecordsMedicineResultModel.cs" />
+    <Compile Include="RecordsSelfcareabilityModel.cs" />
+    <Compile Include="RecordsSignatureModel.cs" />
+    <Compile Include="RecordsTumorModel.cs" />
+    <Compile Include="RecordsxqModel.cs" />
+    <Compile Include="ReferraBaseInfoModel.cs" />
+    <Compile Include="RequireModel.cs" />
+    <Compile Include="SystemErrorLogModel.cs" />
+    <Compile Include="ChronicChdBaseInfoModel.cs" />
+    <Compile Include="ChronicChdVisitModel.cs" />
+    <Compile Include="ChronicDiabetesBaseInfoModel.cs" />
+    <Compile Include="ChronicDiadetesVisitModel.cs" />
+    <Compile Include="ChronicDrugConditionModel.cs" />
+    <Compile Include="ChronicHypertensionBaseInfoModel.cs" />
+    <Compile Include="ChronicHypertensionVisitModel.cs" />
+    <Compile Include="ChronicMentalDiseaseBaseInfoModel.cs" />
+    <Compile Include="ChronicMentalDiseaseVisitModel.cs" />
+    <Compile Include="ChronicStrokeBaseInfoModel.cs" />
+    <Compile Include="ChronicStrokeVisitModel.cs" />
+    <Compile Include="DeviceInfoModel.cs" />
+    <Compile Include="EcgDataModel.cs" />
+    <Compile Include="ItemDictonaryModel.cs" />
+    <Compile Include="KidsBaseInfoModel.cs" />
+    <Compile Include="KidsNewBornVisitModel.cs" />
+    <Compile Include="KidsOneToThreeYearOldModel.cs" />
+    <Compile Include="KidsTcmhmOneModel.cs" />
+    <Compile Include="KidsTcmhmOneToThreeModel.cs" />
+    <Compile Include="KidsTcmhmThreeToSixModel.cs" />
+    <Compile Include="KidsThreeToSixYearOldModel.cs" />
+    <Compile Include="KidsWithinOneYearOldModel.cs" />
+    <Compile Include="OlderMedicineCnModel.cs" />
+    <Compile Include="OlderMedicineResultModel.cs" />
+    <Compile Include="OlderSelfCareabilityModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecordsAssessmentGuideModel.cs" />
+    <Compile Include="RecordsAssistCheckModel.cs" />
+    <Compile Include="RecordsBaseInfoModel.cs" />
+    <Compile Include="RecordsCantonModel.cs" />
+    <Compile Include="RecordsCardModel.cs" />
+    <Compile Include="RecordsCityModel.cs" />
+    <Compile Include="RecordsCustomerBaseInfoModel.cs" />
+    <Compile Include="RecordsDistrictModel.cs" />
+    <Compile Include="RecordsEducationActivitiesModel.cs" />
+    <Compile Include="RecordsEnvironmentModel.cs" />
+    <Compile Include="RecordsFamilyBedHistoryModel.cs" />
+    <Compile Include="RecordsFamilyHistoryInfoModel.cs" />
+    <Compile Include="RecordsFamilyInfoModel.cs" />
+    <Compile Include="RecordsGeneralConditionModel.cs" />
+    <Compile Include="RecordsHealthQuestionModel.cs" />
+    <Compile Include="RecordsHospitalHistoryModel.cs" />
+    <Compile Include="RecordsIllnessHistoryInfoModel.cs" />
+    <Compile Include="RecordsInoculationHistoryModel.cs" />
+    <Compile Include="RecordsLifeStyleModel.cs" />
+    <Compile Include="RecordsMedicationModel.cs" />
+    <Compile Include="RecordsMediPhysDistModel.cs" />
+    <Compile Include="RecordsPhysicalExamModel.cs" />
+    <Compile Include="RecordsProvinceModel.cs" />
+    <Compile Include="RecordsRequiredModel.cs" />
+    <Compile Include="RecordsStateModel.cs" />
+    <Compile Include="RecordsTownModel.cs" />
+    <Compile Include="RecordsVillageModel.cs" />
+    <Compile Include="RecordsVisceraFunctionModel.cs" />
+    <Compile Include="SysOrgCityModel.cs" />
+    <Compile Include="SysOrgDistrictModel.cs" />
+    <Compile Include="SysOrgProvinceModel.cs" />
+    <Compile Include="SysOrgTownModel.cs" />
+    <Compile Include="SysOrgVillangModle.cs" />
+    <Compile Include="SysUserModel.cs" />
+    <Compile Include="VaccinationCardModel.cs" />
+    <Compile Include="VaccinationOtherProgramModel.cs" />
+    <Compile Include="VaccinationProgramModel.cs" />
+    <Compile Include="WomenGravidaBaseInfoModel.cs" />
+    <Compile Include="WomenGravidaFirstVisitModel.cs" />
+    <Compile Include="WomenGravidaPostpartum42DayModel.cs" />
+    <Compile Include="WomenGravidaPostpartumModel.cs" />
+    <Compile Include="WomenGravidaPreAssistCheckModel.cs" />
+    <Compile Include="WomenGravidaTwoToFiveVisitModel.cs" />
+    <Compile Include="XinJiangSeparationModel.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

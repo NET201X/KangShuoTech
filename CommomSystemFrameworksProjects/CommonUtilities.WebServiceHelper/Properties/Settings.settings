@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CommonUtilities.WebServiceHelper.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CommonUtilities_WebServiceHelper_WebService_MedivaService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://116.255.245.244:8090/Mediva?wsdl</Value>
+    </Setting>
+    <Setting Name="Utilities_WebServiceHelper_WebService_MedivaService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://hwtest.xjjxzy.com:8000/Service/MedivaService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,653 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>7.10.3077</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1DAF924B-69F8-4216-B14E-A8B91A98074E}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+    <AssemblyKeyContainerName />
+    <AssemblyName>RecordManagement</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RecordManagement</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\PadPlatform\bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>TRACE;Debug</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.AcroPDFLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Library\AxInterop.AcroPDFLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.HWPenSignLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Library\AxInterop.HWPenSignLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.BioneFPAPILib">
+      <HintPath>..\..\Library\Interop.BioneFPAPILib.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="mscorlib">
+      <Name>mscorlib</Name>
+      <HintPath>mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System">
+      <Name>System</Name>
+      <HintPath>System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <Name>System.Core</Name>
+      <HintPath>System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+      <HintPath>System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+      <HintPath>System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+      <HintPath>System.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChItems.cs" />
+    <Compile Include="ECGShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ECGShow.Designer.cs">
+      <DependentUpon>ECGShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ECGShowM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ECGShowM.designer.cs">
+      <DependentUpon>ECGShowM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyFactory.cs" />
+    <Compile Include="DemoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FamilyListQueryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FamilyListQueryForm.Designer.cs">
+      <DependentUpon>FamilyListQueryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyQueryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoseForm.designer.cs">
+      <DependentUpon>DoseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChdStrokeReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChdStrokeReport.designer.cs">
+      <DependentUpon>frmChdStrokeReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFollowDataUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFollowDataUpdate.Designer.cs">
+      <DependentUpon>frmFollowDataUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHealthRefresh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHealthRefresh.Designer.cs">
+      <DependentUpon>frmHealthRefresh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHyperSurvey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHyperSurvey.designer.cs">
+      <DependentUpon>frmHyperSurvey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOldMedEX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTumorReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTumorReport.designer.cs">
+      <DependentUpon>frmTumorReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ftrNativeLib.cs" />
+    <Compile Include="HomeQueryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainItemUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyBitmapFile.cs" />
+    <Compile Include="OldPeopleInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OverView\frmOutBaseInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OverView\frmOutBaseInfo.designer.cs">
+      <DependentUpon>frmOutBaseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OverView\frmOutDiabete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OverView\frmOutDiabete.designer.cs">
+      <DependentUpon>frmOutDiabete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OverView\frmOutHyper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OverView\frmOutHyper.designer.cs">
+      <DependentUpon>frmOutHyper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OverView\frmOutInfoQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OverView\frmOutInfoQuery.designer.cs">
+      <DependentUpon>frmOutInfoQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OverView\frmOutOldMen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OverView\frmOutOldMen.Designer.cs">
+      <DependentUpon>frmOutOldMen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OverView\LeaveOutInfoFactory.cs" />
+    <Compile Include="PersonFileFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonFileFrm.Designer.cs">
+      <DependentUpon>PersonFileFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonFileRequiredForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonFileRequiredForm.Designer.cs">
+      <DependentUpon>PersonFileRequiredForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhysicalQueryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhysicalQueryForm.Designer.cs">
+      <DependentUpon>PhysicalQueryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="QueryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QueryForm.Designer.cs">
+      <DependentUpon>QueryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueryInfoFactory.cs" />
+    <Compile Include="RecordBaseInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HealthInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FamilyInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeFamilyRoleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonRecordInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecordQueryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecordQueryForm.Designer.cs">
+      <DependentUpon>RecordQueryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RequiredFieldForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyCheckBox.cs" />
+    <Compile Include="PEControler.cs" />
+    <Compile Include="PersonInfoFactory.cs" />
+    <Compile Include="PhysicalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhysicalInfoFactory.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="AidExamUserControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CureStateUserControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HealthAppraisalUserControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HealthQuestionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LifeStyleUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFormUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MedicalPhysiqueUserControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NormalStateUserControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhysicalExamForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequiredForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequiredForm.Designer.cs">
+      <DependentUpon>RequiredForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScoreJudge.cs" />
+    <Compile Include="ShowHW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowHW.Designer.cs">
+      <DependentUpon>ShowHW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignFeedBack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignFeedBack.Designer.cs">
+      <DependentUpon>SignFeedBack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignMaint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignMaint.Designer.cs">
+      <DependentUpon>SignMaint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignMaintFactory.cs" />
+    <Compile Include="TranslateClsResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DemoForm.resx">
+      <DependentUpon>DemoForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ECGShow.resx">
+      <DependentUpon>ECGShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ECGShowM.resx">
+      <DependentUpon>ECGShowM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FamilyListQueryForm.resx">
+      <DependentUpon>FamilyListQueryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FamilyQueryForm.resx">
+      <DependentUpon>FamilyQueryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoseForm.resx">
+      <DependentUpon>DoseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChdStrokeReport.resx">
+      <DependentUpon>frmChdStrokeReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFollowDataUpdate.resx">
+      <DependentUpon>frmFollowDataUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHealthRefresh.resx">
+      <DependentUpon>frmHealthRefresh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHyperSurvey.resx">
+      <DependentUpon>frmHyperSurvey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOldMedEX.resx">
+      <DependentUpon>FrmOldMedEX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTumorReport.resx">
+      <DependentUpon>frmTumorReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeQueryForm.resx">
+      <DependentUpon>HomeQueryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainItemUserControl.resx">
+      <DependentUpon>MainItemUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OldPeopleInfoForm.resx">
+      <DependentUpon>OldPeopleInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverView\frmOutBaseInfo.resx">
+      <DependentUpon>frmOutBaseInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverView\frmOutDiabete.resx">
+      <DependentUpon>frmOutDiabete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverView\frmOutHyper.resx">
+      <DependentUpon>frmOutHyper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverView\frmOutInfoQuery.resx">
+      <DependentUpon>frmOutInfoQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverView\frmOutOldMen.resx">
+      <DependentUpon>frmOutOldMen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonFileRequiredForm.resx">
+      <DependentUpon>PersonFileRequiredForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhysicalQueryForm.resx">
+      <DependentUpon>PhysicalQueryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QueryForm.resx">
+      <DependentUpon>QueryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecordBaseInfoForm.resx">
+      <DependentUpon>RecordBaseInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HealthInfoForm.resx">
+      <DependentUpon>HealthInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FamilyInfoForm.resx">
+      <DependentUpon>FamilyInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeFamilyRoleForm.resx">
+      <DependentUpon>ChangeFamilyRoleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonRecordInfoForm.resx">
+      <DependentUpon>PersonRecordInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecordQueryForm.resx">
+      <DependentUpon>RecordQueryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RequiredFieldForm.resx">
+      <DependentUpon>RequiredFieldForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AidExamUserControl.resx">
+      <DependentUpon>AidExamUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CureStateUserControl.resx">
+      <DependentUpon>CureStateUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HealthAppraisalUserControl.resx">
+      <DependentUpon>HealthAppraisalUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HealthQuestionForm.resx">
+      <DependentUpon>HealthQuestionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LifeStyleUser.resx">
+      <DependentUpon>LifeStyleUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFormUserControl.resx">
+      <DependentUpon>MainFormUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedicalPhysiqueUserControl.resx">
+      <DependentUpon>MedicalPhysiqueUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NormalStateUserControl.resx">
+      <DependentUpon>NormalStateUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhysicalExamForm.resx">
+      <DependentUpon>PhysicalExamForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RequiredForm.resx">
+      <DependentUpon>RequiredForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowHW.resx">
+      <DependentUpon>ShowHW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignFeedBack.resx">
+      <DependentUpon>SignFeedBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignMaint.resx">
+      <DependentUpon>SignMaint.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataAccessProjects\BLL\BLL.csproj">
+      <Project>{88db6cea-c1d8-4ca8-8920-d84facd56af9}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataAccessProjects\DAL\DAL.csproj">
+      <Project>{3014aeab-b113-4d34-a8a9-c88dc6f00b48}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataAccessProjects\Model\Model.csproj">
+      <Project>{cf316d09-eead-4e9f-aef5-be10e341cab7}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemFrameworksProjects\Utilities.CommonControl\Utilities.CommonControl.csproj">
+      <Project>{87d63522-d4d3-401a-b734-ef0b3f5767a4}</Project>
+      <Name>Utilities.CommonControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemFrameworksProjects\Utilities.CommonTools\Utilities.CommonTools.csproj">
+      <Project>{b309e324-c5eb-4c31-96cf-5e578ac11cb3}</Project>
+      <Name>Utilities.CommonTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemFrameworksProjects\Utilities.CommonUI\Utilities.CommonUI.csproj">
+      <Project>{a4b7a3cc-4d00-4770-af42-c6bf17f401ed}</Project>
+      <Name>Utilities.CommonUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemFrameworksProjects\Utilities.Common\Utilities.Common.csproj">
+      <Project>{8f302c1f-01d0-4d2f-a921-07927adb3b9c}</Project>
+      <Name>Utilities.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemFrameworksProjects\Utilities.CommunicationData\Utilities.CommunicationData.csproj">
+      <Project>{c326f026-d7a4-4429-a423-07593c1441bb}</Project>
+      <Name>Utilities.CommunicationData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemFrameworksProjects\Utilities.MySQLHelper\Utilities.MySQLHelper.csproj">
+      <Project>{f53e47a2-10c9-4616-a324-bfc822910846}</Project>
+      <Name>Utilities.MySQLHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FingerPrint\FingerPrint.csproj">
+      <Project>{0d858c57-ccec-4669-a053-4da33f8a3d29}</Project>
+      <Name>FingerPrint</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FocusGroup\FocusGroup.csproj">
+      <Project>{BF46D33E-D9D3-4733-A937-9A324D4BE006}</Project>
+      <Name>FocusGroup</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OverView\OverView.csproj">
+      <Project>{7758464b-d1c4-44de-8784-4bfa60a8988a}</Project>
+      <Name>OverView</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TypeBUI\TypeBUI.csproj">
+      <Project>{4E8B674D-FB68-42C6-A1A6-A79664E29AB8}</Project>
+      <Name>TypeBUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beijing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MainItemBgp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MainItemBgp1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\返回.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ComExit.png" />
+    <None Include="Resources\ComSave.png" />
+    <None Include="Resources\ComTest.png" />
+    <None Include="Resources\btnchatixinxi00.png" />
+    <None Include="Resources\btnchatixinxi01.png" />
+    <None Include="Resources\btnfengmian00.png" />
+    <None Include="Resources\btnfengmian01.png" />
+    <None Include="Resources\btnfuzhujiancha00.png" />
+    <None Include="Resources\btnfuzhujiancha01.png" />
+    <None Include="Resources\btnjiankang00.png" />
+    <None Include="Resources\btnjiankang01.png" />
+    <None Include="Resources\btnjiankangpinggu00.png" />
+    <None Include="Resources\btnjiankangpinggu01.png" />
+    <None Include="Resources\btnjiankangpingjia00.png" />
+    <None Include="Resources\btnjiankangpingjia01.png" />
+    <None Include="Resources\btnjiankangwenti00.png" />
+    <None Include="Resources\btnjiankangwenti01.png" />
+    <None Include="Resources\btnjiben00.png" />
+    <None Include="Resources\btnjiben01.png" />
+    <None Include="Resources\btnshenghuofangshi00.png" />
+    <None Include="Resources\btnshenghuofangshi01.png" />
+    <None Include="Resources\btnxiangxi00.png" />
+    <None Include="Resources\btnxiangxi01.png" />
+    <None Include="Resources\btnyibanqingkuang00.png" />
+    <None Include="Resources\btnyibanqingkuang01.png" />
+    <None Include="Resources\btnzhiliaoqingkuang00.png" />
+    <None Include="Resources\btnzhiliaoqingkuang01.png" />
+    <None Include="Resources\btnzhonghitizhi00.png" />
+    <None Include="Resources\btnzhonghitizhi01.png" />
+    <None Include="Resources\btngerenxinxi00.png" />
+    <None Include="Resources\btngerenxinxi01.png" />
+    <None Include="Resources\btnjiatingxinxi00.png" />
+    <None Include="Resources\btnqianziweihu00.png" />
+    <None Include="Resources\btnqianziweihu01.png" />
+    <None Include="Resources\btngaoxueya00.png" />
+    <None Include="Resources\btngaoxueya01.png" />
+    <None Include="Resources\btnlaonianren00.png" />
+    <None Include="Resources\btnlaonianren01.png" />
+    <None Include="Resources\btntangniaobing00.png" />
+    <None Include="Resources\btntangniaobing01.png" />
+    <None Include="Resources\btnyishiqianzi00.png" />
+    <None Include="Resources\btnyishiqianzi01.png" />
+    <None Include="Resources\btnzangqigongneng00.png" />
+    <None Include="Resources\btnzangqigongneng01.png" />
+    <Content Include="logo.ico" />
+    <Content Include="Resources\Middle.png" />
+    <None Include="Resources\本地查询.png" />
+    <None Include="Resources\列表统计.png" />
+    <None Include="Resources\漏项统计.png" />
+    <None Include="Resources\医师查询.png" />
+    <None Include="Resources\档案查询小.png" />
+    <Content Include="Resources\糖尿病.png" />
+    <Content Include="Resources\肿瘤报告卡.png" />
+    <Content Include="Resources\脑 冠报告卡.png" />
+    <None Include="Resources\随访提醒.png" />
+    <Content Include="Resources\高血压.png" />
+    <Content Include="Resources\高血压调查表.png" />
+    <None Include="Resources\健康体检.png" />
+    <None Include="Resources\家庭档案.png" />
+    <None Include="Resources\个人档案.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="HWPenSignLib">
+      <Guid>{43926116-9BAB-4486-ADF6-5C9D443E808F}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>

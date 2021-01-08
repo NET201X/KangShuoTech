@@ -1,0 +1,667 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>7.10.3077</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BF46D33E-D9D3-4733-A937-9A324D4BE006}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+    <AssemblyKeyContainerName />
+    <AssemblyName>FocusGroup</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FocusGroup</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\PadPlatform\bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>TRACE;DEBUG;Debug</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.AcroPDFLib">
+      <HintPath>..\..\Library\AxInterop.AcroPDFLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.HWPenSignLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Library\AxInterop.HWPenSignLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Femiani.Forms.UI">
+      <HintPath>..\..\Library\Femiani.Forms.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="FingerPrint">
+      <HintPath>..\PadPlatform\bin\Debug\FingerPrint.exe</HintPath>
+    </Reference>
+    <Reference Include="MagicLibrary">
+      <Name>MagicLibrary</Name>
+      <HintPath>..\..\Library\MagicLibrary.DLL</HintPath>
+    </Reference>
+    <Reference Include="mscorlib">
+      <Name>mscorlib</Name>
+      <HintPath>mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+      <HintPath>System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+      <HintPath>System.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <Name>System.Core</Name>
+      <HintPath>System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+      <HintPath>System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+      <HintPath>System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+      <HintPath>System.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.XML" />
+    <Reference Include="Utilities.Common">
+      <HintPath>..\..\Library\Utilities.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChronicDisease\CHDFactory.cs" />
+    <Compile Include="ChronicDisease\DiaFactory.cs" />
+    <Compile Include="ChronicDisease\DiaRequiredForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChronicDisease\DiaRequiredForm.Designer.cs">
+      <DependentUpon>DiaRequiredForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChronicDisease\DoseFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChronicDisease\DoseFrm.Designer.cs">
+      <DependentUpon>DoseFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChronicDisease\DrugCondion.cs" />
+    <Compile Include="ChronicDisease\DiaVisitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChronicDisease\DiaInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChronicDisease\CHDVisitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChronicDisease\DrugCondions.cs" />
+    <Compile Include="ChronicDisease\HyperRequiredForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChronicDisease\HyperRequiredForm.Designer.cs">
+      <DependentUpon>HyperRequiredForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChronicDisease\HypVisitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChronicDisease\HypInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChronicDisease\MentalInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChronicDisease\MentalVisitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChronicDisease\PTBFactory.cs" />
+    <Compile Include="ChronicDisease\PTBInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChronicDisease\PTBInfoForm.Designer.cs">
+      <DependentUpon>PTBInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChronicDisease\StrokeVisitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChronicDisease\HypFactory.cs" />
+    <Compile Include="ChronicDisease\HypForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChronicDisease\MentalFactory.cs" />
+    <Compile Include="ChronicDisease\StrokeFactory.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChronicDisease\PTBVisitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChronicDisease\PTBVisitForm.Designer.cs">
+      <DependentUpon>PTBVisitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OldPeople\FrmOldMedEX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OldPeople\OldPeopleInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Query\GroupDataListsSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Query\GroupDataListsSearch.Designer.cs">
+      <DependentUpon>GroupDataListsSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Query\FocusQueryInfoFactory.cs" />
+    <Compile Include="OldPeople\CreateDataGridViewColumn.cs" />
+    <Compile Include="OldPeople\OldPeopleRequiredForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OldPeople\OldPeopleRequiredForm.Designer.cs">
+      <DependentUpon>OldPeopleRequiredForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Query\DiaQueryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Query\DiaQueryForm.Designer.cs">
+      <DependentUpon>DiaQueryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Query\GroupDataListsSearchFactory.cs" />
+    <Compile Include="Query\HypQueryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Query\HypQueryForm.Designer.cs">
+      <DependentUpon>HypQueryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Query\OlderQueryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Query\OlderQueryForm.Designer.cs">
+      <DependentUpon>OlderQueryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gravida\After42DaysVisitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gravida\AfterKidBirthVisitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gravida\GravidaInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gravida\GravidaFirstVisitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gravida\GravidaTwoToFiveVisitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gravida\GravidaFactory.cs" />
+    <Compile Include="Gravida\GravidaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kids\KidsFactory.cs" />
+    <Compile Include="Kids\KidsThreeToSixVisitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kids\KidsOneToTwoVisitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kids\KidsInOneYearOldVisitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kids\KidsInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kids\KidsOneMonthOldVisitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kids\KidsWithinOneYearOldVisitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kids\KidsOneYearOldVisitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kids\FrmChlTcmhmOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kids\FrmNewBornVisit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kids\KidsOneToTwoUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kids\KidsThreeToSixUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kids\KidsWithinOneUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OldPeople\ChItems.cs" />
+    <Compile Include="OldPeople\OldPeopleInfoFactory.cs" />
+    <Compile Include="OldPeople\OldPeopleInfoFormModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OldPeople\MedCNResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OldPeople\OldPeopleMedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OldPeople\FrmOldMedEXModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OldPeople\ScoreJudge.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="MainItemUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ChronicDisease\DiaRequiredForm.resx">
+      <DependentUpon>DiaRequiredForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChronicDisease\DiaVisitForm.resx">
+      <DependentUpon>DiaVisitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChronicDisease\DiaInfoForm.resx">
+      <DependentUpon>DiaInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChronicDisease\CHDVisitForm.resx">
+      <DependentUpon>CHDVisitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChronicDisease\DoseFrm.resx">
+      <DependentUpon>DoseFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChronicDisease\HyperRequiredForm.resx">
+      <DependentUpon>HyperRequiredForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChronicDisease\HypVisitForm.resx">
+      <DependentUpon>HypVisitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChronicDisease\HypInfoForm.resx">
+      <DependentUpon>HypInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChronicDisease\MentalInfoForm.resx">
+      <DependentUpon>MentalInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChronicDisease\MentalVisitForm.resx">
+      <DependentUpon>MentalVisitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChronicDisease\PTBInfoForm.resx">
+      <DependentUpon>PTBInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChronicDisease\PTBVisitForm.resx">
+      <DependentUpon>PTBVisitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChronicDisease\StrokeVisitForm.resx">
+      <DependentUpon>StrokeVisitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OldPeople\FrmOldMedEX.resx">
+      <DependentUpon>FrmOldMedEX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OldPeople\OldPeopleInfoForm.resx">
+      <DependentUpon>OldPeopleInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Query\GroupDataListsSearch.resx">
+      <DependentUpon>GroupDataListsSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OldPeople\OldPeopleRequiredForm.resx">
+      <DependentUpon>OldPeopleRequiredForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gravida\After42DaysVisitForm.resx">
+      <DependentUpon>After42DaysVisitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gravida\AfterKidBirthVisitForm.resx">
+      <DependentUpon>AfterKidBirthVisitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gravida\GravidaInfoForm.resx">
+      <DependentUpon>GravidaInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gravida\GravidaFirstVisitForm.resx">
+      <DependentUpon>GravidaFirstVisitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gravida\GravidaTwoToFiveVisitForm.resx">
+      <DependentUpon>GravidaTwoToFiveVisitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kids\KidsThreeToSixVisitForm.resx">
+      <DependentUpon>KidsThreeToSixVisitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kids\KidsOneToTwoVisitForm.resx">
+      <DependentUpon>KidsOneToTwoVisitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kids\KidsInOneYearOldVisitForm.resx">
+      <DependentUpon>KidsInOneYearOldVisitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kids\KidsInfoForm.resx">
+      <DependentUpon>KidsInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kids\KidsOneMonthOldVisitForm.resx">
+      <DependentUpon>KidsOneMonthOldVisitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kids\KidsWithinOneYearOldVisitForm.resx">
+      <DependentUpon>KidsWithinOneYearOldVisitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kids\KidsOneYearOldVisitForm.resx">
+      <DependentUpon>KidsOneYearOldVisitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kids\FrmChlTcmhmOne.resx">
+      <DependentUpon>FrmChlTcmhmOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kids\FrmNewBornVisit.resx">
+      <DependentUpon>FrmNewBornVisit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kids\KidsOneToTwoUserControl.resx">
+      <DependentUpon>KidsOneToTwoUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kids\KidsThreeToSixUserControl.resx">
+      <DependentUpon>KidsThreeToSixUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kids\KidsWithinOneUserControl.resx">
+      <DependentUpon>KidsWithinOneUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OldPeople\OldPeopleInfoFormModify.resx">
+      <DependentUpon>OldPeopleInfoFormModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OldPeople\MedCNResultForm.resx">
+      <DependentUpon>MedCNResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OldPeople\OldPeopleMedForm.resx">
+      <DependentUpon>OldPeopleMedForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OldPeople\FrmOldMedEXModify.resx">
+      <DependentUpon>FrmOldMedEXModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainItemUserControl.resx">
+      <DependentUpon>MainItemUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataAccessProjects\BLL\BLL.csproj">
+      <Project>{88db6cea-c1d8-4ca8-8920-d84facd56af9}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataAccessProjects\Model\Model.csproj">
+      <Project>{cf316d09-eead-4e9f-aef5-be10e341cab7}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemFrameworksProjects\Utilities.CommonControl\Utilities.CommonControl.csproj">
+      <Project>{87d63522-d4d3-401a-b734-ef0b3f5767a4}</Project>
+      <Name>Utilities.CommonControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemFrameworksProjects\Utilities.CommonTools\Utilities.CommonTools.csproj">
+      <Project>{b309e324-c5eb-4c31-96cf-5e578ac11cb3}</Project>
+      <Name>Utilities.CommonTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemFrameworksProjects\Utilities.CommonUI\Utilities.CommonUI.csproj">
+      <Project>{A4B7A3CC-4D00-4770-AF42-C6BF17F401ED}</Project>
+      <Name>Utilities.CommonUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\beijing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\MainItemBgp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\newborn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\newborn_er.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\newborn_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\old_med.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\visit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\visit_er.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\visit_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\well.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\within1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\within1_er.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\within1_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\返回.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\退出.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\随访人群.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btntangniaobing01.png" />
+    <None Include="Resources\btntangniaobing00.png" />
+    <None Include="Resources\btnnaocuzhong01.png" />
+    <None Include="Resources\btnnaocuzhong00.png" />
+    <None Include="Resources\btnlaonianren01.png" />
+    <None Include="Resources\btnlaonianren00.png" />
+    <None Include="Resources\btnjingshenjibing01.png" />
+    <None Include="Resources\btnjingshenjibing00.png" />
+    <None Include="Resources\btnguanxinbing01.png" />
+    <None Include="Resources\btnguanxinbing00.png" />
+    <None Include="Resources\btngaoxueya01.png" />
+    <None Include="Resources\btngaoxueya00.png" />
+    <None Include="Resources\btnfeijiehe01.png" />
+    <None Include="Resources\btnfeijiehe00.png" />
+    <None Include="Resources\btnruhu01.png" />
+    <None Include="Resources\btnruhu00.png" />
+    <None Include="Resources\btnfeijiehe401.png" />
+    <None Include="Resources\btnfeijiehe400.png" />
+    <None Include="Resources\btnfeijiehe301.png" />
+    <None Include="Resources\btnfeijiehe300.png" />
+    <None Include="Resources\btnfeijiehe201.png" />
+    <None Include="Resources\btnfeijiehe200.png" />
+    <None Include="Resources\btnfeijiehe101.png" />
+    <None Include="Resources\btnfeijiehe100.png" />
+    <None Include="Resources\btnzhongyiyao01.png" />
+    <None Include="Resources\btnzhongyiyao00.png" />
+    <None Include="Resources\btn3-6jiancha01.png" />
+    <None Include="Resources\btn3-6jiancha00.png" />
+    <None Include="Resources\btn1jiancha01.png" />
+    <None Include="Resources\btn1jiancha00.png" />
+    <None Include="Resources\btn1-2jiancha01.png" />
+    <None Include="Resources\btn1-2jiancha00.png" />
+    <None Include="Resources\btnxinshengerfangshi01.png" />
+    <None Include="Resources\btnxinshengerfangshi00.png" />
+    <None Include="Resources\btnxinshenger01.png" />
+    <None Include="Resources\btnxinshenger00.png" />
+    <None Include="Resources\btnchanqianshuifang0501.png" />
+    <None Include="Resources\btnchanqianshuifang0100.png" />
+    <None Include="Resources\btnchanqianshuifang0500.png" />
+    <None Include="Resources\btnchanqianshuifang0401.png" />
+    <None Include="Resources\btnchanqianshuifang0400.png" />
+    <None Include="Resources\btnchanqianshuifang0301.png" />
+    <None Include="Resources\btnchanqianshuifang0300.png" />
+    <None Include="Resources\btnchanqianshuifang0201.png" />
+    <None Include="Resources\btnchanqianshuifang0200.png" />
+    <None Include="Resources\btnchanqianshuifang0101.png" />
+    <None Include="Resources\btnchanhoufangshi01.png" />
+    <None Include="Resources\btnchanhoufangshi00.png" />
+    <None Include="Resources\btn42jiancha01.png" />
+    <None Include="Resources\btn42jiancha00.png" />
+    <None Include="Resources\suifang01.png" />
+    <None Include="Resources\suifang00.png" />
+    <None Include="Resources\btnjiben01.png" />
+    <None Include="Resources\btnjiben00.png" />
+    <None Include="Resources\btnzhongyibaojian01.png" />
+    <None Include="Resources\btnzhongyibaojian00.png" />
+    <None Include="Resources\btnjiankangpinggu01.png" />
+    <None Include="Resources\btnjiankangpinggu00.png" />
+    <None Include="Properties\gaoxueya.png" />
+    <None Include="Properties\tangniaobing.png" />
+    <None Include="Properties\feijiehe.png" />
+    <None Include="Properties\suifangchaxun.png" />
+    <Content Include="logo.ico" />
+    <Content Include="Properties\XChild.png" />
+    <Content Include="Properties\XFjh.png" />
+    <Content Include="Properties\XGxb.png" />
+    <Content Include="Properties\XJsb.png" />
+    <Content Include="Properties\XNcz.png" />
+    <Content Include="Properties\XYcf.png" />
+    <None Include="Properties\VisitData.png" />
+    <Content Include="Properties\CHD.png" />
+    <None Include="Properties\Chinese.png" />
+    <None Include="Properties\ChineseDrug.png" />
+    <Content Include="Properties\Griva.png" />
+    <None Include="Properties\HealthEva.png" />
+    <Content Include="Properties\Kids.png" />
+    <None Include="Properties\xOrder.png" />
+    <None Include="Properties\XHyp.png" />
+    <None Include="Properties\XDia.png" />
+    <None Include="Properties\lungertwo.png" />
+    <None Include="Properties\lungerfirst.png" />
+    <None Include="Properties\lungerfour.png" />
+    <None Include="Properties\lungerinfo.png" />
+    <None Include="Properties\lungerthree.png" />
+    <Content Include="Properties\Mental.png" />
+    <None Include="Resources\Image1.bmp" />
+    <None Include="Properties\Middle.png" />
+    <Content Include="Properties\OldPeople.png" />
+    <Content Include="Properties\Stroke.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="HWPenSignLib">
+      <Guid>{43926116-9BAB-4486-ADF6-5C9D443E808F}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>

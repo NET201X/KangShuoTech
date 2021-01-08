@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C326F026-D7A4-4429-A423-07593C1441BB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QinCSoft.Utilities.CommunicationData</RootNamespace>
+    <AssemblyName>Utilities.CommunicationData</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BCResult.cs" />
+    <Compile Include="ClsALKDEVICETF.cs" />
+    <Compile Include="ClsALKDEVICETFEx.cs" />
+    <Compile Include="ClsCHITDEVICEBG.cs" />
+    <Compile Include="ClsCHITDEVICEBGEx.cs" />
+    <Compile Include="ClsCHITDEVICEBM.cs" />
+    <Compile Include="ClsCHITDEVICEBMEx.cs" />
+    <Compile Include="ClsCHITDEVICEBP.cs" />
+    <Compile Include="ClsCHITDEVICEBPEx.cs" />
+    <Compile Include="ClsCHITDEVICEBPR.cs" />
+    <Compile Include="ClsCommunication.cs" />
+    <Compile Include="ClsCommunicationBlue.cs" />
+    <Compile Include="ClsCommunicationBlueEx.cs" />
+    <Compile Include="ClsCommunicationCom.cs" />
+    <Compile Include="ClsCommunicationComEx.cs" />
+    <Compile Include="ClsDeviceFactory.cs" />
+    <Compile Include="ClsDeviceFactoryEx.cs" />
+    <Compile Include="ClsEMPDEVICEUI.cs" />
+    <Compile Include="ClsEMPDEVICEUIEx.cs" />
+    <Compile Include="ClsFMDDEVICEBP.cs" />
+    <Compile Include="ClsQCTDevice.cs" />
+    <Compile Include="ClsQCTDEVICEBC.cs" />
+    <Compile Include="ClsQCTDEVICEBE.cs" />
+    <Compile Include="ClsQCTDEVICEBF.cs" />
+    <Compile Include="ClsQCTDEVICEBG.cs" />
+    <Compile Include="ClsQCTDEVICEBH.cs" />
+    <Compile Include="ClsQCTDEVICEBM.cs" />
+    <Compile Include="ClsQCTDEVICEBM_N.cs" />
+    <Compile Include="ClsQCTDEVICEBP.cs" />
+    <Compile Include="ClsQCTDEVICEBPT.cs" />
+    <Compile Include="ClsQCTDEVICEBT.cs" />
+    <Compile Include="ClsQCTDEVICEBU.cs" />
+    <Compile Include="ClsQCTDEVICEBW.cs" />
+    <Compile Include="ClsQCTDeviceComAKBG.cs" />
+    <Compile Include="ClsQCTDeviceComAKBU.cs" />
+    <Compile Include="ClsQCTDeviceComAKHB.cs" />
+    <Compile Include="ClsQCTDeviceComAKHW.cs" />
+    <Compile Include="ClsQCTDeviceComBG.cs" />
+    <Compile Include="ClsQCTDeviceComBP.cs" />
+    <Compile Include="ClsQCTDeviceComBS.cs" />
+    <Compile Include="ClsQCTDeviceComBU.cs" />
+    <Compile Include="ClsQCTDeviceComZQ.cs" />
+    <Compile Include="ClsQCTDeviceDT.cs" />
+    <Compile Include="ClsQCTDeviceEx.cs" />
+    <Compile Include="ClsQCTDeviceHEM.cs" />
+    <Compile Include="ClsQCTDEVICESE.cs" />
+    <Compile Include="ClsQCTDEVICETF.cs" />
+    <Compile Include="ClsQCTDEVICEUI.cs" />
+    <Compile Include="ClsQCTDEVICEUR.cs" />
+    <Compile Include="ClsQCTDeviceYueHaoBG.cs" />
+    <Compile Include="ClsParseEcg.cs" />
+    <Compile Include="ClsResult.cs" />
+    <Compile Include="ClsTransInfo.cs" />
+    <Compile Include="ClsTransInfoBG.cs" />
+    <Compile Include="ClsTransInfoBM.cs" />
+    <Compile Include="ClsTransInfoBP.cs" />
+    <Compile Include="ClsTransInfoEx.cs" />
+    <Compile Include="ClsTransInfoTF.cs" />
+    <Compile Include="ClsTransInfoUI.cs" />
+    <Compile Include="Conversions.cs" />
+    <Compile Include="FormDeviceSE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QCTBC_VALUE.cs" />
+    <Compile Include="QCTBE_VALUE.cs" />
+    <Compile Include="QCTBF_VALUE.cs" />
+    <Compile Include="QCTBG_VALUE.cs" />
+    <Compile Include="QCTBH_VALUE.cs" />
+    <Compile Include="QCTBPT_VALUE.cs" />
+    <Compile Include="QCTBP_VALUE.cs" />
+    <Compile Include="QCTBS_BYTES.cs" />
+    <Compile Include="QCTBS_VALUE.cs" />
+    <Compile Include="QCTBT_VALUE.cs" />
+    <Compile Include="QCTBU_VALUE.cs" />
+    <Compile Include="QCTBW_VALUE.cs" />
+    <Compile Include="QCTHB_VALUE.cs" />
+    <Compile Include="QCTTF_VALUE.cs" />
+    <Compile Include="QCTUI_VALUE.cs" />
+    <Compile Include="QCTZQ_VALUE.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="tagMSG.cs" />
+    <Compile Include="TransMessageHandle.cs" />
+    <Compile Include="TYPEANDVALUE.cs" />
+    <Compile Include="valueItem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormDeviceSE.resx">
+      <DependentUpon>FormDeviceSE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\drop.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\up_baocun.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

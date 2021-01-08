@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://hwtest.xjjxzy.com:8000/Service/MedivaService.asmx?wsdl" docRef="http://hwtest.xjjxzy.com:8000/Service/MedivaService.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://hwtest.xjjxzy.com:8000/Service/MedivaService.asmx" xmlns:q1="http://tempuri.org/" binding="q1:MedivaServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://hwtest.xjjxzy.com:8000/Service/MedivaService.asmx" xmlns:q2="http://tempuri.org/" binding="q2:MedivaServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

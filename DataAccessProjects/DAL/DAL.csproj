@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3014AEAB-B113-4D34-A8A9-C88DC6F00B48}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\WinUIProjects\PadPlatform\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\MySQL\MySQL Connector Net 6.9.6\Assemblies\v4.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\Library\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChronicLungerFirstVisitDAL.cs" />
+    <Compile Include="ChronicLungerVisitDAL.cs" />
+    <Compile Include="ConsulationBaseInfoDAL.cs" />
+    <Compile Include="ConsulationDoctorsDAL.cs" />
+    <Compile Include="DataUploadSqliteDAL.cs" />
+    <Compile Include="DeviceInfoSqliteDAL.cs" />
+    <Compile Include="HealthAssessDAL.cs" />
+    <Compile Include="HealthAssessExamDAL.cs" />
+    <Compile Include="HealthHouseBCHAODAL.cs" />
+    <Compile Include="HealthHouseDAL.cs" />
+    <Compile Include="HealthHouseEcgDAL.cs" />
+    <Compile Include="HealthHouseGuideDAL.cs" />
+    <Compile Include="HealthHouseMedicineCnDAL.cs" />
+    <Compile Include="HealthHouseMedicineResultDAL.cs" />
+    <Compile Include="HealthHouseMediPhyDAL.cs" />
+    <Compile Include="HealthHousePhysicalAssistCheckDAL.cs" />
+    <Compile Include="HealthOverviewSetDAL.cs" />
+    <Compile Include="HealthRecordsinfoDAL.cs" />
+    <Compile Include="HealthSelfCareabilityDAL.cs" />
+    <Compile Include="HHBoneDAL.cs" />
+    <Compile Include="HHCardiovascularDAL.cs" />
+    <Compile Include="HHLungDAL.cs" />
+    <Compile Include="OldMedGuideDAL.cs" />
+    <Compile Include="OldSelfSqliteDAL.cs" />
+    <Compile Include="PrintDAL.cs" />
+    <Compile Include="RecordsChdStrokeReportDAL.cs" />
+    <Compile Include="RecordsHyperFoodsDAL.cs" />
+    <Compile Include="RecordsHyperSurveyDAL.cs" />
+    <Compile Include="RecordsMedicationSqliteDAL.cs" />
+    <Compile Include="RecordsMedicineCnSqliteDAL.cs" />
+    <Compile Include="RecordsMedicineResultSqliteDAL.cs" />
+    <Compile Include="ReceiveTreatBaseInfoDAL.cs" />
+    <Compile Include="RecordsEcgDAL.cs" />
+    <Compile Include="RecordsMedicineCnDAL.cs" />
+    <Compile Include="RecordsMedicineResultDAL.cs" />
+    <Compile Include="RecordsSelfcareabilityDAL.cs" />
+    <Compile Include="RecordsSignatureDAL.cs" />
+    <Compile Include="RecordsTumorDAL.cs" />
+    <Compile Include="RecordsxqDAL.cs" />
+    <Compile Include="ReferraBaseInfoDAL.cs" />
+    <Compile Include="RequireDAL.cs" />
+    <Compile Include="SystemErrorLogDAL.cs" />
+    <Compile Include="ChronicChdBaseInfoDAL.cs" />
+    <Compile Include="ChronicChdVisitDAL.cs" />
+    <Compile Include="ChronicDiabetesBaseInfoDAL.cs" />
+    <Compile Include="ChronicDiadetesVisitDAL.cs" />
+    <Compile Include="ChronicDrugconditionDAL.cs" />
+    <Compile Include="ChronicHypertensionBaseInfoDAL.cs" />
+    <Compile Include="ChronicHypertensionVisitDAL.cs" />
+    <Compile Include="ChronicMentalDiseaseBaseInfoDAL.cs" />
+    <Compile Include="ChronicMentalDiseaseVisitDAL.cs" />
+    <Compile Include="ChronicStrokeBaseInfoDAL.cs" />
+    <Compile Include="ChronicStrokeVisitDAL.cs" />
+    <Compile Include="DataOperationDAL.cs" />
+    <Compile Include="DeviceInfoDAL.cs" />
+    <Compile Include="EcgDataDAL.cs" />
+    <Compile Include="KidsBaseInfoDAL.cs" />
+    <Compile Include="KidsNewBornVisitDAL.cs" />
+    <Compile Include="KidsOneToThreeYearOldDAL.cs" />
+    <Compile Include="KidsTcmhmOneDAL.cs" />
+    <Compile Include="KidsTcmhmOneToThreeDAL.cs" />
+    <Compile Include="KidsTcmhmThreeToSixDAL.cs" />
+    <Compile Include="KidsThreeToSixYearOldDAL.cs" />
+    <Compile Include="KidsWithinOneYearOldDAL.cs" />
+    <Compile Include="OlderMedicineCnDAL.cs" />
+    <Compile Include="OlderMedicineResultDAL.cs" />
+    <Compile Include="OlderSelfCareabilityDAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecordsAssessmentGuideDAL.cs" />
+    <Compile Include="RecordsAssistCheckDAL.cs" />
+    <Compile Include="RecordsBaseInfoDAL.cs" />
+    <Compile Include="RecordsCantonDAL.cs" />
+    <Compile Include="RecordsCardDAL.cs" />
+    <Compile Include="RecordsCityDAL.cs" />
+    <Compile Include="RecordsCustomerBaseInfoDAL.cs" />
+    <Compile Include="RecordsDistrictDAL.cs" />
+    <Compile Include="RecordsEducationActivitiesDAL.cs" />
+    <Compile Include="RecordsEnvironmentDAL.cs" />
+    <Compile Include="RecordsFamilyBedHistoryDAL.cs" />
+    <Compile Include="RecordsFamilyHistoryInfoDAL.cs" />
+    <Compile Include="RecordsFamilyInfoDAL.cs" />
+    <Compile Include="RecordsGeneralConditionDAL.cs" />
+    <Compile Include="RecordsHealthQuestionDAL.cs" />
+    <Compile Include="RecordsHospitalHistoryDAL.cs" />
+    <Compile Include="RecordsIllnessHistoryInfoDAL.cs" />
+    <Compile Include="RecordsInoculationHistoryDAL.cs" />
+    <Compile Include="RecordsLifeStyleDAL.cs" />
+    <Compile Include="RecordsMedicationDAL.cs" />
+    <Compile Include="RecordsMediPhysDistDAL.cs" />
+    <Compile Include="RecordsPhysicalExamDAL.cs" />
+    <Compile Include="RecordsProvinceDAL.cs" />
+    <Compile Include="RecordsRequiredDAL.cs" />
+    <Compile Include="RecordsTownDAL.cs" />
+    <Compile Include="RecordsVillageDAL.cs" />
+    <Compile Include="RecordsVisceraFunctionDAL.cs" />
+    <Compile Include="SysOrgCityDAL.cs" />
+    <Compile Include="SysOrgDistrictDAL.cs" />
+    <Compile Include="SysOrgProvinceDAL.cs" />
+    <Compile Include="SysOrgTownDAL.cs" />
+    <Compile Include="SysOrgVillangDAL.cs" />
+    <Compile Include="SysUserDAL.cs" />
+    <Compile Include="TypeBDAL.cs" />
+    <Compile Include="VaccinationCardDAL.cs" />
+    <Compile Include="VaccinationOtherProgramDAL.cs" />
+    <Compile Include="VaccinationProgramDAL.cs" />
+    <Compile Include="WomenGravidaBaseInfoDAL.cs" />
+    <Compile Include="WomenGravidaFirstVisitDAL.cs" />
+    <Compile Include="WomenGravidaPostpartum42DayDAL.cs" />
+    <Compile Include="WomenGravidaPostpartumDAL.cs" />
+    <Compile Include="WomenGravidaPreAssistCheckDAL.cs" />
+    <Compile Include="WomenGravidaTwoToFiveVisitDAL.cs" />
+    <Compile Include="XinJiangSeparationSqliteDAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SystemFrameworksProjects\Utilities.Common\Utilities.Common.csproj">
+      <Project>{8F302C1F-01D0-4D2F-A921-07927ADB3B9C}</Project>
+      <Name>Utilities.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemFrameworksProjects\Utilities.MySQLHelper\Utilities.MySQLHelper.csproj">
+      <Project>{F53E47A2-10C9-4616-A324-BFC822910846}</Project>
+      <Name>Utilities.MySQLHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemFrameworksProjects\Utilities.SQLHelper\Utilities.SQLHelper.csproj">
+      <Project>{A4ED099C-45D2-46DC-A173-F4E464B1DE28}</Project>
+      <Name>Utilities.SQLHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemFrameworksProjects\Utilities.SQLiteHelper\Utilities.SQLiteHelper.csproj">
+      <Project>{B0EE4264-D664-4179-B072-06EE9DFE6228}</Project>
+      <Name>Utilities.SQLiteHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{cf316d09-eead-4e9f-aef5-be10e341cab7}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

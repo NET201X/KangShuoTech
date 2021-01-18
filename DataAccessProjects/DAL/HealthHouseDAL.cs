@@ -103,7 +103,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append(@"INSERT INTO tbl_RecordsHealthHouse
+            builder.Append(@"INSERT INTO ARCHIVE_HEALTH_HOUSE
                                      (
                                          IDCardNo
                                         ,CheckDate
@@ -230,7 +230,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append(@"UPDATE tbl_RecordsHealthHouse
+            builder.Append(@"UPDATE ARCHIVE_HEALTH_HOUSE
                                      SET                                         
                                         CheckDate = @CheckDate 
                                         ,BloodOxygen = @BloodOxygen 
@@ -350,8 +350,8 @@ namespace KangShuoTech.DataAccessProjects.DAL
                                         ,HealthHouse.Skeleton         
                                         ,HealthHouse.Calorie                                          
                                     FROM 
-                                        tbl_RecordsHealthHouse HealthHouse
-                                    INNER JOIN tbl_recordsbaseinfo BaseInfo
+                                        ARCHIVE_HEALTH_HOUSE HealthHouse
+                                    INNER JOIN ARCHIVE_BASEINFO BaseInfo
                                         ON BaseInfo.IDCardNo=HealthHouse.IDCardNo
                                     WHERE
                                        HealthHouse.IDCardNo=@IDCardNo
@@ -408,12 +408,12 @@ namespace KangShuoTech.DataAccessProjects.DAL
                                         ,Lung.ResultEx AS LResultEx
                                         ,Lung.ImgPath AS LImgPath
                                     FROM 
-                                        tbl_RecordsHealthHouse HealthHouse
-                                    LEFT JOIN tbl_HHBone Bone
+                                        ARCHIVE_HEALTH_HOUSE HealthHouse
+                                    LEFT JOIN HEALTHHOUSE_BMD Bone
                                         ON Bone.PID=HealthHouse.ID
-                                    LEFT JOIN tbl_HHCardiovascular Cardiovascular
+                                    LEFT JOIN HEALTHHOUSE_CARDIOVASCULAR Cardiovascular
                                         ON Cardiovascular.PID=HealthHouse.ID
-                                    LEFT JOIN tbl_HHLung Lung
+                                    LEFT JOIN HEALTHHOUSE_LUNG_FUNCTION Lung
                                         ON Lung.PID=HealthHouse.ID
                                     WHERE
                                        HealthHouse.IDCardNo=@IDCardNo
@@ -466,8 +466,8 @@ namespace KangShuoTech.DataAccessProjects.DAL
                                         ,HealthHouse.Skeleton         
                                         ,HealthHouse.Calorie                                          
                                     FROM 
-                                        tbl_RecordsHealthHouse HealthHouse
-                                    INNER JOIN tbl_recordsbaseinfo BaseInfo
+                                        ARCHIVE_HEALTH_HOUSE HealthHouse
+                                    INNER JOIN ARCHIVE_BASEINFO BaseInfo
                                         ON BaseInfo.IDCardNo=HealthHouse.IDCardNo
                                     WHERE
                                         HealthHouse.IDCardNo=@IDCardNo ");
@@ -519,12 +519,12 @@ namespace KangShuoTech.DataAccessProjects.DAL
                                         ,Lung.ResultEx AS LResultEx
                                         ,Lung.ImgPath AS LImgPath
                                     FROM 
-                                        tbl_RecordsHealthHouse HealthHouse
-                                    LEFT JOIN tbl_HHBone Bone
+                                        ARCHIVE_HEALTH_HOUSE HealthHouse
+                                    LEFT JOIN HEALTHHOUSE_BMD Bone
                                         ON Bone.PID=HealthHouse.ID
-                                    LEFT JOIN tbl_HHCardiovascular Cardiovascular
+                                    LEFT JOIN HEALTHHOUSE_CARDIOVASCULAR Cardiovascular
                                         ON Cardiovascular.PID=HealthHouse.ID
-                                    LEFT JOIN tbl_HHLung Lung
+                                    LEFT JOIN HEALTHHOUSE_LUNG_FUNCTION Lung
                                         ON Lung.PID=HealthHouse.ID
                                     WHERE
                                        HealthHouse.ID=@ID");
@@ -588,18 +588,18 @@ namespace KangShuoTech.DataAccessProjects.DAL
                                         ,PtnTbl.BCHAOther
                                         ,PtnTbl.BCHAOtherEx
                                     FROM 
-                                        tbl_RecordsHealthHouse HealthHouse
-                                    LEFT JOIN tbl_HHBone Bone
+                                        ARCHIVE_HEALTH_HOUSE HealthHouse
+                                    LEFT JOIN HEALTHHOUSE_BMD Bone
                                         ON Bone.PID=HealthHouse.ID
-                                    LEFT JOIN tbl_HHCardiovascular Cardiovascular
+                                    LEFT JOIN HEALTHHOUSE_CARDIOVASCULAR Cardiovascular
                                         ON Cardiovascular.PID=HealthHouse.ID
-                                    LEFT JOIN tbl_HHLung Lung
+                                    LEFT JOIN HEALTHHOUSE_LUNG_FUNCTION Lung
                                         ON Lung.PID=HealthHouse.ID
-                                    LEFT JOIN tbl_HHAssistCheck Assist
+                                    LEFT JOIN HEALTHHOUSE_PHYSICAL_ASSIST_CHECK Assist
                                     ON Assist.PID=HealthHouse.ID
-                                    LEFT JOIN tbl_HHRecordsEcg Ecg
+                                    LEFT JOIN HEALTHHOUSE_ECG_RESULT Ecg
                                     ON Ecg.PID=HealthHouse.ID
-                                    LEFT JOIN tbl_HHPtnTbl PtnTbl
+                                    LEFT JOIN HEALTHHOUSE_ULTRASONICB_RESULT PtnTbl
                                     ON PtnTbl.PID=HealthHouse.ID
                                     WHERE
                                        HealthHouse.IDCardNo=@IDCardNo
@@ -615,7 +615,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("SELECT COUNT(1)");
-            builder.Append(" from tbl_RecordsHealthHouse  B left join tbl_recordsbaseinfo T on T.IDCardNo = B.IDCardNo   ");
+            builder.Append(" from ARCHIVE_HEALTH_HOUSE  B left join ARCHIVE_BASEINFO T on T.IDCardNo = B.IDCardNo   ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -634,7 +634,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("(case T.CreateDate when null then null when '' then null else T.CreateDate end)CreateDate, ");
             builder.Append("(case T.LastUpdateDate when null then null when '' then null else T.LastUpdateDate end ) as LastUpdateDate, ");
             builder.Append("T.PopulationType,T.CreateMenName, B.CheckDate ");
-            builder.Append(" from tbl_RecordsHealthHouse B left join tbl_recordsbaseinfo T on T.IDCardNo = B.IDCardNo");
+            builder.Append(" from ARCHIVE_HEALTH_HOUSE B left join ARCHIVE_BASEINFO T on T.IDCardNo = B.IDCardNo");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE 1=1 " + strWhere);
@@ -654,7 +654,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_RecordsHealthHouse ");
+            builder.Append("delete from ARCHIVE_HEALTH_HOUSE ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;

@@ -350,9 +350,9 @@ namespace PadPlatform
 
         private bool checkTableExist()
         {
-            return new DataOperationBLL().TableExist(new string[] { "tbl_recordscity", "tbl_recordsdistrict", "tbl_recordsprovince", 
-                "tbl_recordstown", "tbl_recordsvillage", "tbl_sysorgcity", "tbl_sysorgdistrict", "tbl_sysorgprovince", "tbl_sysorgtown", 
-                "tbl_sysorgvillage", "tbl_sysuser" });
+            return new DataOperationBLL().TableExist(new string[] { "ARCHIVE_CITY", "ARCHIVE_DISTRICT", "ARCHIVE_PROVINCE", 
+                "ARCHIVE_TOWN", "ARCHIVE_VILLAGE", "SYS_ORG_CITY", "SYS_ORG_DISTRICT", "SYS_ORG_PROVINCE", "SYS_ORG_TOWN", 
+                "SYS_ORG_VILLAGE", "SYS_USER" });
         }
 
         protected override void Dispose(bool disposing)

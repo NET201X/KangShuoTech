@@ -27,12 +27,12 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append("SELECT T.IDCardNo,B.CheckDate");
-            builder.Append(" FROM tbl_recordsbaseinfo T LEFT JOIN  ");
-            builder.Append(" (SELECT a.IDCardNo, a.ID,a.CheckDate,a.doctor FROM tbl_recordscustomerbaseinfo a ");
+            builder.Append(" FROM ARCHIVE_BASEINFO T LEFT JOIN  ");
+            builder.Append(" (SELECT a.IDCardNo, a.ID,a.CheckDate,a.doctor FROM ARCHIVE_CUSTOMERBASEINFO a ");
 
             if (!strWhere.Contains("B.CheckDate"))
             {
-                builder.Append(" WHERE a.CheckDate=(SELECT MAX(c.CheckDate) FROM tbl_recordscustomerbaseinfo c WHERE a.IDCardNo=c.IDCardNo)");
+                builder.Append(" WHERE a.CheckDate=(SELECT MAX(c.CheckDate) FROM ARCHIVE_CUSTOMERBASEINFO c WHERE a.IDCardNo=c.IDCardNo)");
             }
 
             builder.Append(" ) B ON T.IDCardNo=B.IDCardNo");
@@ -54,11 +54,11 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("SELECT COUNT(1) FROM tbl_recordsbaseinfo T ");
-            builder.Append(" LEFT JOIN (SELECT a.IDCardNo, a.ID,a.CheckDate FROM tbl_recordscustomerbaseinfo a ");
+            builder.Append("SELECT COUNT(1) FROM ARCHIVE_BASEINFO T ");
+            builder.Append(" LEFT JOIN (SELECT a.IDCardNo, a.ID,a.CheckDate FROM ARCHIVE_CUSTOMERBASEINFO a ");
             if (!strWhere.Contains("B.CheckDate"))
             {
-                builder.Append(" WHERE  a.CheckDate = (SELECT max(c.CheckDate) FROM tbl_recordscustomerbaseinfo c  WHERE a.IDCardNo = c.IDCardNo )");
+                builder.Append(" WHERE  a.CheckDate = (SELECT max(c.CheckDate) FROM ARCHIVE_CUSTOMERBASEINFO c  WHERE a.IDCardNo = c.IDCardNo )");
             }
 
             builder.Append(" ) B ON T.IDCardNo = B.IDCardNo  ");
@@ -87,12 +87,12 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             builder.Append("T.LastUpdateBy,(case T.LastUpdateDate when null then null when '' then null else T.LastUpdateDate end ) AS LastUpdateDate,");
             builder.Append("T.PopulationType,T.FamilyIDCardNo,T.HouseRelation,T.HouseRealOther,T.Email,T.IsDelete,T.IsUpdate,T.TownName,");
             builder.Append("T.VillageName,T.CreateUnitName,T.CreateMenName, B.CheckDate ,B.ID AS CustomerID");
-            builder.Append(" FROM tbl_recordsbaseinfo T LEFT JOIN  ");
-            builder.Append(" (SELECT a.IDCardNo, a.ID,a.CheckDate FROM tbl_recordscustomerbaseinfo a ");
+            builder.Append(" FROM ARCHIVE_BASEINFO T LEFT JOIN  ");
+            builder.Append(" (SELECT a.IDCardNo, a.ID,a.CheckDate FROM ARCHIVE_CUSTOMERBASEINFO a ");
 
             if (!strWhere.Contains("B.CheckDate"))
             {
-                builder.Append(" WHERE a.CheckDate = (SELECT MAX(c.CheckDate) FROM tbl_recordscustomerbaseinfo c WHERE a.IDCardNo = c.IDCardNo) ");
+                builder.Append(" WHERE a.CheckDate = (SELECT MAX(c.CheckDate) FROM ARCHIVE_CUSTOMERBASEINFO c WHERE a.IDCardNo = c.IDCardNo) ");
             }
 
             builder.Append(" ) B ON T.IDCardNo=B.IDCardNo");
@@ -117,7 +117,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         public DataSet GetTownList()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("SELECT  DISTINCT(TownName) FROM tbl_recordsbaseinfo");
+            builder.Append("SELECT  DISTINCT(TownName) FROM ARCHIVE_BASEINFO");
             return MySQLHelper.Query(builder.ToString());
         }
 
@@ -125,7 +125,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("SELECT distinct T.CreateMenName,T.ID,T.PopulationType ");
-            builder.Append(" FROM tbl_recordsbaseinfo T LEFT JOIN tbl_recordscustomerbaseinfo B ON T.IDCardNo = B.IDCardNo ");
+            builder.Append(" FROM ARCHIVE_BASEINFO T LEFT JOIN ARCHIVE_CUSTOMERBASEINFO B ON T.IDCardNo = B.IDCardNo ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE 1=1 " + strWhere);
@@ -139,8 +139,8 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append("SELECT ");
-            builder.Append("a.*,b.CustomerName AS HouseName FROM tbl_RecordsBaseInfo a ");
-            builder.Append("LEFT JOIN tbl_RecordsBaseInfo b ON a.FamilyIDCardNo = b.IDCardNo ");
+            builder.Append("a.*,b.CustomerName AS HouseName FROM ARCHIVE_BASEINFO a ");
+            builder.Append("LEFT JOIN ARCHIVE_BASEINFO b ON a.FamilyIDCardNo = b.IDCardNo ");
             builder.Append(" WHERE a.IDCardNo=@IDCardNo");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
@@ -159,24 +159,21 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             List<string> list = MySQLHelper.GetList("SELECT table_name FROM information_schema.tables WHERE table_schema='" + BackData + "' ORDER BY table_name");
             ArrayList sQLStringList = new ArrayList();
 
-            string[] strArray = new string[] {"tbl_chronicchdbaseinfo", "tbl_chronicchdvisit", "tbl_chronicdiabetesbaseinfo", "tbl_chronicdiabetesinfo",
-                "tbl_chronicdiadetesvisit", "tbl_ChronicDrugCondition", "tbl_chronicendemicdiseasebaseinfo", "tbl_chronicendemicdiseasevisit",
-                "tbl_chronicfluorideinfo", "tbl_ChronicHypertensionBaseInfo", "tbl_ChronicHypertensionVisit",
-                "tbl_chroniciodineinfo", "tbl_chronickashinbeckinfo", "tbl_chronickeshaninfo", "tbl_chroniclungerfirstvisit", "tbl_chroniclungerscreen",
-                "tbl_chroniclungervisit", "tbl_chronicmentaldiseasebaseinfo", "tbl_chronicmentaldiseasevisit", "tbl_chronicstrokebaseinfo",
-                "tbl_chronicstrokevisit", "tbl_chronictumor", "tbl_clinacalrecievetreatinfo", "tbl_consultationbaseinfo", "tbl_kidsbaseinfo",
-                "tbl_kidsnewbornvisit", "tbl_kidsonetothreeyearold", "tbl_kidstcmhmone", "tbl_kidstcmhmonetothree", "tbl_kidstcmhmthreetosix",
-                "tbl_kidsthreetosixyearold", "tbl_kidswithinoneyearold", "tbl_oldbaseinfo", "tbl_oldermedicinecn", "tbl_oldermedicineresult",
-                "tbl_olderselfcareability", "tbl_olderspecialregist", "tbl_oldervisit", "tbl_oldervisitregist", "tbl_oldmedguide", "tbl_oldpeoplevisit",
-                "tbl_recordsassessmentguide", "tbl_recordsassistcheck", "tbl_recordsecg", "tbl_deviceinfo",
-                "tbl_recordsfamilyinfo", "tbl_recordseducationactivities", "tbl_recordsenvironment", "tbl_recordsfamilybedhistory",
-                "tbl_recordsfamilyhistoryinfo", "tbl_recordsgeneralcondition", "tbl_recordshealthhouse", "tbl_recordshealthquestion",
-                "tbl_recordshospitalhistory", "tbl_recordsillnesshistoryinfo", "tbl_recordsindhealthedu", "tbl_recordsinoculationhistory",
-                "tbl_recordslifestyle", "tbl_recordsmedication", "tbl_recordsmedicinecn", "tbl_recordsmedicineresult", "tbl_recordsmediphysdist",
-                "tbl_recordsphysicalexam", "tbl_recordsselfcareability", "tbl_recordssignature", "tbl_recordsviscerafunction", "tbl_recordsxq",
-                "tbl_womengravidabaseinfo", "tbl_womengravidafirstvisit", "tbl_womengravidapostpartum", "tbl_womengravidapostpartum42day",
-                "tbl_womengravidapreassistcheck", "tbl_womengravidatwotofivevisit", "tbl_RecordsPersonInfo",  "tbl_HealthRecordsInfo",
-                "tbl_RecordsCustomerBaseInfo"
+            string[] strArray = new string[] {"CD_CHD_BASEINFO", "CD_CHD_FOLLOWUP", "CD_DIABETES_BASEINFO",
+                "CD_DIABETESFOLLOWUP", "CD_DRUGCONDITION",  "CD_HYPERTENSION_BASEINFO", "CD_HYPERTENSIONFOLLOWUP", "CD_PTB_FIRSTVISIT",
+                "CD_PTB_VISIT", "CD_MENTALDISEASE_BASEINFO", "CD_MENTALDISEASE_FOLLOWUP", "CD_STROKE_BASEINFO",
+                "CD_STROKE_FOLLOWUP", "tbl_chronictumor", "ARCHIVE_RECEPTION_RECORD", "ARCHIVE_CONSULTATION_RECORD", "CHILD_BASEINFO",
+                "CHILD_NEWBORN_FOLLOWUP", "CHILD_ONE2THREE_YEAR_OLD", "CHILD_TCMHM_ONE", "CHILD_TCMHM_ONE2THREE", "CHILD_TCMHM_THREE2SIX",
+                "CHILD_THREE2SIX_YEAR_OLD", "CHILD_WITHIN_ONE_YEAR_OLD",  "OLD_MEDICINE_CN", "OLD_MEDICINE_RESULT",
+                "OLDER_SELFCAREABILITY","ARCHIVE_ASSESSMENTGUIDE", "ARCHIVE_ASSISTCHECK", "ARCHIVE_ECG", "ARCHIVE_DEVICEINFO",
+                "ARCHIVE_FAMILY_INFO", "ARCHIVE_EDUCATION_ACTIVITIES", "ARCHIVE_ENVIRONMENT", "ARCHIVE_FAMILYBEDHISTORY",
+                "ARCHIVE_FAMILYHISTORYINFO", "ARCHIVE_GENERALCONDITION", "ARCHIVE_HEALTH_HOUSE", "ARCHIVE_HEALTHQUESTION",
+                "ARCHIVE_HOSPITALHISTORY", "ARCHIVE_ILLNESSHISTORYINFO", "ARCHIVE_INOCULATIONHISTORY",
+                "ARCHIVE_LIFESTYLE", "ARCHIVE_MEDICATION", "ARCHIVE_MEDICINE_CN", "OLD_MEDICINE_RESULT", "ARCHIVE_MEDI_PHYS_DIST",
+                "ARCHIVE_PHYSICALEXAM", "ARCHIVE_SELFCAREABILITY", "ARCHIVE_SIGNATURE", "ARCHIVE_VISCERAFUNCTION", "ARCHIVE_BLOODTEST",
+                "GRAVIDA_BASEINFO", "GRAVIDA_FIRSTFOLLOWUP", "GRAVIDA_POSTPARTUM", "GRAVIDA_POSTPARTUM_42DAY",
+                "GRAVIDA_PRE_ASSISTCHECK", "GRAVIDA_TWO2FIVE_FOLLOWUP", "tbl_RecordsPersonInfo",  "ARCHIVE_BASEINFO_OUT",
+                "ARCHIVE_CUSTOMERBASEINFO"
             };
 
             ArrayList al = new ArrayList(strArray);
@@ -210,7 +207,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append("SELECT GROUP_CONCAT(DISTINCT IDCardNo) AS IDCardNo  ");
-            builder.Append(" FROM tbl_RecordsBaseInfo ");
+            builder.Append(" FROM ARCHIVE_BASEINFO ");
             builder.Append(" WHERE CreateDate BETWEEN @CreateDateS AND @CreateDateE ");
             
             MySqlParameter[] cmdParms = new MySqlParameter[] {
@@ -231,24 +228,21 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             List<string> list = MySQLHelper.GetList("SELECT table_name FROM information_schema.tables WHERE table_schema='" + BackData + "' ORDER BY table_name");
             ArrayList sQLStringList = new ArrayList();
 
-            string[] strArray = new string[] {"tbl_chronicchdbaseinfo", "tbl_chronicchdvisit", "tbl_chronicdiabetesbaseinfo", "tbl_chronicdiabetesinfo",
-                "tbl_chronicdiadetesvisit", "tbl_ChronicDrugCondition", "tbl_chronicendemicdiseasebaseinfo", "tbl_chronicendemicdiseasevisit",
-                "tbl_chronicfluorideinfo", "tbl_chronichyperinfo", "tbl_ChronicHypertensionBaseInfo", "tbl_ChronicHypertensionVisit",
-                "tbl_chroniciodineinfo", "tbl_chronickashinbeckinfo", "tbl_chronickeshaninfo", "tbl_chroniclungerfirstvisit", "tbl_chroniclungerscreen",
-                "tbl_chroniclungervisit", "tbl_chronicmentaldiseasebaseinfo", "tbl_chronicmentaldiseasevisit", "tbl_chronicstrokebaseinfo",
-                "tbl_chronicstrokevisit", "tbl_chronictumor", "tbl_clinacalrecievetreatinfo", "tbl_consultationbaseinfo", "tbl_kidsbaseinfo",
-                "tbl_kidsnewbornvisit", "tbl_kidsonetothreeyearold", "tbl_kidstcmhmone", "tbl_kidstcmhmonetothree", "tbl_kidstcmhmthreetosix",
-                "tbl_kidsthreetosixyearold", "tbl_kidswithinoneyearold", "tbl_oldbaseinfo", "tbl_oldermedicinecn", "tbl_oldermedicineresult",
-                "tbl_olderselfcareability", "tbl_olderspecialregist", "tbl_oldervisit", "tbl_oldervisitregist", "tbl_oldmedguide", "tbl_oldpeoplevisit",
-                "tbl_recordsassessmentguide", "tbl_recordsassistcheck", "tbl_recordsecg", "tbl_deviceinfo",
-                "tbl_recordsfamilyinfo", "tbl_recordseducationactivities", "tbl_recordsenvironment", "tbl_recordsfamilybedhistory",
-                "tbl_recordsfamilyhistoryinfo", "tbl_recordsgeneralcondition", "tbl_recordshealthhouse", "tbl_recordshealthquestion",
-                "tbl_recordshospitalhistory", "tbl_recordsillnesshistoryinfo", "tbl_recordsindhealthedu", "tbl_recordsinoculationhistory",
-                "tbl_recordslifestyle", "tbl_recordsmedication", "tbl_recordsmedicinecn", "tbl_recordsmedicineresult", "tbl_recordsmediphysdist",
-                "tbl_recordsphysicalexam", "tbl_recordsselfcareability", "tbl_recordssignature", "tbl_recordsviscerafunction", "tbl_recordsxq",
-                "tbl_womengravidabaseinfo", "tbl_womengravidafirstvisit", "tbl_womengravidapostpartum", "tbl_womengravidapostpartum42day",
-                "tbl_womengravidapreassistcheck", "tbl_womengravidatwotofivevisit", "tbl_RecordsPersonInfo",  "tbl_HealthRecordsInfo",
-                "tbl_RecordsCustomerBaseInfo", "tbl_RecordsBaseInfo"
+            string[] strArray = new string[] {"CD_CHD_BASEINFO", "CD_CHD_FOLLOWUP", "CD_DIABETES_BASEINFO",
+                "CD_DIABETESFOLLOWUP", "CD_DRUGCONDITION",  "CD_HYPERTENSION_BASEINFO", "CD_HYPERTENSIONFOLLOWUP","CD_PTB_FIRSTVISIT", 
+                "CD_PTB_VISIT", "CD_MENTALDISEASE_BASEINFO", "CD_MENTALDISEASE_FOLLOWUP", "CD_STROKE_BASEINFO",
+                "CD_STROKE_FOLLOWUP",  "ARCHIVE_RECEPTION_RECORD", "ARCHIVE_CONSULTATION_RECORD", "CHILD_BASEINFO",
+                "CHILD_NEWBORN_FOLLOWUP", "CHILD_ONE2THREE_YEAR_OLD", "CHILD_TCMHM_ONE", "CHILD_TCMHM_ONE2THREE", "CHILD_TCMHM_THREE2SIX",
+                "CHILD_THREE2SIX_YEAR_OLD", "CHILD_WITHIN_ONE_YEAR_OLD", "tbl_oldbaseinfo", "OLD_MEDICINE_CN", "OLD_MEDICINE_RESULT",
+                "OLDER_SELFCAREABILITY", "ARCHIVE_ASSESSMENTGUIDE", "ARCHIVE_ASSISTCHECK", "ARCHIVE_ECG", "ARCHIVE_DEVICEINFO",
+                "ARCHIVE_FAMILY_INFO", "ARCHIVE_EDUCATION_ACTIVITIES", "ARCHIVE_ENVIRONMENT", "ARCHIVE_FAMILYBEDHISTORY",
+                "ARCHIVE_FAMILYHISTORYINFO", "ARCHIVE_GENERALCONDITION", "ARCHIVE_HEALTH_HOUSE", "ARCHIVE_HEALTHQUESTION",
+                "ARCHIVE_HOSPITALHISTORY", "ARCHIVE_ILLNESSHISTORYINFO", "tbl_recordsindhealthedu", "ARCHIVE_INOCULATIONHISTORY",
+                "ARCHIVE_LIFESTYLE", "ARCHIVE_MEDICATION", "ARCHIVE_MEDICINE_CN", "OLD_MEDICINE_RESULT", "ARCHIVE_MEDI_PHYS_DIST",
+                "ARCHIVE_PHYSICALEXAM", "ARCHIVE_SELFCAREABILITY", "ARCHIVE_SIGNATURE", "ARCHIVE_VISCERAFUNCTION", "ARCHIVE_BLOODTEST",
+                "GRAVIDA_BASEINFO", "GRAVIDA_FIRSTFOLLOWUP", "GRAVIDA_POSTPARTUM", "GRAVIDA_POSTPARTUM_42DAY",
+                "GRAVIDA_PRE_ASSISTCHECK", "GRAVIDA_TWO2FIVE_FOLLOWUP",  "ARCHIVE_BASEINFO_OUT",
+                "ARCHIVE_CUSTOMERBASEINFO", "ARCHIVE_BASEINFO"
             };
 
             ArrayList al = new ArrayList(strArray);

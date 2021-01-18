@@ -13,7 +13,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_chronichypertensionvisit(");
+            builder.Append("INSERT INTO CD_HYPERTENSIONFOLLOWUP(");
             builder.Append("RecordID,CustomerID,IDCardNo,CustomerName,FollowUpDate,FollowUpDoctor,");
             builder.Append("NextFollowUpDate,Symptom,SympToMother,Hypertension,Hypotension,Weight,BMI,");
             builder.Append("HeartRate,PhysicalSympToMother,DailySmokeNum,DailyDrinkNum,SportTimePerWeek,");
@@ -352,7 +352,7 @@
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_chronichypertensionvisit ");
+            builder.Append("delete from CD_HYPERTENSIONFOLLOWUP ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -369,7 +369,7 @@
             builder.Append("PsyChoadJustMent,ObeyDoctorBehavior,AssistantExam,MedicationCompliance,Adr,AdrEx,FollowUpType,");
             builder.Append("ReferralReason,ReferralOrg,FollowUpWay,WeightTarGet,BMITarGet,DailySmokeNumTarget,DailyDrinkNumTarget,");
             builder.Append("SportTimeSperWeekTarget,SportPerMinutesTimeTarget,CreatedBy,CreatedDate,");
-            builder.Append("LastUpdateBy,LastUpdateDate,IsDel,Hight,DoctorView,IsReferral,NextMeasures,ReferralContacts,ReferralResult,Remarks from tbl_chronichypertensionvisit ");
+            builder.Append("LastUpdateBy,LastUpdateDate,IsDel,Hight,DoctorView,IsReferral,NextMeasures,ReferralContacts,ReferralResult,Remarks from CD_HYPERTENSIONFOLLOWUP ");
             builder.Append(" where FollowUpDate = @FollowUpDate and IDCardNo =@IDCardNo ");
             MySqlParameter[] cmdParms = new MySqlParameter[] {
                 new MySqlParameter("@FollowUpDate", MySqlDbType.Date),
@@ -397,7 +397,7 @@
             builder.Append("WeightTarGet,BMITarGet,DailySmokeNumTarget,DailyDrinkNumTarget,SportTimeSperWeekTarget,");
             builder.Append("SportPerMinutesTimeTarget,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel,Hight,DoctorView,IsReferral, ");
             builder.Append("NextMeasures,ReferralContacts,ReferralResult,Remarks ");
-            builder.Append(" FROM tbl_chronichypertensionvisit ");
+            builder.Append(" FROM CD_HYPERTENSIONFOLLOWUP ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -408,7 +408,7 @@
         public DataSet GetChypertensionvisitdt(string IDCardNo)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select IDCardNo FROM tbl_chronichypertensionvisit ");
+            builder.Append("select IDCardNo FROM CD_HYPERTENSIONFOLLOWUP ");
             builder.Append(" where IDCardNo = '" + IDCardNo + "' ");
             return MySQLHelper.Query(builder.ToString());
         }
@@ -422,7 +422,7 @@
             builder.Append("(case C.FollowUpDate when null then null when '' then null else C.FollowUpDate end)FollowUpDate, ");
             builder.Append("T.PopulationType,T.FamilyIDCardNo,T.HouseRelation,T.HouseRealOther,T.TownName,");
             builder.Append("T.VillageName,T.CreateUnitName,T.CreateMenName ");
-            builder.Append(" from tbl_chronichypertensionvisit C inner join tbl_recordsbaseinfo T on T.IDCardNo = C.IDCardNo ");
+            builder.Append(" from CD_HYPERTENSIONFOLLOWUP C inner join ARCHIVE_BASEINFO T on T.IDCardNo = C.IDCardNo ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE 1=1 " + strWhere);
@@ -453,7 +453,7 @@
             builder.Append("SportTimeSperWeekTarget,SportPerMinutesTimeTarget,CreatedBy,CreatedDate,");
             builder.Append("LastUpdateBy,LastUpdateDate,IsDel,Hight,DoctorView,IsReferral, ");
             builder.Append("NextMeasures,ReferralContacts,ReferralResult,Remarks ");
-            builder.Append(" from tbl_chronichypertensionvisit ");
+            builder.Append(" from CD_HYPERTENSIONFOLLOWUP ");
             builder.Append(" where IDCardNo=@IDCardNo order by FollowUpDate desc limit 0,1 ");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String, 21) };
             cmdParms[0].Value = IDCardNo;
@@ -478,7 +478,7 @@
             builder.Append("SportTimeSperWeekTarget,SportPerMinutesTimeTarget,CreatedBy,CreatedDate,");
             builder.Append("LastUpdateBy,LastUpdateDate,IsDel,Hight,DoctorView,IsReferral,");
             builder.Append("NextMeasures,ReferralContacts,ReferralResult,Remarks ");
-            builder.Append(" from tbl_chronichypertensionvisit ");
+            builder.Append(" from CD_HYPERTENSIONFOLLOWUP ");
             builder.Append(" where ID=@ID ");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 11) };
             cmdParms[0].Value = ID;
@@ -500,7 +500,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_ChronicHypertensionVisit ");
+            builder.Append("SELECT * FROM CD_HYPERTENSIONFOLLOWUP ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
             builder.Append(" ORDER BY FollowupDate DESC LIMIT 0,1 ");
 
@@ -516,8 +516,8 @@
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_chronichypertensionvisit C ");
-            builder.Append("left join tbl_recordsbaseinfo T on T.IDCardNo = C.IDCardNo   ");
+            builder.Append("select count(1) FROM CD_HYPERTENSIONFOLLOWUP C ");
+            builder.Append("left join ARCHIVE_BASEINFO T on T.IDCardNo = C.IDCardNo   ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -533,7 +533,7 @@
         public bool Update(ChronicHypertensionVisitModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_chronichypertensionvisit set ");
+            builder.Append("update CD_HYPERTENSIONFOLLOWUP set ");
             builder.Append("RecordID=@RecordID,");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("IDCardNo=@IDCardNo,");
@@ -692,7 +692,7 @@
         public bool UpdateDate(ChronicHypertensionVisitModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_chronichypertensionvisit set ");
+            builder.Append("update CD_HYPERTENSIONFOLLOWUP set ");
             decimal d;
             if (decimal.TryParse(model.Hypertension.ToString(), out d))
             {
@@ -746,7 +746,7 @@
             string sql = builder.ToString();
             sql = sql.Substring(0, sql.LastIndexOf(','));
 
-            sql += " where ID=(select * from (select ID from tbl_ChronicHypertensionVisit where FollowUpDate like '" + DateTime.Now.Year + "%' and IDCardNo='" + model.IDCardNo + "' order by FollowUpDate desc LIMIT 1 )t)";
+            sql += " where ID=(select * from (select ID from CD_HYPERTENSIONFOLLOWUP where FollowUpDate like '" + DateTime.Now.Year + "%' and IDCardNo='" + model.IDCardNo + "' order by FollowUpDate desc LIMIT 1 )t)";
 
             return (MySQLHelper.ExecuteSql(sql) > 0);
         }
@@ -754,7 +754,7 @@
         public DataSet DtPertensionCount()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select IDCardNo ,NextFollowUpDate FROM  tbl_chronichypertensionvisit order by NextFollowUpDate desc ");
+            builder.Append("select IDCardNo ,NextFollowUpDate FROM  CD_HYPERTENSIONFOLLOWUP order by NextFollowUpDate desc ");
             return MySQLHelper.Query(builder.ToString());
         }
     }

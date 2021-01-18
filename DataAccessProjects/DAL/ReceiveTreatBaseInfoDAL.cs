@@ -13,7 +13,7 @@
        {
 
            StringBuilder builder = new StringBuilder();
-           builder.Append("insert into tbl_clinacalrecievetreatinfo(");
+           builder.Append("insert into ARCHIVE_RECEPTION_RECORD(");
            builder.Append("IDCardNo,Doctor,SubjectiveData,ObjectiveData,Assessment,ManagePlane,ReceiveDate,UpdateUnitName,UpdatePerson,UpdateDate)");
            builder.Append("values (");
            builder.Append("@IDCardNo,@Doctor,@SubjectiveData,@ObjectiveData,@Assessment,@ManagePlane,@ReceiveDate,@UpdateUnitName,@UpdatePerson,@UpdateDate)");
@@ -55,7 +55,7 @@
         {
 
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_clinacalrecievetreatinfo(");
+            builder.Append("insert into ARCHIVE_RECEPTION_RECORD(");
             builder.Append("IDCardNo,Doctor,SubjectiveData,ObjectiveData,Assessment,ManagePlane,ReceiveDate,UpdateUnitName,UpdatePerson,UpdateDate)");
             builder.Append("values (");
             builder.Append("@IDCardNo,@Doctor,@SubjectiveData,@ObjectiveData,@Assessment,@ManagePlane,@ReceiveDate,@UpdateUnitName,@UpdatePerson,@UpdateDate)");
@@ -96,7 +96,7 @@
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_clinacalrecievetreatinfo ");
+            builder.Append("delete from ARCHIVE_RECEPTION_RECORD ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -107,7 +107,7 @@
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("SELECT COUNT( T.IDCardNo) AS IDCount");
-            builder.Append(" FROM 	tbl_recordsbaseinfo T INNER JOIN  tbl_clinacalrecievetreatinfo C ON T.IDCardNo = C.IDCardNo ");
+            builder.Append(" FROM 	ARCHIVE_BASEINFO T INNER JOIN  ARCHIVE_RECEPTION_RECORD C ON T.IDCardNo = C.IDCardNo ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -128,7 +128,7 @@
             builder.Append("(case C.ReceiveDate when null then null when '' then null else C.ReceiveDate end) as CheckDate, ");
             builder.Append("T.PopulationType,T.FamilyIDCardNo,T.HouseRelation,T.HouseRealOther,T.TownName,");
             builder.Append("T.VillageName,T.CreateUnitName,T.CreateMenName ");
-            builder.Append(" from tbl_clinacalrecievetreatinfo C inner join tbl_recordsbaseinfo T on T.IDCardNo = C.IDCardNo ");
+            builder.Append(" from ARCHIVE_RECEPTION_RECORD C inner join ARCHIVE_BASEINFO T on T.IDCardNo = C.IDCardNo ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE 1=1 " + strWhere);
@@ -214,7 +214,7 @@
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select T.ID, C.CustomerName,C.IDCardNo,T.Doctor,T.SubjectiveData,T.ObjectiveData,T.Assessment,T.ManagePlane,T.ReceiveDate,C.CreateMenName,C.CreateDate ,C.Sex,C.Address,C.CreateUnitName ");
-            builder.Append("from tbl_clinacalrecievetreatinfo T LEFT JOIN tbl_recordsbaseinfo C ON T.IDCardNo=C.IDCardNo ");
+            builder.Append("from ARCHIVE_RECEPTION_RECORD T LEFT JOIN ARCHIVE_BASEINFO C ON T.IDCardNo=C.IDCardNo ");
             builder.Append("where T.ID=@ID");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 8) };
@@ -230,7 +230,7 @@
         public bool Update(ReceiveTreatBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_clinacalrecievetreatinfo set ");
+            builder.Append("update ARCHIVE_RECEPTION_RECORD set ");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("Doctor=@Doctor,");
             builder.Append("SubjectiveData=@SubjectiveData,");
@@ -273,7 +273,7 @@
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select IDCardNo,Doctor,SubjectiveData,ObjectiveData,Assessment,ManagePlane,ReceiveDate,UpdateUnitName,UpdatePerson,UpdateDate  ");
-            builder.Append(" FROM tbl_clinacalrecievetreatinfo ");
+            builder.Append(" FROM ARCHIVE_RECEPTION_RECORD ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -284,7 +284,7 @@
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select T.ID, C.CustomerName,C.IDCardNo,T.Doctor,T.SubjectiveData,T.ObjectiveData,T.Assessment,T.ManagePlane,T.ReceiveDate,C.CreateMenName,C.CreateDate ,C.Sex,C.Address,C.CreateUnitName ");
-            builder.Append("from tbl_clinacalrecievetreatinfo T LEFT JOIN tbl_recordsbaseinfo C ON T.IDCardNo=C.IDCardNo ");
+            builder.Append("from ARCHIVE_RECEPTION_RECORD T LEFT JOIN ARCHIVE_BASEINFO C ON T.IDCardNo=C.IDCardNo ");
             builder.Append("where T.IDCardNo=@IDCardNo ");
             builder.Append("order by T.ID DESC LIMIT 0,1");
 

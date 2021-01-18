@@ -12,7 +12,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(RecordsCustomerBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordscustomerbaseinfo(");
+            builder.Append("insert into ARCHIVE_CUSTOMERBASEINFO(");
             builder.Append("CustomerID,IDCardNo,CheckDate,Doctor,Symptom,Other,PhysicalID,CreateBy,CreateDate,LastUpdateBy,LastUpdateDate,IsDel)");
             builder.Append(" values (");
             builder.Append("@CustomerID,@IDCardNo,@CheckDate,@Doctor,@Symptom,@Other,@PhysicalID,@CreateBy,@CreateDate,@LastUpdateBy,@LastUpdateDate,@IsDel)");
@@ -114,7 +114,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordscustomerbaseinfo ");
+            builder.Append("delete from ARCHIVE_CUSTOMERBASEINFO ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -125,7 +125,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,CustomerID,IDCardNo,CheckDate,Doctor,Symptom,Other,PhysicalID,CreateBy,CreateDate,LastUpdateBy,LastUpdateDate,IsDel ");
-            builder.Append(" FROM tbl_recordscustomerbaseinfo ");
+            builder.Append(" FROM ARCHIVE_CUSTOMERBASEINFO ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -137,7 +137,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select  ID,CustomerID,IDCardNo,CheckDate,Doctor,Symptom,Other,PhysicalID,CreateBy,CreateDate,LastUpdateBy,");
-            builder.Append("LastUpdateDate,IsDel from tbl_recordscustomerbaseinfo ");
+            builder.Append("LastUpdateDate,IsDel from ARCHIVE_CUSTOMERBASEINFO ");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -153,7 +153,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(RecordsCustomerBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordscustomerbaseinfo set ");
+            builder.Append("update ARCHIVE_CUSTOMERBASEINFO set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("CheckDate=@CheckDate,");
@@ -203,7 +203,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("SELECT COUNT(1)");
-            builder.Append(" from tbl_recordscustomerbaseinfo  B left join tbl_recordsbaseinfo T on T.IDCardNo = B.IDCardNo   ");
+            builder.Append(" from ARCHIVE_CUSTOMERBASEINFO  B left join ARCHIVE_BASEINFO T on T.IDCardNo = B.IDCardNo   ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -223,7 +223,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("(case T.CreateDate when null then null when '' then null else T.CreateDate end)CreateDate, ");
             builder.Append("(case T.LastUpdateDate when null then null when '' then null else T.LastUpdateDate end ) as LastUpdateDate, ");
             builder.Append("T.PopulationType,T.CreateMenName, B.CheckDate ");
-            builder.Append(" from tbl_recordscustomerbaseinfo B left join tbl_recordsbaseinfo T on T.IDCardNo = B.IDCardNo");
+            builder.Append(" from ARCHIVE_CUSTOMERBASEINFO B left join ARCHIVE_BASEINFO T on T.IDCardNo = B.IDCardNo");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE 1=1 " + strWhere);
@@ -245,7 +245,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select  ID,CustomerID,IDCardNo,CheckDate,Doctor,Symptom,Other,PhysicalID,CreateBy,CreateDate,LastUpdateBy,");
-            builder.Append("LastUpdateDate,IsDel from tbl_recordscustomerbaseinfo ");
+            builder.Append("LastUpdateDate,IsDel from ARCHIVE_CUSTOMERBASEINFO ");
             builder.Append(" where IDCardNo=@IDCardNo");
             builder.Append(" order by CheckDate DESC LIMIT 0,1 ");
 
@@ -264,7 +264,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select  ID,CustomerID,IDCardNo,CheckDate,Doctor,Symptom,Other,PhysicalID,CreateBy,CreateDate,LastUpdateBy,");
-            builder.Append("LastUpdateDate,IsDel from tbl_recordscustomerbaseinfo ");
+            builder.Append("LastUpdateDate,IsDel from ARCHIVE_CUSTOMERBASEINFO ");
             builder.Append(" where ID=@ID");
 
 
@@ -283,7 +283,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select  ID,CustomerID,IDCardNo,CheckDate,Doctor,Symptom,Other,PhysicalID,CreateBy,CreateDate,LastUpdateBy,");
-            builder.Append("LastUpdateDate,IsDel from tbl_recordscustomerbaseinfo ");
+            builder.Append("LastUpdateDate,IsDel from ARCHIVE_CUSTOMERBASEINFO ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE 1=1 and " + strWhere);
@@ -300,14 +300,14 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public DataSet GetTownList()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select  DISTINCT(TownName) from tbl_recordsbaseinfo");
+            builder.Append("select  DISTINCT(TownName) from ARCHIVE_BASEINFO");
             return MySQLHelper.Query(builder.ToString());
         }
 
         public DataSet GetVillageList(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select  DISTINCT(VillageName) from tbl_recordsbaseinfo");
+            builder.Append("select  DISTINCT(VillageName) from ARCHIVE_BASEINFO");
             builder.Append(" where 1=1 ");
             if (!string.IsNullOrEmpty(strWhere))
             {
@@ -327,8 +327,8 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append("SELECT ID,CheckDate ");
-            builder.Append(" FROM tbl_recordscustomerbaseinfo ");
-            builder.Append(" WHERE ID=(SELECT ID FROM tbl_recordscustomerbaseinfo ");
+            builder.Append(" FROM ARCHIVE_CUSTOMERBASEINFO ");
+            builder.Append(" WHERE ID=(SELECT ID FROM ARCHIVE_CUSTOMERBASEINFO ");
             builder.Append("    WHERE IDCardNo=@IDCardNo AND LEFT(CheckDate,4)=@CheckDate ORDER BY CheckDate DESC LIMIT 0,1) ");
 
             if (Convert.ToString(checkDate).Length > 3) checkDate = checkDate.Substring(0, 4);

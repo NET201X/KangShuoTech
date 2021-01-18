@@ -14,7 +14,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(HealthRecordsinfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_HealthRecordsinfo(");
+            builder.Append("insert into ARCHIVE_BASEINFO_OUT(");
             builder.Append("IDCardNo,Prevalence,PrevalenceOther,OrgTelphone,FamilyDoctor,FamilyDoctorTel,Nurses,NursesTel,HealthPersonnel,HealthPersonnelTel,Others)");
             builder.Append(" values (");
             builder.Append("@IDCardNo,@Prevalence,@PrevalenceOther,@OrgTelphone,@FamilyDoctor,@FamilyDoctorTel,@Nurses,@NursesTel,@HealthPersonnel,@HealthPersonnelTel,@Others)");
@@ -112,7 +112,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_HealthRecordsinfo ");
+            builder.Append("delete from ARCHIVE_BASEINFO_OUT ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -121,7 +121,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_HealthRecordsinfo");
+            builder.Append("select count(1) from ARCHIVE_BASEINFO_OUT");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -132,7 +132,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select * ");
-            builder.Append(" FROM tbl_HealthRecordsinfo ");
+            builder.Append(" FROM ARCHIVE_BASEINFO_OUT ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -143,7 +143,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public HealthRecordsinfoModel GetModel(string IDCardNo)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select  * from tbl_HealthRecordsinfo ");
+            builder.Append("select  * from ARCHIVE_BASEINFO_OUT ");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -158,7 +158,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(HealthRecordsinfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_HealthRecordsinfo set ");
+            builder.Append("update ARCHIVE_BASEINFO_OUT set ");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("Prevalence=@Prevalence,");
             builder.Append("PrevalenceOther=@PrevalenceOther,");

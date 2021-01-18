@@ -1190,7 +1190,7 @@ namespace PadPlatform
         private void SendBugMail()
         {
             SystemErrorLogBLL report = new SystemErrorLogBLL();
-            report.CheckTable("tbl_SystemErrorLog");
+            report.CheckTable("SYS_ERROR_LOG");
             List<SystemErrorLogModel> modelList = report.GetModelList(" SENDED = '0' ");
             if (modelList.Count > 0)
             {

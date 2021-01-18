@@ -12,7 +12,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(KidsOneToThreeYearOldModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_kidsonetothreeyearold(");
+            builder.Append("insert into CHILD_ONE2THREE_YEAR_OLD(");
             builder.Append("CustomerID,RecordID,IDCardNo,Name,FollowupDate,Weight,WeightAnalysis,Stature,StatureAnalysis,ColourFace,Skin,Bregma,BregmaLeft,BregmaRight,EyeAppearance,EarAppearance,Listening,TeethDcnLeft,TeethDcnRight,HeartLung,Stomach,FourLimb,Gait,SuspiciousRickets,HemoglobinValue,OutdoorActivities,TakingVitaminsd,AuxeEstimate,AmongTwoFollowup,Other,ReferralAdvice,ReferralReason,AgenciesDepartments,Guidance,GuidanceOther,NextFollowUpDate,FollowUpDoctorSign,Flag,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel,");
             builder.Append("Chest,SickNone,PneumoniaCounts,DiarrheaCounts,TraumaCounts,SickOther,ReferraContacts,ReferralContactsTel,ReferralResult) ");
             builder.Append(" values (");
@@ -136,7 +136,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int AddServer(KidsOneToThreeYearOldModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_kidsonetothreeyearold(");
+            builder.Append("insert into CHILD_ONE2THREE_YEAR_OLD(");
             builder.Append("CustomerID,RecordID,IDCardNo,Name,FollowupDate,Weight,WeightAnalysis,Stature,StatureAnalysis,ColourFace,Skin,Bregma,BregmaLeft,BregmaRight,EyeAppearance,EarAppearance,Listening,TeethDcnLeft,TeethDcnRight,HeartLung,Stomach,FourLimb,Gait,SuspiciousRickets,HemoglobinValue,OutdoorActivities,TakingVitaminsd,AuxeEstimate,AmongTwoFollowup,Other,ReferralAdvice,ReferralReason,AgenciesDepartments,Guidance,GuidanceOther,NextFollowUpDate,FollowUpDoctorSign,Flag,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel,");
             builder.Append("Chest,SickNone,PneumoniaCounts,DiarrheaCounts,TraumaCounts,SickOther,ReferraContacts,ReferralContactsTel,ReferralResult) ");
             builder.Append(" values (");
@@ -482,7 +482,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_kidsonetothreeyearold ");
+            builder.Append("delete from CHILD_ONE2THREE_YEAR_OLD ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -492,7 +492,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_kidsonetothreeyearold ");
+            builder.Append("delete from CHILD_ONE2THREE_YEAR_OLD ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -500,7 +500,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_kidsonetothreeyearold");
+            builder.Append("select count(1) from CHILD_ONE2THREE_YEAR_OLD");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -512,7 +512,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,CustomerID,RecordID,IDCardNo,Name,FollowupDate,Weight,WeightAnalysis,Stature,StatureAnalysis,ColourFace,Skin,Bregma,BregmaLeft,BregmaRight,EyeAppearance,EarAppearance,Listening,TeethDcnLeft,TeethDcnRight,HeartLung,Stomach,FourLimb,Gait,SuspiciousRickets,HemoglobinValue,OutdoorActivities,TakingVitaminsd,AuxeEstimate,AmongTwoFollowup,Other,ReferralAdvice,ReferralReason,AgenciesDepartments,Guidance,GuidanceOther,NextFollowUpDate,FollowUpDoctorSign,Flag,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel, ");
             builder.Append("Chest,SickNone,PneumoniaCounts,DiarrheaCounts,TraumaCounts,SickOther,ReferraContacts,ReferralContactsTel,ReferralResult ");
-            builder.Append(" FROM tbl_kidsonetothreeyearold ");
+            builder.Append(" FROM CHILD_ONE2THREE_YEAR_OLD ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -533,7 +533,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_kidsonetothreeyearold T ");
+            builder.Append(")AS Row, T.*  from CHILD_ONE2THREE_YEAR_OLD T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -545,7 +545,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_kidsonetothreeyearold");
+            return MySQLHelper.GetMaxID("ID", "CHILD_ONE2THREE_YEAR_OLD");
         }
 
         public KidsOneToThreeYearOldModel GetModel(string IDCardNo)
@@ -553,7 +553,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
             builder.Append("select  ID,CustomerID,RecordID,IDCardNo,Name,FollowupDate,Weight,WeightAnalysis,Stature,StatureAnalysis,ColourFace,Skin,Bregma,BregmaLeft,BregmaRight,EyeAppearance,EarAppearance,Listening,TeethDcnLeft,TeethDcnRight,HeartLung,Stomach,FourLimb,Gait,SuspiciousRickets,HemoglobinValue,OutdoorActivities,TakingVitaminsd,AuxeEstimate,AmongTwoFollowup,Other,ReferralAdvice,ReferralReason,AgenciesDepartments,Guidance,GuidanceOther,NextFollowUpDate,FollowUpDoctorSign,Flag,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel, ");
             builder.Append("Chest,SickNone,PneumoniaCounts,DiarrheaCounts,TraumaCounts,SickOther,ReferraContacts,ReferralContactsTel,ReferralResult ");
-            builder.Append(" FROM tbl_kidsonetothreeyearold ");
+            builder.Append(" FROM CHILD_ONE2THREE_YEAR_OLD ");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[]
             {
@@ -572,7 +572,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_kidsonetothreeyearold ");
+            builder.Append("select count(1) FROM CHILD_ONE2THREE_YEAR_OLD ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -588,7 +588,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(KidsOneToThreeYearOldModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_kidsonetothreeyearold set ");
+            builder.Append("update CHILD_ONE2THREE_YEAR_OLD set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
@@ -756,7 +756,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool UpdateServer(KidsOneToThreeYearOldModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_kidsonetothreeyearold set ");
+            builder.Append("update CHILD_ONE2THREE_YEAR_OLD set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");

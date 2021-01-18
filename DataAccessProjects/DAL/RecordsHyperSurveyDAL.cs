@@ -13,7 +13,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(RecordsHyperSurveyModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordsHyperSurvey(");
+            builder.Append("insert into ARCHIVE_HYPER_SURVEY(");
             builder.Append("IDCardNo,EatPersonSum,EatChildSum,EatSaltQuantity,EatSoyQuntity,OutKey )");
             builder.Append(" values (");
             builder.Append("@IDCardNo,@EatPersonSum,@EatChildSum,@EatSaltQuantity,@EatSoyQuntity,@OutKey )");
@@ -84,7 +84,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordsHyperSurvey ");
+            builder.Append("delete from ARCHIVE_HYPER_SURVEY ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -94,7 +94,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordsHyperSurvey ");
+            builder.Append("delete from ARCHIVE_HYPER_SURVEY ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -102,7 +102,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_recordsHyperSurvey ");
+            builder.Append("select count(1) from ARCHIVE_HYPER_SURVEY ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -113,7 +113,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,IDCardNo,EatPersonSum,EatChildSum,EatSaltQuantity,EatSoyQuntity,OutKey ");
-            builder.Append(" FROM tbl_recordsHyperSurvey ");
+            builder.Append(" FROM ARCHIVE_HYPER_SURVEY ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -124,7 +124,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,IDCardNo,EatPersonSum,EatChildSum,EatSaltQuantity,EatSoyQuntity,OutKey ");
-            builder.Append(" from tbl_recordshypersurvey where OutKey=@OutKey ");
+            builder.Append(" from ARCHIVE_HYPER_SURVEY where OutKey=@OutKey ");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@OutKey", MySqlDbType.Int32) };
             cmdParms[0].Value = OutKey;
             new RecordsHyperSurveyModel();
@@ -139,7 +139,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(RecordsHyperSurveyModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordshypersurvey set ");
+            builder.Append("update ARCHIVE_HYPER_SURVEY set ");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("EatPersonSum=@EatPersonSum,");
             builder.Append("EatChildSum=@EatChildSum,");
@@ -168,7 +168,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool ExistsOutKey(string IDCardNo, int OutKey)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_recordshypersurvey");
+            builder.Append("select count(1) from ARCHIVE_HYPER_SURVEY");
             builder.Append(" where IDCardNo=@IDCardNo ");
             builder.Append(" and OutKey=@OutKey");
             MySqlParameter[] cmdParms = new MySqlParameter[] { 

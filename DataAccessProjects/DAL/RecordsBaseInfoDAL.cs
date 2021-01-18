@@ -14,7 +14,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(RecordsBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordsbaseinfo(");
+            builder.Append("insert into ARCHIVE_BASEINFO(");
             builder.Append("RecordID,IDCardNo,OrgProvinceID,OrgCityID,OrgDistrictID,OrgTownID,OrgVillageID,ProvinceID,CityID,DistrictID,TownID,VillageID,WorkUnit,LiveType,Nation,RH,Culture,Job,MaritalStatus,MedicalPayType,DrugAllergic,Disease,DiseasEndition,CustomerName,Doctor,Sex,Birthday,ContactName,ContactPhone,BloodType,Phone,MedicalPayTypeOther,DrugAllergicOther,DiseaseEx,DiseasEnditionEx,CustomerID,Address,HouseHoldAddress,CreateUnit,Minority,Exposure,CreateBy,CreateDate,LastUpdateBy,LastUpdateDate,PopulationType,FamilyIDCardNo,HouseRelation,HouseRealOther,Email,IsDelete,IsUpdate,TownName,VillageName,CreateUnitName,CreateMenName,");
             builder.Append("TownMedicalCard,ResidentMedicalCard,PovertyReliefMedicalCard,LiveCondition,FamilyNum,FamilyStructure,HouseName,PreSituation,PreNum,YieldNum,Chemical,Poison,Radial )");
             builder.Append(" values (");
@@ -467,28 +467,28 @@ namespace KangShuoTech.DataAccessProjects.DAL
             ArrayList sQLStringList = new ArrayList();
             //list.Remove("android_metadata");
             //list.Remove("sqlite_sequence");
-            //list.Remove("tbl_recordscanton");
-            //string[] strArray = new string[] {"tbl_recordscity", "tbl_recordsdistrict", "tbl_recordsprovince", 
-            //    "tbl_recordstown", "tbl_recordsvillage", "tbl_sysorgcity", "tbl_sysorgdistrict", "tbl_sysorgprovince", "tbl_sysorgtown", 
-            //    "tbl_sysorgvillage", "tbl_sysuser", "tbl_vaccinationotherprogram" };
+            //list.Remove("ARCHIVE_CANTON");
+            //string[] strArray = new string[] {"ARCHIVE_CITY", "ARCHIVE_DISTRICT", "ARCHIVE_PROVINCE", 
+            //    "ARCHIVE_TOWN", "ARCHIVE_VILLAGE", "SYS_ORG_CITY", "SYS_ORG_DISTRICT", "SYS_ORG_PROVINCE", "SYS_ORG_TOWN", 
+            //    "SYS_ORG_VILLAGE", "SYS_USER", "INOCULATION_OTHERPROGRAM" };
             //foreach (string str in strArray)
             //{
             //    list.Remove(str);
             //}
-            string[] strArray = new string[] {"tbl_chronicchdbaseinfo", 
-                "tbl_chronicchdvisit", "tbl_chronicdiabetesbaseinfo", "tbl_chronicdiadetesvisit", "tbl_chronicdrugcondition", "tbl_chronichypertensionbaseinfo", 
-                "tbl_chronichypertensionvisit", "tbl_chroniclungerfirstvisit", 
-                "tbl_chroniclungervisit", "tbl_chronicmentaldiseasebaseinfo", "tbl_chronicmentaldiseasevisit", "tbl_chronicstrokebaseinfo",
-                "tbl_chronicstrokevisit", "tbl_deviceinfo", "tbl_kidsbaseinfo", "tbl_kidsnewbornvisit", "tbl_kidsonetothreeyearold", "tbl_kidstcmhmone",
-                "tbl_kidstcmhmonetothree", "tbl_kidstcmhmthreetosix", "tbl_kidsthreetosixyearold","tbl_kidswithinoneyearold", "tbl_oldermedicinecn", "tbl_oldermedicineresult",
-                "tbl_olderselfcareability", "tbl_recordsassessmentguide", "tbl_recordsassistcheck","tbl_recordsbaseinfo", "tbl_recordscard", "tbl_recordscustomerbaseinfo",
-                "tbl_recordsecg", "tbl_recordseducationactivities", "tbl_recordsenvironment","tbl_recordsfamilybedhistory", "tbl_recordsfamilyhistoryinfo", 
-                "tbl_recordsfamilyinfo","tbl_recordsgeneralcondition", "tbl_recordshealthquestion", "tbl_recordshospitalhistory","tbl_recordsillnesshistoryinfo",
-                "tbl_recordsinoculationhistory", "tbl_recordslifestyle", "tbl_recordsmedication","tbl_recordsmediphysdist","tbl_recordsphysicalexam",
-                "tbl_recordsviscerafunction", "tbl_systemerrorlog","tbl_vaccinationcard", 
-                "tbl_vaccinationprogram","tbl_womengravidabaseinfo", "tbl_womengravidafirstvisit", "tbl_womengravidapostpartum",
-                "tbl_womengravidapostpartum42day", "tbl_womengravidapreassistcheck", "tbl_womengravidatwotofivevisit","uploaded","tbl_clinacalrecievetreatinfo",
-                "tbl_consultationbaseinfo","tbl_referralbaseinfo","tbl_recordsselfcareability","tbl_recordsmedicinecn","tbl_recordsmedicineresult","tbl_HealthRecordsinfo"
+            string[] strArray = new string[] {"CD_CHD_BASEINFO", 
+                "CD_CHD_FOLLOWUP", "CD_DIABETES_BASEINFO", "CD_DIABETESFOLLOWUP", "CD_DRUGCONDITION", "CD_HYPERTENSION_BASEINFO", 
+                "CD_HYPERTENSIONFOLLOWUP", "CD_PTB_FIRSTVISIT", 
+                "CD_PTB_VISIT", "CD_MENTALDISEASE_BASEINFO", "CD_MENTALDISEASE_FOLLOWUP", "CD_STROKE_BASEINFO",
+                "CD_STROKE_FOLLOWUP", "ARCHIVE_DEVICEINFO", "CHILD_BASEINFO", "CHILD_NEWBORN_FOLLOWUP", "CHILD_ONE2THREE_YEAR_OLD", "CHILD_TCMHM_ONE",
+                "CHILD_TCMHM_ONE2THREE", "CHILD_TCMHM_THREE2SIX", "CHILD_THREE2SIX_YEAR_OLD","CHILD_WITHIN_ONE_YEAR_OLD", "OLD_MEDICINE_CN", "OLD_MEDICINE_RESULT",
+                "OLDER_SELFCAREABILITY", "ARCHIVE_ASSESSMENTGUIDE", "ARCHIVE_ASSISTCHECK","ARCHIVE_BASEINFO", "ARCHIVE_CARD", "ARCHIVE_CUSTOMERBASEINFO",
+                "ARCHIVE_ECG", "ARCHIVE_EDUCATION_ACTIVITIES", "ARCHIVE_ENVIRONMENT","ARCHIVE_FAMILYBEDHISTORY", "ARCHIVE_FAMILYHISTORYINFO", 
+                "ARCHIVE_FAMILY_INFO","ARCHIVE_GENERALCONDITION", "ARCHIVE_HEALTHQUESTION", "ARCHIVE_HOSPITALHISTORY","ARCHIVE_ILLNESSHISTORYINFO",
+                "ARCHIVE_INOCULATIONHISTORY", "ARCHIVE_LIFESTYLE", "ARCHIVE_MEDICATION","ARCHIVE_MEDI_PHYS_DIST","ARCHIVE_PHYSICALEXAM",
+                "ARCHIVE_VISCERAFUNCTION", "SYS_ERROR_LOG","INOCULATION_CARD", 
+                "INOCULATION_PROGRAM","GRAVIDA_BASEINFO", "GRAVIDA_FIRSTFOLLOWUP", "GRAVIDA_POSTPARTUM",
+                "GRAVIDA_POSTPARTUM_42DAY", "GRAVIDA_PRE_ASSISTCHECK", "GRAVIDA_TWO2FIVE_FOLLOWUP","SYS_UPLOADED","ARCHIVE_RECEPTION_RECORD",
+                "ARCHIVE_CONSULTATION_RECORD","ARCHIVE_REFERRAL","ARCHIVE_SELFCAREABILITY","ARCHIVE_MEDICINE_CN","ARCHIVE_MEDICINE_RESULT","ARCHIVE_BASEINFO_OUT"
             };
 
             foreach (string str in strArray)
@@ -509,7 +509,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Exists(string IDCardNo)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_recordsbaseinfo");
+            builder.Append("select count(1) from ARCHIVE_BASEINFO");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -520,7 +520,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select  ID,RecordID,IDCardNo,OrgProvinceID,OrgCityID,OrgDistrictID,OrgTownID,OrgVillageID,ProvinceID,CityID,DistrictID,TownID,VillageID,WorkUnit,LiveType,Nation,RH,Culture,Job,MaritalStatus,MedicalPayType,DrugAllergic,Disease,DiseasEndition,CustomerName,Doctor,Sex,Birthday,ContactName,ContactPhone,BloodType,Phone,MedicalPayTypeOther,DrugAllergicOther,DiseaseEx,DiseasEnditionEx,CustomerID,Address,HouseHoldAddress,CreateUnit,Minority,Exposure,CreateBy,CreateDate,LastUpdateBy,LastUpdateDate,PopulationType,FamilyIDCardNo,HouseRelation,HouseRealOther,Email,IsDelete,IsUpdate,TownName,VillageName,CreateUnitName,CreateMenName,TownMedicalCard,ResidentMedicalCard,PovertyReliefMedicalCard,LiveCondition,FamilyNum,FamilyStructure,HouseName,PreSituation,PreNum,YieldNum,Chemical,Poison,Radial  ");
-            builder.Append(" FROM tbl_recordsbaseinfo ");
+            builder.Append(" FROM ARCHIVE_BASEINFO ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -533,12 +533,12 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append("SELECT T.IDCardNo,B.CheckDate");
-            builder.Append(" FROM tbl_recordsbaseinfo T LEFT JOIN  ");
-            builder.Append(" (SELECT a.IDCardNo, a.ID,a.CheckDate FROM tbl_recordscustomerbaseinfo a ");
+            builder.Append(" FROM ARCHIVE_BASEINFO T LEFT JOIN  ");
+            builder.Append(" (SELECT a.IDCardNo, a.ID,a.CheckDate FROM ARCHIVE_CUSTOMERBASEINFO a ");
 
             if (!strWhere.Contains("B.CheckDate"))
             {
-                builder.Append(" WHERE a.CheckDate=(SELECT MAX(c.CheckDate) FROM tbl_recordscustomerbaseinfo c WHERE a.IDCardNo=c.IDCardNo)");
+                builder.Append(" WHERE a.CheckDate=(SELECT MAX(c.CheckDate) FROM ARCHIVE_CUSTOMERBASEINFO c WHERE a.IDCardNo=c.IDCardNo)");
             }
 
             builder.Append(" ) B ON T.IDCardNo=B.IDCardNo");
@@ -572,49 +572,49 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("concat(format((1-(ChdBaseCount-ChdCount+ChdNoVisitCount)/ChdBaseCount)*100,2), '%') AS ChdPersent ");
             builder.Append("from (select CreateMenName, ");
 
-            builder.Append("(select count(*) from tbl_recordsbaseinfo where PopulationType like '%4%' and tbl_recordsbaseinfo.CreateMenName = MenName.CreateMenName) as oldBaseCount,");
-            builder.Append("(select count(*) from tbl_olderselfcareability inner join tbl_recordsbaseinfo on tbl_olderselfcareability.IDCardNo = tbl_recordsbaseinfo.IDCardNo ");
-            builder.Append("where tbl_recordsbaseinfo.CreateMenName = MenName.CreateMenName) as oldCount, ");
-            builder.Append("(select count(*) from tbl_olderselfcareability inner join tbl_recordsbaseinfo on tbl_olderselfcareability.IDCardNo = tbl_recordsbaseinfo.IDCardNo ");
-            builder.Append("where tbl_recordsbaseinfo.CreateMenName = MenName.CreateMenName and NextfollowUpDate < now()) as oldNoVisitCount, ");
+            builder.Append("(select count(*) from ARCHIVE_BASEINFO where PopulationType like '%4%' and ARCHIVE_BASEINFO.CreateMenName = MenName.CreateMenName) as oldBaseCount,");
+            builder.Append("(select count(*) from OLDER_SELFCAREABILITY inner join ARCHIVE_BASEINFO on OLDER_SELFCAREABILITY.IDCardNo = ARCHIVE_BASEINFO.IDCardNo ");
+            builder.Append("where ARCHIVE_BASEINFO.CreateMenName = MenName.CreateMenName) as oldCount, ");
+            builder.Append("(select count(*) from OLDER_SELFCAREABILITY inner join ARCHIVE_BASEINFO on OLDER_SELFCAREABILITY.IDCardNo = ARCHIVE_BASEINFO.IDCardNo ");
+            builder.Append("where ARCHIVE_BASEINFO.CreateMenName = MenName.CreateMenName and NextfollowUpDate < now()) as oldNoVisitCount, ");
 
-            builder.Append("(select count(*) from tbl_recordsbaseinfo where PopulationType like '%6%' and tbl_recordsbaseinfo.CreateMenName = MenName.CreateMenName) as HyperBaseCount, ");
-            builder.Append("(select count(*) from tbl_chronichypertensionvisit inner join tbl_recordsbaseinfo on tbl_chronichypertensionvisit.IDCardNo = tbl_recordsbaseinfo.IDCardNo ");
-            builder.Append("where tbl_recordsbaseinfo.CreateMenName = MenName.CreateMenName) as HyperCount, ");
-            builder.Append("(select count(*) from tbl_chronichypertensionvisit inner join tbl_recordsbaseinfo on tbl_chronichypertensionvisit.IDCardNo = tbl_recordsbaseinfo.IDCardNo ");
-            builder.Append("where tbl_recordsbaseinfo.CreateMenName = MenName.CreateMenName and NextFollowUpDate < now()) as HyperNoVisitCount, ");
+            builder.Append("(select count(*) from ARCHIVE_BASEINFO where PopulationType like '%6%' and ARCHIVE_BASEINFO.CreateMenName = MenName.CreateMenName) as HyperBaseCount, ");
+            builder.Append("(select count(*) from CD_HYPERTENSIONFOLLOWUP inner join ARCHIVE_BASEINFO on CD_HYPERTENSIONFOLLOWUP.IDCardNo = ARCHIVE_BASEINFO.IDCardNo ");
+            builder.Append("where ARCHIVE_BASEINFO.CreateMenName = MenName.CreateMenName) as HyperCount, ");
+            builder.Append("(select count(*) from CD_HYPERTENSIONFOLLOWUP inner join ARCHIVE_BASEINFO on CD_HYPERTENSIONFOLLOWUP.IDCardNo = ARCHIVE_BASEINFO.IDCardNo ");
+            builder.Append("where ARCHIVE_BASEINFO.CreateMenName = MenName.CreateMenName and NextFollowUpDate < now()) as HyperNoVisitCount, ");
 
-            builder.Append("(select count(*) from tbl_recordsbaseinfo where PopulationType like '%7%' and tbl_recordsbaseinfo.CreateMenName = MenName.CreateMenName) as DiaBaseCount, ");
-            builder.Append("(select count(*) from tbl_chronicdiadetesvisit inner join tbl_recordsbaseinfo on tbl_chronicdiadetesvisit.IDCardNo = tbl_recordsbaseinfo.IDCardNo ");
-            builder.Append("where tbl_recordsbaseinfo.CreateMenName = MenName.CreateMenName) as DiaCount, ");
-            builder.Append("(select count(*) from tbl_chronicdiadetesvisit inner join tbl_recordsbaseinfo on tbl_chronicdiadetesvisit.IDCardNo = tbl_recordsbaseinfo.IDCardNo ");
-            builder.Append("where tbl_recordsbaseinfo.CreateMenName = MenName.CreateMenName and NextVisitDate < now()) as DiaNoVisitCount, ");
+            builder.Append("(select count(*) from ARCHIVE_BASEINFO where PopulationType like '%7%' and ARCHIVE_BASEINFO.CreateMenName = MenName.CreateMenName) as DiaBaseCount, ");
+            builder.Append("(select count(*) from CD_DIABETESFOLLOWUP inner join ARCHIVE_BASEINFO on CD_DIABETESFOLLOWUP.IDCardNo = ARCHIVE_BASEINFO.IDCardNo ");
+            builder.Append("where ARCHIVE_BASEINFO.CreateMenName = MenName.CreateMenName) as DiaCount, ");
+            builder.Append("(select count(*) from CD_DIABETESFOLLOWUP inner join ARCHIVE_BASEINFO on CD_DIABETESFOLLOWUP.IDCardNo = ARCHIVE_BASEINFO.IDCardNo ");
+            builder.Append("where ARCHIVE_BASEINFO.CreateMenName = MenName.CreateMenName and NextVisitDate < now()) as DiaNoVisitCount, ");
 
-            builder.Append("(select count(*) from tbl_recordsbaseinfo where PopulationType like '%5%' and tbl_recordsbaseinfo.CreateMenName = MenName.CreateMenName) as MentalBaseCount, ");
-            builder.Append("(select count(*) from tbl_chronicmentaldiseasevisit inner join tbl_recordsbaseinfo on tbl_chronicmentaldiseasevisit.IDCardNo = tbl_recordsbaseinfo.IDCardNo ");
-            builder.Append("where tbl_recordsbaseinfo.CreateMenName = MenName.CreateMenName) as MentalCount, ");
-            builder.Append("(select count(*) from tbl_chronicmentaldiseasevisit inner join tbl_recordsbaseinfo on tbl_chronicmentaldiseasevisit.IDCardNo = tbl_recordsbaseinfo.IDCardNo ");
-            builder.Append("where tbl_recordsbaseinfo.CreateMenName = MenName.CreateMenName and NextFollowUpDate < now()) as MentalNoVisitCount, ");
+            builder.Append("(select count(*) from ARCHIVE_BASEINFO where PopulationType like '%5%' and ARCHIVE_BASEINFO.CreateMenName = MenName.CreateMenName) as MentalBaseCount, ");
+            builder.Append("(select count(*) from CD_MENTALDISEASE_FOLLOWUP inner join ARCHIVE_BASEINFO on CD_MENTALDISEASE_FOLLOWUP.IDCardNo = ARCHIVE_BASEINFO.IDCardNo ");
+            builder.Append("where ARCHIVE_BASEINFO.CreateMenName = MenName.CreateMenName) as MentalCount, ");
+            builder.Append("(select count(*) from CD_MENTALDISEASE_FOLLOWUP inner join ARCHIVE_BASEINFO on CD_MENTALDISEASE_FOLLOWUP.IDCardNo = ARCHIVE_BASEINFO.IDCardNo ");
+            builder.Append("where ARCHIVE_BASEINFO.CreateMenName = MenName.CreateMenName and NextFollowUpDate < now()) as MentalNoVisitCount, ");
 
-            builder.Append("(select count(*) from tbl_recordsbaseinfo where PopulationType like '%10%' and tbl_recordsbaseinfo.CreateMenName = MenName.CreateMenName) as LungerBaseCount, ");
-            builder.Append("(select count(*) from tbl_chroniclungerfirstvisit inner join tbl_recordsbaseinfo on tbl_chroniclungerfirstvisit.IDCardNo = tbl_recordsbaseinfo.IDCardNo ");
-            builder.Append("where tbl_recordsbaseinfo.CreateMenName = MenName.CreateMenName) as LungerCount, ");
-            builder.Append("(select count(*) from tbl_chroniclungerfirstvisit inner join tbl_recordsbaseinfo on tbl_chroniclungerfirstvisit.IDCardNo = tbl_recordsbaseinfo.IDCardNo ");
-            builder.Append("where tbl_recordsbaseinfo.CreateMenName = MenName.CreateMenName and NextVisitDate < now()) as LungerNoVisitCount, ");
+            builder.Append("(select count(*) from ARCHIVE_BASEINFO where PopulationType like '%10%' and ARCHIVE_BASEINFO.CreateMenName = MenName.CreateMenName) as LungerBaseCount, ");
+            builder.Append("(select count(*) from CD_PTB_FIRSTVISIT inner join ARCHIVE_BASEINFO on CD_PTB_FIRSTVISIT.IDCardNo = ARCHIVE_BASEINFO.IDCardNo ");
+            builder.Append("where ARCHIVE_BASEINFO.CreateMenName = MenName.CreateMenName) as LungerCount, ");
+            builder.Append("(select count(*) from CD_PTB_FIRSTVISIT inner join ARCHIVE_BASEINFO on CD_PTB_FIRSTVISIT.IDCardNo = ARCHIVE_BASEINFO.IDCardNo ");
+            builder.Append("where ARCHIVE_BASEINFO.CreateMenName = MenName.CreateMenName and NextVisitDate < now()) as LungerNoVisitCount, ");
 
-            builder.Append("(select count(*) from tbl_recordsbaseinfo where PopulationType like '%9%' and tbl_recordsbaseinfo.CreateMenName = MenName.CreateMenName) as StrokeBaseCount, ");
-            builder.Append("(select count(*) from tbl_chronicstrokevisit inner join tbl_recordsbaseinfo on tbl_chronicstrokevisit.IDCardNo = tbl_recordsbaseinfo.IDCardNo ");
-            builder.Append("where tbl_recordsbaseinfo.CreateMenName = MenName.CreateMenName) as StrokeCount, ");
-            builder.Append("(select count(*) from tbl_chronicstrokevisit inner join tbl_recordsbaseinfo on tbl_chronicstrokevisit.IDCardNo = tbl_recordsbaseinfo.IDCardNo ");
-            builder.Append("where tbl_recordsbaseinfo.CreateMenName = MenName.CreateMenName and NextFollowupDate < now()) as StrokeNoVisitCount, ");
+            builder.Append("(select count(*) from ARCHIVE_BASEINFO where PopulationType like '%9%' and ARCHIVE_BASEINFO.CreateMenName = MenName.CreateMenName) as StrokeBaseCount, ");
+            builder.Append("(select count(*) from CD_STROKE_FOLLOWUP inner join ARCHIVE_BASEINFO on CD_STROKE_FOLLOWUP.IDCardNo = ARCHIVE_BASEINFO.IDCardNo ");
+            builder.Append("where ARCHIVE_BASEINFO.CreateMenName = MenName.CreateMenName) as StrokeCount, ");
+            builder.Append("(select count(*) from CD_STROKE_FOLLOWUP inner join ARCHIVE_BASEINFO on CD_STROKE_FOLLOWUP.IDCardNo = ARCHIVE_BASEINFO.IDCardNo ");
+            builder.Append("where ARCHIVE_BASEINFO.CreateMenName = MenName.CreateMenName and NextFollowupDate < now()) as StrokeNoVisitCount, ");
 
-            builder.Append("(select count(*) from tbl_recordsbaseinfo where PopulationType like '%8%' and tbl_recordsbaseinfo.CreateMenName = MenName.CreateMenName) as ChdBaseCount, ");
-            builder.Append("(select count(*) from tbl_chronicchdvisit inner join tbl_recordsbaseinfo on tbl_chronicchdvisit.IDCardNo = tbl_recordsbaseinfo.IDCardNo  ");
-            builder.Append("where tbl_recordsbaseinfo.CreateMenName = MenName.CreateMenName) as ChdCount, ");
-            builder.Append("(select count(*) from tbl_chronicchdvisit inner join tbl_recordsbaseinfo on tbl_chronicchdvisit.IDCardNo = tbl_recordsbaseinfo.IDCardNo  ");
-            builder.Append("where tbl_recordsbaseinfo.CreateMenName = MenName.CreateMenName and NextVisitDate < now()) as ChdNoVisitCount ");
+            builder.Append("(select count(*) from ARCHIVE_BASEINFO where PopulationType like '%8%' and ARCHIVE_BASEINFO.CreateMenName = MenName.CreateMenName) as ChdBaseCount, ");
+            builder.Append("(select count(*) from CD_CHD_FOLLOWUP inner join ARCHIVE_BASEINFO on CD_CHD_FOLLOWUP.IDCardNo = ARCHIVE_BASEINFO.IDCardNo  ");
+            builder.Append("where ARCHIVE_BASEINFO.CreateMenName = MenName.CreateMenName) as ChdCount, ");
+            builder.Append("(select count(*) from CD_CHD_FOLLOWUP inner join ARCHIVE_BASEINFO on CD_CHD_FOLLOWUP.IDCardNo = ARCHIVE_BASEINFO.IDCardNo  ");
+            builder.Append("where ARCHIVE_BASEINFO.CreateMenName = MenName.CreateMenName and NextVisitDate < now()) as ChdNoVisitCount ");
 
-            builder.Append("from (select distinct CreateMenName from tbl_recordsbaseinfo) as MenName) as visitDetail ");
+            builder.Append("from (select distinct CreateMenName from ARCHIVE_BASEINFO) as MenName) as visitDetail ");
 
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
@@ -627,7 +627,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select distinct T.CreateMenName,T.ID,T.PopulationType ");
-            builder.Append(" from tbl_recordsbaseinfo T left join tbl_recordscustomerbaseinfo B on T.IDCardNo = B.IDCardNo ");
+            builder.Append(" from ARCHIVE_BASEINFO T left join ARCHIVE_CUSTOMERBASEINFO B on T.IDCardNo = B.IDCardNo ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE 1=1 " + strWhere);
@@ -643,11 +643,11 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("(case T.CreateDate when null then null when '' then null else T.CreateDate end)CreateDate, ");
             builder.Append("(case T.LastUpdateDate when null then null when '' then null else T.LastUpdateDate end ) as LastUpdateDate, ");
             builder.Append("T.PopulationType,T.CreateMenName, B.CheckDate,B.ID as PID ");
-            builder.Append(" from tbl_recordsbaseinfo T left join ");
-            builder.Append(" (SELECT a.IDCardNo, a.ID,a.CheckDate FROM tbl_recordscustomerbaseinfo a ");
+            builder.Append(" from ARCHIVE_BASEINFO T left join ");
+            builder.Append(" (SELECT a.IDCardNo, a.ID,a.CheckDate FROM ARCHIVE_CUSTOMERBASEINFO a ");
             if (!strWhere.Contains("B.CheckDate"))
             {
-                builder.Append(" where  a.CheckDate = (select max(c.CheckDate) from tbl_recordscustomerbaseinfo c  where a.IDCardNo = c.IDCardNo  )");
+                builder.Append(" where  a.CheckDate = (select max(c.CheckDate) from ARCHIVE_CUSTOMERBASEINFO c  where a.IDCardNo = c.IDCardNo  )");
             }
             builder.Append(" ) B on T.IDCardNo=B.IDCardNo");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
@@ -677,15 +677,15 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("T.LastUpdateBy,(case T.LastUpdateDate when null then null when '' then null else T.LastUpdateDate end ) as LastUpdateDate,");
             builder.Append("T.PopulationType,T.FamilyIDCardNo,T.HouseRelation,T.HouseRealOther,T.Email,T.IsDelete,T.IsUpdate,T.TownName,");
             builder.Append("T.VillageName,T.CreateUnitName,T.CreateMenName,B.CheckDate ,B.ID as CustomerID");
-            builder.Append(" from tbl_recordsbaseinfo T left join  ");
-            builder.Append(" (SELECT a.IDCardNo, a.ID,a.CheckDate FROM tbl_recordscustomerbaseinfo a ");
+            builder.Append(" from ARCHIVE_BASEINFO T left join  ");
+            builder.Append(" (SELECT a.IDCardNo, a.ID,a.CheckDate FROM ARCHIVE_CUSTOMERBASEINFO a ");
             if (!strWhere.Contains("B.CheckDate"))
             {
-                builder.Append(" where  a.CheckDate = (select max(c.CheckDate) from tbl_recordscustomerbaseinfo c  where a.IDCardNo = c.IDCardNo  )");
+                builder.Append(" where  a.CheckDate = (select max(c.CheckDate) from ARCHIVE_CUSTOMERBASEINFO c  where a.IDCardNo = c.IDCardNo  )");
             }
             builder.Append(" ) B on T.IDCardNo=B.IDCardNo");
 
-            //builder.Append("select [ID]\t\t,[RecordID]\t\t,[IDCardNo]\t\t,[OrgProvinceID]\t\t,[OrgCityID]\t\t,[OrgDistrictID]\t\t,[OrgTownID]\t\t,[OrgVillageID]\t\t,[ProvinceID]\t\t,[CityID]\t\t,[DistrictID]\t\t,[TownID]\t\t,[VillageID]\t\t,[WorkUnit]\t\t,[LiveType]\t\t,[Nation]\t\t,[RH]\t\t,[Culture]\t\t,[Job]\t\t,[MaritalStatus]\t\t,[MedicalPayType]\t\t,[DrugAllergic]\t\t,[Disease]\t\t,[DiseasEndition]\t\t,[CustomerName]\t\t,[Doctor]\t\t,[Sex]\t\t,[Birthday]\t\t,[ContactName]\t\t,[ContactPhone]\t\t,[BloodType]\t\t,[Phone]\t\t,[MedicalPayTypeOther]\t\t,[DrugAllergicOther]\t\t,[DiseaseEx]\t\t,[DiseasEnditionEx]\t\t,[CustomerID]\t\t,[Address]\t\t,[HouseHoldAddress]\t\t,[CreateUnit]\t\t,[Minority]\t\t,[Exposure]\t\t,[CreateBy]\t\t,(case CreateDate when null then null when '' then null else CreateDate end)[CreateDate]\t\t,[LastUpdateBy]\t\t,(case LastUpdateDate when null then null when '' then null else LastUpdateDate end ) as [LastUpdateDate]\t\t,[PopulationType]\t\t,[FamilyIDCardNo]\t\t,[HouseRelation]\t\t,[HouseRealOther]\t\t,[Email]\t\t,[IsDelete]\t\t,[IsUpdate]\t\t,[TownName]\t\t,[VillageName]\t\t,[CreateUnitName]\t\t,[CreateMenName] from tbl_recordsbaseinfo T ");
+            //builder.Append("select [ID]\t\t,[RecordID]\t\t,[IDCardNo]\t\t,[OrgProvinceID]\t\t,[OrgCityID]\t\t,[OrgDistrictID]\t\t,[OrgTownID]\t\t,[OrgVillageID]\t\t,[ProvinceID]\t\t,[CityID]\t\t,[DistrictID]\t\t,[TownID]\t\t,[VillageID]\t\t,[WorkUnit]\t\t,[LiveType]\t\t,[Nation]\t\t,[RH]\t\t,[Culture]\t\t,[Job]\t\t,[MaritalStatus]\t\t,[MedicalPayType]\t\t,[DrugAllergic]\t\t,[Disease]\t\t,[DiseasEndition]\t\t,[CustomerName]\t\t,[Doctor]\t\t,[Sex]\t\t,[Birthday]\t\t,[ContactName]\t\t,[ContactPhone]\t\t,[BloodType]\t\t,[Phone]\t\t,[MedicalPayTypeOther]\t\t,[DrugAllergicOther]\t\t,[DiseaseEx]\t\t,[DiseasEnditionEx]\t\t,[CustomerID]\t\t,[Address]\t\t,[HouseHoldAddress]\t\t,[CreateUnit]\t\t,[Minority]\t\t,[Exposure]\t\t,[CreateBy]\t\t,(case CreateDate when null then null when '' then null else CreateDate end)[CreateDate]\t\t,[LastUpdateBy]\t\t,(case LastUpdateDate when null then null when '' then null else LastUpdateDate end ) as [LastUpdateDate]\t\t,[PopulationType]\t\t,[FamilyIDCardNo]\t\t,[HouseRelation]\t\t,[HouseRealOther]\t\t,[Email]\t\t,[IsDelete]\t\t,[IsUpdate]\t\t,[TownName]\t\t,[VillageName]\t\t,[CreateUnitName]\t\t,[CreateMenName] from ARCHIVE_BASEINFO T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE 1=1 " + strWhere);
@@ -709,23 +709,23 @@ namespace KangShuoTech.DataAccessProjects.DAL
             string strDate = DateTime.Now.ToString("yyyy-MM-dd");
 
             builder.Append("select * from (");
-            builder.Append("select tbl_recordsbaseinfo.ID, tbl_recordsbaseinfo.CustomerName, tbl_recordsbaseinfo.IDCardNo, HouseHoldAddress,Birthday,tbl_recordsbaseinfo.CreateDate,tbl_recordsbaseinfo.CreateBy,tbl_recordsbaseinfo.CreateMenName,tbl_recordsbaseinfo.PopulationType,");
-            builder.Append("(select cast(C.NextfollowUpDate as char) from tbl_olderselfcareability C ");
-            builder.Append("where tbl_recordsbaseinfo.IDCardNo = C.IDCardNo and C.FollowUpDate =(SELECT MAX(C1.FollowUpDate) from tbl_olderselfcareability C1 where C.IDCardNo=C1.IDCardNO)) as OLDVisit, ");
-            builder.Append("(select cast(C.NextFollowUpDate as char) from tbl_chronichypertensionvisit C ");
-            builder.Append("where tbl_recordsbaseinfo.IDCardNo = C.IDCardNo and C.FollowUpDate=(select max(C1.FollowUpDate) from tbl_chronichypertensionvisit C1 where C.IDCardNo=C1.IDCardNO)) as HyperVisit, ");
-            builder.Append("(select cast(C.NextVisitDate as char) from tbl_chronicdiadetesvisit C ");
-            builder.Append("where tbl_recordsbaseinfo.IDCardNo = C.IDCardNo and C.VisitDate=(select max(C1.VisitDate) from tbl_chronicdiadetesvisit C1 where C.IDCardNo=C1.IDCardNO)) as DiaVisit, ");
-            builder.Append("(select cast(C.NextFollowUpDate as char) from tbl_chronicmentaldiseasevisit C ");
-            builder.Append("where tbl_recordsbaseinfo.IDCardNo = C.IDCardNo and C.FollowUpDate=(select max(C1.FollowUpDate) from tbl_chronicmentaldiseasevisit C1 where C.IDCardNo=C1.IDCardNO)) as MentalVisit, ");
-            builder.Append("(select cast(C.NextVisitDate as char) from tbl_chroniclungerfirstvisit C ");
-            builder.Append("where tbl_recordsbaseinfo.IDCardNo = C.IDCardNo and C.FollowupDate=(select max(C1.FollowupDate) from tbl_chroniclungerfirstvisit C1 where C.IDCardNo=C1.IDCardNO)) as LungerVisit, ");
-            builder.Append("(select cast(C.NextFollowupDate as char) from tbl_chronicstrokevisit C ");
-            builder.Append("where tbl_recordsbaseinfo.IDCardNo = C.IDCardNo and C.FollowUpDate=(select max(C1.FollowUpDate) from tbl_chronicstrokevisit C1 where C.IDCardNo=C1.IDCardNO)) as StrokeVisit, ");
-            builder.Append("(select cast(C.NextVisitDate as char) from tbl_chronicchdvisit C ");
-            builder.Append("where tbl_recordsbaseinfo.IDCardNo = C.IDCardNo and C.VisitDate=(select max(C1.VisitDate) from tbl_chronicchdvisit C1 where C.IDCardNo=C1.IDCardNO)) as ChdVisit ");
-            builder.Append("FROM tbl_recordsbaseinfo) T ");
-            builder.Append("left join (select * from tbl_recordscustomerbaseinfo D WHERE D.CheckDate=(select max(D1.CheckDate) from tbl_recordscustomerbaseinfo D1 where D.IDCardNo=D1.IDCardNo ) )B on T.IDCardNo = B.IDCardNo ");
+            builder.Append("select ARCHIVE_BASEINFO.ID, ARCHIVE_BASEINFO.CustomerName, ARCHIVE_BASEINFO.IDCardNo, HouseHoldAddress,Birthday,ARCHIVE_BASEINFO.CreateDate,ARCHIVE_BASEINFO.CreateBy,ARCHIVE_BASEINFO.CreateMenName,ARCHIVE_BASEINFO.PopulationType,");
+            builder.Append("(select cast(C.NextfollowUpDate as char) from OLDER_SELFCAREABILITY C ");
+            builder.Append("where ARCHIVE_BASEINFO.IDCardNo = C.IDCardNo and C.FollowUpDate =(SELECT MAX(C1.FollowUpDate) from OLDER_SELFCAREABILITY C1 where C.IDCardNo=C1.IDCardNO)) as OLDVisit, ");
+            builder.Append("(select cast(C.NextFollowUpDate as char) from CD_HYPERTENSIONFOLLOWUP C ");
+            builder.Append("where ARCHIVE_BASEINFO.IDCardNo = C.IDCardNo and C.FollowUpDate=(select max(C1.FollowUpDate) from CD_HYPERTENSIONFOLLOWUP C1 where C.IDCardNo=C1.IDCardNO)) as HyperVisit, ");
+            builder.Append("(select cast(C.NextVisitDate as char) from CD_DIABETESFOLLOWUP C ");
+            builder.Append("where ARCHIVE_BASEINFO.IDCardNo = C.IDCardNo and C.VisitDate=(select max(C1.VisitDate) from CD_DIABETESFOLLOWUP C1 where C.IDCardNo=C1.IDCardNO)) as DiaVisit, ");
+            builder.Append("(select cast(C.NextFollowUpDate as char) from CD_MENTALDISEASE_FOLLOWUP C ");
+            builder.Append("where ARCHIVE_BASEINFO.IDCardNo = C.IDCardNo and C.FollowUpDate=(select max(C1.FollowUpDate) from CD_MENTALDISEASE_FOLLOWUP C1 where C.IDCardNo=C1.IDCardNO)) as MentalVisit, ");
+            builder.Append("(select cast(C.NextVisitDate as char) from CD_PTB_FIRSTVISIT C ");
+            builder.Append("where ARCHIVE_BASEINFO.IDCardNo = C.IDCardNo and C.FollowupDate=(select max(C1.FollowupDate) from CD_PTB_FIRSTVISIT C1 where C.IDCardNo=C1.IDCardNO)) as LungerVisit, ");
+            builder.Append("(select cast(C.NextFollowupDate as char) from CD_STROKE_FOLLOWUP C ");
+            builder.Append("where ARCHIVE_BASEINFO.IDCardNo = C.IDCardNo and C.FollowUpDate=(select max(C1.FollowUpDate) from CD_STROKE_FOLLOWUP C1 where C.IDCardNo=C1.IDCardNO)) as StrokeVisit, ");
+            builder.Append("(select cast(C.NextVisitDate as char) from CD_CHD_FOLLOWUP C ");
+            builder.Append("where ARCHIVE_BASEINFO.IDCardNo = C.IDCardNo and C.VisitDate=(select max(C1.VisitDate) from CD_CHD_FOLLOWUP C1 where C.IDCardNo=C1.IDCardNO)) as ChdVisit ");
+            builder.Append("FROM ARCHIVE_BASEINFO) T ");
+            builder.Append("left join (select * from ARCHIVE_CUSTOMERBASEINFO D WHERE D.CheckDate=(select max(D1.CheckDate) from ARCHIVE_CUSTOMERBASEINFO D1 where D.IDCardNo=D1.IDCardNo ) )B on T.IDCardNo = B.IDCardNo ");
             builder.Append("where  ((PopulationType like '%4%' and OLDVisit is null) or (PopulationType like '%5%' and MentalVisit is null) ");
             builder.Append(" or (PopulationType like '%6%' and HyperVisit is null) or (PopulationType like '%7%' and DiaVisit is null) ");
             builder.Append(" or (PopulationType like '%8%' and ChdVisit is null) or (PopulationType like '%9%' and StrokeVisit is null) ");
@@ -756,7 +756,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("a.Email,a.MedicalPayTypeOther,a.PovertyReliefMedicalCard,a.ResidentMedicalCard,a.TownMedicalCard,a.MaritalStatus,a.job, ");
             builder.Append("a.Culture,a.RH,a.BloodType,a.LiveType,a.WorkUnit,a.Nation,a.FamilyStructure,a.HouseRelation,a.LiveCondition,a.FamilyNum, ");
             builder.Append("a.FamilyIDCardNo,a.HouseName,a.PreSituation,a.PreNum,a.YieldNum,a.Chemical,a.Poison,a.Radial,b.BlowMeasure,b.FuelType,b.DrinkWater,b.Toilet,b.LiveStockRail,b.SignDate ");
-            builder.Append(" from tbl_recordsbaseinfo a LEFT JOIN tbl_recordsenvironment b on a.IDCardNo = b.IDCardNo ");
+            builder.Append(" from ARCHIVE_BASEINFO a LEFT JOIN ARCHIVE_ENVIRONMENT b on a.IDCardNo = b.IDCardNo ");
             builder.Append(" where a.IDCardNo = '" + strWhere + "'");
             return MySQLHelper.Query(builder.ToString());
         }
@@ -774,10 +774,10 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("e.HCY,e.FPGDL,e.BloodOther,e.PLT,e.WBC,e.HB,f.Lips,f.ToothResides,f.Pharyngeal,f.Listen,f.SportFunction,f.RightEyecorrect,");
             builder.Append("f.LeftEyecorrect,f.RightView,f.LeftView,g.BrainDis,g.RenalDis,g.HeartDis,");
             builder.Append("g.VesselDis,g.EyeDis,g.NerveDis,g.ElseDis,h.IsNormal,h.HealthGuide,h.DangerControl ");
-            builder.Append(" from tbl_recordscustomerbaseinfo a LEFT JOIN tbl_recordsgeneralcondition b on a.ID = b.OutKey ");
-            builder.Append(" LEFT JOIN tbl_recordslifestyle c on a.ID = c.OutKey  LEFT JOIN tbl_recordsphysicalexam d on a.ID = d.OutKey  ");
-            builder.Append(" LEFT JOIN tbl_recordsassistcheck e on a.ID = e.OutKey LEFT JOIN tbl_recordsviscerafunction f on a.ID = f.OutKey ");
-            builder.Append(" LEFT JOIN tbl_recordshealthquestion g on a.ID = g.OutKey LEFT JOIN tbl_recordsassessmentguide h on a.ID = h.OutKey ");
+            builder.Append(" from ARCHIVE_CUSTOMERBASEINFO a LEFT JOIN ARCHIVE_GENERALCONDITION b on a.ID = b.OutKey ");
+            builder.Append(" LEFT JOIN ARCHIVE_LIFESTYLE c on a.ID = c.OutKey  LEFT JOIN ARCHIVE_PHYSICALEXAM d on a.ID = d.OutKey  ");
+            builder.Append(" LEFT JOIN ARCHIVE_ASSISTCHECK e on a.ID = e.OutKey LEFT JOIN ARCHIVE_VISCERAFUNCTION f on a.ID = f.OutKey ");
+            builder.Append(" LEFT JOIN ARCHIVE_HEALTHQUESTION g on a.ID = g.OutKey LEFT JOIN ARCHIVE_ASSESSMENTGUIDE h on a.ID = h.OutKey ");
             builder.Append(" where a.IDCardNo = '" + strWhere + "'");
             builder.Append(" order by a.CheckDate DESC LIMIT 0,1 ");
             return MySQLHelper.Query(builder.ToString());
@@ -794,7 +794,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("a.PBG,a.DoctorView,a.NextMeasures,a.InsulinAdjustType,a.InsulinAdjustUsage,a.IsReferral,a.Remarks,a.NextVisitDate,");
             builder.Append("b.FamilyHistory,b.DiabetesType,b.DiabetesTime,b.DiabetesWork,b.Insulin,b.InsulinWeight,b.EnalaprilMelete,");
             builder.Append("b.Symptom as Symptom1,b.ManagementGroup,b.CaseSource,b.EndManage ");
-            builder.Append("from tbl_chronicdiadetesvisit a INNER JOIN tbl_chronicdiabetesbaseinfo b on a.IDCardNo = b.IDCardNo ");
+            builder.Append("from CD_DIABETESFOLLOWUP a INNER JOIN CD_DIABETES_BASEINFO b on a.IDCardNo = b.IDCardNo ");
             builder.Append(" where a.IDCardNo ='" + strWhere + "' order by a.VisitDate DESC LIMIT 0,1;");
 
             return MySQLHelper.Query(builder.ToString());
@@ -809,7 +809,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("a.FollowUpDoctor,a.FollowUpWay,a.Hight,a.PhysicalSympToMother,a.ObeyDoctorBehavior,a.AssistantExam,a.FollowUpType,a.NextMeasures,");
             builder.Append("a.DoctorView,a.IsReferral,a.Remarks,a.NextFollowUpDate,b.FatherHistory,b.Symptom as Symptom1 ,b.Hypotensor,b.ManagementGroup,");
             builder.Append("b.CaseOurce,b.HypertensionComplication ");
-            builder.Append("from tbl_chronichypertensionvisit a INNER JOIN tbl_chronichypertensionbaseinfo b on a.IDCardNo = b.IDCardNo  ");
+            builder.Append("from CD_HYPERTENSIONFOLLOWUP a INNER JOIN CD_HYPERTENSION_BASEINFO b on a.IDCardNo = b.IDCardNo  ");
             builder.Append("where a.IDCardNo ='" + strWhere + "' order by a.FollowUpDate DESC LIMIT 0,1 ");
             return MySQLHelper.Query(builder.ToString());
         }
@@ -818,7 +818,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select count(*) from ( ");
-            builder.Append(" (select C.IDCardNo, MAX(C.NextfollowUpDate) from tbl_olderselfcareability C  ");
+            builder.Append(" (select C.IDCardNo, MAX(C.NextfollowUpDate) from OLDER_SELFCAREABILITY C  ");
             builder.Append(string.Format(" where NextfollowUpDate between '{0}' and '{1}'  ", DateTime.Now.AddDays(-10).ToString("yyyy-MM-dd"), DateTime.Now.ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -826,7 +826,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             }
             builder.Append(" GROUP BY C.IDCardNo)B INNER JOIN  ");
             builder.Append(" (SELECT T.ID, T.CustomerName, T.IDCardNo, T.HouseHoldAddress,T.Birthday,T.CreateDate,T.CreateMenName,T.CreateBy   ");
-            builder.Append(" from tbl_recordsbaseinfo T   ");
+            builder.Append(" from ARCHIVE_BASEINFO T   ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -848,7 +848,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
             builder.Append("select count(*) from (");
             builder.Append(" (SELECT T.ID, T.CustomerName, T.IDCardNo, T.HouseHoldAddress,T.Birthday,T.CreateDate,T.CreateMenName,T.CreateBy,T.PopulationType  ");
-            builder.Append(" from tbl_recordsbaseinfo T ");
+            builder.Append(" from ARCHIVE_BASEINFO T ");
             builder.Append("WHERE (T.PopulationType like '%4%')   ");
             if (CheckDate.Trim() != "")
             {
@@ -859,7 +859,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
                 builder.Append(strWhere);
             }
             builder.Append("  )P  LEFT JOIN  ");
-            builder.Append(" (select C.IDCardNo, MAX(C.NextfollowUpDate) AS OLDVisit from tbl_olderselfcareability C  ");
+            builder.Append(" (select C.IDCardNo, MAX(C.NextfollowUpDate) AS OLDVisit from OLDER_SELFCAREABILITY C  ");
             builder.Append(" GROUP BY C.IDCardNo  )B  ON B.IDCardNo=P.IDCardNo) ");
             builder.Append(" WHERE  (PopulationType like '%4%' and OLDVisit is null) ");
 
@@ -876,7 +876,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select count(*) from ( ");
-            builder.Append(" (select C.IDCardNo, MAX(C.NextFollowUpDate) from tbl_chronichypertensionvisit C  ");
+            builder.Append(" (select C.IDCardNo, MAX(C.NextFollowUpDate) from CD_HYPERTENSIONFOLLOWUP C  ");
             builder.Append(string.Format(" where NextfollowUpDate between '{0}' and '{1}'  ", DateTime.Now.AddDays(-10).ToString("yyyy-MM-dd"), DateTime.Now.ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -884,7 +884,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             }
             builder.Append(" GROUP BY C.IDCardNo)B INNER JOIN  ");
             builder.Append(" (SELECT T.ID, T.CustomerName, T.IDCardNo, T.HouseHoldAddress,T.Birthday,T.CreateDate,T.CreateMenName,T.CreateBy   ");
-            builder.Append(" from tbl_recordsbaseinfo T   ");
+            builder.Append(" from ARCHIVE_BASEINFO T   ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -907,7 +907,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
             builder.Append("select count(*) from (");
             builder.Append(" (SELECT T.ID, T.CustomerName, T.IDCardNo, T.HouseHoldAddress,T.Birthday,T.CreateDate,T.CreateMenName,T.CreateBy,T.PopulationType  ");
-            builder.Append(" from tbl_recordsbaseinfo T ");
+            builder.Append(" from ARCHIVE_BASEINFO T ");
             builder.Append("WHERE (T.PopulationType like '%6%')   ");
             if (CheckDate.Trim() != "")
             {
@@ -918,7 +918,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
                 builder.Append(strWhere);
             }
             builder.Append("  )P  LEFT JOIN  ");
-            builder.Append(" (select C.IDCardNo, MAX(C.NextFollowUpDate) AS HyperVisit from tbl_chronichypertensionvisit C  ");
+            builder.Append(" (select C.IDCardNo, MAX(C.NextFollowUpDate) AS HyperVisit from CD_HYPERTENSIONFOLLOWUP C  ");
             builder.Append(" GROUP BY C.IDCardNo  )B  ON B.IDCardNo=P.IDCardNo) ");
             builder.Append(" WHERE  (PopulationType like '%6%' and HyperVisit is null) ");
 
@@ -935,7 +935,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select count(*) from ( ");
-            builder.Append(" (select C.IDCardNo, MAX(C.NextVisitDate) from tbl_chronicdiadetesvisit C  ");
+            builder.Append(" (select C.IDCardNo, MAX(C.NextVisitDate) from CD_DIABETESFOLLOWUP C  ");
             builder.Append(string.Format(" where C.NextVisitDate between '{0}' and '{1}' ", DateTime.Now.AddDays(-10).ToString("yyyy-MM-dd"), DateTime.Now.ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -943,7 +943,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             }
             builder.Append(" GROUP BY C.IDCardNo)B INNER JOIN  ");
             builder.Append(" (SELECT T.ID, T.CustomerName, T.IDCardNo, T.HouseHoldAddress,T.Birthday,T.CreateDate,T.CreateMenName,T.CreateBy   ");
-            builder.Append(" from tbl_recordsbaseinfo T   ");
+            builder.Append(" from ARCHIVE_BASEINFO T   ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -964,7 +964,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
             builder.Append("select count(*) from (");
             builder.Append(" (SELECT T.ID, T.CustomerName, T.IDCardNo, T.HouseHoldAddress,T.Birthday,T.CreateDate,T.CreateMenName,T.CreateBy,T.PopulationType  ");
-            builder.Append(" from tbl_recordsbaseinfo T ");
+            builder.Append(" from ARCHIVE_BASEINFO T ");
             builder.Append("WHERE (T.PopulationType like '%7%')   ");
             if (CheckDate.Trim() != "")
             {
@@ -975,7 +975,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
                 builder.Append(strWhere);
             }
             builder.Append("  )P  LEFT JOIN  ");
-            builder.Append(" (select C.IDCardNo, MAX(C.NextVisitDate) AS DiaVisit from tbl_chronicdiadetesvisit C  ");
+            builder.Append(" (select C.IDCardNo, MAX(C.NextVisitDate) AS DiaVisit from CD_DIABETESFOLLOWUP C  ");
             builder.Append(" GROUP BY C.IDCardNo  )B  ON B.IDCardNo=P.IDCardNo) ");
             builder.Append(" WHERE  (PopulationType like '%7%' and DiaVisit is null) ");
 
@@ -992,7 +992,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select count(*) from ( ");
-            builder.Append(" (select C.IDCardNo, MAX(C.NextfollowUpDate) from tbl_chronicmentaldiseasevisit C  ");
+            builder.Append(" (select C.IDCardNo, MAX(C.NextfollowUpDate) from CD_MENTALDISEASE_FOLLOWUP C  ");
             builder.Append(string.Format(" where NextFollowUpDate between '{0}' and '{1}'  ", DateTime.Now.AddDays(-10).ToString("yyyy-MM-dd"), DateTime.Now.ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -1000,7 +1000,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             }
             builder.Append(" GROUP BY C.IDCardNo)B INNER JOIN  ");
             builder.Append(" (SELECT T.ID, T.CustomerName, T.IDCardNo, T.HouseHoldAddress,T.Birthday,T.CreateDate,T.CreateMenName,T.CreateBy   ");
-            builder.Append(" from tbl_recordsbaseinfo T   ");
+            builder.Append(" from ARCHIVE_BASEINFO T   ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -1023,7 +1023,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
             builder.Append("select count(*) from (");
             builder.Append(" (SELECT T.ID, T.CustomerName, T.IDCardNo, T.HouseHoldAddress,T.Birthday,T.CreateDate,T.CreateMenName,T.CreateBy,T.PopulationType  ");
-            builder.Append(" from tbl_recordsbaseinfo T ");
+            builder.Append(" from ARCHIVE_BASEINFO T ");
             builder.Append("WHERE (T.PopulationType like '%5%')   ");
             if (CheckDate.Trim() != "")
             {
@@ -1034,7 +1034,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
                 builder.Append(strWhere);
             }
             builder.Append("  )P  LEFT JOIN  ");
-            builder.Append(" (select C.IDCardNo, MAX(C.NextFollowUpDate) AS MentalVisit from tbl_chronicmentaldiseasevisit C  ");
+            builder.Append(" (select C.IDCardNo, MAX(C.NextFollowUpDate) AS MentalVisit from CD_MENTALDISEASE_FOLLOWUP C  ");
             builder.Append(" GROUP BY C.IDCardNo  )B  ON B.IDCardNo=P.IDCardNo) ");
             builder.Append(" WHERE  (PopulationType like '%5%' and MentalVisit is null) ");
 
@@ -1051,7 +1051,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select count(*) from ( ");
-            builder.Append(" (select C.IDCardNo, MAX(C.NextVisitDate) from tbl_chroniclungerfirstvisit C  ");
+            builder.Append(" (select C.IDCardNo, MAX(C.NextVisitDate) from CD_PTB_FIRSTVISIT C  ");
             builder.Append(string.Format(" where C.NextVisitDate between '{0}' and '{1}'  ", DateTime.Now.AddDays(-10).ToString("yyyy-MM-dd"), DateTime.Now.ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -1059,7 +1059,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             }
             builder.Append(" GROUP BY C.IDCardNo)B INNER JOIN  ");
             builder.Append(" (SELECT T.ID, T.CustomerName, T.IDCardNo, T.HouseHoldAddress,T.Birthday,T.CreateDate,T.CreateMenName,T.CreateBy   ");
-            builder.Append(" from tbl_recordsbaseinfo T   ");
+            builder.Append(" from ARCHIVE_BASEINFO T   ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -1081,7 +1081,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
             builder.Append("select count(*) from (");
             builder.Append(" (SELECT T.ID, T.CustomerName, T.IDCardNo, T.HouseHoldAddress,T.Birthday,T.CreateDate,T.CreateMenName,T.CreateBy,T.PopulationType  ");
-            builder.Append(" from tbl_recordsbaseinfo T ");
+            builder.Append(" from ARCHIVE_BASEINFO T ");
             builder.Append("WHERE (T.PopulationType like '%10%')   ");
             if (CheckDate.Trim() != "")
             {
@@ -1092,7 +1092,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
                 builder.Append(strWhere);
             }
             builder.Append("  )P  LEFT JOIN  ");
-            builder.Append(" (select C.IDCardNo, MAX(C.NextVisitDate) AS LungerVisit from tbl_chroniclungerfirstvisit C  ");
+            builder.Append(" (select C.IDCardNo, MAX(C.NextVisitDate) AS LungerVisit from CD_PTB_FIRSTVISIT C  ");
             builder.Append(" GROUP BY C.IDCardNo  )B  ON B.IDCardNo=P.IDCardNo) ");
             builder.Append(" WHERE  (PopulationType like '%10%' and LungerVisit is null) ");
 
@@ -1109,7 +1109,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select count(*) from ( ");
-            builder.Append(" (select C.IDCardNo, MAX(C.NextFollowupDate) from tbl_chronicstrokevisit C  ");
+            builder.Append(" (select C.IDCardNo, MAX(C.NextFollowupDate) from CD_STROKE_FOLLOWUP C  ");
             builder.Append(string.Format(" where C.NextFollowupDate between '{0}' and '{1}' ", DateTime.Now.AddDays(-10).ToString("yyyy-MM-dd"), DateTime.Now.ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -1117,7 +1117,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             }
             builder.Append(" GROUP BY C.IDCardNo)B INNER JOIN  ");
             builder.Append(" (SELECT T.ID, T.CustomerName, T.IDCardNo, T.HouseHoldAddress,T.Birthday,T.CreateDate,T.CreateMenName,T.CreateBy   ");
-            builder.Append(" from tbl_recordsbaseinfo T   ");
+            builder.Append(" from ARCHIVE_BASEINFO T   ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -1138,7 +1138,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
             builder.Append("select count(*) from (");
             builder.Append(" (SELECT T.ID, T.CustomerName, T.IDCardNo, T.HouseHoldAddress,T.Birthday,T.CreateDate,T.CreateMenName,T.CreateBy,T.PopulationType  ");
-            builder.Append(" from tbl_recordsbaseinfo T ");
+            builder.Append(" from ARCHIVE_BASEINFO T ");
             builder.Append("WHERE (T.PopulationType like '%9%')   ");
             if (CheckDate.Trim() != "")
             {
@@ -1149,7 +1149,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
                 builder.Append(strWhere);
             }
             builder.Append("  )P  LEFT JOIN  ");
-            builder.Append(" (select C.IDCardNo, MAX(C.NextFollowupDate) AS StrokeVisit from tbl_chronicstrokevisit C  ");
+            builder.Append(" (select C.IDCardNo, MAX(C.NextFollowupDate) AS StrokeVisit from CD_STROKE_FOLLOWUP C  ");
             builder.Append(" GROUP BY C.IDCardNo  )B  ON B.IDCardNo=P.IDCardNo) ");
             builder.Append(" WHERE  (PopulationType like '%9%' and StrokeVisit is null) ");
 
@@ -1166,7 +1166,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select count(*) from ( ");
-            builder.Append(" (select C.IDCardNo, MAX(C.NextVisitDate) from tbl_chronicchdvisit C  ");
+            builder.Append(" (select C.IDCardNo, MAX(C.NextVisitDate) from CD_CHD_FOLLOWUP C  ");
             builder.Append(string.Format(" where C.NextVisitDate between '{0}' and '{1}' ", DateTime.Now.AddDays(-10).ToString("yyyy-MM-dd"), DateTime.Now.ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -1174,7 +1174,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             }
             builder.Append(" GROUP BY C.IDCardNo)B INNER JOIN  ");
             builder.Append(" (SELECT T.ID, T.CustomerName, T.IDCardNo, T.HouseHoldAddress,T.Birthday,T.CreateDate,T.CreateMenName,T.CreateBy   ");
-            builder.Append(" from tbl_recordsbaseinfo T   ");
+            builder.Append(" from ARCHIVE_BASEINFO T   ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -1195,7 +1195,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
             builder.Append("select count(*) from (");
             builder.Append(" (SELECT T.ID, T.CustomerName, T.IDCardNo, T.HouseHoldAddress,T.Birthday,T.CreateDate,T.CreateMenName,T.CreateBy,T.PopulationType  ");
-            builder.Append(" from tbl_recordsbaseinfo T ");
+            builder.Append(" from ARCHIVE_BASEINFO T ");
             builder.Append("WHERE (T.PopulationType like '%8%')   ");
             if (CheckDate.Trim() != "")
             {
@@ -1206,7 +1206,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
                 builder.Append(strWhere);
             }
             builder.Append("  )P  LEFT JOIN  ");
-            builder.Append(" (select C.IDCardNo, MAX(C.NextVisitDate) AS ChdVisit from tbl_chronicchdvisit C  ");
+            builder.Append(" (select C.IDCardNo, MAX(C.NextVisitDate) AS ChdVisit from CD_CHD_FOLLOWUP C  ");
             builder.Append(" GROUP BY C.IDCardNo  )B  ON B.IDCardNo=P.IDCardNo) ");
             builder.Append(" WHERE  (PopulationType like '%8%' and ChdVisit is null) ");
 
@@ -1224,8 +1224,8 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append("SELECT ");
-            builder.Append("a.*,b.CustomerName AS HOUSENAME FROM tbl_RecordsBaseInfo a ");
-            builder.Append("LEFT JOIN tbl_RecordsBaseInfo b ON a.FamilyIDCardNo = b.IDCardNo ");
+            builder.Append("a.*,b.CustomerName AS HOUSENAME FROM ARCHIVE_BASEINFO a ");
+            builder.Append("LEFT JOIN ARCHIVE_BASEINFO b ON a.FamilyIDCardNo = b.IDCardNo ");
             builder.Append(" WHERE a.IDCardNo=@IDCardNo");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
@@ -1239,11 +1239,11 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_recordsbaseinfo T ");
-            builder.Append(" left join (SELECT a.IDCardNo, a.ID,a.CheckDate FROM tbl_recordscustomerbaseinfo a ");
+            builder.Append("select count(1) FROM ARCHIVE_BASEINFO T ");
+            builder.Append(" left join (SELECT a.IDCardNo, a.ID,a.CheckDate FROM ARCHIVE_CUSTOMERBASEINFO a ");
             if (!strWhere.Contains("B.CheckDate"))
             {
-                builder.Append(" where  a.CheckDate = (select max(c.CheckDate) from tbl_recordscustomerbaseinfo c  where a.IDCardNo = c.IDCardNo )");
+                builder.Append(" where  a.CheckDate = (select max(c.CheckDate) from ARCHIVE_CUSTOMERBASEINFO c  where a.IDCardNo = c.IDCardNo )");
             }
 
             builder.Append(" ) B on T.IDCardNo = B.IDCardNo  ");
@@ -1273,7 +1273,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append(" group_concat(D.StrokeVisit) as StrokeVisit,group_concat(D.ChdVisit) as ChdVisit ");
             builder.Append(" from ( ");
             builder.Append(" (select C.IDCardNo, MAX(C.NextfollowUpDate) AS OLDVisit, NULL as HyperVisit,NULL as DiaVisit,null as MentalVisit,null as LungerVisit,null as StrokeVisit,null as ChdVisit ");
-            builder.Append(" from tbl_olderselfcareability C  ");
+            builder.Append(" from OLDER_SELFCAREABILITY C  ");
             builder.Append(string.Format(" where  C.NextfollowUpDate between '{0}' and '{1}'  ", DateTime.Now.AddDays(-10).ToString("yyyy-MM-dd"), DateTime.Now.ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -1282,7 +1282,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append(" GROUP BY C.IDCardNo ) ");
             builder.Append(" UNION ");
             builder.Append(" (select C.IDCardNo, null,MAX(C.NextFollowUpDate) AS HyperVisit,NULL,NULL,null,null ,null ");
-            builder.Append(" from tbl_chronichypertensionvisit C  ");
+            builder.Append(" from CD_HYPERTENSIONFOLLOWUP C  ");
             builder.Append(string.Format(" where  C.NextFollowUpDate between '{0}' and '{1}'  ", DateTime.Now.AddDays(-10).ToString("yyyy-MM-dd"), DateTime.Now.ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -1291,7 +1291,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append(" GROUP BY C.IDCardNo )  ");
             builder.Append(" UNION ");
             builder.Append(" (select C.IDCardNo,null,null,MAX(C.NextVisitDate) AS  DiaVisit,null,null,null,null  ");
-            builder.Append(" from tbl_chronicdiadetesvisit C ");
+            builder.Append(" from CD_DIABETESFOLLOWUP C ");
             builder.Append(string.Format(" where C.NextVisitDate between '{0}' and '{1}' ", DateTime.Now.AddDays(-10).ToString("yyyy-MM-dd"), DateTime.Now.ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -1300,7 +1300,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append(" GROUP BY C.IDCardNo )  ");
             builder.Append(" UNION ");
             builder.Append(" (select C.IDCardNo,null,null,null, MAX(C.NextFollowUpDate) AS MentalVisit,null,null,null ");
-            builder.Append(" from tbl_chronicmentaldiseasevisit C ");
+            builder.Append(" from CD_MENTALDISEASE_FOLLOWUP C ");
             builder.Append(string.Format(" where C.NextFollowUpDate between '{0}' and '{1}' ", DateTime.Now.AddDays(-10).ToString("yyyy-MM-dd"), DateTime.Now.ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -1309,7 +1309,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append(" GROUP BY C.IDCardNo )  ");
             builder.Append(" UNION ");
             builder.Append(" (select C.IDCardNo,null,null,null,null,MAX(C.NextVisitDate) AS LungerVisit,null,null ");
-            builder.Append(" from tbl_chroniclungerfirstvisit C ");
+            builder.Append(" from CD_PTB_FIRSTVISIT C ");
             builder.Append(string.Format("where C.NextVisitDate between '{0}' and '{1}' ", DateTime.Now.AddDays(-10).ToString("yyyy-MM-dd"), DateTime.Now.ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -1318,7 +1318,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append(" GROUP BY C.IDCardNo )  ");
             builder.Append(" UNION ");
             builder.Append(" (select C.IDCardNo,null,null,null,null,null,MAX(C.NextFollowupDate) AS StrokeVisit,null ");
-            builder.Append(" from tbl_chronicstrokevisit C ");
+            builder.Append(" from CD_STROKE_FOLLOWUP C ");
             builder.Append(string.Format("where C.NextFollowupDate between '{0}' and '{1}' ", DateTime.Now.AddDays(-10).ToString("yyyy-MM-dd"), DateTime.Now.ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -1327,7 +1327,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append(" GROUP BY C.IDCardNo )  ");
             builder.Append(" UNION ");
             builder.Append(" (select C.IDCardNo,null,null,null,null,null,null,MAX(C.NextVisitDate) AS ChdVisit ");
-            builder.Append(" from tbl_chronicchdvisit C  ");
+            builder.Append(" from CD_CHD_FOLLOWUP C  ");
             builder.Append(string.Format("where NextVisitDate between '{0}' and '{1}' ", DateTime.Now.AddDays(-10).ToString("yyyy-MM-dd"), DateTime.Now.ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -1338,7 +1338,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("where D.IDCardNo is not null GROUP BY D.IDCardNo )B ");
             builder.Append(" INNER JOIN  ");
             builder.Append("(SELECT T.ID, T.CustomerName, T.IDCardNo, T.HouseHoldAddress,T.Birthday,T.CreateDate,T.CreateMenName,T.CreateBy  ");
-            builder.Append("from tbl_recordsbaseinfo T  ");
+            builder.Append("from ARCHIVE_BASEINFO T  ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -1368,7 +1368,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
 
             builder.Append("select * from ( ");
             builder.Append(" (SELECT T.ID, T.CustomerName, T.IDCardNo, T.HouseHoldAddress,T.Birthday,T.CreateDate,T.CreateMenName,T.CreateBy,T.PopulationType  ");
-            builder.Append(" from tbl_recordsbaseinfo T ");
+            builder.Append(" from ARCHIVE_BASEINFO T ");
             builder.Append("WHERE ((T.PopulationType like '%4%') or (T.PopulationType like '%5%' )  ");
             builder.Append("or (T.PopulationType like '%6%') or ( T.PopulationType like '%7%'  ) ");
             builder.Append("or (T.PopulationType like '%8%') or (T.PopulationType like '%9%') ");
@@ -1388,37 +1388,37 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append(" from ( ");
             builder.Append(" ");
             builder.Append(" (select C.IDCardNo, MAX(C.NextfollowUpDate) AS OLDVisit, NULL as HyperVisit,NULL as DiaVisit,null as MentalVisit,null as LungerVisit,null as StrokeVisit,null as ChdVisit ");
-            builder.Append(" from tbl_olderselfcareability C  ");
+            builder.Append(" from OLDER_SELFCAREABILITY C  ");
             builder.Append(" GROUP BY C.IDCardNo ) ");
           
             builder.Append(" UNION ");
             builder.Append(" (select C.IDCardNo, null,MAX(C.NextFollowUpDate) AS HyperVisit,NULL,NULL,null,null ,null ");
-            builder.Append(" from tbl_chronichypertensionvisit C  ");
+            builder.Append(" from CD_HYPERTENSIONFOLLOWUP C  ");
             builder.Append(" GROUP BY C.IDCardNo ) ");
 
             builder.Append(" UNION ");
             builder.Append(" (select C.IDCardNo,null,null,MAX(C.NextVisitDate) AS  DiaVisit,null,null,null,null  ");
-            builder.Append(" from tbl_chronicdiadetesvisit C ");
+            builder.Append(" from CD_DIABETESFOLLOWUP C ");
             builder.Append(" GROUP BY C.IDCardNo ) ");
 
             builder.Append(" UNION ");
             builder.Append(" (select C.IDCardNo,null,null,null, MAX(C.NextFollowUpDate) AS MentalVisit,null,null,null ");
-            builder.Append(" from tbl_chronicmentaldiseasevisit C ");
+            builder.Append(" from CD_MENTALDISEASE_FOLLOWUP C ");
             builder.Append(" GROUP BY C.IDCardNo ) ");
 
             builder.Append(" UNION ");
             builder.Append(" (select C.IDCardNo,null,null,null,null,MAX(C.NextVisitDate) AS LungerVisit,null,null ");
-            builder.Append(" from tbl_chroniclungerfirstvisit C ");
+            builder.Append(" from CD_PTB_FIRSTVISIT C ");
             builder.Append(" GROUP BY C.IDCardNo ) ");
 
             builder.Append(" UNION ");
             builder.Append(" (select C.IDCardNo,null,null,null,null,null,MAX(C.NextFollowupDate) AS StrokeVisit,null ");
-            builder.Append(" from tbl_chronicstrokevisit C ");
+            builder.Append(" from CD_STROKE_FOLLOWUP C ");
             builder.Append(" GROUP BY C.IDCardNo ) ");
 
             builder.Append(" UNION ");
             builder.Append(" (select C.IDCardNo,null,null,null,null,null,null,MAX(C.NextVisitDate) AS ChdVisit ");
-            builder.Append(" from tbl_chronicchdvisit C  ");
+            builder.Append(" from CD_CHD_FOLLOWUP C  ");
             builder.Append(" GROUP BY C.IDCardNo ) "); 
             builder.Append(" )D  where D.IDCardNo is not null GROUP BY D.IDCardNo ");
             builder.Append(" )B on B.IDCardNo=P.IDCardNo ) ");
@@ -1456,7 +1456,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append(" group_concat(D.StrokeVisit) as StrokeVisit,group_concat(D.ChdVisit) as ChdVisit ");
             builder.Append(" from ( ");
             builder.Append(" (select C.IDCardNo, MAX(C.NextfollowUpDate) AS OLDVisit, NULL as HyperVisit,NULL as DiaVisit,null as MentalVisit,null as LungerVisit,null as StrokeVisit,null as ChdVisit ");
-            builder.Append(" from tbl_olderselfcareability C  ");
+            builder.Append(" from OLDER_SELFCAREABILITY C  ");
             builder.Append(string.Format(" where  C.NextfollowUpDate between '{0}' and '{1}'  ", DateTime.Now.ToString("yyyy-MM-dd"), DateTime.Now.AddDays(10).ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -1465,7 +1465,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append(" GROUP BY C.IDCardNo ) ");
             builder.Append(" UNION ");
             builder.Append(" (select C.IDCardNo, null,MAX(C.NextFollowUpDate) AS HyperVisit,NULL,NULL,null,null ,null ");
-            builder.Append(" from tbl_chronichypertensionvisit C  ");
+            builder.Append(" from CD_HYPERTENSIONFOLLOWUP C  ");
             builder.Append(string.Format(" where  C.NextFollowUpDate between '{0}' and '{1}'  ", DateTime.Now.ToString("yyyy-MM-dd"), DateTime.Now.AddDays(10).ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -1474,7 +1474,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append(" GROUP BY C.IDCardNo )  ");
             builder.Append(" UNION ");
             builder.Append(" (select C.IDCardNo,null,null,MAX(C.NextVisitDate) AS  DiaVisit,null,null,null,null  ");
-            builder.Append(" from tbl_chronicdiadetesvisit C ");
+            builder.Append(" from CD_DIABETESFOLLOWUP C ");
             builder.Append(string.Format(" where C.NextVisitDate between '{0}' and '{1}' ", DateTime.Now.ToString("yyyy-MM-dd"), DateTime.Now.AddDays(10).ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -1483,7 +1483,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append(" GROUP BY C.IDCardNo )  ");
             builder.Append(" UNION ");
             builder.Append(" (select C.IDCardNo,null,null,null, MAX(C.NextFollowUpDate) AS MentalVisit,null,null,null ");
-            builder.Append(" from tbl_chronicmentaldiseasevisit C ");
+            builder.Append(" from CD_MENTALDISEASE_FOLLOWUP C ");
             builder.Append(string.Format(" where C.NextFollowUpDate between '{0}' and '{1}' ", DateTime.Now.ToString("yyyy-MM-dd"), DateTime.Now.AddDays(10).ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -1492,7 +1492,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append(" GROUP BY C.IDCardNo )  ");
             builder.Append(" UNION ");
             builder.Append(" (select C.IDCardNo,null,null,null,null,MAX(C.NextVisitDate) AS LungerVisit,null,null ");
-            builder.Append(" from tbl_chroniclungerfirstvisit C ");
+            builder.Append(" from CD_PTB_FIRSTVISIT C ");
             builder.Append(string.Format("where C.NextVisitDate between '{0}' and '{1}' ", DateTime.Now.ToString("yyyy-MM-dd"), DateTime.Now.AddDays(10).ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -1501,7 +1501,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append(" GROUP BY C.IDCardNo )  ");
             builder.Append(" UNION ");
             builder.Append(" (select C.IDCardNo,null,null,null,null,null,MAX(C.NextFollowupDate) AS StrokeVisit,null ");
-            builder.Append(" from tbl_chronicstrokevisit C ");
+            builder.Append(" from CD_STROKE_FOLLOWUP C ");
             builder.Append(string.Format("where C.NextFollowupDate between '{0}' and '{1}' ", DateTime.Now.ToString("yyyy-MM-dd"), DateTime.Now.AddDays(10).ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -1510,7 +1510,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append(" GROUP BY C.IDCardNo )  ");
             builder.Append(" UNION ");
             builder.Append(" (select C.IDCardNo,null,null,null,null,null,null,MAX(C.NextVisitDate) AS ChdVisit ");
-            builder.Append(" from tbl_chronicchdvisit C  ");
+            builder.Append(" from CD_CHD_FOLLOWUP C  ");
             builder.Append(string.Format("where NextVisitDate between '{0}' and '{1}' ", DateTime.Now.ToString("yyyy-MM-dd"), DateTime.Now.AddDays(10).ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -1521,7 +1521,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("where D.IDCardNo is not null GROUP BY D.IDCardNo )B ");
             builder.Append(" INNER JOIN  ");
             builder.Append("(SELECT T.ID, T.CustomerName, T.IDCardNo, T.HouseHoldAddress,T.Birthday,T.CreateDate,T.CreateMenName,T.CreateBy  ");
-            builder.Append("from tbl_recordsbaseinfo T  ");
+            builder.Append("from ARCHIVE_BASEINFO T  ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -1549,7 +1549,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select count(*) from ( ");
-            builder.Append(" (select C.IDCardNo, MAX(C.NextfollowUpDate) from tbl_olderselfcareability C  ");
+            builder.Append(" (select C.IDCardNo, MAX(C.NextfollowUpDate) from OLDER_SELFCAREABILITY C  ");
             builder.Append(string.Format(" where NextfollowUpDate between '{0}' and '{1}'  ", DateTime.Now.ToString("yyyy-MM-dd"), DateTime.Now.AddDays(10).ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -1557,7 +1557,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             }
             builder.Append(" GROUP BY C.IDCardNo)B INNER JOIN  ");
             builder.Append(" (SELECT T.ID, T.CustomerName, T.IDCardNo, T.HouseHoldAddress,T.Birthday,T.CreateDate,T.CreateMenName,T.CreateBy   ");
-            builder.Append(" from tbl_recordsbaseinfo T   ");
+            builder.Append(" from ARCHIVE_BASEINFO T   ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -1583,7 +1583,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select count(*) from ( ");
-            builder.Append(" (select C.IDCardNo, MAX(C.NextfollowUpDate) from tbl_chronichypertensionvisit C  ");
+            builder.Append(" (select C.IDCardNo, MAX(C.NextfollowUpDate) from CD_HYPERTENSIONFOLLOWUP C  ");
             builder.Append(string.Format(" where NextfollowUpDate between '{0}' and '{1}'  ", DateTime.Now.ToString("yyyy-MM-dd"), DateTime.Now.AddDays(10).ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -1591,7 +1591,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             }
             builder.Append(" GROUP BY C.IDCardNo)B INNER JOIN  ");
             builder.Append(" (SELECT T.ID, T.CustomerName, T.IDCardNo, T.HouseHoldAddress,T.Birthday,T.CreateDate,T.CreateMenName,T.CreateBy   ");
-            builder.Append(" from tbl_recordsbaseinfo T   ");
+            builder.Append(" from ARCHIVE_BASEINFO T   ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -1617,7 +1617,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select count(*) from ( ");
-            builder.Append(" (select C.IDCardNo, MAX(C.NextVisitDate) from tbl_chronicdiadetesvisit C  ");
+            builder.Append(" (select C.IDCardNo, MAX(C.NextVisitDate) from CD_DIABETESFOLLOWUP C  ");
             builder.Append(string.Format(" where NextVisitDate between '{0}' and '{1}'  ", DateTime.Now.ToString("yyyy-MM-dd"), DateTime.Now.AddDays(10).ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -1625,7 +1625,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             }
             builder.Append(" GROUP BY C.IDCardNo)B INNER JOIN  ");
             builder.Append(" (SELECT T.ID, T.CustomerName, T.IDCardNo, T.HouseHoldAddress,T.Birthday,T.CreateDate,T.CreateMenName,T.CreateBy   ");
-            builder.Append(" from tbl_recordsbaseinfo T   ");
+            builder.Append(" from ARCHIVE_BASEINFO T   ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -1651,7 +1651,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select count(*) from ( ");
-            builder.Append(" (select C.IDCardNo, MAX(C.NextfollowUpDate) from tbl_chronicmentaldiseasevisit C  ");
+            builder.Append(" (select C.IDCardNo, MAX(C.NextfollowUpDate) from CD_MENTALDISEASE_FOLLOWUP C  ");
             builder.Append(string.Format(" where NextfollowUpDate between '{0}' and '{1}'  ", DateTime.Now.ToString("yyyy-MM-dd"), DateTime.Now.AddDays(10).ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -1659,7 +1659,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             }
             builder.Append(" GROUP BY C.IDCardNo)B INNER JOIN  ");
             builder.Append(" (SELECT T.ID, T.CustomerName, T.IDCardNo, T.HouseHoldAddress,T.Birthday,T.CreateDate,T.CreateMenName,T.CreateBy   ");
-            builder.Append(" from tbl_recordsbaseinfo T   ");
+            builder.Append(" from ARCHIVE_BASEINFO T   ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -1684,7 +1684,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select count(*) from ( ");
-            builder.Append(" (select C.IDCardNo, MAX(C.NextVisitDate) from tbl_chroniclungerfirstvisit C  ");
+            builder.Append(" (select C.IDCardNo, MAX(C.NextVisitDate) from CD_PTB_FIRSTVISIT C  ");
             builder.Append(string.Format(" where NextVisitDate between '{0}' and '{1}'  ", DateTime.Now.ToString("yyyy-MM-dd"), DateTime.Now.AddDays(10).ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -1692,7 +1692,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             }
             builder.Append(" GROUP BY C.IDCardNo)B INNER JOIN  ");
             builder.Append(" (SELECT T.ID, T.CustomerName, T.IDCardNo, T.HouseHoldAddress,T.Birthday,T.CreateDate,T.CreateMenName,T.CreateBy   ");
-            builder.Append(" from tbl_recordsbaseinfo T   ");
+            builder.Append(" from ARCHIVE_BASEINFO T   ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -1718,7 +1718,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select count(*) from ( ");
-            builder.Append(" (select C.IDCardNo, MAX(C.NextfollowUpDate) from tbl_chronicstrokevisit C  ");
+            builder.Append(" (select C.IDCardNo, MAX(C.NextfollowUpDate) from CD_STROKE_FOLLOWUP C  ");
             builder.Append(string.Format(" where NextfollowUpDate between '{0}' and '{1}'  ", DateTime.Now.ToString("yyyy-MM-dd"), DateTime.Now.AddDays(10).ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -1726,7 +1726,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             }
             builder.Append(" GROUP BY C.IDCardNo)B INNER JOIN  ");
             builder.Append(" (SELECT T.ID, T.CustomerName, T.IDCardNo, T.HouseHoldAddress,T.Birthday,T.CreateDate,T.CreateMenName,T.CreateBy   ");
-            builder.Append(" from tbl_recordsbaseinfo T   ");
+            builder.Append(" from ARCHIVE_BASEINFO T   ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -1752,7 +1752,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select count(*) from ( ");
-            builder.Append(" (select C.IDCardNo, MAX(C.NextVisitDate) from tbl_chronicchdvisit C  ");
+            builder.Append(" (select C.IDCardNo, MAX(C.NextVisitDate) from CD_CHD_FOLLOWUP C  ");
             builder.Append(string.Format(" where NextVisitDate between '{0}' and '{1}'  ", DateTime.Now.ToString("yyyy-MM-dd"), DateTime.Now.AddDays(10).ToString("yyyy-MM-dd")));
             if (!string.IsNullOrEmpty(CheckDate))
             {
@@ -1760,7 +1760,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             }
             builder.Append(" GROUP BY C.IDCardNo)B INNER JOIN  ");
             builder.Append(" (SELECT T.ID, T.CustomerName, T.IDCardNo, T.HouseHoldAddress,T.Birthday,T.CreateDate,T.CreateMenName,T.CreateBy   ");
-            builder.Append(" from tbl_recordsbaseinfo T   ");
+            builder.Append(" from ARCHIVE_BASEINFO T   ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -1780,7 +1780,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(RecordsBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordsbaseinfo set ");
+            builder.Append("update ARCHIVE_BASEINFO set ");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("OrgProvinceID=@OrgProvinceID,");
@@ -2002,7 +2002,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public DataSet dtbaseinfo()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select IDCardNo FROM tbl_recordsbaseinfo");
+            builder.Append("select IDCardNo FROM ARCHIVE_BASEINFO");
             return MySQLHelper.Query(builder.ToString());
         }
 
@@ -2011,20 +2011,20 @@ namespace KangShuoTech.DataAccessProjects.DAL
             List<string> list = new List<string>();
             ArrayList sQLStringList = new ArrayList();
 
-            string[] strArray = new string[] { "tbl_chronicchdbaseinfo", 
-                "tbl_chronicchdvisit", "tbl_chronicdiabetesbaseinfo", "tbl_chronicdiadetesvisit", "tbl_chronicdrugcondition", "tbl_chronichypertensionbaseinfo", 
-                "tbl_chronichypertensionvisit", "tbl_chroniclungerfirstvisit", 
-                "tbl_chroniclungervisit", "tbl_chronicmentaldiseasebaseinfo", "tbl_chronicmentaldiseasevisit", "tbl_chronicstrokebaseinfo",
-                "tbl_chronicstrokevisit", "tbl_deviceinfo", "tbl_kidsbaseinfo", "tbl_kidsnewbornvisit", "tbl_kidsonetothreeyearold", "tbl_kidstcmhmone",
-                "tbl_kidstcmhmonetothree", "tbl_kidstcmhmthreetosix", "tbl_kidsthreetosixyearold","tbl_kidswithinoneyearold", "tbl_oldermedicinecn", "tbl_oldermedicineresult",
-                "tbl_olderselfcareability", "tbl_recordsassessmentguide", "tbl_recordsassistcheck","tbl_recordsbaseinfo", "tbl_recordscard", "tbl_recordscustomerbaseinfo",
-                "tbl_recordsecg", "tbl_recordseducationactivities", "tbl_recordsenvironment","tbl_recordsfamilybedhistory", "tbl_recordsfamilyhistoryinfo", 
-                "tbl_recordsfamilyinfo","tbl_recordsgeneralcondition", "tbl_recordshealthquestion", "tbl_recordshospitalhistory","tbl_recordsillnesshistoryinfo",
-                "tbl_recordsinoculationhistory", "tbl_recordslifestyle", "tbl_recordsmedication","tbl_recordsmediphysdist","tbl_recordsphysicalexam",
-                "tbl_recordsviscerafunction", "tbl_systemerrorlog","tbl_vaccinationcard", 
-                "tbl_vaccinationprogram","tbl_womengravidabaseinfo", "tbl_womengravidafirstvisit", "tbl_womengravidapostpartum",
-                "tbl_womengravidapostpartum42day", "tbl_womengravidapreassistcheck", "tbl_womengravidatwotofivevisit","uploaded","tbl_clinacalrecievetreatinfo",
-                "tbl_consultationbaseinfo","tbl_referralbaseinfo"
+            string[] strArray = new string[] { "CD_CHD_BASEINFO", 
+                "CD_CHD_FOLLOWUP", "CD_DIABETES_BASEINFO", "CD_DIABETESFOLLOWUP", "CD_DRUGCONDITION", "CD_HYPERTENSION_BASEINFO", 
+                "CD_HYPERTENSIONFOLLOWUP", "CD_PTB_FIRSTVISIT", 
+                "CD_PTB_VISIT", "CD_MENTALDISEASE_BASEINFO", "CD_MENTALDISEASE_FOLLOWUP", "CD_STROKE_BASEINFO",
+                "CD_STROKE_FOLLOWUP", "ARCHIVE_DEVICEINFO", "CHILD_BASEINFO", "CHILD_NEWBORN_FOLLOWUP", "CHILD_ONE2THREE_YEAR_OLD", "CHILD_TCMHM_ONE",
+                "CHILD_TCMHM_ONE2THREE", "CHILD_TCMHM_THREE2SIX", "CHILD_THREE2SIX_YEAR_OLD","CHILD_WITHIN_ONE_YEAR_OLD", "OLD_MEDICINE_CN", "OLD_MEDICINE_RESULT",
+                "OLDER_SELFCAREABILITY", "ARCHIVE_ASSESSMENTGUIDE", "ARCHIVE_ASSISTCHECK","ARCHIVE_BASEINFO", "ARCHIVE_CARD", "ARCHIVE_CUSTOMERBASEINFO",
+                "ARCHIVE_ECG", "ARCHIVE_EDUCATION_ACTIVITIES", "ARCHIVE_ENVIRONMENT","ARCHIVE_FAMILYBEDHISTORY", "ARCHIVE_FAMILYHISTORYINFO", 
+                "ARCHIVE_FAMILY_INFO","ARCHIVE_GENERALCONDITION", "ARCHIVE_HEALTHQUESTION", "ARCHIVE_HOSPITALHISTORY","ARCHIVE_ILLNESSHISTORYINFO",
+                "ARCHIVE_INOCULATIONHISTORY", "ARCHIVE_LIFESTYLE", "ARCHIVE_MEDICATION","ARCHIVE_MEDI_PHYS_DIST","ARCHIVE_PHYSICALEXAM",
+                "ARCHIVE_VISCERAFUNCTION", "SYS_ERROR_LOG","INOCULATION_CARD", 
+                "INOCULATION_PROGRAM","GRAVIDA_BASEINFO", "GRAVIDA_FIRSTFOLLOWUP", "GRAVIDA_POSTPARTUM",
+                "GRAVIDA_POSTPARTUM_42DAY", "GRAVIDA_PRE_ASSISTCHECK", "GRAVIDA_TWO2FIVE_FOLLOWUP","SYS_UPLOADED","ARCHIVE_RECEPTION_RECORD",
+                "ARCHIVE_CONSULTATION_RECORD","ARCHIVE_REFERRAL"
             };
 
             foreach (string str in strArray)
@@ -2043,7 +2043,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         }
 
         public void UpdatePhysicalClass(string idcard,string PhysicalClass) {
-            MySQLHelper.ExecuteSql("update tbl_recordsbaseinfo set PhysicalClass='"+ PhysicalClass + "' where idcardno='"+idcard+"'");
+            MySQLHelper.ExecuteSql("update ARCHIVE_BASEINFO set PhysicalClass='"+ PhysicalClass + "' where idcardno='"+idcard+"'");
         }
         #region Â©Ïî²éÑ¯
 
@@ -2064,19 +2064,19 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.AppendFormat("SELECT Base.IDCardNo,Base.Nation,Base.CustomerName,Base.Sex,Base.Minority, ");
             builder.AppendFormat("DATE_FORMAT(Base.Birthday,'%Y-%m-%d') AS Birthday,Base.Phone ");
             builder.AppendFormat("{0}", strCol);
-            builder.AppendFormat(" FROM tbl_recordsbaseinfo Base ");
+            builder.AppendFormat(" FROM ARCHIVE_BASEINFO Base ");
             builder.AppendFormat(" LEFT JOIN ");
-            builder.AppendFormat(" (SELECT IDCardNo,CheckDate,Doctor FROM tbl_recordscustomerbaseinfo Customer ");
+            builder.AppendFormat(" (SELECT IDCardNo,CheckDate,Doctor FROM ARCHIVE_CUSTOMERBASEINFO Customer ");
             builder.AppendFormat("    WHERE CheckDate=(");
-            builder.AppendFormat("        SELECT MAX(CheckDate) FROM tbl_recordscustomerbaseinfo");
+            builder.AppendFormat("        SELECT MAX(CheckDate) FROM ARCHIVE_CUSTOMERBASEINFO");
             builder.AppendFormat("        WHERE IDCardNo=Customer.IDCardNo");
             builder.AppendFormat("    )");
             builder.AppendFormat(" ) Customer ON Base.IDCardNo=Customer.IDCardNo ");
-            builder.AppendFormat(" LEFT JOIN tbl_recordsenvironment Environment ");
+            builder.AppendFormat(" LEFT JOIN ARCHIVE_ENVIRONMENT Environment ");
             builder.AppendFormat(" ON Environment.IDCardNo=Base.IDCardNo ");
-            builder.AppendFormat(" LEFT JOIN tbl_recordsillnesshistoryinfo Ill ");
+            builder.AppendFormat(" LEFT JOIN ARCHIVE_ILLNESSHISTORYINFO Ill ");
             builder.AppendFormat(" ON Ill.IDCardNo=Base.IDCardNo AND IllnessType='1' ");
-            builder.AppendFormat(" LEFT JOIN tbl_recordsfamilyhistoryinfo Family ");
+            builder.AppendFormat(" LEFT JOIN ARCHIVE_FAMILYHISTORYINFO Family ");
             builder.AppendFormat(" ON Family.IDCardNo=Base.IDCardNo ");
 
             if (!string.IsNullOrEmpty(strWhere.Trim()))
@@ -2115,19 +2115,19 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.AppendFormat("SELECT COUNT(0) FROM( ");
             builder.AppendFormat("SELECT Base.IDCardNo");
             builder.AppendFormat("{0}", strCol);
-            builder.AppendFormat(" FROM tbl_recordsbaseinfo Base ");
+            builder.AppendFormat(" FROM ARCHIVE_BASEINFO Base ");
             builder.AppendFormat(" LEFT JOIN ");
-            builder.AppendFormat(" (SELECT IDCardNo,CheckDate,Doctor FROM tbl_recordscustomerbaseinfo Customer ");
+            builder.AppendFormat(" (SELECT IDCardNo,CheckDate,Doctor FROM ARCHIVE_CUSTOMERBASEINFO Customer ");
             builder.AppendFormat("    WHERE CheckDate=(");
-            builder.AppendFormat("        SELECT MAX(CheckDate) FROM tbl_recordscustomerbaseinfo");
+            builder.AppendFormat("        SELECT MAX(CheckDate) FROM ARCHIVE_CUSTOMERBASEINFO");
             builder.AppendFormat("        WHERE IDCardNo=Customer.IDCardNo");
             builder.AppendFormat("    )");
             builder.AppendFormat(" ) Customer ON Base.IDCardNo=Customer.IDCardNo ");
-            builder.AppendFormat(" LEFT JOIN tbl_recordsenvironment Environment ");
+            builder.AppendFormat(" LEFT JOIN ARCHIVE_ENVIRONMENT Environment ");
             builder.AppendFormat(" ON Environment.IDCardNo=Base.IDCardNo ");
-            builder.AppendFormat(" LEFT JOIN tbl_recordsillnesshistoryinfo Ill ");
+            builder.AppendFormat(" LEFT JOIN ARCHIVE_ILLNESSHISTORYINFO Ill ");
             builder.AppendFormat(" ON Ill.IDCardNo=Base.IDCardNo AND IllnessType='1' ");
-            builder.AppendFormat(" LEFT JOIN tbl_recordsfamilyhistoryinfo Family ");
+            builder.AppendFormat(" LEFT JOIN ARCHIVE_FAMILYHISTORYINFO Family ");
             builder.AppendFormat(" ON Family.IDCardNo=Base.IDCardNo ");
 
             if (!string.IsNullOrEmpty(strWhere.Trim()))
@@ -2164,31 +2164,31 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.AppendFormat("DATE_FORMAT(Base.Birthday,'%Y-%m-%d') AS Birthday,Base.Phone, ");
             builder.AppendFormat("DATE_FORMAT(Customer.CheckDate,'%Y-%m-%d') AS CheckDate,Customer.ID AS CustomerID ");
             builder.AppendFormat("{0}", strCol);
-            builder.AppendFormat(" FROM tbl_recordsbaseinfo Base ");
-            builder.AppendFormat(" LEFT JOIN tbl_recordscustomerbaseinfo Customer ");
+            builder.AppendFormat(" FROM ARCHIVE_BASEINFO Base ");
+            builder.AppendFormat(" LEFT JOIN ARCHIVE_CUSTOMERBASEINFO Customer ");
             builder.AppendFormat(" ON Base.IDCardNo=Customer.IDCardNo ");
-            builder.AppendFormat(" LEFT JOIN tbl_recordsgeneralcondition General ");
+            builder.AppendFormat(" LEFT JOIN ARCHIVE_GENERALCONDITION General ");
             builder.AppendFormat(" ON General.IDCardNo=Customer.IDCardNo ");
             builder.AppendFormat(" AND Customer.ID=General.OutKey ");
-            builder.AppendFormat(" LEFT JOIN tbl_recordslifestyle Life ");
+            builder.AppendFormat(" LEFT JOIN ARCHIVE_LIFESTYLE Life ");
             builder.AppendFormat(" ON Life.IDCardNo=Customer.IDCardNo ");
             builder.AppendFormat(" AND Customer.ID=Life.OutKey ");
-            builder.AppendFormat(" LEFT JOIN tbl_recordsviscerafunction Function ");
+            builder.AppendFormat(" LEFT JOIN ARCHIVE_VISCERAFUNCTION Function ");
             builder.AppendFormat(" ON Function.IDCardNo=Customer.IDCardNo ");
             builder.AppendFormat(" AND Customer.ID=Function.OutKey ");
-            builder.AppendFormat(" LEFT JOIN tbl_recordsphysicalexam Physical ");
+            builder.AppendFormat(" LEFT JOIN ARCHIVE_PHYSICALEXAM Physical ");
             builder.AppendFormat(" ON Physical.IDCardNo=Customer.IDCardNo ");
             builder.AppendFormat(" AND Customer.ID=Physical.OutKey ");
-            builder.AppendFormat(" LEFT JOIN tbl_recordsassistcheck Checks ");
+            builder.AppendFormat(" LEFT JOIN ARCHIVE_ASSISTCHECK Checks ");
             builder.AppendFormat(" ON Checks.IDCardNo=Customer.IDCardNo ");
             builder.AppendFormat(" AND Customer.ID=Checks.OutKey ");
-            builder.AppendFormat(" LEFT JOIN tbl_RecordsHealthQuestion Health ");
+            builder.AppendFormat(" LEFT JOIN ARCHIVE_HEALTHQUESTION Health ");
             builder.AppendFormat(" ON Health.IDCardNo=Customer.IDCardNo ");
             builder.AppendFormat(" AND Customer.ID=Health.OutKey ");
-            builder.AppendFormat(" LEFT JOIN tbl_recordsassessmentguide Assess ");
+            builder.AppendFormat(" LEFT JOIN ARCHIVE_ASSESSMENTGUIDE Assess ");
             builder.AppendFormat(" ON Assess.IDCardNo=Customer.IDCardNo ");
             builder.AppendFormat(" AND Customer.ID=Assess.OutKey ");
-            builder.AppendFormat(" LEFT JOIN tbl_recordsinoculationhistory Inocula ");
+            builder.AppendFormat(" LEFT JOIN ARCHIVE_INOCULATIONHISTORY Inocula ");
             builder.AppendFormat(" ON Inocula.IDCardNo=Customer.IDCardNo ");
             builder.AppendFormat(" AND Customer.ID=Inocula.OutKey ");
 
@@ -2229,31 +2229,31 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.AppendFormat("SELECT COUNT(*) FROM( ");
             builder.AppendFormat("SELECT Base.IDCardNo ");
             builder.AppendFormat("{0}", strCol);
-            builder.AppendFormat(" FROM tbl_recordsbaseinfo Base ");
-            builder.AppendFormat(" LEFT JOIN tbl_recordscustomerbaseinfo Customer ");
+            builder.AppendFormat(" FROM ARCHIVE_BASEINFO Base ");
+            builder.AppendFormat(" LEFT JOIN ARCHIVE_CUSTOMERBASEINFO Customer ");
             builder.AppendFormat(" ON Base.IDCardNo=Customer.IDCardNo ");
-            builder.AppendFormat(" LEFT JOIN tbl_recordsgeneralcondition General ");
+            builder.AppendFormat(" LEFT JOIN ARCHIVE_GENERALCONDITION General ");
             builder.AppendFormat(" ON General.IDCardNo=Customer.IDCardNo ");
             builder.AppendFormat(" AND Customer.ID=General.OutKey ");
-            builder.AppendFormat(" LEFT JOIN tbl_recordslifestyle Life ");
+            builder.AppendFormat(" LEFT JOIN ARCHIVE_LIFESTYLE Life ");
             builder.AppendFormat(" ON Life.IDCardNo=Customer.IDCardNo ");
             builder.AppendFormat(" AND Customer.ID=Life.OutKey ");
-            builder.AppendFormat(" LEFT JOIN tbl_recordsviscerafunction Function ");
+            builder.AppendFormat(" LEFT JOIN ARCHIVE_VISCERAFUNCTION Function ");
             builder.AppendFormat(" ON Function.IDCardNo=Customer.IDCardNo ");
             builder.AppendFormat(" AND Customer.ID=Function.OutKey ");
-            builder.AppendFormat(" LEFT JOIN tbl_recordsphysicalexam Physical ");
+            builder.AppendFormat(" LEFT JOIN ARCHIVE_PHYSICALEXAM Physical ");
             builder.AppendFormat(" ON Physical.IDCardNo=Customer.IDCardNo ");
             builder.AppendFormat(" AND Customer.ID=Physical.OutKey ");
-            builder.AppendFormat(" LEFT JOIN tbl_recordsassistcheck Checks ");
+            builder.AppendFormat(" LEFT JOIN ARCHIVE_ASSISTCHECK Checks ");
             builder.AppendFormat(" ON Checks.IDCardNo=Customer.IDCardNo ");
             builder.AppendFormat(" AND Customer.ID=Checks.OutKey ");
-            builder.AppendFormat(" LEFT JOIN tbl_RecordsHealthQuestion Health ");
+            builder.AppendFormat(" LEFT JOIN ARCHIVE_HEALTHQUESTION Health ");
             builder.AppendFormat(" ON Health.IDCardNo=Customer.IDCardNo ");
             builder.AppendFormat(" AND Customer.ID=Health.OutKey ");
-            builder.AppendFormat(" LEFT JOIN tbl_recordsassessmentguide Assess ");
+            builder.AppendFormat(" LEFT JOIN ARCHIVE_ASSESSMENTGUIDE Assess ");
             builder.AppendFormat(" ON Assess.IDCardNo=Customer.IDCardNo ");
             builder.AppendFormat(" AND Customer.ID=Assess.OutKey ");
-            builder.AppendFormat(" LEFT JOIN tbl_recordsinoculationhistory Inocula ");
+            builder.AppendFormat(" LEFT JOIN ARCHIVE_INOCULATIONHISTORY Inocula ");
             builder.AppendFormat(" ON Inocula.IDCardNo=Customer.IDCardNo ");
             builder.AppendFormat(" AND Customer.ID=Inocula.OutKey ");
 
@@ -2292,8 +2292,8 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.AppendFormat("DATE_FORMAT(Base.Birthday,'%Y-%m-%d') AS Birthday,Base.Phone, ");
             builder.AppendFormat("DATE_FORMAT(Older.FollowUpDate,'%Y-%m-%d') AS FollowUpDate ");
             builder.AppendFormat("{0}", strCol);
-            builder.AppendFormat(" FROM tbl_recordsbaseinfo Base ");
-            builder.AppendFormat(" LEFT JOIN tbl_olderselfcareability Older");
+            builder.AppendFormat(" FROM ARCHIVE_BASEINFO Base ");
+            builder.AppendFormat(" LEFT JOIN OLDER_SELFCAREABILITY Older");
             builder.AppendFormat(" ON Base.IDCardNo=Older.IDCardNo ");
 
             if (!string.IsNullOrEmpty(strWhere.Trim()))
@@ -2332,8 +2332,8 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.AppendFormat("SELECT COUNT(0) FROM( ");
             builder.AppendFormat("SELECT Base.IDCardNo");
             builder.AppendFormat("{0}", strCol);
-            builder.AppendFormat(" FROM tbl_recordsbaseinfo Base ");
-            builder.AppendFormat(" LEFT JOIN tbl_olderselfcareability Older");
+            builder.AppendFormat(" FROM ARCHIVE_BASEINFO Base ");
+            builder.AppendFormat(" LEFT JOIN OLDER_SELFCAREABILITY Older");
             builder.AppendFormat(" ON Base.IDCardNo=Older.IDCardNo ");
 
             if (!string.IsNullOrEmpty(strWhere.Trim()))
@@ -2370,16 +2370,16 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.AppendFormat("DATE_FORMAT(Base.Birthday,'%Y-%m-%d') AS Birthday,Base.Phone, ");
             builder.AppendFormat("DATE_FORMAT(Visit.FollowUpDate,'%Y-%m-%d') AS FollowUpDate ");
             builder.AppendFormat("{0}", strCol);
-            builder.AppendFormat(" FROM tbl_recordsbaseinfo Base ");
-            builder.AppendFormat(" LEFT JOIN tbl_chronichypertensionbaseinfo HyperBase");
+            builder.AppendFormat(" FROM ARCHIVE_BASEINFO Base ");
+            builder.AppendFormat(" LEFT JOIN CD_HYPERTENSION_BASEINFO HyperBase");
             builder.AppendFormat(" ON Base.IDCardNo=HyperBase.IDCardNo ");
-            builder.AppendFormat(" LEFT JOIN tbl_chronichypertensionvisit Visit");
+            builder.AppendFormat(" LEFT JOIN CD_HYPERTENSIONFOLLOWUP Visit");
             builder.AppendFormat(" ON Base.IDCardNo=Visit.IDCardNo ");
-            builder.AppendFormat(" LEFT JOIN tbl_chronicdrugcondition Conditions");
+            builder.AppendFormat(" LEFT JOIN CD_DRUGCONDITION Conditions");
             builder.AppendFormat(" ON Base.IDCardNo=Conditions.IDCardNo ");
             builder.AppendFormat(" AND Conditions.Type=1 ");
             builder.AppendFormat(" AND Visit.ID=Conditions.OutKey ");
-            builder.AppendFormat(" LEFT JOIN tbl_chronicdrugcondition ConditionChange");
+            builder.AppendFormat(" LEFT JOIN CD_DRUGCONDITION ConditionChange");
             builder.AppendFormat(" ON Base.IDCardNo=ConditionChange.IDCardNo ");
             builder.AppendFormat(" AND ConditionChange.Type=7 ");
             builder.AppendFormat(" AND Visit.ID=ConditionChange.OutKey ");
@@ -2420,16 +2420,16 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.AppendFormat("SELECT COUNT(0) FROM( ");
             builder.AppendFormat("SELECT Base.IDCardNo");
             builder.AppendFormat("{0}", strCol);
-            builder.AppendFormat(" FROM tbl_recordsbaseinfo Base ");
-            builder.AppendFormat(" LEFT JOIN tbl_chronichypertensionbaseinfo HyperBase");
+            builder.AppendFormat(" FROM ARCHIVE_BASEINFO Base ");
+            builder.AppendFormat(" LEFT JOIN CD_HYPERTENSION_BASEINFO HyperBase");
             builder.AppendFormat(" ON Base.IDCardNo=HyperBase.IDCardNo ");
-            builder.AppendFormat(" LEFT JOIN tbl_chronichypertensionvisit Visit");
+            builder.AppendFormat(" LEFT JOIN CD_HYPERTENSIONFOLLOWUP Visit");
             builder.AppendFormat(" ON Base.IDCardNo=Visit.IDCardNo ");
-            builder.AppendFormat(" LEFT JOIN tbl_chronicdrugcondition Conditions");
+            builder.AppendFormat(" LEFT JOIN CD_DRUGCONDITION Conditions");
             builder.AppendFormat(" ON Base.IDCardNo=Conditions.IDCardNo ");
             builder.AppendFormat(" AND Conditions.Type=1 ");
             builder.AppendFormat(" AND Visit.ID=Conditions.OutKey ");
-            builder.AppendFormat(" LEFT JOIN tbl_chronicdrugcondition ConditionChange");
+            builder.AppendFormat(" LEFT JOIN CD_DRUGCONDITION ConditionChange");
             builder.AppendFormat(" ON Base.IDCardNo=ConditionChange.IDCardNo ");
             builder.AppendFormat(" AND ConditionChange.Type=7 ");
             builder.AppendFormat(" AND Visit.ID=ConditionChange.OutKey ");
@@ -2468,16 +2468,16 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.AppendFormat("DATE_FORMAT(Base.Birthday,'%Y-%m-%d') AS Birthday,Base.Phone, ");
             builder.AppendFormat("DATE_FORMAT(Visit.VisitDate,'%Y-%m-%d') AS VisitDate ");
             builder.AppendFormat("{0}", strCol);
-            builder.AppendFormat(" FROM tbl_recordsbaseinfo Base ");
-            builder.AppendFormat(" LEFT JOIN tbl_ChronicDiabetesBaseInfo DiabeteBase");
+            builder.AppendFormat(" FROM ARCHIVE_BASEINFO Base ");
+            builder.AppendFormat(" LEFT JOIN CD_DIABETES_BASEINFO DiabeteBase");
             builder.AppendFormat(" ON Base.IDCardNo=DiabeteBase.IDCardNo ");
-            builder.AppendFormat(" LEFT JOIN tbl_ChronicDiadetesVisit Visit");
+            builder.AppendFormat(" LEFT JOIN CD_DIABETESFOLLOWUP Visit");
             builder.AppendFormat(" ON Base.IDCardNo=Visit.IDCardNo ");
-            builder.AppendFormat(" LEFT JOIN tbl_chronicdrugcondition Conditions");
+            builder.AppendFormat(" LEFT JOIN CD_DRUGCONDITION Conditions");
             builder.AppendFormat(" ON Base.IDCardNo=Conditions.IDCardNo ");
             builder.AppendFormat(" AND Conditions.Type=2 ");
             builder.AppendFormat(" AND Visit.ID=Conditions.OutKey ");
-            builder.AppendFormat(" LEFT JOIN tbl_chronicdrugcondition ConditionChange");
+            builder.AppendFormat(" LEFT JOIN CD_DRUGCONDITION ConditionChange");
             builder.AppendFormat(" ON Base.IDCardNo=ConditionChange.IDCardNo ");
             builder.AppendFormat(" AND ConditionChange.Type=8 ");
             builder.AppendFormat(" AND Visit.ID=ConditionChange.OutKey ");
@@ -2518,16 +2518,16 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.AppendFormat("SELECT COUNT(0) FROM( ");
             builder.AppendFormat("SELECT Base.IDCardNo");
             builder.AppendFormat("{0}", strCol);
-            builder.AppendFormat(" FROM tbl_recordsbaseinfo Base ");
-            builder.AppendFormat(" LEFT JOIN tbl_ChronicDiabetesBaseInfo DiabeteBase");
+            builder.AppendFormat(" FROM ARCHIVE_BASEINFO Base ");
+            builder.AppendFormat(" LEFT JOIN CD_DIABETES_BASEINFO DiabeteBase");
             builder.AppendFormat(" ON Base.IDCardNo=DiabeteBase.IDCardNo ");
-            builder.AppendFormat(" LEFT JOIN tbl_ChronicDiadetesVisit Visit");
+            builder.AppendFormat(" LEFT JOIN CD_DIABETESFOLLOWUP Visit");
             builder.AppendFormat(" ON Base.IDCardNo=Visit.IDCardNo ");
-            builder.AppendFormat(" LEFT JOIN tbl_chronicdrugcondition Conditions");
+            builder.AppendFormat(" LEFT JOIN CD_DRUGCONDITION Conditions");
             builder.AppendFormat(" ON Base.IDCardNo=Conditions.IDCardNo ");
             builder.AppendFormat(" AND Conditions.Type=2 ");
             builder.AppendFormat(" AND Visit.ID=Conditions.OutKey ");
-            builder.AppendFormat(" LEFT JOIN tbl_chronicdrugcondition ConditionChange");
+            builder.AppendFormat(" LEFT JOIN CD_DRUGCONDITION ConditionChange");
             builder.AppendFormat(" ON Base.IDCardNo=ConditionChange.IDCardNo ");
             builder.AppendFormat(" AND ConditionChange.Type=8 ");
             builder.AppendFormat(" AND Visit.ID=ConditionChange.OutKey ");

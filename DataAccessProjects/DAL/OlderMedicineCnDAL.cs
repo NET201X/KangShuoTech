@@ -12,7 +12,7 @@
         public int Add(OlderMedicineCnModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_oldermedicinecn(");
+            builder.Append("insert into OLD_MEDICINE_CN(");
             builder.Append("RecordID,IDCardNo,CustomerID,PhysicalID,Energy,Tired,Breath,Voice,Emotion,Spirit,Alone,Fear,");
             builder.Append("Weight,Eye,FootHand,Stomach,Cold,Influenza,Nasal,Snore,Allergy,Urticaria,Skin,Scratch,Mouth,");
             builder.Append("Arms,Greasy,Spot,Eczema,Thirsty,Smell,Abdomen,Coolfood,Defecate,Defecatedry,Tongue,Vein,");
@@ -127,7 +127,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_oldermedicinecn(");
+            builder.Append("INSERT INTO OLD_MEDICINE_CN(");
             builder.Append("RecordID,IDCardNo,CustomerID,PhysicalID,Energy,Tired,Breath,Voice,Emotion,Spirit,Alone,Fear,");
             builder.Append("Weight,Eye,FootHand,Stomach,Cold,Influenza,Nasal,Snore,Allergy,Urticaria,Skin,Scratch,Mouth,");
             builder.Append("Arms,Greasy,Spot,Eczema,Thirsty,Smell,Abdomen,Coolfood,Defecate,Defecatedry,Tongue,Vein,");
@@ -243,7 +243,7 @@
         public bool DelOUTkey(int OUTkey)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_oldermedicinecn ");
+            builder.Append("delete from OLD_MEDICINE_CN ");
             builder.Append(" where OUTkey=@OUTkey");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@OUTkey", MySqlDbType.Int32, 11) };
             cmdParms[0].Value = OUTkey;
@@ -253,7 +253,7 @@
         public bool ExistOutKey(int OUTkey)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_oldermedicinecn");
+            builder.Append("select count(1) from OLD_MEDICINE_CN");
             builder.Append(" where OUTkey=@OUTkey");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@OUTkey", MySqlDbType.Int32, 11) };
             cmdParms[0].Value = OUTkey;
@@ -267,7 +267,7 @@
             builder.Append("Spirit,Alone,Fear,Weight,Eye,FootHand,Stomach,Cold,Influenza,Nasal,Snore,Allergy,Urticaria,");
             builder.Append("Skin,Scratch,Mouth,Arms,Greasy,Spot,Eczema,Thirsty,Smell,Abdomen,Coolfood,Defecate,Defecatedry,");
             builder.Append("Tongue,Vein,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,FollowUpDoctor,RecordDate,IsDel");
-            builder.Append(" FROM tbl_oldermedicinecn ");
+            builder.Append(" FROM OLD_MEDICINE_CN ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -282,7 +282,7 @@
             builder.Append("select ID,RecordID,IDCardNo,CustomerID,PhysicalID,OUTkey,Energy,Tired,Breath,Voice,Emotion,Spirit,");
             builder.Append("Alone,Fear,Weight,Eye,FootHand,Stomach,Cold,Influenza,Nasal,Snore,Allergy,Urticaria,Skin,Scratch,");
             builder.Append("Mouth,Arms,Greasy,Spot,Eczema,Thirsty,Smell,Abdomen,Coolfood,Defecate,Defecatedry,Tongue,Vein,CreatedBy,");
-            builder.Append("CreatedDate,LastUpdateBy,LastUpdateDate,FollowUpDoctor,RecordDate,IsDel from tbl_oldermedicinecn ");
+            builder.Append("CreatedDate,LastUpdateBy,LastUpdateDate,FollowUpDoctor,RecordDate,IsDel from OLD_MEDICINE_CN ");
             builder.Append(" where IDCardNo=@IDCardNo and OUTkey = @OUTkey ");
             MySqlParameter[] cmdParms = new MySqlParameter[] {
                 new MySqlParameter("@IDCardNo", MySqlDbType.String),
@@ -301,7 +301,7 @@
             builder.Append("Alone,Fear,Weight,Eye,FootHand,Stomach,Cold,Influenza,Nasal,Snore,Allergy,Urticaria,Skin,Scratch,");
             builder.Append("Mouth,Arms,Greasy,Spot,Eczema,Thirsty,Smell,Abdomen,Coolfood,Defecate,Defecatedry,Tongue,Vein,CreatedBy,");
             builder.Append("CreatedDate,LastUpdateBy,LastUpdateDate,FollowUpDoctor,RecordDate,IsDel,OUTkey ");
-            builder.Append("from tbl_oldermedicinecn ");
+            builder.Append("from OLD_MEDICINE_CN ");
             builder.Append(" where OUTkey=@OUTkey");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@OUTkey", MySqlDbType.Int32, 11) };
             cmdParms[0].Value = OUtkey;
@@ -312,7 +312,7 @@
         public bool Update(OlderMedicineCnModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_oldermedicinecn set ");
+            builder.Append("update OLD_MEDICINE_CN set ");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("CustomerID=@CustomerID,");
@@ -457,7 +457,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("UPDATE tbl_oldermedicinecn SET ");
+            builder.Append("UPDATE OLD_MEDICINE_CN SET ");
             builder.Append("Energy=@Energy,");
             builder.Append("Tired=@Tired,");
             builder.Append("Breath=@Breath,");

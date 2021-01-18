@@ -15,7 +15,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(HealthAssessExamModel model)
         {
            StringBuilder builder = new StringBuilder();
-           builder.Append(" insert into tbl_hhhealthinquiry(");
+           builder.Append(" insert into HEALTHHOUSE_ASSESS_EXAM(");
            builder.Append( "PID,IDCardNo,MedicalHistory,FamilyHistory,HospitalHistory,TakingMedicine,DietaryHabit,DietaryNum,DietaryLaw,DietaryOther,ExerciseExistense,IsSmoke,IsDrink,ExerciseExistenseOther,ExerciseRate,ExerciseTimes,OldSelfCareability,GloomyScore,MedicalOther,FamilyOther)");
            builder.Append(" values (");
            builder.Append("@PID,@IDCardNo,@MedicalHistory,@FamilyHistory,@HospitalHistory,@TakingMedicine,@DietaryHabit,@DietaryNum,@DietaryLaw,@DietaryOther,@ExerciseExistense,@IsSmoke,@IsDrink,@ExerciseExistenseOther,@ExerciseRate,@ExerciseTimes,@OldSelfCareability,@GloomyScore,@MedicalOther,@FamilyOther)");
@@ -74,7 +74,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append(" select * ");
-            builder.Append(" from tbl_hhhealthinquiry ");
+            builder.Append(" from HEALTHHOUSE_ASSESS_EXAM ");
             builder.Append(" where PID=@PID ");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] {
@@ -99,7 +99,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool ExistsPID(string IDCardNo, int PID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_hhhealthinquiry");
+            builder.Append("select count(1) from HEALTHHOUSE_ASSESS_EXAM");
             builder.Append(" where IDCardNo=@IDCardNo ");
             builder.Append(" and PID=@PID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { 
@@ -113,7 +113,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(HealthAssessExamModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append(" update tbl_hhhealthinquiry set ");
+            builder.Append(" update HEALTHHOUSE_ASSESS_EXAM set ");
             builder.Append("PID=@PID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("MedicalHistory=@MedicalHistory,");
@@ -193,8 +193,8 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("SELECT COUNT(1)");
-            builder.Append(" From tbl_HHHealthInquiry a ");
-            builder.Append(" Left Join tbl_recordsbaseinfo b ON a.IDCardNo = b.IDCardNo");
+            builder.Append(" From HEALTHHOUSE_ASSESS_EXAM a ");
+            builder.Append(" Left Join ARCHIVE_BASEINFO b ON a.IDCardNo = b.IDCardNo");
 
             if (strWhere.Trim() != "")
             {
@@ -245,8 +245,8 @@ namespace KangShuoTech.DataAccessProjects.DAL
                                                 ,b.CreateMenName
                                                 ,b.CreateDate");
 
-            builder.Append(" from tbl_HHHealthInquiry a");
-            builder.Append(" Left Join tbl_recordsbaseinfo b on a.IDCardNo = b.IDCardNo");
+            builder.Append(" from HEALTHHOUSE_ASSESS_EXAM a");
+            builder.Append(" Left Join ARCHIVE_BASEINFO b on a.IDCardNo = b.IDCardNo");
 
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
@@ -268,7 +268,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_HHHealthInquiry ");
+            builder.Append("delete from HEALTHHOUSE_ASSESS_EXAM ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -303,8 +303,8 @@ namespace KangShuoTech.DataAccessProjects.DAL
                                     a.GloomyScore,
                                     a.MedicalOther,
                                     a.FamilyOther ");
-            builder.Append(" From tbl_HHHealthInquiry a ");
-            builder.Append(" Left Join tbl_RecordsHealthHouse b ON a.IDCardNo = b.IDCardNo and a.PID=b.ID ");
+            builder.Append(" From HEALTHHOUSE_ASSESS_EXAM a ");
+            builder.Append(" Left Join ARCHIVE_HEALTH_HOUSE b ON a.IDCardNo = b.IDCardNo and a.PID=b.ID ");
             builder.Append(" where a.IDCardNo=@IDCardNo ");
             builder.Append(" order by b.CheckDate DESC LIMIT 0,1  ");
 

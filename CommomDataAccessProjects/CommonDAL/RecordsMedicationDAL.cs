@@ -13,7 +13,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("DELETE FROM tbl_recordsmedication ");
+            builder.Append("DELETE FROM ARCHIVE_MEDICATION ");
             builder.Append(" WHERE OutKey=@OutKey");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] {
@@ -28,7 +28,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder strSql = new StringBuilder();
 
-            strSql.Append("INSERT INTO tbl_RecordsMedication(");
+            strSql.Append("INSERT INTO ARCHIVE_MEDICATION(");
             strSql.Append("PhysicalID,IDCardNo,UseAge,UseNum,StartTime,EndTime,PillDependence,MedicinalName,drugtype,factory,");
             strSql.Append("OutKey,Num,Frequency,UseNumUnit,UseYear,UseYearUnit,OtherExplain,NumUnit,Remark,DrugYear,DrugMonth,");
             strSql.Append("DrugDay,FreUseNum,FreUseDay,UseDay,Effect,EffectDes,EachNum)");
@@ -107,7 +107,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 		{
 			StringBuilder builder = new StringBuilder();
 
-			builder.Append("SELECT * FROM tbl_RecordsMedication ");
+			builder.Append("SELECT * FROM ARCHIVE_MEDICATION ");
 
 			if (strWhere.Trim() != "")
 			{

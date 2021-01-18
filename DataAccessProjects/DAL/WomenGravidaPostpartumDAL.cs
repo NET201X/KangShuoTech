@@ -12,7 +12,7 @@
         public int Add(WomenGravidaPostpartumModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_womengravidapostpartum(");
+            builder.Append("insert into GRAVIDA_POSTPARTUM(");
             builder.Append("CustomerID,RecordID,IDCardNo,FollowupDate,Tem,HealthCondition,Mentalcondition,HBbloodPressure,LBloodPressure,Breast,BreastEx,Lochia,LochiaEx,Uterus,UterusEx,Wound,WoundEx,Other,Classification,ClassificationEx,Advising,AdvisingOther,Referral,ReferralReason,ReferralOrg,NextFollowUpDate,FollowUpDoctor,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel,");
             builder.Append("DeliveryDate,LeaveHospitalDate,ReferralContacts,ReferralContactsTel,ReferralResult)");
             builder.Append(" values (");
@@ -107,7 +107,7 @@
         public int AddServer(WomenGravidaPostpartumModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_womengravidapostpartum(");
+            builder.Append("insert into GRAVIDA_POSTPARTUM(");
             builder.Append("CustomerID,RecordID,IDCardNo,FollowupDate,Tem,HealthCondition,Mentalcondition,HBbloodPressure,LBloodPressure,Breast,BreastEx,Lochia,LochiaEx,Uterus,UterusEx,Wound,WoundEx,Other,Classification,ClassificationEx,Advising,AdvisingOther,Referral,ReferralReason,ReferralOrg,NextFollowUpDate,FollowUpDoctor,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel,");
             builder.Append("DeliveryDate,LeaveHospitalDate,ReferralContacts,ReferralContactsTel,ReferralResult)");
             builder.Append(" values (");
@@ -362,7 +362,7 @@
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_womengravidapostpartum ");
+            builder.Append("delete from GRAVIDA_POSTPARTUM ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -372,7 +372,7 @@
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_womengravidapostpartum ");
+            builder.Append("delete from GRAVIDA_POSTPARTUM ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -380,7 +380,7 @@
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_womengravidapostpartum");
+            builder.Append("select count(1) from GRAVIDA_POSTPARTUM");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -392,7 +392,7 @@
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,CustomerID,RecordID,IDCardNo,FollowupDate,Tem,HealthCondition,Mentalcondition,HBbloodPressure,LBloodPressure,Breast,BreastEx,Lochia,LochiaEx,Uterus,UterusEx,Wound,WoundEx,Other,Classification,ClassificationEx,Advising,AdvisingOther,Referral,ReferralReason,ReferralOrg,NextFollowUpDate,FollowUpDoctor,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel, ");
             builder.Append("DeliveryDate,LeaveHospitalDate,ReferralContacts,ReferralContactsTel,ReferralResult ");
-            builder.Append(" FROM tbl_womengravidapostpartum ");
+            builder.Append(" FROM GRAVIDA_POSTPARTUM ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -413,7 +413,7 @@
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_womengravidapostpartum T ");
+            builder.Append(")AS Row, T.*  from GRAVIDA_POSTPARTUM T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -425,7 +425,7 @@
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_womengravidapostpartum");
+            return MySQLHelper.GetMaxID("ID", "GRAVIDA_POSTPARTUM");
         }
 
         public WomenGravidaPostpartumModel GetModel(string IDCardNo)
@@ -433,7 +433,7 @@
             StringBuilder builder = new StringBuilder();
             builder.Append("select  ID,CustomerID,RecordID,IDCardNo,FollowupDate,Tem,HealthCondition,Mentalcondition,HBbloodPressure,LBloodPressure,Breast,BreastEx,Lochia,LochiaEx,Uterus,UterusEx,Wound,WoundEx,Other,Classification,ClassificationEx,Advising,AdvisingOther,Referral,ReferralReason,ReferralOrg,NextFollowUpDate,FollowUpDoctor,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel,  ");
             builder.Append("DeliveryDate,LeaveHospitalDate,ReferralContacts,ReferralContactsTel,ReferralResult ");
-            builder.Append("from tbl_womengravidapostpartum ");
+            builder.Append("from GRAVIDA_POSTPARTUM ");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -449,7 +449,7 @@
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_womengravidapostpartum ");
+            builder.Append("select count(1) FROM GRAVIDA_POSTPARTUM ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -465,7 +465,7 @@
         public bool Update(WomenGravidaPostpartumModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_womengravidapostpartum set ");
+            builder.Append("update GRAVIDA_POSTPARTUM set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
@@ -588,7 +588,7 @@
         public bool UpdateServer(WomenGravidaPostpartumModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_womengravidapostpartum set ");
+            builder.Append("update GRAVIDA_POSTPARTUM set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");

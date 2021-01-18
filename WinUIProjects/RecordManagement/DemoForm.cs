@@ -35,7 +35,7 @@ namespace RecordManagement
             this.MainFormUserControl1.BackColor = System.Drawing.Color.White;
             this.MainFormUserControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MainFormUserControl1.BackgroundImage")));
             this.MainFormUserControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MainFormUserControl1.IDCardNo = "360502195306090016";
+            this.MainFormUserControl1.IDCardNo = "36050219360726464X";
             this.MainFormUserControl1.Location = new System.Drawing.Point(5, 5);
             this.MainFormUserControl1.Name = "MainFormUserControl1";
             this.MainFormUserControl1.Size = new System.Drawing.Size(1200, 534);

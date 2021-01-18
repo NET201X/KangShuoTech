@@ -12,7 +12,7 @@
         public int Add(ChronicMentalDiseaseVisitModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_chronicmentaldiseasevisit(");
+            builder.Append("insert into CD_MENTALDISEASE_FOLLOWUP(");
             builder.Append("CustomerID,RecordID,IDCardNo,FollowUpDate,Fatalness,PresentSymptom,PresentSymptoOther,");
             builder.Append("Insight,SleepQuality,Diet,PersonalCare,Housework,ProductLaborWork,LearningAbility,");
             builder.Append("SocialInterIntera,MildTroubleFrequen,CreateDistuFrequen,CauseAccidFrequen,AutolesionFrequen,");
@@ -170,7 +170,7 @@
         public int AddServer(ChronicMentalDiseaseVisitModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_chronicmentaldiseasevisit(");
+            builder.Append("insert into CD_MENTALDISEASE_FOLLOWUP(");
             builder.Append("CustomerID,RecordID,IDCardNo,FollowUpDate,Fatalness,PresentSymptom,PresentSymptoOther,");
             builder.Append("Insight,SleepQuality,Diet,PersonalCare,Housework,ProductLaborWork,LearningAbility,");
             builder.Append("SocialInterIntera,MildTroubleFrequen,CreateDistuFrequen,CauseAccidFrequen,AutolesionFrequen,");
@@ -593,7 +593,7 @@
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_chronicmentaldiseasevisit ");
+            builder.Append("delete from CD_MENTALDISEASE_FOLLOWUP ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -603,7 +603,7 @@
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_chronicmentaldiseasevisit ");
+            builder.Append("delete from CD_MENTALDISEASE_FOLLOWUP ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -611,7 +611,7 @@
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_chronicmentaldiseasevisit");
+            builder.Append("select count(1) from CD_MENTALDISEASE_FOLLOWUP");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -620,7 +620,7 @@
         public bool ExistVisitdate(string visitdate, string IDCardNo)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_chronicmentaldiseasevisit");
+            builder.Append("select count(1) from CD_MENTALDISEASE_FOLLOWUP");
             builder.Append(" where FollowUpDate = @FollowUpDate and IDCardNo =@IDCardNo ");
             MySqlParameter[] cmdParms = new MySqlParameter[] { 
                 new MySqlParameter("@FollowUpDate", Convert.ToDateTime( visitdate).ToShortDateString()),
@@ -640,7 +640,7 @@
             builder.Append("ReferralReason,ReferralAgencDepar,RehabiliMeasu,RehabiliMeasuOther,FollowupClassificat,");
             builder.Append("NextFollowUpDate,FollowUpDoctor,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel,NoVisitReason,DeathDate,IllReason,DeathReason,OtherDangerFrequen,FollowUpType, ");
             builder.Append("JointPartFlag,PoliceAgent,PoliceAgentTel,CommunityAgent,CommunityAgentTel,ReferralResult,ReferralOrgan,ReferraContacts,ReferralContactsTel,ContactSpecialist,SpecialistName,SpecialistTel,DisposalResult  ");
-            builder.Append(" FROM tbl_chronicmentaldiseasevisit ");
+            builder.Append(" FROM CD_MENTALDISEASE_FOLLOWUP ");
             builder.Append(" where FollowUpDate = @FollowUpDate and IDCardNo =@IDCardNo ");
             MySqlParameter[] cmdParms = new MySqlParameter[] { 
                 new MySqlParameter("@FollowUpDate", MySqlDbType.Date),
@@ -668,7 +668,7 @@
             builder.Append("ReferralReason,ReferralAgencDepar,RehabiliMeasu,RehabiliMeasuOther,FollowupClassificat,");
             builder.Append("NextFollowUpDate,FollowUpDoctor,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel,NoVisitReason,DeathDate,IllReason,DeathReason,OtherDangerFrequen,FollowUpType, ");
             builder.Append("JointPartFlag,PoliceAgent,PoliceAgentTel,CommunityAgent,CommunityAgentTel,ReferralResult,ReferralOrgan,ReferraContacts,ReferralContactsTel,ContactSpecialist,SpecialistName,SpecialistTel,DisposalResult  ");
-            builder.Append(" FROM tbl_chronicmentaldiseasevisit ");
+            builder.Append(" FROM CD_MENTALDISEASE_FOLLOWUP ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -685,7 +685,7 @@
             builder.Append("(case C.FollowUpDate when null then null when '' then null else C.FollowUpDate end)FollowUpDate, ");
             builder.Append("T.PopulationType,T.FamilyIDCardNo,T.HouseRelation,T.HouseRealOther,T.TownName,");
             builder.Append("T.VillageName,T.CreateUnitName,T.CreateMenName,C.NoVisitReason,C.DeathDate,C.IllReason,C.DeathReason,C.OtherDangerFrequen,C.FollowUpType ");
-            builder.Append(" from tbl_chronicmentaldiseasevisit C inner join tbl_recordsbaseinfo T on T.IDCardNo = C.IDCardNo ");
+            builder.Append(" from CD_MENTALDISEASE_FOLLOWUP C inner join ARCHIVE_BASEINFO T on T.IDCardNo = C.IDCardNo ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE 1=1 " + strWhere);
@@ -705,7 +705,7 @@
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_chronicmentaldiseasevisit");
+            return MySQLHelper.GetMaxID("ID", "CD_MENTALDISEASE_FOLLOWUP");
         }
 
         public ChronicMentalDiseaseVisitModel GetModel(string IDCardNo)
@@ -720,7 +720,7 @@
             builder.Append("RehabiliMeasu,RehabiliMeasuOther,FollowupClassificat,NextFollowUpDate,FollowUpDoctor,");
             builder.Append("CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel,NoVisitReason,DeathDate,IllReason,DeathReason,OtherDangerFrequen,FollowUpType, ");
             builder.Append("JointPartFlag,PoliceAgent,PoliceAgentTel,CommunityAgent,CommunityAgentTel,ReferralResult,ReferralOrgan,ReferraContacts,ReferralContactsTel,ContactSpecialist,SpecialistName,SpecialistTel,DisposalResult  ");
-            builder.Append(" from tbl_chronicmentaldiseasevisit");
+            builder.Append(" from CD_MENTALDISEASE_FOLLOWUP");
             builder.Append(" where IDCardNo=@IDCardNo order by FollowUpDate desc limit 0,1 ");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -744,7 +744,7 @@
             builder.Append("RehabiliMeasu,RehabiliMeasuOther,FollowupClassificat,NextFollowUpDate,FollowUpDoctor,");
             builder.Append("CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel,NoVisitReason,DeathDate,IllReason,DeathReason,OtherDangerFrequen,FollowUpType,");
             builder.Append("JointPartFlag,PoliceAgent,PoliceAgentTel,CommunityAgent,CommunityAgentTel,ReferralResult,ReferralOrgan,ReferraContacts,ReferralContactsTel,ContactSpecialist,SpecialistName,SpecialistTel,DisposalResult  ");
-            builder.Append(" from tbl_chronicmentaldiseasevisit");
+            builder.Append(" from CD_MENTALDISEASE_FOLLOWUP");
             builder.Append(" where IDCardNo=@IDCardNo and FollowUpDate=@FollowUpDate ");
             MySqlParameter[] cmdParms = new MySqlParameter[] { 
                 new MySqlParameter("@IDCardNo", MySqlDbType.String),
@@ -772,7 +772,7 @@
             builder.Append("RehabiliMeasu,RehabiliMeasuOther,FollowupClassificat,NextFollowUpDate,FollowUpDoctor,");
             builder.Append("CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel,NoVisitReason,DeathDate,IllReason,DeathReason,OtherDangerFrequen,FollowUpType, ");
             builder.Append("JointPartFlag,PoliceAgent,PoliceAgentTel,CommunityAgent,CommunityAgentTel,ReferralResult,ReferralOrgan,ReferraContacts,ReferralContactsTel,ContactSpecialist,SpecialistName,SpecialistTel,DisposalResult  ");
-            builder.Append(" from tbl_chronicmentaldiseasevisit");
+            builder.Append(" from CD_MENTALDISEASE_FOLLOWUP");
             builder.Append(" where ID=@ID ");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 11) };
             cmdParms[0].Value = ID;
@@ -787,8 +787,8 @@
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_chronicmentaldiseasevisit C ");
-            builder.Append("left join tbl_recordsbaseinfo T on T.IDCardNo = C.IDCardNo   ");
+            builder.Append("select count(1) FROM CD_MENTALDISEASE_FOLLOWUP C ");
+            builder.Append("left join ARCHIVE_BASEINFO T on T.IDCardNo = C.IDCardNo   ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -804,7 +804,7 @@
         public bool Update(ChronicMentalDiseaseVisitModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_chronicmentaldiseasevisit set ");
+            builder.Append("update CD_MENTALDISEASE_FOLLOWUP set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
@@ -1002,7 +1002,7 @@
         public bool UpdateServer(ChronicMentalDiseaseVisitModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_chronicmentaldiseasevisit set ");
+            builder.Append("update CD_MENTALDISEASE_FOLLOWUP set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
@@ -1200,7 +1200,7 @@
         public DataSet DtMentaldiseaseCount()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select IDCardNo , NextFollowUpDate FROM  tbl_chronicmentaldiseasevisit order by NextFollowUpDate desc ");
+            builder.Append("select IDCardNo , NextFollowUpDate FROM  CD_MENTALDISEASE_FOLLOWUP order by NextFollowUpDate desc ");
             return MySQLHelper.Query(builder.ToString());
         }
     }

@@ -12,7 +12,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(RecordsFamilyInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordsfamilyinfo(");
+            builder.Append("insert into ARCHIVE_FAMILY_INFO(");
             builder.Append("FamilyRecordID,IDCardNo,RecordID,HomeAddr,HomeAddrInfo,ToiletType,HouseType,IsPoorfy,LiveStatus,IncomeAvg,CreateUnit,HouseArea,Monthoil,MonthSalt,CreatedBy,CreatedDate,LastUpDateBy,LastUpdateDate)");
             builder.Append(" values (");
             builder.Append("@FamilyRecordID,@IDCardNo,@RecordID,@HomeAddr,@HomeAddrInfo,@ToiletType,@HouseType,@IsPoorfy,@LiveStatus,@IncomeAvg,@CreateUnit,@HouseArea,@Monthoil,@MonthSalt,@CreatedBy,@CreatedDate,@LastUpDateBy,@LastUpdateDate)");
@@ -66,7 +66,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int AddServer(RecordsFamilyInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordsfamilyinfo(");
+            builder.Append("insert into ARCHIVE_FAMILY_INFO(");
             builder.Append("FamilyRecordID,IDCardNo,RecordID,HomeAddr,HomeAddrInfo,ToiletType,HouseType,IsPoorfy,LiveStatus,IncomeAvg,CreateUnit,HouseArea,Monthoil,MonthSalt,CreatedBy,CreatedDate,LastUpDateBy,LastUpdateDate)");
             builder.Append(" values (");
             builder.Append("@FamilyRecordID,@IDCardNo,@RecordID,@HomeAddr,@HomeAddrInfo,@ToiletType,@HouseType,@IsPoorfy,@LiveStatus,@IncomeAvg,@CreateUnit,@HouseArea,@Monthoil,@MonthSalt,@CreatedBy,@CreatedDate,@LastUpDateBy,@LastUpdateDate)");
@@ -209,7 +209,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordsfamilyinfo ");
+            builder.Append("delete from ARCHIVE_FAMILY_INFO ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -219,7 +219,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordsfamilyinfo ");
+            builder.Append("delete from ARCHIVE_FAMILY_INFO ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -227,7 +227,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_recordsfamilyinfo");
+            builder.Append("select count(1) from ARCHIVE_FAMILY_INFO");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -237,7 +237,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public DataSet GetList(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select f.* ,b.CUSTOMERNAME \n  from tbl_recordsfamilyinfo f inner join tbl_recordsbaseinfo b on f.IDCardNo = b.IDCardNo WHERE 1 = 1 ");
+            builder.Append("select f.* ,b.CUSTOMERNAME \n  from ARCHIVE_FAMILY_INFO f inner join ARCHIVE_BASEINFO b on f.IDCardNo = b.IDCardNo WHERE 1 = 1 ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(strWhere);
@@ -258,7 +258,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_recordsfamilyinfo T ");
+            builder.Append(")AS Row, T.*  from ARCHIVE_FAMILY_INFO T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -270,7 +270,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_recordsfamilyinfo");
+            return MySQLHelper.GetMaxID("ID", "ARCHIVE_FAMILY_INFO");
         }
 
         public RecordsFamilyInfoModel GetModel(string IDCardNo)
@@ -281,7 +281,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append(
                 "f.IsPoorfy,f.LiveStatus,f.IncomeAvg,f.CreateUnit,f.HouseArea,f.Monthoil,f.MonthSalt,f.CreatedBy,");
             builder.Append("f.CreatedDate,f.LastUpDateBy,f.LastUpdateDate,b.CUSTOMERNAME ");
-            builder.Append(" from tbl_recordsfamilyinfo f inner join tbl_recordsbaseinfo b on f.IDCardNo = b.IDCardNo ");
+            builder.Append(" from ARCHIVE_FAMILY_INFO f inner join ARCHIVE_BASEINFO b on f.IDCardNo = b.IDCardNo ");
             builder.Append(" where f.IDCardNo=@IDCardNo ");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -297,7 +297,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_recordsfamilyinfo ");
+            builder.Append("select count(1) FROM ARCHIVE_FAMILY_INFO ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -313,7 +313,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(RecordsFamilyInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordsfamilyinfo set ");
+            builder.Append("update ARCHIVE_FAMILY_INFO set ");
             builder.Append("FamilyRecordID=@FamilyRecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("RecordID=@RecordID,");
@@ -379,7 +379,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool UpdateServer(RecordsFamilyInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordsfamilyinfo set ");
+            builder.Append("update ARCHIVE_FAMILY_INFO set ");
             builder.Append("FamilyRecordID=@FamilyRecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("RecordID=@RecordID,");
@@ -445,7 +445,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("SELECT COUNT(1)");
-            builder.Append(" from tbl_recordsfamilyinfo  C inner join tbl_recordsbaseinfo T on T.FamilyIDCardNo = C.FamilyRecordID   ");
+            builder.Append(" from ARCHIVE_FAMILY_INFO  C inner join ARCHIVE_BASEINFO T on T.FamilyIDCardNo = C.FamilyRecordID   ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -461,7 +461,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select T.IDCardNo,T.CustomerName,T.Sex,T.Birthday,T.Phone,T.HouseHoldAddress,C.RecordID,T.HouseRelation,C.FamilyRecordID ,T.CreateDate ");
-            builder.Append("from tbl_recordsfamilyinfo  C inner join tbl_recordsbaseinfo T on T.FamilyIDCardNo = C.FamilyRecordID    ");
+            builder.Append("from ARCHIVE_FAMILY_INFO  C inner join ARCHIVE_BASEINFO T on T.FamilyIDCardNo = C.FamilyRecordID    ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE 1=1 " + strWhere);

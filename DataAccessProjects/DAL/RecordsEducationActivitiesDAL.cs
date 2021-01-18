@@ -12,7 +12,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(RecordsEducationActivitiesModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordseducationactivities(");
+            builder.Append("insert into ARCHIVE_EDUCATION_ACTIVITIES(");
             builder.Append("CustomerID,RecordID,IDCardNo,ActivityDate,ActivityAddress,ActivityType,ActivityTheme,Planner,EducationClasses,EducationNumber,DataFileNumber,ActivityContent,Activity,ActivityType,ResponsiblePerson,InformationPerson,FillformTime,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate)");
             builder.Append(" values (");
             builder.Append("@CustomerID,@RecordID,@IDCardNo,@ActivityDate,@ActivityAddress,@ActivityType,@ActivityTheme,@Planner,@EducationClasses,@EducationNumber,@DataFileNumber,@ActivityContent,@Activity,@ActivityType,@ResponsiblePerson,@InformationPerson,@FillformTime,@CreatedBy,@CreatedDate,@LastUpdateBy,@LastUpdateDate)");
@@ -72,7 +72,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int AddServer(RecordsEducationActivitiesModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordseducationactivities(");
+            builder.Append("insert into ARCHIVE_EDUCATION_ACTIVITIES(");
             builder.Append("CustomerID,RecordID,IDCardNo,ActivityDate,ActivityAddress,ActivityType,ActivityTheme,Planner,EducationClasses,EducationNumber,DataFileNumber,ActivityContent,Activity,ActivityType,ResponsiblePerson,InformationPerson,FillformTime,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate)");
             builder.Append(" values (");
             builder.Append("@CustomerID,@RecordID,@IDCardNo,@ActivityDate,@ActivityAddress,@ActivityType,@ActivityTheme,@Planner,@EducationClasses,@EducationNumber,@DataFileNumber,@ActivityContent,@Activity,@ActivityType,@ResponsiblePerson,@InformationPerson,@FillformTime,@CreatedBy,@CreatedDate,@LastUpdateBy,@LastUpdateDate)");
@@ -225,7 +225,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordseducationactivities ");
+            builder.Append("delete from ARCHIVE_EDUCATION_ACTIVITIES ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -235,7 +235,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordseducationactivities ");
+            builder.Append("delete from ARCHIVE_EDUCATION_ACTIVITIES ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -243,7 +243,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_recordseducationactivities");
+            builder.Append("select count(1) from ARCHIVE_EDUCATION_ACTIVITIES");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -254,7 +254,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,CustomerID,RecordID,IDCardNo,ActivityDate,ActivityAddress,ActivityType,ActivityTheme,Planner,EducationClasses,EducationNumber,DataFileNumber,ActivityContent,Activity,ActivityType,ResponsiblePerson,InformationPerson,FillformTime,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate ");
-            builder.Append(" FROM tbl_recordseducationactivities ");
+            builder.Append(" FROM ARCHIVE_EDUCATION_ACTIVITIES ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -275,7 +275,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_recordseducationactivities T ");
+            builder.Append(")AS Row, T.*  from ARCHIVE_EDUCATION_ACTIVITIES T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -287,13 +287,13 @@ namespace KangShuoTech.DataAccessProjects.DAL
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_recordseducationactivities");
+            return MySQLHelper.GetMaxID("ID", "ARCHIVE_EDUCATION_ACTIVITIES");
         }
 
         public RecordsEducationActivitiesModel GetModel(string IDCardNo)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select  ID,CustomerID,RecordID,IDCardNo,ActivityDate,ActivityAddress,ActivityType,ActivityTheme,Planner,EducationClasses,EducationNumber,DataFileNumber,ActivityContent,Activity,ActivityType,ResponsiblePerson,InformationPerson,FillformTime,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate from tbl_recordseducationactivities ");
+            builder.Append("select  ID,CustomerID,RecordID,IDCardNo,ActivityDate,ActivityAddress,ActivityType,ActivityTheme,Planner,EducationClasses,EducationNumber,DataFileNumber,ActivityContent,Activity,ActivityType,ResponsiblePerson,InformationPerson,FillformTime,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate from ARCHIVE_EDUCATION_ACTIVITIES ");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -309,7 +309,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_recordseducationactivities ");
+            builder.Append("select count(1) FROM ARCHIVE_EDUCATION_ACTIVITIES ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -325,7 +325,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(RecordsEducationActivitiesModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordseducationactivities set ");
+            builder.Append("update ARCHIVE_EDUCATION_ACTIVITIES set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
@@ -400,7 +400,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool UpdateServer(RecordsEducationActivitiesModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordseducationactivities set ");
+            builder.Append("update ARCHIVE_EDUCATION_ACTIVITIES set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");

@@ -16,7 +16,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_ChronicDrugCondition(");
+            builder.Append("INSERT INTO CD_DRUGCONDITION(");
             builder.Append("IDCardNo,Type,Name,DailyTime,EveryTimeMg,drugtype,factory,OutKey )");
             builder.Append(" VALUES (");
             builder.Append("@IDCardNo,@Type,@Name,@DailyTime,@EveryTimeMg,@drugtype,@factory,@OutKey )");
@@ -54,7 +54,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_ChronicDrugCondition ");
+            builder.Append("SELECT * FROM CD_DRUGCONDITION ");
 
             if (strWhere.Trim() != "")
             {
@@ -74,7 +74,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_ChronicMentalDiseaseBaseInfo(");
+            builder.Append("INSERT INTO CD_MENTALDISEASE_BASEINFO(");
             builder.Append("CustomerID,RecordID,IDCardNo,GuardianRecordID,GuardianName,Ralation,GuradianAddr,");
             builder.Append("GuradianPhone,FirstTime,AgreeManagement,AgreeSignature,AgreeTime,Symptom,SymptomOther,OutPatien,");
             builder.Append("HospitalCount,DiagnosisInfo,DiagnosisHospital,DiagnosisTime,LastCure,VillageContacts,VillageTel,");
@@ -193,7 +193,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_ChronicMentalDiseaseBaseInfo ");
+            builder.Append("SELECT * FROM CD_MENTALDISEASE_BASEINFO ");
 
             if (strWhere.Trim() != "")
             {
@@ -212,7 +212,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT COUNT(0) FROM tbl_ChronicMentalDiseaseBaseInfo ");
+            builder.Append("SELECT COUNT(0) FROM CD_MENTALDISEASE_BASEINFO ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] {
@@ -238,7 +238,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_ChronicMentalDiseaseVisit(");
+            builder.Append("INSERT INTO CD_MENTALDISEASE_FOLLOWUP(");
             builder.Append("CustomerID,RecordID,IDCardNo,Fatalness,PresentSymptom,PresentSymptoOther,");
 
             if (VersionNo.Contains("3.0")) builder.Append(" VisitDate,VisitDoctor,NextVisitDate,VisitType, ");
@@ -374,7 +374,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_ChronicMentalDiseaseVisit ");
+            builder.Append("SELECT * FROM CD_MENTALDISEASE_FOLLOWUP ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             if (CheckDate != "")
@@ -413,7 +413,7 @@
             StringBuilder builder = new StringBuilder();
             string column = VersionNo.Contains("3.0") ? "VisitDate" : "FollowupDate";
 
-            builder.Append("SELECT * FROM tbl_ChronicMentalDiseaseVisit ");
+            builder.Append("SELECT * FROM CD_MENTALDISEASE_FOLLOWUP ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             builder.AppendFormat(" ORDER BY {0} DESC LIMIT 0,1 ", column);
@@ -436,7 +436,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT COUNT(0) FROM tbl_ChronicMentalDiseaseVisit ");
+            builder.Append("SELECT COUNT(0) FROM CD_MENTALDISEASE_FOLLOWUP ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             if (VersionNo.Contains("3.0"))

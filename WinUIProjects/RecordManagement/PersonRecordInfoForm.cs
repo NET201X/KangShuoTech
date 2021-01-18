@@ -2785,12 +2785,12 @@ namespace RecordManagement
 
         public bool SaveModelToDB()
         {
-            RecordsBaseInfoBLL tbl_recordsbaseinfo = new RecordsBaseInfoBLL();
+            RecordsBaseInfoBLL ARCHIVE_BASEINFO = new RecordsBaseInfoBLL();
             if (this.IsChanged(this.Model, this.ModelCopy))
             {
                 this.Model.IsUpdate = "Y";
             }
-            tbl_recordsbaseinfo.Update(this.Model);
+            ARCHIVE_BASEINFO.Update(this.Model);
             return true;
         }
 

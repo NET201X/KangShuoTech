@@ -14,7 +14,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(RecordsChdStrokeReportModel model)
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("insert into tbl_RecordsChdStrokeReport(");
+            sb.Append("insert into ARCHIVE_CHD_STROKE_REPORT(");
             sb.Append("PatientNo,AdmissionNo,CardNo,IDCardNo,ICD10Code,Age,Phone,AddDistrict,HouesAddDistrict,AddTown,HouesAddTown,AddVillage,HouseAddVillage,AddNum,HouseAddNum,");
             sb.Append("AcuteMI,SAH,Diagnosis,DiseaseTime,DiagnosisTime,FirstOnset,ConfirmedUnit,CardUnit,CardDoctor,CardDate,DeathDate,DeathReason,DeathCode,OutKey )");
             sb.Append("values(");
@@ -99,7 +99,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(RecordsChdStrokeReportModel model)
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("update tbl_RecordsChdStrokeReport set ");
+            sb.Append("update ARCHIVE_CHD_STROKE_REPORT set ");
             sb.Append("PatientNo=@PatientNo,AdmissionNo=@AdmissionNo,CardNo=@CardNo,IDCardNo=@IDCardNo,ICD10Code=@ICD10Code,AddDistrict=@AddDistrict,HouesAddDistrict=@HouesAddDistrict, ");
             sb.Append("AddTown=@AddTown,HouesAddTown=@HouesAddTown,AddVillage=@AddVillage,HouseAddVillage=@HouseAddVillage,AddNum=@AddNum,HouseAddNum=@HouseAddNum, ");
             sb.Append("AcuteMI=@AcuteMI,SAH=@SAH,Diagnosis=@Diagnosis,");
@@ -180,7 +180,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID ,PatientNo,AdmissionNo,CardNo,IDCardNo,ICD10Code,Age,Phone,AddDistrict,HouesAddDistrict,AddTown,HouesAddTown,AddVillage,HouseAddVillage,AddNum,HouseAddNum,");
             builder.Append("AcuteMI,SAH,Diagnosis,DiseaseTime,DiagnosisTime,FirstOnset,ConfirmedUnit,CardUnit,CardDoctor,CardDate,DeathDate,DeathReason,DeathCode,OutKey ");
-            builder.Append(" FROM tbl_recordschdstrokereport where OutKey=@OutKey ");
+            builder.Append(" FROM ARCHIVE_CHD_STROKE_REPORT where OutKey=@OutKey ");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@OutKey", MySqlDbType.Int32) };
             cmdParms[0].Value = OutKey;
             new RecordsChdStrokeReportModel();
@@ -316,7 +316,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
 
         public bool Exists(int ID)
         {
-            string str = "select count(1) from tbl_recordschdstrokereport where ID='"+ID+"'";
+            string str = "select count(1) from ARCHIVE_CHD_STROKE_REPORT where ID='"+ID+"'";
             return MySQLHelper.Exists(str); 
         }
 
@@ -325,7 +325,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID ,PatientNo,AdmissionNo,CardNo,IDCardNo,ICD10Code,Age,Phone,AddDistrict,HouesAddDistrict,AddTown,HouesAddTown,AddVillage,HouseAddVillage,AddNum,HouseAddNum,");
             builder.Append("AcuteMI,SAH,Diagnosis,DiseaseTime,DiagnosisTime,FirstOnset,ConfirmedUnit,CardUnit,CardDoctor,CardDate,DeathDate,DeathReason,DeathCode,OutKey ");
-            builder.Append(" FROM tbl_recordschdstrokereport ");
+            builder.Append(" FROM ARCHIVE_CHD_STROKE_REPORT ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -335,7 +335,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool ExistsOutKey(string IDCardNo, int OutKey)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_recordschdstrokereport");
+            builder.Append("select count(1) from ARCHIVE_CHD_STROKE_REPORT");
             builder.Append(" where IDCardNo=@IDCardNo ");
             builder.Append(" and OutKey=@OutKey");
             MySqlParameter[] cmdParms = new MySqlParameter[] { 

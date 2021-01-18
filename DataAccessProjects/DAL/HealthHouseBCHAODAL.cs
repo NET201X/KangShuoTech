@@ -14,7 +14,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(HealthHouseBCHAOModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append(@"INSERT INTO tbl_hhptntbl
+            builder.Append(@"INSERT INTO HEALTHHOUSE_ULTRASONICB_RESULT
                                     ( 
                                         ID
                                         ,PID
@@ -69,7 +69,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append(" select * ");
-            builder.Append(" from tbl_hhptntbl ");
+            builder.Append(" from HEALTHHOUSE_ULTRASONICB_RESULT ");
             builder.Append(" where PID=@PID ");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] {
@@ -88,7 +88,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool ExistsPID(string IDCardNo, int PID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_hhptntbl");
+            builder.Append("select count(1) from HEALTHHOUSE_ULTRASONICB_RESULT");
             builder.Append(" where IDCardNo=@IDCardNo ");
             builder.Append(" and PID=@PID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { 
@@ -102,7 +102,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(HealthHouseBCHAOModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append(@"UPDATE tbl_hhptntbl 
+            builder.Append(@"UPDATE HEALTHHOUSE_ULTRASONICB_RESULT 
                                      SET 
                                          PID = @PID 
                                         ,IDCardNo = @IDCardNo 

@@ -11,7 +11,7 @@ namespace QKangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_recordsfamilyhistoryinfo ");
+            builder.Append("SELECT * FROM ARCHIVE_FAMILYHISTORYINFO ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] {

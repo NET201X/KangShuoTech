@@ -2791,7 +2791,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonBLL
 
                     #endregion
 
-                    // 更新tbl_RecordsEcg表，先删后增
+                    // 更新ARCHIVE_ECG表，先删后增
                     recordsEcgBLL.Delete(ecgModel);
                     recordsEcgBLL.Add(ecgModel);
 
@@ -3023,7 +3023,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonBLL
                         strEcg = "2";
                     }
 
-                    // 更新tbl_RecordsEcg表，先删后增
+                    // 更新ARCHIVE_ECG表，先删后增
                     recordsEcgBLL.Delete(ecgModel); recordsEcgBLL.Add(ecgModel);
 
                     bool flag = false;
@@ -4096,7 +4096,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonBLL
 
                         int medicineCnKey = 0;
 
-                        // 更新体检 中医体质33项问题 tbl_recordsmedicinecn
+                        // 更新体检 中医体质33项问题 ARCHIVE_MEDICINE_CN
                         if (recordsMedicineCnBLL.UpdateByMiniPad(saveResultModel, baseModel.ID.ToString())) saveSuccess = true;
                         else
                         {
@@ -4113,7 +4113,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonBLL
                             }
                         }
 
-                        // 更新体检 中医体质结果 tbl_recordsmedicineresult
+                        // 更新体检 中医体质结果 OLD_MEDICINE_RESULT
                         if (recordsMedicineResultBLL.UpdateByMiniPad(saveResultModel, baseModel.ID.ToString()))
                         {
                             // 更新体检中 中医体质辨识结果Key及对应体质

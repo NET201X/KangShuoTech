@@ -14,7 +14,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(HealthHouseMedicineCnModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_hhmedicinecn(");
+            builder.Append("insert into HEALTHHOUSE_MEDICINE_CN(");
             builder.Append("IDCardNo,Energy,Tired,Breath,Voice,Emotion,Spirit,Alone,Fear,");
             builder.Append("Weight,Eye,FootHand,Stomach,Cold,Influenza,Nasal,Snore,Allergy,Urticaria,Skin,Scratch,Mouth,");
             builder.Append("Arms,Greasy,Spot,Eczema,Thirsty,Smell,Abdomen,Coolfood,Defecate,Defecatedry,Tongue,Vein,");
@@ -113,7 +113,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("select ID,IDCardNo,Energy,Tired,Breath,Voice,Emotion,Spirit,");
             builder.Append("Alone,Fear,Weight,Eye,FootHand,Stomach,Cold,Influenza,Nasal,Snore,Allergy,Urticaria,Skin,Scratch,");
             builder.Append("Mouth,Arms,Greasy,Spot,Eczema,Thirsty,Smell,Abdomen,Coolfood,Defecate,Defecatedry,Tongue,Vein,");
-            builder.Append("FollowUpDoctor,RecordDate from tbl_hhmedicinecn ");
+            builder.Append("FollowUpDoctor,RecordDate from HEALTHHOUSE_MEDICINE_CN ");
             builder.Append(" where ID=@ID  ");
             MySqlParameter[] cmdParms = new MySqlParameter[] {
                 new MySqlParameter("@ID", MySqlDbType.Int32,4)
@@ -286,7 +286,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(HealthHouseMedicineCnModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_hhmedicinecn set ");
+            builder.Append("update HEALTHHOUSE_MEDICINE_CN set ");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("Energy=@Energy,");
             builder.Append("Tired=@Tired,");
@@ -405,7 +405,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_hhmedicinecn ");
+            builder.Append("delete from HEALTHHOUSE_MEDICINE_CN ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;

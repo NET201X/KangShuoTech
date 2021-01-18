@@ -14,7 +14,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(HealthHouseMedicineResultModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_hhmedicineresult(");
+            builder.Append("insert into HEALTHHOUSE_MEDICINE_RESULT(");
             builder.Append("Mild,Faint,Yang,Yin,PhlegmDamp,Muggy,BloodStasis,QIconStraint,Characteristic,");
             builder.Append("MildScore,FaintScore,YangsCore,YinScore,PhlegmdampScore,MuggyScore,BloodStasisScore,QiConstraintScore,");
             builder.Append("CharacteristicScore,MildAdvising,FaintAdvising,YangAdvising,YinAdvising,PhlegmdampAdvising,MuggyAdvising,");
@@ -275,7 +275,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_hhmedicineresult ");
+            builder.Append("delete from HEALTHHOUSE_MEDICINE_RESULT ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -285,7 +285,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select *");
-            builder.Append("from tbl_hhmedicineresult ");
+            builder.Append("from HEALTHHOUSE_MEDICINE_RESULT ");
             builder.Append(" where ID = @ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] {
                 new MySqlParameter("@ID", MySqlDbType.String) 
@@ -302,7 +302,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(HealthHouseMedicineResultModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_hhmedicineresult set ");
+            builder.Append("update HEALTHHOUSE_MEDICINE_RESULT set ");
             builder.Append("Mild=@Mild,");
             builder.Append("Faint=@Faint,");
             builder.Append("Yang=@Yang,");

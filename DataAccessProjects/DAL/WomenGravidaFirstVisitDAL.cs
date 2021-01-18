@@ -12,7 +12,7 @@
         public int Add(WomenGravidaFirstVisitModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_womengravidafirstvisit(");
+            builder.Append("insert into GRAVIDA_FIRSTFOLLOWUP(");
             builder.Append("CustomerID,RecordID,IDCardNo,RecordDate,PregancyWeeks,CustomerAge,HusbandName,HusbandAge,HusbandPhone,PregancyCount,NatrualChildBirthCount,CaeSareanCount,LastMenStruation,LastMenStruationDate,ExpectedDueDate,CustomerHistory,CustomerHistoryEx,FamilyHistory,FamilyHistoryEx,PersonalHistory,PersonalHistoryEx,GyNecoloGyHistory,AbortionInfo,Deadfetus,StillBirthInfo,NewBornDead,NewBornDefect,Height,Weight,Bmi,HBloodpressure,LBloodpressure,Heart,Heartex,Lung,Lungex,Vulva,VulvaEx,Vagina,VaginaEx,CervixuTeri,CervixuTeriex,Corpus,CorpusEx,Attach,AttachEx,OverAlassessMent,HealthZhiDao,HealthZhiDaoOthers,Referral,ReferralReason,ReferralOrg,NextfollowupDate,FollowUpDoctor,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel,GynecologyHistoryEx,OverAlassessmentEx,");
             builder.Append("ArtificialAbortion,BooksInfo,BooksInstitution,ReferralContacts,ReferralContactsTel,ReferralResult)");
             builder.Append(" values (");
@@ -167,7 +167,7 @@
         public int AddServer(WomenGravidaFirstVisitModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_womengravidafirstvisit(");
+            builder.Append("insert into GRAVIDA_FIRSTFOLLOWUP(");
             builder.Append("CustomerID,RecordID,IDCardNo,RecordDate,PregancyWeeks,CustomerAge,HusbandName,HusbandAge,HusbandPhone,PregancyCount,NatrualChildBirthCount,CaeSareanCount,LastMenStruation,LastMenStruationDate,ExpectedDueDate,CustomerHistory,CustomerHistoryEx,FamilyHistory,FamilyHistoryEx,PersonalHistory,PersonalHistoryEx,GyNecoloGyHistory,AbortionInfo,Deadfetus,StillBirthInfo,NewBornDead,NewBornDefect,Height,Weight,Bmi,HBloodpressure,LBloodpressure,Heart,Heartex,Lung,Lungex,Vulva,VulvaEx,Vagina,VaginaEx,CervixuTeri,CervixuTeriex,Corpus,CorpusEx,Attach,AttachEx,OverAlassessMent,HealthZhiDao,HealthZhiDaoOthers,Referral,ReferralReason,ReferralOrg,NextfollowupDate,FollowUpDoctor,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel,GynecologyHistoryEx,OverAlassessmentEx,");
             builder.Append("ArtificialAbortion,BooksInfo,BooksInstitution,ReferralContacts,ReferralContactsTel,ReferralResult)");
             builder.Append(" values (");
@@ -604,7 +604,7 @@
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_womengravidafirstvisit ");
+            builder.Append("delete from GRAVIDA_FIRSTFOLLOWUP ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -614,7 +614,7 @@
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_womengravidafirstvisit ");
+            builder.Append("delete from GRAVIDA_FIRSTFOLLOWUP ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -622,7 +622,7 @@
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_womengravidafirstvisit");
+            builder.Append("select count(1) from GRAVIDA_FIRSTFOLLOWUP");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -634,7 +634,7 @@
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,CustomerID,RecordID,IDCardNo,RecordDate,PregancyWeeks,CustomerAge,HusbandName,HusbandAge,HusbandPhone,PregancyCount,NatrualChildBirthCount,CaeSareanCount,LastMenStruation,LastMenStruationDate,ExpectedDueDate,CustomerHistory,CustomerHistoryEx,FamilyHistory,FamilyHistoryEx,PersonalHistory,PersonalHistoryEx,GyNecoloGyHistory,AbortionInfo,Deadfetus,StillBirthInfo,NewBornDead,NewBornDefect,Height,Weight,Bmi,HBloodpressure,LBloodpressure,Heart,Heartex,Lung,Lungex,Vulva,VulvaEx,Vagina,VaginaEx,CervixuTeri,CervixuTeriex,Corpus,CorpusEx,Attach,AttachEx,OverAlassessMent,HealthZhiDao,HealthZhiDaoOthers,Referral,ReferralReason,ReferralOrg,NextfollowupDate,FollowUpDoctor,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel,GynecologyHistoryEx,OverAlassessmentEx, ");
             builder.Append("ArtificialAbortion,BooksInfo,BooksInstitution,ReferralContacts,ReferralContactsTel,ReferralResult ");
-            builder.Append(" FROM tbl_womengravidafirstvisit ");
+            builder.Append(" FROM GRAVIDA_FIRSTFOLLOWUP ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -655,7 +655,7 @@
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_womengravidafirstvisit T ");
+            builder.Append(")AS Row, T.*  from GRAVIDA_FIRSTFOLLOWUP T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -667,13 +667,13 @@
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_womengravidafirstvisit");
+            return MySQLHelper.GetMaxID("ID", "GRAVIDA_FIRSTFOLLOWUP");
         }
 
         public WomenGravidaFirstVisitModel GetModel(string IDCardNo)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select  ID,CustomerID,RecordID,IDCardNo,RecordDate,PregancyWeeks,CustomerAge,HusbandName,HusbandAge,HusbandPhone,PregancyCount,NatrualChildBirthCount,CaeSareanCount,LastMenStruation,LastMenStruationDate,ExpectedDueDate,CustomerHistory,CustomerHistoryEx,FamilyHistory,FamilyHistoryEx,PersonalHistory,PersonalHistoryEx,GyNecoloGyHistory,AbortionInfo,Deadfetus,StillBirthInfo,NewBornDead,NewBornDefect,Height,Weight,Bmi,HBloodpressure,LBloodpressure,Heart,Heartex,Lung,Lungex,Vulva,VulvaEx,Vagina,VaginaEx,CervixuTeri,CervixuTeriex,Corpus,CorpusEx,Attach,AttachEx,OverAlassessMent,HealthZhiDao,HealthZhiDaoOthers,Referral,ReferralReason,ReferralOrg,NextfollowupDate,FollowUpDoctor,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel,GynecologyHistoryEx,OverAlassessmentEx,ArtificialAbortion,BooksInfo,BooksInstitution,ReferralContacts,ReferralContactsTel,ReferralResult from tbl_womengravidafirstvisit ");
+            builder.Append("select  ID,CustomerID,RecordID,IDCardNo,RecordDate,PregancyWeeks,CustomerAge,HusbandName,HusbandAge,HusbandPhone,PregancyCount,NatrualChildBirthCount,CaeSareanCount,LastMenStruation,LastMenStruationDate,ExpectedDueDate,CustomerHistory,CustomerHistoryEx,FamilyHistory,FamilyHistoryEx,PersonalHistory,PersonalHistoryEx,GyNecoloGyHistory,AbortionInfo,Deadfetus,StillBirthInfo,NewBornDead,NewBornDefect,Height,Weight,Bmi,HBloodpressure,LBloodpressure,Heart,Heartex,Lung,Lungex,Vulva,VulvaEx,Vagina,VaginaEx,CervixuTeri,CervixuTeriex,Corpus,CorpusEx,Attach,AttachEx,OverAlassessMent,HealthZhiDao,HealthZhiDaoOthers,Referral,ReferralReason,ReferralOrg,NextfollowupDate,FollowUpDoctor,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel,GynecologyHistoryEx,OverAlassessmentEx,ArtificialAbortion,BooksInfo,BooksInstitution,ReferralContacts,ReferralContactsTel,ReferralResult from GRAVIDA_FIRSTFOLLOWUP ");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -689,7 +689,7 @@
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_womengravidafirstvisit ");
+            builder.Append("select count(1) FROM GRAVIDA_FIRSTFOLLOWUP ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -705,7 +705,7 @@
         public bool Update(WomenGravidaFirstVisitModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_womengravidafirstvisit set ");
+            builder.Append("update GRAVIDA_FIRSTFOLLOWUP set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
@@ -917,7 +917,7 @@
         public bool UpdateServer(WomenGravidaFirstVisitModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_womengravidafirstvisit set ");
+            builder.Append("update GRAVIDA_FIRSTFOLLOWUP set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");

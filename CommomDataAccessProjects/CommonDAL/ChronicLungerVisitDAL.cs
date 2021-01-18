@@ -16,7 +16,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_chroniclungerfirstvisit(");
+            builder.Append("INSERT INTO CD_PTB_FIRSTVISIT(");
             builder.Append("RecordID,CustomerID,IDCardNo,CustomerName,EstimateDoctor,");
             builder.Append("PatientType,Sputumfungs,DrugFast,Symptom,SymptomEx,MedicationCompliance,");
 
@@ -133,7 +133,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_chroniclungervisit(");
+            builder.Append("INSERT INTO CD_PTB_VISIT(");
             builder.Append("RecordID,CustomerID,IDCardNo,CustomerName,VisitDoctor,");
 
             if (VersionNo.Contains("3.0")) builder.Append(" VisitDate,VisitWay, ");
@@ -265,24 +265,24 @@
 
             if (VersionNo.Contains("3.0"))
             {
-                builder.Append("SELECT COUNT(0) AS COUNTS FROM tbl_ChronicLungerFirstVisit ");
+                builder.Append("SELECT COUNT(0) AS COUNTS FROM CD_PTB_FIRSTVISIT ");
                 builder.Append("WHERE IDCardNo=@IDCardNo ");
                 builder.Append(" AND YEAR(VisitDate)=YEAR(NOW())");
                 builder.Append(" AND QUARTER(VisitDate) = QUARTER(NOW())");
                 builder.Append(" UNION ");
-                builder.Append("SELECT COUNT(0) AS COUNTS FROM tbl_ChronicLungerVisit ");
+                builder.Append("SELECT COUNT(0) AS COUNTS FROM CD_PTB_VISIT ");
                 builder.Append("WHERE IDCardNo=@IDCardNo ");
                 builder.Append(" AND YEAR(VisitDate)=YEAR(NOW())");
                 builder.Append(" AND QUARTER(VisitDate) = QUARTER(NOW())");
             }
             else
             {
-                builder.Append("SELECT COUNT(0) AS COUNTS FROM tbl_ChronicLungerFirstVisit ");
+                builder.Append("SELECT COUNT(0) AS COUNTS FROM CD_PTB_FIRSTVISIT ");
                 builder.Append("WHERE IDCardNo=@IDCardNo ");
                 builder.Append(" AND YEAR(FollowUpDate)=YEAR(NOW())");
                 builder.Append(" AND QUARTER(FollowUpDate) = QUARTER(NOW())");
                 builder.Append(" UNION ");
-                builder.Append("SELECT COUNT(0) AS COUNTS FROM tbl_ChronicLungerVisit ");
+                builder.Append("SELECT COUNT(0) AS COUNTS FROM CD_PTB_VISIT ");
                 builder.Append("WHERE IDCardNo=@IDCardNo ");
                 builder.Append(" AND YEAR(FollowUpDate)=YEAR(NOW())");
                 builder.Append(" AND QUARTER(FollowUpDate) = QUARTER(NOW())");
@@ -313,7 +313,7 @@
             StringBuilder builder = new StringBuilder();
             string column = VersionNo.Contains("3.0") ? "VisitDate" : "FollowupDate";
 
-            builder.Append("SELECT * FROM tbl_ChronicLungerFirstVisit ");
+            builder.Append("SELECT * FROM CD_PTB_FIRSTVISIT ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             builder.AppendFormat(" ORDER BY {0} DESC LIMIT 0,1 ", column);
@@ -337,7 +337,7 @@
             StringBuilder builder = new StringBuilder();
             string column = VersionNo.Contains("3.0") ? "VisitDate" : "FollowupDate";
 
-            builder.Append("SELECT * FROM tbl_ChronicLungerVisit ");
+            builder.Append("SELECT * FROM CD_PTB_VISIT ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             builder.AppendFormat(" ORDER BY {0} DESC LIMIT 0,1 ", column);

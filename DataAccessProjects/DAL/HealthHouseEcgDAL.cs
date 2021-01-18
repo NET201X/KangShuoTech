@@ -14,7 +14,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(HealthHouseEcgModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_hhrecordsecg(");
+            builder.Append("insert into HEALTHHOUSE_ECG_RESULT(");
             builder.Append("PID,MID,IDCardNo,Name,Conclusion,CreateTime,ECG,ECGEx,ImgPath) ");
             builder.Append("values( ");
             builder.Append("@PID,@MID,@IDCardNo,@Name,@Conclusion,@CreateTime,@ECG,@ECGEx,@ImgPath) ");
@@ -52,7 +52,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append(" select * ");
-            builder.Append(" from tbl_hhrecordsecg ");
+            builder.Append(" from HEALTHHOUSE_ECG_RESULT ");
             builder.Append(" where PID=@PID ");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] {
@@ -76,7 +76,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool ExistsPID(string IDCardNo, int PID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_hhrecordsecg");
+            builder.Append("select count(1) from HEALTHHOUSE_ECG_RESULT");
             builder.Append(" where IDCardNo=@IDCardNo ");
             builder.Append(" and PID=@PID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { 
@@ -91,7 +91,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(HealthHouseEcgModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_hhrecordsecg set ");
+            builder.Append("update HEALTHHOUSE_ECG_RESULT set ");
             builder.Append("PID=@PID,");
             builder.Append("MID=@MID,");
             builder.Append("IDCardNo=@IDCardNo,");

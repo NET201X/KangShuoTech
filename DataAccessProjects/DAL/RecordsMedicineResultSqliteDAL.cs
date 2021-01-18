@@ -14,7 +14,7 @@
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,Mild,Faint,Yang,Yin,PhlegmDamp,Muggy,BloodStasis,QIconStraint,Characteristic,MildScore,FaintScore,YangsCore,YinScore,PhlegmdampScore,MuggyScore,BloodStasisScore,QiConstraintScore,CharacteristicScore,MildAdvising,FaintAdvising,YangAdvising,YinAdvising,PhlegmdampAdvising,MuggyAdvising,BloodStasisAdvising,QiconstraintAdvising,CharacteristicAdvising,MildAdvisingEx,FaintAdvisingEx,YangadvisingEx,YinAdvisingEx,PhlegmdampAdvisingEx,MuggyAdvisingEx,BloodStasisAdvisingEx,QiconstraintAdvisingEx,CharacteristicAdvisingEx,IDCardNo,EffectAssess,Satisfy,RecordDate ");
-            builder.Append(" FROM tbl_oldermedicineresult ");
+            builder.Append(" FROM OLD_MEDICINE_RESULT ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -36,8 +36,8 @@
             builder.Append("Energy,Tired,Breath,Voice,Emotion,Spirit,Alone,Fear,Weight,Eye,FootHand,Stomach,Cold,Influenza,Nasal, ");
             builder.Append("Snore,Allergy,Urticaria,Skin,Scratch,Mouth,Arms,Greasy,Spot,Eczema,Thirsty,Smell,Abdomen,Coolfood, ");
             builder.Append("Defecate,Defecatedry,Tongue,Vein ");
-            builder.Append("FROM tbl_oldermedicinecn Medicinecn ");
-            builder.Append("LEFT JOIN tbl_oldermedicineresult Result ");
+            builder.Append("FROM OLD_MEDICINE_CN Medicinecn ");
+            builder.Append("LEFT JOIN OLD_MEDICINE_RESULT Result ");
             builder.Append("ON Result.IDCardNo=Medicinecn.IDCardNo ");
             builder.Append("AND Result.RecordDate=Medicinecn.RecordDate ");
 
@@ -54,7 +54,7 @@
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_oldermedicineresult ");
+            builder.Append("select count(1) FROM OLD_MEDICINE_RESULT ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);

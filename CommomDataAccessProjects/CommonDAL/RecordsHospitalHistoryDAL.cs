@@ -16,7 +16,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder strSql = new StringBuilder();
 
-            strSql.Append("INSERT INTO tbl_RecordsHospitalHistory(");
+            strSql.Append("INSERT INTO ARCHIVE_HOSPITALHISTORY(");
             strSql.Append("PhysicalID,IDCardNo,InHospitalDate,Reason,IllcaseNum,HospitalName,OutHospitalDate,OutKey)");
             strSql.Append(" VALUES (");
             strSql.Append("@PhysicalID,@IDCardNo,@InHospitalDate,@Reason,@IllcaseNum,@HospitalName,@OutHospitalDate,@OutKey)");
@@ -51,7 +51,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("DELETE FROM tbl_recordshospitalhistory ");
+            builder.Append("DELETE FROM ARCHIVE_HOSPITALHISTORY ");
             builder.Append(" WHERE OutKey=@OutKey");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@OutKey", MySqlDbType.Int32, 4) };
@@ -64,7 +64,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 		{
 			StringBuilder builder = new StringBuilder();
 
-			builder.Append("SELECT * FROM tbl_recordshospitalhistory ");
+			builder.Append("SELECT * FROM ARCHIVE_HOSPITALHISTORY ");
 
 			if (strWhere.Trim() != "")
 			{

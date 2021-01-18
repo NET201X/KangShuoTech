@@ -19,7 +19,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder sbSave = new StringBuilder();
             sbSave.Append(@"INSERT INTO 
-                            tbl_fingerinfo
+                            ARCHIVE_FINGERPRINT_INFO
                             (
                                 fingerid
                                 ,idcardno
@@ -61,7 +61,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             sbQuery.Append(@"SELECT 
                                 FingerInfo 
                             FROM 
-                                tbl_fingerinfo 
+                                ARCHIVE_FINGERPRINT_INFO 
                             WHERE idcardno = @idcardno");
 
             List<MySqlParameter> cmdParms = new List<MySqlParameter>();
@@ -90,7 +90,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             sbQuery.Append(@"SELECT 
                                 IFNULL(MAX(fingerid), 0)
                             FROM 
-                                tbl_fingerinfo ");
+                                ARCHIVE_FINGERPRINT_INFO ");
 
             DataSet ds = MySQLHelper.ExecuteDataSet(MySQLHelper.ConnectionString, CommandType.Text,
                 sbQuery.ToString());
@@ -115,7 +115,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             sbQuery.Append(@"SELECT 
                                 idcardno 
                             FROM 
-                                tbl_fingerinfo 
+                                ARCHIVE_FINGERPRINT_INFO 
                             WHERE fingerid = @fingerid");
 
             List<MySqlParameter> cmdParms = new List<MySqlParameter>();
@@ -145,7 +145,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                                 idcardno
                                 ,FingerInfo
                             FROM 
-                                tbl_fingerinfo ");
+                                ARCHIVE_FINGERPRINT_INFO ");
 
             List<MySqlParameter> cmdParms = new List<MySqlParameter>();
 
@@ -167,11 +167,11 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder sbSave = new StringBuilder();
             sbSave.Append(@"DELETE FROM
-                            tbl_fingerinfo
+                            ARCHIVE_FINGERPRINT_INFO
                             WHERE 
                             idcardno not IN
                             (
-	                            SELECT tbl_recordsbaseinfo.IDCardNo FROM tbl_recordsbaseinfo
+	                            SELECT ARCHIVE_BASEINFO.IDCardNo FROM ARCHIVE_BASEINFO
                             )");
 
             List<MySqlParameter> cmdParms = new List<MySqlParameter>();

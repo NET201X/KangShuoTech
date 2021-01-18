@@ -82,7 +82,7 @@ namespace RecordManagement.OverView
                     string colName = dtBase.Rows[i]["ChinName"].ToString();
                     string tableName = dtBase.Rows[i]["TableName"].ToString();
 
-                    if (tableName.ToUpper().Equals("TBL_HEALTHRECORDSINFO")) col = "HealthRecords." + col;
+                    if (tableName.ToUpper().Equals("ARCHIVE_BASEINFO_OUT")) col = "HealthRecords." + col;
                     else col = "Base." + col;
 
                     // 拼接必输栏位非空白条件
@@ -134,8 +134,8 @@ namespace RecordManagement.OverView
                     string colName = dtHealth.Rows[i]["ChinName"].ToString();
                     string tableName = dtHealth.Rows[i]["TableName"].ToString();
 
-                    if (tableName.ToUpper().Equals("TBL_RECORDSILLNESSHISTORYINFO")) col = "Ill." + col;
-                    else if (tableName.ToUpper().Equals("TBL_RECORDSFAMILYHISTORYINFO")) col = "Family." + col;
+                    if (tableName.ToUpper().Equals("ARCHIVE_ILLNESSHISTORYINFO")) col = "Ill." + col;
+                    else if (tableName.ToUpper().Equals("ARCHIVE_FAMILYHISTORYINFO")) col = "Family." + col;
                     else col = "Environment." + col;
 
                     if (col.ToLower().Equals("illnesstype"))

@@ -12,7 +12,7 @@
         public int Add(KidsTcmhmThreeToSixModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_kidstcmhmthreetosix(");
+            builder.Append("insert into CHILD_TCMHM_THREE2SIX(");
             builder.Append("CustomerID,RecordID,FollowupType,Tcmhm,TcmhmOther,FollowupDate,NextFollowUpDate,FollowUpDoctor,IsDel,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IDCardNo)");
             builder.Append(" values (");
             builder.Append("@CustomerID,@RecordID,@FollowupType,@Tcmhm,@TcmhmOther,@FollowupDate,@NextFollowUpDate,@FollowUpDoctor,@IsDel,@CreatedBy,@CreatedDate,@LastUpdateBy,@LastUpdateDate,@IDCardNo)");
@@ -59,7 +59,7 @@
         public int AddServer(KidsTcmhmThreeToSixModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_kidstcmhmthreetosix(");
+            builder.Append("insert into CHILD_TCMHM_THREE2SIX(");
             builder.Append("CustomerID,RecordID,FollowupType,Tcmhm,TcmhmOther,FollowupDate,NextFollowUpDate,FollowUpDoctor,IsDel,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IDCardNo)");
             builder.Append(" values (");
             builder.Append("@CustomerID,@RecordID,@FollowupType,@Tcmhm,@TcmhmOther,@FollowupDate,@NextFollowUpDate,@FollowUpDoctor,@IsDel,@CreatedBy,@CreatedDate,@LastUpdateBy,@LastUpdateDate,@IDCardNo)");
@@ -177,7 +177,7 @@
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_kidstcmhmthreetosix ");
+            builder.Append("delete from CHILD_TCMHM_THREE2SIX ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -187,7 +187,7 @@
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_kidstcmhmthreetosix ");
+            builder.Append("delete from CHILD_TCMHM_THREE2SIX ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -195,7 +195,7 @@
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_kidstcmhmthreetosix");
+            builder.Append("select count(1) from CHILD_TCMHM_THREE2SIX");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -206,7 +206,7 @@
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,CustomerID,RecordID,FollowupType,Tcmhm,TcmhmOther,FollowupDate,NextFollowUpDate,FollowUpDoctor,IsDel,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IDCardNo ");
-            builder.Append(" FROM tbl_kidstcmhmthreetosix ");
+            builder.Append(" FROM CHILD_TCMHM_THREE2SIX ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -227,7 +227,7 @@
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_kidstcmhmthreetosix T ");
+            builder.Append(")AS Row, T.*  from CHILD_TCMHM_THREE2SIX T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -239,13 +239,13 @@
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_kidstcmhmthreetosix");
+            return MySQLHelper.GetMaxID("ID", "CHILD_TCMHM_THREE2SIX");
         }
 
         public KidsTcmhmThreeToSixModel GetModel(string IDCardNo)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select ID,CustomerID,RecordID,FollowupType,Tcmhm,TcmhmOther,FollowupDate,NextFollowUpDate,FollowUpDoctor,IsDel,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IDCardNo from tbl_kidstcmhmthreetosix ");
+            builder.Append("select ID,CustomerID,RecordID,FollowupType,Tcmhm,TcmhmOther,FollowupDate,NextFollowUpDate,FollowUpDoctor,IsDel,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IDCardNo from CHILD_TCMHM_THREE2SIX ");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -261,7 +261,7 @@
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_kidstcmhmthreetosix ");
+            builder.Append("select count(1) FROM CHILD_TCMHM_THREE2SIX ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -277,7 +277,7 @@
         public bool Update(KidsTcmhmThreeToSixModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_kidstcmhmthreetosix set ");
+            builder.Append("update CHILD_TCMHM_THREE2SIX set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("FollowupType=@FollowupType,");
@@ -333,7 +333,7 @@
         public bool UpdateServer(KidsTcmhmThreeToSixModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_kidstcmhmthreetosix set ");
+            builder.Append("update CHILD_TCMHM_THREE2SIX set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("FollowupType=@FollowupType,");

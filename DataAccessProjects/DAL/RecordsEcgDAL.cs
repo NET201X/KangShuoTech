@@ -14,15 +14,15 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,IDCardNo,Conclusion ");
-            builder.Append(" FROM tbl_recordsecg where IDCardNo = '"+IDCardNo+"'  ");
+            builder.Append(" FROM ARCHIVE_ECG where IDCardNo = '"+IDCardNo+"'  ");
             return MySQLHelper.Query(builder.ToString());
         }
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
             builder.Append(" SELECT count(*) from ");
-            builder.Append(" (select MAX(E.MID)as MID FROM  tbl_recordsecg E left join tbl_recordsbaseinfo T  on T.IDCardNo = E.IDCardNo ");
-            builder.Append(" left join tbl_recordscustomerbaseinfo B on E.IDCardNo = B.IDCardNo ");
+            builder.Append(" (select MAX(E.MID)as MID FROM  ARCHIVE_ECG E left join ARCHIVE_BASEINFO T  on T.IDCardNo = E.IDCardNo ");
+            builder.Append(" left join ARCHIVE_CUSTOMERBASEINFO B on E.IDCardNo = B.IDCardNo ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -39,8 +39,8 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public DataSet GetUserDt(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select T.CreateMenName FROM  tbl_recordsecg E left join tbl_recordsbaseinfo T  on T.IDCardNo = E.IDCardNo ");
-            builder.Append("left join tbl_recordscustomerbaseinfo B on E.IDCardNo = B.IDCardNo ");
+            builder.Append("select T.CreateMenName FROM  ARCHIVE_ECG E left join ARCHIVE_BASEINFO T  on T.IDCardNo = E.IDCardNo ");
+            builder.Append("left join ARCHIVE_CUSTOMERBASEINFO B on E.IDCardNo = B.IDCardNo ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE 1=1 " + strWhere);
@@ -54,8 +54,8 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
             builder.Append("select E.IDCardNo,T.CustomerName,T.Sex,T.Nation,T.Birthday,T.Phone,T.HouseHoldAddress,");
             builder.Append("E.Conclusion ,MAX(E.MID)as MID,T.Minority ");
-            builder.Append(" from  tbl_recordsecg E left join tbl_recordsbaseinfo T  on T.IDCardNo = E.IDCardNo");
-            builder.Append(" left join tbl_recordscustomerbaseinfo B on T.IDCardNo = B.IDCardNo ");
+            builder.Append(" from  ARCHIVE_ECG E left join ARCHIVE_BASEINFO T  on T.IDCardNo = E.IDCardNo");
+            builder.Append(" left join ARCHIVE_CUSTOMERBASEINFO B on T.IDCardNo = B.IDCardNo ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE 1=1 " + strWhere);
@@ -79,8 +79,8 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append(" SELECT count(*) from ");
-            builder.Append(" (select MAX(E.MID)as MID FROM  tbl_recordsecg E left join tbl_recordsbaseinfo T  on T.IDCardNo = E.IDCardNo ");
-            builder.Append(" left join tbl_recordscustomerbaseinfo B on E.IDCardNo = B.IDCardNo ");
+            builder.Append(" (select MAX(E.MID)as MID FROM  ARCHIVE_ECG E left join ARCHIVE_BASEINFO T  on T.IDCardNo = E.IDCardNo ");
+            builder.Append(" left join ARCHIVE_CUSTOMERBASEINFO B on E.IDCardNo = B.IDCardNo ");
             builder.Append(" where MID is not NULL ");
             if (strWhere.Trim() != "")
             {
@@ -99,7 +99,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,MID,IDCardNo,Name,Conclusion,CreateTime");
-            builder.Append(" FROM tbl_recordsecg ");
+            builder.Append(" FROM ARCHIVE_ECG ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -111,7 +111,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select * ");
-            builder.Append(" FROM tbl_recordsecg ");
+            builder.Append(" FROM ARCHIVE_ECG ");
             builder.Append(" where IDCardNo=@IDCardNo");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
@@ -163,7 +163,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append(" SELECT * ");
-            builder.Append(" FROM tbl_recordsecg ");
+            builder.Append(" FROM ARCHIVE_ECG ");
             builder.Append(" WHERE IDCardNo=@IDCardNo");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };

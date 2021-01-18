@@ -13,7 +13,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_OlderMedicineCn(");
+            builder.Append("INSERT INTO OLD_MEDICINE_CN(");
             builder.Append("RecordID,IDCardNo,CustomerID,PhysicalID,Energy,Tired,Breath,Voice,Emotion,Spirit,Alone,Fear,");
             builder.Append("Weight,Eye,FootHand,Stomach,Cold,Influenza,Nasal,Snore,Allergy,Urticaria,Skin,Scratch,Mouth,");
             builder.Append("Arms,Greasy,Spot,Eczema,Thirsty,Smell,Abdomen,Coolfood,Defecate,Defecatedry,Tongue,Vein,");
@@ -138,7 +138,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("UPDATE tbl_OlderMedicineCn SET ");
+            builder.Append("UPDATE OLD_MEDICINE_CN SET ");
             builder.Append("Energy=@Energy,");
             builder.Append("Tired=@Tired,");
             builder.Append("Breath=@Breath,");
@@ -269,7 +269,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_OlderMedicineCn ");
+            builder.Append("SELECT * FROM OLD_MEDICINE_CN ");
             builder.Append(" WHERE OutKey=@OutKey");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] {
@@ -281,7 +281,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             if (Version.Contains("V3.0"))
             {
                 builder.Clear();
-                builder.Append("SELECT * FROM tbl_OlderMedicineCn ");
+                builder.Append("SELECT * FROM OLD_MEDICINE_CN ");
                 builder.Append(" WHERE RecordDate=@RecordDate AND IDCardNo=@IDCardNo");
 
                 cmdParms = new MySqlParameter[] {
@@ -300,7 +300,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_OlderMedicineCn ");
+            builder.Append("SELECT * FROM OLD_MEDICINE_CN ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             if (CheckDate != "") builder.Append("AND RecordDate=@RecordDate");
@@ -327,8 +327,8 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_OlderMedicineCn Cn ");
-            builder.Append("LEFT JOIN tbl_OlderMedicineResult Result ");
+            builder.Append("SELECT * FROM OLD_MEDICINE_CN Cn ");
+            builder.Append("LEFT JOIN OLD_MEDICINE_RESULT Result ");
             builder.Append("ON Result.OutKey=Cn.OutKey ");
             builder.Append("AND Result.IDCardNo=Cn.IDCardNo ");
             builder.Append(" WHERE Cn.OutKey=@OutKey");
@@ -352,8 +352,8 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_OlderMedicineCn Cn ");
-            builder.Append(" LEFT JOIN tbl_OlderMedicineResult Result ");
+            builder.Append("SELECT * FROM OLD_MEDICINE_CN Cn ");
+            builder.Append(" LEFT JOIN OLD_MEDICINE_RESULT Result ");
             builder.Append(" ON Result.MedicineID=Cn.ID ");
             builder.Append(" AND Result.IDCardNo=Cn.IDCardNo ");
             builder.Append(" WHERE Cn.IDCardNo=@IDCardNo ");
@@ -382,7 +382,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT COUNT(0) FROM tbl_OlderMedicineCn ");
+            builder.Append("SELECT COUNT(0) FROM OLD_MEDICINE_CN ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
             builder.Append(" AND YEAR(RecordDate)=YEAR(NOW())");
             builder.Append(" AND QUARTER(RecordDate) = QUARTER(NOW())");

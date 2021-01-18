@@ -12,7 +12,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Add(SysUserModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_sysuser(");
+            builder.Append("insert into SYS_USER(");
             builder.Append("ID,UserID,UserName,PassWord,Addr,Tel,Status,Remark,ResetPassword,Isuk,Email,Sex,ProvinceID,CityID,DistrictID,TownID,VillageID)");
             builder.Append(" values (");
             builder.Append("@ID,@UserID,@UserName,@PassWord,@Addr,@Tel,@Status,@Remark,@ResetPassword,@Isuk,@Email,@Sex,@ProvinceID,@CityID,@DistrictID,@TownID,@VillageID)");
@@ -117,7 +117,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_sysuser ");
+            builder.Append("delete from SYS_USER ");
             builder.Append(" where ");
             MySqlParameter[] cmdParms = new MySqlParameter[0];
             return (MySQLHelper.ExecuteSql(builder.ToString(), cmdParms) > 0);
@@ -127,7 +127,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select  ID,UserID,UserName,PassWord,Addr,Tel,Status,Remark,ResetPassword,Isuk,Email,Sex,\n(case ProvinceID when '' then null else ProvinceID end)ProvinceID,\n(case CityID when '' then null when 'null' then NULL ELSE CityID end)CityID,DistrictID,(case TownID when 'null' then NULL else TownID end)TownID,\n(case VillageID when 'null' then NULL else VillageID end)VillageID ");
-            builder.Append(" FROM tbl_sysuser ");
+            builder.Append(" FROM SYS_USER ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -148,7 +148,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             {
                 builder.Append("order by T. desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_sysuser T ");
+            builder.Append(")AS Row, T.*  from SYS_USER T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -161,7 +161,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public SysUserModel GetModel(string id)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select  ID,UserID,UserName,PassWord,Addr,Tel,Status,Remark,ResetPassword,Isuk,Email,Sex,\n(case ProvinceID when '' then null else ProvinceID end)ProvinceID,CityID,DistrictID,(case TownID when '' then null else TownID end)TownID,\n(case VillageID when '' then null else VillageID end)VillageID from tbl_sysuser ");
+            builder.Append("select  ID,UserID,UserName,PassWord,Addr,Tel,Status,Remark,ResetPassword,Isuk,Email,Sex,\n(case ProvinceID when '' then null else ProvinceID end)ProvinceID,CityID,DistrictID,(case TownID when '' then null else TownID end)TownID,\n(case VillageID when '' then null else VillageID end)VillageID from SYS_USER ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.String) };
             cmdParms[0].Value = id;
@@ -177,7 +177,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_sysuser ");
+            builder.Append("select count(1) FROM SYS_USER ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -193,7 +193,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(SysUserModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_sysuser set ");
+            builder.Append("update SYS_USER set ");
             builder.Append("UserID=@UserID,");
             builder.Append("UserName=@UserName,");
             builder.Append("PassWord=@PassWord,");
@@ -257,7 +257,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public DataSet GetDoctorList(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append(" Select  UserID,UserName FROM tbl_sysuser ");
+            builder.Append(" Select  UserID,UserName FROM SYS_USER ");
 
             if (strWhere.Trim() != "")
             {

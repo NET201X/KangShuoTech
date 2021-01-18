@@ -8,7 +8,7 @@
         public int ID { get; set; }
 
         /// <summary>
-        /// tbl_report ID 外键
+        /// ARCHIVE_REPORT ID 外键
         /// </summary>
         public int? ReportID { get; set; }
 
@@ -40,29 +40,29 @@
         public string Col2 { get; set; }
         public string Col3 { get; set; }
 
-        #region tbl_report 字段
+        #region ARCHIVE_REPORT 字段
         /// <summary>
-        /// tbl_report ID
+        /// ARCHIVE_REPORT ID
         /// </summary>
         public int TblReportID { get; set; }
 
         /// <summary>
-        /// tbl_report 表名
+        /// ARCHIVE_REPORT 表名
         /// </summary>
         public string TableName { get; set; }
 
         /// <summary>
-        /// tbl_report 别名
+        /// ARCHIVE_REPORT 别名
         /// </summary>
         public string AnotherName { get; set; }
 
         /// <summary>
-        /// tbl_report 栏位名
+        /// ARCHIVE_REPORT 栏位名
         /// </summary>
         public string OptionName { get; set; }
 
         /// <summary>
-        /// tbl_report 中文名称
+        /// ARCHIVE_REPORT 中文名称
         /// </summary>
         public string ChinaName { get; set; }
         #endregion

@@ -18,14 +18,14 @@ namespace PrintPlatform
                             (                       
                             SELECT
                             MAX(ID) as ID
-                            FROM tbl_ptntbl
+                            FROM ARCHIVE_ULTRASONICB_RESULT
                             GROUP BY PTNIDNO  
                             ) TypeB
                             INNER JOIN
-                            tbl_ptntbl E 
+                            ARCHIVE_ULTRASONICB_RESULT E 
                             ON TypeB.ID = E.ID
-                            inner join tbl_recordsbaseinfo T  on T.IDCardNo = E.PTNIDNO 
-                            left join tbl_recordscustomerbaseinfo B on T.IDCardNo = B.IDCardNo ");
+                            inner join ARCHIVE_BASEINFO T  on T.IDCardNo = E.PTNIDNO 
+                            left join ARCHIVE_CUSTOMERBASEINFO B on T.IDCardNo = B.IDCardNo ");
 
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
@@ -54,16 +54,16 @@ namespace PrintPlatform
                             SELECT
                               PTNIDNO
                               , MAX(DIAGTM) AS DIAGTM
-                            FROM tbl_ptntbl
+                            FROM ARCHIVE_ULTRASONICB_RESULT
                             WHERE PTNIDNO <> ''
                             GROUP BY PTNIDNO
                             ) TypeB
                             INNER JOIN
-                            tbl_ptntbl E 
+                            ARCHIVE_ULTRASONICB_RESULT E 
                             ON TypeB.PTNIDNO = E.PTNIDNO
                             AND TypeB.DIAGTM = E.DIAGTM
-                            inner join tbl_recordsbaseinfo T  on T.IDCardNo = E.PTNIDNO 
-                            left join tbl_recordscustomerbaseinfo B on T.IDCardNo = B.IDCardNo  ");
+                            inner join ARCHIVE_BASEINFO T  on T.IDCardNo = E.PTNIDNO 
+                            left join ARCHIVE_CUSTOMERBASEINFO B on T.IDCardNo = B.IDCardNo  ");
 
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {

@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{6026869B-B135-4733-B4FF-96212F15732C}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>NewPrint</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>
+    </DocumentationFile>
+    <WarningLevel>4</WarningLevel>
+    <OutputPath>..\PadPlatform\bin\Debug\</OutputPath>
+    <DefineConstants>Debug</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>..\PadPlatform\bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\Library\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Spire.Doc">
+      <HintPath>..\..\Library\Spire.Doc.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.License">
+      <HintPath>..\..\Library\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf">
+      <HintPath>..\..\Library\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data.SQLite, Version=1.0.96.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Library\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.XML" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.cs" />
+    <Compile Include="BatchXPSPrinter.cs" />
+    <Compile Include="frmPrint.xaml.cs">
+      <DependentUpon>frmPrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmSelectSave.xaml.cs">
+      <DependentUpon>frmSelectSave.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmShowBatch.xaml.cs">
+      <DependentUpon>frmShowBatch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmShowBatchExport.xaml.cs">
+      <DependentUpon>frmShowBatchExport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmShowSave.cs" />
+    <Compile Include="mainFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewPrint.Properties\Resources.cs" />
+    <Compile Include="NewPrint.Properties\Settings.cs" />
+    <Compile Include="printClass\ArchiveBase.cs" />
+    <Compile Include="printClass\ArchiveCard.cs" />
+    <Compile Include="printClass\ArchiveCover.cs" />
+    <Compile Include="printClass\ArchivePhysical.cs" />
+    <Compile Include="printClass\Blood_Urine.cs" />
+    <Compile Include="printClass\Child_CN_ONE.cs" />
+    <Compile Include="printClass\Child_CN_THREE.cs" />
+    <Compile Include="printClass\Child_CN_TWO.cs" />
+    <Compile Include="printClass\Child_With_NEW.cs" />
+    <Compile Include="printClass\Child_With_ONE.cs" />
+    <Compile Include="printClass\Child_With_THREE.cs" />
+    <Compile Include="printClass\Child_With_TWO.cs" />
+    <Compile Include="printClass\ChronicLungerVisit.cs" />
+    <Compile Include="printClass\ElectroCardioGramcs.cs" />
+    <Compile Include="printClass\GRAVIDA_FRIST.cs" />
+    <Compile Include="printClass\GRAVIDA_Postpartum.cs" />
+    <Compile Include="printClass\GRAVIDA_Postpartum42.cs" />
+    <Compile Include="printClass\GRAVIDA_TWO.cs" />
+    <Compile Include="printClass\HealthCoverCard.cs" />
+    <Compile Include="printClass\HealthCoverCard_Colour.cs" />
+    <Compile Include="printClass\HealthEducation.cs" />
+    <Compile Include="printClass\HealthFeedback.cs" />
+    <Compile Include="printClass\HealthReport.cs" />
+    <Compile Include="printClass\IGetReport.cs" />
+    <Compile Include="printClass\LungerFirstVisit.cs" />
+    <Compile Include="printClass\Medical_Consulation.cs" />
+    <Compile Include="printClass\Medical_Receive.cs" />
+    <Compile Include="printClass\Medical_Refferral.cs" />
+    <Compile Include="printClass\OldHealthFeedback.cs" />
+    <Compile Include="printClass\OldHealthFeedbackRiZhao.cs" />
+    <Compile Include="printClass\OldHealthReport.cs" />
+    <Compile Include="printClass\Old_Medicine_CN.cs" />
+    <Compile Include="printClass\PhyicalReport.cs" />
+    <Compile Include="printClass\Physical_OldSelfCare.cs" />
+    <Compile Include="printClass\TransWord.cs" />
+    <Compile Include="printClass\TypeBchao.cs" />
+    <Compile Include="printClass\OldHealthFeedbackYuCheng.cs" />
+    <Compile Include="printClass\CHD_Follow.cs" />
+    <Compile Include="printClass\Diabetes_Followup.cs" />
+    <Compile Include="ReportPrint\DrawItems.cs" />
+    <Compile Include="printClass\Hypertension_Followup.cs" />
+    <Compile Include="ReportPrint\ListValue.cs" />
+    <Compile Include="printClass\Mentaldisease_Baseinfo.cs" />
+    <Compile Include="printClass\Mentaldisease_Followup.cs" />
+    <Compile Include="printClass\Stroke_Followup.cs" />
+    <Compile Include="ReportPrint\StructMark.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="mainFrom.resources" />
+    <EmbeddedResource Include="NewPrint.Properties\Resources.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="frmshowsave.baml" />
+    <Resource Include="resources\btn3.jpg" />
+    <Resource Include="resources\btnprintall.jpg" />
+    <Resource Include="resources\print.ico" />
+    <Resource Include="resources\printbutton.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataAccessProjects\BLL\BLL.csproj">
+      <Project>{88DB6CEA-C1D8-4CA8-8920-D84FACD56AF9}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataAccessProjects\DAL\DAL.csproj">
+      <Project>{3014AEAB-B113-4D34-A8A9-C88DC6F00B48}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataAccessProjects\Model\Model.csproj">
+      <Project>{cf316d09-eead-4e9f-aef5-be10e341cab7}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemFrameworksProjects\Utilities.Common\Utilities.Common.csproj">
+      <Project>{8F302C1F-01D0-4D2F-A921-07927ADB3B9C}</Project>
+      <Name>Utilities.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="printXps\01健康封面.xps" />
+    <None Include="printXps\01健康档案封面.xps" />
+    <None Include="printXps\02个人基本信息表.xps" />
+    <None Include="printXps\03健康体检表%28道口铺镇卫生院%29.xps" />
+    <None Include="printXps\03健康体检表.xps" />
+    <None Include="printXps\04高血压患者随访服务记录表.xps" />
+    <None Include="printXps\05型糖尿病患者随访服务记录表.xps" />
+    <None Include="printXps\07重性精神疾病患者个人信息补充表.xps" />
+    <None Include="printXps\08重性精神疾病患者随访服务记录表.xps" />
+    <None Include="printXps\09居民健康档案信息卡.xps" />
+    <None Include="printXps\10老年人生活自理能力评估表（体检）.xps" />
+    <None Include="printXps\10老年人生活自理能力评估表（禹城）.xps" />
+    <None Include="printXps\11新生儿家庭访视记录表.xps" />
+    <None Include="printXps\12一岁以内儿童健康检查记录表.xps" />
+    <None Include="printXps\13一到二岁儿童健康检查记录表.xps" />
+    <None Include="printXps\14三到六岁儿童健康检查记录表.xps" />
+    <None Include="printXps\15第一次产前随访服务记录表.xps" />
+    <None Include="printXps\16第2～5次产前随访服务记录表.xps" />
+    <None Include="printXps\17产后访视记录表.xps" />
+    <None Include="printXps\18产后42天访视记录表.xps" />
+    <None Include="printXps\19脑卒中患者随访服务记录表.xps" />
+    <None Include="printXps\20冠心病患者随访服务记录表.xps" />
+    <None Include="printXps\21一岁以内儿童中医药健康管理.xps" />
+    <None Include="printXps\22一到二岁以内儿童中医药健康管理.xps" />
+    <None Include="printXps\23三到六岁以内儿童中医药健康管理.xps" />
+    <None Include="printXps\24-36月龄儿童中医药健康管理.xps" />
+    <None Include="printXps\24老年人中医体质辨识.xps" />
+    <None Include="printXps\24老年人中医体质辨识（济南随访）.xps" />
+    <None Include="printXps\24老年人中医体质辨识（随访）.xps" />
+    <None Include="printXps\25肺结核患者第一次入户随访记录表.xps" />
+    <None Include="printXps\26肺结核患者随访服务记录表.xps" />
+    <None Include="printXps\27个体化健康教育.xps" />
+    <None Include="printXps\29会诊记录表.xps" />
+    <None Include="printXps\30接诊记录表.xps" />
+    <None Include="printXps\31双向转诊单.xps" />
+    <None Include="printXps\32健康体检反馈单%28道口铺%29.xps" />
+    <None Include="printXps\32健康体检反馈单.xps" />
+    <None Include="printXps\33血生化、血常规、尿液数据表%28威海美年大健康%29.xps" />
+    <None Include="printXps\33血生化、血常规、尿液数据表%28禹城%29.xps" />
+    <None Include="printXps\33血生化、血常规、尿液数据表%28聊城韩集乡医院%29.xps" />
+    <None Include="printXps\33血生化、血常规、尿液数据表%28菏泽%29.xps" />
+    <None Include="printXps\33血生化、血常规、尿液数据表%28顾官屯%29.xps" />
+    <None Include="printXps\33血生化、血常规、尿液数据表.xps" />
+    <None Include="printXps\35老年人健康体检反馈单%28威海美年大健康%29.xps" />
+    <None Include="printXps\35老年人健康体检反馈单%28日照街道社区%29.xps" />
+    <None Include="printXps\35老年人健康体检反馈单%28淄博%29.xps" />
+    <None Include="printXps\35老年人健康体检反馈单%28禹城%29.xps" />
+    <None Include="printXps\35老年人健康体检反馈单%28道口铺%29.xps" />
+    <None Include="printXps\35老年人健康体检反馈单%28顾官屯%29.xps" />
+    <None Include="printXps\35老年人健康体检反馈单.xps" />
+    <None Include="printXps\36居民健康体检表%28禹城%29.xps" />
+    <None Include="printXps\36居民健康体检表.xps" />
+    <None Include="printXps\36居民健康体检表（彩页）.xps" />
+    <None Include="printXps\38心电图.xps" />
+    <None Include="printXps\39B超.xps" />
+    <None Include="printXps\40体检报告.docx" />
+    <None Include="printXps\41老年人体检封面.xps" />
+    <None Include="printXps\6-18月龄儿童中医药健康管理服务记录表.xps" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="frmPrint.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="frmSelectSave.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="frmShowBatch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="frmShowBatchExport.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

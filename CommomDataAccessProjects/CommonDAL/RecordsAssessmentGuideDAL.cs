@@ -13,7 +13,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_RecordsAssessmentGuide(IDCardNo,OutKey)");
+            builder.Append("INSERT INTO ARCHIVE_ASSESSMENTGUIDE(IDCardNo,OutKey)");
             builder.Append(" VALUES (@IDCardNo,@OutKey)");
             builder.Append(";SELECT @@IDENTITY");
 
@@ -37,7 +37,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_RecordsAssessmentGuide ");
+            builder.Append("SELECT * FROM ARCHIVE_ASSESSMENTGUIDE ");
             builder.Append(" WHERE OutKey=@OutKey");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@OutKey", MySqlDbType.Int32, 4) };

@@ -10,7 +10,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonModel
         public int ID { get; set; }
 
         /// <summary>
-        /// tbl_recordscustomerbaseinfo
+        /// ARCHIVE_CUSTOMERBASEINFO
         /// </summary>
         /// 
         //ID,IDCardNo,RecordDate,Symptom,SymptomEx,
@@ -20,7 +20,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonModel
         public string SymptomEx { get; set; }//
 
         /// <summary>
-        /// tbl_recordsgeneralcondition
+        /// ARCHIVE_GENERALCONDITION
         /// </summary>
         /// 
         //OldRecognise,OldEmotion,InterScore,GloomyScore,WaistIp,OldHealthStaus,OldSelfCareability
@@ -33,7 +33,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonModel
         public string OldSelfCareability { get; set; }
 
         /// <summary>
-        /// tbl_recordslifestyle
+        /// ARCHIVE_LIFESTYLE
         /// </summary>
         /// 
         //ExerciseRate,ExerciseTimes,ExcisepersistTime,ExerciseExistense,DietaryHabit,SmokeCondition,SmokeDayNum,
@@ -79,10 +79,10 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonModel
         public string OtherProtectEx { get; set; }//
 
         /// <summary>
-        /// tbl_recordsassistcheck
+        /// ARCHIVE_ASSISTCHECK
         /// </summary>
         /// 
-        //tbl_recordsassistcheck,CHESTX,BCHAO,CERVIX,CHESTXEx,BCHAOEx,CERVIXEx,6
+        //ARCHIVE_ASSISTCHECK,CHESTX,BCHAO,CERVIX,CHESTXEx,BCHAOEx,CERVIXEx,6
         public string CHESTX { get; set; }//
         public string BCHAO { get; set; }//
         public string CERVIX { get; set; }//
@@ -91,10 +91,10 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonModel
         public string CERVIXEx { get; set; }//
 
         /// <summary>
-        /// tbl_recordshealthquestion
+        /// ARCHIVE_HEALTHQUESTION
         /// </summary>
         /// 
-        //tbl_recordshealthquestion,BrainDis,RenalDis,HeartDis,VesselDis,EyeDis,NerveDis,ElseDis,BrainDisEx,
+        //ARCHIVE_HEALTHQUESTION,BrainDis,RenalDis,HeartDis,VesselDis,EyeDis,NerveDis,ElseDis,BrainDisEx,
         //RenalDisEx,HeartDisEx,VesselDisEx,EyeDisEx,NerveDisEx,ElseDisEx,14
         public string BrainDis { get; set; }//健康问题-脑血管疾病
         public string RenalDis { get; set; }//健康问题-肾脏疾病
@@ -112,10 +112,10 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonModel
         public string ElseDisEx { get; set; }//
 
         /// <summary>
-        /// tbl_recordsviscerafunction
+        /// ARCHIVE_VISCERAFUNCTION
         /// </summary>
         /// 
-        //tbl_recordsviscerafunction,Lips,ToothResides,Pharyngeal,LeftView,RightView,LeftEyecorrect,RightEyecorrect,Listen,
+        //ARCHIVE_VISCERAFUNCTION,Lips,ToothResides,Pharyngeal,LeftView,RightView,LeftEyecorrect,RightEyecorrect,Listen,
         //SportFunction,HypodontiaEx,SaprodontiaEx,DentureEx,12
         public string Lips { get; set; }//口腔-口唇
         public string ToothResides { get; set; }//口腔-齿列
@@ -131,10 +131,10 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonModel
         public string DentureEx { get; set; }//
 
         /// <summary>
-        /// tbl_recordsphysicalexam
+        /// ARCHIVE_PHYSICALEXAM
         /// </summary>
         /// 
-        //tbl_recordsphysicalexam,EyeRound,Skin,Sclere,Lymph,BarrelChest,BreathSounds,Rale,HeartRate,HeartRhythm,Noise,PressPain,EnclosedMass,
+        //ARCHIVE_PHYSICALEXAM,EyeRound,Skin,Sclere,Lymph,BarrelChest,BreathSounds,Rale,HeartRate,HeartRhythm,Noise,PressPain,EnclosedMass,
         //Liver,Spleen,Voiced,Edema,FootBack,SkinEx,SclereEx,LymphEx,RaleEx,NoiseEx,LiverEx,SpleenEx,VoicedEx,
         //BarrelChestEx,BreathSoundsEx,PressPainEx,EnclosedMassEx,29
         public string EyeRound { get; set; }//

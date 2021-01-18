@@ -15,7 +15,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append(@"SELECT * FROM tbl_print ");
+            builder.Append(@"SELECT * FROM SYS_PRINT ");
             builder.Append(" WHERE 1=1 ");
 
             if (strWhere.Length > 0) builder.AppendFormat(" {0} ", strWhere);
@@ -30,7 +30,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append(@"
-                                    UPDATE tbl_print 
+                                    UPDATE SYS_PRINT 
                                      SET
                                         ButtonName = @ButtonName
                                         ,Orders = @Orders

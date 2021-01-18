@@ -13,7 +13,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_recordshealthquestion(");
+            builder.Append("INSERT INTO ARCHIVE_HEALTHQUESTION(");
             builder.Append("PhysicalID,IDCardNo,BrainDis,RenalDis,HeartDis,VesselDis,EyeDis,NerveDis,ElseDis,BrainOther,RenalOther,HeartOther,VesselOther,EyeOther,NerveOther,ElseOther,OutKey )");
             builder.Append(" VALUES (");
             builder.Append("@PhysicalID,@IDCardNo,@BrainDis,@RenalDis,@HeartDis,@VesselDis,@EyeDis,@NerveDis,@ElseDis,@BrainOther,@RenalOther,@HeartOther,@VesselOther,@EyeOther,@NerveOther,@ElseOther,@OutKey )");
@@ -68,7 +68,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_recordshealthquestion ");
+            builder.Append("SELECT * FROM ARCHIVE_HEALTHQUESTION ");
             builder.Append(" WHERE OutKey=@OutKey");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@OutKey", MySqlDbType.Int32, 4) };
@@ -83,7 +83,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("UPDATE tbl_recordshealthquestion SET ");
+            builder.Append("UPDATE ARCHIVE_HEALTHQUESTION SET ");
             builder.Append("PhysicalID=@PhysicalID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("BrainDis=@BrainDis,");
@@ -154,7 +154,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append(@"UPDATE 
-                                    tbl_RecordsHealthQuestion
+                                    ARCHIVE_HEALTHQUESTION
                              SET 
                                     ElseDis=@ElseDis
                                     ,ElseOther=@ElseOther

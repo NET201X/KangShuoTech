@@ -12,7 +12,7 @@
         public int Add(KidsWithinOneYearOldModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_kidswithinoneyearold(");
+            builder.Append("insert into CHILD_WITHIN_ONE_YEAR_OLD(");
             builder.Append("CustomerID,RecordID,IDCardNo,Name,VisitDate,Weight,WeightAnalysis,Stature,StatureAnalysis,HeadCircumference,ColorFace,Skin,Bregma,BregmaLeft,BregmaRight,NeckMass,EyeAppearance,EarAppearance,Listening,OralCavity,HeartLung,Stomach,UmbilicalRegion,FourLimb,RicketsSympotom,RicketsSign,AnusExternalGenita,HemoglobinValue,OutdoorActivities,TakingVitaminsd,AuxeEstimate,AmongTwoFollowup,Other,ReferralAdvice,ReferralReason,AgenciesDepartments,Guidance,NextFollowUpDate,FollowUpDoctorSign,Flag,TeethNum,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel,");
             builder.Append("Chest,SickNone,PneumoniaCounts,DiarrheaCounts,TraumaCounts,SickOther,GuidesOther,ReferraContacts,ReferralContactsTel,ReferralResult) ");
             builder.Append(" values (");
@@ -144,7 +144,7 @@
         public int AddServer(KidsWithinOneYearOldModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_kidswithinoneyearold(");
+            builder.Append("insert into CHILD_WITHIN_ONE_YEAR_OLD(");
             builder.Append("CustomerID,RecordID,IDCardNo,Name,VisitDate,Weight,WeightAnalysis,Stature,StatureAnalysis,HeadCircumference,ColorFace,Skin,Bregma,BregmaLeft,BregmaRight,NeckMass,EyeAppearance,EarAppearance,Listening,OralCavity,HeartLung,Stomach,UmbilicalRegion,FourLimb,RicketsSympotom,RicketsSign,AnusExternalGenita,HemoglobinValue,OutdoorActivities,TakingVitaminsd,AuxeEstimate,AmongTwoFollowup,Other,ReferralAdvice,ReferralReason,AgenciesDepartments,Guidance,NextFollowUpDate,FollowUpDoctorSign,Flag,TeethNum,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel,");
             builder.Append("Chest,SickNone,PneumoniaCounts,DiarrheaCounts,TraumaCounts,SickOther,GuidesOther,ReferraContacts,ReferralContactsTel,ReferralResult) ");
             builder.Append(" values (");
@@ -513,7 +513,7 @@
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_kidswithinoneyearold ");
+            builder.Append("delete from CHILD_WITHIN_ONE_YEAR_OLD ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -523,7 +523,7 @@
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_kidswithinoneyearold ");
+            builder.Append("delete from CHILD_WITHIN_ONE_YEAR_OLD ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -531,7 +531,7 @@
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_kidswithinoneyearold");
+            builder.Append("select count(1) from CHILD_WITHIN_ONE_YEAR_OLD");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -543,7 +543,7 @@
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,CustomerID,RecordID,IDCardNo,Name,VisitDate,Weight,WeightAnalysis,Stature,StatureAnalysis,HeadCircumference,ColorFace,Skin,Bregma,BregmaLeft,BregmaRight,NeckMass,EyeAppearance,EarAppearance,Listening,OralCavity,HeartLung,Stomach,UmbilicalRegion,FourLimb,RicketsSympotom,RicketsSign,AnusExternalGenita,HemoglobinValue,OutdoorActivities,TakingVitaminsd,AuxeEstimate,AmongTwoFollowup,Other,ReferralAdvice,ReferralReason,AgenciesDepartments,Guidance,NextFollowUpDate,FollowUpDoctorSign,Flag,TeethNum,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel, ");
             builder.Append("Chest,SickNone,PneumoniaCounts,DiarrheaCounts,TraumaCounts,SickOther,GuidesOther,ReferraContacts,ReferralContactsTel,ReferralResult ");
-            builder.Append(" FROM tbl_kidswithinoneyearold ");
+            builder.Append(" FROM CHILD_WITHIN_ONE_YEAR_OLD ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -564,7 +564,7 @@
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_kidswithinoneyearold T ");
+            builder.Append(")AS Row, T.*  from CHILD_WITHIN_ONE_YEAR_OLD T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -576,7 +576,7 @@
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_kidswithinoneyearold");
+            return MySQLHelper.GetMaxID("ID", "CHILD_WITHIN_ONE_YEAR_OLD");
         }
 
         public KidsWithinOneYearOldModel GetModel(string IDCardNo)
@@ -584,7 +584,7 @@
             StringBuilder builder = new StringBuilder();
             builder.Append("select  ID,CustomerID,RecordID,IDCardNo,Name,VisitDate,Weight,WeightAnalysis,Stature,StatureAnalysis,HeadCircumference,ColorFace,Skin,Bregma,BregmaLeft,BregmaRight,NeckMass,EyeAppearance,EarAppearance,Listening,OralCavity,HeartLung,Stomach,UmbilicalRegion,FourLimb,RicketsSympotom,RicketsSign,AnusExternalGenita,HemoglobinValue,OutdoorActivities,TakingVitaminsd,AuxeEstimate,AmongTwoFollowup,Other,ReferralAdvice,ReferralReason,AgenciesDepartments,Guidance,NextFollowUpDate,FollowUpDoctorSign,Flag,TeethNum,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel, ");
             builder.Append("Chest,SickNone,PneumoniaCounts,DiarrheaCounts,TraumaCounts,SickOther,GuidesOther,ReferraContacts,ReferralContactsTel,ReferralResult ");
-            builder.Append(" FROM tbl_kidswithinoneyearold ");
+            builder.Append(" FROM CHILD_WITHIN_ONE_YEAR_OLD ");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -600,7 +600,7 @@
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_kidswithinoneyearold ");
+            builder.Append("select count(1) FROM CHILD_WITHIN_ONE_YEAR_OLD ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -616,7 +616,7 @@
         public bool Update(KidsWithinOneYearOldModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_kidswithinoneyearold set ");
+            builder.Append("update CHILD_WITHIN_ONE_YEAR_OLD set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
@@ -796,7 +796,7 @@
         public bool UpdateServer(KidsWithinOneYearOldModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_kidswithinoneyearold set ");
+            builder.Append("update CHILD_WITHIN_ONE_YEAR_OLD set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");

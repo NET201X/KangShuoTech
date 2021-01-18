@@ -17,7 +17,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_ChronicHypertensionBaseInfo(");
+            builder.Append("INSERT INTO CD_HYPERTENSION_BASEINFO(");
             builder.Append("CustomerID,RecordID,IDCardNo,ManagementGroup,CaseOurce,TerminateExcuse,");
             builder.Append("FatherHistory,Symptom,HypertensionComplication,Hypotensor,TerminateManagemen,");
             builder.Append("TerminateTime,CreateUnit,CurrentUnit,CreatedDate,");
@@ -121,7 +121,7 @@
         public int Add(ChronicHypertensionVisitModel model, string VersionNo)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("INSERT INTO tbl_ChronicHypertensionVisit(");
+            builder.Append("INSERT INTO CD_HYPERTENSIONFOLLOWUP(");
             builder.Append("RecordID,CustomerID,IDCardNo,CustomerName,");
 
             if (VersionNo.Contains("3.0")) builder.Append(" VisitDate,VisitDoctor,NextVisitDate,VisitWay,VisitType, ");
@@ -247,7 +247,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_ChronicHypertensionVisit");
+            builder.Append("SELECT * FROM CD_HYPERTENSIONFOLLOWUP");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             if (Convert.ToString(CheckDate).Length > 3)
@@ -288,7 +288,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_ChronicHypertensionVisit");
+            builder.Append("SELECT * FROM CD_HYPERTENSIONFOLLOWUP");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             if (Convert.ToString(CheckDate).Length > 3)
@@ -329,7 +329,7 @@
             StringBuilder builder = new StringBuilder();
             string column = VersionNo.Contains("3.0") ? "VisitDate" : "FollowupDate";
 
-            builder.Append("SELECT * FROM tbl_ChronicHypertensionVisit ");
+            builder.Append("SELECT * FROM CD_HYPERTENSIONFOLLOWUP ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             builder.AppendFormat(" ORDER BY {0} DESC LIMIT 0,1 ", column);
@@ -352,7 +352,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT COUNT(0) FROM tbl_ChronicHypertensionBaseInfo ");
+            builder.Append("SELECT COUNT(0) FROM CD_HYPERTENSION_BASEINFO ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] {
@@ -377,7 +377,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT COUNT(0) FROM tbl_ChronicHypertensionVisit ");
+            builder.Append("SELECT COUNT(0) FROM CD_HYPERTENSIONFOLLOWUP ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             if (VersionNo.Contains("3.0"))
@@ -414,7 +414,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("UPDATE tbl_ChronicHypertensionVisit SET ");
+            builder.Append("UPDATE CD_HYPERTENSIONFOLLOWUP SET ");
 
             decimal value;
 
@@ -476,12 +476,12 @@
 
             if (VersionNo.Contains("3.0"))
             {
-                sql += " WHERE ID=(SELECT * FROM (SELECT ID FROM tbl_ChronicHypertensionVisit WHERE VisitDate LIKE '" +
+                sql += " WHERE ID=(SELECT * FROM (SELECT ID FROM CD_HYPERTENSIONFOLLOWUP WHERE VisitDate LIKE '" +
                     DateTime.Now.Year + "%' AND IDCardNo='" + model.IDCardNo + "' ORDER BY VisitDate DESC LIMIT 1) AS DATAS )";
             }
             else
             {
-                sql += " WHERE ID=(SELECT * FROM (SELECT ID FROM tbl_ChronicHypertensionVisit WHERE FollowUpDate LIKE '" +
+                sql += " WHERE ID=(SELECT * FROM (SELECT ID FROM CD_HYPERTENSIONFOLLOWUP WHERE FollowUpDate LIKE '" +
                     DateTime.Now.Year + "%' AND IDCardNo='" + model.IDCardNo + "' ORDER BY FollowUpDate DESC LIMIT 1) AS DATAS )";
             }
 
@@ -498,7 +498,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_ChronicStrokeBaseInfo(");
+            builder.Append("INSERT INTO CD_STROKE_BASEINFO(");
             builder.Append("CustomerID,RecordID,IDCardNo,IllSource,IllTime,DiagnosisHource,");
             builder.Append("Familyhistory,HosState,Mrs,GroupLevel,DangerousElement,DgrElementOther,");
             builder.Append("CT,Mri,StrokeType,StrokePosition,SelfAbility,DrugsRely,SpecialTreatment,");
@@ -589,7 +589,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_ChronicStrokeVisit(");
+            builder.Append("INSERT INTO CD_STROKE_FOLLOWUP(");
             builder.Append("CustomerID,IDCardNo,Symptom,SymptomOther,Hypertension,Hypotension,Weight,SignOther,");
 
             if (VersionNo.Contains("3.0")) builder.Append(" VisitDate,VisitDoctor,NextVisitDate, ");
@@ -683,7 +683,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_ChronicStrokeVisit");
+            builder.Append("SELECT * FROM CD_STROKE_FOLLOWUP");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             if (CheckDate != "")
@@ -722,7 +722,7 @@
             StringBuilder builder = new StringBuilder();
             string column = VersionNo.Contains("3.0") ? "VisitDate" : "FollowupDate";
 
-            builder.Append("SELECT * FROM tbl_ChronicStrokeVisit ");
+            builder.Append("SELECT * FROM CD_STROKE_FOLLOWUP ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             builder.AppendFormat(" ORDER BY {0} DESC LIMIT 0,1 ", column);
@@ -745,7 +745,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT COUNT(0) FROM tbl_ChronicStrokeBaseInfo ");
+            builder.Append("SELECT COUNT(0) FROM CD_STROKE_BASEINFO ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] {
@@ -770,7 +770,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT COUNT(0) FROM tbl_ChronicStrokeVisit ");
+            builder.Append("SELECT COUNT(0) FROM CD_STROKE_FOLLOWUP ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             if (VersionNo.Contains("3.0"))
@@ -807,7 +807,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_ChronicChdBaseInfo(");
+            builder.Append("INSERT INTO CD_CHD_BASEINFO(");
             builder.Append("CustomerID,RecordID,IDCardNo,Source,FamilyHistory,SureDate,SureUnit,CoroType,CurrenStatus,History,Height,Weight,");
             builder.Append("BMI,HeatRate,Hypertension,Hypotension,FPG,HLIP,LLIP,Glycerate,Chole,Waistline,CheckDate,ECGResult,ECGSports,ECGColor,");
             builder.Append("Artery,Myocardial,Smoking,Drinking,Exercise,Life,Medical,Status,EndDate,EndReason,GroupLevel,");
@@ -922,7 +922,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_ChronicChdVisit(");
+            builder.Append("INSERT INTO CD_CHD_FOLLOWUP(");
             builder.Append("RecordID,IDCardNo,CustomerID,Symptom,SymptomEx,Systolic,Diastolic,Weight,HearVoice,");
             builder.Append("HeatRate,Apex,Smoking,Sports,Salt,Action,AssistCheck,AfterPill,Compliance,Untoward,UntowardEx,");
             builder.Append("FollowType,ReferralReason,ReferralDepart,NextVisitDate,VisitDoctor,");
@@ -1017,7 +1017,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_ChronicChdVisit");
+            builder.Append("SELECT * FROM CD_CHD_FOLLOWUP");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             if (CheckDate != "") builder.Append("AND VisitDate=@VisitDate");
@@ -1045,7 +1045,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_ChronicChdVisit ");
+            builder.Append("SELECT * FROM CD_CHD_FOLLOWUP ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
             builder.Append(" ORDER BY VisitDate DESC LIMIT 0,1 ");
 
@@ -1067,7 +1067,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT COUNT(0) FROM tbl_ChronicChdBaseInfo ");
+            builder.Append("SELECT COUNT(0) FROM CD_CHD_BASEINFO ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] {
@@ -1092,7 +1092,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT COUNT(0) FROM tbl_ChronicChdVisit ");
+            builder.Append("SELECT COUNT(0) FROM CD_CHD_FOLLOWUP ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
             builder.Append(" AND YEAR(VisitDate)=YEAR(NOW())");
             builder.Append(" AND QUARTER(VisitDate) = QUARTER(NOW())");

@@ -12,7 +12,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Add(SysOrgTownModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_sysorgtown(");
+            builder.Append("insert into SYS_ORG_TOWN(");
             builder.Append("ID,Code,Name,DistrictID)");
             builder.Append(" values (");
             builder.Append("@ID,@Code,@Name,@DistrictID)");
@@ -52,7 +52,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_sysorgtown ");
+            builder.Append("delete from SYS_ORG_TOWN ");
             builder.Append(" where ");
             MySqlParameter[] cmdParms = new MySqlParameter[0];
             return (MySQLHelper.ExecuteSql(builder.ToString(), cmdParms) > 0);
@@ -62,7 +62,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,Code,Name,DistrictID ");
-            builder.Append(" FROM tbl_sysorgtown ");
+            builder.Append(" FROM SYS_ORG_TOWN ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -83,7 +83,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             {
                 builder.Append("order by T. desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_sysorgtown T ");
+            builder.Append(")AS Row, T.*  from SYS_ORG_TOWN T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -96,7 +96,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public SysOrgTownModel GetModel(string code)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select ID,Code,Name,DistrictID from tbl_sysorgtown ");
+            builder.Append("select ID,Code,Name,DistrictID from SYS_ORG_TOWN ");
             builder.Append(" where Code = @Code");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@Code", MySqlDbType.String) };
             cmdParms[0].Value = code;
@@ -111,7 +111,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public SysOrgTownModel GetModelCode(string code)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select ID,Code,Name,DistrictID from tbl_sysorgtown ");
+            builder.Append("select ID,Code,Name,DistrictID from SYS_ORG_TOWN ");
             builder.Append(" where Code = @Code order by ID desc LIMIT 0,1 ");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@Code", MySqlDbType.String) };
             cmdParms[0].Value = code;
@@ -126,7 +126,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_sysorgtown ");
+            builder.Append("select count(1) FROM SYS_ORG_TOWN ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -142,7 +142,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(SysOrgTownModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_sysorgtown set ");
+            builder.Append("update SYS_ORG_TOWN set ");
             builder.Append("ID=@ID,");
             builder.Append("Code=@Code,");
             builder.Append("Name=@Name,");

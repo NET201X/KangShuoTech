@@ -21,7 +21,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             builder.Append("Snore,Allergy,Urticaria,Skin,Scratch,Mouth,Arms,Greasy,Spot,Eczema,Thirsty,Smell,Abdomen,Coolfood, ");
             builder.Append("Defecate,Defecatedry,Medicinecn.Tongue,Vein ");
 
-            string table = "SELECT COUNT(0) FROM sqlite_master WHERE NAME = 'tbl_oldermedicineresult' AND SQL LIKE '%Tongue%'";
+            string table = "SELECT COUNT(0) FROM sqlite_master WHERE NAME = 'OLD_MEDICINE_RESULT' AND SQL LIKE '%Tongue%'";
 
             object single = YcSqliteHelper.GetSingle(table, conn);
             int count = 0;
@@ -30,8 +30,8 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 
             if (count > 0) builder.Append(",Result.Tongue AS TongueM,TongueColor,TongueFur,Pulse ");
 
-            builder.Append("FROM tbl_oldermedicinecn Medicinecn ");
-            builder.Append("LEFT JOIN tbl_oldermedicineresult Result ");
+            builder.Append("FROM OLD_MEDICINE_CN Medicinecn ");
+            builder.Append("LEFT JOIN OLD_MEDICINE_RESULT Result ");
             builder.Append("ON Result.IDCardNo=Medicinecn.IDCardNo ");
             builder.Append("AND Result.RecordDate=Medicinecn.RecordDate ");
 

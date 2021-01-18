@@ -12,7 +12,7 @@
         public int Add(ChronicLungerFirstVisitModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_chroniclungerfirstvisit(");
+            builder.Append("insert into CD_PTB_FIRSTVISIT(");
             builder.Append("RecordID,CustomerID,IDCardNo,CustomerName,FollowupDate,EstimateDoctor,");
             builder.Append("FollowupWay,PatientType,Sputumfungs,DrugFast,Symptom,SymptomEx,MedicationCompliance,");
             builder.Append("ChemotherapyScheme,DrugType,Supervisor,StandaloneRoom,Ventilation,");
@@ -293,7 +293,7 @@
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_chroniclungerfirstvisit ");
+            builder.Append("delete from CD_PTB_FIRSTVISIT ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -302,7 +302,7 @@
         public bool DelOUTkey(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_chroniclungerfirstvisit ");
+            builder.Append("delete from CD_PTB_FIRSTVISIT ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 11) };
             cmdParms[0].Value = ID;
@@ -311,14 +311,14 @@
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_chroniclungerfirstvisit ");
+            builder.Append("delete from CD_PTB_FIRSTVISIT ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_chroniclungerfirstvisit");
+            builder.Append("select count(1) from CD_PTB_FIRSTVISIT");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -333,7 +333,7 @@
             builder.Append("SmokeDayNum,DayDrinkVolume,NextSmokeDayNum,NextDayDrinkVolume,MediclineReceiveTime,MediclineReceivePlace,RecordcardWrite,");
             builder.Append("PharmacyWayDeposit,Therapies,IndisciplineHarm,AdrsHandle,SubsequentVisit,InsistPharmacy,LivingHabit,");
             builder.Append("ChecktouchPerson,NextVisitDate,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel");
-            builder.Append(" FROM tbl_chroniclungerfirstvisit ");
+            builder.Append(" FROM CD_PTB_FIRSTVISIT ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -349,7 +349,7 @@
             builder.Append("(case C.FollowUpDate when null then null when '' then null else C.FollowUpDate end) as FollowUpDate, ");
             builder.Append("T.PopulationType,T.FamilyIDCardNo,T.HouseRelation,T.HouseRealOther,T.TownName,");
             builder.Append("T.VillageName,T.CreateUnitName,T.CreateMenName ");
-            builder.Append(" from tbl_chroniclungerfirstvisit C inner join tbl_recordsbaseinfo T on T.IDCardNo = C.IDCardNo ");
+            builder.Append(" from CD_PTB_FIRSTVISIT C inner join ARCHIVE_BASEINFO T on T.IDCardNo = C.IDCardNo ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE 1=1 " + strWhere);
@@ -368,7 +368,7 @@
         }
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_chroniclungerfirstvisit");
+            return MySQLHelper.GetMaxID("ID", "CD_PTB_FIRSTVISIT");
         }
         public ChronicLungerFirstVisitModel GetModel(string IDCardNo)
         {
@@ -379,7 +379,7 @@
             builder.Append("SmokeDayNum,DayDrinkVolume,NextSmokeDayNum,NextDayDrinkVolume,MediclineReceiveTime,MediclineReceivePlace,RecordcardWrite,");
             builder.Append("PharmacyWayDeposit,Therapies,IndisciplineHarm,AdrsHandle,SubsequentVisit,InsistPharmacy,LivingHabit,");
             builder.Append("ChecktouchPerson,NextVisitDate,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel ");
-            builder.Append(" from tbl_chroniclungerfirstvisit where IDCardNo = @IDCardNo ");
+            builder.Append(" from CD_PTB_FIRSTVISIT where IDCardNo = @IDCardNo ");
             builder.Append(" order by FollowupDate desc LIMIT 0,1 ");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
@@ -395,7 +395,7 @@
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_chroniclungerfirstvisit C left join tbl_recordsbaseinfo T on T.IDCardNo = C.IDCardNo   ");
+            builder.Append("select count(1) FROM CD_PTB_FIRSTVISIT C left join ARCHIVE_BASEINFO T on T.IDCardNo = C.IDCardNo   ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -410,7 +410,7 @@
         public bool Update(ChronicLungerFirstVisitModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_chroniclungerfirstvisit set ");
+            builder.Append("update CD_PTB_FIRSTVISIT set ");
             builder.Append("RecordID=@RecordID,");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("IDCardNo=@IDCardNo,");
@@ -547,7 +547,7 @@
             builder.Append("SmokeDayNum,DayDrinkVolume,NextSmokeDayNum,NextDayDrinkVolume,MediclineReceiveTime,MediclineReceivePlace,RecordcardWrite,");
             builder.Append("PharmacyWayDeposit,Therapies,IndisciplineHarm,AdrsHandle,SubsequentVisit,InsistPharmacy,LivingHabit,");
             builder.Append("ChecktouchPerson,NextVisitDate,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel ");
-            builder.Append(" from tbl_chroniclungerfirstvisit where ID = @ID ");
+            builder.Append(" from CD_PTB_FIRSTVISIT where ID = @ID ");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.String) };
             cmdParms[0].Value = ID;
@@ -568,7 +568,7 @@
             builder.Append("SmokeDayNum,DayDrinkVolume,NextSmokeDayNum,NextDayDrinkVolume,MediclineReceiveTime,MediclineReceivePlace,RecordcardWrite,");
             builder.Append("PharmacyWayDeposit,Therapies,IndisciplineHarm,AdrsHandle,SubsequentVisit,InsistPharmacy,LivingHabit,");
             builder.Append("ChecktouchPerson,NextVisitDate,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel ");
-            builder.Append(" from tbl_chroniclungerfirstvisit  ");
+            builder.Append(" from CD_PTB_FIRSTVISIT  ");
             if (!string.IsNullOrEmpty(strWhere))
             {
                 builder.Append(" where "+strWhere);

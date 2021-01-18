@@ -12,7 +12,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Add(SysOrgVillangModle model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_sysorgvillage(");
+            builder.Append("insert into SYS_ORG_VILLAGE(");
             builder.Append("ID,Code,Name,TownID)");
             builder.Append(" values (");
             builder.Append("@ID,@Code,@Name,@TownID)");
@@ -52,7 +52,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_sysorgvillage ");
+            builder.Append("delete from SYS_ORG_VILLAGE ");
             builder.Append(" where ");
             MySqlParameter[] cmdParms = new MySqlParameter[0];
             return (MySQLHelper.ExecuteSql(builder.ToString(), cmdParms) > 0);
@@ -62,7 +62,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,Code,Name,TownID ");
-            builder.Append(" FROM tbl_sysorgvillage ");
+            builder.Append(" FROM SYS_ORG_VILLAGE ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -83,7 +83,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             {
                 builder.Append("order by T. desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_sysorgvillage T ");
+            builder.Append(")AS Row, T.*  from SYS_ORG_VILLAGE T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -96,7 +96,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public SysOrgVillangModle GetModel(string code)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select ID,Code,Name,TownID from tbl_sysorgvillage ");
+            builder.Append("select ID,Code,Name,TownID from SYS_ORG_VILLAGE ");
             builder.Append(" where Code = @Code");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@Code", MySqlDbType.String) };
             cmdParms[0].Value = code;
@@ -112,7 +112,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_sysorgvillage ");
+            builder.Append("select count(1) FROM SYS_ORG_VILLAGE ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -128,7 +128,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(SysOrgVillangModle model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_sysorgvillage set ");
+            builder.Append("update SYS_ORG_VILLAGE set ");
             builder.Append("ID=@ID,");
             builder.Append("Code=@Code,");
             builder.Append("Name=@Name,");

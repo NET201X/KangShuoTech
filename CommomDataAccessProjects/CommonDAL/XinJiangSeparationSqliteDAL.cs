@@ -57,7 +57,7 @@
 
             builder.Append(@"
                             UPDATE 
-                                tbl_recordsviscerafunction D
+                                ARCHIVE_VISCERAFUNCTION D
                             SET 
                                 Lips = @Lips
                                 ,ToothResides= @ToothResides
@@ -104,7 +104,7 @@
 
             builder.Append(@"
                             INSERT INTO
-                                tbl_recordsviscerafunction
+                                ARCHIVE_VISCERAFUNCTION
                             (
                                 PhysicalID
                                 ,IDCardNo
@@ -221,7 +221,7 @@
 
             builder.Append(@"
                             UPDATE 
-                                tbl_recordsphysicalexam
+                                ARCHIVE_PHYSICALEXAM
                             SET 
                                 Skin = @Skin 
                                 ,SkinEx = @SkinEx 
@@ -283,7 +283,7 @@
 
             builder.Append(@"
                             UPDATE 
-                                tbl_recordsviscerafunction
+                                ARCHIVE_VISCERAFUNCTION
                             SET 
                                 SportFunction = @SportFunction
                             WHERE 
@@ -309,7 +309,7 @@
 
             builder.Append(@"
                             UPDATE 
-                                tbl_recordshealthquestion
+                                ARCHIVE_HEALTHQUESTION
                             SET 
                                 ElseDis = @ElseDis
                                 ,ElseOther = @ElseOther
@@ -338,7 +338,7 @@
 
             builder.Append(@"
                             INSERT INTO 
-                                tbl_recordsviscerafunction 
+                                ARCHIVE_VISCERAFUNCTION 
                             (
                                 PhysicalID
                                 ,IDCardNo
@@ -375,7 +375,7 @@
 
             builder.Append(@"
                             INSERT INTO 
-                                tbl_recordshealthquestion 
+                                ARCHIVE_HEALTHQUESTION 
                             (
                                 PhysicalID
                                 ,IDCardNo
@@ -468,7 +468,7 @@
 
             builder.Append(@"
                             UPDATE 
-                                tbl_recordsphysicalexam
+                                ARCHIVE_PHYSICALEXAM
                             SET 
                                 EyeRound = @EyeRound 
                                 ,EyeRoundEx = @EyeRoundEx 
@@ -541,7 +541,7 @@
 
             builder.Append(@"
                             INSERT INTO
-                                tbl_recordsphysicalexam
+                                ARCHIVE_PHYSICALEXAM
                             (
                                 PhysicalID
                                 ,IDCardNo
@@ -734,7 +734,7 @@
 
             builder.Append(@"
                             UPDATE 
-                                tbl_recordsassistcheck
+                                ARCHIVE_ASSISTCHECK
                             SET 
                                 CHESTX = @CHESTX 
                                 ,CHESTXEx = @CHESTXEx
@@ -763,7 +763,7 @@
 
             builder.Append(@"
                             INSERT INTO
-                                tbl_recordsassistcheck
+                                ARCHIVE_ASSISTCHECK
                             (
                                 PhysicalID
                                 ,IDCardNo

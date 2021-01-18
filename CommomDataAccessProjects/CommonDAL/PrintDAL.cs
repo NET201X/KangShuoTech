@@ -13,7 +13,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append(" INSERT INTO tbl_Print(");
+            builder.Append(" INSERT INTO SYS_PRINT(");
             builder.Append("ButtonName,ButtonID,Orders,StyleName,IsDisplay,IsDouble,PrintFile,PrintType,FileName,Col2,Col3)");
             builder.Append(" VALUES (");
             builder.Append("@ButtonName,@ButtonID,@Orders,@StyleName,@IsDisplay,@IsDouble,@PrintFile,@PrintType,@FileName,@Col2,@Col3)");
@@ -60,8 +60,8 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append("SELECT B.*,C.ID AS AID,C.PrintID,C.FileButtonName,C.IsDouble,C.PrintOrders,C.IsPrint ");
-            builder.Append(" FROM tbl_Print B LEFT JOIN  ");
-            builder.Append(" (SELECT *,'Y' AS IsPrint FROM tbl_PrintAll WHERE 1=1 ");
+            builder.Append(" FROM SYS_PRINT B LEFT JOIN  ");
+            builder.Append(" (SELECT *,'Y' AS IsPrint FROM SYS_PRINT_ALL WHERE 1=1 ");
             builder.Append(strPrintAll);
             builder.Append(" ) C");
             builder.Append(" ON B.ID=C.PrintID ");
@@ -82,7 +82,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append(" SELECT ButtonName FROM tbl_Print ");
+            builder.Append(" SELECT ButtonName FROM SYS_PRINT ");
             builder.Append(" WHERE ButtonID='btnPrintAll' AND IsDisplay='Y' ");
             builder.Append(" GROUP BY ButtonName ");
 
@@ -98,7 +98,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append(" SELECT COUNT(*) FROM tbl_Print WHERE 1=1 ");
+            builder.Append(" SELECT COUNT(*) FROM SYS_PRINT WHERE 1=1 ");
 
             if (!string.IsNullOrEmpty(strWhere))
             {
@@ -113,7 +113,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append(@"
-                                    UPDATE tbl_Print 
+                                    UPDATE SYS_PRINT 
                                      SET
                                          Orders = @Orders
                                         ,IsDisplay = @IsDisplay
@@ -144,7 +144,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append(" SELECT MAX(Orders) FROM tbl_Print ");
+            builder.Append(" SELECT MAX(Orders) FROM SYS_PRINT ");
 
             return MySQLHelper.GetInt(builder.ToString());
         }
@@ -158,7 +158,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT *  FROM tbl_Print  ");
+            builder.Append("SELECT *  FROM SYS_PRINT  ");
             builder.Append(" WHERE 1=1 ");
 
             if (!string.IsNullOrEmpty(strWhere))

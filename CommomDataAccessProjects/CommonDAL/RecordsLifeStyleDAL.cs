@@ -13,7 +13,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_recordslifestyle(");
+            builder.Append("INSERT INTO ARCHIVE_LIFESTYLE(");
             builder.Append("PhysicalID,IDCardNo,SmokeDayNum,SmokeAgeStart,SmokeAgeForbiddon,ExerciseRate,ExerciseTimes,DietaryHabit,ExerciseExistense,ExcisepersistTime,SmokeCondition,DrinkRate,DayDrinkVolume,IsDrinkForbiddon,ForbiddonAge,DrinkStartAge,DrinkThisYear,DrinkType,CareerHarmFactorHistory,Dust,DustProtect,Radiogen,RadiogenProtect,Physical,PhysicalProtect,Chem,ChemProtect,Other,OtherProtect,WorkType,WorkTime,DustProtectEx,RadiogenProtectEx,PhysicalProtectEx,ChemProtectEx,OtherProtectEx,DrinkTypeOther,OutKey,ExerciseExistenseOther)");
             builder.Append(" VALUES (");
             builder.Append("@PhysicalID,@IDCardNo,@SmokeDayNum,@SmokeAgeStart,@SmokeAgeForbiddon,@ExerciseRate,@ExerciseTimes,@DietaryHabit,@ExerciseExistense,@ExcisepersistTime,@SmokeCondition,@DrinkRate,@DayDrinkVolume,@IsDrinkForbiddon,@ForbiddonAge,@DrinkStartAge,@DrinkThisYear,@DrinkType,@CareerHarmFactorHistory,@Dust,@DustProtect,@Radiogen,@RadiogenProtect,@Physical,@PhysicalProtect,@Chem,@ChemProtect,@Other,@OtherProtect,@WorkType,@WorkTime,@DustProtectEx,@RadiogenProtectEx,@PhysicalProtectEx,@ChemProtectEx,@OtherProtectEx,@DrinkTypeOther,@OutKey,@ExerciseExistenseOther)");
@@ -111,7 +111,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_recordslifestyle ");
+            builder.Append("SELECT * FROM ARCHIVE_LIFESTYLE ");
             builder.Append(" WHERE OutKey=@OutKey");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@OutKey", MySqlDbType.Int32,4) };

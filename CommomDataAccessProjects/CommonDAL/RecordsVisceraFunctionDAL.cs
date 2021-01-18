@@ -14,7 +14,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_recordsviscerafunction(");
+            builder.Append("INSERT INTO ARCHIVE_VISCERAFUNCTION(");
             builder.Append("PhysicalID,IDCardNo,Lips,ToothResides,ToothResidesOther,Pharyngeal,LeftView,Listen,RightView,SportFunction,LeftEyecorrect,");
             builder.Append("RightEyecorrect,OutKey,HypodontiaEx,SaprodontiaEx,DentureEx, LipsEx,PharyngealEx,LeftViewEx,RightViewEx,LeftEye,RightEye)");
             builder.Append(" VALUES (");
@@ -82,7 +82,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_recordsviscerafunction ");
+            builder.Append("SELECT * FROM ARCHIVE_VISCERAFUNCTION ");
             builder.Append(" WHERE OutKey=@OutKey");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@OutKey", MySqlDbType.Int32, 4) };
@@ -98,7 +98,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             List<MySqlParameter> ilistStr = new List<MySqlParameter>();
             MySqlParameter[] cmdParms = new MySqlParameter[] { };
 
-            builder.Append(@"UPDATE tbl_recordsviscerafunction SET 
+            builder.Append(@"UPDATE ARCHIVE_VISCERAFUNCTION SET 
                                      IDCardNo=IDCardNo  ");
 
             if (model.LeftView.HasValue)

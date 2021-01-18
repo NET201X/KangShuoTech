@@ -12,7 +12,7 @@
         public int Add(WomenGravidaBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_womengravidabaseinfo(");
+            builder.Append("insert into GRAVIDA_BASEINFO(");
             builder.Append("CustomerID,RecordID,IDCardNo,Name,Age,Culture,Job,Address,Nation,Birthday,Living,Phone,HealthResot, ");
             builder.Append("TownName,VillageName,PwPhone,HusbandName,HusbandPhone,CurrentUnit,CreateUnit,CreatedBy,CreatedDate, ");
             builder.Append("LastUpdateBy,LastUpdateDate,IsDel,HouseholdTown,HouseholdVillage,AddrTown,AddrVillage,AddrPhone, ");
@@ -118,7 +118,7 @@
         public int AddServer(WomenGravidaBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_womengravidabaseinfo(");
+            builder.Append("insert into GRAVIDA_BASEINFO(");
             builder.Append("CustomerID,RecordID,IDCardNo,Name,Age,Culture,Job,Address,Nation,Birthday,Living,Phone,HealthResot, ");
             builder.Append("TownName,VillageName,PwPhone,HusbandName,HusbandPhone,CurrentUnit,CreateUnit,CreatedBy,CreatedDate, ");
             builder.Append("LastUpdateBy,LastUpdateDate,IsDel,HouseholdTown,HouseholdVillage,AddrTown,AddrVillage,AddrPhone, ");
@@ -223,7 +223,7 @@
 
         public void CheckColumns()
         {
-            foreach (DataRow row in MySQLHelper.Query(string.Format("PRAGMA table_info([{0}])", "tbl_womengravidabaseinfo")).Tables[0].Rows)
+            foreach (DataRow row in MySQLHelper.Query(string.Format("PRAGMA table_info([{0}])", "GRAVIDA_BASEINFO")).Tables[0].Rows)
             {
                 bool flag1 = row["name"].ToString() == "HouseholdTown";
             }
@@ -409,7 +409,7 @@
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_womengravidabaseinfo ");
+            builder.Append("delete from GRAVIDA_BASEINFO ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -419,7 +419,7 @@
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_womengravidabaseinfo ");
+            builder.Append("delete from GRAVIDA_BASEINFO ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -427,7 +427,7 @@
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_womengravidabaseinfo");
+            builder.Append("select count(1) from GRAVIDA_BASEINFO");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -438,7 +438,7 @@
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,CustomerID,RecordID,IDCardNo,Name,Age,Culture,Job,Address,Nation,Birthday,Living,Phone,HealthResot,TownName,VillageName,PwPhone,HusbandName,HusbandPhone,CurrentUnit,CreateUnit,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel,HouseholdTown,HouseholdVillage,AddrTown,AddrVillage,AddrPhone,WorkUnit,UnitPhone,HusbandAge,HusbandCulture,HusbandNation,HusbandUnit,HbUnitPhone,HusbandJob,CardNum,CreatePhone,CreateDate ");
-            builder.Append(" FROM tbl_womengravidabaseinfo ");
+            builder.Append(" FROM GRAVIDA_BASEINFO ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -459,7 +459,7 @@
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_womengravidabaseinfo T ");
+            builder.Append(")AS Row, T.*  from GRAVIDA_BASEINFO T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -471,13 +471,13 @@
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_womengravidabaseinfo");
+            return MySQLHelper.GetMaxID("ID", "GRAVIDA_BASEINFO");
         }
 
         public WomenGravidaBaseInfoModel GetModel(string IDCardNo)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select  ID,CustomerID,RecordID,IDCardNo,Name,Age,Culture,Job,Address,Nation,Birthday,Living,Phone,HealthResot,TownName,VillageName,PwPhone,HusbandName,HusbandPhone,CurrentUnit,CreateUnit,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel,HouseholdTown,HouseholdVillage,AddrTown,AddrVillage,AddrPhone,WorkUnit,UnitPhone,HusbandAge,HusbandCulture,HusbandNation,HusbandUnit,HbUnitPhone,HusbandJob,CardNum,CreatePhone,CreateDate from tbl_womengravidabaseinfo ");
+            builder.Append("select  ID,CustomerID,RecordID,IDCardNo,Name,Age,Culture,Job,Address,Nation,Birthday,Living,Phone,HealthResot,TownName,VillageName,PwPhone,HusbandName,HusbandPhone,CurrentUnit,CreateUnit,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel,HouseholdTown,HouseholdVillage,AddrTown,AddrVillage,AddrPhone,WorkUnit,UnitPhone,HusbandAge,HusbandCulture,HusbandNation,HusbandUnit,HbUnitPhone,HusbandJob,CardNum,CreatePhone,CreateDate from GRAVIDA_BASEINFO ");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -493,7 +493,7 @@
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_womengravidabaseinfo ");
+            builder.Append("select count(1) FROM GRAVIDA_BASEINFO ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -509,7 +509,7 @@
         public bool Update(WomenGravidaBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_womengravidabaseinfo set ");
+            builder.Append("update GRAVIDA_BASEINFO set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
@@ -644,7 +644,7 @@
         public bool UpdateServer(WomenGravidaBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_womengravidabaseinfo set ");
+            builder.Append("update GRAVIDA_BASEINFO set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");

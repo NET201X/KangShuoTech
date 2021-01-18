@@ -29,10 +29,10 @@ namespace KangShuoTech.DataAccessProjects.DAL
                                                 ,b.Sex
                                                 ,b.Birthday
                                                 ,c.CheckDate 
-                                                FROM tbl_HHHealthGuid a
-                                        LEFT JOIN tbl_recordsbaseinfo b
+                                                FROM HEALTHHOUSE_HEALTH_GUIDE a
+                                        LEFT JOIN ARCHIVE_BASEINFO b
                                         ON  a.IDCardNo=b.IDCardNo
-                                        LEFT JOIN tbl_recordscustomerbaseinfo c
+                                        LEFT JOIN ARCHIVE_CUSTOMERBASEINFO c
                                         ON a.IDCardNo=c.IDCardNo
                                         WHERE a.IDCardNo=@IDCardNo");
 
@@ -53,10 +53,10 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append(@"SELECT Count(1)
-                                                FROM tbl_HHHealthGuid a
-                                        LEFT JOIN tbl_recordsbaseinfo b
+                                                FROM HEALTHHOUSE_HEALTH_GUIDE a
+                                        LEFT JOIN ARCHIVE_BASEINFO b
                                         ON  a.IDCardNo=b.IDCardNo
-                                        LEFT JOIN tbl_recordscustomerbaseinfo c
+                                        LEFT JOIN ARCHIVE_CUSTOMERBASEINFO c
                                         ON a.IDCardNo=c.IDCardNo
                                         WHERE a.IDCardNo=@IDCardNo
                                         And a.PID=@PID ");
@@ -78,7 +78,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append(@"INSERT INTO tbl_HHHealthGuid
+            builder.Append(@"INSERT INTO HEALTHHOUSE_HEALTH_GUIDE
                                                                                      (
                                                                                          PID
                                                                                         ,IDCardNo
@@ -141,7 +141,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append(@" UPDATE tbl_HHHealthGuid
+            builder.Append(@" UPDATE HEALTHHOUSE_HEALTH_GUIDE
                                     SET
                                          Summary=@Summary
                                         ,HealthGuid = @HealthGuid 
@@ -186,10 +186,10 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append(@"SELECT COUNT(*)
-                                        FROM tbl_hhhealthguid a
-                                        LEFT JOIN tbl_recordscustomerbaseinfo b
+                                        FROM HEALTHHOUSE_HEALTH_GUIDE a
+                                        LEFT JOIN ARCHIVE_CUSTOMERBASEINFO b
                                         ON a.IDCardNo=b.IDCardNo
-                                        LEFT JOIN tbl_recordsbaseinfo c
+                                        LEFT JOIN ARCHIVE_BASEINFO c
                                         ON a.IDCardNo=c.IDCardNo");
 
             if (!string.IsNullOrEmpty(strWhere))
@@ -232,10 +232,10 @@ namespace KangShuoTech.DataAccessProjects.DAL
                                                     ,c.CreateMenName
                                                     ,a.CreateDate
                                                     ,b.CheckDate 
-                                        FROM tbl_hhhealthguid a
-                                        LEFT JOIN tbl_recordscustomerbaseinfo b
+                                        FROM HEALTHHOUSE_HEALTH_GUIDE a
+                                        LEFT JOIN ARCHIVE_CUSTOMERBASEINFO b
                                         ON a.IDCardNo=b.IDCardNo
-                                        LEFT JOIN tbl_recordsbaseinfo c
+                                        LEFT JOIN ARCHIVE_BASEINFO c
                                         ON a.IDCardNo=c.IDCardNo");
 
             if (!string.IsNullOrEmpty(strWhere))
@@ -272,10 +272,10 @@ namespace KangShuoTech.DataAccessProjects.DAL
 				                                    ,a.Summary
 				                                    ,a.HealthGuid
 				                                    ,a.MedGuid 
-                                    FROM tbl_HHHealthGuid a
-                                    LEFT JOIN tbl_recordsbaseinfo b
+                                    FROM HEALTHHOUSE_HEALTH_GUIDE a
+                                    LEFT JOIN ARCHIVE_BASEINFO b
                                     ON a.IDCardNo=b.IDCardNo
-                                    LEFT JOIN tbl_recordscustomerbaseinfo c
+                                    LEFT JOIN ARCHIVE_CUSTOMERBASEINFO c
                                     ON a.IDCardNo=c.IDCardNo
                                     Where a.ID=@ID");
 
@@ -302,7 +302,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_HHHealthGuid ");
+            builder.Append("delete from HEALTHHOUSE_HEALTH_GUIDE ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;

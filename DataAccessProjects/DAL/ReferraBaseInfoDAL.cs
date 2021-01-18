@@ -12,7 +12,7 @@
        {
 
            StringBuilder builder = new StringBuilder();
-           builder.Append("insert into tbl_referralbaseinfo(");
+           builder.Append("insert into ARCHIVE_REFERRAL(");
            builder.Append("SickPhone,IllnessDate,NewUnitName,NewDepartName,NewDoctor,FirstImpress,");
            builder.Append("TransReason,HistoryIllness,Retrospectively,RefDoctor,RefDoctorPhone,TranseDate,UpdateUnitName,UpdatePerson,UpdateDate,IDCardNo,HomeAddress)");
            builder.Append("values (");
@@ -69,7 +69,7 @@
        {
 
            StringBuilder builder = new StringBuilder();
-           builder.Append("insert into tbl_referralbaseinfo(");
+           builder.Append("insert into ARCHIVE_REFERRAL(");
            builder.Append("SickPhone,IllnessDate,NewUnitName,NewDepartName,NewDoctor,FirstImpress,");
            builder.Append("TransReason,HistoryIllness,Retrospectively,RefDoctor,RefDoctorPhone,TranseDate,UpdateUnitName,UpdatePerson,UpdateDate,IDCardNo,HomeAddress)");
            builder.Append("values (");
@@ -125,7 +125,7 @@
        public bool Delete(int ID)
        {
            StringBuilder builder = new StringBuilder();
-           builder.Append("delete from tbl_referralbaseinfo ");
+           builder.Append("delete from ARCHIVE_REFERRAL ");
            builder.Append(" where ID=@ID");
            MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
            cmdParms[0].Value = ID;
@@ -135,7 +135,7 @@
        {
            StringBuilder builder = new StringBuilder();
            builder.Append("SELECT COUNT( T.IDCardNo) AS IDCount");
-           builder.Append(" FROM 	tbl_recordsbaseinfo T INNER JOIN  tbl_referralbaseinfo R ON T.IDCardNo = R.IDCardNo ");
+           builder.Append(" FROM 	ARCHIVE_BASEINFO T INNER JOIN  ARCHIVE_REFERRAL R ON T.IDCardNo = R.IDCardNo ");
            if (strWhere.Trim() != "")
            {
                builder.Append(" where 1=1 " + strWhere);
@@ -156,7 +156,7 @@
            builder.Append("(case R.TranseDate when null then null when '' then null else R.TranseDate end) as CheckDate, ");
            builder.Append("T.PopulationType,T.FamilyIDCardNo,T.HouseRelation,T.HouseRealOther,T.TownName,");
            builder.Append("T.VillageName,T.CreateUnitName,T.CreateMenName ");
-           builder.Append(" from tbl_referralbaseinfo R inner join tbl_recordsbaseinfo T on T.IDCardNo = R.IDCardNo ");
+           builder.Append(" from ARCHIVE_REFERRAL R inner join ARCHIVE_BASEINFO T on T.IDCardNo = R.IDCardNo ");
            if (!string.IsNullOrEmpty(strWhere.Trim()))
            {
                builder.Append(" WHERE 1=1 " + strWhere);
@@ -273,7 +273,7 @@
        {
            StringBuilder builder = new StringBuilder();
            builder.Append("select T.ID, C.CustomerName,T.SickPhone,T.IllnessDate,T.NewUnitName,T.NewDepartName,T.NewDoctor,T.FirstImpress,T.TransReason,T.HistoryIllness,T.Retrospectively,T.RefDoctor,T.RefDoctorPhone,T.TranseDate,C.CreateUnitName,C.CreateMenName,C.CreateDate,C.Sex,T.HomeAddress,C.RecordID,C.IDCardNo ");
-           builder.Append("FROM tbl_referralbaseinfo T LEFT JOIN tbl_recordsbaseinfo C ON T.IDCardNo=C.IDCardNo ");
+           builder.Append("FROM ARCHIVE_REFERRAL T LEFT JOIN ARCHIVE_BASEINFO C ON T.IDCardNo=C.IDCardNo ");
            builder.Append("where T.ID=@ID");
 
            MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 8) };
@@ -289,7 +289,7 @@
        public bool Update(ReferraBaseInfoModel model)
        {
            StringBuilder builder = new StringBuilder();
-           builder.Append("update tbl_referralbaseinfo set ");
+           builder.Append("update ARCHIVE_REFERRAL set ");
            builder.Append("SickPhone=@SickPhone ,");
            builder.Append("IllnessDate=@IllnessDate ,");
            builder.Append("NewUnitName=@NewUnitName ,");
@@ -354,7 +354,7 @@
            StringBuilder builder = new StringBuilder();
            builder.Append("select SickPhone,IllnessDate,NewUnitName,NewDepartName,NewDoctor,FirstImpress,");
            builder.Append("TransReason,HistoryIllness,Retrospectively,RefDoctor,RefDoctorPhone,TranseDate,UpdateUnitName,UpdatePerson,UpdateDate,IDCardNo,HomeAddress");
-           builder.Append(" FROM tbl_referralbaseinfo ");
+           builder.Append(" FROM ARCHIVE_REFERRAL ");
            if (strWhere.Trim() != "")
            {
                builder.Append(" where 1=1 " + strWhere);
@@ -365,7 +365,7 @@
        {
            StringBuilder builder = new StringBuilder();
            builder.Append("select T.ID, C.CustomerName,T.SickPhone,T.IllnessDate,T.NewUnitName,T.NewDepartName,T.NewDoctor,T.FirstImpress,T.TransReason,T.HistoryIllness,T.Retrospectively,T.RefDoctor,T.RefDoctorPhone,T.TranseDate,C.CreateUnitName,C.CreateMenName,C.CreateDate,C.Sex,T.HomeAddress,C.RecordID,C.IDCardNo ");
-           builder.Append("FROM tbl_referralbaseinfo T LEFT JOIN tbl_recordsbaseinfo C ON T.IDCardNo=C.IDCardNo ");
+           builder.Append("FROM ARCHIVE_REFERRAL T LEFT JOIN ARCHIVE_BASEINFO C ON T.IDCardNo=C.IDCardNo ");
            builder.Append("where T.IDCardNo=@IDCardNo ");
            builder.Append("order by T.ID DESC LIMIT 0,1");
 

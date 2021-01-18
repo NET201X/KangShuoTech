@@ -14,7 +14,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(RecordsMedicineResultModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordsmedicineresult(");
+            builder.Append("insert into ARCHIVE_MEDICINE_RESULT(");
             builder.Append("PhysicalID,MedicineID,Mild,Faint,Yang,Yin,PhlegmDamp,Muggy,BloodStasis,QIconStraint,Characteristic,");
             builder.Append("MildScore,FaintScore,YangsCore,YinScore,PhlegmdampScore,MuggyScore,BloodStasisScore,QiConstraintScore,");
             builder.Append("CharacteristicScore,MildAdvising,FaintAdvising,YangAdvising,YinAdvising,PhlegmdampAdvising,MuggyAdvising,");
@@ -128,7 +128,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_recordsmedicineresult(");
+            builder.Append("INSERT INTO ARCHIVE_MEDICINE_RESULT(");
             builder.Append("PhysicalID,MedicineID,Mild,Faint,Yang,Yin,PhlegmDamp,Muggy,BloodStasis,QIconStraint,Characteristic,");
             builder.Append("MildScore,FaintScore,YangsCore,YinScore,PhlegmdampScore,MuggyScore,BloodStasisScore,QiConstraintScore,");
             builder.Append("CharacteristicScore,MildAdvising,FaintAdvising,YangAdvising,YinAdvising,PhlegmdampAdvising,MuggyAdvising,");
@@ -242,7 +242,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordsmedicineresult ");
+            builder.Append("delete from ARCHIVE_MEDICINE_RESULT ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -258,7 +258,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("BloodStasisAdvising,QiconstraintAdvising,CharacteristicAdvising,MildAdvisingEx,FaintAdvisingEx,");
             builder.Append("YangadvisingEx,YinAdvisingEx,PhlegmdampAdvisingEx,MuggyAdvisingEx,BloodStasisAdvisingEx,");
             builder.Append("QiconstraintAdvisingEx,CharacteristicAdvisingEx,IsDel,IDCardNo ");
-            builder.Append("from tbl_recordsmedicineresult ");
+            builder.Append("from ARCHIVE_MEDICINE_RESULT ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] {
                 new MySqlParameter("@ID", MySqlDbType.String)
@@ -272,7 +272,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(RecordsMedicineResultModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordsmedicineresult set ");
+            builder.Append("update ARCHIVE_MEDICINE_RESULT set ");
             builder.Append("PhysicalID=@PhysicalID,");
             builder.Append("MedicineID=@MedicineID,");
             builder.Append("Mild=@Mild,");
@@ -419,7 +419,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append(@"
-                            UPDATE tbl_recordsmedicineresult D SET                             
+                            UPDATE ARCHIVE_MEDICINE_RESULT D SET                             
                                 Mild=@Mild,Faint=@Faint,Yang=@Yang,
                                 Yin=@Yin, PhlegmDamp=@PhlegmDamp,
                                 Muggy=@Muggy,BloodStasis=@BloodStasis,
@@ -458,7 +458,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
                                     SELECT 
                                         D.ID 
                                     FROM
-                                        tbl_recordsmediphysdist med
+                                        ARCHIVE_MEDI_PHYS_DIST med
                                     WHERE D.ID= med.MedicineResultID
                                         AND med.OutKey=@OutKey
                                 ) ");
@@ -516,7 +516,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("UPDATE tbl_recordsmediphysdist D SET ");
+            builder.Append("UPDATE ARCHIVE_MEDI_PHYS_DIST D SET ");
             builder.Append("Mild=@Mild,Faint=@Faint,");
             builder.Append("Yang=@Yang,Yin=@Yin,");
             builder.Append("PhlegmDamp=@PhlegmDamp,Muggy=@Muggy,");
@@ -552,7 +552,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("UPDATE tbl_recordsmediphysdist D SET ");
+            builder.Append("UPDATE ARCHIVE_MEDI_PHYS_DIST D SET ");
             builder.Append("MedicineResultID=@MedicineResultID, ");
             builder.Append("Mild=@Mild,Faint=@Faint,");
             builder.Append("Yang=@Yang,Yin=@Yin,");

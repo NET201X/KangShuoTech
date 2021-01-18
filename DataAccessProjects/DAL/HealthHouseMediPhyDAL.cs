@@ -14,7 +14,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(HealthHouseMediPhyModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_hhmediphysdist(");
+            builder.Append("insert into HEALTHHOUSE_MEDIPHYDIST(");
             builder.Append("IDCardNo,Mild,Faint,Yang,Yin,PhlegmDamp,Muggy,BloodStasis,QiConstraint,Characteristic,PID,MedicineID,MedicineResultID)");
             builder.Append(" values (");
             builder.Append("@IDCardNo,@Mild,@Faint,@Yang,@Yin,@PhlegmDamp,@Muggy,@BloodStasis,@QiConstraint,@Characteristic,@PID,@MedicineID,@MedicineResultID)");
@@ -58,7 +58,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public HealthHouseMediPhyModel GetModel(int PID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select *  from tbl_hhmediphysdist ");
+            builder.Append("select *  from HEALTHHOUSE_MEDIPHYDIST ");
             builder.Append(" where PID=@PID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@PID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = PID;
@@ -132,7 +132,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(HealthHouseMediPhyModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_hhmediphysdist set ");
+            builder.Append("update HEALTHHOUSE_MEDIPHYDIST set ");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("Mild=@Mild,");
             builder.Append("Faint=@Faint,");

@@ -12,7 +12,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(RecordsInoculationHistoryModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordsinoculationhistory(");
+            builder.Append("insert into ARCHIVE_INOCULATIONHISTORY(");
             builder.Append("PhysicalID,IDCardNo,PillName,InoculationDate,InoculationHistory,OutKey)");
             builder.Append(" values (");
             builder.Append("@PhysicalID,@IDCardNo,@PillName,@InoculationDate,@InoculationHistory,@OutKey)");
@@ -43,7 +43,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int AddServer(RecordsInoculationHistoryModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordsinoculationhistory(");
+            builder.Append("insert into ARCHIVE_INOCULATIONHISTORY(");
             builder.Append("PhysicalID,IDCardNo,PillName,InoculationDate,InoculationHistory,OutKey)");
             builder.Append(" values (");
             builder.Append("@PhysicalID,@IDCardNo,@PillName,@InoculationDate,@InoculationHistory,@OutKey)");
@@ -107,7 +107,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordsinoculationhistory ");
+            builder.Append("delete from ARCHIVE_INOCULATIONHISTORY ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -117,7 +117,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordsinoculationhistory ");
+            builder.Append("delete from ARCHIVE_INOCULATIONHISTORY ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -125,7 +125,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_recordsinoculationhistory");
+            builder.Append("select count(1) from ARCHIVE_INOCULATIONHISTORY");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -136,7 +136,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select  ID,PhysicalID,IDCardNo,PillName,InoculationDate,InoculationHistory ");
-            builder.Append(" FROM tbl_recordsinoculationhistory ");
+            builder.Append(" FROM ARCHIVE_INOCULATIONHISTORY ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere + " order by id limit 3");
@@ -157,7 +157,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             {
                 builder.Append("order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_recordsinoculationhistory T ");
+            builder.Append(")AS Row, T.*  from ARCHIVE_INOCULATIONHISTORY T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -169,13 +169,13 @@ namespace KangShuoTech.DataAccessProjects.DAL
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_recordsinoculationhistory");
+            return MySQLHelper.GetMaxID("ID", "ARCHIVE_INOCULATIONHISTORY");
         }
 
         public RecordsInoculationHistoryModel GetModel(string IDCardNo)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select  ID,PhysicalID,IDCardNo,PillName,InoculationDate,InoculationHistory from tbl_recordsinoculationhistory ");
+            builder.Append("select  ID,PhysicalID,IDCardNo,PillName,InoculationDate,InoculationHistory from ARCHIVE_INOCULATIONHISTORY ");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -191,7 +191,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_recordsinoculationhistory ");
+            builder.Append("select count(1) FROM ARCHIVE_INOCULATIONHISTORY ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -207,7 +207,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(RecordsInoculationHistoryModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordsinoculationhistory set ");
+            builder.Append("update ARCHIVE_INOCULATIONHISTORY set ");
             builder.Append("PhysicalID=@PhysicalID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("PillName=@PillName,");
@@ -235,7 +235,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool UpdateServer(RecordsInoculationHistoryModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordsinoculationhistory set ");
+            builder.Append("update ARCHIVE_INOCULATIONHISTORY set ");
             builder.Append("PhysicalID=@PhysicalID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("PillName=@PillName,");
@@ -262,7 +262,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool DeleteByOutKey(int OutKey)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordsinoculationhistory ");
+            builder.Append("delete from ARCHIVE_INOCULATIONHISTORY ");
             builder.Append(" where OutKey=@OutKey");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@OutKey", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = OutKey;

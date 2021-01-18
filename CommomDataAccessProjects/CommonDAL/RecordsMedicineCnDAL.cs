@@ -13,14 +13,14 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_recordsmedicinecn(");
+            builder.Append("INSERT INTO ARCHIVE_MEDICINE_CN(");
             builder.Append("RecordID,IDCardNo,CustomerID,PhysicalID,Energy,Tired,Breath,Voice,Emotion,Spirit,Alone,Fear,");
             builder.Append("Weight,Eye,FootHand,Stomach,Cold,Influenza,Nasal,Snore,Allergy,Urticaria,Skin,Scratch,Mouth,");
             builder.Append("Arms,Greasy,Spot,Eczema,Thirsty,Smell,Abdomen,Coolfood,Defecate,Defecatedry,Tongue,Vein,");
             builder.Append("CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,FollowUpDoctor,RecordDate,IsDel");
 
             // 判断是否存在OutKey栏位，3.0用OutKey做关联
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'tbl_recordsmedicinecn' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='OutKey'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_MEDICINE_CN' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='OutKey'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;
@@ -154,7 +154,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("UPDATE tbl_recordsmedicinecn D SET ");
+            builder.Append("UPDATE ARCHIVE_MEDICINE_CN D SET ");
             builder.Append("Energy=@Energy,");
             builder.Append("Tired=@Tired,");
             builder.Append("Breath=@Breath,");
@@ -191,7 +191,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             builder.Append("RecordDate=@RecordDate ");
 
             // 判断是否存在OutKey栏位，3.0用OutKey做关联
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'tbl_recordsmedicinecn' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='OutKey'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_MEDICINE_CN' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='OutKey'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;
@@ -206,7 +206,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                                     SELECT 
                                         D.ID 
                                     FROM
-                                        tbl_recordsmediphysdist med 
+                                        ARCHIVE_MEDI_PHYS_DIST med 
                                     WHERE D.ID=med.MedicineID
                                         AND med.OutKey=@OutKey
                                 ); ");
@@ -262,7 +262,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("UPDATE tbl_recordsmediphysdist D SET ");
+            builder.Append("UPDATE ARCHIVE_MEDI_PHYS_DIST D SET ");
             builder.Append("MedicineID=@MedicineID ");
             builder.Append("WHERE OutKey=@OutKey");
 
@@ -278,7 +278,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_recordsmediphysdist ");
+            builder.Append("SELECT * FROM ARCHIVE_MEDI_PHYS_DIST ");
             builder.Append(" WHERE OutKey=@OutKey");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@OutKey", MySqlDbType.Int32) };
@@ -296,7 +296,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_recordssignature ");
+            builder.Append("SELECT * FROM ARCHIVE_SIGNATURE ");
             builder.Append(" WHERE IdCardNo=@IdCardNo ");
 
             if (OutKey == 0) builder.Append(" AND OutKey IS NULL ");

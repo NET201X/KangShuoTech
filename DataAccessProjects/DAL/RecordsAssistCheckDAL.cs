@@ -13,7 +13,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(RecordsAssistCheckModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordsassistcheck(");
+            builder.Append("insert into ARCHIVE_ASSISTCHECK(");
             builder.Append("PhysicalID,IDCardNo,HB,WBC,PLT,PRO,GLU,KET,BLD,FPGL,ECG,ALBUMIN,FOB,HBALC,HBSAG,SGPT,GOT,BP,TBIL,CB,SCR,BUN,PC,HYPE,TC,TG,LowCho,HeiCho,CHESTX,BCHAO,BloodOther,UrineOther,Other,CERVIX,GT,ECGEx,CHESTXEx,BCHAOEx,CERVIXEx,FPGDL,OutKey,UA,HCY,BCHAOther,BCHAOtherEx,BloodType,RH,TP,GLB,AG,IBIL)");
             builder.Append(" values (");
             builder.Append("@PhysicalID,@IDCardNo,@HB,@WBC,@PLT,@PRO,@GLU,@KET,@BLD,@FPGL,@ECG,@ALBUMIN,@FOB,@HBALC,@HBSAG,@SGPT,@GOT,@BP,@TBIL,@CB,@SCR,@BUN,@PC,@HYPE,@TC,@TG,@LowCho,@HeiCho,@CHESTX,@BCHAO,@BloodOther,@UrineOther,@Other,@CERVIX,@GT,@ECGEx,@CHESTXEx,@BCHAOEx,@CERVIXEx,@FPGDL,@OutKey,@UA,@HCY,@BCHAOther,@BCHAOtherEx,@BloodType,@RH,@TP,@GLB,@AG,@IBIL)");
@@ -134,7 +134,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select * ");
-            builder.Append(" FROM tbl_recordsassistcheck ");
+            builder.Append(" FROM ARCHIVE_ASSISTCHECK ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -145,7 +145,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(RecordsAssistCheckModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordsassistcheck set ");
+            builder.Append("update ARCHIVE_ASSISTCHECK set ");
             builder.Append("PhysicalID=@PhysicalID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("HB=@HB,");
@@ -307,7 +307,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_recordsassistcheck ");
+            builder.Append("SELECT * FROM ARCHIVE_ASSISTCHECK ");
             builder.Append(" WHERE OutKey=@OutKey");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@OutKey", MySqlDbType.String) };
@@ -319,7 +319,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool ExistsOutKey(string IDCardNo, int OutKey)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_recordsassistcheck");
+            builder.Append("select count(1) from ARCHIVE_ASSISTCHECK");
             builder.Append(" where IDCardNo=@IDCardNo ");
             builder.Append(" and OutKey=@OutKey");
             MySqlParameter[] cmdParms = new MySqlParameter[] { 
@@ -342,7 +342,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append(@"UPDATE 
-                                         tbl_recordsassistcheck  D
+                                         ARCHIVE_ASSISTCHECK  D
                                        SET 
                                          BLD=@BLD
                                         ,KET=@KET
@@ -358,7 +358,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
                                         SELECT 
                                             ID 
                                         FROM
-                                        tbl_recordscustomerbaseinfo M
+                                        ARCHIVE_CUSTOMERBASEINFO M
                                         WHERE M.ID = D.OutKey
                                         AND M.IDCardNo = @IDCardNo
                                         AND M.CheckDate = @CheckDate
@@ -388,7 +388,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append(@"UPDATE 
-                                    tbl_recordsassistcheck  D
+                                    ARCHIVE_ASSISTCHECK  D
                              SET 
                                     FPGL=@FPGL
                                
@@ -398,7 +398,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
                                         SELECT 
                                             ID 
                                         FROM
-                                        tbl_recordscustomerbaseinfo M
+                                        ARCHIVE_CUSTOMERBASEINFO M
                                         WHERE M.ID = D.OutKey
                                         AND M.IDCardNo = @IDCardNo
                                         AND M.CheckDate = @CheckDate
@@ -440,7 +440,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
 
                 StringBuilder sb = new StringBuilder();
 
-                sb.Append("UPDATE tbl_recordsassistcheck D SET ");
+                sb.Append("UPDATE ARCHIVE_ASSISTCHECK D SET ");
 
                 if (model.HB != "" && IsNum(model.HB))
                 {
@@ -579,10 +579,10 @@ namespace KangShuoTech.DataAccessProjects.DAL
 
                 #endregion
 
-                if (sb.ToString() != "UPDATE tbl_recordsassistcheck D SET ")
+                if (sb.ToString() != "UPDATE ARCHIVE_ASSISTCHECK D SET ")
                 {
                     string upStr = sb.ToString().Substring(0, sb.ToString().Length - 1);
-                    upStr += " WHERE D.OutKey = (SELECT M.ID FROM tbl_recordscustomerbaseinfo M ";
+                    upStr += " WHERE D.OutKey = (SELECT M.ID FROM ARCHIVE_CUSTOMERBASEINFO M ";
                     upStr += " WHERE M.IDCardNo = '" + model.IDCardNo + "' ";
                     upStr += " ORDER BY M.CheckDate DESC LIMIT 0,1);";
 
@@ -612,7 +612,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
 
                 StringBuilder sb = new StringBuilder();
 
-                sb.Append("UPDATE tbl_recordsassistcheck D SET ");
+                sb.Append("UPDATE ARCHIVE_ASSISTCHECK D SET ");
 
                 if (model.PRO != "") sb.Append("PRO='" + model.PRO + "',");
                 if (model.GLU != "") sb.Append("GLU='" + model.GLU + "',");
@@ -622,10 +622,10 @@ namespace KangShuoTech.DataAccessProjects.DAL
 
                 #endregion
 
-                if (sb.ToString() != "UPDATE tbl_recordsassistcheck D SET ")
+                if (sb.ToString() != "UPDATE ARCHIVE_ASSISTCHECK D SET ")
                 {
                     string upStr = sb.ToString().Substring(0, sb.ToString().Length - 1);
-                    upStr += " WHERE D.OutKey = (SELECT M.ID FROM tbl_recordscustomerbaseinfo M ";
+                    upStr += " WHERE D.OutKey = (SELECT M.ID FROM ARCHIVE_CUSTOMERBASEINFO M ";
                     upStr += " WHERE M.IDCardNo = '" + model.IDCardNo + "' ";
                     upStr += " ORDER BY M.CheckDate DESC LIMIT 0,1);";
 
@@ -655,7 +655,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
 
                 StringBuilder sb = new StringBuilder();
 
-                sb.Append("UPDATE tbl_recordsgeneralcondition D SET ");
+                sb.Append("UPDATE ARCHIVE_GENERALCONDITION D SET ");
 
                 if (model.Height != "" && IsNum(model.Height))
                 {
@@ -676,10 +676,10 @@ namespace KangShuoTech.DataAccessProjects.DAL
 
                 #endregion
 
-                if (sb.ToString() != "UPDATE tbl_recordsgeneralcondition D SET ")
+                if (sb.ToString() != "UPDATE ARCHIVE_GENERALCONDITION D SET ")
                 {
                     string upStr = sb.ToString().Substring(0, sb.ToString().Length - 1);
-                    upStr += " WHERE D.OutKey = (SELECT M.ID FROM tbl_recordscustomerbaseinfo M ";
+                    upStr += " WHERE D.OutKey = (SELECT M.ID FROM ARCHIVE_CUSTOMERBASEINFO M ";
                     upStr += " WHERE M.IDCardNo = '" + model.IDCardNo + "' ";
                     upStr += " ORDER BY M.CheckDate DESC LIMIT 0,1);";
 
@@ -705,7 +705,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
 
             StringBuilder sb = new StringBuilder();
 
-            sb.Append("UPDATE tbl_recordsxq SET ");
+            sb.Append("UPDATE ARCHIVE_BLOODTEST SET ");
 
             //百分比
             //中性粒细胞百分比
@@ -830,7 +830,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
                 sb.Append("P_LCR='" + model.P_LCR + "',");
             }
 
-            if (sb.ToString() != "UPDATE tbl_recordsxq SET ")
+            if (sb.ToString() != "UPDATE ARCHIVE_BLOODTEST SET ")
             {
                 string str = sb.ToString().Trim().TrimEnd(',');
                 str += " WHERE IDCardNo='" + model.IDCardNo + "' AND TestTime='" + model.TestTime + "'";

@@ -3786,13 +3786,13 @@ namespace RecordManagement
             if (ectType == "2")
             {
                 string id = this.Model.IDCardNo;
-                string strtest = "select max(MID),IDCardNo,Name,Conclusion,CreateTime FROM tbl_recordsecg WHERE IDCardNo='" + id + "' GROUP BY IDCardNo ";
+                string strtest = "select max(MID),IDCardNo,Name,Conclusion,CreateTime FROM ARCHIVE_ECG WHERE IDCardNo='" + id + "' GROUP BY IDCardNo ";
                 DataSet testSet = MySQLHelper.Query(strtest);
                 DataTable dtTable = testSet.Tables[0];
                 if (dtTable.Rows.Count > 0)
                 {
                     ////插入结论
-                    //string conclusion = "update tbl_recordsassistcheck set ECG='2', ECGEx='" + dtTable.Rows[0][3] + "'where IDCardNo=" + dtTable.Rows[0][1];
+                    //string conclusion = "update ARCHIVE_ASSISTCHECK set ECG='2', ECGEx='" + dtTable.Rows[0][3] + "'where IDCardNo=" + dtTable.Rows[0][1];
                     //DataSet updataECG = MySQLHelper.Query(conclusion);
 
                     string fileName1 = ECGReport + "\\" + dtTable.Rows[0][0] + ".png ";

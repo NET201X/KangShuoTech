@@ -1,0 +1,136 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="NewPrint.MainWindow" 
+        WindowStyle="ToolWindow"
+        WindowStartupLocation="CenterScreen" 
+        Width="840"  Height="698"
+        Title="居民健康档案打印" Loaded="Window_Loaded">
+    <Window.Resources>
+
+        <ImageBrush x:Key="ButtonNormalBackground" ImageSource="Resources\btn3.jpg" />
+
+        <Style x:Key="btnStyle" TargetType="{x:Type Button}">
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="Cursor" Value="Hand"></Setter>
+            <Setter Property="Height" Value="110"></Setter>
+            <Setter Property="Width" Value="110"></Setter>
+            <Setter Property="Background" Value="{StaticResource ResourceKey=ButtonNormalBackground}"/>
+            <Setter Property="Padding" Value="0,71,0,0"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Border x:Name="test" Background="{TemplateBinding Background}" >
+                            </Border>
+                            <ContentPresenter 	HorizontalAlignment="Center"
+							 RecognizesAccessKey="True"  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+							  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+							  Margin="{TemplateBinding Padding}"
+							  >
+                                <ContentPresenter.ContentTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding}" TextWrapping="Wrap" TextAlignment ="Center" />
+                                    </DataTemplate>
+                                </ContentPresenter.ContentTemplate>
+                            </ContentPresenter>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver"  Value="true">
+
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <StackPanel Background="#0C71B9" Height="684" Width="818">
+
+        <Grid  ShowGridLines="True" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="110*" />
+                <RowDefinition Height="110*" />
+                <RowDefinition Height="110*" />
+                <RowDefinition Height="110*" />
+                <RowDefinition Height="110*" />
+                <RowDefinition Height="125*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="btnFengmian" Grid.Row="0" Grid.Column="0" Content="封面"  Height="95"
+                    Style="{DynamicResource btnStyle}"   Click="button1_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources\printButton.jpg"/>
+                </Button.Background>
+            </Button>
+
+            <Button x:Name="btnBaseInfo" Grid.Row="0" Grid.Column="1" Content="基本信息"             Style="{DynamicResource btnStyle}" Click="button1_Click"/>
+            <Button x:Name="btnPhysical" Grid.Row="0" Grid.Column="2" Content="健康体检表"           Style="{DynamicResource btnStyle}" Click="button1_Click"/>
+            <Button x:Name="btnHyper" Grid.Row="0" Grid.Column="3" Content="高血压随访"           Style="{DynamicResource btnStyle}" Click="button1_Click"/>
+            <Button x:Name="btnDiabetes" Grid.Row="0" Grid.Column="4" Content="糖尿病随访"           Style="{DynamicResource btnStyle}" Click="button1_Click"/>
+            <Button x:Name="btnMentaldisease_Baseinfo" Grid.Row="0" Grid.Column="5" Content="精神病信息补充"      Style="{DynamicResource btnStyle}" Click="button1_Click" />
+            <Button x:Name="btnMentalFollow" Grid.Row="0" Grid.Column="6" Content="精神病随访"          Style="{DynamicResource btnStyle}" Click="button1_Click" />
+            <Button x:Name="btnArchiveCard" Grid.Row="1" Grid.Column="0" Content="居民健康档案卡"      Style="{DynamicResource btnStyle}" Click="button1_Click" />
+            <Button x:Name="btnPhyOLDSelf" Grid.Row="1" Grid.Column="1" Content="老年人自理能力"      Style="{DynamicResource btnStyle}" Click="button1_Click" />
+            <Button x:Name="btnOLDMEDICINECN" Grid.Row="1" Grid.Column="2" Content="老年人中医健康"      Style="{DynamicResource btnStyle}" Click="button1_Click" />
+
+            <Button x:Name="btnChildNEW" Grid.Row="1" Grid.Column="3" Content="新生儿家庭访视"      Style="{DynamicResource btnStyle}" Click="button1_Click" />
+            <Button x:Name="btnChildInOne" Grid.Row="1" Grid.Column="4" Content="1岁内儿童健康检查"   Style="{DynamicResource btnStyle}" Click="button1_Click" />
+            <Button x:Name="btnChildTWO" Grid.Row="1" Grid.Column="5" Content="1-2岁内儿童健康检查" Style="{DynamicResource btnStyle}" Click="button1_Click" />
+            <Button x:Name="btnChildTHREE" Grid.Row="1" Grid.Column="6" Content="3-6岁内儿童健康检查" Style="{DynamicResource btnStyle}" Click="button1_Click" />
+            <Button x:Name="btnGRAVIDA_FRIST" Grid.Row="2" Grid.Column="0" Content="第1次产前随访"       Style="{DynamicResource btnStyle}" Click="button1_Click" />
+
+            <Button x:Name="btnGRAVIDA_TWO" Grid.Row="2" Grid.Column="1" Content="第2-5次产前随访"     Style="{DynamicResource btnStyle}" Click="button1_Click" />
+            <Button x:Name="btnGRAVIDA_POST" Grid.Row="2" Grid.Column="2" Content="产后访视记录"        Style="{DynamicResource btnStyle}" Click="button1_Click" />
+            <Button x:Name="btnGRAVIDA_POST42" Grid.Row="2" Grid.Column="3" Content="产后42天健康检查"    Style="{DynamicResource btnStyle}" Click="button1_Click" />
+            <Button x:Name="btStroke" Grid.Row="2" Grid.Column="4" Content="脑卒中随访记录"      Style="{DynamicResource btnStyle}" Click="button1_Click" />
+            <Button x:Name="btnChd" Grid.Row="2" Grid.Column="5" Content="冠心病随访记录"      Style="{DynamicResource btnStyle}" Click="button1_Click" />
+
+            <Button x:Name="btnChildCNOne" Grid.Row="2" Grid.Column="6" Content="6-18月龄儿童中医健康"   Style="{DynamicResource btnStyle}" Click="button1_Click" />
+            <Button x:Name="btnChildCNOne2Three" Grid.Row="3" Grid.Column="0" Content="24-36月龄儿童中医健康"   Style="{DynamicResource btnStyle}" Click="button1_Click" />
+            <Button x:Name="btnChildCNThree2Six" Grid.Row="3" Grid.Column="1" Content="3-6岁内儿童中医健康" Style="{DynamicResource btnStyle}" Click="button1_Click" Visibility="Hidden" />
+
+            <Button x:Name="btnOnePTBVisit" Grid.Row="3" Grid.Column="1" Content="第1次肺结核随访"      Style="{DynamicResource btnStyle}" Click="button1_Click" />
+            <Button x:Name="btnPTBVisit" Grid.Row="3" Grid.Column="2" Content="肺结核随访"      Style="{DynamicResource btnStyle}" Click="button1_Click" />
+            <Button x:Name="btnHealth" Grid.Row="3" Grid.Column="3" Content="健康教育"      Style="{DynamicResource btnStyle}" Click="button1_Click" />
+            <Button x:Name="btnMReceiveTreat" Grid.Row="3" Grid.Column="4" Content="接诊记录"      Style="{DynamicResource btnStyle}" Click="button1_Click" />
+            <Button x:Name="btnMConsulation" Grid.Row="3" Grid.Column="5" Content="会诊记录"      Style="{DynamicResource btnStyle}" Click="button1_Click" />
+            <Button x:Name="btnMReferral" Grid.Row="3" Grid.Column="6" Content="双向转诊"      Style="{DynamicResource btnStyle}" Click="button1_Click" />
+            <Button x:Name="btnHealthFeedback" Grid.Row="4" Content="健康体检反馈单"      Style="{DynamicResource btnStyle}" Click="button1_Click" Margin="5,0,2,0" Grid.Column="0" />
+            <Button x:Name="btnOldHealthFeedback" Grid.Row="4" Grid.Column="1" Content="65岁以上老年人健康体检反馈单"      Style="{DynamicResource btnStyle}" Click="button1_Click" HorizontalAlignment="Left" Width="110" Margin="3,0,0,0" />
+            <Button x:Name="btnCoverCard" Grid.Row="4" Grid.Column="2" Content="体检封面"      Style="{DynamicResource btnStyle}" Click="button1_Click" HorizontalAlignment="Left" Width="110" Margin="3,0,0,0" />
+            <Button x:Name="btnBloodUrine" Grid.Row="4" Grid.Column="3" Content="血生化、血常规、尿液数据"      Style="{DynamicResource btnStyle}" Click="button1_Click" HorizontalAlignment="Left" Width="110" Margin="3,0,0,0" />
+            <Button x:Name="btnCoverCard_2" Grid.Row="4" Grid.Column="4" Content="体检封面(彩页)"      Style="{DynamicResource btnStyle}" Click="button1_Click" HorizontalAlignment="Left" Width="110" Margin="3,0,0,0" />
+
+            <Button Content="B超打印" Grid.Column="5" Grid.Row="4" Height="110" HorizontalAlignment="Left" x:Name="btnTypeBUI" VerticalAlignment="Top" Width="110" Style="{StaticResource btnStyle}" Click="button1_Click" Margin="2,0,0,0" />
+            <Button Content="心电打印" Grid.Column="6" Grid.Row="4" Height="110" HorizontalAlignment="Left" Margin="3,0,0,0" x:Name="btnECG" VerticalAlignment="Top" Width="110" Style="{StaticResource btnStyle}" Click="button1_Click" />
+            <Button Name="btnPhyicalRe" Grid.Row="5" Content="体检报告"      Style="{DynamicResource btnStyle}" Click="button1_Click" HorizontalAlignment="Left" Margin="4,5,0,6" Width="110" />
+            <Button x:Name="btnOldCover" Grid.Row="5" Grid.Column="1" Content="老年人体检封面"      Style="{DynamicResource btnStyle}" Click="button1_Click" HorizontalAlignment="Left" Width="110" Margin="3,0,0,0" />
+            <Button x:Name="button45" Grid.Row="5" Grid.Column="2" Content="一键打印"  Style="{DynamicResource btnStyle}" Padding="0,80,0,0"
+                    Click="btn_PrintAll" Margin="2,5,5,6">
+                <Button.Background>
+
+                    <ImageBrush ImageSource="Resources\btnPrintAll.jpg" Stretch="Uniform" AlignmentX="Center" AlignmentY="Bottom"  />
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnPrint" Grid.Row="5" Content="一键打印(不含化验单)"  Style="{DynamicResource btnStyle}" Padding="0,55,0,0"
+                    Click="btn_PrintAllNo" Margin="3,6,4,5" Grid.Column="3">
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources\btnPrintAll.jpg" Stretch="Uniform" AlignmentX="Center" AlignmentY="Top"  />
+                </Button.Background>
+            </Button>
+        </Grid>
+
+        <StackPanel Height="20"  Orientation="Horizontal" HorizontalAlignment="Right"/>
+    </StackPanel>
+</Window>

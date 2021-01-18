@@ -978,12 +978,12 @@ namespace OverView
         private void TransDs(DataSet ds)
         {
             ds.Tables[0].Columns.Add("BlueToothRecord");
-            DeviceInfoBLL tbl_deviceinfo = new DeviceInfoBLL();
+            DeviceInfoBLL ARCHIVE_DEVICEINFO = new DeviceInfoBLL();
             foreach (DataRow row in ds.Tables[0].Rows)
             {
                 row["Sex"] = !(row["Sex"].ToString() == "1") ? "女" : "男";
                 row["Nation"] = !(row["Nation"].ToString() == "1") ? row["MINORITY"] : "汉";
-                if (tbl_deviceinfo.GetRecordCount(string.Format(" IDCardNo = '{0}'", row["IDCardNo"])) > 0)
+                if (ARCHIVE_DEVICEINFO.GetRecordCount(string.Format(" IDCardNo = '{0}'", row["IDCardNo"])) > 0)
                 {
                     row["BlueToothRecord"] = "检测数据";
                 }

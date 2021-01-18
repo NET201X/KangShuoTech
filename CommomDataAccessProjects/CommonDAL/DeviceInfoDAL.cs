@@ -12,10 +12,10 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         public int Add(DeviceInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("INSERT INTO tbl_DeviceInfo(");
+            builder.Append("INSERT INTO ARCHIVE_DEVICEINFO(");
             builder.Append("DeviceType,DeviceName,Value1,Value2,Value3,Value4,Value5,Value6,Value7,Value8,Value9,Value10,Value11,Value12,Value13,IsUpload,UpdateData,IDCardNo");
 
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'tbl_deviceinfo' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='BarCode'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_DEVICEINFO' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='BarCode'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;
@@ -86,7 +86,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_DeviceInfo(");
+            builder.Append("INSERT INTO ARCHIVE_DEVICEINFO(");
             builder.Append("DeviceType,DeviceName,Value1,Value2,Value3,Value4,Value5,Value6,Value7,Value8,Value9,Value10,Value11,Value12,");
             builder.Append("Value13,IsUpload,UpdateData,IDCardNo,BarCode,Codes) VALUES ( ");
             builder.Append("@DeviceType,@DeviceName,@Value1,@Value2,@Value3,@Value4,@Value5,@Value6,@Value7,@Value8,@Value9,@Value10,@Value11,@Value12,");
@@ -94,7 +94,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 
             if (string.IsNullOrEmpty(model.BarCode)) builder.Append("@IDCardNo ");
             else
-                builder.Append("    (SELECT IDCardNo FROM tbl_RecordsCustomerBaseInfo WHERE CustomerID=@BarCode ORDER BY CheckDate DESC LIMIT 0,1) ");
+                builder.Append("    (SELECT IDCardNo FROM ARCHIVE_CUSTOMERBASEINFO WHERE CustomerID=@BarCode ORDER BY CheckDate DESC LIMIT 0,1) ");
 
             builder.Append(",@BarCode,@Codes ");
             builder.Append(");SELECT @@IDENTITY");
@@ -154,7 +154,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("UPDATE tbl_deviceinfo SET ");
+            builder.Append("UPDATE ARCHIVE_DEVICEINFO SET ");
             builder.Append("Value1=@Value1,");
             builder.Append("Value2=@Value2,");
             builder.Append("Value3=@Value3,");
@@ -218,7 +218,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("UPDATE tbl_DeviceInfo SET ");
+            builder.Append("UPDATE ARCHIVE_DEVICEINFO SET ");
             builder.Append("Value1=@Value1,");
             builder.Append("Value2=@Value2,");
             builder.Append("Value3=@Value3,");
@@ -290,7 +290,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_DeviceInfo ");
+            builder.Append("SELECT * FROM ARCHIVE_DEVICEINFO ");
 
             if (strWhere.Trim() != "")
             {

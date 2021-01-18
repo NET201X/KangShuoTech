@@ -17,7 +17,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             StringBuilder builder = new StringBuilder();
 
             // 体检问询用药
-            builder.Append(@"SELECT * FROM tbl_recordsmedication WHERE EXISTS 
+            builder.Append(@"SELECT * FROM ARCHIVE_MEDICATION WHERE EXISTS 
                                 (
                                     SELECT ID FROM tbl_recordscustomerinfo
                                     WHERE ID = OutKey ");

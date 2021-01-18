@@ -12,7 +12,7 @@
         public int Add(VaccinationProgramModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_vaccinationprogram(");
+            builder.Append("insert into INOCULATION_PROGRAM(");
             builder.Append("CustomerID,RecordID,IDCardNo,VaccinationName,VaccinationChild,VaccinationTimes,VaccinationPart,VaccinationDoes,Remark,");
             builder.Append("VaccineBatchNumber,VaccinationDoctor,VaccinationTime,CreateBy,CreateDate,LastUpdateBy,LastUpdateDate)");
             builder.Append(" values (");
@@ -63,86 +63,86 @@
 
         public VaccinationProgramModel DataRowToModel(DataRow row)
         {
-            VaccinationProgramModel inoculation_program = new VaccinationProgramModel();
+            VaccinationProgramModel INOCULATION_OTHERPROGRAM = new VaccinationProgramModel();
             if (row != null)
             {
                 if (((row["ID"] != null) && (row["ID"] != DBNull.Value)) && (row["ID"].ToString() != ""))
                 {
-                    inoculation_program.ID = int.Parse(row["ID"].ToString());
+                    INOCULATION_OTHERPROGRAM.ID = int.Parse(row["ID"].ToString());
                 }
                 if ((row["CustomerID"] != null) && (row["CustomerID"] != DBNull.Value))
                 {
-                    inoculation_program.CustomerID = row["CustomerID"].ToString();
+                    INOCULATION_OTHERPROGRAM.CustomerID = row["CustomerID"].ToString();
                 }
                 if ((row["RecordID"] != null) && (row["RecordID"] != DBNull.Value))
                 {
-                    inoculation_program.RecordID = row["RecordID"].ToString();
+                    INOCULATION_OTHERPROGRAM.RecordID = row["RecordID"].ToString();
                 }
                 if ((row["IDCardNo"] != null) && (row["IDCardNo"] != DBNull.Value))
                 {
-                    inoculation_program.IDCardNo = row["IDCardNo"].ToString();
+                    INOCULATION_OTHERPROGRAM.IDCardNo = row["IDCardNo"].ToString();
                 }
                 if ((row["VaccinationName"] != null) && (row["VaccinationName"] != DBNull.Value))
                 {
-                    inoculation_program.VaccinationName = row["VaccinationName"].ToString();
+                    INOCULATION_OTHERPROGRAM.VaccinationName = row["VaccinationName"].ToString();
                 }
                 if ((row["VaccinationChild"] != null) && (row["VaccinationChild"] != DBNull.Value))
                 {
-                    inoculation_program.VaccinationChild = row["VaccinationChild"].ToString();
+                    INOCULATION_OTHERPROGRAM.VaccinationChild = row["VaccinationChild"].ToString();
                 }
                 if (((row["VaccinationTimes"] != null) && (row["VaccinationTimes"] != DBNull.Value)) && (row["VaccinationTimes"].ToString() != ""))
                 {
-                    inoculation_program.VaccinationTimes = new decimal?(decimal.Parse(row["VaccinationTimes"].ToString()));
+                    INOCULATION_OTHERPROGRAM.VaccinationTimes = new decimal?(decimal.Parse(row["VaccinationTimes"].ToString()));
                 }
                 if ((row["VaccinationPart"] != null) && (row["VaccinationPart"] != DBNull.Value))
                 {
-                    inoculation_program.VaccinationPart = row["VaccinationPart"].ToString();
+                    INOCULATION_OTHERPROGRAM.VaccinationPart = row["VaccinationPart"].ToString();
                 }
                 if ((row["VaccinationDoes"] != null) && (row["VaccinationDoes"] != DBNull.Value))
                 {
-                    inoculation_program.VaccinationDoes = row["VaccinationDoes"].ToString();
+                    INOCULATION_OTHERPROGRAM.VaccinationDoes = row["VaccinationDoes"].ToString();
                 }
                 if ((row["Remark"] != null) && (row["Remark"] != DBNull.Value))
                 {
-                    inoculation_program.Remark = row["Remark"].ToString();
+                    INOCULATION_OTHERPROGRAM.Remark = row["Remark"].ToString();
                 }
                 if ((row["VaccineBatchNumber"] != null) && (row["VaccineBatchNumber"] != DBNull.Value))
                 {
-                    inoculation_program.VaccineBatchNumber = row["VaccineBatchNumber"].ToString();
+                    INOCULATION_OTHERPROGRAM.VaccineBatchNumber = row["VaccineBatchNumber"].ToString();
                 }
                 if ((row["VaccinationDoctor"] != null) && (row["VaccinationDoctor"] != DBNull.Value))
                 {
-                    inoculation_program.VaccinationDoctor = row["VaccinationDoctor"].ToString();
+                    INOCULATION_OTHERPROGRAM.VaccinationDoctor = row["VaccinationDoctor"].ToString();
                 }
                 if (((row["VaccinationTime"] != null) && (row["VaccinationTime"] != DBNull.Value)) && (row["VaccinationTime"].ToString() != ""))
                 {
-                    inoculation_program.VaccinationTime = new DateTime?(DateTime.Parse(row["VaccinationTime"].ToString()));
+                    INOCULATION_OTHERPROGRAM.VaccinationTime = new DateTime?(DateTime.Parse(row["VaccinationTime"].ToString()));
                 }
                 if (((row["CreateBy"] != null) && (row["CreateBy"] != DBNull.Value)) && (row["CreateBy"].ToString() != ""))
                 {
-                    inoculation_program.CreateBy = new decimal?(decimal.Parse(row["CreateBy"].ToString()));
+                    INOCULATION_OTHERPROGRAM.CreateBy = new decimal?(decimal.Parse(row["CreateBy"].ToString()));
                 }
                 if (((row["CreateDate"] != null) && (row["CreateDate"] != DBNull.Value)) && (row["CreateDate"].ToString() != ""))
                 {
-                    inoculation_program.CreateDate = new DateTime?(DateTime.Parse(row["CreateDate"].ToString()));
+                    INOCULATION_OTHERPROGRAM.CreateDate = new DateTime?(DateTime.Parse(row["CreateDate"].ToString()));
                 }
                 if (((row["LastUpdateBy"] != null) && (row["LastUpdateBy"] != DBNull.Value)) && (row["LastUpdateBy"].ToString() != ""))
                 {
-                    inoculation_program.LastUpdateBy = new decimal?(decimal.Parse(row["LastUpdateBy"].ToString()));
+                    INOCULATION_OTHERPROGRAM.LastUpdateBy = new decimal?(decimal.Parse(row["LastUpdateBy"].ToString()));
                 }
                 if (((row["LastUpdateDate"] != null) && (row["LastUpdateDate"] != DBNull.Value)) && (row["LastUpdateDate"].ToString() != ""))
                 {
-                    inoculation_program.LastUpdateDate = new DateTime?(DateTime.Parse(row["LastUpdateDate"].ToString()));
+                    INOCULATION_OTHERPROGRAM.LastUpdateDate = new DateTime?(DateTime.Parse(row["LastUpdateDate"].ToString()));
                 }
-                inoculation_program.ModelStatus = RecordsStateModel.Unchanged;
+                INOCULATION_OTHERPROGRAM.ModelStatus = RecordsStateModel.Unchanged;
             }
-            return inoculation_program;
+            return INOCULATION_OTHERPROGRAM;
         }
 
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_vaccinationprogram ");
+            builder.Append("delete from INOCULATION_PROGRAM ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -152,7 +152,7 @@
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_vaccinationprogram ");
+            builder.Append("delete from INOCULATION_PROGRAM ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -160,7 +160,7 @@
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_vaccinationprogram");
+            builder.Append("select count(1) from INOCULATION_PROGRAM");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -171,7 +171,7 @@
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select  ID,CustomerID,RecordID,IDCardNo,VaccinationName,VaccinationChild,VaccinationTimes,VaccinationPart,VaccinationDoes,Remark,VaccineBatchNumber,VaccinationDoctor,VaccinationTime,CreateBy,CreateDate,LastUpdateBy,LastUpdateDate ");
-            builder.Append(" FROM tbl_vaccinationprogram ");
+            builder.Append(" FROM INOCULATION_PROGRAM ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -192,7 +192,7 @@
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_vaccinationprogram T ");
+            builder.Append(")AS Row, T.*  from INOCULATION_PROGRAM T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -204,13 +204,13 @@
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_vaccinationprogram");
+            return MySQLHelper.GetMaxID("ID", "INOCULATION_PROGRAM");
         }
 
         public VaccinationProgramModel GetModel(string IDCardNo)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select  ID,CustomerID,RecordID,IDCardNo,VaccinationName,VaccinationChild,VaccinationTimes,VaccinationPart,VaccinationDoes,Remark,VaccineBatchNumber,VaccinationDoctor,VaccinationTime,CreateBy,CreateDate,LastUpdateBy,LastUpdateDate from tbl_vaccinationprogram ");
+            builder.Append("select  ID,CustomerID,RecordID,IDCardNo,VaccinationName,VaccinationChild,VaccinationTimes,VaccinationPart,VaccinationDoes,Remark,VaccineBatchNumber,VaccinationDoctor,VaccinationTime,CreateBy,CreateDate,LastUpdateBy,LastUpdateDate from INOCULATION_PROGRAM ");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -226,7 +226,7 @@
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_vaccinationprogram ");
+            builder.Append("select count(1) FROM INOCULATION_PROGRAM ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -242,7 +242,7 @@
         public bool Update(VaccinationProgramModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_vaccinationprogram set ");
+            builder.Append("update INOCULATION_PROGRAM set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");

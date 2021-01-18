@@ -15,7 +15,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(HealthSelfCareabilityModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append(" insert into tbl_hhselfcareability(");
+            builder.Append(" insert into HEALTHHOUSE_SELFCAREABILITY(");
             builder.Append("PID,IDCardNo,Dine,Groming,Dressing,Tolet,Activity,TotalScore,CreatedBy,CreatedDate,LastUpDateBy,LastUpDateDate)");
             builder.Append(" values (");
             builder.Append("@PID,@IDCardNo,@Dine,@Groming,@Dressing,@Tolet,@Activity,@TotalScore,@CreatedBy,@CreatedDate,@LastUpDateBy,@LastUpDateDate)");
@@ -57,7 +57,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append(" select * ");
-            builder.Append(" from tbl_hhselfcareability ");
+            builder.Append(" from HEALTHHOUSE_SELFCAREABILITY ");
             builder.Append(" where PID=@PID ");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] {
@@ -82,7 +82,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool ExistsPID(string IDCardNo, int PID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_hhselfcareability");
+            builder.Append("select count(1) from HEALTHHOUSE_SELFCAREABILITY");
             builder.Append(" where IDCardNo=@IDCardNo ");
             builder.Append(" and PID=@PID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { 
@@ -96,7 +96,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(HealthSelfCareabilityModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append(" update tbl_hhselfcareability set ");
+            builder.Append(" update HEALTHHOUSE_SELFCAREABILITY set ");
             //builder.Append("PID=@PID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("Dine=@Dine,");

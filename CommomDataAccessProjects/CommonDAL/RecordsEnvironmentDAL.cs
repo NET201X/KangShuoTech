@@ -11,7 +11,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_recordsenvironment ");
+            builder.Append("SELECT * FROM ARCHIVE_ENVIRONMENT ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };

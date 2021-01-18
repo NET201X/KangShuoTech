@@ -13,7 +13,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_OlderSelfCareAbility(");
+            builder.Append("INSERT INTO OLDER_SELFCAREABILITY(");
             builder.Append("CustomerID,RecordID,IDCardNo,Dine,Groming,Dressing,Tolet,Activity,TotalScore,");
 
             if (VersionNo.Contains("3.0"))
@@ -87,7 +87,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("UPDATE tbl_olderselfcareability SET ");
+            builder.Append("UPDATE OLDER_SELFCAREABILITY SET ");
             builder.Append("Dine=@Dine");
             builder.Append(",Groming=@Groming");
             builder.Append(",Dressing=@Dressing");
@@ -130,7 +130,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_OlderSelfCareAbility ");
+            builder.Append("SELECT * FROM OLDER_SELFCAREABILITY ");
 
             if (!string.IsNullOrEmpty(strWhere))
             {
@@ -145,7 +145,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             StringBuilder builder = new StringBuilder();
             string column = VersionNo.Contains("3.0") ? "VisitDate" : "FollowupDate";
 
-            builder.Append("SELECT * FROM tbl_OlderSelfCareAbility ");
+            builder.Append("SELECT * FROM OLDER_SELFCAREABILITY ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             if (CheckDate != "")
@@ -176,7 +176,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT COUNT(0) FROM tbl_OlderSelfCareAbility ");
+            builder.Append("SELECT COUNT(0) FROM OLDER_SELFCAREABILITY ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             if (VersionNo.Contains("3.0")) builder.Append(" AND YEAR(VisitDate)=YEAR(NOW())");

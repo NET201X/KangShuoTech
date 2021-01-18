@@ -20,7 +20,7 @@
             StringBuilder builder = new StringBuilder();
 
             builder.Append("select * ");
-            builder.Append(" FROM tbl_recordsmedication ");
+            builder.Append(" FROM ARCHIVE_MEDICATION ");
 
             if (strWhere.Trim() != "")
             {
@@ -34,7 +34,7 @@
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select id,medicinalname,useage,usenum,pilldependence,starttime,drugtype,outkey ");
-            builder.Append(" FROM tbl_recordsmedication ");
+            builder.Append(" FROM ARCHIVE_MEDICATION ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -47,7 +47,7 @@
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_recordsmedication ");
+            builder.Append("select count(1) FROM ARCHIVE_MEDICATION ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);

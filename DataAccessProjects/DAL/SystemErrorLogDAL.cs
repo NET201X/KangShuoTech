@@ -13,7 +13,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(SystemErrorLogModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_SystemErrorLog(");
+            builder.Append("insert into SYS_ERROR_LOG(");
             builder.Append("LogData,Message,StackTrace,TargetSite,IDCardNo,CreateDate,SendEd,SendDate)");
             builder.Append(" values (");
             builder.Append("@LogData,@Message,@StackTrace,@TargetSite,@IDCardNo,@CreateDate,@SendEd,@SendDate)");
@@ -55,7 +55,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             }
             if (!flag)
             {
-                MySQLHelper.ExecuteSql("CREATE TABLE [tbl_SystemErrorLog] (\r\n\t                                        [ID] integer NOT NULL PRIMARY KEY AUTOINCREMENT, \r\n\t                                        [LogData] text, \r\n\t                                        [Message] text, \r\n\t                                        [StackTrace] text, \r\n\t                                        [TargetSite] text,\t\r\n\t                                        [IDCardNo] nvarchar(50), \r\n\t                                        [CreateDate] date,\r\n\t                                        [SendEd] char(1),\r\n\t                                        [SendDate] date\r\n                                        );");
+                MySQLHelper.ExecuteSql("CREATE TABLE [SYS_ERROR_LOG] (\r\n\t                                        [ID] integer NOT NULL PRIMARY KEY AUTOINCREMENT, \r\n\t                                        [LogData] text, \r\n\t                                        [Message] text, \r\n\t                                        [StackTrace] text, \r\n\t                                        [TargetSite] text,\t\r\n\t                                        [IDCardNo] nvarchar(50), \r\n\t                                        [CreateDate] date,\r\n\t                                        [SendEd] char(1),\r\n\t                                        [SendDate] date\r\n                                        );");
             }
         }
 
@@ -107,7 +107,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_SystemErrorLog ");
+            builder.Append("delete from SYS_ERROR_LOG ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -117,7 +117,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_SystemErrorLog ");
+            builder.Append("delete from SYS_ERROR_LOG ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -125,7 +125,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_SystemErrorLog");
+            builder.Append("select count(1) from SYS_ERROR_LOG");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -136,7 +136,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,LogData,Message,StackTrace,TargetSite,IDCardNo,CreateDate,SendEd,SendDate ");
-            builder.Append(" FROM tbl_SystemErrorLog ");
+            builder.Append(" FROM SYS_ERROR_LOG ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -157,7 +157,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_SystemErrorLog T ");
+            builder.Append(")AS Row, T.*  from SYS_ERROR_LOG T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -170,7 +170,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public SystemErrorLogModel GetModel(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select ID,LogData,Message,StackTrace,TargetSite,IDCardNo,CreateDate,SendEd,SendDate from tbl_SystemErrorLog ");
+            builder.Append("select ID,LogData,Message,StackTrace,TargetSite,IDCardNo,CreateDate,SendEd,SendDate from SYS_ERROR_LOG ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -186,7 +186,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_SystemErrorLog ");
+            builder.Append("select count(1) FROM SYS_ERROR_LOG ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -202,7 +202,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(SystemErrorLogModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_SystemErrorLog set ");
+            builder.Append("update SYS_ERROR_LOG set ");
             builder.Append("LogData=@LogData,");
             builder.Append("Message=@Message,");
             builder.Append("StackTrace=@StackTrace,");

@@ -14,7 +14,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_chronicdiadetesvisit(");
+            builder.Append("INSERT INTO CD_DIABETESFOLLOWUP(");
             builder.Append("CustomerID,RecordID,IDCardNo,CustomerName,VisitDate,VisitDoctor,");
             builder.Append("NextVisitDate,Symptom,SymptomOther,Hypertension,Hypotension,Weight,");
             builder.Append("BMI,DorsalisPedispulse,PhysicalSymptomMother,DailySmokeNum,DailyDrinkNum,");
@@ -426,7 +426,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_chronicdiadetesvisit ");
+            builder.Append("delete from CD_DIABETESFOLLOWUP ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -446,7 +446,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("CreateDate,LastUpdateBy,LastUpdateDate,IsDelete,StapleFooddailygTarget,");
             builder.Append("Hight,DoctorView,IsReferral,RBG,PBG, ");
             builder.Append("NextMeasures,ReferralContacts,ReferralResult,Remarks,DorsalisPedispulseType,InsulinAdjustType,InsulinAdjustUsage ");
-            builder.Append(" FROM tbl_chronicdiadetesvisit ");
+            builder.Append(" FROM CD_DIABETESFOLLOWUP ");
             builder.Append(" where VisitDate = @VisitDate and IDCardNo =@IDCardNo "); 
             MySqlParameter[] cmdParms = new MySqlParameter[] { 
                 new MySqlParameter("@VisitDate", MySqlDbType.Date),
@@ -476,7 +476,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("CreateDate,LastUpdateBy,LastUpdateDate,IsDelete,StapleFooddailygTarget,");
             builder.Append("Hight,DoctorView,IsReferral,RBG,PBG, ");
             builder.Append("NextMeasures,ReferralContacts,ReferralResult,Remarks,DorsalisPedispulseType,InsulinAdjustType,InsulinAdjustUsage ");
-            builder.Append(" FROM tbl_chronicdiadetesvisit ");
+            builder.Append(" FROM CD_DIABETESFOLLOWUP ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -493,7 +493,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("(case C.VisitDate when null then null when '' then null else C.VisitDate end)VisitDate, ");
             builder.Append("T.PopulationType,T.FamilyIDCardNo,T.HouseRelation,T.HouseRealOther,T.TownName,");
             builder.Append("T.VillageName,T.CreateUnitName,T.CreateMenName ");
-            builder.Append(" from tbl_chronicdiadetesvisit C inner join tbl_recordsbaseinfo T on T.IDCardNo = C.IDCardNo ");
+            builder.Append(" from CD_DIABETESFOLLOWUP C inner join ARCHIVE_BASEINFO T on T.IDCardNo = C.IDCardNo ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE 1=1 " + strWhere);
@@ -523,7 +523,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("TargetWeight,BMITarget,DailySmokeNumTarget,DailyDrinkNumTarget,SportTimePerWeekTarget,SportPerMinuteTimeTarget,");
             builder.Append("CreateBy,CreateDate,LastUpdateBy,LastUpdateDate,IsDelete,StapleFooddailygTarget,Hight,DoctorView,IsReferral,RBG,PBG, ");
             builder.Append("NextMeasures,ReferralContacts,ReferralResult,Remarks,DorsalisPedispulseType,InsulinAdjustType,InsulinAdjustUsage ");
-            builder.Append(" from tbl_chronicdiadetesvisit  ");
+            builder.Append(" from CD_DIABETESFOLLOWUP  ");
             builder.Append(" where IDCardNo=@IDCardNo order by VisitDate desc limit 0,1");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
@@ -546,7 +546,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_ChronicDiadetesVisit ");
+            builder.Append("SELECT * FROM CD_DIABETESFOLLOWUP ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
             builder.Append(" ORDER BY VisitDate DESC LIMIT 0,1 ");
 
@@ -571,7 +571,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("TargetWeight,BMITarget,DailySmokeNumTarget,DailyDrinkNumTarget,SportTimePerWeekTarget,SportPerMinuteTimeTarget,");
             builder.Append("CreateBy,CreateDate,LastUpdateBy,LastUpdateDate,IsDelete,StapleFooddailygTarget,Hight,DoctorView,IsReferral,RBG,PBG, ");
             builder.Append("NextMeasures,ReferralContacts,ReferralResult,Remarks,DorsalisPedispulseType,InsulinAdjustType,InsulinAdjustUsage ");
-            builder.Append(" from tbl_chronicdiadetesvisit ");
+            builder.Append(" from CD_DIABETESFOLLOWUP ");
             builder.Append(" where ID=@ID ");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 11) };
@@ -588,8 +588,8 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_chronicdiadetesvisit C ");
-            builder.Append("left join tbl_recordsbaseinfo T on T.IDCardNo = C.IDCardNo   ");
+            builder.Append("select count(1) FROM CD_DIABETESFOLLOWUP C ");
+            builder.Append("left join ARCHIVE_BASEINFO T on T.IDCardNo = C.IDCardNo   ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -605,7 +605,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(ChronicDiadetesVisitModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_chronicdiadetesvisit set ");
+            builder.Append("update CD_DIABETESFOLLOWUP set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
@@ -798,7 +798,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("update tbl_chronicdiadetesvisit set ");
+            builder.Append("update CD_DIABETESFOLLOWUP set ");
             decimal d;
             if (decimal.TryParse( model.Hypertension.ToString(),out d))
             {
@@ -855,7 +855,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             string sql = builder.ToString();
             sql =sql.Substring( 0,sql.LastIndexOf(','));
 
-            sql+= " where ID=(select * from (select ID from tbl_chronicdiadetesvisit where VisitDate like '" + DateTime.Now.Year+"%' and IDCardNo='"+model.IDCardNo+ "' order by VisitDate desc LIMIT 1 )t)";
+            sql+= " where ID=(select * from (select ID from CD_DIABETESFOLLOWUP where VisitDate like '" + DateTime.Now.Year+"%' and IDCardNo='"+model.IDCardNo+ "' order by VisitDate desc LIMIT 1 )t)";
 
             return (MySQLHelper.ExecuteSql(sql) > 0);
         }
@@ -863,7 +863,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public DataSet DtDiadetesCount()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select IDCardNo , NextVisitDate FROM  tbl_chronicdiadetesvisit order by NextVisitDate desc ");
+            builder.Append("select IDCardNo , NextVisitDate FROM  CD_DIABETESFOLLOWUP order by NextVisitDate desc ");
             return MySQLHelper.Query(builder.ToString());
         }
     }

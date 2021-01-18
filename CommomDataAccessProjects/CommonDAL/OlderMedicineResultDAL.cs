@@ -13,7 +13,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_OlderMedicineResult(");
+            builder.Append("INSERT INTO OLD_MEDICINE_RESULT(");
             builder.Append("PhysicalID,MedicineID,Mild,Faint,Yang,Yin,PhlegmDamp,Muggy,BloodStasis,QIconStraint,Characteristic,");
             builder.Append("MildScore,FaintScore,YangsCore,YinScore,PhlegmdampScore,MuggyScore,BloodStasisScore,QiConstraintScore,");
             builder.Append("CharacteristicScore,MildAdvising,FaintAdvising,YangAdvising,YinAdvising,PhlegmdampAdvising,MuggyAdvising,");
@@ -21,7 +21,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             builder.Append("YinAdvisingEx,PhlegmdampAdvisingEx,MuggyAdvisingEx,BloodStasisAdvisingEx,QiconstraintAdvisingEx,");
             builder.Append("CharacteristicAdvisingEx,IsDel,IDCardNo");
 
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'tbl_oldermedicineresult' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='Tongue'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'OLD_MEDICINE_RESULT' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='Tongue'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;
@@ -155,7 +155,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("UPDATE tbl_OlderMedicineResult SET ");
+            builder.Append("UPDATE OLD_MEDICINE_RESULT SET ");
             builder.Append("MedicineID=@MedicineID,");
             builder.Append("Mild=@Mild,");
             builder.Append("Faint=@Faint,");
@@ -194,7 +194,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             builder.Append("QiconstraintAdvisingEx=@QiconstraintAdvisingEx,");
             builder.Append("CharacteristicAdvisingEx=@CharacteristicAdvisingEx ");
 
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'tbl_oldermedicineresult' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='Tongue'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'OLD_MEDICINE_RESULT' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='Tongue'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;
@@ -303,7 +303,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_OlderMedicineResult ");
+            builder.Append("SELECT * FROM OLD_MEDICINE_RESULT ");
             builder.Append(" WHERE MedicineID=@MedicineID");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] {

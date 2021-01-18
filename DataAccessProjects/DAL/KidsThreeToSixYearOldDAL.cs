@@ -12,7 +12,7 @@
         public int Add(KidsThreeToSixYearOldModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_kidsthreetosixyearold(");
+            builder.Append("insert into CHILD_THREE2SIX_YEAR_OLD(");
             builder.Append("CustomerID,RecordID,IDCardNo,Name,VisitDate,Weight,WeightAnalysis,Stature,StatureAnalysis,PhysicalAuxeEvaluat,Sight,Listening,TcnLeft,TdcnRight,HeartLung,Stomach,HemoglobinValue,Other,AmongTwoFolloNone,PneumoniaFrequen,DiarrhoeaFrequen,TraumatismFrequen,AmongTwoFolloOther,ReferralAdvice,ReferralReason,AgenciesDepartments,Guidance,GuidanceOther,NextVisitDate,VisitDoctorSign,Flag,CreateBy,CreateDate,LastUpdateBy,LastUpdateDate,IsDel,");
             builder.Append("Kindergarten,ManagerContact,ManagerContactTel,BodyInstitution,InstitutionOther,WeightVsHeight,WeightVsHeightAnalysis,Chest,ReferraContacts,ReferralContactsTel,ReferralResult,AuxeEstimate) ");
             builder.Append(" values (");
@@ -128,7 +128,7 @@
         public int AddServer(KidsThreeToSixYearOldModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_kidsthreetosixyearold(");
+            builder.Append("insert into CHILD_THREE2SIX_YEAR_OLD(");
             builder.Append("CustomerID,RecordID,IDCardNo,Name,VisitDate,Weight,WeightAnalysis,Stature,StatureAnalysis,PhysicalAuxeEvaluat,Sight,Listening,TcnLeft,TdcnRight,HeartLung,Stomach,HemoglobinValue,Other,AmongTwoFolloNone,PneumoniaFrequen,DiarrhoeaFrequen,TraumatismFrequen,AmongTwoFolloOther,ReferralAdvice,ReferralReason,AgenciesDepartments,Guidance,GuidanceOther,NextVisitDate,VisitDoctorSign,Flag,CreateBy,CreateDate,LastUpdateBy,LastUpdateDate,IsDel,");
             builder.Append("Kindergarten,ManagerContact,ManagerContactTel,BodyInstitution,InstitutionOther,WeightVsHeight,WeightVsHeightAnalysis,Chest,ReferraContacts,ReferralContactsTel,ReferralResult,AuxeEstimate) ");
             builder.Append(" values (");
@@ -453,7 +453,7 @@
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_kidsthreetosixyearold ");
+            builder.Append("delete from CHILD_THREE2SIX_YEAR_OLD ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -463,7 +463,7 @@
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_kidsthreetosixyearold ");
+            builder.Append("delete from CHILD_THREE2SIX_YEAR_OLD ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -471,7 +471,7 @@
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_kidsthreetosixyearold");
+            builder.Append("select count(1) from CHILD_THREE2SIX_YEAR_OLD");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -483,7 +483,7 @@
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,CustomerID,RecordID,IDCardNo,Name,VisitDate,Weight,WeightAnalysis,Stature,StatureAnalysis,PhysicalAuxeEvaluat,Sight,Listening,TcnLeft,TdcnRight,HeartLung,Stomach,HemoglobinValue,Other,AmongTwoFolloNone,PneumoniaFrequen,DiarrhoeaFrequen,TraumatismFrequen,AmongTwoFolloOther,ReferralAdvice,ReferralReason,AgenciesDepartments,Guidance,GuidanceOther,NextVisitDate,VisitDoctorSign,Flag,CreateBy,CreateDate,LastUpdateBy,LastUpdateDate,IsDel, ");
             builder.Append("Kindergarten,ManagerContact,ManagerContactTel,BodyInstitution,InstitutionOther,WeightVsHeight,WeightVsHeightAnalysis,Chest,ReferraContacts,ReferralContactsTel,ReferralResult,AuxeEstimate ");
-            builder.Append(" FROM tbl_kidsthreetosixyearold ");
+            builder.Append(" FROM CHILD_THREE2SIX_YEAR_OLD ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -504,7 +504,7 @@
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_kidsthreetosixyearold T ");
+            builder.Append(")AS Row, T.*  from CHILD_THREE2SIX_YEAR_OLD T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -516,7 +516,7 @@
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_kidsthreetosixyearold");
+            return MySQLHelper.GetMaxID("ID", "CHILD_THREE2SIX_YEAR_OLD");
         }
 
         public KidsThreeToSixYearOldModel GetModel(string IDCardNo)
@@ -524,7 +524,7 @@
             StringBuilder builder = new StringBuilder();
             builder.Append("select  ID,CustomerID,RecordID,IDCardNo,Name,VisitDate,Weight,WeightAnalysis,Stature,StatureAnalysis,PhysicalAuxeEvaluat,Sight,Listening,TcnLeft,TdcnRight,HeartLung,Stomach,HemoglobinValue,Other,AmongTwoFolloNone,PneumoniaFrequen,DiarrhoeaFrequen,TraumatismFrequen,AmongTwoFolloOther,ReferralAdvice,ReferralReason,AgenciesDepartments,Guidance,GuidanceOther,NextVisitDate,VisitDoctorSign,Flag,CreateBy,CreateDate,LastUpdateBy,LastUpdateDate,IsDel ,");
             builder.Append("Kindergarten,ManagerContact,ManagerContactTel,BodyInstitution,InstitutionOther,WeightVsHeight,WeightVsHeightAnalysis,Chest,ReferraContacts,ReferralContactsTel,ReferralResult,AuxeEstimate ");
-            builder.Append(" FROM tbl_kidsthreetosixyearold ");
+            builder.Append(" FROM CHILD_THREE2SIX_YEAR_OLD ");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -540,7 +540,7 @@
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_kidsthreetosixyearold ");
+            builder.Append("select count(1) FROM CHILD_THREE2SIX_YEAR_OLD ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -556,7 +556,7 @@
         public bool Update(KidsThreeToSixYearOldModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_kidsthreetosixyearold set ");
+            builder.Append("update CHILD_THREE2SIX_YEAR_OLD set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
@@ -712,7 +712,7 @@
         public bool UpdateServer(KidsThreeToSixYearOldModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_kidsthreetosixyearold set ");
+            builder.Append("update CHILD_THREE2SIX_YEAR_OLD set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");

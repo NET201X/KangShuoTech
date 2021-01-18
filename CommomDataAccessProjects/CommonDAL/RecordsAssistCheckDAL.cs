@@ -23,11 +23,11 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_recordsassistcheck(");
+            builder.Append("INSERT INTO ARCHIVE_ASSISTCHECK(");
             builder.Append("PhysicalID,IDCardNo,HB,WBC,PLT,PRO,GLU,KET,BLD,FPGL,ECG,ALBUMIN,FOB,HBALC,HBSAG,SGPT,GOT,BP,TBIL,CB,SCR,BUN,PC,HYPE,TC,TG,LowCho,HeiCho,");
             builder.Append("CHESTX,BCHAO,BloodOther,UrineOther,Other,CERVIX,GT,ECGEx,CHESTXEx,BCHAOEx,CERVIXEx,FPGDL,OutKey,UA,BCHAOther,BCHAOtherEx,BloodType,RH,TP,AG,IBIL");
 
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'tbl_RecordsAssistCheck' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='ALP'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_ASSISTCHECK' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='ALP'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;
@@ -160,7 +160,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_RecordsAssistCheck ");
+            builder.Append("SELECT * FROM ARCHIVE_ASSISTCHECK ");
 
             if (strWhere.Trim() != "")
             {
@@ -192,7 +192,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 
             StringBuilder sb = new StringBuilder();
 
-            sb.Append("UPDATE tbl_recordsxq SET ");
+            sb.Append("UPDATE ARCHIVE_BLOODTEST SET ");
 
             //百分比
             //中性粒细胞百分比
@@ -337,7 +337,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                 sb.Append("ALY_N='" + model.ALY_N + "',");
             }
 
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'tbl_recordsxq' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='NRBC_N'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_BLOODTEST' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='NRBC_N'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;
@@ -363,7 +363,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                 }
             }
 
-            if (sb.ToString() != "UPDATE tbl_recordsxq SET ")
+            if (sb.ToString() != "UPDATE ARCHIVE_BLOODTEST SET ")
             {
                 string str = sb.ToString().Trim().TrimEnd(',');
                 str += " WHERE IDCardNo='" + model.IDCardNo + "' AND DATE_FORMAT(TestTime,'%Y-%m-%d') ='" +
@@ -387,13 +387,13 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 
             StringBuilder sb = new StringBuilder();
 
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'tbl_recordsxq' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='BarCode'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_BLOODTEST' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='BarCode'";
 
             object single = MySQLHelper.GetSingle(table);
 
             if (single != null && int.Parse(single.ToString()) < 1) return 0;
 
-            sb.Append("UPDATE tbl_recordsxq SET ");
+            sb.Append("UPDATE ARCHIVE_BLOODTEST SET ");
 
             //百分比
             //中性粒细胞百分比
@@ -538,7 +538,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                 sb.Append("ALY_N='" + model.ALY_N + "',");
             }
 
-            table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'tbl_recordsxq' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='NRBC_N'";
+            table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_BLOODTEST' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='NRBC_N'";
 
             single = MySQLHelper.GetSingle(table);
             int count = 0;
@@ -564,10 +564,10 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                 }
             }
 
-            if (sb.ToString() != "UPDATE tbl_recordsxq SET ")
+            if (sb.ToString() != "UPDATE ARCHIVE_BLOODTEST SET ")
             {
                 sb.AppendFormat("IDCardNo=(");
-                sb.AppendFormat("    SELECT IDCardNo FROM tbl_RecordsCustomerBaseInfo WHERE CustomerID='{0}' ORDER BY CheckDate DESC LIMIT 0,1) ", model.BarCode);
+                sb.AppendFormat("    SELECT IDCardNo FROM ARCHIVE_CUSTOMERBASEINFO WHERE CustomerID='{0}' ORDER BY CheckDate DESC LIMIT 0,1) ", model.BarCode);
 
                 string str = sb.ToString().Trim().TrimEnd(',');
                 str += " WHERE BarCode='" + model.BarCode + "' AND DATE_FORMAT(TestTime,'%Y-%m-%d') ='" +
@@ -595,7 +595,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 
                 StringBuilder sb = new StringBuilder();
 
-                sb.Append("UPDATE tbl_recordsassistcheck SET ");
+                sb.Append("UPDATE ARCHIVE_ASSISTCHECK SET ");
 
                 if (model.HB != "" && IsNum(model.HB))
                 {
@@ -706,7 +706,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                     else if (model.HBSAG.Trim() == ("-") || model.HBSAG.Contains("1")) model.HBSAG = "1";
                     else if (model.HBSAG.Trim() == ("+-") || model.HBSAG.Contains("3")) model.HBSAG = "3";
 
-                    string t = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'tbl_RecordsAssistCheck' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='HBSAG'";
+                    string t = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_ASSISTCHECK' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='HBSAG'";
 
                     object s = MySQLHelper.GetSingle(t);
                     int c = 0;
@@ -724,7 +724,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                     else if (model.HBEAG.Trim() == ("-") || model.HBEAG.Contains("1")) model.HBEAG = "1";
                     else if (model.HBEAG.Trim() == ("+-") || model.HBEAG.Contains("3")) model.HBEAG = "3";
 
-                    string t = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'tbl_RecordsAssistCheck' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='HBEAG'";
+                    string t = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_ASSISTCHECK' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='HBEAG'";
 
                     object s = MySQLHelper.GetSingle(t);
                     int c = 0;
@@ -743,7 +743,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                     else if (model.HBEAB.Trim() == ("-") || model.HBEAB.Contains("1")) model.HBEAB = "1";
                     else if (model.HBEAB.Trim() == ("+-") || model.HBEAB.Contains("3")) model.HBEAB = "3";
 
-                    string t = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'tbl_RecordsAssistCheck' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='HBEAB'";
+                    string t = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_ASSISTCHECK' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='HBEAB'";
 
                     object s = MySQLHelper.GetSingle(t);
                     int c = 0;
@@ -761,7 +761,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                     else if (model.HBCAB.Trim() == ("-") || model.HBCAB.Contains("1")) model.HBCAB = "1";
                     else if (model.HBCAB.Trim() == ("+-") || model.HBCAB.Contains("3")) model.HBCAB = "3";
 
-                    string t = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'tbl_RecordsAssistCheck' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='HBCAB'";
+                    string t = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_ASSISTCHECK' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='HBCAB'";
 
                     object s = MySQLHelper.GetSingle(t);
                     int c = 0;
@@ -779,7 +779,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                     else if (model.HBSAB.Trim() == ("-") || model.HBSAB.Contains("1")) model.HBSAB = "1";
                     else if (model.HBSAB.Trim() == ("+-") || model.HBSAB.Contains("3")) model.HBSAB = "3";
 
-                    string t = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'tbl_RecordsAssistCheck' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='HBSAB'";
+                    string t = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_ASSISTCHECK' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='HBSAB'";
 
                     object s = MySQLHelper.GetSingle(t);
                     int c = 0;
@@ -823,7 +823,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                     sb.Append("CA='" + model.CA + "',");
                 }
 
-                string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'tbl_RecordsAssistCheck' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='ALP'";
+                string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_ASSISTCHECK' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='ALP'";
 
                 object single = MySQLHelper.GetSingle(table);
                 int count = 0;
@@ -890,7 +890,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 
                 #endregion
 
-                if (sb.ToString() != "UPDATE tbl_recordsassistcheck SET ")
+                if (sb.ToString() != "UPDATE ARCHIVE_ASSISTCHECK SET ")
                 {
                     string upStr = sb.ToString().Substring(0, sb.ToString().Length - 1);
                     upStr += " WHERE OutKey =  '" + model.PersonID + "' ";
@@ -921,7 +921,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 
                 StringBuilder sb = new StringBuilder();
 
-                sb.Append("UPDATE tbl_recordsassistcheck D SET ");
+                sb.Append("UPDATE ARCHIVE_ASSISTCHECK D SET ");
 
                 if (model.HB != "" && IsNum(model.HB))
                 {
@@ -1067,7 +1067,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                     sb.Append("CA='" + model.CA + "',");
                 }
 
-                string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'tbl_RecordsAssistCheck' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='ALP'";
+                string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_ASSISTCHECK' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='ALP'";
 
                 object single = MySQLHelper.GetSingle(table);
                 int count = 0;
@@ -1133,10 +1133,10 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 
                 #endregion
 
-                if (sb.ToString() != "UPDATE tbl_recordsassistcheck D SET ")
+                if (sb.ToString() != "UPDATE ARCHIVE_ASSISTCHECK D SET ")
                 {
                     string upStr = sb.ToString().Substring(0, sb.ToString().Length - 1);
-                    upStr += " WHERE D.OutKey = (SELECT M.ID FROM tbl_recordscustomerbaseinfo M ";
+                    upStr += " WHERE D.OutKey = (SELECT M.ID FROM ARCHIVE_CUSTOMERBASEINFO M ";
                     upStr += " WHERE M.CustomerID = '" + model.BarCode + "' ";
                     upStr += " ORDER BY M.CheckDate DESC LIMIT 0,1);";
 
@@ -1166,7 +1166,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 
                 StringBuilder sb = new StringBuilder();
 
-                sb.Append("UPDATE tbl_recordsgeneralcondition D SET ");
+                sb.Append("UPDATE ARCHIVE_GENERALCONDITION D SET ");
 
                 if (model.Height != "" && IsNum(model.Height))
                 {
@@ -1187,10 +1187,10 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 
                 #endregion
 
-                if (sb.ToString() != "UPDATE tbl_recordsgeneralcondition D SET ")
+                if (sb.ToString() != "UPDATE ARCHIVE_GENERALCONDITION D SET ")
                 {
                     string upStr = sb.ToString().Substring(0, sb.ToString().Length - 1);
-                    upStr += " WHERE D.OutKey = (SELECT M.ID FROM tbl_recordscustomerbaseinfo M ";
+                    upStr += " WHERE D.OutKey = (SELECT M.ID FROM ARCHIVE_CUSTOMERBASEINFO M ";
                     upStr += " WHERE M.IDCardNo = '" + model.IDCardNo + "' ";
                     upStr += " ORDER BY M.CheckDate DESC LIMIT 0,1);";
 
@@ -1220,7 +1220,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 
                 StringBuilder sb = new StringBuilder();
 
-                sb.Append("UPDATE tbl_recordsassistcheck D SET ");
+                sb.Append("UPDATE ARCHIVE_ASSISTCHECK D SET ");
 
                 if (model.PRO != "") sb.Append("PRO='" + model.PRO + "',");
                 if (model.GLU != "") sb.Append("GLU='" + model.GLU + "',");
@@ -1230,10 +1230,10 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 
                 #endregion
 
-                if (sb.ToString() != "UPDATE tbl_recordsassistcheck D SET ")
+                if (sb.ToString() != "UPDATE ARCHIVE_ASSISTCHECK D SET ")
                 {
                     string upStr = sb.ToString().Substring(0, sb.ToString().Length - 1);
-                    upStr += " WHERE D.OutKey = (SELECT M.ID FROM tbl_recordscustomerbaseinfo M ";
+                    upStr += " WHERE D.OutKey = (SELECT M.ID FROM ARCHIVE_CUSTOMERBASEINFO M ";
                     upStr += " WHERE M.IDCardNo = '" + model.IDCardNo + "' ";
                     upStr += " ORDER BY M.CheckDate DESC LIMIT 0,1);";
 
@@ -1258,7 +1258,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append(@"UPDATE 
-                                    tbl_recordsassistcheck  D
+                                    ARCHIVE_ASSISTCHECK  D
                              SET 
                                     FPGL=@FPGL
                                
@@ -1268,7 +1268,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                                         SELECT 
                                             ID 
                                         FROM
-                                        tbl_recordscustomerbaseinfo M
+                                        ARCHIVE_CUSTOMERBASEINFO M
                                         WHERE M.ID = D.OutKey
                                         AND M.IDCardNo = @IDCardNo
                                         AND M.CheckDate = @CheckDate
@@ -1288,7 +1288,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_recordsassistcheck ");
+            builder.Append("SELECT * FROM ARCHIVE_ASSISTCHECK ");
             builder.Append(" WHERE OutKey=@OutKey");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] {
@@ -1312,7 +1312,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append(@"UPDATE 
-                                         tbl_recordsassistcheck  D
+                                         ARCHIVE_ASSISTCHECK  D
                                        SET 
                                          BLD=@BLD
                                         ,KET=@KET
@@ -1328,7 +1328,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                                         SELECT 
                                             ID 
                                         FROM
-                                        tbl_recordscustomerbaseinfo M
+                                        ARCHIVE_CUSTOMERBASEINFO M
                                         WHERE M.ID = D.OutKey
                                         AND M.IDCardNo = @IDCardNo
                                         AND M.CheckDate = @CheckDate
@@ -1359,7 +1359,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append(@"UPDATE 
-                                         tbl_recordsassistcheck  D
+                                         ARCHIVE_ASSISTCHECK  D
                                        SET 
                                          BLD=@BLD
                                         ,KET=@KET
@@ -1375,7 +1375,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                                         SELECT 
                                             ID 
                                         FROM
-                                            tbl_recordscustomerbaseinfo M
+                                            ARCHIVE_CUSTOMERBASEINFO M
                                         WHERE M.ID = D.OutKey  ");
 
             if (string.IsNullOrEmpty(barCode)) builder.Append("AND M.IDCardNo = @IDCardNo) ");
@@ -1409,14 +1409,14 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             StringBuilder builder = new StringBuilder();
             string sql = "";
 
-            builder.Append("UPDATE tbl_recordsassistcheck SET ");
+            builder.Append("UPDATE ARCHIVE_ASSISTCHECK SET ");
 
             if (ECG != "") sql += "ECG=@ECG, ECGEx=@ECGEx,";
             if (BChao != "") sql += "BChao=@BChao, BChaoEx=@BChaoEx,";
 
             builder.Append(sql.TrimEnd(','));
 
-            if (builder.ToString() != "UPDATE tbl_recordsassistcheck SET ")
+            if (builder.ToString() != "UPDATE ARCHIVE_ASSISTCHECK SET ")
             {
                 builder.Append(@" WHERE IDCardNo = @IDCardNo
                                             AND OutKey = @OutKey ");
@@ -1444,7 +1444,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append(@"UPDATE 
-                                    tbl_recordsassistcheck
+                                    ARCHIVE_ASSISTCHECK
                              SET 
                                      BCHAO=@BCHAO
                                     ,BCHAOEx=@BCHAOEx");
@@ -1488,7 +1488,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append(@"UPDATE 
-                                            tbl_RecordsPhysicalExam
+                                            ARCHIVE_PHYSICALEXAM
                                         SET 
                                             Other=@Other
                                         WHERE
@@ -1513,7 +1513,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append(@"UPDATE 
-                                            tbl_RecordsHealthQuestion
+                                            ARCHIVE_HEALTHQUESTION
                                         SET 
                                                 RenalDis=(
                                                     CASE WHEN IFNULL(RenalDis,'')='' OR RenalDis='1' THEN '6'
@@ -1543,7 +1543,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append(@"UPDATE 
-                                            tbl_RecordsHealthQuestion D
+                                            ARCHIVE_HEALTHQUESTION D
                                         SET 
                                                 ElseDis=(
                                                     CASE WHEN IFNULL(ElseDis,'')='' OR ElseDis='1' THEN '2'
@@ -1576,7 +1576,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append(@"UPDATE 
-                                    tbl_RecordsIllnessHistoryInfo
+                                    ARCHIVE_ILLNESSHISTORYINFO
                              SET 
                                      IllnessOther=@IllnessOther
                                      ,DiagnoseTime=@DiagnoseTime
@@ -1598,7 +1598,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             {
                 builder.Clear();
                 builder.Append(@"INSERT INTO
-                                    tbl_RecordsIllnessHistoryInfo
+                                    ARCHIVE_ILLNESSHISTORYINFO
                                     (
                                         IDCardNo
                                         ,IllnessType

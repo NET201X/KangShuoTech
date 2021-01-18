@@ -172,12 +172,12 @@ namespace MedicalService
         private void TransDs(DataSet ds)
         {
             ds.Tables[0].Columns.Add("UpdateData");
-            DeviceInfoBLL tbl_deviceinfo = new DeviceInfoBLL();
+            DeviceInfoBLL ARCHIVE_DEVICEINFO = new DeviceInfoBLL();
             foreach (DataRow row in ds.Tables[0].Rows)
             {
                 row["Sex"] = !(row["Sex"].ToString() == "1") ? "女" : "男";
                 row["UpdateData"] = "修改";
-                //if (tbl_deviceinfo.GetRecordCount(string.Format(" IDCardNo = '{0}'", row["IDCardNo"])) > 0)
+                //if (ARCHIVE_DEVICEINFO.GetRecordCount(string.Format(" IDCardNo = '{0}'", row["IDCardNo"])) > 0)
                 //{
                 //    row["BlueToothRecord"] = this.RecordsName;
                 //}

@@ -12,7 +12,7 @@
         public int Add(ChronicStrokeBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_chronicstrokebaseinfo(");
+            builder.Append("insert into CD_STROKE_BASEINFO(");
             builder.Append("CustomerID,RecordID,IDCardNo,IllSource,IllTime,DiagnosisHource,");
             builder.Append("Familyhistory,HosState,Mrs,GroupLevel,DangerousElement,DgrElementOther,");
             builder.Append("CT,Mri,StrokeType,StrokePosition,SelfAbility,DrugsRely,SpecialTreatment,");
@@ -100,7 +100,7 @@
         public int AddServer(ChronicStrokeBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_chronicstrokebaseinfo(");
+            builder.Append("insert into CD_STROKE_BASEINFO(");
             builder.Append("CustomerID,RecordID,IDCardNo,IllSource,IllTime,DiagnosisHource,");
             builder.Append("Familyhistory,HosState,Mrs,GroupLevel,DangerousElement,DgrElementOther,");
             builder.Append("CT,Mri,StrokeType,StrokePosition,SelfAbility,DrugsRely,SpecialTreatment,");
@@ -325,7 +325,7 @@
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_chronicstrokebaseinfo ");
+            builder.Append("delete from CD_STROKE_BASEINFO ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -335,14 +335,14 @@
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_chronicstrokebaseinfo ");
+            builder.Append("delete from CD_STROKE_BASEINFO ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_chronicstrokebaseinfo");
+            builder.Append("select count(1) from CD_STROKE_BASEINFO");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -356,7 +356,7 @@
             builder.Append("Mrs,GroupLevel,DangerousElement,DgrElementOther,CT,Mri,StrokeType,StrokePosition,SelfAbility,DrugsRely,");
             builder.Append("SpecialTreatment,OtherTreatment,StopManager,StopTime,StopReason,OccurTime,CreateUnit,CurrentUnit,");
             builder.Append("CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel ");
-            builder.Append(" FROM tbl_chronicstrokebaseinfo ");
+            builder.Append(" FROM CD_STROKE_BASEINFO ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -377,7 +377,7 @@
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_chronicstrokebaseinfo T ");
+            builder.Append(")AS Row, T.*  from CD_STROKE_BASEINFO T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -389,7 +389,7 @@
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_chronicstrokebaseinfo");
+            return MySQLHelper.GetMaxID("ID", "CD_STROKE_BASEINFO");
         }
 
         public ChronicStrokeBaseInfoModel GetModel(string IDCardNo)
@@ -398,7 +398,7 @@
             builder.Append("select ID,CustomerID,RecordID,IDCardNo,IllSource,IllTime,DiagnosisHource,Familyhistory,");
             builder.Append("HosState,Mrs,GroupLevel,DangerousElement,DgrElementOther,CT,Mri,StrokeType,StrokePosition,");
             builder.Append("SelfAbility,DrugsRely,SpecialTreatment,OtherTreatment,StopManager,StopTime,StopReason,OccurTime,");
-            builder.Append("CreateUnit,CurrentUnit,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel from tbl_chronicstrokebaseinfo ");
+            builder.Append("CreateUnit,CurrentUnit,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel from CD_STROKE_BASEINFO ");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -414,7 +414,7 @@
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_chronicstrokebaseinfo ");
+            builder.Append("select count(1) FROM CD_STROKE_BASEINFO ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -430,7 +430,7 @@
         public bool Update(ChronicStrokeBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_chronicstrokebaseinfo set ");
+            builder.Append("update CD_STROKE_BASEINFO set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
@@ -535,7 +535,7 @@
         public bool UpdateServer(ChronicStrokeBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_chronicstrokebaseinfo set ");
+            builder.Append("update CD_STROKE_BASEINFO set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");

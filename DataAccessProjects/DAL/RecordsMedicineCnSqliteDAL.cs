@@ -332,7 +332,7 @@
             builder.Append("Spirit,Alone,Fear,Weight,Eye,FootHand,Stomach,Cold,Influenza,Nasal,Snore,Allergy,Urticaria,");
             builder.Append("Skin,Scratch,Mouth,Arms,Greasy,Spot,Eczema,Thirsty,Smell,Abdomen,Coolfood,Defecate,Defecatedry,");
             builder.Append("Tongue,Vein,RecordDate");
-            builder.Append(" FROM tbl_oldermedicinecn ");
+            builder.Append(" FROM OLD_MEDICINE_CN ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -347,7 +347,7 @@
             builder.Append("Spirit,Alone,Fear,Weight,Eye,FootHand,Stomach,Cold,Influenza,Nasal,Snore,Allergy,Urticaria,");
             builder.Append("Skin,Scratch,Mouth,Arms,Greasy,Spot,Eczema,Thirsty,Smell,Abdomen,Coolfood,Defecate,Defecatedry,");
             builder.Append("Tongue,Vein,RecordDate");
-            builder.Append(" FROM tbl_oldermedicinecn ");
+            builder.Append(" FROM OLD_MEDICINE_CN ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -359,7 +359,7 @@
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_oldermedicinecn ");
+            builder.Append("select count(1) FROM OLD_MEDICINE_CN ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);

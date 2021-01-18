@@ -14,7 +14,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(RecordsIllnessHistoryInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordsillnesshistoryinfo(");
+            builder.Append("insert into ARCHIVE_ILLNESSHISTORYINFO(");
             builder.Append("RecordID,IDCardNo,IllnessType,IllnessName,Therioma,IllnessOther,JobIllness,IllnessNameOther,DiagnoseTime)");
             builder.Append(" values (");
             builder.Append("@RecordID,@IDCardNo,@IllnessType,@IllnessName,@Therioma,@IllnessOther,@JobIllness,@IllnessNameOther,@DiagnoseTime)");
@@ -51,7 +51,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int AddServer(RecordsIllnessHistoryInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordsillnesshistoryinfo(");
+            builder.Append("insert into ARCHIVE_ILLNESSHISTORYINFO(");
             builder.Append("RecordID,IDCardNo,IllnessType,IllnessName,Therioma,IllnessOther,JobIllness,IllnessNameOther,DiagnoseTime)");
             builder.Append(" values (");
             builder.Append("@RecordID,@IDCardNo,@IllnessType,@IllnessName,@Therioma,@IllnessOther,@JobIllness,@IllnessNameOther,@DiagnoseTime)");
@@ -139,7 +139,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordsillnesshistoryinfo ");
+            builder.Append("delete from ARCHIVE_ILLNESSHISTORYINFO ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -149,7 +149,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordsillnesshistoryinfo ");
+            builder.Append("delete from ARCHIVE_ILLNESSHISTORYINFO ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -157,7 +157,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_recordsillnesshistoryinfo");
+            builder.Append("select count(1) from ARCHIVE_ILLNESSHISTORYINFO");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -168,7 +168,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select  ID,RecordID,IDCardNo,IllnessType,IllnessName,Therioma,IllnessOther,JobIllness,IllnessNameOther,DiagnoseTime ");
-            builder.Append(" FROM tbl_recordsillnesshistoryinfo ");
+            builder.Append(" FROM ARCHIVE_ILLNESSHISTORYINFO ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere + " order by id limit 6");
@@ -189,7 +189,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_recordsillnesshistoryinfo T ");
+            builder.Append(")AS Row, T.*  from ARCHIVE_ILLNESSHISTORYINFO T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -201,13 +201,13 @@ namespace KangShuoTech.DataAccessProjects.DAL
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_recordsillnesshistoryinfo");
+            return MySQLHelper.GetMaxID("ID", "ARCHIVE_ILLNESSHISTORYINFO");
         }
 
         public RecordsIllnessHistoryInfoModel GetModel(string IDCardNo)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select  ID,RecordID,IDCardNo,IllnessType,IllnessName,Therioma,IllnessOther,JobIllness,IllnessNameOther,DiagnoseTime from tbl_recordsillnesshistoryinfo ");
+            builder.Append("select  ID,RecordID,IDCardNo,IllnessType,IllnessName,Therioma,IllnessOther,JobIllness,IllnessNameOther,DiagnoseTime from ARCHIVE_ILLNESSHISTORYINFO ");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -222,7 +222,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public DataSet Getdt(string IDCardNo ,string s)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select  ID,RecordID,IDCardNo,IllnessType,IllnessName,Therioma,IllnessOther,IllnessNameOther from tbl_recordsillnesshistoryinfo ");
+            builder.Append("select  ID,RecordID,IDCardNo,IllnessType,IllnessName,Therioma,IllnessOther,IllnessNameOther from ARCHIVE_ILLNESSHISTORYINFO ");
             builder.Append(" where IDCardNo= '" + IDCardNo + "' and IllnessType = '"+Convert.ToChar(s.ToString ())+"' ");
            
             return MySQLHelper.Query(builder.ToString());
@@ -230,7 +230,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_recordsillnesshistoryinfo ");
+            builder.Append("select count(1) FROM ARCHIVE_ILLNESSHISTORYINFO ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -246,7 +246,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(RecordsIllnessHistoryInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordsillnesshistoryinfo set ");
+            builder.Append("update ARCHIVE_ILLNESSHISTORYINFO set ");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("IllnessType=@IllnessType,");
@@ -285,7 +285,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool UpdateServer(RecordsIllnessHistoryInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordsillnesshistoryinfo set ");
+            builder.Append("update ARCHIVE_ILLNESSHISTORYINFO set ");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("IllnessType=@IllnessType,");

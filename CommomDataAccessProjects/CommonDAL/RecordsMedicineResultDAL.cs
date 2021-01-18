@@ -19,7 +19,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append(@"
-                            UPDATE tbl_recordsmedicineresult D SET                             
+                            UPDATE OLD_MEDICINE_RESULT D SET                             
                                 Mild=@Mild,Faint=@Faint,Yang=@Yang,
                                 Yin=@Yin, PhlegmDamp=@PhlegmDamp,
                                 Muggy=@Muggy,BloodStasis=@BloodStasis,
@@ -54,7 +54,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                                 CharacteristicAdvisingEx=@CharacteristicAdvisingEx ");
 
             // 判断是否存在OutKey栏位，3.0用OutKey做关联
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'tbl_recordsmedicineresult' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='OutKey'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'OLD_MEDICINE_RESULT' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='OutKey'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;
@@ -69,7 +69,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                                     SELECT 
                                         D.ID 
                                     FROM
-                                        tbl_recordsmediphysdist med
+                                        ARCHIVE_MEDI_PHYS_DIST med
                                     WHERE D.ID= med.MedicineResultID
                                         AND med.OutKey=@OutKey
                                 ) ");
@@ -127,14 +127,14 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("UPDATE tbl_recordsmediphysdist D SET ");
+            builder.Append("UPDATE ARCHIVE_MEDI_PHYS_DIST D SET ");
             builder.Append("Mild=@Mild,Faint=@Faint,");
             builder.Append("Yang=@Yang,Yin=@Yin,");
             builder.Append("PhlegmDamp=@PhlegmDamp,Muggy=@Muggy,");
             builder.Append("BloodStasis=@BloodStasis,QiConstraint=@QiConstraint,");
             builder.Append("Characteristic=@Characteristic ");
 
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'tbl_recordsmediphysdist' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='Tongue'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_MEDI_PHYS_DIST' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='Tongue'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;
@@ -171,7 +171,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_recordsmedicineresult(");
+            builder.Append("INSERT INTO OLD_MEDICINE_RESULT(");
             builder.Append("PhysicalID,MedicineID,Mild,Faint,Yang,Yin,PhlegmDamp,Muggy,BloodStasis,QIconStraint,Characteristic,");
             builder.Append("MildScore,FaintScore,YangsCore,YinScore,PhlegmdampScore,MuggyScore,BloodStasisScore,QiConstraintScore,");
             builder.Append("CharacteristicScore,MildAdvising,FaintAdvising,YangAdvising,YinAdvising,PhlegmdampAdvising,MuggyAdvising,");
@@ -180,7 +180,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             builder.Append("CharacteristicAdvisingEx,IsDel,IDCardNo,EffectAssess,Satisfy");
 
             // 判断是否存在OutKey栏位，3.0用OutKey做关联
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'tbl_recordsmedicineresult' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='OutKey'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'OLD_MEDICINE_RESULT' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='OutKey'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;
@@ -313,7 +313,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("UPDATE tbl_recordsmediphysdist D SET ");
+            builder.Append("UPDATE ARCHIVE_MEDI_PHYS_DIST D SET ");
             builder.Append("MedicineResultID=@MedicineResultID, ");
             builder.Append("Mild=@Mild,Faint=@Faint,");
             builder.Append("Yang=@Yang,Yin=@Yin,");
@@ -321,7 +321,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             builder.Append("BloodStasis=@BloodStasis,QiConstraint=@QiConstraint,");
             builder.Append("Characteristic=@Characteristic ");
 
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'tbl_recordsmediphysdist' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='Tongue'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_MEDI_PHYS_DIST' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='Tongue'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;

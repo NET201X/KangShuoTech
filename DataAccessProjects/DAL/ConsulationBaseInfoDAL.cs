@@ -13,7 +13,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(ConsulationBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_consultationbaseinfo(");
+            builder.Append("insert into ARCHIVE_CONSULTATION_RECORD(");
             builder.Append("IDCardNo,Reason,View,ResponsibilityDoctor,ConsultationDate,UpdateUnitName,UpdatePerson,UpdateDate)");
             builder.Append("values (");
             builder.Append("@IDCardNo,@Reason,@View,@ResponsibilityDoctor,@ConsultationDate,@UpdateUnitName,@UpdatePerson,@UpdateDate)");
@@ -48,7 +48,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int AddServer(ConsulationBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_consultationbaseinfo(");
+            builder.Append("insert into ARCHIVE_CONSULTATION_RECORD(");
             builder.Append("IDCardNo,Reason,View,ResponsibilityDoctor,ConsultationDate,UpdateUnitName,UpdatePerson,UpdateDate)");
             builder.Append("values (");
             builder.Append("@IDCardNo,@Reason,@View,@ResponsibilityDoctor,@ConsultationDate,@UpdateUnitName,@UpdatePerson,@UpdateDate)");
@@ -84,7 +84,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_consultationbaseinfo ");
+            builder.Append("delete from ARCHIVE_CONSULTATION_RECORD ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -95,7 +95,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("SELECT COUNT(T.IDCardNo) AS IDCount");
-            builder.Append(" FROM 	tbl_recordsbaseinfo T INNER JOIN  tbl_consultationbaseinfo C ON T.IDCardNo = C.IDCardNo ");
+            builder.Append(" FROM 	ARCHIVE_BASEINFO T INNER JOIN  ARCHIVE_CONSULTATION_RECORD C ON T.IDCardNo = C.IDCardNo ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -111,7 +111,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select  IDCardNo,Reason,View,ResponsibilityDoctor,ConsultationDate,UpdateUnitName,UpdatePerson,UpdateDate  ");
-            builder.Append(" FROM tbl_consultationbaseinfo ");
+            builder.Append(" FROM ARCHIVE_CONSULTATION_RECORD ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -128,7 +128,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("(case C.ConsultationDate when null then null when '' then null else C.ConsultationDate end) as CheckDate, ");
             builder.Append("T.PopulationType,T.FamilyIDCardNo,T.HouseRelation,T.HouseRealOther,T.TownName,");
             builder.Append("T.VillageName,T.CreateUnitName,T.CreateMenName ");
-            builder.Append(" from tbl_consultationbaseinfo C inner join tbl_recordsbaseinfo T on T.IDCardNo = C.IDCardNo ");
+            builder.Append(" from ARCHIVE_CONSULTATION_RECORD C inner join ARCHIVE_BASEINFO T on T.IDCardNo = C.IDCardNo ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE 1=1 " + strWhere);
@@ -208,7 +208,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select T.ID, T.IDCardNo,C.CustomerName,T.Reason,T.View,T.ResponsibilityDoctor,T.ConsultationDate,C.CreateMenName,C.CreateDate ,C.Sex,C.Address,C.CreateUnitName ");
-            builder.Append("from tbl_consultationbaseinfo T LEFT JOIN tbl_recordsbaseinfo C ON T.IDCardNo=C.IDCardNo ");
+            builder.Append("from ARCHIVE_CONSULTATION_RECORD T LEFT JOIN ARCHIVE_BASEINFO C ON T.IDCardNo=C.IDCardNo ");
             builder.Append("where T.ID=@ID");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32,8) };
@@ -225,7 +225,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select T.ID,T.IDCardNo,C.CustomerName,T.Reason,T.View,T.ResponsibilityDoctor,T.ConsultationDate,C.CreateMenName,C.CreateDate ,C.Sex,C.Address,C.CreateUnitName ");
-            builder.Append("from tbl_consultationbaseinfo T LEFT JOIN tbl_recordsbaseinfo C ON T.IDCardNo=C.IDCardNo ");
+            builder.Append("from ARCHIVE_CONSULTATION_RECORD T LEFT JOIN ARCHIVE_BASEINFO C ON T.IDCardNo=C.IDCardNo ");
             builder.Append("where T.IDCardNo=@IDCardNo ");
             builder.Append("order by T.ID DESC LIMIT 0,1");
 
@@ -243,7 +243,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(ConsulationBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_consultationbaseinfo set ");
+            builder.Append("update ARCHIVE_CONSULTATION_RECORD set ");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("Reason=@Reason,");
             builder.Append("View=@View,");

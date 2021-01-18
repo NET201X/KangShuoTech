@@ -17,7 +17,7 @@
         {
             StringBuilder strSql = new StringBuilder();
 
-            strSql.Append("INSERT INTO tbl_OtherAssessSet(");
+            strSql.Append("INSERT INTO ARCHIVE_OTHER_ASSESS_SET(");
             strSql.Append("Type,ExceptionCol,IsShowNum,IncludeEqual,MaxVal,MinVal,Content,Content2,Content3,CreatedBy,CreatedDate,LastUpDateBy,LastUpdateDate)");
             strSql.Append(" VALUES (");
             strSql.Append("@Type,@ExceptionCol,@IsShowNum,@IncludeEqual,@MaxVal,@MinVal,@Content,@Content2,@Content3,@CreatedBy,@CreatedDate,@LastUpDateBy,@LastUpdateDate)");
@@ -65,7 +65,7 @@
         {
             StringBuilder strSql = new StringBuilder();
 
-            strSql.Append("UPDATE tbl_OtherAssessSet SET ");
+            strSql.Append("UPDATE ARCHIVE_OTHER_ASSESS_SET SET ");
             strSql.Append("Type=@Type,");
             strSql.Append("ExceptionCol=@ExceptionCol,");
             strSql.Append("IsShowNum=@IsShowNum,");
@@ -120,7 +120,7 @@
         {
             StringBuilder strSql = new StringBuilder();
 
-            strSql.Append("DELETE FROM tbl_OtherAssessSet ");
+            strSql.Append("DELETE FROM ARCHIVE_OTHER_ASSESS_SET ");
             strSql.Append(" WHERE ID=@ID");
 
             MySqlParameter[] parameters = {
@@ -141,7 +141,7 @@
         {
             StringBuilder strSql = new StringBuilder();
 
-            strSql.Append("SELECT * FROM tbl_OtherAssessSet ");
+            strSql.Append("SELECT * FROM ARCHIVE_OTHER_ASSESS_SET ");
 
             if (strWHERE.Trim() != "")
             {

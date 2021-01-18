@@ -13,7 +13,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(DeviceInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_DeviceInfo(");
+            builder.Append("insert into ARCHIVE_DEVICEINFO(");
             builder.Append("DeviceType,DeviceName,Value1,Value2,Value3,Value4,Value5,Value6,Value7,Value8,Value9,Value10,Value11,Value12,Value13,IsUpload,UpdateData,IDCardNo)");
             builder.Append(" values (");
             builder.Append("@DeviceType,@DeviceName,@Value1,@Value2,@Value3,@Value4,@Value5,@Value6,@Value7,@Value8,@Value9,@Value10,@Value11,@Value12,@Value13,@IsUpload,@UpdateData,@IDCardNo)");
@@ -70,7 +70,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int AddRow(DataRow row)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_DeviceInfo(");
+            builder.Append("insert into ARCHIVE_DEVICEINFO(");
             builder.Append("DeviceType,DeviceName,Value1,Value2,Value3,Value4,Value5,Value6,Value7,Value8,Value9,Value10,Value11,Value12,Value13,IsUpload,UpdateData,IDCardNo)");
             builder.Append(" values (");
             builder.Append("@DeviceType,@DeviceName,@Value1,@Value2,@Value3,@Value4,@Value5,@Value6,@Value7,@Value8,@Value9,@Value10,@Value11,@Value12,@Value13,@IsUpload,@UpdateData,@IDCardNo)");
@@ -108,7 +108,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select DeviceType,DeviceName,Value1,Value2,Value3,Value4,Value5,Value6,Value7,Value8,Value9,Value10,Value11,Value12,Value13,IsUpload,UpdateData,IDCardNo,ID ");
-            builder.Append(" FROM tbl_deviceinfo ");
+            builder.Append(" FROM ARCHIVE_DEVICEINFO ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -119,7 +119,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_deviceinfo ");
+            builder.Append("select count(1) FROM ARCHIVE_DEVICEINFO ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -136,7 +136,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("UPDATE tbl_deviceinfo SET ");
+            builder.Append("UPDATE ARCHIVE_DEVICEINFO SET ");
             builder.Append("Value1=@Value1,");
             builder.Append("Value2=@Value2,");
             builder.Append("Value3=@Value3,");
@@ -200,7 +200,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("UPDATE tbl_deviceinfo SET ");
+            builder.Append("UPDATE ARCHIVE_DEVICEINFO SET ");
             builder.Append("Value1=@Value1,");
             builder.Append("Value2=@Value2,");
             builder.Append("Value3=@Value3,");
@@ -245,7 +245,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(string column, string p_value, int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("Update tbl_deviceinfo set ");
+            builder.Append("Update ARCHIVE_DEVICEINFO set ");
             builder.Append(string.Format("{0}=@{0}", column));
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@" + column, MySqlDbType.String), new MySqlParameter("@ID", MySqlDbType.Int32) };

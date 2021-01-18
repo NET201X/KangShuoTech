@@ -17,7 +17,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_ChronicDiabetesBaseInfo(");
+            builder.Append("INSERT INTO CD_DIABETES_BASEINFO(");
             builder.Append("CustomerID,RecordID,IDCardNo,ManagementGroup,CaseSource,FamilyHistory,DiabetesType,");
             builder.Append("DiabetesTime,DiabetesWork,Insulin,InsulinWeight,EnalaprilMelete,EndManage,EndWhy,");
             builder.Append("EndTime,HappnTime,CreateUnit,CurrentUnit,LastUpdateBy,LastUpdateDate,");
@@ -134,7 +134,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_ChronicDiadetesVisit(");
+            builder.Append("INSERT INTO CD_DIABETESFOLLOWUP(");
             builder.Append("CustomerID,RecordID,IDCardNo,CustomerName,VisitDate,VisitDoctor,");
             builder.Append("NextVisitDate,Symptom,SymptomOther,Hypertension,Hypotension,Weight,Height,");
             builder.Append("BMI,DorsalisPedispulse,PhysicalSymptomMother,DailySmokeNum,DailyDrinkNum,");
@@ -271,7 +271,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_ChronicDiadetesVisit");
+            builder.Append("SELECT * FROM CD_DIABETESFOLLOWUP");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             if (Convert.ToString(CheckDate).Length > 3)
@@ -298,7 +298,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_ChronicDiadetesVisit");
+            builder.Append("SELECT * FROM CD_DIABETESFOLLOWUP");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             if (Convert.ToString(CheckDate).Length > 3)
@@ -330,7 +330,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_ChronicDiadetesVisit ");
+            builder.Append("SELECT * FROM CD_DIABETESFOLLOWUP ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
             builder.Append(" ORDER BY VisitDate DESC LIMIT 0,1 ");
 
@@ -352,7 +352,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT COUNT(0) FROM tbl_ChronicDiabetesBaseInfo ");
+            builder.Append("SELECT COUNT(0) FROM CD_DIABETES_BASEINFO ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] {
@@ -377,7 +377,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT COUNT(0) FROM tbl_ChronicDiadetesVisit ");
+            builder.Append("SELECT COUNT(0) FROM CD_DIABETESFOLLOWUP ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
             builder.Append(" AND YEAR(VisitDate)=YEAR(NOW())");
             builder.Append(" AND QUARTER(VisitDate) = QUARTER(NOW())");
@@ -404,7 +404,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("UPDATE tbl_ChronicDiadetesVisit SET ");
+            builder.Append("UPDATE CD_DIABETESFOLLOWUP SET ");
 
             decimal value;
 
@@ -465,7 +465,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             string sql = builder.ToString();
 
             sql = sql.Substring(0, sql.LastIndexOf(','));
-            sql += " WHERE ID=(SELECT * FROM (SELECT ID FROM tbl_ChronicDiadetesVisit WHERE VisitDate LIKE '" + 
+            sql += " WHERE ID=(SELECT * FROM (SELECT ID FROM CD_DIABETESFOLLOWUP WHERE VisitDate LIKE '" + 
                 DateTime.Now.Year + "%' AND IDCardNo='" + model.IDCardNo + "' ORDER BY VisitDate DESC LIMIT 1) DATAS)";
 
             return (MySQLHelper.ExecuteSql(sql) > 0);

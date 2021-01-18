@@ -12,7 +12,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Add(SysOrgCityModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_sysorgcity(");
+            builder.Append("insert into SYS_ORG_CITY(");
             builder.Append("ID,Code,Name,ProvinceID)");
             builder.Append(" values (");
             builder.Append("@ID,@Code,@Name,@ProvinceID)");
@@ -52,7 +52,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_sysorgcity ");
+            builder.Append("delete from SYS_ORG_CITY ");
             builder.Append(" where ");
             MySqlParameter[] cmdParms = new MySqlParameter[0];
             return (MySQLHelper.ExecuteSql(builder.ToString(), cmdParms) > 0);
@@ -62,7 +62,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,Code,Name,ProvinceID ");
-            builder.Append(" FROM tbl_sysorgcity ");
+            builder.Append(" FROM SYS_ORG_CITY ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -83,7 +83,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             {
                 builder.Append("order by T. desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_sysorgcity T ");
+            builder.Append(")AS Row, T.*  from SYS_ORG_CITY T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -96,7 +96,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public SysOrgCityModel GetModel()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select ID,Code,Name,ProvinceID from tbl_sysorgcity ");
+            builder.Append("select ID,Code,Name,ProvinceID from SYS_ORG_CITY ");
             builder.Append(" where ");
             MySqlParameter[] cmdParms = new MySqlParameter[0];
             new SysOrgCityModel();
@@ -111,7 +111,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_sysorgcity ");
+            builder.Append("select count(1) FROM SYS_ORG_CITY ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -127,7 +127,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(SysOrgCityModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_sysorgcity set ");
+            builder.Append("update SYS_ORG_CITY set ");
             builder.Append("ID=@ID,");
             builder.Append("Code=@Code,");
             builder.Append("Name=@Name,");

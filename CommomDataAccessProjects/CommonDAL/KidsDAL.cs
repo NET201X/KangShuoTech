@@ -11,7 +11,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_KidsTcmhmOne ");
+            builder.Append("SELECT * FROM CHILD_TCMHM_ONE ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] {
@@ -30,7 +30,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_KidsTcmhmOneToThree ");
+            builder.Append("SELECT * FROM CHILD_TCMHM_ONE2THREE ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] {
@@ -49,7 +49,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_KidsTcmhmThreeToSix ");
+            builder.Append("SELECT * FROM CHILD_TCMHM_THREE2SIX ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] {
@@ -68,7 +68,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_kidswithinoneyearold ");
+            builder.Append("SELECT * FROM CHILD_WITHIN_ONE_YEAR_OLD ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] {

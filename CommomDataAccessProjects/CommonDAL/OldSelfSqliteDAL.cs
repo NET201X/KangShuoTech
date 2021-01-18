@@ -10,7 +10,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            string table = "SELECT COUNT(0) FROM sqlite_master WHERE TYPE='table' AND NAME = 'tbl_olderselfcareability' ";
+            string table = "SELECT COUNT(0) FROM sqlite_master WHERE TYPE='table' AND NAME = 'OLDER_SELFCAREABILITY' ";
 
             object single = YcSqliteHelper.GetSingle(table, conn);
             int count = 0;
@@ -19,7 +19,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 
             if (count == 0) return null;
 
-            builder.Append("SELECT * FROM tbl_olderselfcareability Medicinecn ");
+            builder.Append("SELECT * FROM OLDER_SELFCAREABILITY Medicinecn ");
 
             if (strWhere.Trim() != "")
             {

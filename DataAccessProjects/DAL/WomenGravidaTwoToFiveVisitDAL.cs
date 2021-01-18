@@ -13,7 +13,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(WomenGravidaTwoToFiveVisitModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_womengravidatwotofivevisit(");
+            builder.Append("insert into GRAVIDA_TWO2FIVE_FOLLOWUP(");
             builder.Append("CustomerID,RecordID,IDCardNo,Times,FollowupDate,PregancyWeeks,ChiefComPlaint,Weight,UteruslowHeight,AbdominalCirumference,FetusPosition,FHR,HBloodPressure,LBloodPressure,HB,AssistanTexam,Classification,ClassificationEx,Advising,AdvisingOther,Referral,ReferralReason,ReferralOrg,PRO,NextFollowUpDate,FollowUpDoctor,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel,");
             builder.Append("FollowupWay,PrenatalOrg,ReferralContacts,ReferralContactsTel,ReferralResult,FreeSerumCheck,SerumCheckResult) ");
             builder.Append(" values (");
@@ -109,7 +109,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int AddServer(WomenGravidaTwoToFiveVisitModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_womengravidatwotofivevisit(");
+            builder.Append("insert into GRAVIDA_TWO2FIVE_FOLLOWUP(");
             builder.Append("CustomerID,RecordID,IDCardNo,Times,FollowupDate,PregancyWeeks,ChiefComPlaint,Weight,UteruslowHeight,AbdominalCirumference,FetusPosition,FHR,HBloodPressure,LBloodPressure,HB,AssistanTexam,Classification,ClassificationEx,Advising,AdvisingOther,Referral,ReferralReason,ReferralOrg,PRO,NextFollowUpDate,FollowUpDoctor,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel,");
             builder.Append("FollowupWay,PrenatalOrg,ReferralContacts,ReferralContactsTel,ReferralResult,FreeSerumCheck,SerumCheckResult) ");
             builder.Append(" values (");
@@ -370,7 +370,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_womengravidatwotofivevisit ");
+            builder.Append("delete from GRAVIDA_TWO2FIVE_FOLLOWUP ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -380,7 +380,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_womengravidatwotofivevisit ");
+            builder.Append("delete from GRAVIDA_TWO2FIVE_FOLLOWUP ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -388,7 +388,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_womengravidatwotofivevisit");
+            builder.Append("select count(1) from GRAVIDA_TWO2FIVE_FOLLOWUP");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -398,7 +398,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Exists(string IDCardNo)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_womengravidatwotofivevisit");
+            builder.Append("select count(1) from GRAVIDA_TWO2FIVE_FOLLOWUP");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = IDCardNo;
@@ -410,7 +410,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,CustomerID,RecordID,IDCardNo,Times,FollowupDate,PregancyWeeks,ChiefComPlaint,Weight,UteruslowHeight,AbdominalCirumference,FetusPosition,FHR,HBloodPressure,LBloodPressure,HB,AssistanTexam,Classification,ClassificationEx,Advising,AdvisingOther,Referral,ReferralReason,ReferralOrg,PRO,NextFollowUpDate,FollowUpDoctor,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel, ");
             builder.Append("FollowupWay,PrenatalOrg,ReferralContacts,ReferralContactsTel,ReferralResult,FreeSerumCheck,SerumCheckResult ");
-            builder.Append(" FROM tbl_womengravidatwotofivevisit ");
+            builder.Append(" FROM GRAVIDA_TWO2FIVE_FOLLOWUP ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -431,7 +431,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_womengravidatwotofivevisit T ");
+            builder.Append(")AS Row, T.*  from GRAVIDA_TWO2FIVE_FOLLOWUP T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -443,7 +443,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_womengravidatwotofivevisit");
+            return MySQLHelper.GetMaxID("ID", "GRAVIDA_TWO2FIVE_FOLLOWUP");
         }
 
         public WomenGravidaTwoToFiveVisitModel GetModel(string IDCardNo)
@@ -451,7 +451,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
             builder.Append("select  ID,CustomerID,RecordID,IDCardNo,Times,FollowupDate,PregancyWeeks,ChiefComPlaint,Weight,UteruslowHeight,AbdominalCirumference,FetusPosition,FHR,HBloodPressure,LBloodPressure,HB,AssistanTexam,Classification,ClassificationEx,Advising,AdvisingOther,Referral,ReferralReason,ReferralOrg,NextFollowUpDate,FollowUpDoctor,CreatedBy,PRO,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel, ");
             builder.Append("FollowupWay,PrenatalOrg,ReferralContacts,ReferralContactsTel,ReferralResult,FreeSerumCheck,SerumCheckResult ");
-            builder.Append(" from tbl_womengravidatwotofivevisit");
+            builder.Append(" from GRAVIDA_TWO2FIVE_FOLLOWUP");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -467,7 +467,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_womengravidatwotofivevisit ");
+            builder.Append("select count(1) FROM GRAVIDA_TWO2FIVE_FOLLOWUP ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -483,7 +483,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(WomenGravidaTwoToFiveVisitModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_womengravidatwotofivevisit set ");
+            builder.Append("update GRAVIDA_TWO2FIVE_FOLLOWUP set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
@@ -609,7 +609,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool UpdateServer(WomenGravidaTwoToFiveVisitModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_womengravidatwotofivevisit set ");
+            builder.Append("update GRAVIDA_TWO2FIVE_FOLLOWUP set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");

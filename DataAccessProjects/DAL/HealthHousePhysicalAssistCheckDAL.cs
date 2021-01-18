@@ -15,7 +15,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("insert into tbl_HHAssistCheck(");
+            builder.Append("insert into HEALTHHOUSE_PHYSICAL_ASSIST_CHECK(");
             builder.Append("IDCardNo,PRO,GLU,KET,BLD,UBG,BIL,PH,NIT,LEU,SG,VC,");
             builder.Append("CHESTX,CHESTXEx,PID)");
             builder.Append("values(");
@@ -69,7 +69,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append(" select * ");
-            builder.Append(" from tbl_HHAssistCheck ");
+            builder.Append(" from HEALTHHOUSE_PHYSICAL_ASSIST_CHECK ");
             builder.Append(" where PID=@PID ");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] {
@@ -90,7 +90,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("update tbl_HHAssistCheck set ");
+            builder.Append("update HEALTHHOUSE_PHYSICAL_ASSIST_CHECK set ");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("PRO=@PRO,");
             builder.Append("GLU=@GLU,");
@@ -151,7 +151,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("select count(1) from tbl_HHAssistCheck");
+            builder.Append("select count(1) from HEALTHHOUSE_PHYSICAL_ASSIST_CHECK");
             builder.Append(" where IDCardNo=@IDCardNo ");
             builder.Append(" and PID=@PID");
 

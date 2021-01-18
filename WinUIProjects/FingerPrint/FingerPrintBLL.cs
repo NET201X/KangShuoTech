@@ -19,7 +19,7 @@ namespace FingerPrint
         {
             StringBuilder sbSave = new StringBuilder();
             sbSave.Append(@"insert into 
-                            tbl_fingerinfo
+                            ARCHIVE_FINGERPRINT_INFO
                             (
                                 fingerid
                                 ,idcardno
@@ -49,7 +49,7 @@ namespace FingerPrint
             sbQuery.Append(@"SELECT 
                                 fingerid 
                             FROM 
-                                tbl_fingerinfo 
+                                ARCHIVE_FINGERPRINT_INFO 
                             WHERE idcardno = @idcardno");
 
             List<MySqlParameter> cmdParms = new List<MySqlParameter>();
@@ -78,7 +78,7 @@ namespace FingerPrint
             sbQuery.Append(@"SELECT 
                                 idcardno 
                             FROM 
-                                tbl_fingerinfo 
+                                ARCHIVE_FINGERPRINT_INFO 
                             WHERE fingerid = @fingerid");
 
             List<MySqlParameter> cmdParms = new List<MySqlParameter>();
@@ -102,11 +102,11 @@ namespace FingerPrint
         {
             StringBuilder sbSave = new StringBuilder();
             sbSave.Append(@"delete FROM
-                            tbl_fingerinfo
+                            ARCHIVE_FINGERPRINT_INFO
                             where 
                             idcardno not IN
                             (
-	                            SELECT tbl_recordsbaseinfo.IDCardNo from tbl_recordsbaseinfo
+	                            SELECT ARCHIVE_BASEINFO.IDCardNo from ARCHIVE_BASEINFO
                             )");
 
             List<MySqlParameter> cmdParms = new List<MySqlParameter>();

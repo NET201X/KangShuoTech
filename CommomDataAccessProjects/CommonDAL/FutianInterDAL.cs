@@ -41,7 +41,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             string upStr = sql.ToString().Substring(0, sql.ToString().Length - 1);
 
-            upStr += " WHERE D.OutKey = (SELECT M.ID FROM tbl_recordscustomerbaseinfo M ";
+            upStr += " WHERE D.OutKey = (SELECT M.ID FROM ARCHIVE_CUSTOMERBASEINFO M ";
             upStr += " WHERE M.IDCardNo = '" + IDCardNo + "' AND Left(M.CheckDate,4)= " + DateTime.Now.Year.ToString();
             upStr += " ORDER BY M.CheckDate DESC LIMIT 0,1  );";
 

@@ -135,7 +135,7 @@
 
             builder.Append(@"
                             UPDATE 
-                                tbl_recordsassistcheck D
+                                ARCHIVE_ASSISTCHECK D
                             SET 
                                 CHESTX = @CHESTX 
                                 ,CHESTXEx = @CHESTXEx
@@ -145,7 +145,7 @@
                                     SELECT 
                                         D.ID 
                                     FROM
-                                        tbl_recordscustomerbaseinfo M 
+                                        ARCHIVE_CUSTOMERBASEINFO M 
                                     WHERE  
                                         IFNULL(M.IsDel,'')!='Y'
                                         AND M.ID= D.OUTkey
@@ -175,7 +175,7 @@
 
             builder.Append(@"
                             INSERT INTO
-                                tbl_recordsassistcheck
+                                ARCHIVE_ASSISTCHECK
                             (
                                 PhysicalID
                                 ,IDCardNo

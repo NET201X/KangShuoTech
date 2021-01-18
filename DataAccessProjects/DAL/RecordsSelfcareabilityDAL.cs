@@ -15,7 +15,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(RecordsSelfcareabilityModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordsselfcareability(");
+            builder.Append("insert into ARCHIVE_SELFCAREABILITY(");
             builder.Append("CustomerID,RecordID,IDCardNo,Dine,Groming,Dressing,Tolet,Activity,TotalScore,FollowUpDate,");
             builder.Append("FollowUpDoctor,NextfollowUpDate,CreatedBy,CreatedDate,LastUpDateBy,LastUpDateDate,NextVisitAim)");
             builder.Append(" values (");
@@ -71,7 +71,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordsselfcareability ");
+            builder.Append("delete from ARCHIVE_SELFCAREABILITY ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -81,7 +81,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordsselfcareability ");
+            builder.Append("delete from ARCHIVE_SELFCAREABILITY ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -89,7 +89,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_recordsselfcareability");
+            builder.Append("select count(1) from ARCHIVE_SELFCAREABILITY");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -101,7 +101,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
             builder.Append("select  ID,CustomerID,RecordID,IDCardNo,Dine,Groming,Dressing,Tolet,");
             builder.Append("Activity,TotalScore,FollowUpDate,FollowUpDoctor,NextfollowUpDate,CreatedBy,CreatedDate,");
-            builder.Append("LastUpDateBy,LastUpDateDate,NextVisitAim from tbl_recordsselfcareability ");
+            builder.Append("LastUpDateBy,LastUpDateDate,NextVisitAim from ARCHIVE_SELFCAREABILITY ");
             if (!string.IsNullOrEmpty(strWhere))
             {
                 builder.Append("where " + strWhere);
@@ -116,7 +116,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("select ID,CustomerID,RecordID,IDCardNo,Dine,Groming,Dressing,Tolet,");
             builder.Append("Activity,TotalScore,FollowUpDate,FollowUpDoctor,NextfollowUpDate,CreatedBy,");
             builder.Append("CreatedDate,LastUpDateBy,LastUpDateDate,NextVisitAim ");
-            builder.Append(" FROM tbl_recordsselfcareability ");
+            builder.Append(" FROM ARCHIVE_SELFCAREABILITY ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -134,7 +134,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("(case C.FollowUpDate when null then null when '' then null else C.FollowUpDate end)FollowUpDate , ");
             builder.Append("T.PopulationType,T.FamilyIDCardNo,T.HouseRelation,T.HouseRealOther,T.TownName,");
             builder.Append("T.VillageName,T.CreateUnitName,T.CreateMenName ");
-            builder.Append(" from tbl_recordsselfcareability C inner join tbl_recordsbaseinfo T on T.IDCardNo = C.IDCardNo ");
+            builder.Append(" from ARCHIVE_SELFCAREABILITY C inner join ARCHIVE_BASEINFO T on T.IDCardNo = C.IDCardNo ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE 1=1 " + strWhere);
@@ -154,7 +154,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_recordsselfcareability");
+            return MySQLHelper.GetMaxID("ID", "ARCHIVE_SELFCAREABILITY");
         }
 
         public DataSet GetModel(string IDCardNo)
@@ -162,7 +162,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
             builder.Append("select  ID,CustomerID,RecordID,IDCardNo,Dine,Groming,Dressing,Tolet,");
             builder.Append("Activity,TotalScore,FollowUpDate,FollowUpDoctor,NextfollowUpDate,CreatedBy,CreatedDate,");
-            builder.Append("LastUpDateBy,LastUpDateDate,NextVisitAim from tbl_recordsselfcareability ");
+            builder.Append("LastUpDateBy,LastUpDateDate,NextVisitAim from ARCHIVE_SELFCAREABILITY ");
             builder.Append(" where IDCardNo=@IDCardNo order by FollowUpDate desc limit 0,1 ");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -175,7 +175,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
             builder.Append("select  ID,CustomerID,RecordID,IDCardNo,Dine,Groming,Dressing,Tolet,Activity,");
             builder.Append("TotalScore,FollowUpDate,FollowUpDoctor,NextfollowUpDate,CreatedBy,CreatedDate,LastUpDateBy,");
-            builder.Append("LastUpDateDate,NextVisitAim from tbl_recordsselfcareability ");
+            builder.Append("LastUpDateDate,NextVisitAim from ARCHIVE_SELFCAREABILITY ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 8) };
             cmdParms[0].Value = ID;
@@ -186,8 +186,8 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_recordsselfcareability C ");
-            builder.Append("left join tbl_recordsbaseinfo T on T.IDCardNo = C.IDCardNo   ");
+            builder.Append("select count(1) FROM ARCHIVE_SELFCAREABILITY C ");
+            builder.Append("left join ARCHIVE_BASEINFO T on T.IDCardNo = C.IDCardNo   ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -203,7 +203,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(RecordsSelfcareabilityModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordsselfcareability set ");
+            builder.Append("update ARCHIVE_SELFCAREABILITY set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
@@ -267,7 +267,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("UPDATE tbl_recordsselfcareability Self SET ");
+            builder.Append("UPDATE ARCHIVE_SELFCAREABILITY Self SET ");
             builder.Append("Dine=@Dine");
             builder.Append(",Groming=@Groming");
             builder.Append(",Dressing=@Dressing");
@@ -282,22 +282,22 @@ namespace KangShuoTech.DataAccessProjects.DAL
                                         SELECT 
                                             Self.ID
                                         FROM
-                                            tbl_recordscustomerbaseinfo BaseInfo 
-                                        INNER JOIN tbl_recordsgeneralcondition G 
+                                            ARCHIVE_CUSTOMERBASEINFO BaseInfo 
+                                        INNER JOIN ARCHIVE_GENERALCONDITION G 
                                             ON BaseInfo.ID = G.OutKey
                                         WHERE Self.ID= G.SelfID
                                             AND BaseInfo.IDCardNo = @IDCardNo
                                             AND BaseInfo.CheckDate = @CheckDate
                                     );
-                                    UPDATE tbl_recordsgeneralcondition G SET 
+                                    UPDATE ARCHIVE_GENERALCONDITION G SET 
                                         OldSelfCareability =@OldSelfCareability
                                     WHERE EXISTS
                                     (
                                         SELECT 
                                             G.SelfID 
                                         FROM
-                                            tbl_recordscustomerbaseinfo BaseInfo 
-                                        INNER JOIN tbl_recordsselfcareability med 
+                                            ARCHIVE_CUSTOMERBASEINFO BaseInfo 
+                                        INNER JOIN ARCHIVE_SELFCAREABILITY med 
                                             ON BaseInfo.IDCardNo = med.IDCardNo
                                         WHERE G.SelfID= med.ID
                                             AND BaseInfo.IDCardNo = @IDCardNo
@@ -324,7 +324,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool ExistData(string IDCardNo, string RecordDate) //测试pad中当天是不是有这笔数据
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_recordsgeneralcondition G inner join  tbl_recordscustomerbaseinfo M on M.ID = G.OutKey ");
+            builder.Append("select count(1) from ARCHIVE_GENERALCONDITION G inner join  ARCHIVE_CUSTOMERBASEINFO M on M.ID = G.OutKey ");
             builder.Append(" where M.IDCardNo = @IDCardNo AND M.CheckDate = @CheckDate ");
             MySqlParameter[] cmdParms = new MySqlParameter[] {
                 new MySqlParameter("@IDCardNo", IDCardNo) ,
@@ -337,14 +337,14 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("UPDATE tbl_recordsgeneralcondition D SET ");
+            builder.Append("UPDATE ARCHIVE_GENERALCONDITION D SET ");
             builder.Append("SelfID=@SelfID ");
             builder.Append(",OldSelfCareability=@OldSelfCareability ");
             builder.Append(@" WHERE EXISTS
                                     (  
                                         SELECT 
                                              M.ID 
-                                         FROM  tbl_recordscustomerbaseinfo M 
+                                         FROM  ARCHIVE_CUSTOMERBASEINFO M 
                                          WHERE M.ID = D.OutKey
                                              AND M.IDCardNo = @IDCardNo
                                              AND M.CheckDate = @CheckDate

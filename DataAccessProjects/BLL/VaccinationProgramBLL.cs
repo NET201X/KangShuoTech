@@ -76,7 +76,7 @@
 
         public VaccinationProgramModel GetModelByCache(string IDCardNo)
         {
-            string cacheKey = "INOCULATION_PROGRAMModel-" + IDCardNo;
+            string cacheKey = "INOCULATION_OTHERPROGRAMModel-" + IDCardNo;
             object cache = DataCache.GetCache(cacheKey);
             if (cache == null)
             {

@@ -12,7 +12,7 @@
         public int Add(KidsNewBornVisitModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_kidsnewbornvisit(");
+            builder.Append("insert into CHILD_NEWBORN_FOLLOWUP(");
             builder.Append("CustomerID,RecordID,IDCardNo,Sex,Birthday,HomeAddr,FatherName,FatherJob,FatherTel,FatherBirthday,MotherName,MotherJob,MotherTel,MotherBirthday,GestationalWeek,PregnancPreva,PregnancPrevaOther,MidwifOrganizaName,BirthInforma,BirthInformaOther,Aasphyxia,Apgar,WhetherAbnorma,WhetherAbnormaHave,HearingScreen,DiseaseScreen,DiseaseScreenOther,BirthWeight,PresentWeight,BirthStature,FeedingPattern,NursingQuantity,InfantFrequen,Vomit,Stool,StoolFrequen,Temperature,PulseRate,BreathingRate,ColourFace,ColourFaceOther,Jaundice,BregmaLeft,BregmaRight,Bregma,BregmaOther,EyeAppearance,EyeAppearanceEx,LimbsActivity,LimbsActivityEx,EarAppearance,EarAppearanceEx,NeckMass,NeckMassHave,Nose,NoseEx,Skin,SkinOther,MouthCavity,MouthCavityEx,Anus,AnusEx,HeartLungAuscul,HeartLungAusculEx,Aedea,AedeaEx,AbdominalTouch,AbdominalTouchEx,Spine,SpineEx,UmbilicalCord,UmbilicalCordOther,ReferralAdvice,ReferralReason,AgenciesDepartments,Guidance,InterviewDate,NextFollowupPlace,NextFollowUpDate,FollowUpDoctorSign,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel,Apgar1,Apgar5,");
             builder.Append("FatherID,MotherID,Chest,ChestEx,GuidanceOther,ReferralOrgan,ReferraContacts,ReferralContactsTel,ReferralResult) ");
             builder.Append(" values (");
@@ -224,7 +224,7 @@
         public int AddServer(KidsNewBornVisitModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_kidsnewbornvisit(");
+            builder.Append("insert into CHILD_NEWBORN_FOLLOWUP(");
             builder.Append("CustomerID,RecordID,IDCardNo,Sex,Birthday,HomeAddr,FatherName,FatherJob,FatherTel,FatherBirthday,MotherName,MotherJob,MotherTel,MotherBirthday,GestationalWeek,PregnancPreva,PregnancPrevaOther,MidwifOrganizaName,BirthInforma,BirthInformaOther,Aasphyxia,Apgar,WhetherAbnorma,WhetherAbnormaHave,HearingScreen,DiseaseScreen,DiseaseScreenOther,BirthWeight,PresentWeight,BirthStature,FeedingPattern,NursingQuantity,InfantFrequen,Vomit,Stool,StoolFrequen,Temperature,PulseRate,BreathingRate,ColourFace,ColourFaceOther,Jaundice,BregmaLeft,BregmaRight,Bregma,BregmaOther,EyeAppearance,EyeAppearanceEx,LimbsActivity,LimbsActivityEx,EarAppearance,EarAppearanceEx,NeckMass,NeckMassHave,Nose,NoseEx,Skin,SkinOther,MouthCavity,MouthCavityEx,Anus,AnusEx,HeartLungAuscul,HeartLungAusculEx,Aedea,AedeaEx,AbdominalTouch,AbdominalTouchEx,Spine,SpineEx,UmbilicalCord,UmbilicalCordOther,ReferralAdvice,ReferralReason,AgenciesDepartments,Guidance,InterviewDate,NextFollowupPlace,NextFollowUpDate,FollowUpDoctorSign,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel,Apgar1,Apgar5,");
             builder.Append("FatherID,MotherID,Chest,ChestEx,GuidanceOther,ReferralOrgan,ReferraContacts,ReferralContactsTel,ReferralResult) ");
             builder.Append(" values (");
@@ -833,7 +833,7 @@
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_kidsnewbornvisit ");
+            builder.Append("delete from CHILD_NEWBORN_FOLLOWUP ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -843,7 +843,7 @@
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_kidsnewbornvisit ");
+            builder.Append("delete from CHILD_NEWBORN_FOLLOWUP ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -851,7 +851,7 @@
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_kidsnewbornvisit");
+            builder.Append("select count(1) from CHILD_NEWBORN_FOLLOWUP");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -863,7 +863,7 @@
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,CustomerID,RecordID,IDCardNo,Sex,Birthday,HomeAddr,FatherName,FatherJob,FatherTel,FatherBirthday,MotherName,MotherJob,MotherTel,MotherBirthday,GestationalWeek,PregnancPreva,PregnancPrevaOther,MidwifOrganizaName,BirthInforma,BirthInformaOther,Aasphyxia,Apgar,WhetherAbnorma,WhetherAbnormaHave,HearingScreen,DiseaseScreen,DiseaseScreenOther,BirthWeight,PresentWeight,BirthStature,FeedingPattern,NursingQuantity,InfantFrequen,Vomit,Stool,StoolFrequen,Temperature,PulseRate,BreathingRate,ColourFace,ColourFaceOther,Jaundice,BregmaLeft,BregmaRight,Bregma,BregmaOther,EyeAppearance,EyeAppearanceEx,LimbsActivity,LimbsActivityEx,EarAppearance,EarAppearanceEx,NeckMass,NeckMassHave,Nose,NoseEx,Skin,SkinOther,MouthCavity,MouthCavityEx,Anus,AnusEx,HeartLungAuscul,HeartLungAusculEx,Aedea,AedeaEx,AbdominalTouch,AbdominalTouchEx,Spine,SpineEx,UmbilicalCord,UmbilicalCordOther,ReferralAdvice,ReferralReason,AgenciesDepartments,Guidance,InterviewDate,NextFollowupPlace,NextFollowUpDate,FollowUpDoctorSign,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel,Apgar1,Apgar5, ");
             builder.Append("FatherID,MotherID,Chest,ChestEx,GuidanceOther,ReferralOrgan,ReferraContacts,ReferralContactsTel,ReferralResult ");
-            builder.Append(" FROM tbl_kidsnewbornvisit ");
+            builder.Append(" FROM CHILD_NEWBORN_FOLLOWUP ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -884,7 +884,7 @@
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_kidsnewbornvisit T ");
+            builder.Append(")AS Row, T.*  from CHILD_NEWBORN_FOLLOWUP T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -896,7 +896,7 @@
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_kidsnewbornvisit");
+            return MySQLHelper.GetMaxID("ID", "CHILD_NEWBORN_FOLLOWUP");
         }
 
         public KidsNewBornVisitModel GetModel(string IDCardNo)
@@ -904,7 +904,7 @@
             StringBuilder builder = new StringBuilder();
             builder.Append("select  ID,CustomerID,RecordID,IDCardNo,Sex,Birthday,HomeAddr,FatherName,FatherJob,FatherTel,FatherBirthday,MotherName,MotherJob,MotherTel,MotherBirthday,GestationalWeek,PregnancPreva,PregnancPrevaOther,MidwifOrganizaName,BirthInforma,BirthInformaOther,Aasphyxia,Apgar,WhetherAbnorma,WhetherAbnormaHave,HearingScreen,DiseaseScreen,DiseaseScreenOther,BirthWeight,PresentWeight,BirthStature,FeedingPattern,NursingQuantity,InfantFrequen,Vomit,Stool,StoolFrequen,Temperature,PulseRate,BreathingRate,ColourFace,ColourFaceOther,Jaundice,BregmaLeft,BregmaRight,Bregma,BregmaOther,EyeAppearance,EyeAppearanceEx,LimbsActivity,LimbsActivityEx,EarAppearance,EarAppearanceEx,NeckMass,NeckMassHave,Nose,NoseEx,Skin,SkinOther,MouthCavity,MouthCavityEx,Anus,AnusEx,HeartLungAuscul,HeartLungAusculEx,Aedea,AedeaEx,AbdominalTouch,AbdominalTouchEx,Spine,SpineEx,UmbilicalCord,UmbilicalCordOther,ReferralAdvice,ReferralReason,AgenciesDepartments,Guidance,InterviewDate,NextFollowupPlace,NextFollowUpDate,FollowUpDoctorSign,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel,Apgar1,Apgar5, ");
             builder.Append("FatherID,MotherID,Chest,ChestEx,GuidanceOther,ReferralOrgan,ReferraContacts,ReferralContactsTel,ReferralResult ");
-            builder.Append(" FROM tbl_kidsnewbornvisit ");
+            builder.Append(" FROM CHILD_NEWBORN_FOLLOWUP ");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -920,7 +920,7 @@
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_kidsnewbornvisit ");
+            builder.Append("select count(1) FROM CHILD_NEWBORN_FOLLOWUP ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -936,7 +936,7 @@
         public bool Update(KidsNewBornVisitModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_kidsnewbornvisit set ");
+            builder.Append("update CHILD_NEWBORN_FOLLOWUP set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
@@ -1236,7 +1236,7 @@
         public bool UpdateServer(KidsNewBornVisitModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_kidsnewbornvisit set ");
+            builder.Append("update CHILD_NEWBORN_FOLLOWUP set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");

@@ -34,7 +34,7 @@ namespace PrintPlatform
             base.SuspendLayout();
             this.ucMainItem1.BackgroundImage = (Image)resources.GetObject("ucMainItem1.BackgroundImage");
             this.ucMainItem1.BorderStyle = BorderStyle.FixedSingle;
-            this.ucMainItem1.IDCardNo = "370702197211045118";
+            this.ucMainItem1.IDCardNo = "36050219360726464X";
             this.ucMainItem1.Location = new Point(0x4c, 0x30);
             this.ucMainItem1.Name = "ucMainItem1";
             this.ucMainItem1.Size = new Size(0x3eb, 510);

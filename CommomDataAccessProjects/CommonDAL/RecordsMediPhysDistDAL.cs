@@ -13,7 +13,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_RecordsMediphysDist(");
+            builder.Append("INSERT INTO ARCHIVE_MEDI_PHYS_DIST(");
             builder.Append("PhysicalID,IDCardNo,Mild,Faint,Yang,Yin,PhlegmDamp,Muggy,BloodStasis,QiConstraint,Characteristic,OutKey,MedicineID,MedicineResultID)");
             builder.Append(" VALUES (");
             builder.Append("@PhysicalID,@IDCardNo,@Mild,@Faint,@Yang,@Yin,@PhlegmDamp,@Muggy,@BloodStasis,@QiConstraint,@Characteristic,@OutKey,@MedicineID,@MedicineResultID)");
@@ -63,7 +63,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_RecordsMediphysDist ");
+            builder.Append("SELECT * FROM ARCHIVE_MEDI_PHYS_DIST ");
             builder.Append(" WHERE OutKey=@OutKey");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@OutKey", MySqlDbType.Int32) };
@@ -78,7 +78,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_RecordsMedicineCn ");
+            builder.Append("SELECT * FROM ARCHIVE_MEDICINE_CN ");
             builder.Append(" WHERE ID=@ID");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] {
@@ -95,7 +95,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_RecordsMedicineResult ");
+            builder.Append("SELECT * FROM OLD_MEDICINE_RESULT ");
             builder.Append(" WHERE ID=@ID");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] {

@@ -14,7 +14,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(RecordsSignatureModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("INSERT INTO tbl_recordssignature(");
+            builder.Append("INSERT INTO ARCHIVE_SIGNATURE(");
             builder.Append("PhysicalID,IDCardNo,SymptomSn,GeneralConditionSn,LifeStyleSn,OrgansFunctionSn,PEyebseSn,PSkinSn,");
             builder.Append("PDigtalExamSn,PBreastSn,PGynecologySn,PhysicalQtSn,ABloodRoutineSn,AMAUSn,AECGSn,AChestXraySn,");
             builder.Append("ABtypeUltrasonicSn,ABtypeQtSn,ASmearSn,AssistQtSn,InpatientCareSn,DrugNonimmunitySn,HealthAssessmentSn,");
@@ -110,7 +110,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordssignature ");
+            builder.Append("delete from ARCHIVE_SIGNATURE ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -120,7 +120,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordssignature ");
+            builder.Append("delete from ARCHIVE_SIGNATURE ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -128,7 +128,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_recordssignature");
+            builder.Append("select count(1) from ARCHIVE_SIGNATURE");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -141,7 +141,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("select ID,PhysicalID,IDCardNo,SymptomSn,GeneralConditionSn,LifeStyleSn,OrgansFunctionSn,PEyebseSn,PSkinSn,PDigtalExamSn,PBreastSn, ");
             builder.Append("PGynecologySn,PhysicalQtSn,ABloodRoutineSn,AMAUSn,AECGSn,AChestXraySn,ABtypeUltrasonicSn,ABtypeQtSn,ASmearSn,AssistQtSn,");
             builder.Append("InpatientCareSn,DrugNonimmunitySn,HealthAssessmentSn,HealthGuidanceSn,SelfSn,DependentSn,PersonalFb,FeedbackDate,OutKey,BloodLiverKidneySn,ExamineDoctor,ECGExamineDoctor,PhysiqueSn ");
-            builder.Append(" FROM tbl_recordssignature ");
+            builder.Append(" FROM ARCHIVE_SIGNATURE ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -162,7 +162,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_recordssignature T ");
+            builder.Append(")AS Row, T.*  from ARCHIVE_SIGNATURE T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -174,7 +174,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_recordssignature");
+            return MySQLHelper.GetMaxID("ID", "ARCHIVE_SIGNATURE");
         }
 
         public DataSet GetModel(string IDCardNo)
@@ -185,7 +185,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("PSkinSn,PDigtalExamSn,PBreastSn,PGynecologySn,PhysicalQtSn,ABloodRoutineSn,AMAUSn,AECGSn,AChestXraySn,");
             builder.Append("ABtypeUltrasonicSn,ABtypeQtSn,ASmearSn,AssistQtSn,InpatientCareSn,DrugNonimmunitySn,HealthAssessmentSn, ");
             builder.Append("HealthGuidanceSn,SelfSn,DependentSn,PersonalFb,DoctorSn,FeedbackDate,OutKey,BloodLiverKidneySn,ExamineDoctor,ECGExamineDoctor,PhysiqueSn ");
-            builder.Append(" FROM tbl_recordssignature ");
+            builder.Append(" FROM ARCHIVE_SIGNATURE ");
             builder.Append(" WHERE IDCardNo=@IDCardNo");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
@@ -199,7 +199,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_recordssignature ");
+            builder.Append("select count(1) FROM ARCHIVE_SIGNATURE ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -220,7 +220,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("PSkinSn,PDigtalExamSn,PBreastSn,PGynecologySn,PhysicalQtSn,ABloodRoutineSn,AMAUSn,AECGSn,AChestXraySn,");
             builder.Append("ABtypeUltrasonicSn,ABtypeQtSn,ASmearSn,AssistQtSn,InpatientCareSn,DrugNonimmunitySn,HealthAssessmentSn, ");
             builder.Append("HealthGuidanceSn,SelfSn,DependentSn,PersonalFb,DoctorSn,FeedbackDate,OutKey,BloodLiverKidneySn,ExamineDoctor,ECGExamineDoctor,PhysiqueSn ");
-            builder.Append("FROM tbl_recordssignature ");
+            builder.Append("FROM ARCHIVE_SIGNATURE ");
             builder.Append("WHERE IdCardNo=@IdCardNo ");
 
             if (OutKey == 0) builder.Append(" AND OutKey IS NULL ");
@@ -242,7 +242,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool ExistsOutKey(string IDCardNo, int OutKey)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_recordssignature");
+            builder.Append("select count(1) from ARCHIVE_SIGNATURE");
             builder.Append(" where IDCardNo=@IDCardNo ");
             builder.Append(" and OutKey=@OutKey");
             MySqlParameter[] cmdParms = new MySqlParameter[] {
@@ -257,7 +257,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(RecordsSignatureModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordssignature set ");
+            builder.Append("update ARCHIVE_SIGNATURE set ");
             builder.Append("PhysicalID=@PhysicalID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("SymptomSn=@SymptomSn,");

@@ -165,7 +165,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         public DataSet GetMedication(string startDate, string endDate, string conn)
         {
             // 体检问询用药
-            string sql = @"SELECT * FROM tbl_recordsmedication WHERE EXISTS 
+            string sql = @"SELECT * FROM ARCHIVE_MEDICATION WHERE EXISTS 
                                 (
                                     SELECT ID FROM tbl_recordscustomerinfo
                                     WHERE ID = OutKey ";
@@ -243,7 +243,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         public int GetMedicineCount(string startDate, string endDate, string conn)
         {
             // 判断分离式中是否有中医体质
-            string isExist = "SELECT COUNT(0) FROM sqlite_master WHERE TYPE='table' AND NAME='tbl_oldermedicineresult'";
+            string isExist = "SELECT COUNT(0) FROM sqlite_master WHERE TYPE='table' AND NAME='OLD_MEDICINE_RESULT'";
 
             object single = YcSqliteHelper.GetSingle(isExist, conn);
 
@@ -252,7 +252,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                 // 中医体质笔数
                 string sql = @"SELECT COUNT(0) FROM 
                                   (
-                                        SELECT Count(0) FROM tbl_oldermedicinecn WHERE 1=1 ";
+                                        SELECT Count(0) FROM OLD_MEDICINE_CN WHERE 1=1 ";
 
                 if (startDate.Length > 0)
                 {
@@ -272,7 +272,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                 int count = result == null ? 0 : Convert.ToInt32(result);
 
                 // 判断分离式中是否有自理能力表
-                isExist = "SELECT COUNT(0) FROM sqlite_master WHERE TYPE='table' AND NAME='tbl_olderselfcareability'";
+                isExist = "SELECT COUNT(0) FROM sqlite_master WHERE TYPE='table' AND NAME='OLDER_SELFCAREABILITY'";
 
                 single = YcSqliteHelper.GetSingle(isExist, conn);
 
@@ -281,7 +281,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                     // 自理能力笔数
                     sql = @"SELECT COUNT(0) FROM 
                                   (
-                                        SELECT COUNT(0) FROM tbl_olderselfcareability WHERE 1=1 ";
+                                        SELECT COUNT(0) FROM OLDER_SELFCAREABILITY WHERE 1=1 ";
 
                     if (startDate.Length > 0)
                     {
@@ -316,7 +316,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             StringBuilder builder = new StringBuilder();
 
             // 判断分离式中是否有中医体质
-            string isExist = "SELECT COUNT(0) FROM sqlite_master WHERE TYPE='table' AND NAME='tbl_oldermedicineresult'";
+            string isExist = "SELECT COUNT(0) FROM sqlite_master WHERE TYPE='table' AND NAME='OLD_MEDICINE_RESULT'";
 
             object single = YcSqliteHelper.GetSingle(isExist, conn);
 
@@ -333,7 +333,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                 builder.Append("Snore,Allergy,Urticaria,Skin,Scratch,Mouth,Arms,Greasy,Spot,Eczema,Thirsty,Smell,Abdomen,Coolfood, ");
                 builder.Append("Defecate,Defecatedry,Medicinecn.Tongue,Vein,'' AS Sign,'' AS Finger ");
 
-                string table = "SELECT COUNT(0) FROM sqlite_master WHERE NAME = 'tbl_oldermedicineresult' AND SQL LIKE '%Tongue%'";
+                string table = "SELECT COUNT(0) FROM sqlite_master WHERE NAME = 'OLD_MEDICINE_RESULT' AND SQL LIKE '%Tongue%'";
 
                 single = YcSqliteHelper.GetSingle(table, conn);
                 int count = 0;
@@ -342,8 +342,8 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 
                 if (count > 0) builder.Append(",Result.Tongue AS TongueM,TongueColor,TongueFur,Pulse ");
 
-                builder.Append("FROM tbl_oldermedicinecn Medicinecn ");
-                builder.Append("LEFT JOIN tbl_oldermedicineresult Result ");
+                builder.Append("FROM OLD_MEDICINE_CN Medicinecn ");
+                builder.Append("LEFT JOIN OLD_MEDICINE_RESULT Result ");
                 builder.Append("ON Result.IDCardNo=Medicinecn.IDCardNo ");
                 builder.Append("AND Result.RecordDate=Medicinecn.RecordDate ");
                 builder.Append("WHERE 1=1 ");
@@ -381,14 +381,14 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         public DataSet GetOldSelf(string startDate, string endDate, string conn)
         {
             // 判断分离式中是否有自理能力表
-            string isExist = "SELECT COUNT(0) FROM sqlite_master WHERE TYPE='table' AND NAME='tbl_olderselfcareability'";
+            string isExist = "SELECT COUNT(0) FROM sqlite_master WHERE TYPE='table' AND NAME='OLDER_SELFCAREABILITY'";
 
             object single = YcSqliteHelper.GetSingle(isExist, conn);
 
             if (single != null && Convert.ToInt32(single) > 0)
             {
                 // 自理能力
-                string sql = @"SELECT * FROM tbl_olderselfcareability WHERE 1=1 ";
+                string sql = @"SELECT * FROM OLDER_SELFCAREABILITY WHERE 1=1 ";
 
                 if (startDate.Length > 0)
                 {
@@ -1667,12 +1667,12 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         public int GetHealthCount(string startDate, string endDate, string conn)
         {
             // 判断分离式中是否有健康状况表
-            string isExist = "SELECT COUNT(0) FROM sqlite_master WHERE TYPE='table' AND NAME='tbl_RecordsHealthCondition'";
+            string isExist = "SELECT COUNT(0) FROM sqlite_master WHERE TYPE='table' AND NAME='ARCHIVE_HEALTH_CONDITION'";
             object single = YcSqliteHelper.GetSingle(isExist, conn);
 
             if (single == null || Convert.ToInt32(single) == 0) return 0;
 
-            string sql = @"SELECT Count(*) FROM tbl_RecordsHealthCondition WHERE 1=1  ";
+            string sql = @"SELECT Count(*) FROM ARCHIVE_HEALTH_CONDITION WHERE 1=1  ";
 
             if (startDate.Length > 0)
             {
@@ -1701,14 +1701,14 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         public DataSet GetHealth(string startDate, string endDate, string conn)
         {
             // 判断分离式中是否有健康状况表
-            string isExist = "SELECT COUNT(0) FROM sqlite_master WHERE TYPE='table' AND NAME='tbl_RecordsHealthCondition'";
+            string isExist = "SELECT COUNT(0) FROM sqlite_master WHERE TYPE='table' AND NAME='ARCHIVE_HEALTH_CONDITION'";
             object single = YcSqliteHelper.GetSingle(isExist, conn);
 
             if (single == null || Convert.ToInt32(single) == 0) return null;
 
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_RecordsHealthCondition ");
+            builder.Append("SELECT * FROM ARCHIVE_HEALTH_CONDITION ");
             builder.Append("WHERE 1=1 ");
 
             if (startDate.Length > 0)

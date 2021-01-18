@@ -12,7 +12,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Add(RecordsCityModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordscity(");
+            builder.Append("insert into ARCHIVE_CITY(");
             builder.Append("ID,Code,Name,ProvinceID)");
             builder.Append(" values (");
             builder.Append("@ID,@Code,@Name,@ProvinceID)");
@@ -50,7 +50,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordscity ");
+            builder.Append("delete from ARCHIVE_CITY ");
             builder.Append(" where ");
             MySqlParameter[] cmdParms = new MySqlParameter[0];
             return (MySQLHelper.ExecuteSql(builder.ToString(), cmdParms) > 0);
@@ -60,7 +60,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,Code,Name,ProvinceID ");
-            builder.Append(" FROM tbl_recordscity ");
+            builder.Append(" FROM ARCHIVE_CITY ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -81,7 +81,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             {
                 builder.Append("order by T. desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_recordscity T ");
+            builder.Append(")AS Row, T.*  from ARCHIVE_CITY T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -94,7 +94,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public RecordsCityModel GetModel()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select ID,Code,Name,ProvinceID from tbl_recordscity ");
+            builder.Append("select ID,Code,Name,ProvinceID from ARCHIVE_CITY ");
             builder.Append(" where ");
             MySqlParameter[] cmdParms = new MySqlParameter[0];
             new RecordsCityModel();
@@ -109,7 +109,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_recordscity ");
+            builder.Append("select count(1) FROM ARCHIVE_CITY ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -125,7 +125,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(RecordsCityModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordscity set ");
+            builder.Append("update ARCHIVE_CITY set ");
             builder.Append("ID=@ID,");
             builder.Append("Code=@Code,");
             builder.Append("Name=@Name,");

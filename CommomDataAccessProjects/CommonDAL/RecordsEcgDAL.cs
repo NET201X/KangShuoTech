@@ -18,8 +18,8 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 
             builder.Append("SELECT E.IDCardNo,T.CustomerName,T.Sex,T.Nation,T.Birthday,T.Phone,T.HouseHoldAddress,");
             builder.Append("E.Conclusion ,MAX(E.MID) AS MID,T.Minority ");
-            builder.Append(" FROM  tbl_RecordsEcg E LEFT JOIN tbl_recordsbaseinfo T ON T.IDCardNo = E.IDCardNo");
-            builder.Append(" LEFT JOIN tbl_recordscustomerbaseinfo B ON T.IDCardNo = B.IDCardNo ");
+            builder.Append(" FROM  ARCHIVE_ECG E LEFT JOIN ARCHIVE_BASEINFO T ON T.IDCardNo = E.IDCardNo");
+            builder.Append(" LEFT JOIN ARCHIVE_CUSTOMERBASEINFO B ON T.IDCardNo = B.IDCardNo ");
 
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
@@ -47,8 +47,8 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append(" SELECT COUNT(*) FROM ");
-            builder.Append(" (SELECT MAX(E.MID)AS MID FROM  tbl_RecordsEcg E LEFT JOIN tbl_recordsbaseinfo T  ON T.IDCardNo = E.IDCardNo ");
-            builder.Append(" LEFT JOIN tbl_recordscustomerbaseinfo B ON E.IDCardNo = B.IDCardNo ");
+            builder.Append(" (SELECT MAX(E.MID)AS MID FROM  ARCHIVE_ECG E LEFT JOIN ARCHIVE_BASEINFO T  ON T.IDCardNo = E.IDCardNo ");
+            builder.Append(" LEFT JOIN ARCHIVE_CUSTOMERBASEINFO B ON E.IDCardNo = B.IDCardNo ");
 
             if (strWhere.Trim() != "")
             {
@@ -68,8 +68,8 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append(" SELECT COUNT(*) FROM ");
-            builder.Append(" (SELECT MAX(E.MID)AS MID FROM  tbl_RecordsEcg E LEFT JOIN tbl_recordsbaseinfo T  ON T.IDCardNo = E.IDCardNo ");
-            builder.Append(" LEFT JOIN tbl_recordscustomerbaseinfo B ON E.IDCardNo = B.IDCardNo ");
+            builder.Append(" (SELECT MAX(E.MID)AS MID FROM  ARCHIVE_ECG E LEFT JOIN ARCHIVE_BASEINFO T  ON T.IDCardNo = E.IDCardNo ");
+            builder.Append(" LEFT JOIN ARCHIVE_CUSTOMERBASEINFO B ON E.IDCardNo = B.IDCardNo ");
             builder.Append(" WHERE MID IS NOT NULL ");
 
             if (strWhere.Trim() != "")
@@ -89,8 +89,8 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT T.CreateMenName FROM  tbl_RecordsEcg E LEFT JOIN tbl_recordsbaseinfo T ON T.IDCardNo = E.IDCardNo ");
-            builder.Append("LEFT JOIN tbl_recordscustomerbaseinfo B ON E.IDCardNo = B.IDCardNo ");
+            builder.Append("SELECT T.CreateMenName FROM  ARCHIVE_ECG E LEFT JOIN ARCHIVE_BASEINFO T ON T.IDCardNo = E.IDCardNo ");
+            builder.Append("LEFT JOIN ARCHIVE_CUSTOMERBASEINFO B ON E.IDCardNo = B.IDCardNo ");
 
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
@@ -106,7 +106,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_RecordsEcg ");
+            builder.Append("SELECT * FROM ARCHIVE_ECG ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             if (Convert.ToString(CheckDate).Length > 3) CheckDate = CheckDate.Substring(0, 4);
@@ -129,7 +129,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_RecordsEcg(");
+            builder.Append("INSERT INTO ARCHIVE_ECG(");
             builder.Append("MID,IDCardNo,Name,Conclusion,CreateTime)");
             builder.Append(" VALUES (");
             builder.Append("@MID,@IDCardNo,@Name,@Conclusion,@CreateTime)");
@@ -159,7 +159,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         public void Delete(EcgDataModel model) {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("DELETE FROM tbl_RecordsEcg ");
+            builder.Append("DELETE FROM ARCHIVE_ECG ");
             builder.Append(" WHERE MID=@MID AND IDCardNo=@IDCardNo");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] {
@@ -176,7 +176,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append(" SELECT PTNIDNO,CLNCDIAG,DIAG,CONCAT(LEFT(DIAGTM,10),'_',PTNIDNO) AS MID FROM tbl_ptntbl");
+            builder.Append(" SELECT PTNIDNO,CLNCDIAG,DIAG,CONCAT(LEFT(DIAGTM,10),'_',PTNIDNO) AS MID FROM ARCHIVE_ULTRASONICB_RESULT");
             builder.Append(" WHERE PTNIDNO=@IDCardNo ");
 
             if (Convert.ToString(CheckDate).Length > 3) CheckDate = CheckDate.Substring(0, 4);
@@ -255,7 +255,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                 cmdParms.Add(new MySqlParameter("@" + c.ColumnName, drInfo[c.ColumnName]));
             }
 
-            sbQuery.Append(@"INSERT INTO tbl_ptntbl (").Append(sbC.ToString().TrimStart(',')).Append(")");
+            sbQuery.Append(@"INSERT INTO ARCHIVE_ULTRASONICB_RESULT (").Append(sbC.ToString().TrimStart(',')).Append(")");
             sbQuery.Append(" VALUES (").Append(sbCVal.ToString().TrimStart(',')).Append(")");
 
             MySQLHelper.ExecuteSql(sbQuery.ToString(), cmdParms.ToArray());
@@ -270,7 +270,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 
             string dtm = drInfo["DIAGTM"].ToString().Substring(0, 10);
 
-            sbDelete.Append(@"DELETE FROM tbl_ptntbl
+            sbDelete.Append(@"DELETE FROM ARCHIVE_ULTRASONICB_RESULT
                                          WHERE PTNIDNO=@PTNIDNO
                                          AND DIAGTM LIKE @CHECKDATE ");
 
@@ -295,7 +295,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             List<MySqlParameter> cmdParms = new List<MySqlParameter>();
 
             builder.Append(@"
-                                    DELETE FROM tbl_ptntbl 
+                                    DELETE FROM ARCHIVE_ULTRASONICB_RESULT 
                                     WHERE PTNIDNO=@PTNIDNO
                                         AND DIAGTM LIKE @CHECKDATE ");
 
@@ -319,7 +319,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             StringBuilder builder = new StringBuilder();
             List<MySqlParameter> cmdParms = new List<MySqlParameter>();
 
-            builder.Append(@"INSERT INTO tbl_ptntbl 
+            builder.Append(@"INSERT INTO ARCHIVE_ULTRASONICB_RESULT 
                                         (
                                             RECID
                                             ,PTNNM
@@ -397,7 +397,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             DateTime dt = (DateTime)drInfo["TestTime"];
 
             builder.Append(@"
-                                    DELETE FROM tbl_ptntbl 
+                                    DELETE FROM ARCHIVE_ULTRASONICB_RESULT 
                                     WHERE PTNIDNO=@PTNIDNO
                                         AND DIAGTM LIKE @CHECKDATE ");
 
@@ -419,7 +419,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             // MySQLHelper.
             List<MySqlParameter> cmdParms = new List<MySqlParameter>();
 
-            sbQuery.Append("INSERT INTO tbl_ptntbl ( CHKNO,PTNIDNO,DIAGTM,DIAG) ");
+            sbQuery.Append("INSERT INTO ARCHIVE_ULTRASONICB_RESULT ( CHKNO,PTNIDNO,DIAGTM,DIAG) ");
             sbQuery.Append(" VALUES(@CHKNO,@PTNIDNO,@DIAGTM,@DIAG) ");
 
             cmdParms.Add(new MySqlParameter("CHKNO", drInfo["PersonID"].ToString()));

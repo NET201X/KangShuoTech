@@ -11,7 +11,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         public int Add(PrintALLModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append(" INSERT INTO tbl_printall(");
+            builder.Append(" INSERT INTO SYS_PRINT_ALL(");
             builder.Append("PrintID,FileButtonName,IsDouble,PrintOrders,Col2,Col3)");
             builder.Append(" VALUES (");
             builder.Append("@PrintID,@FileButtonName,@IsDouble,@PrintOrders,@Col2,@Col3)");
@@ -40,7 +40,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         public bool Update(PrintALLModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append(" UPDATE tbl_printall SET ");
+            builder.Append(" UPDATE SYS_PRINT_ALL SET ");
             builder.Append("PrintID=@PrintID,");
             builder.Append("FileButtonName=@FileButtonName,");
             builder.Append("IsDouble=@IsDouble,");
@@ -69,7 +69,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("DELETE FROM tbl_printall ");
+            builder.Append("DELETE FROM SYS_PRINT_ALL ");
             builder.Append(" WHERE ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;

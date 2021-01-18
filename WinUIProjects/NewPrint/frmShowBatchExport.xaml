@@ -1,0 +1,18 @@
+﻿<Window x:Class="NewPrint.frmShowBatchExport"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Height="232" Width="655" WindowStartupLocation="CenterScreen" 
+        WindowStyle="None"
+        AllowsTransparency="True" 
+        Title="批量汇出" Loaded="Window_Loaded">
+    <Grid Background="#0C71B9">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="52*"></RowDefinition>
+            <RowDefinition Height="27*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ProgressBar Height="20" Name="progressBar1" VerticalAlignment="Center" HorizontalAlignment="Left" Width="552"  Margin="50,5,0,5" />
+        <Label x:Name="lbMsg"  Grid.Row="1" Content="请稍等，正在处理"   FontSize="15" Foreground="GreenYellow"  Margin="50,0,50,0"></Label>
+
+    </Grid>
+</Window>

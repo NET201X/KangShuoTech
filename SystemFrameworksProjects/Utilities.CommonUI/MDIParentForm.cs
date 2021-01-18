@@ -141,7 +141,7 @@ namespace KangShuoTech.Utilities.CommonUI
             // splitContainer1
             // 
             this.splitContainer1.BackColor = System.Drawing.Color.Transparent;
-            this.splitContainer1.BackgroundImage = global::KangShuoTech.Utilities.CommonUI.Properties.Resources.childmain;
+            this.splitContainer1.BackgroundImage = global::Utilities.CommonUI.Properties.Resources.childmain;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
@@ -151,7 +151,7 @@ namespace KangShuoTech.Utilities.CommonUI
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.Transparent;
-            this.splitContainer1.Panel1.BackgroundImage = global::KangShuoTech.Utilities.CommonUI.Properties.Resources.childmain;
+            this.splitContainer1.Panel1.BackgroundImage = global::Utilities.CommonUI.Properties.Resources.childmain;
             this.splitContainer1.Panel1.Controls.Add(this.topButtons);
             this.splitContainer1.Panel1.Controls.Add(this.btnSave);
             this.splitContainer1.Panel1.Controls.Add(this.btnCanel);
@@ -177,7 +177,7 @@ namespace KangShuoTech.Utilities.CommonUI
             // 
             // btnSave
             // 
-            this.btnSave.BackgroundImage = global::KangShuoTech.Utilities.CommonUI.Properties.Resources.btnbaocun001;
+            this.btnSave.BackgroundImage = global::Utilities.CommonUI.Properties.Resources.btnbaocun001;
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -193,7 +193,7 @@ namespace KangShuoTech.Utilities.CommonUI
             // 
             // btnCanel
             // 
-            this.btnCanel.BackgroundImage = global::KangShuoTech.Utilities.CommonUI.Properties.Resources.btnguanbi001;
+            this.btnCanel.BackgroundImage = global::Utilities.CommonUI.Properties.Resources.btnguanbi001;
             this.btnCanel.FlatAppearance.BorderSize = 0;
             this.btnCanel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnCanel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;

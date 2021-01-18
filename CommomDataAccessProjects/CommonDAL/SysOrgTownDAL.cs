@@ -11,7 +11,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_SysOrgTown ");
+            builder.Append("SELECT * FROM SYS_ORG_TOWN ");
             builder.Append(" WHERE Code = @Code");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@Code", MySqlDbType.String) };

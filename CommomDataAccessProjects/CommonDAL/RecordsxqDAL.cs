@@ -13,12 +13,12 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_recordsxq ( ");
+            builder.Append("INSERT INTO ARCHIVE_BLOODTEST ( ");
             builder.Append(" IDCardNo,NEU_B,LYMPH_B,MON_B,EOS_B,BAS_B,NEU_N,LYMPH_N,MON_N,EOS_N,BAS_N,");
             builder.Append(" RBC,HCT,MCV,MCH,MCHC,RDW_CV,RDW_SD,MPV,PDW,PCT,TestTime,MID_B,MID_N,P_LCR,");
             builder.Append(" CL,CA,ASTALT,HLR_B,HLR_N,ALY_B,ALY_N,P_LCC");
 
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'tbl_recordsxq' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='NRBC_N'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_BLOODTEST' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='NRBC_N'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;
@@ -142,12 +142,12 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_recordsxq ( ");
+            builder.Append("INSERT INTO ARCHIVE_BLOODTEST ( ");
             builder.Append(" NEU_B,LYMPH_B,MON_B,EOS_B,BAS_B,NEU_N,LYMPH_N,MON_N,EOS_N,BAS_N,");
             builder.Append(" RBC,HCT,MCV,MCH,MCHC,RDW_CV,RDW_SD,MPV,PDW,PCT,TestTime,MID_B,MID_N,P_LCR,");
             builder.Append(" CL,CA,ASTALT,HLR_B,HLR_N,ALY_B,ALY_N,P_LCC,IDCardNo");
 
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'tbl_recordsxq' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='BarCode'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_BLOODTEST' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='BarCode'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;
@@ -156,7 +156,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 
             if (count > 0) builder.Append(",BarCode ");
 
-            table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'tbl_recordsxq' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='NRBC_N'";
+            table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_BLOODTEST' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='NRBC_N'";
 
             single = MySQLHelper.GetSingle(table);
             count = 0;
@@ -172,7 +172,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 
             if (count > 0)
             {
-                builder.Append("(SELECT IDCardNo FROM tbl_RecordsCustomerBaseInfo WHERE CustomerID=@BarCode ORDER BY CheckDate DESC LIMIT 0,1) ");
+                builder.Append("(SELECT IDCardNo FROM ARCHIVE_CUSTOMERBASEINFO WHERE CustomerID=@BarCode ORDER BY CheckDate DESC LIMIT 0,1) ");
                 builder.Append(",@BarCode ");
             }
             else builder.Append("@IDCardNo ");
@@ -289,7 +289,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_RecordsXQ ");
+            builder.Append("SELECT * FROM ARCHIVE_BLOODTEST ");
 
             if (!string.IsNullOrEmpty(strWhere))
             {

@@ -13,7 +13,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(ChronicHypertensionBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_chronichypertensionbaseinfo(");
+            builder.Append("insert into CD_HYPERTENSION_BASEINFO(");
             builder.Append("CustomerID,RecordID,IDCardNo,ManagementGroup,CaseOurce,TerminateExcuse,");
             builder.Append("FatherHistory,Symptom,HypertensionComplication,Hypotensor,TerminateManagemen,");
             builder.Append("TerminateTime,CreateUnit,CurrentUnit,CreateoBy,CreatedDate,");
@@ -75,7 +75,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int AddServer(ChronicHypertensionBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_chronichypertensionbaseinfo(");
+            builder.Append("insert into CD_HYPERTENSION_BASEINFO(");
             builder.Append("CustomerID,RecordID,IDCardNo,ManagementGroup,CaseOurce,TerminateExcuse,");
             builder.Append("FatherHistory,Symptom,HypertensionComplication,Hypotensor,TerminateManagemen,");
             builder.Append("TerminateTime,CreateUnit,CurrentUnit,CreateoBy,CreatedDate,");
@@ -227,7 +227,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_chronichypertensionbaseinfo ");
+            builder.Append("delete from CD_HYPERTENSION_BASEINFO ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -237,7 +237,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_chronichypertensionbaseinfo ");
+            builder.Append("delete from CD_HYPERTENSION_BASEINFO ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -245,7 +245,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_chronichypertensionbaseinfo");
+            builder.Append("select count(1) from CD_HYPERTENSION_BASEINFO");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -254,7 +254,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool ExistIDCardNo(string IDCardNo)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_chronichypertensionbaseinfo");
+            builder.Append("select count(1) from CD_HYPERTENSION_BASEINFO");
             builder.Append(" where IDCardNo =@IDCardNo ");
             MySqlParameter[] cmdParms = new MySqlParameter[] {
                 new MySqlParameter("@IDCardNo", MySqlDbType.String, 21)
@@ -270,7 +270,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("CaseOurce,TerminateExcuse,FatherHistory,Symptom,HypertensionComplication,");
             builder.Append("Hypotensor,TerminateManagemen,TerminateTime,CreateUnit,CurrentUnit,");
             builder.Append("CreateoBy,CreatedDate,LastUpdateBy,LastUpdateDate,IsDel ");
-            builder.Append(" FROM tbl_chronichypertensionbaseinfo ");
+            builder.Append(" FROM CD_HYPERTENSION_BASEINFO ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -291,7 +291,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_chronichypertensionbaseinfo T ");
+            builder.Append(")AS Row, T.*  from CD_HYPERTENSION_BASEINFO T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -303,7 +303,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_chronichypertensionbaseinfo");
+            return MySQLHelper.GetMaxID("ID", "CD_HYPERTENSION_BASEINFO");
         }
         public ChronicHypertensionBaseInfoModel GetModel(string IDCardNo)
         {
@@ -312,7 +312,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("FatherHistory,Symptom,HypertensionComplication,Hypotensor,TerminateManagemen,");
             builder.Append("TerminateTime,CreateUnit,CurrentUnit,CreateoBy,CreatedDate,");
             builder.Append("LastUpdateBy,LastUpdateDate,IsDel ");
-            builder.Append(" from tbl_chronichypertensionbaseinfo ");
+            builder.Append(" from CD_HYPERTENSION_BASEINFO ");
             builder.Append(" where IDCardNo=@IDCardNo order by ID desc limit 0,1  ");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String, 21) };
             cmdParms[0].Value = IDCardNo;
@@ -328,7 +328,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_chronichypertensionbaseinfo ");
+            builder.Append("select count(1) FROM CD_HYPERTENSION_BASEINFO ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -344,7 +344,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(ChronicHypertensionBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_chronichypertensionbaseinfo set ");
+            builder.Append("update CD_HYPERTENSION_BASEINFO set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
@@ -413,7 +413,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool UpdateServer(ChronicHypertensionBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_chronichypertensionbaseinfo set ");
+            builder.Append("update CD_HYPERTENSION_BASEINFO set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");

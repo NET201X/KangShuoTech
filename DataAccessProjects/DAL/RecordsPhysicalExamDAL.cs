@@ -12,7 +12,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(RecordsPhysicalExamModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordsphysicalexam(");
+            builder.Append("insert into ARCHIVE_PHYSICALEXAM(");
             builder.Append("PhysicalID,IDCardNo,Skin,Sclere,Lymph,BarrelChest,BreathSounds,Rale,HeartRate, ");
             builder.Append("HeartRhythm,Noise,EnclosedMass,Edema,FootBack,Anus,Breast,Vulva,Vagina,CervixUteri, ");
             builder.Append("Corpus,Attach,Other,PressPain,Liver,Spleen,Voiced,SkinEx,SclereEx,LymphEx,BreastEx, ");
@@ -132,7 +132,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int AddIDCardNo(string IDCardNo)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordsphysicalexam (IDCardNo) values (@IDCardNo) ");
+            builder.Append("insert into ARCHIVE_PHYSICALEXAM (IDCardNo) values (@IDCardNo) ");
             builder.Append(";select @@IDENTITY");
             MySqlParameter[] cmdParms = new MySqlParameter[] { 
                 new MySqlParameter("@IDCardNo", MySqlDbType.String, 21)
@@ -148,7 +148,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int AddServer(RecordsPhysicalExamModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordsphysicalexam(");
+            builder.Append("insert into ARCHIVE_PHYSICALEXAM(");
             builder.Append("PhysicalID,IDCardNo,Skin,Sclere,Lymph,BarrelChest,BreathSounds,Rale,HeartRate, ");
             builder.Append("HeartRhythm,Noise,EnclosedMass,Edema,FootBack,Anus,Breast,Vulva,Vagina,CervixUteri, ");
             builder.Append("Corpus,Attach,Other,PressPain,Liver,Spleen,Voiced,SkinEx,SclereEx,LymphEx,BreastEx, ");
@@ -466,7 +466,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordsphysicalexam ");
+            builder.Append("delete from ARCHIVE_PHYSICALEXAM ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -476,7 +476,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordsphysicalexam ");
+            builder.Append("delete from ARCHIVE_PHYSICALEXAM ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -484,7 +484,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_recordsphysicalexam");
+            builder.Append("select count(1) from ARCHIVE_PHYSICALEXAM");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -499,7 +499,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("CervixUteri,Corpus,Attach,Other,PressPain,Liver,Spleen,Voiced,SkinEx,SclereEx,LymphEx,");
             builder.Append("BreastEx,AnusEx,BreathSoundsEx,RaleEx,NoiseEx,CervixUteriEx,CorpusEx,AttachEx,VulvaEx,");
             builder.Append("VaginaEx,PressPainEx,LiverEx,SpleenEx,VoicedEx,EnclosedMassEx,EyeRound,EyeRoundEx ");
-            builder.Append(" FROM tbl_recordsphysicalexam ");
+            builder.Append(" FROM ARCHIVE_PHYSICALEXAM ");
 
             if (strWhere.Trim() != "")
             {
@@ -522,7 +522,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_recordsphysicalexam T ");
+            builder.Append(")AS Row, T.*  from ARCHIVE_PHYSICALEXAM T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -534,7 +534,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_recordsphysicalexam");
+            return MySQLHelper.GetMaxID("ID", "ARCHIVE_PHYSICALEXAM");
         }
 
         public RecordsPhysicalExamModel GetModel(string IDCardNo)
@@ -544,7 +544,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("HeartRhythm,Noise,EnclosedMass,Edema,FootBack,Anus,Breast,Vulva,Vagina,CervixUteri,Corpus,");
             builder.Append("Attach,Other,PressPain,Liver,Spleen,Voiced,SkinEx,SclereEx,LymphEx,BreastEx,AnusEx,BreathSoundsEx,");
             builder.Append("RaleEx,NoiseEx,CervixUteriEx,CorpusEx,AttachEx,VulvaEx,VaginaEx,PressPainEx,LiverEx,SpleenEx,VoicedEx,");
-            builder.Append("EnclosedMassEx,EyeRound,EyeRoundEx from tbl_recordsphysicalexam ");
+            builder.Append("EnclosedMassEx,EyeRound,EyeRoundEx from ARCHIVE_PHYSICALEXAM ");
             builder.Append(" where IDCardNo=@IDCardNo");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
@@ -563,7 +563,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_recordsphysicalexam ");
+            builder.Append("select count(1) FROM ARCHIVE_PHYSICALEXAM ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -579,7 +579,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(RecordsPhysicalExamModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordsphysicalexam set ");
+            builder.Append("update ARCHIVE_PHYSICALEXAM set ");
             builder.Append("PhysicalID=@PhysicalID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("Skin=@Skin,");
@@ -729,7 +729,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool UpdateServer(RecordsPhysicalExamModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordsphysicalexam set ");
+            builder.Append("update ARCHIVE_PHYSICALEXAM set ");
             builder.Append("PhysicalID=@PhysicalID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("Skin=@Skin,");
@@ -882,7 +882,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("HeartRhythm,Noise,EnclosedMass,Edema,FootBack,Anus,Breast,Vulva,Vagina,CervixUteri,Corpus,");
             builder.Append("Attach,Other,PressPain,Liver,Spleen,Voiced,SkinEx,SclereEx,LymphEx,BreastEx,AnusEx,BreathSoundsEx,");
             builder.Append("RaleEx,NoiseEx,CervixUteriEx,CorpusEx,AttachEx,VulvaEx,VaginaEx,PressPainEx,LiverEx,SpleenEx,VoicedEx,");
-            builder.Append("EnclosedMassEx,EyeRound,EyeRoundEx,OutKey from tbl_recordsphysicalexam ");
+            builder.Append("EnclosedMassEx,EyeRound,EyeRoundEx,OutKey from ARCHIVE_PHYSICALEXAM ");
             builder.Append(" where OutKey=@OutKey");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@OutKey", MySqlDbType.String) };
@@ -900,7 +900,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool ExistsOutKey(string IDCardNo, int OutKey)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_recordsphysicalexam");
+            builder.Append("select count(1) from ARCHIVE_PHYSICALEXAM");
             builder.Append(" where IDCardNo=@IDCardNo ");
             builder.Append(" and OutKey=@OutKey");
             MySqlParameter[] cmdParms = new MySqlParameter[] { 
@@ -915,7 +915,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append(@"UPDATE 
-                                    tbl_recordsphysicalexam  D
+                                    ARCHIVE_PHYSICALEXAM  D
                              SET 
                                 BarrelChest=@BarrelChest,BreathSounds=@BreathSounds,Rale=@Rale,
                                 HeartRhythm=@HeartRhythm,Noise=@Noise,PressPain=@PressPain,EnclosedMass=@EnclosedMass,
@@ -930,7 +930,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
                                         SELECT 
                                             ID 
                                         FROM
-                                        tbl_recordscustomerbaseinfo M
+                                        ARCHIVE_CUSTOMERBASEINFO M
                                         WHERE M.ID = D.OutKey
                                         AND M.IDCardNo = @IDCardNo
                                         AND M.CheckDate = @CheckDate

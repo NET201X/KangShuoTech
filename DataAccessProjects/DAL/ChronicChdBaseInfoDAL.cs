@@ -13,7 +13,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(ChronicChdBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_chronicchdbaseinfo(");
+            builder.Append("insert into CD_CHD_BASEINFO(");
             builder.Append("CustomerID,RecordID,IDCardNo,Source,FamilyHistory,SureDate,SureUnit,CoroType,CurrenStatus,History,Height,Weight,");
             builder.Append("BMI,HeatRate,Hypertension,Hypotension,FPG,HLIP,LLIP,Glycerate,Chole,Waistline,CheckDate,ECGResult,ECGSports,ECGColor,");
             builder.Append("Artery,Myocardial,Smoking,Drinking,Exercise,Life,Medical,Status,EndDate,EndReason,GroupLevel,CreateBy,CreateDate,");
@@ -123,7 +123,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int AddServer(ChronicChdBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_chronicchdbaseinfo(");
+            builder.Append("insert into CD_CHD_BASEINFO(");
             builder.Append("CustomerID,RecordID,IDCardNo,Source,FamilyHistory,SureDate,SureUnit,CoroType,CurrenStatus,History,Height,Weight,");
             builder.Append("BMI,HeatRate,Hypertension,Hypotension,FPG,HLIP,LLIP,Glycerate,Chole,Waistline,CheckDate,ECGResult,ECGSports,ECGColor,");
             builder.Append("Artery,Myocardial,Smoking,Drinking,Exercise,Life,Medical,Status,EndDate,EndReason,GroupLevel,CreateBy,CreateDate,");
@@ -418,7 +418,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_chronicchdbaseinfo ");
+            builder.Append("delete from CD_CHD_BASEINFO ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -427,7 +427,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool DelOUTkey(int OUTkey)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_chronicchdbaseinfo ");
+            builder.Append("delete from CD_CHD_BASEINFO ");
             builder.Append(" where OUTkey=@OUTkey");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@OUTkey", MySqlDbType.Int32, 11) };
             cmdParms[0].Value = OUTkey;
@@ -436,7 +436,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_chronicchdbaseinfo ");
+            builder.Append("delete from CD_CHD_BASEINFO ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -444,7 +444,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_chronicchdbaseinfo");
+            builder.Append("select count(1) from CD_CHD_BASEINFO");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -459,7 +459,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("Hypotension,FPG,HLIP,LLIP,Glycerate,Chole,Waistline,CheckDate,ECGResult,ECGSports,");
             builder.Append("ECGColor,Artery,Myocardial,Smoking,Drinking,Exercise,Life,Medical,Status,EndDate, ");
             builder.Append("EndReason,GroupLevel,CreateBy,CreateDate,LastUpdateBy,LastUpdateDate,IsDelete");
-            builder.Append(" FROM tbl_chronicchdbaseinfo ");
+            builder.Append(" FROM CD_CHD_BASEINFO ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -480,7 +480,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_chronicchdbaseinfo T ");
+            builder.Append(")AS Row, T.*  from CD_CHD_BASEINFO T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -492,7 +492,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_chronicchdbaseinfo");
+            return MySQLHelper.GetMaxID("ID", "CD_CHD_BASEINFO");
         }
 
         public ChronicChdBaseInfoModel GetModel(string IDCardNo)
@@ -503,7 +503,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("HeatRate,Hypertension,Hypotension,FPG,HLIP,LLIP,Glycerate,Chole,Waistline,");
             builder.Append("CheckDate,ECGResult,ECGSports,ECGColor,Artery,Myocardial,Smoking,Drinking,Exercise,");
             builder.Append("Life,Medical,Status,EndDate,EndReason,GroupLevel,CreateBy,CreateDate,LastUpdateBy, ");
-            builder.Append("LastUpdateDate,IsDelete from tbl_chronicchdbaseinfo");
+            builder.Append("LastUpdateDate,IsDelete from CD_CHD_BASEINFO");
             builder.Append(" where IDCardNo=@IDCardNo ");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -519,7 +519,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_chronicchdbaseinfo ");
+            builder.Append("select count(1) FROM CD_CHD_BASEINFO ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -535,7 +535,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(ChronicChdBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_chronicchdbaseinfo set ");
+            builder.Append("update CD_CHD_BASEINFO set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
@@ -673,7 +673,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool UpdateServer(ChronicChdBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_chronicchdbaseinfo set ");
+            builder.Append("update CD_CHD_BASEINFO set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");

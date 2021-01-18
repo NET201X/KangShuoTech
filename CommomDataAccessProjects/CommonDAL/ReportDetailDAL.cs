@@ -16,7 +16,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         /// <returns></returns>
         public bool DeleteReportDetail(string reportName)
         {
-            string sql = $"DELETE FROM Tbl_ReportDetail WHERE ReportName='{reportName}'";
+            string sql = $"DELETE FROM ARCHIVE_REPORT_DETAIL WHERE ReportName='{reportName}'";
             return MySQLHelper.ExecuteSql(sql) > 0 ? true : false;
         }        
 
@@ -26,7 +26,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 		public bool AddReportDetail(ReportDetailModel model)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("INSERT INTO tbl_reportdetail(");
+            strSql.Append("INSERT INTO ARCHIVE_REPORT_DETAIL(");
             strSql.Append("ReportID,ReportName,ExportType,ColumnName,ColumnValue,Seq,Col1,Col2,Col3)");
             strSql.Append(" VALUES (");
             strSql.Append("@ReportID,@ReportName,@ExportType,@ColumnName,@ColumnValue,@Seq,@Col1,@Col2,@Col3)");
@@ -60,7 +60,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         /// <returns></returns>
         public DataSet GetReportName()
         {
-            string sql = "SELECT distinct ReportName FROM tbl_ReportDetail";
+            string sql = "SELECT distinct ReportName FROM ARCHIVE_REPORT_DETAIL";
             return MySQLHelper.Query(sql);
         }
 
@@ -74,13 +74,13 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             StringBuilder sb = new StringBuilder();
             //sb.Append("SELECT * FROM ((SELECT a.ID TblReportID,a.TableName,a.AnotherName,a.OptionName,a.ChinaName,");
             //sb.Append("b.ID,b.ReportID,b.ReportName,b.ExportType,b.ColumnName,b.ColumnValue,b.Seq,b.Col1,b.Col2,b.Col3");
-            //sb.Append(" FROM tbl_report a left join tbl_reportdetail b on a.id =b.ReportID or b.ReportID is null WHERE b.ReportName=@ReportName or b.ReportName is null");
-            //sb.Append(" ) union all (SELECT 0 TblReportID,'' TableName,'' AnotherName,'' OptionName,'' ChinaName,c.ID,-1 ReportID,c.ReportName,c.ExportType,c.ColumnName,c.ColumnValue,c.Seq,c.Col1,c.Col2,c.Col3 FROM tbl_reportdetail c WHERE ReportName =@ReportName AND ReportID is null)) f");
+            //sb.Append(" FROM ARCHIVE_REPORT a left join ARCHIVE_REPORT_DETAIL b on a.id =b.ReportID or b.ReportID is null WHERE b.ReportName=@ReportName or b.ReportName is null");
+            //sb.Append(" ) union all (SELECT 0 TblReportID,'' TableName,'' AnotherName,'' OptionName,'' ChinaName,c.ID,-1 ReportID,c.ReportName,c.ExportType,c.ColumnName,c.ColumnValue,c.Seq,c.Col1,c.Col2,c.Col3 FROM ARCHIVE_REPORT_DETAIL c WHERE ReportName =@ReportName AND ReportID is null)) f");
             //sb.Append(" order by ISNULL(Seq),seq asc,TblReportID asc");
 
-            sb.Append("SELECT * FROM (SELECT a.ID TblReportID,a.TableName,a.AnotherName,a.OptionName,a.ChinaName,b.ID,b.ReportID,b.ReportName,b.ExportType,b.ColumnName,b.ColumnValue,b.Seq,b.Col1,b.Col2,b.Col3 FROM tbl_report a RIGHT JOIN tbl_reportdetail b ON a.ID = b.ReportID WHERE b.ReportName = @ReportName ");
+            sb.Append("SELECT * FROM (SELECT a.ID TblReportID,a.TableName,a.AnotherName,a.OptionName,a.ChinaName,b.ID,b.ReportID,b.ReportName,b.ExportType,b.ColumnName,b.ColumnValue,b.Seq,b.Col1,b.Col2,b.Col3 FROM ARCHIVE_REPORT a RIGHT JOIN ARCHIVE_REPORT_DETAIL b ON a.ID = b.ReportID WHERE b.ReportName = @ReportName ");
             sb.Append("union ");
-            sb.Append("SELECT ID TblReportID,TableName,AnotherName,OptionName,ChinaName, null ID,null ReportID,null ReportName,null ExportType,null ColumnName,null ColumnValue,null Seq,null Col1,null Col2,null Col3 FROM tbl_report WHERE id not in (SELECT a.ID FROM tbl_report a LEFT JOIN tbl_reportdetail b ON a.ID = b.ReportID WHERE b.ReportName = @ReportName)) t");
+            sb.Append("SELECT ID TblReportID,TableName,AnotherName,OptionName,ChinaName, null ID,null ReportID,null ReportName,null ExportType,null ColumnName,null ColumnValue,null Seq,null Col1,null Col2,null Col3 FROM ARCHIVE_REPORT WHERE id not in (SELECT a.ID FROM ARCHIVE_REPORT a LEFT JOIN ARCHIVE_REPORT_DETAIL b ON a.ID = b.ReportID WHERE b.ReportName = @ReportName)) t");
             sb.Append(" order by ISNULL(Seq),seq asc,TblReportID asc");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] {

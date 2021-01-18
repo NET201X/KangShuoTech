@@ -14,7 +14,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(List<ConsulationDoctorsModel>model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_consultdoctor(");
+            builder.Append("insert into ARCHIVE_SUB_CONSU_RECORD(");
             builder.Append("ConsultationUnitName,ConsultationDoctor1,ConsultationDoctor2,ConsultationDoctor3,OutKey)");
             builder.Append("values ");
             foreach (ConsulationDoctorsModel del in model)
@@ -34,7 +34,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int AddServer(List<ConsulationDoctorsModel> model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_consultdoctor(");
+            builder.Append("insert into ARCHIVE_SUB_CONSU_RECORD(");
             builder.Append("ConsultationUnitName,ConsultationDoctor1,ConsultationDoctor2,ConsultationDoctor3,OutKey)");
             builder.Append("values ");
             foreach (ConsulationDoctorsModel del in model)
@@ -54,7 +54,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public DataSet GetList(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select ID, ConsultationUnitName,ConsultationDoctor1,ConsultationDoctor2,ConsultationDoctor3 from tbl_consultdoctor ");
+            builder.Append("select ID, ConsultationUnitName,ConsultationDoctor1,ConsultationDoctor2,ConsultationDoctor3 from ARCHIVE_SUB_CONSU_RECORD ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE  " + strWhere);
@@ -64,7 +64,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(List<ConsulationDoctorsModel> model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_consultdoctor set ");
+            builder.Append("update ARCHIVE_SUB_CONSU_RECORD set ");
           
             string addstr1="";
             string addstr2="";
@@ -102,7 +102,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_consultdoctor ");
+            builder.Append("delete from ARCHIVE_SUB_CONSU_RECORD ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }

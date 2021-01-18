@@ -90,7 +90,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,TableName,OptionName,ChinName,Comment,Isrequired,TabName,SetValue,Content,TypeName,IsSetValue,ItemValue,IsDecimalPlace,DecimalPlace,IsOdevity ");
-            builder.Append(" from tbl_required where ID=@ID");
+            builder.Append(" from ARCHIVE_REQUIRED where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
             new RecordsRequiredModel();
@@ -106,7 +106,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,TableName,OptionName,ChinName,Comment,Isrequired,TabName,SetValue,Content,TypeName,IsSetValue,ItemValue,IsDecimalPlace,DecimalPlace,IsOdevity ");
-            builder.Append(" from tbl_required where TabName=@TabName and Comment=@Comment and ChinName=@ChinName");
+            builder.Append(" from ARCHIVE_REQUIRED where TabName=@TabName and Comment=@Comment and ChinName=@ChinName");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@TabName", MySqlDbType.VarChar), new MySqlParameter("@Comment", MySqlDbType.VarChar), new MySqlParameter("@ChinName", MySqlDbType.VarChar) };
             cmdParms[0].Value = TabName;
             cmdParms[1].Value = Comment;
@@ -124,7 +124,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,TableName,OptionName,ChinName,Comment,Isrequired,TabName,SetValue,Content,TypeName,IsSetValue,ItemValue,IsDecimalPlace,DecimalPlace,IsOdevity ");
-            builder.Append(" from tbl_required where 1=1");
+            builder.Append(" from ARCHIVE_REQUIRED where 1=1");
            
             List<RequireModel> list = new List<RequireModel>();
             DataSet set = MySQLHelper.Query(builder.ToString());
@@ -139,7 +139,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select *  ");
-            builder.Append(" FROM tbl_required ");
+            builder.Append(" FROM ARCHIVE_REQUIRED ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -150,7 +150,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool UpdateID(int id, string Isrequired, string SetValue = "", string isSetValue = "", string ItemValue = "")
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_required set ");
+            builder.Append("update ARCHIVE_REQUIRED set ");
             builder.Append("Isrequired=@Isrequired,  ");
             builder.Append("IsSetValue=@IsSetValue, ");
             builder.Append("SetValue=@SetValue,  ");
@@ -174,7 +174,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool UpdateID(int id, string Isrequired, string IsDecimalPlace, int DecimalPlace, string IsOdevity, string SetValue, string isSetValue, string ItemValue)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_required set ");
+            builder.Append("update ARCHIVE_REQUIRED set ");
             builder.Append("Isrequired=@Isrequired,  ");
             builder.Append("IsSetValue=@IsSetValue, ");
             builder.Append("SetValue=@SetValue,  ");
@@ -232,7 +232,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(RequireModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_required set ");
+            builder.Append("update ARCHIVE_REQUIRED set ");
             builder.Append("TableName=@TableName,");
             builder.Append("OptionName=@OptionName,");
             builder.Append("ChinName =@ChinName,");
@@ -268,45 +268,45 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select concat(format(");
-            builder.Append("(select count(0) = 0 from tbl_recordsbaseinfo b join tbl_required a where  a.ID=112 and a.Isrequired=1 and b.IDCardNo = '" + strWhere + "' and b.Address != '') ");
-            builder.Append("+ (select count(0) = 0 from tbl_recordsbaseinfo b join tbl_required a WHERE a.ID=113 and a.Isrequired=1 and b.IDCardNo = '" + strWhere + "' and b.Phone != '' )");
+            builder.Append("(select count(0) = 0 from ARCHIVE_BASEINFO b join ARCHIVE_REQUIRED a where  a.ID=112 and a.Isrequired=1 and b.IDCardNo = '" + strWhere + "' and b.Address != '') ");
+            builder.Append("+ (select count(0) = 0 from ARCHIVE_BASEINFO b join ARCHIVE_REQUIRED a WHERE a.ID=113 and a.Isrequired=1 and b.IDCardNo = '" + strWhere + "' and b.Phone != '' )");
             builder.Append(",'')) as baseinfocount,");
             builder.Append("concat( format(");
-            builder.Append("(select count(0) = 0 from tbl_recordsbaseinfo b join tbl_required a where  a.ID=114 and a.Isrequired=1 and b.IDCardNo = '" + strWhere + "' and b.ContactName != '')");
-            builder.Append("+(select count(0) = 0 from tbl_recordsbaseinfo b join tbl_required a where  a.ID=115 and a.Isrequired=1 and b.IDCardNo = '" + strWhere + "' and b.ContactPhone != '')");
-            builder.Append("+(select count(0) = 0 from tbl_recordsbaseinfo b join tbl_required a where  a.ID=116 and a.Isrequired=1 and b.IDCardNo = '" + strWhere + "' and b.Disease != '') ");
-            builder.Append("+(select count(0) = 0 from tbl_recordsbaseinfo b join tbl_required a where  a.ID=117 and a.Isrequired=1 and b.IDCardNo = '" + strWhere + "' and b.MedicalPayType != '')");
-            builder.Append("+(select count(0) = 0 from tbl_recordsbaseinfo b join tbl_required a where  a.ID=118 and a.Isrequired=1 and b.IDCardNo = '" + strWhere + "' and b.DrugAllergic != '') ");
-            builder.Append("+(select count(0) = 0 from tbl_recordsbaseinfo b join tbl_required a where  a.ID=119 and a.Isrequired=1 and b.IDCardNo = '" + strWhere + "' and b.Exposure != '')");
-            builder.Append("+(select count(0) = 0 from tbl_recordsbaseinfo b join tbl_required a where  a.ID=120 and a.Isrequired=1 and b.IDCardNo = '" + strWhere + "' and b.DiseasEndition != '')");
+            builder.Append("(select count(0) = 0 from ARCHIVE_BASEINFO b join ARCHIVE_REQUIRED a where  a.ID=114 and a.Isrequired=1 and b.IDCardNo = '" + strWhere + "' and b.ContactName != '')");
+            builder.Append("+(select count(0) = 0 from ARCHIVE_BASEINFO b join ARCHIVE_REQUIRED a where  a.ID=115 and a.Isrequired=1 and b.IDCardNo = '" + strWhere + "' and b.ContactPhone != '')");
+            builder.Append("+(select count(0) = 0 from ARCHIVE_BASEINFO b join ARCHIVE_REQUIRED a where  a.ID=116 and a.Isrequired=1 and b.IDCardNo = '" + strWhere + "' and b.Disease != '') ");
+            builder.Append("+(select count(0) = 0 from ARCHIVE_BASEINFO b join ARCHIVE_REQUIRED a where  a.ID=117 and a.Isrequired=1 and b.IDCardNo = '" + strWhere + "' and b.MedicalPayType != '')");
+            builder.Append("+(select count(0) = 0 from ARCHIVE_BASEINFO b join ARCHIVE_REQUIRED a where  a.ID=118 and a.Isrequired=1 and b.IDCardNo = '" + strWhere + "' and b.DrugAllergic != '') ");
+            builder.Append("+(select count(0) = 0 from ARCHIVE_BASEINFO b join ARCHIVE_REQUIRED a where  a.ID=119 and a.Isrequired=1 and b.IDCardNo = '" + strWhere + "' and b.Exposure != '')");
+            builder.Append("+(select count(0) = 0 from ARCHIVE_BASEINFO b join ARCHIVE_REQUIRED a where  a.ID=120 and a.Isrequired=1 and b.IDCardNo = '" + strWhere + "' and b.DiseasEndition != '')");
             builder.Append(",'')) as recordinfocount ,");
             builder.Append("concat( format(");
-            builder.Append("(select count(0) = 0 from tbl_recordsillnesshistoryinfo b join tbl_recordsbaseinfo c join tbl_required a where  a.ID=121 and a.Isrequired=1 and  c.IDCardNo = b.IDCardNo ");
-            builder.Append("and c.IDCardNo = '" + strWhere + "' and ( b.IllnessType != '' or ((select count(*) from tbl_recordsillnesshistoryinfo) = 0)))");
-            builder.Append("+(select count(0) = 0 from tbl_recordsenvironment b join tbl_recordsbaseinfo c join tbl_required a where  a.ID=122 and a.Isrequired=1 and  c.IDCardNo = b.IDCardNo ");
-            builder.Append("and c.IDCardNo = '" + strWhere + "' and ( b.BlowMeasure != '' or ((select count(*) from tbl_recordsenvironment) = 0)))");
-            builder.Append("+(select count(0) = 0 from tbl_recordsenvironment b  join tbl_recordsbaseinfo c join tbl_required a where  a.ID=123 and a.Isrequired=1 and  c.IDCardNo = b.IDCardNo ");
-            builder.Append("and c.IDCardNo = '" + strWhere + "' and ( b.FuelType != '' or ((select count(*) from tbl_recordsenvironment) = 0))) ");
-            builder.Append("+(select count(0) = 0 from tbl_recordsenvironment b join tbl_recordsbaseinfo c join tbl_required a where  a.ID=124 and a.Isrequired=1 and  c.IDCardNo = b.IDCardNo ");
-            builder.Append("and c.IDCardNo = '" + strWhere + "' and ( b.DrinkWater != '' or ((select count(*) from tbl_recordsenvironment) = 0)))");
-            builder.Append("+(select count(0) = 0 from tbl_recordsenvironment b join tbl_recordsbaseinfo c join tbl_required a where  a.ID=125 and a.Isrequired=1 and  c.IDCardNo = b.IDCardNo ");
-            builder.Append("and c.IDCardNo = '" + strWhere + "' and ( b.Toilet != '' or ((select count(*) from tbl_recordsenvironment) = 0)))");
-            builder.Append("+(select count(0) = 0 from tbl_recordsenvironment b  join tbl_recordsbaseinfo c join tbl_required a where  a.ID=126 and a.Isrequired=1 and  c.IDCardNo = b.IDCardNo ");
-            builder.Append("and c.IDCardNo = '" + strWhere + "' and ( b.LiveStockRail != '' or ((select count(*) from tbl_recordsenvironment) = 0)))");
+            builder.Append("(select count(0) = 0 from ARCHIVE_ILLNESSHISTORYINFO b join ARCHIVE_BASEINFO c join ARCHIVE_REQUIRED a where  a.ID=121 and a.Isrequired=1 and  c.IDCardNo = b.IDCardNo ");
+            builder.Append("and c.IDCardNo = '" + strWhere + "' and ( b.IllnessType != '' or ((select count(*) from ARCHIVE_ILLNESSHISTORYINFO) = 0)))");
+            builder.Append("+(select count(0) = 0 from ARCHIVE_ENVIRONMENT b join ARCHIVE_BASEINFO c join ARCHIVE_REQUIRED a where  a.ID=122 and a.Isrequired=1 and  c.IDCardNo = b.IDCardNo ");
+            builder.Append("and c.IDCardNo = '" + strWhere + "' and ( b.BlowMeasure != '' or ((select count(*) from ARCHIVE_ENVIRONMENT) = 0)))");
+            builder.Append("+(select count(0) = 0 from ARCHIVE_ENVIRONMENT b  join ARCHIVE_BASEINFO c join ARCHIVE_REQUIRED a where  a.ID=123 and a.Isrequired=1 and  c.IDCardNo = b.IDCardNo ");
+            builder.Append("and c.IDCardNo = '" + strWhere + "' and ( b.FuelType != '' or ((select count(*) from ARCHIVE_ENVIRONMENT) = 0))) ");
+            builder.Append("+(select count(0) = 0 from ARCHIVE_ENVIRONMENT b join ARCHIVE_BASEINFO c join ARCHIVE_REQUIRED a where  a.ID=124 and a.Isrequired=1 and  c.IDCardNo = b.IDCardNo ");
+            builder.Append("and c.IDCardNo = '" + strWhere + "' and ( b.DrinkWater != '' or ((select count(*) from ARCHIVE_ENVIRONMENT) = 0)))");
+            builder.Append("+(select count(0) = 0 from ARCHIVE_ENVIRONMENT b join ARCHIVE_BASEINFO c join ARCHIVE_REQUIRED a where  a.ID=125 and a.Isrequired=1 and  c.IDCardNo = b.IDCardNo ");
+            builder.Append("and c.IDCardNo = '" + strWhere + "' and ( b.Toilet != '' or ((select count(*) from ARCHIVE_ENVIRONMENT) = 0)))");
+            builder.Append("+(select count(0) = 0 from ARCHIVE_ENVIRONMENT b  join ARCHIVE_BASEINFO c join ARCHIVE_REQUIRED a where  a.ID=126 and a.Isrequired=1 and  c.IDCardNo = b.IDCardNo ");
+            builder.Append("and c.IDCardNo = '" + strWhere + "' and ( b.LiveStockRail != '' or ((select count(*) from ARCHIVE_ENVIRONMENT) = 0)))");
             builder.Append(",'')) as healthinfocount ");
             return MySQLHelper.Query(builder.ToString());
         }
         public DataSet GetTabName()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append(" SELECT TabName  FROM tbl_required  ");
+            builder.Append(" SELECT TabName  FROM ARCHIVE_REQUIRED  ");
             builder.Append(" GROUP BY TabName ");
             return MySQLHelper.Query(builder.ToString());
         }
         public DataSet GetComment()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append(" SELECT TabName,Comment  FROM tbl_required  ");
+            builder.Append(" SELECT TabName,Comment  FROM ARCHIVE_REQUIRED  ");
             builder.Append(" GROUP BY Comment ");
             return MySQLHelper.Query(builder.ToString());
         }

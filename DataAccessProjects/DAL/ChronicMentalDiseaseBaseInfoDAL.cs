@@ -12,7 +12,7 @@
         public int Add(ChronicMentalDiseaseBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_chronicmentaldiseasebaseinfo(");
+            builder.Append("insert into CD_MENTALDISEASE_BASEINFO(");
             builder.Append("CustomerID,RecordID,IDCardNo,GuardianRecordID,GuardianName,Ralation,GuradianAddr,");
             builder.Append("GuradianPhone,FirstTime,AgreeManagement,AgreeSignature,AgreeTime,Symptom,SymptomOther,OutPatien,");
             builder.Append("HospitalCount,DiagnosisInfo,DiagnosisHospital,DiagnosisTime,LastCure,VillageContacts,VillageTel,");
@@ -129,7 +129,7 @@
         public int AddServer(ChronicMentalDiseaseBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_chronicmentaldiseasebaseinfo(");
+            builder.Append("insert into CD_MENTALDISEASE_BASEINFO(");
             builder.Append("CustomerID,RecordID,IDCardNo,GuardianRecordID,GuardianName,Ralation,GuradianAddr,");
             builder.Append("GuradianPhone,FirstTime,AgreeManagement,AgreeSignature,AgreeTime,Symptom,SymptomOther,OutPatien,");
             builder.Append("HospitalCount,DiagnosisInfo,DiagnosisHospital,DiagnosisTime,LastCure,VillageContacts,VillageTel,");
@@ -435,7 +435,7 @@
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_chronicmentaldiseasebaseinfo ");
+            builder.Append("delete from CD_MENTALDISEASE_BASEINFO ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -445,7 +445,7 @@
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_chronicmentaldiseasebaseinfo ");
+            builder.Append("delete from CD_MENTALDISEASE_BASEINFO ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -453,7 +453,7 @@
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_chronicmentaldiseasebaseinfo");
+            builder.Append("select count(1) from CD_MENTALDISEASE_BASEINFO");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -472,7 +472,7 @@
             builder.Append("SpecialistProposal,FillformTime,DoctorMark,CreatedBy,CreatedDate,LastUpdateBy,LastUpDateDate,");
             builder.Append("CreateUnit,CurrentUnit,IsDel,FirstTreatmenTTime,MildTroubleFrequen,CreateDistuFrequen, ");
             builder.Append("CauseAccidFrequen,AutolesionFrequen,AttemptSuicFrequen,AttemptSuicideNone,Professional,OtherDangerFrequen,HouseType ");
-            builder.Append(" FROM tbl_chronicmentaldiseasebaseinfo ");
+            builder.Append(" FROM CD_MENTALDISEASE_BASEINFO ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -493,7 +493,7 @@
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_chronicmentaldiseasebaseinfo T ");
+            builder.Append(")AS Row, T.*  from CD_MENTALDISEASE_BASEINFO T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -505,7 +505,7 @@
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_chronicmentaldiseasebaseinfo");
+            return MySQLHelper.GetMaxID("ID", "CD_MENTALDISEASE_BASEINFO");
         }
 
         public ChronicMentalDiseaseBaseInfoModel GetModel(string IDCardNo)
@@ -518,7 +518,7 @@
             builder.Append("VillageTel,LockInfo,Economy,SpecialistProposal,FillformTime,DoctorMark,CreatedBy,");
             builder.Append("CreatedDate,LastUpdateBy,LastUpDateDate,CreateUnit,CurrentUnit,IsDel,");
             builder.Append("FirstTreatmenTTime,MildTroubleFrequen,CreateDistuFrequen,CauseAccidFrequen,");
-            builder.Append("AutolesionFrequen,AttemptSuicFrequen,AttemptSuicideNone,Professional,OtherDangerFrequen,HouseType from tbl_chronicmentaldiseasebaseinfo ");
+            builder.Append("AutolesionFrequen,AttemptSuicFrequen,AttemptSuicideNone,Professional,OtherDangerFrequen,HouseType from CD_MENTALDISEASE_BASEINFO ");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -535,7 +535,7 @@
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_chronicmentaldiseasebaseinfo ");
+            builder.Append("select count(1) FROM CD_MENTALDISEASE_BASEINFO ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -551,7 +551,7 @@
         public bool Update(ChronicMentalDiseaseBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_chronicmentaldiseasebaseinfo set ");
+            builder.Append("update CD_MENTALDISEASE_BASEINFO set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
@@ -696,7 +696,7 @@
         {
 
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_chronicmentaldiseasebaseinfo set ");
+            builder.Append("update CD_MENTALDISEASE_BASEINFO set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");

@@ -13,7 +13,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_recordsfamilybedhistory(");
+            builder.Append("INSERT INTO ARCHIVE_FAMILYBEDHISTORY(");
             builder.Append("PhysicalID,IDCardNo,HospitalName,InHospitalDate,IllcaseNums,Reasons,OutHospitalDate,OutKey)");
             builder.Append(" VALUES (");
             builder.Append("@PhysicalID,@IDCardNo,@HospitalName,@InHospitalDate,@IllcaseNums,@Reasons,@OutHospitalDate,@OutKey)");
@@ -49,7 +49,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("DELETE FROM tbl_recordsfamilybedhistory ");
+            builder.Append("DELETE FROM ARCHIVE_FAMILYBEDHISTORY ");
             builder.Append(" WHERE OutKey=@OutKey");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@OutKey", MySqlDbType.Int32, 4) };
@@ -62,7 +62,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 		{
 			StringBuilder builder = new StringBuilder();
 
-			builder.Append("SELECT* FROM tbl_recordsfamilybedhistory ");
+			builder.Append("SELECT* FROM ARCHIVE_FAMILYBEDHISTORY ");
 
 			if (strWhere.Trim() != "")
 			{

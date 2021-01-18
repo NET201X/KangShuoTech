@@ -12,7 +12,7 @@
         public int Add(VaccinationOtherProgramModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_vaccinationotherprogram(");
+            builder.Append("insert into INOCULATION_OTHERPROGRAM(");
             builder.Append("Name,ProvinceID,CityID,DistrictID,TownID,VillageID,Times)");
             builder.Append(" values (");
             builder.Append("@Name,@ProvinceID,@CityID,@DistrictID,@TownID,@VillageID,@Times)");
@@ -86,7 +86,7 @@
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_vaccinationotherprogram ");
+            builder.Append("delete from INOCULATION_OTHERPROGRAM ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -96,7 +96,7 @@
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_vaccinationotherprogram ");
+            builder.Append("delete from INOCULATION_OTHERPROGRAM ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -104,7 +104,7 @@
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_vaccinationotherprogram");
+            builder.Append("select count(1) from INOCULATION_OTHERPROGRAM");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -115,7 +115,7 @@
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,Name,ProvinceID,CityID,DistrictID,TownID,VillageID,Times ");
-            builder.Append(" FROM tbl_vaccinationotherprogram ");
+            builder.Append(" FROM INOCULATION_OTHERPROGRAM ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -136,7 +136,7 @@
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_vaccinationotherprogram T ");
+            builder.Append(")AS Row, T.*  from INOCULATION_OTHERPROGRAM T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -149,7 +149,7 @@
         public VaccinationOtherProgramModel GetModel(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select ID,Name,ProvinceID,CityID,DistrictID,TownID,VillageID,Times from tbl_vaccinationotherprogram ");
+            builder.Append("select ID,Name,ProvinceID,CityID,DistrictID,TownID,VillageID,Times from INOCULATION_OTHERPROGRAM ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -165,7 +165,7 @@
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_vaccinationotherprogram ");
+            builder.Append("select count(1) FROM INOCULATION_OTHERPROGRAM ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -181,7 +181,7 @@
         public bool Update(VaccinationOtherProgramModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_vaccinationotherprogram set ");
+            builder.Append("update INOCULATION_OTHERPROGRAM set ");
             builder.Append("Name=@Name,");
             builder.Append("ProvinceID=@ProvinceID,");
             builder.Append("CityID=@CityID,");

@@ -13,7 +13,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_recordsphysicalexam(");
+            builder.Append("INSERT INTO ARCHIVE_PHYSICALEXAM(");
             builder.Append("PhysicalID,IDCardNo,Skin,Sclere,Lymph,BarrelChest,BreathSounds,Rale,HeartRate, ");
             builder.Append("HeartRhythm,Noise,EnclosedMass,Edema,FootBack,Anus,Breast,Vulva,Vagina,CervixUteri, ");
             builder.Append("Corpus,Attach,Other,PressPain,Liver,Spleen,Voiced,SkinEx,SclereEx,LymphEx,BreastEx, ");
@@ -135,7 +135,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_recordsphysicalexam ");
+            builder.Append("SELECT * FROM ARCHIVE_PHYSICALEXAM ");
             builder.Append(" WHERE OutKey=@OutKey");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@OutKey", MySqlDbType.String) };
@@ -157,14 +157,14 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             StringBuilder builder = new StringBuilder();
             string sql = "";
 
-            builder.Append("UPDATE tbl_recordsphysicalexam SET ");
+            builder.Append("UPDATE ARCHIVE_PHYSICALEXAM SET ");
 
             if (HeartRhythm != "") sql += "HeartRhythm=@HeartRhythm,";
             if (HeartRate != "") sql += "HeartRate=@HeartRate,";
 
             builder.Append(sql.TrimEnd(','));
 
-            if (builder.ToString() != "UPDATE tbl_recordsphysicalexam SET ")
+            if (builder.ToString() != "UPDATE ARCHIVE_PHYSICALEXAM SET ")
             {
                 builder.Append(@" WHERE IDCardNo = @IDCardNo
                                             AND OutKey = @OutKey ");

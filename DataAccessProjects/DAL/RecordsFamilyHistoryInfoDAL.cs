@@ -12,7 +12,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(RecordsFamilyHistoryInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordsfamilyhistoryinfo(");
+            builder.Append("insert into ARCHIVE_FAMILYHISTORYINFO(");
             builder.Append("RecordID,IDCardNo,FamilyType,FatherHistory,FatherHistoryOther,MotherHistory,MotherHistoryOther,BrotherSisterHistory,BrotherSisterHistoryOther,ChildrenHistory,ChildrenHistoryOther)");
             builder.Append(" values (");
             builder.Append("@RecordID,@IDCardNo,@FamilyType,@FatherHistory,@FatherHistoryOther,@MotherHistory,@MotherHistoryOther,@BrotherSisterHistory,@BrotherSisterHistoryOther,@ChildrenHistory,@ChildrenHistoryOther)");
@@ -53,7 +53,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int AddServer(RecordsFamilyHistoryInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordsfamilyhistoryinfo(");
+            builder.Append("insert into ARCHIVE_FAMILYHISTORYINFO(");
             builder.Append("RecordID,IDCardNo,FamilyType,FatherHistory,FatherHistoryOther,MotherHistory,MotherHistoryOther,BrotherSisterHistory,BrotherSisterHistoryOther,ChildrenHistory,ChildrenHistoryOther)");
             builder.Append(" values (");
             builder.Append("@RecordID,@IDCardNo,@FamilyType,@FatherHistory,@FatherHistoryOther,@MotherHistory,@MotherHistoryOther,@BrotherSisterHistory,@BrotherSisterHistoryOther,@ChildrenHistory,@ChildrenHistoryOther)");
@@ -151,7 +151,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordsfamilyhistoryinfo ");
+            builder.Append("delete from ARCHIVE_FAMILYHISTORYINFO ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -161,7 +161,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordsfamilyhistoryinfo ");
+            builder.Append("delete from ARCHIVE_FAMILYHISTORYINFO ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -169,7 +169,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_recordsfamilyhistoryinfo");
+            builder.Append("select count(1) from ARCHIVE_FAMILYHISTORYINFO");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -180,7 +180,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select  ID,RecordID,IDCardNo,FamilyType,FatherHistory,FatherHistoryOther,MotherHistory,MotherHistoryOther,BrotherSisterHistory,BrotherSisterHistoryOther,ChildrenHistory,ChildrenHistoryOther ");
-            builder.Append(" FROM tbl_recordsfamilyhistoryinfo ");
+            builder.Append(" FROM ARCHIVE_FAMILYHISTORYINFO ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -201,7 +201,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_recordsfamilyhistoryinfo T ");
+            builder.Append(")AS Row, T.*  from ARCHIVE_FAMILYHISTORYINFO T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -213,13 +213,13 @@ namespace KangShuoTech.DataAccessProjects.DAL
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_recordsfamilyhistoryinfo");
+            return MySQLHelper.GetMaxID("ID", "ARCHIVE_FAMILYHISTORYINFO");
         }
 
         public RecordsFamilyHistoryInfoModel GetModel(string IDCardNo)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select  ID,RecordID,IDCardNo,FamilyType,FatherHistory,FatherHistoryOther,MotherHistory,MotherHistoryOther,BrotherSisterHistory,BrotherSisterHistoryOther,ChildrenHistory,ChildrenHistoryOther from tbl_recordsfamilyhistoryinfo ");
+            builder.Append("select  ID,RecordID,IDCardNo,FamilyType,FatherHistory,FatherHistoryOther,MotherHistory,MotherHistoryOther,BrotherSisterHistory,BrotherSisterHistoryOther,ChildrenHistory,ChildrenHistoryOther from ARCHIVE_FAMILYHISTORYINFO ");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -235,7 +235,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_recordsfamilyhistoryinfo ");
+            builder.Append("select count(1) FROM ARCHIVE_FAMILYHISTORYINFO ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -251,7 +251,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(RecordsFamilyHistoryInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordsfamilyhistoryinfo set ");
+            builder.Append("update ARCHIVE_FAMILYHISTORYINFO set ");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("FamilyType=@FamilyType,");
@@ -296,7 +296,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool UpdateServer(RecordsFamilyHistoryInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordsfamilyhistoryinfo set ");
+            builder.Append("update ARCHIVE_FAMILYHISTORYINFO set ");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("FamilyType=@FamilyType,");

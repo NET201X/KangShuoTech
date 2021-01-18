@@ -13,7 +13,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_recordsillnesshistoryinfo(");
+            builder.Append("INSERT INTO ARCHIVE_ILLNESSHISTORYINFO(");
             builder.Append("RecordID,IDCardNo,IllnessType,IllnessName,Therioma,IllnessOther,JobIllness,IllnessNameOther,DiagnoseTime,IllnessResult,Unite,OccurTime,EndTime,Remarks,DateSorce,Dose,IllDescription)");
             builder.Append(" VALUES (");
             builder.Append("@RecordID,@IDCardNo,@IllnessType,@IllnessName,@Therioma,@IllnessOther,@JobIllness,@IllnessNameOther,@DiagnoseTime,@IllnessResult,@Unite,@OccurTime,@EndTime,@Remarks,@DateSorce,@Dose,@IllDescription)");
@@ -68,7 +68,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("DELETE FROM tbl_recordsillnesshistoryinfo ");
+            builder.Append("DELETE FROM ARCHIVE_ILLNESSHISTORYINFO ");
             builder.Append(" WHERE ID=@ID");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
@@ -81,7 +81,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT *  FROM tbl_recordsillnesshistoryinfo ");
+            builder.Append("SELECT *  FROM ARCHIVE_ILLNESSHISTORYINFO ");
 
             if (strWhere.Trim() != "")
             {
@@ -94,7 +94,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         public bool Update(RecordsIllnessHistoryInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("UPDATE tbl_recordsillnesshistoryinfo SET ");
+            builder.Append("UPDATE ARCHIVE_ILLNESSHISTORYINFO SET ");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("IllnessType=@IllnessType,");

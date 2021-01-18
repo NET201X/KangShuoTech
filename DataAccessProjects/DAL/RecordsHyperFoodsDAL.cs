@@ -13,7 +13,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(RecordsHyperFoodsModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordsHyperFoods(");
+            builder.Append("insert into ARCHIVE_HYPER_FOOD(");
             builder.Append("IDCardNo,FoodName,EatYesNo,DayBeats,WeekBeats,MouthBeats,SaltSumBeats,OutKey )");
             builder.Append(" values (");
             builder.Append("@IDCardNo,@FoodName,@EatYesNo,@DayBeats,@WeekBeats,@MouthBeats,@SaltSumBeats,@OutKey )");
@@ -92,7 +92,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordsHyperFoods ");
+            builder.Append("delete from ARCHIVE_HYPER_FOOD ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -102,7 +102,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordsHyperFoods ");
+            builder.Append("delete from ARCHIVE_HYPER_FOOD ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -110,7 +110,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_recordsHyperFoods");
+            builder.Append("select count(1) from ARCHIVE_HYPER_FOOD");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -120,7 +120,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,IDCardNo,FoodName,EatYesNo,DayBeats,WeekBeats,MouthBeats,SaltSumBeats,OutKey ");
-            builder.Append(" FROM tbl_recordsHyperFoods ");
+            builder.Append(" FROM ARCHIVE_HYPER_FOOD ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -130,7 +130,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public RecordsHyperFoodsModel GetModel(string IDCardNo)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select ID,IDCardNo,FoodName,EatYesNo,DayBeats,WeekBeats,MouthBeats,SaltSumBeats from tbl_recordsHyperFoods,OutKey ");
+            builder.Append("select ID,IDCardNo,FoodName,EatYesNo,DayBeats,WeekBeats,MouthBeats,SaltSumBeats from ARCHIVE_HYPER_FOOD,OutKey ");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -146,7 +146,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(RecordsHyperFoodsModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordsHyperFoods set ");
+            builder.Append("update ARCHIVE_HYPER_FOOD set ");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("FoodName=@FoodName,");
             builder.Append("EatYesNo=@EatYesNo,");
@@ -181,7 +181,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool ExistsOutKey(string IDCardNo, string FoodName, int OutKey)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_recordsHyperFoods");
+            builder.Append("select count(1) from ARCHIVE_HYPER_FOOD");
             builder.Append(" where IDCardNo=@IDCardNo ");
             builder.Append(" and OutKey=@OutKey and FoodName=@FoodName ");
             MySqlParameter[] cmdParms = new MySqlParameter[] { 

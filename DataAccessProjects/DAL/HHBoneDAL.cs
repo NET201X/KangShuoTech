@@ -21,7 +21,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append(@"INSERT INTO tbl_HHBone
+            builder.Append(@"INSERT INTO HEALTHHOUSE_BMD
                                      (
                                          IDCardNo
                                         ,CheckDate
@@ -67,7 +67,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append(@"UPDATE tbl_HHBone
+            builder.Append(@"UPDATE HEALTHHOUSE_BMD
                                      SET                                         
                                         CheckDate = @CheckDate 
                                         ,Result = @Result 
@@ -100,7 +100,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool ExistsPID(string IDCardNo, int PID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_HHBone");
+            builder.Append("select count(1) from HEALTHHOUSE_BMD");
             builder.Append(" where IDCardNo=@IDCardNo ");
             builder.Append(" and PID=@PID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { 
@@ -117,7 +117,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public HHBoneModel GetData(string IDCardNo, int PID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append(@"SELECT * from  tbl_HHBone ");
+            builder.Append(@"SELECT * from  HEALTHHOUSE_BMD ");
             builder.Append(" where IDCardNo=@IDCardNo ");
             builder.Append(" and PID=@PID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { 

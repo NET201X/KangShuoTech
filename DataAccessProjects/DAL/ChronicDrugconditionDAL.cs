@@ -13,7 +13,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(ChronicDrugConditionModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_chronicdrugcondition(");
+            builder.Append("insert into CD_DRUGCONDITION(");
             builder.Append("IDCardNo,Type,Name,DailyTime,EveryTimeMg,drugtype,factory,DosAge,OUTKey )");
             builder.Append(" values (");
             builder.Append("@IDCardNo,@Type,@Name,@DailyTime,@EveryTimeMg,@drugtype,@factory,@DosAge,@OUTKey )");
@@ -101,7 +101,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_chronicdrugcondition ");
+            builder.Append("delete from CD_DRUGCONDITION ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -111,7 +111,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool DeleteOUTKey(int OUTKey ,string drugType)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_chronicdrugcondition ");
+            builder.Append("delete from CD_DRUGCONDITION ");
             builder.Append(" where OUTKey=@OUTKey and Type =@Type ");
             MySqlParameter[] cmdParms = new MySqlParameter[] {
                 new MySqlParameter("@OUTKey", MySqlDbType.Int32, 4) ,
@@ -125,7 +125,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_chronicdrugcondition ");
+            builder.Append("delete from CD_DRUGCONDITION ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -133,7 +133,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_chronicdrugcondition");
+            builder.Append("select count(1) from CD_DRUGCONDITION");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -142,7 +142,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool ExistOUTKey(int OUTKey ,int ID, string drugType)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_chronicdrugcondition");
+            builder.Append("select count(1) from CD_DRUGCONDITION");
             builder.Append(" where OUTKey=@OUTKey and ID =@ID and Type = @Type ");
             MySqlParameter[] cmdParms = new MySqlParameter[] {
                 new MySqlParameter("@OUTKey", MySqlDbType.Int32, 11),
@@ -159,7 +159,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,IDCardNo,Type,Name,DailyTime,EveryTimeMg,drugtype,factory,DosAge,OUTKey ");
-            builder.Append(" FROM tbl_chronicdrugcondition ");
+            builder.Append(" FROM CD_DRUGCONDITION ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere + " order by id limit 4");
@@ -180,7 +180,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_chronicdrugcondition T ");
+            builder.Append(")AS Row, T.*  from CD_DRUGCONDITION T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -192,13 +192,13 @@ namespace KangShuoTech.DataAccessProjects.DAL
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_chronicdrugcondition");
+            return MySQLHelper.GetMaxID("ID", "CD_DRUGCONDITION");
         }
 
         public ChronicDrugConditionModel GetModel(string IDCardNo)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select ID,IDCardNo,Type,Name,DailyTime,EveryTimeMg,drugtype,factory,DosAge,OUTKey from tbl_chronicdrugcondition ");
+            builder.Append("select ID,IDCardNo,Type,Name,DailyTime,EveryTimeMg,drugtype,factory,DosAge,OUTKey from CD_DRUGCONDITION ");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -214,7 +214,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_chronicdrugcondition ");
+            builder.Append("select count(1) FROM CD_DRUGCONDITION ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -230,7 +230,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(ChronicDrugConditionModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_chronicdrugcondition set ");
+            builder.Append("update CD_DRUGCONDITION set ");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("Type=@TYPE,");
             builder.Append("Name=@NAME,");
@@ -268,7 +268,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool UpdateOUTKey(ChronicDrugConditionModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_chronicdrugcondition set ");
+            builder.Append("update CD_DRUGCONDITION set ");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("Type=@TYPE,");
             builder.Append("Name=@NAME,");

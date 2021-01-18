@@ -116,7 +116,7 @@ namespace RecordManagement
         private void TransDs(DataSet ds)
         {
 
-            DeviceInfoBLL tbl_deviceinfo = new DeviceInfoBLL();
+            DeviceInfoBLL ARCHIVE_DEVICEINFO = new DeviceInfoBLL();
             foreach (DataRow row in ds.Tables[0].Rows)
             {
                 row["Sex"] = !(row["Sex"].ToString() == "1") ? "女" : "男";

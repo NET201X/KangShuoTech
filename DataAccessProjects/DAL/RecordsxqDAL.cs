@@ -15,7 +15,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_recordsxq ( ");
+            builder.Append("INSERT INTO ARCHIVE_BLOODTEST ( ");
             builder.Append(" IDCardNo,NEU_B,LYMPH_B,MON_B,EOS_B,BAS_B,NEU_N,LYMPH_N,MON_N,EOS_N,BAS_N,");
             builder.Append(" RBC,HCT,MCV,MCH,MCHC,RDW_CV,RDW_SD,MPV,PDW,PCT,TestTime,MID_B,MID_N,P_LCR )");
             builder.Append(" VALUES (");
@@ -107,7 +107,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public DataSet GetDT(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select * from tbl_recordsxq ");
+            builder.Append("select * from ARCHIVE_BLOODTEST ");
             if (!string.IsNullOrEmpty(strWhere))
             {
                 builder.Append(" where " + strWhere);

@@ -13,7 +13,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("UPDATE tbl_recordsbaseinfo SET ");
+            builder.Append("UPDATE ARCHIVE_BASEINFO SET ");
             builder.Append("PhotoPath=@PhotoPath");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
@@ -29,7 +29,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT COUNT(1) FROM tbl_recordsbaseinfo ");
+            builder.Append("SELECT COUNT(1) FROM ARCHIVE_BASEINFO ");
 
             if (strWhere.Trim() != "") builder.Append(" WHERE 1=1 " + strWhere);
 
@@ -44,7 +44,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_recordsbaseinfo ");
+            builder.Append("SELECT * FROM ARCHIVE_BASEINFO ");
 
             if (!string.IsNullOrEmpty(strWhere.Trim())) builder.Append(" WHERE 1=1 " + strWhere);
 

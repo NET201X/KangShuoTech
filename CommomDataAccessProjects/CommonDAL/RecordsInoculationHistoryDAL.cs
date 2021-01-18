@@ -13,7 +13,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_recordsinoculationhistory(");
+            builder.Append("INSERT INTO ARCHIVE_INOCULATIONHISTORY(");
             builder.Append("PhysicalID,IDCardNo,PillName,InoculationDate,InoculationHistory,OutKey)");
             builder.Append(" VALUES (");
             builder.Append("@PhysicalID,@IDCardNo,@PillName,@InoculationDate,@InoculationHistory,@OutKey)");
@@ -44,7 +44,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         public bool DeleteByOutKey(int OutKey)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("DELETE FROM tbl_recordsinoculationhistory ");
+            builder.Append("DELETE FROM ARCHIVE_INOCULATIONHISTORY ");
             builder.Append(" WHERE OutKey=@OutKey");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@OutKey", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = OutKey;
@@ -55,7 +55,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 		{
 			StringBuilder builder = new StringBuilder();
 
-			builder.Append("SELECT * FROM tbl_recordsinoculationhistory ");
+			builder.Append("SELECT * FROM ARCHIVE_INOCULATIONHISTORY ");
 
 			if (strWhere.Trim() != "")
 			{

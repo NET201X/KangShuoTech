@@ -12,7 +12,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Add(RecordsProvinceModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordsprovince(");
+            builder.Append("insert into ARCHIVE_PROVINCE(");
             builder.Append("ID,Code,Name)");
             builder.Append(" values (");
             builder.Append("@ID,@Code,@Name)");
@@ -49,7 +49,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordsprovince ");
+            builder.Append("delete from ARCHIVE_PROVINCE ");
             builder.Append(" where ");
             MySqlParameter[] cmdParms = new MySqlParameter[0];
             return (MySQLHelper.ExecuteSql(builder.ToString(), cmdParms) > 0);
@@ -59,7 +59,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,Code,Name ");
-            builder.Append(" FROM tbl_recordsprovince ");
+            builder.Append(" FROM ARCHIVE_PROVINCE ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -80,7 +80,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             {
                 builder.Append("order by T. desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_recordsprovince T ");
+            builder.Append(")AS Row, T.*  from ARCHIVE_PROVINCE T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -93,7 +93,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public RecordsProvinceModel GetModel()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select ID,Code,Name from tbl_recordsprovince ");
+            builder.Append("select ID,Code,Name from ARCHIVE_PROVINCE ");
             builder.Append(" where ");
             MySqlParameter[] cmdParms = new MySqlParameter[0];
             new RecordsProvinceModel();
@@ -108,7 +108,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_recordsprovince ");
+            builder.Append("select count(1) FROM ARCHIVE_PROVINCE ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -124,7 +124,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(RecordsProvinceModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordsprovince set ");
+            builder.Append("update ARCHIVE_PROVINCE set ");
             builder.Append("ID=@ID,");
             builder.Append("Code=@Code,");
             builder.Append("Name=@Name");

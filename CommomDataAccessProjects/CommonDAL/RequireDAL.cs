@@ -21,7 +21,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_required ");
+            builder.Append("SELECT * FROM ARCHIVE_REQUIRED ");
             builder.Append(" WHERE TabName=@TabName AND Comment=@Comment AND ChinName LIKE @ChinName");
             builder.Append(" AND IFNULL(IsOdevity,'否')!='否' AND IsOdevity!=''");
 
@@ -52,7 +52,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             StringBuilder builder = new StringBuilder();
             List<MySqlParameter> cmdParms = new List<MySqlParameter>();
 
-            builder.Append("SELECT * FROM tbl_required ");
+            builder.Append("SELECT * FROM ARCHIVE_REQUIRED ");
             builder.Append(" WHERE TabName=@TabName AND Comment=@Comment ");
 
             if(ChinName != "")
@@ -76,7 +76,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append("SELECT *  ");
-            builder.Append(" FROM tbl_required ");
+            builder.Append(" FROM ARCHIVE_REQUIRED ");
 
             if (strWhere.Trim() != "")
             {
@@ -91,7 +91,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("UPDATE tbl_required SET ");
+            builder.Append("UPDATE ARCHIVE_REQUIRED SET ");
             builder.Append("Isrequired=@Isrequired,  ");
             builder.Append("IsSetValue=@IsSetValue, ");
             builder.Append("SetValue=@SetValue,  ");
@@ -157,7 +157,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append(" SELECT TabName  FROM tbl_required  ");
+            builder.Append(" SELECT TabName  FROM ARCHIVE_REQUIRED  ");
             builder.Append(" GROUP BY TabName ");
 
             return MySQLHelper.Query(builder.ToString());
@@ -167,7 +167,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append(" SELECT TabName,Comment  FROM tbl_required  ");
+            builder.Append(" SELECT TabName,Comment  FROM ARCHIVE_REQUIRED  ");
             builder.Append(" GROUP BY Comment ");
 
             return MySQLHelper.Query(builder.ToString());

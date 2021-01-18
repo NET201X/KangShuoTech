@@ -12,7 +12,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Add(RecordsCantonModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordscanton(");
+            builder.Append("insert into ARCHIVE_CANTON(");
             builder.Append("ID,Code,Name,Type)");
             builder.Append(" values (");
             builder.Append("@ID,@Code,@Name,@Type)");
@@ -58,7 +58,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordscanton ");
+            builder.Append("delete from ARCHIVE_CANTON ");
             builder.Append(" where ");
             MySqlParameter[] cmdParms = new MySqlParameter[0];
             return (MySQLHelper.ExecuteSql(builder.ToString(), cmdParms) > 0);
@@ -68,7 +68,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,Code,Name,Type ");
-            builder.Append(" FROM tbl_recordscanton ");
+            builder.Append(" FROM ARCHIVE_CANTON ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -89,7 +89,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_recordscanton T ");
+            builder.Append(")AS Row, T.*  from ARCHIVE_CANTON T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -102,7 +102,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public RecordsCantonModel GetModel()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select ID,Code,Name,Type from tbl_recordscanton ");
+            builder.Append("select ID,Code,Name,Type from ARCHIVE_CANTON ");
             builder.Append(" where ");
             MySqlParameter[] cmdParms = new MySqlParameter[0];
             new RecordsCantonModel();
@@ -117,7 +117,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_recordscanton ");
+            builder.Append("select count(1) FROM ARCHIVE_CANTON ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -133,7 +133,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(RecordsCantonModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordscanton set ");
+            builder.Append("update ARCHIVE_CANTON set ");
             builder.Append("ID=@ID,");
             builder.Append("Code=@Code,");
             builder.Append("Name=@Name,");

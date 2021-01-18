@@ -12,7 +12,7 @@
         public int Add(OlderMedicineResultModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_oldermedicineresult(");
+            builder.Append("insert into OLD_MEDICINE_RESULT(");
             builder.Append("PhysicalID,MedicineID,Mild,Faint,Yang,Yin,PhlegmDamp,Muggy,BloodStasis,QIconStraint,Characteristic,");
             builder.Append("MildScore,FaintScore,YangsCore,YinScore,PhlegmdampScore,MuggyScore,BloodStasisScore,QiConstraintScore,");
             builder.Append("CharacteristicScore,MildAdvising,FaintAdvising,YangAdvising,YinAdvising,PhlegmdampAdvising,MuggyAdvising,");
@@ -131,7 +131,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_oldermedicineresult(");
+            builder.Append("INSERT INTO OLD_MEDICINE_RESULT(");
             builder.Append("PhysicalID,MedicineID,Mild,Faint,Yang,Yin,PhlegmDamp,Muggy,BloodStasis,QIconStraint,Characteristic,");
             builder.Append("MildScore,FaintScore,YangsCore,YinScore,PhlegmdampScore,MuggyScore,BloodStasisScore,QiConstraintScore,");
             builder.Append("CharacteristicScore,MildAdvising,FaintAdvising,YangAdvising,YinAdvising,PhlegmdampAdvising,MuggyAdvising,");
@@ -243,7 +243,7 @@
         public bool DelOUTkey(int OUTkey)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_oldermedicineresult ");
+            builder.Append("delete from OLD_MEDICINE_RESULT ");
             builder.Append(" where OUTkey=@OUTkey");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@OUTkey", MySqlDbType.Int32, 11) };
             cmdParms[0].Value = OUTkey;
@@ -253,7 +253,7 @@
         public bool ExistOUTKey(int OUTkey)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_oldermedicineresult");
+            builder.Append("select count(1) from OLD_MEDICINE_RESULT");
             builder.Append(" where OUTkey=@OUTkey");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@OUTkey", MySqlDbType.Int32, 11) };
             cmdParms[0].Value = OUTkey;
@@ -269,7 +269,7 @@
             builder.Append("BloodStasisAdvising,QiconstraintAdvising,CharacteristicAdvising,MildAdvisingEx,FaintAdvisingEx,");
             builder.Append("YangadvisingEx,YinAdvisingEx,PhlegmdampAdvisingEx,MuggyAdvisingEx,BloodStasisAdvisingEx,");
             builder.Append("QiconstraintAdvisingEx,CharacteristicAdvisingEx,IsDel,IDCardNo,OUTkey,OUTkey,RecordDate,EffectAssess,Satisfy ");
-            builder.Append("from tbl_oldermedicineresult ");
+            builder.Append("from OLD_MEDICINE_RESULT ");
             builder.Append(" where IDCardNo=@IDCardNo and  OUTKey = @OUTKey");
             MySqlParameter[] cmdParms = new MySqlParameter[] {
                 new MySqlParameter("@IDCardNo", MySqlDbType.String) ,
@@ -290,7 +290,7 @@
             builder.Append("BloodStasisAdvising,QiconstraintAdvising,CharacteristicAdvising,MildAdvisingEx,FaintAdvisingEx,");
             builder.Append("YangadvisingEx,YinAdvisingEx,PhlegmdampAdvisingEx,MuggyAdvisingEx,BloodStasisAdvisingEx,");
             builder.Append("QiconstraintAdvisingEx,CharacteristicAdvisingEx,IsDel,IDCardNo,OUTkey,RecordDate,EffectAssess,Satisfy ");
-            builder.Append("from tbl_oldermedicineresult ");
+            builder.Append("from OLD_MEDICINE_RESULT ");
             builder.Append(" where OUTkey=@OUTkey");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@OUTkey", MySqlDbType.Int32, 11) };
             cmdParms[0].Value = OUTkey;
@@ -301,7 +301,7 @@
         public bool Update(OlderMedicineResultModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_oldermedicineresult set ");
+            builder.Append("update OLD_MEDICINE_RESULT set ");
             builder.Append("PhysicalID=@PhysicalID,");
             builder.Append("MedicineID=@MedicineID,");
             builder.Append("Mild=@Mild,");
@@ -446,7 +446,7 @@
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("UPDATE tbl_oldermedicineresult SET ");
+            builder.Append("UPDATE OLD_MEDICINE_RESULT SET ");
             builder.Append("Mild=@Mild,");
             builder.Append("Faint=@Faint,");
             builder.Append("Yang=@Yang,");

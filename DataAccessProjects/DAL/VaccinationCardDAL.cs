@@ -12,7 +12,7 @@
         public int Add( VaccinationCardModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_vaccinationcard(");
+            builder.Append("insert into INOCULATION_CARD(");
             builder.Append("CustomerID,RecordID,IDCardNo,VaccinationCardID,Guardian,Relation,Phone,HomeAddress,HouseHoldAddress,VaccinationInTime, ");
             builder.Append("VaccinationOutTime,VaccinationOutReason,VaccinationIllHistory,VaccinationTaboo,CreateBy,CreateDate,LastUpdateBy,LastUpdateDate,IsDelete,VaccinationExpHistory) ");
             builder.Append(" values (");
@@ -165,7 +165,7 @@
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_vaccinationcard ");
+            builder.Append("delete from INOCULATION_CARD ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -175,7 +175,7 @@
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_vaccinationcard ");
+            builder.Append("delete from INOCULATION_CARD ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -183,7 +183,7 @@
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_vaccinationcard");
+            builder.Append("select count(1) from INOCULATION_CARD");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -194,7 +194,7 @@
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,CustomerID,RecordID,IDCardNo,VaccinationCardID,Guardian,Relation,Phone,HomeAddress,HouseHoldAddress,VaccinationInTime,VaccinationOutTime,VaccinationOutReason,VaccinationIllHistory,VaccinationTaboo,VaccinationExpHistory,CreateBy,CreateDate,LastUpdateBy,LastUpdateDate,IsDelete ");
-            builder.Append(" FROM tbl_vaccinationcard ");
+            builder.Append(" FROM INOCULATION_CARD ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -215,7 +215,7 @@
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_vaccinationcard T ");
+            builder.Append(")AS Row, T.*  from INOCULATION_CARD T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -227,13 +227,13 @@
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_vaccinationcard");
+            return MySQLHelper.GetMaxID("ID", "INOCULATION_CARD");
         }
 
         public VaccinationCardModel GetModel(string IDCardNo)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select  ID,CustomerID,RecordID,IDCardNo,VaccinationCardID,Guardian,Relation,Phone,HomeAddress,HouseHoldAddress,VaccinationInTime,VaccinationOutTime,VaccinationOutReason,VaccinationIllHistory,VaccinationTaboo,VaccinationExpHistory,CreateBy,CreateDate,LastUpdateBy,LastUpdateDate,IsDelete from tbl_vaccinationcard ");
+            builder.Append("select  ID,CustomerID,RecordID,IDCardNo,VaccinationCardID,Guardian,Relation,Phone,HomeAddress,HouseHoldAddress,VaccinationInTime,VaccinationOutTime,VaccinationOutReason,VaccinationIllHistory,VaccinationTaboo,VaccinationExpHistory,CreateBy,CreateDate,LastUpdateBy,LastUpdateDate,IsDelete from INOCULATION_CARD ");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -249,7 +249,7 @@
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_vaccinationcard ");
+            builder.Append("select count(1) FROM INOCULATION_CARD ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -265,7 +265,7 @@
         public bool Update(VaccinationCardModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_vaccinationcard set ");
+            builder.Append("update INOCULATION_CARD set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");

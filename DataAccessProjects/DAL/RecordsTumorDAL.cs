@@ -13,7 +13,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(RecordsTumorModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordstumor(");
+            builder.Append("insert into ARCHIVE_TUMOR(");
             builder.Append("IDCardNo,RecordID,Age,ClinicID,ICD,ICDO,HospitalizationID,Phone,OrigDiagnose,MedicareCardID,HouseholtDistict,HouseholtTown, ");
             builder.Append("HouseholtVillage,HouseholtNum,PresentDistict,PresentTown,PresentVillage,PresentNum,PathologyType,PrimaryParts,");
             builder.Append("StageT,StageN,StageM,ReportsUnit,ReportsDoctor,DieReason,Judgment,OrigDiagnoseDate,DiagnoseDate,DieDate,ReportDate,Diagnose,OutKey )");
@@ -245,7 +245,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordstumor ");
+            builder.Append("delete from ARCHIVE_TUMOR ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -255,7 +255,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordstumor ");
+            builder.Append("delete from ARCHIVE_TUMOR ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -263,7 +263,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_recordstumor ");
+            builder.Append("select count(1) from ARCHIVE_TUMOR ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -276,7 +276,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("select ID,IDCardNo,RecordID,Age,ClinicID,ICD,ICDO,HospitalizationID,Phone,OrigDiagnose,MedicareCardID,HouseholtDistict,HouseholtTown, ");
             builder.Append("HouseholtVillage,HouseholtNum,PresentDistict,PresentTown,PresentVillage,PresentNum,PathologyType,PrimaryParts,");
             builder.Append("StageT,StageN,StageM,ReportsUnit,ReportsDoctor,DieReason,Judgment,OrigDiagnoseDate,DiagnoseDate,DieDate,ReportDate,Diagnose,OutKey ");
-            builder.Append(" FROM tbl_recordstumor ");
+            builder.Append(" FROM ARCHIVE_TUMOR ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -289,7 +289,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("select ID,IDCardNo,RecordID,Age,ClinicID,ICD,ICDO,HospitalizationID,Phone,OrigDiagnose,MedicareCardID,HouseholtDistict,HouseholtTown, ");
             builder.Append("HouseholtVillage,HouseholtNum,PresentDistict,PresentTown,PresentVillage,PresentNum,PathologyType,PrimaryParts,");
             builder.Append("StageT,StageN,StageM,ReportsUnit,ReportsDoctor,DieReason,Judgment,OrigDiagnoseDate,DiagnoseDate,DieDate,ReportDate,Diagnose,OutKey ");
-            builder.Append(" from tbl_recordstumor where OutKey=@OutKey ");
+            builder.Append(" from ARCHIVE_TUMOR where OutKey=@OutKey ");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@OutKey", MySqlDbType.Int32) };
             cmdParms[0].Value = OutKey;
             new RecordsTumorModel();
@@ -303,7 +303,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(RecordsTumorModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordstumor set ");
+            builder.Append("update ARCHIVE_TUMOR set ");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("RecordID=@RecordID,");
             builder.Append("Age=@Age,");
@@ -414,7 +414,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool ExistsOutKey(string IDCardNo, int OutKey)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_recordstumor");
+            builder.Append("select count(1) from ARCHIVE_TUMOR");
             builder.Append(" where IDCardNo=@IDCardNo ");
             builder.Append(" and OutKey=@OutKey");
             MySqlParameter[] cmdParms = new MySqlParameter[] { 

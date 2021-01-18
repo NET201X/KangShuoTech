@@ -14,7 +14,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,IDCardNo,Dine,Groming,Dressing,Tolet,Activity,TotalScore,RecordDate ");
-            builder.Append(" FROM tbl_olderselfcareability ");
+            builder.Append(" FROM OLDER_SELFCAREABILITY ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -26,7 +26,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("SELECT ID,IDCardNo,Dine,Groming,Dressing,Tolet,Activity,TotalScore,RecordDate ");
-            builder.Append(" FROM tbl_olderselfcareability Medicinecn ");
+            builder.Append(" FROM OLDER_SELFCAREABILITY Medicinecn ");
 
             if (strWhere.Trim() != "")
             {

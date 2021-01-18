@@ -12,7 +12,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(RecordsGeneralConditionModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordsgeneralcondition(");
+            builder.Append("insert into ARCHIVE_GENERALCONDITION(");
             builder.Append("PhysicalID,IDCardNo,AnimalHeat,BreathRate,Waistline,Height,OldRecognise,OldEmotion,PulseRate,Weight,BMI,InterScore,GloomyScore,LeftPre,RightPre,WaistIp,LeftHeight,RightHeight,OldHealthStaus,OldSelfCareability,OutKey,LeftReason,RightReason,SelfID,OldMange)");
             builder.Append(" values (");
             builder.Append("@PhysicalID,@IDCardNo,@AnimalHeat,@BreathRate,@Waistline,@Height,@OldRecognise,@OldEmotion,@PulseRate,@Weight,@BMI,@InterScore,@GloomyScore,@LeftPre,@RightPre,@WaistIp,@LeftHeight,@RightHeight,@OldHealthStaus,@OldSelfCareability,@OutKey,@LeftReason,@RightReason,@SelfID,@OldMange )");
@@ -194,7 +194,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,PhysicalID,IDCardNo,AnimalHeat,BreathRate,Waistline,Height,OldRecognise,OldEmotion,PulseRate,Weight,BMI,InterScore,GloomyScore,LeftPre,RightPre,WaistIp,LeftHeight,RightHeight,OldHealthStaus,OldSelfCareability,OutKey,LeftReason,RightReason,SelfID ");
-            builder.Append(" FROM tbl_recordsgeneralcondition ");
+            builder.Append(" FROM ARCHIVE_GENERALCONDITION ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -206,7 +206,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_recordsgeneralcondition WHERE IDCardNo='" + IDCardNo + "' AND OutKey = '" + OutKey + "'  ");
+            builder.Append("SELECT * FROM ARCHIVE_GENERALCONDITION WHERE IDCardNo='" + IDCardNo + "' AND OutKey = '" + OutKey + "'  ");
 
             return MySQLHelper.Query(builder.ToString());
         }
@@ -214,7 +214,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public RecordsGeneralConditionModel GetModel(string IDCardNo)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select ID,PhysicalID,IDCardNo,AnimalHeat,BreathRate,Waistline,Height,OldRecognise,OldEmotion,PulseRate,Weight,BMI,InterScore,GloomyScore,LeftPre,RightPre,WaistIp,LeftHeight,RightHeight,OldHealthStaus,OldSelfCareability,OutKey,LeftReason,RightReason,SelfID,OldMange from tbl_recordsgeneralcondition ");
+            builder.Append("select ID,PhysicalID,IDCardNo,AnimalHeat,BreathRate,Waistline,Height,OldRecognise,OldEmotion,PulseRate,Weight,BMI,InterScore,GloomyScore,LeftPre,RightPre,WaistIp,LeftHeight,RightHeight,OldHealthStaus,OldSelfCareability,OutKey,LeftReason,RightReason,SelfID,OldMange from ARCHIVE_GENERALCONDITION ");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -230,7 +230,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(RecordsGeneralConditionModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordsgeneralcondition set ");
+            builder.Append("update ARCHIVE_GENERALCONDITION set ");
             builder.Append("PhysicalID=@PhysicalID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("AnimalHeat=@AnimalHeat,");
@@ -314,7 +314,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public RecordsGeneralConditionModel GetModelByOutKey(int OutKey)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select ID,PhysicalID,IDCardNo,AnimalHeat,BreathRate,Waistline,Height,OldRecognise,OldEmotion,PulseRate,Weight,BMI,InterScore,GloomyScore,LeftPre,RightPre,WaistIp,LeftHeight,RightHeight,OldHealthStaus,OldSelfCareability,OutKey,LeftReason,RightReason,SelfID,OldMange from tbl_recordsgeneralcondition ");
+            builder.Append("select ID,PhysicalID,IDCardNo,AnimalHeat,BreathRate,Waistline,Height,OldRecognise,OldEmotion,PulseRate,Weight,BMI,InterScore,GloomyScore,LeftPre,RightPre,WaistIp,LeftHeight,RightHeight,OldHealthStaus,OldSelfCareability,OutKey,LeftReason,RightReason,SelfID,OldMange from ARCHIVE_GENERALCONDITION ");
             builder.Append(" where OutKey=@OutKey");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@OutKey", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = OutKey;
@@ -331,7 +331,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append(@"UPDATE 
-                                    tbl_recordsgeneralcondition  D
+                                    ARCHIVE_GENERALCONDITION  D
                              SET 
                                     LeftPre=@LeftPre
                                     ,RightPre=@RightPre
@@ -345,13 +345,13 @@ namespace KangShuoTech.DataAccessProjects.DAL
                                         SELECT 
                                             ID 
                                         FROM
-                                        tbl_recordscustomerbaseinfo M
+                                        ARCHIVE_CUSTOMERBASEINFO M
                                         WHERE M.ID = D.OutKey
                                         AND M.IDCardNo = @IDCardNo
                                         AND M.CheckDate = @CheckDate
                                     );
                              UPDATE 
-                                    tbl_recordsphysicalexam  D
+                                    ARCHIVE_PHYSICALEXAM  D
                              SET 
                                     HeartRate=@PulseRate
                              WHERE
@@ -360,7 +360,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
                                         SELECT 
                                             ID 
                                         FROM
-                                        tbl_recordscustomerbaseinfo M
+                                        ARCHIVE_CUSTOMERBASEINFO M
                                         WHERE M.ID = D.OutKey
                                         AND M.IDCardNo = @IDCardNo
                                         AND M.CheckDate = @CheckDate
@@ -385,7 +385,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append(@"UPDATE 
-                                    tbl_recordsgeneralcondition  D
+                                    ARCHIVE_GENERALCONDITION  D
                              SET 
                                     Weight=@Weight
                                     ,BMI=@BMI
@@ -397,7 +397,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
                                         SELECT 
                                             ID 
                                         FROM
-                                        tbl_recordscustomerbaseinfo M
+                                        ARCHIVE_CUSTOMERBASEINFO M
                                         WHERE M.ID = D.OutKey
                                         AND M.IDCardNo = @IDCardNo
                                         AND M.CheckDate = @CheckDate
@@ -419,7 +419,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append(@"UPDATE 
-                                    tbl_recordsgeneralcondition  D
+                                    ARCHIVE_GENERALCONDITION  D
                              SET 
                                      AnimalHeat=@AnimalHeat
                                
@@ -429,7 +429,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
                                         SELECT 
                                             ID 
                                         FROM
-                                        tbl_recordscustomerbaseinfo M
+                                        ARCHIVE_CUSTOMERBASEINFO M
                                         WHERE M.ID = D.OutKey
                                         AND M.IDCardNo = @IDCardNo
                                         AND M.CheckDate = @CheckDate
@@ -452,9 +452,9 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("SELECT D.ID,D.PhysicalID,D.IDCardNo,D.AnimalHeat,D.BreathRate,D.Waistline,D.Height,D.OldRecognise,D.OldEmotion,");
             builder.Append("D.PulseRate,D.Weight,D.BMI,D.InterScore,D.GloomyScore,D.LeftPre,D.RightPre,D.WaistIp,D.LeftHeight,D.RightHeight,");
             builder.Append("D.OldHealthStaus,D.OldSelfCareability,D.SelfID,M.CheckDate ");
-            builder.Append(" FROM tbl_recordsgeneralcondition D ");
-            builder.Append(" INNER JOIN tbl_recordscustomerbaseinfo M ON M.ID=D.OutKey ");
-            builder.Append(" AND M.CheckDate=(SELECT MAX(CheckDate) FROM tbl_recordscustomerbaseinfo ");
+            builder.Append(" FROM ARCHIVE_GENERALCONDITION D ");
+            builder.Append(" INNER JOIN ARCHIVE_CUSTOMERBASEINFO M ON M.ID=D.OutKey ");
+            builder.Append(" AND M.CheckDate=(SELECT MAX(CheckDate) FROM ARCHIVE_CUSTOMERBASEINFO ");
             builder.Append("    WHERE IDCardNo=@IDCardNo AND LEFT(CheckDate,4)=@checkDate) ");
             builder.Append(" WHERE M.IDCardNo=@IDCardNo");
 
@@ -477,7 +477,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("select a.ID,a.PhysicalID,a.IDCardNo,a.AnimalHeat,a.BreathRate,a.Waistline,a.Height,a.OldRecognise,a.OldEmotion,");
             builder.Append("a.PulseRate,a.Weight,a.BMI,a.InterScore,a.GloomyScore,a.LeftPre,a.RightPre,a.WaistIp,a.LeftHeight,a.RightHeight,");
             builder.Append("a.OldHealthStaus,a.OldSelfCareability,a.OutKey,a.SelfID ");
-            builder.Append("from tbl_recordsgeneralcondition a inner join  tbl_recordscustomerbaseinfo b on a.IDCardNo = b.IDCardNo ");
+            builder.Append("from ARCHIVE_GENERALCONDITION a inner join  ARCHIVE_CUSTOMERBASEINFO b on a.IDCardNo = b.IDCardNo ");
             builder.Append(" where a.IDCardNo=@IDCardNo order by b.CheckDate,a.OutKey desc LIMIT 0,1 ");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
@@ -501,7 +501,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append(@"UPDATE 
-                                            tbl_recordsgeneralcondition  D
+                                            ARCHIVE_GENERALCONDITION  D
                                        SET 
                                             Weight=@Weight
                                             ,BMI=@BMI
@@ -517,7 +517,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
                                         SELECT 
                                             ID 
                                         FROM
-                                        tbl_recordscustomerbaseinfo M
+                                        ARCHIVE_CUSTOMERBASEINFO M
                                         WHERE M.ID = D.OutKey
                                         AND M.IDCardNo = @IDCardNo
                                         AND M.CheckDate = @CheckDate
@@ -544,7 +544,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         /// <returns></returns>
         public bool UpdateBMI(int outKey,decimal? bMI) {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordsgeneralcondition set ");
+            builder.Append("update ARCHIVE_GENERALCONDITION set ");
             builder.Append("BMI=@BMI");
             builder.Append(" where OutKey=@OutKey ");
             MySqlParameter[] cmdParms = new MySqlParameter[] {

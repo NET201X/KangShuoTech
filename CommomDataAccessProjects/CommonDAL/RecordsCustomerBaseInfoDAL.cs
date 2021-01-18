@@ -20,7 +20,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_RecordsCustomerBaseInfo(");
+            builder.Append("INSERT INTO ARCHIVE_CUSTOMERBASEINFO(");
             builder.Append("CustomerID,IDCardNo,CheckDate,Doctor,Symptom,Other,PhysicalID,CreateBy,CreateDate,LastUpdateBy,LastUpdateDate,PhysicalClass,IsDel)");
             builder.Append(" VALUES (");
             builder.Append("@CustomerID,@IDCardNo,@CheckDate,@Doctor,@Symptom,@Other,@PhysicalID,@CreateBy,@CreateDate,@LastUpdateBy,@LastUpdateDate,@PhysicalClass,@IsDel)");
@@ -67,7 +67,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("UPDATE tbl_RecordsCustomerBaseInfo SET CustomerID=@CustomerID");
+            builder.Append("UPDATE ARCHIVE_CUSTOMERBASEINFO SET CustomerID=@CustomerID");
             builder.Append(" WHERE ID=@ID");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] {
@@ -82,7 +82,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT DISTINCT(VillageName) FROM tbl_recordsbaseinfo");
+            builder.Append("SELECT DISTINCT(VillageName) FROM ARCHIVE_BASEINFO");
             builder.Append(" WHERE 1=1 ");
 
             if (!string.IsNullOrEmpty(strWhere)) builder.Append(strWhere);
@@ -101,8 +101,8 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append("SELECT ID,CheckDate,IDCardNo,Doctor ");
-            builder.Append(" FROM tbl_RecordsCustomerBaseInfo ");
-            builder.Append(" WHERE ID=(SELECT ID FROM tbl_RecordsCustomerBaseInfo ");
+            builder.Append(" FROM ARCHIVE_CUSTOMERBASEINFO ");
+            builder.Append(" WHERE ID=(SELECT ID FROM ARCHIVE_CUSTOMERBASEINFO ");
             builder.Append("    WHERE IDCardNo=@IDCardNo AND LEFT(CheckDate,4)=@CheckDate ORDER BY CheckDate DESC LIMIT 0,1) ");
 
             if (Convert.ToString(CheckDate).Length > 3) CheckDate = CheckDate.Substring(0, 4);
@@ -121,7 +121,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_RecordsCustomerBaseInfo ");
+            builder.Append("SELECT * FROM ARCHIVE_CUSTOMERBASEINFO ");
 
             if (!string.IsNullOrEmpty(strWhere.Trim())) builder.Append(" WHERE 1=1 AND " + strWhere);
 
@@ -134,7 +134,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_RecordsCustomerBaseInfo ");
+            builder.Append("SELECT * FROM ARCHIVE_CUSTOMERBASEINFO ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             if (CheckDate != "") builder.Append("AND CheckDate=@CheckDate");
@@ -156,7 +156,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_RecordsCustomerBaseInfo ");
+            builder.Append("SELECT * FROM ARCHIVE_CUSTOMERBASEINFO ");
             builder.Append(" WHERE IDCardNo=@IDCardNo ");
 
             if (Convert.ToString(CheckDate).Length > 3) CheckDate = CheckDate.Substring(0, 4);
@@ -179,7 +179,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_RecordsCustomerBaseInfo ");
+            builder.Append("SELECT * FROM ARCHIVE_CUSTOMERBASEINFO ");
 
             if (strWhere.Trim() != "") builder.Append(" WHERE " + strWhere);
 
@@ -190,7 +190,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT * FROM tbl_RecordsCustomerBaseInfo ");
+            builder.Append("SELECT * FROM ARCHIVE_CUSTOMERBASEINFO ");
             builder.Append(" WHERE ID=@ID");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.String) };
@@ -206,7 +206,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append("SELECT COUNT(1)");
-            builder.Append(" FROM tbl_RecordsCustomerBaseInfo  B LEFT JOIN tbl_recordsbaseinfo T ON T.IDCardNo = B.IDCardNo ");
+            builder.Append(" FROM ARCHIVE_CUSTOMERBASEINFO  B LEFT JOIN ARCHIVE_BASEINFO T ON T.IDCardNo = B.IDCardNo ");
 
             if (strWhere.Trim() != "")
             {
@@ -228,7 +228,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             builder.Append("(case T.CreateDate when null then null when '' then null else T.CreateDate end) CreateDate, ");
             builder.Append("(case T.LastUpdateDate when null then null when '' then null else T.LastUpdateDate end ) AS LastUpdateDate, ");
             builder.Append("T.PopulationType,T.CreateMenName, B.CheckDate,current_date()-T.Birthday AS age ");
-            builder.Append(" FROM tbl_RecordsCustomerBaseInfo B LEFT JOIN tbl_recordsbaseinfo T ON T.IDCardNo = B.IDCardNo");
+            builder.Append(" FROM ARCHIVE_CUSTOMERBASEINFO B LEFT JOIN ARCHIVE_BASEINFO T ON T.IDCardNo = B.IDCardNo");
 
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
@@ -279,7 +279,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 
             #region 体检主档
 
-            sb.Append("UPDATE tbl_recordscustomerbaseinfo SET ");
+            sb.Append("UPDATE ARCHIVE_CUSTOMERBASEINFO SET ");
 
             if (StringPlus.toString(customerBaseInfoModel.Symptom) != "")
             {
@@ -291,7 +291,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                 sb.Append("Other='" + customerBaseInfoModel.Other + "',");
             }
 
-            if (sb.ToString() != "UPDATE tbl_recordscustomerbaseinfo SET ")
+            if (sb.ToString() != "UPDATE ARCHIVE_CUSTOMERBASEINFO SET ")
             {
                 string upStr = sb.ToString().Substring(0, sb.ToString().Length - 1);
                 upStr += " WHERE IDCardNo = '" + deciveModel.IDCardNo + "' AND CheckDate='" + deciveModel.RecordDate + "'";
@@ -469,7 +469,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             generalConditionModel.OldHealthStaus = deciveModel.OldHealthStaus;
             generalConditionModel.OldSelfCareability = deciveModel.OldSelfCareability;
 
-            sb.Append("UPDATE tbl_recordsgeneralcondition D SET ");
+            sb.Append("UPDATE ARCHIVE_GENERALCONDITION D SET ");
 
             if (StringPlus.toString(generalConditionModel.OldRecognise) != "")
             {
@@ -496,7 +496,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                 sb.Append("OldSelfCareability='" + generalConditionModel.OldSelfCareability + "',");
             }
 
-            if (sb.ToString() != "UPDATE tbl_recordsgeneralcondition D SET ")
+            if (sb.ToString() != "UPDATE ARCHIVE_GENERALCONDITION D SET ")
             {
                 string upStr = sb.ToString().Substring(0, sb.ToString().Length - 1);
                 upStr += string.Format(@" WHERE EXISTS
@@ -504,7 +504,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                                         SELECT 
                                             ID 
                                         FROM
-                                            tbl_recordscustomerbaseinfo M
+                                            ARCHIVE_CUSTOMERBASEINFO M
                                         WHERE M.ID = D.OutKey
                                             AND M.IDCardNo = '{0}'
                                             AND M.CheckDate = '{1}'
@@ -536,7 +536,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             lifeStyleModel.IsDrinkForbiddon = deciveModel.IsDrinkForbiddon;//13
             decimal decimal1, decimal2, decimal3, decimal4, decimal5, decimal6, decimal7, decimal8;
 
-            sb.Append("UPDATE tbl_recordslifestyle D SET ");
+            sb.Append("UPDATE ARCHIVE_LIFESTYLE D SET ");
 
             // 锻炼频率 1:每天,2:每周一次以上,3:偶尔,4:不锻炼
             if (StringPlus.toString(lifeStyleModel.ExerciseRate) != "")
@@ -795,7 +795,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                 sb.Append("OtherProtectEx='" + lifeStyleModel.OtherProtectEx + "',");
             }
 
-            if (sb.ToString() != "UPDATE tbl_recordslifestyle D SET ")
+            if (sb.ToString() != "UPDATE ARCHIVE_LIFESTYLE D SET ")
             {
                 string upStr = sb.ToString().Substring(0, sb.ToString().Length - 1);
 
@@ -804,7 +804,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                                                                     SELECT 
                                                                         ID 
                                                                     FROM
-                                                                        tbl_recordscustomerbaseinfo M
+                                                                        ARCHIVE_CUSTOMERBASEINFO M
                                                                     WHERE M.ID = D.OutKey
                                                                         AND M.IDCardNo = '{0}'
                                                                         AND M.CheckDate = '{1}'
@@ -1038,7 +1038,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             healthQuestionModel.VesselOther = deciveModel.VesselDisEx;
             healthQuestionModel.EyeOther = deciveModel.EyeDisEx;
 
-            sb.Append("UPDATE tbl_recordshealthquestion D SET ");
+            sb.Append("UPDATE ARCHIVE_HEALTHQUESTION D SET ");
 
             if (StringPlus.toString(healthQuestionModel.BrainDis) != "")
             {
@@ -1076,7 +1076,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                 sb.Append("ElseOther='" + healthQuestionModel.ElseOther + "',");
             }
 
-            if (sb.ToString() != "UPDATE tbl_recordshealthquestion D SET ")
+            if (sb.ToString() != "UPDATE ARCHIVE_HEALTHQUESTION D SET ")
             {
                 string upStr = sb.ToString().Substring(0, sb.ToString().Length - 1);
 
@@ -1085,7 +1085,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                                                                     SELECT 
                                                                         ID 
                                                                     FROM
-                                                                        tbl_recordscustomerbaseinfo M
+                                                                        ARCHIVE_CUSTOMERBASEINFO M
                                                                     WHERE M.ID = D.OutKey
                                                                         AND M.IDCardNo = '{0}'
                                                                         AND M.CheckDate = '{1}'
@@ -1103,7 +1103,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 
             #region 脏器功能
 
-            //tbl_recordsviscerafunction,Lips,ToothResides,Pharyngeal,LeftView,RightView,LeftEyecorrect,RightEyecorrect,Listen,
+            //ARCHIVE_VISCERAFUNCTION,Lips,ToothResides,Pharyngeal,LeftView,RightView,LeftEyecorrect,RightEyecorrect,Listen,
             //SportFunction,HypodontiaEx,SaprodontiaEx,DentureEx,12
             visceraFunctionModel = new RecordsVisceraFunctionModel();
             visceraFunctionModel.IDCardNo = deciveModel.IDCardNo;
@@ -1116,7 +1116,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             visceraFunctionModel.SaprodontiaEx = deciveModel.SaprodontiaEx;
             visceraFunctionModel.DentureEx = deciveModel.DentureEx;
 
-            sb.Append("UPDATE tbl_recordsviscerafunction D SET ");
+            sb.Append("UPDATE ARCHIVE_VISCERAFUNCTION D SET ");
 
             if (StringPlus.toString(visceraFunctionModel.Lips) != "")
             {
@@ -1165,7 +1165,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                 sb.Append("RightEyecorrect='" + visceraFunctionModel.RightEyecorrect + "',");
             }
 
-            if (sb.ToString() != "UPDATE tbl_recordsviscerafunction D SET ")
+            if (sb.ToString() != "UPDATE ARCHIVE_VISCERAFUNCTION D SET ")
             {
                 string upStr = sb.ToString().Substring(0, sb.ToString().Length - 1);
 
@@ -1174,7 +1174,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                                                                     SELECT 
                                                                         ID 
                                                                     FROM
-                                                                        tbl_recordscustomerbaseinfo M
+                                                                        ARCHIVE_CUSTOMERBASEINFO M
                                                                     WHERE M.ID = D.OutKey
                                                                         AND M.IDCardNo = '{0}'
                                                                         AND M.CheckDate = '{1}'
@@ -1216,7 +1216,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             physicalExamModel.VoicedEx = deciveModel.VoicedEx;
             physicalExamModel.Hunchback = deciveModel.Hunchback;
 
-            sb.Append("UPDATE tbl_recordsphysicalexam D SET ");
+            sb.Append("UPDATE ARCHIVE_PHYSICALEXAM D SET ");
 
             if (StringPlus.toString(physicalExamModel.BarrelChest) != "")
             {
@@ -1278,7 +1278,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             {
                 sb.Append("Hunchback='" + physicalExamModel.Hunchback + "',");
             }
-            if (sb.ToString() != "UPDATE tbl_recordsphysicalexam D SET ")
+            if (sb.ToString() != "UPDATE ARCHIVE_PHYSICALEXAM D SET ")
             {
                 string upStr = sb.ToString().Substring(0, sb.ToString().Length - 1);
 
@@ -1287,7 +1287,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                                                                     SELECT 
                                                                         ID 
                                                                     FROM
-                                                                        tbl_recordscustomerbaseinfo M
+                                                                        ARCHIVE_CUSTOMERBASEINFO M
                                                                     WHERE M.ID = D.OutKey
                                                                         AND M.IDCardNo = '{0}'
                                                                         AND M.CheckDate = '{1}'

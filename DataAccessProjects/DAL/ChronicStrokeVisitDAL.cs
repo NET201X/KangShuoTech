@@ -14,7 +14,7 @@
         public int Add(ChronicStrokeVisitModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_chronicstrokevisit(");
+            builder.Append("insert into CD_STROKE_FOLLOWUP(");
             builder.Append("CustomerID,IDCardNo,FollowupDate,FollowUpDoctor,NextFollowUpDate,Symptom,SymptomOther,");
             builder.Append("Hypertension,Hypotension,Weight,SignOther,SmokeDrinkAttention,SportAttention,");
             builder.Append("EatSaltAttention,PsychicAdjust,ObeyDoctorBehavio,AssistantExam,MedicationCompliance,");
@@ -152,7 +152,7 @@
         public int AddServer(ChronicStrokeVisitModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_chronicstrokevisit(");
+            builder.Append("insert into CD_STROKE_FOLLOWUP(");
             builder.Append("CustomerID,IDCardNo,FollowupDate,FollowUpDoctor,NextFollowUpDate,Symptom,SymptomOther,");
             builder.Append("Hypertension,Hypotension,Weight,SignOther,SmokeDrinkAttention,SportAttention,");
             builder.Append("EatSaltAttention,PsychicAdjust,ObeyDoctorBehavio,AssistantExam,MedicationCompliance,");
@@ -515,7 +515,7 @@
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_chronicstrokevisit ");
+            builder.Append("delete from CD_STROKE_FOLLOWUP ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -525,7 +525,7 @@
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_chronicstrokevisit ");
+            builder.Append("delete from CD_STROKE_FOLLOWUP ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -533,7 +533,7 @@
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_chronicstrokevisit");
+            builder.Append("select count(1) from CD_STROKE_FOLLOWUP");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -542,7 +542,7 @@
         public bool ExistVisitdate(string visitdate, string IDCardNo)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_chronicstrokevisit ");
+            builder.Append("select count(1) from CD_STROKE_FOLLOWUP ");
             builder.Append(" where FollowupDate = @FollowupDate and IDCardNo =@IDCardNo ");
             MySqlParameter[] cmdParms = new MySqlParameter[] { 
                 new MySqlParameter("@FollowupDate", Convert.ToDateTime( visitdate).ToShortDateString()),
@@ -561,7 +561,7 @@
             builder.Append("Strokelocation,StrokeType,MedicalHistory,Syndrome,SyndromeOther,NewSymptom,NewSymptomOther,");
             builder.Append("SmokeDay,DrinkDay,SportWeek,SportMinute,FPGL,Height,BMI,Waistline,LifeSelfCare,LimbRecover,");
             builder.Append("RecoveryCure,RecoveryCureOther,DoctorView,IsReferral,FollowupTypeOther ");
-            builder.Append(" FROM tbl_chronicstrokevisit ");
+            builder.Append(" FROM CD_STROKE_FOLLOWUP ");
             builder.Append(" where FollowupDate = @FollowupDate and IDCardNo =@IDCardNo ");
             MySqlParameter[] cmdParms = new MySqlParameter[] { 
                 new MySqlParameter("@FollowupDate", MySqlDbType.Date),
@@ -589,7 +589,7 @@
             builder.Append("Strokelocation,StrokeType,MedicalHistory,Syndrome,SyndromeOther,NewSymptom,NewSymptomOther,");
             builder.Append("SmokeDay,DrinkDay,SportWeek,SportMinute,FPGL,Height,BMI,Waistline,LifeSelfCare,LimbRecover,");
             builder.Append("RecoveryCure,RecoveryCureOther,DoctorView,IsReferral,FollowupTypeOther ");
-            builder.Append(" FROM tbl_chronicstrokevisit ");
+            builder.Append(" FROM CD_STROKE_FOLLOWUP ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -606,7 +606,7 @@
             builder.Append("(case C.FollowupDate when null then null when '' then null else C.FollowupDate end) FollowupDate, ");
             builder.Append("T.PopulationType,T.FamilyIDCardNo,T.HouseRelation,T.HouseRealOther,T.TownName,");
             builder.Append("T.VillageName,T.CreateUnitName,T.CreateMenName ");
-            builder.Append(" from tbl_chronicstrokevisit C inner join tbl_recordsbaseinfo T on T.IDCardNo = C.IDCardNo ");
+            builder.Append(" from CD_STROKE_FOLLOWUP C inner join ARCHIVE_BASEINFO T on T.IDCardNo = C.IDCardNo ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE 1=1 " + strWhere);
@@ -626,7 +626,7 @@
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_chronicstrokevisit");
+            return MySQLHelper.GetMaxID("ID", "CD_STROKE_FOLLOWUP");
         }
 
         public ChronicStrokeVisitModel GetModel(string IDCardNo)
@@ -640,14 +640,14 @@
             builder.Append("Strokelocation,StrokeType,MedicalHistory,Syndrome,SyndromeOther,NewSymptom,NewSymptomOther,");
             builder.Append("SmokeDay,DrinkDay,SportWeek,SportMinute,FPGL,Height,BMI,Waistline,LifeSelfCare,LimbRecover,");
             builder.Append("RecoveryCure,RecoveryCureOther,DoctorView,IsReferral,FollowupTypeOther ");
-            builder.Append(" from tbl_chronicstrokevisit where IDCardNo=@IDCardNo order by FollowupDate desc limit 0,1 ");
-            //builder.Append("select tbl_chronicstrokevisit.ID,tbl_chronicstrokevisit.CustomerID,tbl_chronicstrokevisit.IDCardNo,FollowupDate,FollowUpDoctor,NextFollowUpDate,Symptom,");
-            //builder.Append("SymptomOther,tbl_recordsgeneralcondition.LeftHeight as Hypertension,tbl_recordsgeneralcondition.LeftPre as Hypotension,tbl_recordsgeneralcondition.Weight,SignOther,SmokeDrinkAttention,SportAttention,");
+            builder.Append(" from CD_STROKE_FOLLOWUP where IDCardNo=@IDCardNo order by FollowupDate desc limit 0,1 ");
+            //builder.Append("select CD_STROKE_FOLLOWUP.ID,CD_STROKE_FOLLOWUP.CustomerID,CD_STROKE_FOLLOWUP.IDCardNo,FollowupDate,FollowUpDoctor,NextFollowUpDate,Symptom,");
+            //builder.Append("SymptomOther,ARCHIVE_GENERALCONDITION.LeftHeight as Hypertension,ARCHIVE_GENERALCONDITION.LeftPre as Hypotension,ARCHIVE_GENERALCONDITION.Weight,SignOther,SmokeDrinkAttention,SportAttention,");
             //builder.Append("EatSaltAttention,PsychicAdjust,ObeyDoctorBehavio,AssistantExam,MedicationCompliance,Adr,AdrEx,");
             //builder.Append("FollowupType,ReferralReason,ReferralOrg,FollowupWay,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,");
-            //builder.Append("IsDel,RecordID,EatingDrug from tbl_chronicstrokevisit  ");
-            //builder.Append("	LEFT JOIN tbl_recordsgeneralcondition ON tbl_recordsgeneralcondition.IDCardNo=tbl_chronicstrokevisit.IDCardNo ");
-            //builder.Append(" where tbl_chronicstrokevisit.IDCardNo=@IDCardNo");
+            //builder.Append("IsDel,RecordID,EatingDrug from CD_STROKE_FOLLOWUP  ");
+            //builder.Append("	LEFT JOIN ARCHIVE_GENERALCONDITION ON ARCHIVE_GENERALCONDITION.IDCardNo=CD_STROKE_FOLLOWUP.IDCardNo ");
+            //builder.Append(" where CD_STROKE_FOLLOWUP.IDCardNo=@IDCardNo");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -670,7 +670,7 @@
             builder.Append("Strokelocation,StrokeType,MedicalHistory,Syndrome,SyndromeOther,NewSymptom,NewSymptomOther,");
             builder.Append("SmokeDay,DrinkDay,SportWeek,SportMinute,FPGL,Height,BMI,Waistline,LifeSelfCare,LimbRecover,");
             builder.Append("RecoveryCure,RecoveryCureOther,DoctorView,IsReferral,FollowupTypeOther ");
-            builder.Append(" from tbl_chronicstrokevisit where IDCardNo=@IDCardNo and FollowupDate=@FollowupDate ");
+            builder.Append(" from CD_STROKE_FOLLOWUP where IDCardNo=@IDCardNo and FollowupDate=@FollowupDate ");
             MySqlParameter[] cmdParms = new MySqlParameter[] {
                 new MySqlParameter("@IDCardNo", MySqlDbType.String),
                 new MySqlParameter("@FollowupDate", MySqlDbType.Date)
@@ -696,7 +696,7 @@
             builder.Append("Strokelocation,StrokeType,MedicalHistory,Syndrome,SyndromeOther,NewSymptom,NewSymptomOther,");
             builder.Append("SmokeDay,DrinkDay,SportWeek,SportMinute,FPGL,Height,BMI,Waistline,LifeSelfCare,LimbRecover,");
             builder.Append("RecoveryCure,RecoveryCureOther,DoctorView,IsReferral,FollowupTypeOther ");
-            builder.Append(" from tbl_chronicstrokevisit where ID=@ID");
+            builder.Append(" from CD_STROKE_FOLLOWUP where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 11) };
             cmdParms[0].Value = ID;
             new ChronicStrokeVisitModel();
@@ -711,8 +711,8 @@
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_chronicstrokevisit C ");
-            builder.Append("left join tbl_recordsbaseinfo T on T.IDCardNo = C.IDCardNo   ");
+            builder.Append("select count(1) FROM CD_STROKE_FOLLOWUP C ");
+            builder.Append("left join ARCHIVE_BASEINFO T on T.IDCardNo = C.IDCardNo   ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where 1=1 " + strWhere);
@@ -728,7 +728,7 @@
         public bool Update(ChronicStrokeVisitModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_chronicstrokevisit set ");
+            builder.Append("update CD_STROKE_FOLLOWUP set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("FollowupDate=@FollowupDate,");
@@ -882,7 +882,7 @@
         public bool UpdateServer(ChronicStrokeVisitModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_chronicstrokevisit set ");
+            builder.Append("update CD_STROKE_FOLLOWUP set ");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("FollowupDate=@FollowupDate,");
@@ -1036,7 +1036,7 @@
         public DataSet DtStrokeCount()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select IDCardNo , NextFollowUpDate FROM  tbl_chronicstrokevisit order by NextFollowUpDate desc ");
+            builder.Append("select IDCardNo , NextFollowUpDate FROM  CD_STROKE_FOLLOWUP order by NextFollowUpDate desc ");
             return MySQLHelper.Query(builder.ToString());
         }
     }

@@ -12,7 +12,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(RecordsVisceraFunctionModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordsviscerafunction(");
+            builder.Append("insert into ARCHIVE_VISCERAFUNCTION(");
             builder.Append("PhysicalID,IDCardNo,Lips,ToothResides,ToothResidesOther,Pharyngeal,LeftView,Listen,RightView,SportFunction,LeftEyecorrect,RightEyecorrect,OutKey,HypodontiaEx,SaprodontiaEx,DentureEx,LipsEx,PharyngealEx )");
             builder.Append(" values (");
             builder.Append("@PhysicalID,@IDCardNo,@Lips,@ToothResides,@ToothResidesOther,@Pharyngeal,@LeftView,@Listen,@RightView,@SportFunction,@LeftEyecorrect,@RightEyecorrect,@OutKey,@HypodontiaEx,@SaprodontiaEx,@DentureEx,@LipsEx,@PharyngealEx )");
@@ -67,7 +67,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int AddServer(RecordsVisceraFunctionModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordsviscerafunction(");
+            builder.Append("insert into ARCHIVE_VISCERAFUNCTION(");
             builder.Append("PhysicalID,IDCardNo,Lips,ToothResides,ToothResidesOther,Pharyngeal,LeftView,Listen,RightView,SportFunction,LeftEyecorrect,RightEyecorrect,OutKey,HypodontiaEx,SaprodontiaEx,DentureEx,LipsEx,PharyngealEx )");
             builder.Append(" values (");
             builder.Append("@PhysicalID,@IDCardNo,@Lips,@ToothResides,@ToothResidesOther,@Pharyngeal,@LeftView,@Listen,@RightView,@SportFunction,@LeftEyecorrect,@RightEyecorrect,@OutKey,@HypodontiaEx,@SaprodontiaEx,@DentureEx,@LipsEx,@PharyngealEx )");
@@ -207,7 +207,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordsviscerafunction ");
+            builder.Append("delete from ARCHIVE_VISCERAFUNCTION ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -217,7 +217,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordsviscerafunction ");
+            builder.Append("delete from ARCHIVE_VISCERAFUNCTION ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -225,7 +225,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_recordsviscerafunction");
+            builder.Append("select count(1) from ARCHIVE_VISCERAFUNCTION");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -236,7 +236,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,PhysicalID,IDCardNo,Lips,ToothResides,ToothResidesOther,Pharyngeal,LeftView,Listen,RightView,SportFunction,LeftEyecorrect,RightEyecorrect,HypodontiaEx,SaprodontiaEx,DentureEx,LipsEx,PharyngealEx,OutKey ");
-            builder.Append(" FROM tbl_recordsviscerafunction ");
+            builder.Append(" FROM ARCHIVE_VISCERAFUNCTION ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -257,7 +257,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_recordsviscerafunction T ");
+            builder.Append(")AS Row, T.*  from ARCHIVE_VISCERAFUNCTION T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -269,13 +269,13 @@ namespace KangShuoTech.DataAccessProjects.DAL
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_recordsviscerafunction");
+            return MySQLHelper.GetMaxID("ID", "ARCHIVE_VISCERAFUNCTION");
         }
 
         public RecordsVisceraFunctionModel GetModel(string IDCardNo)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select ID,PhysicalID,IDCardNo,Lips,ToothResides,ToothResidesOther,Pharyngeal,LeftView,Listen,RightView,SportFunction,LeftEyecorrect,RightEyecorrect,HypodontiaEx,SaprodontiaEx,DentureEx,LipsEx,PharyngealEx,OutKey from tbl_recordsviscerafunction ");
+            builder.Append("select ID,PhysicalID,IDCardNo,Lips,ToothResides,ToothResidesOther,Pharyngeal,LeftView,Listen,RightView,SportFunction,LeftEyecorrect,RightEyecorrect,HypodontiaEx,SaprodontiaEx,DentureEx,LipsEx,PharyngealEx,OutKey from ARCHIVE_VISCERAFUNCTION ");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -291,7 +291,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_recordsviscerafunction ");
+            builder.Append("select count(1) FROM ARCHIVE_VISCERAFUNCTION ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -307,7 +307,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(RecordsVisceraFunctionModel model) //ToothResidesOther,LipsEx,PharyngealEx
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordsviscerafunction set ");
+            builder.Append("update ARCHIVE_VISCERAFUNCTION set ");
             builder.Append("PhysicalID=@PhysicalID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("Lips=@Lips,");
@@ -371,7 +371,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool UpdateServer(RecordsVisceraFunctionModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordsviscerafunction set ");
+            builder.Append("update ARCHIVE_VISCERAFUNCTION set ");
             builder.Append("PhysicalID=@PhysicalID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("Lips=@Lips,");
@@ -434,7 +434,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public RecordsVisceraFunctionModel GetModelByOutKey(int OutKey)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select ID,PhysicalID,IDCardNo,Lips,ToothResides,ToothResidesOther,Pharyngeal,LeftView,Listen,RightView,SportFunction,LeftEyecorrect,RightEyecorrect,HypodontiaEx,SaprodontiaEx,DentureEx,LipsEx,PharyngealEx,OutKey from tbl_recordsviscerafunction ");
+            builder.Append("select ID,PhysicalID,IDCardNo,Lips,ToothResides,ToothResidesOther,Pharyngeal,LeftView,Listen,RightView,SportFunction,LeftEyecorrect,RightEyecorrect,HypodontiaEx,SaprodontiaEx,DentureEx,LipsEx,PharyngealEx,OutKey from ARCHIVE_VISCERAFUNCTION ");
             builder.Append(" where OutKey=@OutKey");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@OutKey", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = OutKey;
@@ -449,7 +449,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool ExistsOutKey(string IDCardNo, int OutKey)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_recordsviscerafunction");
+            builder.Append("select count(1) from ARCHIVE_VISCERAFUNCTION");
             builder.Append(" where IDCardNo=@IDCardNo ");
             builder.Append(" and OutKey=@OutKey");
             MySqlParameter[] cmdParms = new MySqlParameter[] { 
@@ -465,7 +465,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
 
             builder.Append(@"UPDATE 
-                                    tbl_recordsviscerafunction  D
+                                    ARCHIVE_VISCERAFUNCTION  D
                              SET 
                                  Lips=@Lips,ToothResides=@ToothResides,Pharyngeal=@Pharyngeal,
                                  Listen=@Listen,SportFunction=@SportFunction,HypodontiaEx=@HypodontiaEx,
@@ -476,7 +476,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
                                         SELECT 
                                             ID 
                                         FROM
-                                        tbl_recordscustomerbaseinfo M
+                                        ARCHIVE_CUSTOMERBASEINFO M
                                         WHERE M.ID = D.OutKey
                                         AND M.IDCardNo = @IDCardNo
                                         AND M.CheckDate = @CheckDate

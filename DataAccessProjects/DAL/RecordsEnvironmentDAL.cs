@@ -12,7 +12,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(RecordsEnvironmentModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordsenvironment(");
+            builder.Append("insert into ARCHIVE_ENVIRONMENT(");
             builder.Append("RecordID,IDCardNo,BlowMeasure,FuelType,DrinkWater,Toilet,LiveStockRail,SignDate)");
             builder.Append(" values (");
             builder.Append("@RecordID,@IDCardNo,@BlowMeasure,@FuelType,@DrinkWater,@Toilet,@LiveStockRail,@SignDate)");
@@ -46,7 +46,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int AddServer(RecordsEnvironmentModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordsenvironment(");
+            builder.Append("insert into ARCHIVE_ENVIRONMENT(");
             builder.Append("RecordID,IDCardNo,BlowMeasure,FuelType,DrinkWater,Toilet,LiveStockRail,SignDate)");
             builder.Append(" values (");
             builder.Append("@RecordID,@IDCardNo,@BlowMeasure,@FuelType,@DrinkWater,@Toilet,@LiveStockRail,@SignDate)");
@@ -126,7 +126,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordsenvironment ");
+            builder.Append("delete from ARCHIVE_ENVIRONMENT ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -136,7 +136,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordsenvironment ");
+            builder.Append("delete from ARCHIVE_ENVIRONMENT ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -144,7 +144,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_recordsenvironment");
+            builder.Append("select count(1) from ARCHIVE_ENVIRONMENT");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -155,7 +155,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,RecordID,IDCardNo,BlowMeasure,FuelType,DrinkWater,Toilet,LiveStockRail,SignDate ");
-            builder.Append(" FROM tbl_recordsenvironment ");
+            builder.Append(" FROM ARCHIVE_ENVIRONMENT ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -176,7 +176,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_recordsenvironment T ");
+            builder.Append(")AS Row, T.*  from ARCHIVE_ENVIRONMENT T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -188,13 +188,13 @@ namespace KangShuoTech.DataAccessProjects.DAL
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_recordsenvironment");
+            return MySQLHelper.GetMaxID("ID", "ARCHIVE_ENVIRONMENT");
         }
 
         public RecordsEnvironmentModel GetModel(string IDCardNo)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select  ID,RecordID,IDCardNo,BlowMeasure,FuelType,DrinkWater,Toilet,LiveStockRail,SignDate from tbl_recordsenvironment ");
+            builder.Append("select  ID,RecordID,IDCardNo,BlowMeasure,FuelType,DrinkWater,Toilet,LiveStockRail,SignDate from ARCHIVE_ENVIRONMENT ");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -210,7 +210,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_recordsenvironment ");
+            builder.Append("select count(1) FROM ARCHIVE_ENVIRONMENT ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -226,7 +226,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(RecordsEnvironmentModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordsenvironment set ");
+            builder.Append("update ARCHIVE_ENVIRONMENT set ");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("BlowMeasure=@BlowMeasure,");
@@ -263,7 +263,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool UpdateServer(RecordsEnvironmentModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordsenvironment set ");
+            builder.Append("update ARCHIVE_ENVIRONMENT set ");
             builder.Append("RecordID=@RecordID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("BlowMeasure=@BlowMeasure,");

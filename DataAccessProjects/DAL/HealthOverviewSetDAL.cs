@@ -15,7 +15,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(HealthOverviewSetModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append(" insert into tbl_HHOverviewSet(");
+            builder.Append(" insert into HEALTHHOUSE_OVERVIEW_SET(");
             builder.Append("Type,maxValues,minValues,MaxEx,MinEx,Content,Col2,Col3,CreateDate,CreateBy,UpdateDate,UpdateBy)");
             builder.Append(" values (");
             builder.Append("@Type,@maxValues,@minValues,@MaxEx,@MinEx,@Content,@Col2,@Col3,@CreateDate,@CreateBy,@UpdateDate,@UpdateBy)");
@@ -57,7 +57,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append(" select * ");
-            builder.Append(" from tbl_HHOverviewSet ");
+            builder.Append(" from HEALTHHOUSE_OVERVIEW_SET ");
             builder.Append(" where PID=@PID ");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] {
@@ -78,7 +78,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append(" select * ");
-            builder.Append(" from tbl_HHOverviewSet ");
+            builder.Append(" from HEALTHHOUSE_OVERVIEW_SET ");
             builder.Append(" where 1=1  ");
             if (!string.IsNullOrEmpty(strwhere))
             {
@@ -97,7 +97,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(HealthOverviewSetModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append(" update tbl_HHOverviewSet set ");
+            builder.Append(" update HEALTHHOUSE_OVERVIEW_SET set ");
             builder.Append("Type=@Type,");
             builder.Append("maxValues=@maxValues,");
             builder.Append("minValues=@minValues,");
@@ -151,7 +151,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append(" select * ");
-            builder.Append(" from tbl_HHOverviewSet ");
+            builder.Append(" from HEALTHHOUSE_OVERVIEW_SET ");
             builder.Append(" where 1=1 ");
 
             if(!string.IsNullOrEmpty(strWhere))

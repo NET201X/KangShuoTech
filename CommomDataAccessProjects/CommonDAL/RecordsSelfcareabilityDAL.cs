@@ -13,12 +13,12 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("INSERT INTO tbl_RecordsSelfCareAbility(");
+            builder.Append("INSERT INTO ARCHIVE_SELFCAREABILITY(");
             builder.Append("CustomerID,RecordID,IDCardNo,Dine,Groming,Dressing,Tolet,Activity,TotalScore,FollowUpDate,");
             builder.Append("FollowUpDoctor,NextfollowUpDate,CreatedBy,CreatedDate,LastUpDateBy,LastUpDateDate,NextVisitAim ");
 
             // 判断是否存在OutKey栏位，3.0用OutKey做关联
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'tbl_RecordsSelfCareAbility' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='OutKey'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_SELFCAREABILITY' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='OutKey'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;
@@ -90,7 +90,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("UPDATE tbl_RecordsSelfCareAbility Self SET ");
+            builder.Append("UPDATE ARCHIVE_SELFCAREABILITY Self SET ");
             builder.Append("Dine=@Dine");
             builder.Append(",Groming=@Groming");
             builder.Append(",Dressing=@Dressing");
@@ -101,7 +101,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             builder.Append(",LastUpDateDate=@LastUpDateDate");
 
             // 判断是否存在OutKey栏位，3.0用OutKey做关联
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'tbl_RecordsSelfCareAbility' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='OutKey'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_SELFCAREABILITY' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='OutKey'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;
@@ -116,22 +116,22 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                                         SELECT 
                                             Self.ID
                                         FROM
-                                            tbl_recordscustomerbaseinfo BaseInfo 
-                                        INNER JOIN tbl_recordsgeneralcondition G 
+                                            ARCHIVE_CUSTOMERBASEINFO BaseInfo 
+                                        INNER JOIN ARCHIVE_GENERALCONDITION G 
                                             ON BaseInfo.ID = G.OutKey
                                         WHERE Self.ID= G.SelfID
                                             AND BaseInfo.IDCardNo = @IDCardNo
                                             AND BaseInfo.CheckDate = @CheckDate
                                     );
-                                    UPDATE tbl_recordsgeneralcondition G SET 
+                                    UPDATE ARCHIVE_GENERALCONDITION G SET 
                                         OldSelfCareability =@OldSelfCareability
                                     WHERE EXISTS
                                     (
                                         SELECT 
                                             G.SelfID 
                                         FROM
-                                            tbl_recordscustomerbaseinfo BaseInfo 
-                                        INNER JOIN tbl_RecordsSelfCareAbility med 
+                                            ARCHIVE_CUSTOMERBASEINFO BaseInfo 
+                                        INNER JOIN ARCHIVE_SELFCAREABILITY med 
                                             ON BaseInfo.IDCardNo = med.IDCardNo
                                         WHERE G.SelfID= med.ID
                                             AND BaseInfo.IDCardNo = @IDCardNo
@@ -160,14 +160,14 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("UPDATE tbl_recordsgeneralcondition D SET ");
+            builder.Append("UPDATE ARCHIVE_GENERALCONDITION D SET ");
             builder.Append("SelfID=@SelfID ");
             builder.Append(",OldSelfCareability=@OldSelfCareability ");
             builder.Append(@" WHERE EXISTS
                                     (  
                                         SELECT 
                                              M.ID 
-                                         FROM  tbl_recordscustomerbaseinfo M 
+                                         FROM  ARCHIVE_CUSTOMERBASEINFO M 
                                          WHERE M.ID = D.OutKey
                                              AND M.IDCardNo = @IDCardNo
                                              AND M.CheckDate = @CheckDate
@@ -187,7 +187,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append("SELECT* FROM tbl_RecordsSelfCareAbility ");
+            builder.Append("SELECT* FROM ARCHIVE_SELFCAREABILITY ");
             builder.Append(" WHERE OutKey=@OutKey ");
 
             MySqlParameter[] cmdParms = new MySqlParameter[] {

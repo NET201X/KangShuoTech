@@ -12,7 +12,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Add(RecordsTownModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordstown(");
+            builder.Append("insert into ARCHIVE_TOWN(");
             builder.Append("ID,Code,Name,DistrictId,IsDelete)");
             builder.Append(" values (");
             builder.Append("@ID,@Code,@Name,@DistrictId,@IsDelete)");
@@ -54,7 +54,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordstown ");
+            builder.Append("delete from ARCHIVE_TOWN ");
             builder.Append(" where ");
             MySqlParameter[] cmdParms = new MySqlParameter[0];
             return (MySQLHelper.ExecuteSql(builder.ToString(), cmdParms) > 0);
@@ -64,7 +64,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,Code,Name,DistrictId,IsDelete ");
-            builder.Append(" FROM tbl_recordstown ");
+            builder.Append(" FROM ARCHIVE_TOWN ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -85,7 +85,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             {
                 builder.Append("order by T. desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_recordstown T ");
+            builder.Append(")AS Row, T.*  from ARCHIVE_TOWN T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -98,7 +98,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public RecordsTownModel GetModel(string code)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select ID,Code,Name,DistrictId,IsDelete from tbl_recordstown ");
+            builder.Append("select ID,Code,Name,DistrictId,IsDelete from ARCHIVE_TOWN ");
             builder.Append(" where ID = @ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.String) };
             cmdParms[0].Value = code;
@@ -114,7 +114,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_recordstown ");
+            builder.Append("select count(1) FROM ARCHIVE_TOWN ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -130,7 +130,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(RecordsTownModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordstown set ");
+            builder.Append("update ARCHIVE_TOWN set ");
             builder.Append("ID=@ID,");
             builder.Append("Code=@Code,");
             builder.Append("Name=@Name,");

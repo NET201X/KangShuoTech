@@ -60,7 +60,7 @@
 
             builder.Append(@"
                             UPDATE 
-                                tbl_recordsviscerafunction D
+                                ARCHIVE_VISCERAFUNCTION D
                             SET 
                                 Lips = @Lips
                                 ,ToothResides= @ToothResides
@@ -79,7 +79,7 @@
                                     SELECT 
                                         M.ID 
                                     FROM
-                                        tbl_recordscustomerbaseinfo M 
+                                        ARCHIVE_CUSTOMERBASEINFO M 
                                     WHERE  
                                         IFNULL(M.IsDel,'')!='Y'
                                         AND M.IDCardNo =@IDCardNo 
@@ -118,7 +118,7 @@
 
             builder.Append(@"
                             INSERT INTO
-                                tbl_recordsviscerafunction
+                                ARCHIVE_VISCERAFUNCTION
                             (
                                 PhysicalID
                                 ,IDCardNo
@@ -236,7 +236,7 @@
 
             builder.Append(@"
                             UPDATE 
-                                tbl_recordsphysicalexam D
+                                ARCHIVE_PHYSICALEXAM D
                             SET 
                                 Skin = @Skin 
                                 ,SkinEx = @SkinEx 
@@ -263,7 +263,7 @@
                                     SELECT 
                                         M.ID 
                                     FROM
-                                        tbl_recordscustomerbaseinfo M 
+                                        ARCHIVE_CUSTOMERBASEINFO M 
                                     WHERE  
                                         IFNULL(M.IsDel,'')!='Y'
                                         AND M.IDCardNo =@IDCardNo 
@@ -310,7 +310,7 @@
 
             builder.Append(@"
                             UPDATE 
-                                tbl_recordsviscerafunction D
+                                ARCHIVE_VISCERAFUNCTION D
                             SET 
                                 SportFunction = @SportFunction
                             WHERE 
@@ -319,7 +319,7 @@
                                     SELECT 
                                         M.ID 
                                     FROM
-                                        tbl_recordscustomerbaseinfo M 
+                                        ARCHIVE_CUSTOMERBASEINFO M 
                                     WHERE  
                                         IFNULL(M.IsDel,'')!='Y'
                                         AND M.IDCardNo =@IDCardNo 
@@ -348,7 +348,7 @@
 
             builder.Append(@"
                             UPDATE 
-                                tbl_recordshealthquestion D
+                                ARCHIVE_HEALTHQUESTION D
                             SET 
                                 ElseDis = @ElseDis
                                 ,ElseOther = @ElseOther
@@ -358,7 +358,7 @@
                                     SELECT 
                                         M.ID 
                                     FROM
-                                        tbl_recordscustomerbaseinfo M 
+                                        ARCHIVE_CUSTOMERBASEINFO M 
                                     WHERE  
                                         IFNULL(M.IsDel,'')!='Y'
                                         AND M.IDCardNo =@IDCardNo 
@@ -388,7 +388,7 @@
 
             builder.Append(@"
                             INSERT INTO 
-                                tbl_recordsviscerafunction 
+                                ARCHIVE_VISCERAFUNCTION 
                             (
                                 PhysicalID
                                 ,IDCardNo
@@ -425,7 +425,7 @@
 
             builder.Append(@"
                             INSERT INTO 
-                                tbl_recordshealthquestion 
+                                ARCHIVE_HEALTHQUESTION 
                             (
                                 PhysicalID
                                 ,IDCardNo
@@ -519,7 +519,7 @@
 
             builder.Append(@"
                             UPDATE 
-                                tbl_recordsphysicalexam D
+                                ARCHIVE_PHYSICALEXAM D
                             SET 
                                 EyeRound = @EyeRound 
                                 ,EyeRoundEx = @EyeRoundEx 
@@ -551,7 +551,7 @@
                                     SELECT 
                                         M.ID 
                                     FROM
-                                        tbl_recordscustomerbaseinfo M 
+                                        ARCHIVE_CUSTOMERBASEINFO M 
                                     WHERE  
                                         IFNULL(M.IsDel,'')!='Y'
                                         AND M.IDCardNo =@IDCardNo 
@@ -605,7 +605,7 @@
 
             builder.Append(@"
                             INSERT INTO
-                                tbl_recordsphysicalexam
+                                ARCHIVE_PHYSICALEXAM
                             (
                                 PhysicalID
                                 ,IDCardNo
@@ -799,7 +799,7 @@
 
             builder.Append(@"
                             UPDATE 
-                                tbl_recordsassistcheck D
+                                ARCHIVE_ASSISTCHECK D
                             SET 
                                 CHESTX = @CHESTX 
                                 ,CHESTXEx = @CHESTXEx
@@ -809,7 +809,7 @@
                                     SELECT 
                                         M.ID 
                                     FROM
-                                        tbl_recordscustomerbaseinfo M 
+                                        ARCHIVE_CUSTOMERBASEINFO M 
                                     WHERE  
                                         IFNULL(M.IsDel,'')!='Y'
                                         AND M.IDCardNo =@IDCardNo 
@@ -841,7 +841,7 @@
 
             builder.Append(@"
                             INSERT INTO
-                                tbl_recordsassistcheck
+                                ARCHIVE_ASSISTCHECK
                             (
                                 PhysicalID
                                 ,IDCardNo

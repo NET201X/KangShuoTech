@@ -15,7 +15,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder builder = new StringBuilder();
 
-            string table = "SELECT COUNT(0) FROM sqlite_master WHERE TYPE='table' AND NAME = 'tbl_RecordsHealthCondition' ";
+            string table = "SELECT COUNT(0) FROM sqlite_master WHERE TYPE='table' AND NAME = 'ARCHIVE_HEALTH_CONDITION' ";
 
             object single = YcSqliteHelper.GetSingle(table, conn);
             int count = 0;
@@ -24,7 +24,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 
             if (count == 0) return null;
 
-            builder.Append("SELECT * FROM tbl_RecordsHealthCondition ");
+            builder.Append("SELECT * FROM ARCHIVE_HEALTH_CONDITION ");
 
             if (strWhere.Trim() != "")
             {
@@ -42,7 +42,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         public bool Add(RecordsHealthConditionModel model,string outKey)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("INSERT INTO tbl_recordshealthcondition(");
+            strSql.Append("INSERT INTO ARCHIVE_HEALTH_CONDITION(");
             strSql.Append("IDCardNo,FamilyHistory,FamilyHistoryOther,FoodAllergy,OtherAllergy,DrugAllergy,AllergyHistory,HealthStatus,SickStats,HypertensionOld,HypertensionAdvice,HypertensionInterrupt,HypertensionInterruptMonth,DiabetesOld,DiabetesAdvice,DiabetesInterrupt,DiabetesInterruptMonth,CerebralIschemia,CerebralIschemiaSum,CerebralIschemiaStartOld,CerebralIschemiaStartMonth,CerebralIschemiaEndOld,CerebralIschemiaEndMonth,CerebralHemorrhage,CerebralHemorrhageSum,CerebralHemorrhageStartOld,CerebralHemorrhageStartMonth,CerebralHemorrhageEndOld,CerebralHemorrhageEndMonth,CerebralTIA,CerebralTIASum,CerebralTIAStartOld,CerebralTIAStartMonth,CerebralTIAEndOld,CerebralTIAEndMonth,SubarachnoidHemorrhage,MiocardialInfarction,MiocardialInfarctionSum,MiocardialInfarctionStartOld,MiocardialInfarctionStartMonth,MiocardialInfarctionEndOld,MiocardialInfarctionEndMonth,HeartDisease,Kidney,BloodVessel,EyeDiseases,Other,OtherValue,OutKey)");
             strSql.Append(" VALUES (");
             strSql.Append("@IDCardNo,@FamilyHistory,@FamilyHistoryOther,@FoodAllergy,@OtherAllergy,@DrugAllergy,@AllergyHistory,@HealthStatus,@SickStats,@HypertensionOld,@HypertensionAdvice,@HypertensionInterrupt,@HypertensionInterruptMonth,@DiabetesOld,@DiabetesAdvice,@DiabetesInterrupt,@DiabetesInterruptMonth,@CerebralIschemia,@CerebralIschemiaSum,@CerebralIschemiaStartOld,@CerebralIschemiaStartMonth,@CerebralIschemiaEndOld,@CerebralIschemiaEndMonth,@CerebralHemorrhage,@CerebralHemorrhageSum,@CerebralHemorrhageStartOld,@CerebralHemorrhageStartMonth,@CerebralHemorrhageEndOld,@CerebralHemorrhageEndMonth,@CerebralTIA,@CerebralTIASum,@CerebralTIAStartOld,@CerebralTIAStartMonth,@CerebralTIAEndOld,@CerebralTIAEndMonth,@SubarachnoidHemorrhage,@MiocardialInfarction,@MiocardialInfarctionSum,@MiocardialInfarctionStartOld,@MiocardialInfarctionStartMonth,@MiocardialInfarctionEndOld,@MiocardialInfarctionEndMonth,@HeartDisease,@Kidney,@BloodVessel,@EyeDiseases,@Other,@OtherValue,@OutKey)");
@@ -162,7 +162,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
         {
             StringBuilder strSql = new StringBuilder();
 
-            strSql.Append("UPDATE tbl_RecordsHealthCondition SET ");
+            strSql.Append("UPDATE ARCHIVE_HEALTH_CONDITION SET ");
             strSql.Append("FamilyHistory=@FamilyHistory,");
             strSql.Append("FamilyHistoryOther=@FamilyHistoryOther,");
             strSql.Append("FoodAllergy=@FoodAllergy,");

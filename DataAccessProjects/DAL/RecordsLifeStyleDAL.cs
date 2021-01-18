@@ -12,7 +12,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(RecordsLifeStyleModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordslifestyle(");
+            builder.Append("insert into ARCHIVE_LIFESTYLE(");
             builder.Append("PhysicalID,IDCardNo,SmokeDayNum,SmokeAgeStart,SmokeAgeForbiddon,ExerciseRate,ExerciseTimes,DietaryHabit,ExerciseExistense,ExcisepersistTime,SmokeCondition,DrinkRate,DayDrinkVolume,IsDrinkForbiddon,ForbiddonAge,DrinkStartAge,DrinkThisYear,DrinkType,CareerHarmFactorHistory,Dust,DustProtect,Radiogen,RadiogenProtect,Physical,PhysicalProtect,Chem,ChemProtect,Other,OtherProtect,WorkType,WorkTime,DustProtectEx,RadiogenProtectEx,PhysicalProtectEx,ChemProtectEx,OtherProtectEx,DrinkTypeOther,OutKey,ExerciseExistenseOther)");
             builder.Append(" values (");
             builder.Append("@PhysicalID,@IDCardNo,@SmokeDayNum,@SmokeAgeStart,@SmokeAgeForbiddon,@ExerciseRate,@ExerciseTimes,@DietaryHabit,@ExerciseExistense,@ExcisepersistTime,@SmokeCondition,@DrinkRate,@DayDrinkVolume,@IsDrinkForbiddon,@ForbiddonAge,@DrinkStartAge,@DrinkThisYear,@DrinkType,@CareerHarmFactorHistory,@Dust,@DustProtect,@Radiogen,@RadiogenProtect,@Physical,@PhysicalProtect,@Chem,@ChemProtect,@Other,@OtherProtect,@WorkType,@WorkTime,@DustProtectEx,@RadiogenProtectEx,@PhysicalProtectEx,@ChemProtectEx,@OtherProtectEx,@DrinkTypeOther,@OutKey,@ExerciseExistenseOther)");
@@ -108,7 +108,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int AddServer(RecordsLifeStyleModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordslifestyle(");
+            builder.Append("insert into ARCHIVE_LIFESTYLE(");
             builder.Append("PhysicalID,IDCardNo,SmokeDayNum,SmokeAgeStart,SmokeAgeForbiddon,ExerciseRate,ExerciseTimes,DietaryHabit,ExerciseExistense,ExcisepersistTime,SmokeCondition,DrinkRate,DayDrinkVolume,IsDrinkForbiddon,ForbiddonAge,DrinkStartAge,DrinkThisYear,DrinkType,CareerHarmFactorHistory,Dust,DustProtect,Radiogen,RadiogenProtect,Physical,PhysicalProtect,Chem,ChemProtect,Other,OtherProtect,WorkType,WorkTime,DustProtectEx,RadiogenProtectEx,PhysicalProtectEx,ChemProtectEx,OtherProtectEx,DrinkTypeOther,OutKey,ExerciseExistenseOther)");
             builder.Append(" values (");
             builder.Append("@PhysicalID,@IDCardNo,@SmokeDayNum,@SmokeAgeStart,@SmokeAgeForbiddon,@ExerciseRate,@ExerciseTimes,@DietaryHabit,@ExerciseExistense,@ExcisepersistTime,@SmokeCondition,@DrinkRate,@DayDrinkVolume,@IsDrinkForbiddon,@ForbiddonAge,@DrinkStartAge,@DrinkThisYear,@DrinkType,@CareerHarmFactorHistory,@Dust,@DustProtect,@Radiogen,@RadiogenProtect,@Physical,@PhysicalProtect,@Chem,@ChemProtect,@Other,@OtherProtect,@WorkType,@WorkTime,@DustProtectEx,@RadiogenProtectEx,@PhysicalProtectEx,@ChemProtectEx,@OtherProtectEx,@DrinkTypeOther,@OutKey,@ExerciseExistenseOther)");
@@ -369,7 +369,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordslifestyle ");
+            builder.Append("delete from ARCHIVE_LIFESTYLE ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -379,7 +379,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordslifestyle ");
+            builder.Append("delete from ARCHIVE_LIFESTYLE ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -387,7 +387,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_recordslifestyle");
+            builder.Append("select count(1) from ARCHIVE_LIFESTYLE");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -398,7 +398,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,PhysicalID,IDCardNo,SmokeDayNum,SmokeAgeStart,SmokeAgeForbiddon,ExerciseRate,ExerciseTimes,DietaryHabit,ExerciseExistense,ExcisepersistTime,SmokeCondition,DrinkRate,DayDrinkVolume,IsDrinkForbiddon,ForbiddonAge,DrinkStartAge,DrinkThisYear,DrinkType,CareerHarmFactorHistory,Dust,DustProtect,Radiogen,RadiogenProtect,Physical,PhysicalProtect,Chem,ChemProtect,Other,OtherProtect,WorkType,WorkTime,DustProtectEx,RadiogenProtectEx,PhysicalProtectEx,ChemProtectEx,OtherProtectEx,DrinkTypeOther,ExerciseExistenseOther ");
-            builder.Append(" FROM tbl_recordslifestyle ");
+            builder.Append(" FROM ARCHIVE_LIFESTYLE ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -413,7 +413,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             builder.Append("DrinkStartAge,DrinkThisYear,DrinkType,CareerHarmFactorHistory,Dust,DustProtect,Radiogen,RadiogenProtect,Physical,");
             builder.Append("PhysicalProtect,Chem,ChemProtect,Other,OtherProtect,WorkType,WorkTime,DustProtectEx,RadiogenProtectEx,");
             builder.Append("PhysicalProtectEx,ChemProtectEx,OtherProtectEx,DrinkTypeOther,ExerciseExistenseOther  ");
-            builder.Append("from tbl_recordslifestyle where IDCardNo= '" + IDCardNo + "' and OutKey = '"+OutKey+"'");
+            builder.Append("from ARCHIVE_LIFESTYLE where IDCardNo= '" + IDCardNo + "' and OutKey = '"+OutKey+"'");
             return MySQLHelper.Query(builder.ToString());
         }
         public DataSet GetListByPage(string strWhere, string orderby, int startIndex, int endIndex)
@@ -429,7 +429,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_recordslifestyle T ");
+            builder.Append(")AS Row, T.*  from ARCHIVE_LIFESTYLE T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -441,13 +441,13 @@ namespace KangShuoTech.DataAccessProjects.DAL
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_recordslifestyle");
+            return MySQLHelper.GetMaxID("ID", "ARCHIVE_LIFESTYLE");
         }
 
         public RecordsLifeStyleModel GetModel(string IDCardNo)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select ID,PhysicalID,IDCardNo,SmokeDayNum,SmokeAgeStart,SmokeAgeForbiddon,ExerciseRate,ExerciseTimes,DietaryHabit,ExerciseExistense,ExcisepersistTime,SmokeCondition,DrinkRate,DayDrinkVolume,IsDrinkForbiddon,ForbiddonAge,DrinkStartAge,DrinkThisYear,DrinkType,CareerHarmFactorHistory,Dust,DustProtect,Radiogen,RadiogenProtect,Physical,PhysicalProtect,Chem,ChemProtect,Other,OtherProtect,WorkType,WorkTime,DustProtectEx,RadiogenProtectEx,PhysicalProtectEx,ChemProtectEx,OtherProtectEx,DrinkTypeOther,ExerciseExistenseOther from tbl_recordslifestyle ");
+            builder.Append("select ID,PhysicalID,IDCardNo,SmokeDayNum,SmokeAgeStart,SmokeAgeForbiddon,ExerciseRate,ExerciseTimes,DietaryHabit,ExerciseExistense,ExcisepersistTime,SmokeCondition,DrinkRate,DayDrinkVolume,IsDrinkForbiddon,ForbiddonAge,DrinkStartAge,DrinkThisYear,DrinkType,CareerHarmFactorHistory,Dust,DustProtect,Radiogen,RadiogenProtect,Physical,PhysicalProtect,Chem,ChemProtect,Other,OtherProtect,WorkType,WorkTime,DustProtectEx,RadiogenProtectEx,PhysicalProtectEx,ChemProtectEx,OtherProtectEx,DrinkTypeOther,ExerciseExistenseOther from ARCHIVE_LIFESTYLE ");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -463,7 +463,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_recordslifestyle ");
+            builder.Append("select count(1) FROM ARCHIVE_LIFESTYLE ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -479,7 +479,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(RecordsLifeStyleModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordslifestyle set ");
+            builder.Append("update ARCHIVE_LIFESTYLE set ");
             builder.Append("PhysicalID=@PhysicalID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("SmokeDayNum=@SmokeDayNum,");
@@ -605,7 +605,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool UpdateServer(RecordsLifeStyleModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordslifestyle set ");
+            builder.Append("update ARCHIVE_LIFESTYLE set ");
             builder.Append("PhysicalID=@PhysicalID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("SmokeDayNum=@SmokeDayNum,");
@@ -730,7 +730,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public RecordsLifeStyleModel GetModelByOutKey(int outKey)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select ID,PhysicalID,IDCardNo,SmokeDayNum,SmokeAgeStart,SmokeAgeForbiddon,ExerciseRate,ExerciseTimes,DietaryHabit,ExerciseExistense,ExcisepersistTime,SmokeCondition,DrinkRate,DayDrinkVolume,IsDrinkForbiddon,ForbiddonAge,DrinkStartAge,DrinkThisYear,DrinkType,CareerHarmFactorHistory,Dust,DustProtect,Radiogen,RadiogenProtect,Physical,PhysicalProtect,Chem,ChemProtect,Other,OtherProtect,WorkType,WorkTime,DustProtectEx,RadiogenProtectEx,PhysicalProtectEx,ChemProtectEx,OtherProtectEx,DrinkTypeOther,ExerciseExistenseOther from tbl_recordslifestyle ");
+            builder.Append("select ID,PhysicalID,IDCardNo,SmokeDayNum,SmokeAgeStart,SmokeAgeForbiddon,ExerciseRate,ExerciseTimes,DietaryHabit,ExerciseExistense,ExcisepersistTime,SmokeCondition,DrinkRate,DayDrinkVolume,IsDrinkForbiddon,ForbiddonAge,DrinkStartAge,DrinkThisYear,DrinkType,CareerHarmFactorHistory,Dust,DustProtect,Radiogen,RadiogenProtect,Physical,PhysicalProtect,Chem,ChemProtect,Other,OtherProtect,WorkType,WorkTime,DustProtectEx,RadiogenProtectEx,PhysicalProtectEx,ChemProtectEx,OtherProtectEx,DrinkTypeOther,ExerciseExistenseOther from ARCHIVE_LIFESTYLE ");
             builder.Append(" where OutKey=@OutKey");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@OutKey", MySqlDbType.Int32,4) };
             cmdParms[0].Value = outKey;
@@ -745,7 +745,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool ExistsOutKey(string IDCardNo,int OutKey)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_recordslifestyle");
+            builder.Append("select count(1) from ARCHIVE_LIFESTYLE");
             builder.Append(" where IDCardNo=@IDCardNo ");
             builder.Append(" and OutKey=@OutKey");
             MySqlParameter[] cmdParms = new MySqlParameter[] { 
@@ -761,7 +761,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             StringBuilder builder = new StringBuilder();
           
             builder.Append(@"UPDATE 
-                                    tbl_recordslifestyle  D
+                                    ARCHIVE_LIFESTYLE  D
                              SET 
                                      ExerciseRate=@ExerciseRate,ExerciseTimes=@ExerciseTimes,ExcisepersistTime=@ExcisepersistTime,
                                      ExerciseExistense=@ExerciseExistense,DietaryHabit=@DietaryHabit,SmokeCondition=@SmokeCondition,SmokeDayNum=@SmokeDayNum,
@@ -775,7 +775,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
                                         SELECT 
                                             ID 
                                         FROM
-                                        tbl_recordscustomerbaseinfo M
+                                        ARCHIVE_CUSTOMERBASEINFO M
                                         WHERE M.ID = D.OutKey
                                         AND M.IDCardNo = @IDCardNo
                                         AND M.CheckDate = @CheckDate

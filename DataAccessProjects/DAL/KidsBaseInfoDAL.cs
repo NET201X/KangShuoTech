@@ -12,7 +12,7 @@
         public int Add(KidsBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_kidsbaseinfo(");
+            builder.Append("insert into CHILD_BASEINFO(");
             builder.Append("IDCardNo,CustomerID,RecordID,FatherID,MotherID,PostalCode,MotherIdcard,");
             builder.Append("CreateUnitPhone,Childcare,ChildcarePhone,OccurrenceTime,CreateUnit,CurrentUnit,");
             builder.Append("CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,Sex,Birthday,Guardstatus,");
@@ -104,7 +104,7 @@
         public int AddServer(KidsBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_kidsbaseinfo(");
+            builder.Append("insert into CHILD_BASEINFO(");
             builder.Append("IDCardNo,CustomerID,RecordID,FatherID,MotherID,PostalCode,MotherIdcard,");
             builder.Append("CreateUnitPhone,Childcare,ChildcarePhone,OccurrenceTime,CreateUnit,CurrentUnit,");
             builder.Append("CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,Sex,Birthday,Guardstatus,");
@@ -351,7 +351,7 @@
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_kidsbaseinfo ");
+            builder.Append("delete from CHILD_BASEINFO ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -361,7 +361,7 @@
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_kidsbaseinfo ");
+            builder.Append("delete from CHILD_BASEINFO ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -369,7 +369,7 @@
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_kidsbaseinfo");
+            builder.Append("select count(1) from CHILD_BASEINFO");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -380,7 +380,7 @@
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,IDCardNo,CustomerID,RecordID,FatherID,MotherID,PostalCode,MotherIdcard,CreateUnitPhone,Childcare,ChildcarePhone,OccurrenceTime,CreateUnit,CurrentUnit,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,Sex,Birthday,Guardstatus,FatherAge,FatherUnit,FatherPhone,MotherAge,MotherUnit,MotherPhone,GuarderName,GuarderAge,GuarderUnit,GuarderPhone,Addr,CardNum,IsDel,FatherName,MotherName ");
-            builder.Append(" FROM tbl_kidsbaseinfo ");
+            builder.Append(" FROM CHILD_BASEINFO ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -401,7 +401,7 @@
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_kidsbaseinfo T ");
+            builder.Append(")AS Row, T.*  from CHILD_BASEINFO T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -413,13 +413,13 @@
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_kidsbaseinfo");
+            return MySQLHelper.GetMaxID("ID", "CHILD_BASEINFO");
         }
 
         public KidsBaseInfoModel GetModel(string IDCardNo)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select  ID,IDCardNo,CustomerID,RecordID,FatherID,MotherID,PostalCode,MotherIdcard,CreateUnitPhone,Childcare,ChildcarePhone,OccurrenceTime,CreateUnit,CurrentUnit,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,Sex,Birthday,Guardstatus,FatherAge,FatherUnit,FatherPhone,MotherAge,MotherUnit,MotherPhone,GuarderName,GuarderAge,GuarderUnit,GuarderPhone,Addr,CardNum,IsDel,FatherName,MotherName from tbl_kidsbaseinfo ");
+            builder.Append("select  ID,IDCardNo,CustomerID,RecordID,FatherID,MotherID,PostalCode,MotherIdcard,CreateUnitPhone,Childcare,ChildcarePhone,OccurrenceTime,CreateUnit,CurrentUnit,CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,Sex,Birthday,Guardstatus,FatherAge,FatherUnit,FatherPhone,MotherAge,MotherUnit,MotherPhone,GuarderName,GuarderAge,GuarderUnit,GuarderPhone,Addr,CardNum,IsDel,FatherName,MotherName from CHILD_BASEINFO ");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -435,7 +435,7 @@
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_kidsbaseinfo ");
+            builder.Append("select count(1) FROM CHILD_BASEINFO ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -451,7 +451,7 @@
         public bool Update(KidsBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_kidsbaseinfo set ");
+            builder.Append("update CHILD_BASEINFO set ");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");
@@ -569,7 +569,7 @@
         public bool UpdateServer(KidsBaseInfoModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_kidsbaseinfo set ");
+            builder.Append("update CHILD_BASEINFO set ");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("CustomerID=@CustomerID,");
             builder.Append("RecordID=@RecordID,");

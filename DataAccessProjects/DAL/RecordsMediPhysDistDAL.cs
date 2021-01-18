@@ -12,7 +12,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int Add(RecordsMediPhysDistModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordsmediphysdist(");
+            builder.Append("insert into ARCHIVE_MEDI_PHYS_DIST(");
             builder.Append("PhysicalID,IDCardNo,Mild,Faint,Yang,Yin,PhlegmDamp,Muggy,BloodStasis,QiConstraint,Characteristic,OutKey,MedicineID,MedicineResultID)");
             builder.Append(" values (");
             builder.Append("@PhysicalID,@IDCardNo,@Mild,@Faint,@Yang,@Yin,@PhlegmDamp,@Muggy,@BloodStasis,@QiConstraint,@Characteristic,@OutKey,@MedicineID,@MedicineResultID)");
@@ -59,7 +59,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int AddServer(RecordsMediPhysDistModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("insert into tbl_recordsmediphysdist(");
+            builder.Append("insert into ARCHIVE_MEDI_PHYS_DIST(");
             builder.Append("PhysicalID,IDCardNo,Mild,Faint,Yang,Yin,PhlegmDamp,Muggy,BloodStasis,QiConstraint,Characteristic,OutKey,MedicineID,MedicineResultID)");
             builder.Append(" values (");
             builder.Append("@PhysicalID,@IDCardNo,@Mild,@Faint,@Yang,@Yin,@PhlegmDamp,@Muggy,@BloodStasis,@QiConstraint,@Characteristic,@OutKey,@MedicineID,@MedicineResultID)");
@@ -171,7 +171,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Delete(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordsmediphysdist ");
+            builder.Append("delete from ARCHIVE_MEDI_PHYS_DIST ");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -181,7 +181,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool DeleteList(string IDlist)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("delete from tbl_recordsmediphysdist ");
+            builder.Append("delete from ARCHIVE_MEDI_PHYS_DIST ");
             builder.Append(" where ID in (" + IDlist + ")  ");
             return (MySQLHelper.ExecuteSql(builder.ToString()) > 0);
         }
@@ -189,7 +189,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Exists(int ID)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_recordsmediphysdist");
+            builder.Append("select count(1) from ARCHIVE_MEDI_PHYS_DIST");
             builder.Append(" where ID=@ID");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@ID", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = ID;
@@ -200,7 +200,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("select ID,PhysicalID,IDCardNo,Mild,Faint,Yang,Yin,PhlegmDamp,Muggy,BloodStasis,QiConstraint,Characteristic,,OutKey,MedicineID,MedicineResultID ");
-            builder.Append(" FROM tbl_recordsmediphysdist ");
+            builder.Append(" FROM ARCHIVE_MEDI_PHYS_DIST ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -221,7 +221,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
             {
                 builder.Append(" order by T.ID desc");
             }
-            builder.Append(")AS Row, T.*  from tbl_recordsmediphysdist T ");
+            builder.Append(")AS Row, T.*  from ARCHIVE_MEDI_PHYS_DIST T ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 builder.Append(" WHERE " + strWhere);
@@ -233,13 +233,13 @@ namespace KangShuoTech.DataAccessProjects.DAL
 
         public int GetMaxId()
         {
-            return MySQLHelper.GetMaxID("ID", "tbl_recordsmediphysdist");
+            return MySQLHelper.GetMaxID("ID", "ARCHIVE_MEDI_PHYS_DIST");
         }
 
         public RecordsMediPhysDistModel GetModel(string IDCardNo)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select ID,PhysicalID,IDCardNo,Mild,Faint,Yang,Yin,PhlegmDamp,Muggy,BloodStasis,QiConstraint,Characteristic,OutKey,MedicineID,MedicineResultID from tbl_recordsmediphysdist ");
+            builder.Append("select ID,PhysicalID,IDCardNo,Mild,Faint,Yang,Yin,PhlegmDamp,Muggy,BloodStasis,QiConstraint,Characteristic,OutKey,MedicineID,MedicineResultID from ARCHIVE_MEDI_PHYS_DIST ");
             builder.Append(" where IDCardNo=@IDCardNo");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@IDCardNo", MySqlDbType.String) };
             cmdParms[0].Value = IDCardNo;
@@ -255,7 +255,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public int GetRecordCount(string strWhere)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) FROM tbl_recordsmediphysdist ");
+            builder.Append("select count(1) FROM ARCHIVE_MEDI_PHYS_DIST ");
             if (strWhere.Trim() != "")
             {
                 builder.Append(" where " + strWhere);
@@ -271,7 +271,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool Update(RecordsMediPhysDistModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordsmediphysdist set ");
+            builder.Append("update ARCHIVE_MEDI_PHYS_DIST set ");
             builder.Append("PhysicalID=@PhysicalID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("Mild=@Mild,");
@@ -323,7 +323,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool UpdateServer(RecordsMediPhysDistModel model)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("update tbl_recordsmediphysdist set ");
+            builder.Append("update ARCHIVE_MEDI_PHYS_DIST set ");
             builder.Append("PhysicalID=@PhysicalID,");
             builder.Append("IDCardNo=@IDCardNo,");
             builder.Append("Mild=@Mild,");
@@ -374,7 +374,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public RecordsMediPhysDistModel GetModelByOutKey(int OutKey)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select ID,PhysicalID,IDCardNo,Mild,Faint,Yang,Yin,PhlegmDamp,Muggy,BloodStasis,QiConstraint,Characteristic,OutKey,MedicineID,MedicineResultID from tbl_recordsmediphysdist ");
+            builder.Append("select ID,PhysicalID,IDCardNo,Mild,Faint,Yang,Yin,PhlegmDamp,Muggy,BloodStasis,QiConstraint,Characteristic,OutKey,MedicineID,MedicineResultID from ARCHIVE_MEDI_PHYS_DIST ");
             builder.Append(" where OutKey=@OutKey");
             MySqlParameter[] cmdParms = new MySqlParameter[] { new MySqlParameter("@OutKey", MySqlDbType.Int32, 4) };
             cmdParms[0].Value = OutKey;
@@ -389,7 +389,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
         public bool ExistsOutKey(string IDCardNo, int OutKey)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append("select count(1) from tbl_recordsmediphysdist");
+            builder.Append("select count(1) from ARCHIVE_MEDI_PHYS_DIST");
             builder.Append(" where IDCardNo=@IDCardNo ");
             builder.Append(" and OutKey=@OutKey");
             MySqlParameter[] cmdParms = new MySqlParameter[] { 

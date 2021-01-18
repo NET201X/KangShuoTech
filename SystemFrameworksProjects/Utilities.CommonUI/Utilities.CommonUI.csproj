@@ -8,7 +8,7 @@
     <ProjectGuid>{A4B7A3CC-4D00-4770-AF42-C6BF17F401ED}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>QinCSoft.Utilities.CommonUI</RootNamespace>
+    <RootNamespace>Utilities.CommonUI</RootNamespace>
     <AssemblyName>Utilities.CommonUI</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

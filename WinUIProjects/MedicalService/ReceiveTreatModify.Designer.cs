@@ -117,7 +117,7 @@
             this.tbUpdatName.Location = new System.Drawing.Point(140, 460);
             this.tbUpdatName.Name = "tbUpdatName";
             this.tbUpdatName.ReadOnly = true;
-            this.tbUpdatName.Size = new System.Drawing.Size(156, 30);
+            this.tbUpdatName.Size = new System.Drawing.Size(228, 30);
             this.tbUpdatName.TabIndex = 9;
             // 
             // label2
@@ -133,16 +133,16 @@
             // dtpUpdatTime
             // 
             this.dtpUpdatTime.Enabled = false;
-            this.dtpUpdatTime.Location = new System.Drawing.Point(901, 455);
+            this.dtpUpdatTime.Location = new System.Drawing.Point(1047, 455);
             this.dtpUpdatTime.Name = "dtpUpdatTime";
-            this.dtpUpdatTime.Size = new System.Drawing.Size(165, 30);
+            this.dtpUpdatTime.Size = new System.Drawing.Size(179, 30);
             this.dtpUpdatTime.TabIndex = 11;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("宋体", 15F);
-            this.label8.Location = new System.Drawing.Point(780, 461);
+            this.label8.Location = new System.Drawing.Point(926, 461);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(109, 20);
             this.label8.TabIndex = 227;
@@ -150,17 +150,17 @@
             // 
             // tbUpdatUnitName
             // 
-            this.tbUpdatUnitName.Location = new System.Drawing.Point(471, 456);
+            this.tbUpdatUnitName.Location = new System.Drawing.Point(545, 456);
             this.tbUpdatUnitName.Name = "tbUpdatUnitName";
             this.tbUpdatUnitName.ReadOnly = true;
-            this.tbUpdatUnitName.Size = new System.Drawing.Size(265, 30);
+            this.tbUpdatUnitName.Size = new System.Drawing.Size(318, 30);
             this.tbUpdatUnitName.TabIndex = 10;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("宋体", 15F);
-            this.label15.Location = new System.Drawing.Point(345, 461);
+            this.label15.Location = new System.Drawing.Point(419, 461);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(109, 20);
             this.label15.TabIndex = 229;
@@ -171,7 +171,7 @@
             this.tbCreateMenName.Location = new System.Drawing.Point(140, 415);
             this.tbCreateMenName.Name = "tbCreateMenName";
             this.tbCreateMenName.ReadOnly = true;
-            this.tbCreateMenName.Size = new System.Drawing.Size(156, 30);
+            this.tbCreateMenName.Size = new System.Drawing.Size(228, 30);
             this.tbCreateMenName.TabIndex = 6;
             // 
             // label22
@@ -187,15 +187,15 @@
             // dtCreatTime
             // 
             this.dtCreatTime.Enabled = false;
-            this.dtCreatTime.Location = new System.Drawing.Point(901, 414);
+            this.dtCreatTime.Location = new System.Drawing.Point(1047, 414);
             this.dtCreatTime.Name = "dtCreatTime";
-            this.dtCreatTime.Size = new System.Drawing.Size(164, 30);
+            this.dtCreatTime.Size = new System.Drawing.Size(178, 30);
             this.dtCreatTime.TabIndex = 8;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(780, 418);
+            this.label14.Location = new System.Drawing.Point(926, 418);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(109, 20);
             this.label14.TabIndex = 12;
@@ -203,23 +203,23 @@
             // 
             // dtReceiveDate
             // 
-            this.dtReceiveDate.Location = new System.Drawing.Point(471, 372);
+            this.dtReceiveDate.Location = new System.Drawing.Point(545, 372);
             this.dtReceiveDate.Name = "dtReceiveDate";
-            this.dtReceiveDate.Size = new System.Drawing.Size(165, 30);
+            this.dtReceiveDate.Size = new System.Drawing.Size(183, 30);
             this.dtReceiveDate.TabIndex = 5;
             // 
             // tbCreateUnitName
             // 
-            this.tbCreateUnitName.Location = new System.Drawing.Point(471, 414);
+            this.tbCreateUnitName.Location = new System.Drawing.Point(545, 414);
             this.tbCreateUnitName.Name = "tbCreateUnitName";
             this.tbCreateUnitName.ReadOnly = true;
-            this.tbCreateUnitName.Size = new System.Drawing.Size(265, 30);
+            this.tbCreateUnitName.Size = new System.Drawing.Size(318, 30);
             this.tbCreateUnitName.TabIndex = 7;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(345, 419);
+            this.label5.Location = new System.Drawing.Point(419, 419);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 20);
             this.label5.TabIndex = 176;
@@ -228,7 +228,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(345, 375);
+            this.label13.Location = new System.Drawing.Point(419, 375);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(109, 20);
             this.label13.TabIndex = 10;
@@ -238,7 +238,7 @@
             // 
             this.tbDoctor.Location = new System.Drawing.Point(140, 372);
             this.tbDoctor.Name = "tbDoctor";
-            this.tbDoctor.Size = new System.Drawing.Size(156, 30);
+            this.tbDoctor.Size = new System.Drawing.Size(228, 30);
             this.tbDoctor.TabIndex = 4;
             // 
             // label12
@@ -256,13 +256,13 @@
             this.tbManagePlane.Multiline = true;
             this.tbManagePlane.Name = "tbManagePlane";
             this.tbManagePlane.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbManagePlane.Size = new System.Drawing.Size(934, 70);
+            this.tbManagePlane.Size = new System.Drawing.Size(1070, 70);
             this.tbManagePlane.TabIndex = 3;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(57, 278);
+            this.label11.Location = new System.Drawing.Point(84, 289);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(109, 20);
             this.label11.TabIndex = 6;
@@ -274,17 +274,17 @@
             this.tbAssessment.Multiline = true;
             this.tbAssessment.Name = "tbAssessment";
             this.tbAssessment.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbAssessment.Size = new System.Drawing.Size(934, 70);
+            this.tbAssessment.Size = new System.Drawing.Size(1070, 70);
             this.tbAssessment.TabIndex = 2;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(57, 200);
+            this.label9.Location = new System.Drawing.Point(75, 200);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(109, 20);
+            this.label9.Size = new System.Drawing.Size(119, 20);
             this.label9.TabIndex = 4;
-            this.label9.Text = "评     估:";
+            this.label9.Text = "评     估：";
             // 
             // tbObjectiveData
             // 
@@ -292,7 +292,7 @@
             this.tbObjectiveData.Multiline = true;
             this.tbObjectiveData.Name = "tbObjectiveData";
             this.tbObjectiveData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbObjectiveData.Size = new System.Drawing.Size(934, 70);
+            this.tbObjectiveData.Size = new System.Drawing.Size(1070, 70);
             this.tbObjectiveData.TabIndex = 1;
             // 
             // label7
@@ -310,7 +310,7 @@
             this.tbSubjectData.Multiline = true;
             this.tbSubjectData.Name = "tbSubjectData";
             this.tbSubjectData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbSubjectData.Size = new System.Drawing.Size(934, 70);
+            this.tbSubjectData.Size = new System.Drawing.Size(1070, 70);
             this.tbSubjectData.TabIndex = 0;
             // 
             // label6

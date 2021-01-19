@@ -1,6 +1,6 @@
 using KangShuoTech.Utilities.CommonUI;
 
-namespace RecordManagement
+namespace ArchiveInfo
 {
 
     using System;
@@ -56,7 +56,7 @@ namespace RecordManagement
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::RecordManagement.Properties.Resources.档案查询小;
+            this.pictureBox1.BackgroundImage = global::ArchiveInfo.Properties.Resources.档案查询小;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(723, 194);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
@@ -68,7 +68,7 @@ namespace RecordManagement
             // 
             // HealthCheckPictureBox
             // 
-            this.HealthCheckPictureBox.BackgroundImage = global::RecordManagement.Properties.Resources.健康体检;
+            this.HealthCheckPictureBox.BackgroundImage = global::ArchiveInfo.Properties.Resources.健康体检;
             this.HealthCheckPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.HealthCheckPictureBox.Location = new System.Drawing.Point(501, 194);
             this.HealthCheckPictureBox.Margin = new System.Windows.Forms.Padding(4);
@@ -80,7 +80,7 @@ namespace RecordManagement
             // 
             // FamilyRecordPictureBox
             // 
-            this.FamilyRecordPictureBox.BackgroundImage = global::RecordManagement.Properties.Resources.家庭档案;
+            this.FamilyRecordPictureBox.BackgroundImage = global::ArchiveInfo.Properties.Resources.家庭档案;
             this.FamilyRecordPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.FamilyRecordPictureBox.Location = new System.Drawing.Point(280, 194);
             this.FamilyRecordPictureBox.Margin = new System.Windows.Forms.Padding(4);
@@ -92,7 +92,7 @@ namespace RecordManagement
             // 
             // PersonRecordPictureBox
             // 
-            this.PersonRecordPictureBox.BackgroundImage = global::RecordManagement.Properties.Resources.个人档案;
+            this.PersonRecordPictureBox.BackgroundImage = global::ArchiveInfo.Properties.Resources.个人档案;
             this.PersonRecordPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PersonRecordPictureBox.Location = new System.Drawing.Point(62, 194);
             this.PersonRecordPictureBox.Margin = new System.Windows.Forms.Padding(4);
@@ -104,7 +104,7 @@ namespace RecordManagement
             // 
             // SignMaintPictureBox
             // 
-            this.SignMaintPictureBox.BackgroundImage = global::RecordManagement.Properties.Resources.签字维护;
+            this.SignMaintPictureBox.BackgroundImage = global::ArchiveInfo.Properties.Resources.签字维护;
             this.SignMaintPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.SignMaintPictureBox.Location = new System.Drawing.Point(945, 194);
             this.SignMaintPictureBox.Margin = new System.Windows.Forms.Padding(4);

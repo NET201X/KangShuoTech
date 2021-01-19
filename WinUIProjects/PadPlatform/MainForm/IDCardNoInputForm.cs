@@ -2,7 +2,7 @@ using KangShuoTech.DataAccessProjects.BLL;
 using KangShuoTech.DataAccessProjects.Model;
 using KangShuoTech.Utilities.Common;
 
-namespace PadPlatform
+namespace KangShuo
 {
     using System;
     using System.Collections.Generic;
@@ -321,7 +321,7 @@ namespace PadPlatform
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.BackgroundImage = global::PadPlatform.Properties.Resources.logindialogbg600;
+            this.BackgroundImage = global::KangShuo.Properties.Resources.logindialogbg600;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(507, 212);
             this.ControlBox = false;

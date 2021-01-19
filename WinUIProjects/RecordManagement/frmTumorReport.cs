@@ -13,7 +13,7 @@ using KangShuoTech.Utilities.CommonControl;
 using KangShuoTech.Utilities.CommonUI;
 using System.IO;
 
-namespace RecordManagement
+namespace ArchiveInfo
 {
     public partial class frmTumorReport : ChildContentForm, IChildForm, IChildModel<RecordsBaseInfoModel>
     {

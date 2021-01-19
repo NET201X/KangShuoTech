@@ -26,7 +26,7 @@ namespace OverView
         private BindingSource bds;
         private List<RecordsBaseInfoModel> findModels { get; set; }
         private DataTable dt_user;
-        private string restrict = ConfigurationManager.AppSettings["Restrict"];
+        private string Restriction = ConfigurationManager.AppSettings["Restriction"];
         private DataTable dtTmp;
 
         public frmNeverVisit()
@@ -445,7 +445,7 @@ namespace OverView
             //老年人
             if (e.ColumnIndex == dgvData.Columns[2].Index)
             {
-                if (this.restrict == "on")
+                if (this.Restriction == "on")
                 {
                     if (new RecordsBaseInfoBLL().GetModel(idNo).PopulationType.Contains("4"))
                     {
@@ -469,7 +469,7 @@ namespace OverView
             //高血压
             if (e.ColumnIndex == dgvData.Columns[3].Index)
             {
-                if (this.restrict == "on")
+                if (this.Restriction == "on")
                 {
                     if (new RecordsBaseInfoBLL().GetModel(idNo).PopulationType.Contains("6"))
                     {
@@ -494,7 +494,7 @@ namespace OverView
             //糖尿病
             if (e.ColumnIndex == dgvData.Columns[4].Index)
             {
-                if (this.restrict == "on")
+                if (this.Restriction == "on")
                 {
                     if (new RecordsBaseInfoBLL().GetModel(idNo).PopulationType.Contains("7"))
                     {
@@ -518,7 +518,7 @@ namespace OverView
             //精神疾病
             if (e.ColumnIndex == dgvData.Columns[5].Index)
             {
-                if (this.restrict == "on")
+                if (this.Restriction == "on")
                 {
                     if (new RecordsBaseInfoBLL().GetModel(idNo).PopulationType.Contains("5"))
                     {
@@ -542,7 +542,7 @@ namespace OverView
             //肺结核
             if (e.ColumnIndex == dgvData.Columns[6].Index)
             {
-                if (this.restrict == "on")
+                if (this.Restriction == "on")
                 {
                     if (new RecordsBaseInfoBLL().GetModel(idNo).PopulationType.Contains("10"))
                     {
@@ -567,7 +567,7 @@ namespace OverView
             //脑卒中
             if (e.ColumnIndex == dgvData.Columns[7].Index)
             {
-                if (this.restrict == "on")
+                if (this.Restriction == "on")
                 {
                     if (new RecordsBaseInfoBLL().GetModel(idNo).PopulationType.Contains("9"))
                     {
@@ -592,7 +592,7 @@ namespace OverView
             //冠心病
             if (e.ColumnIndex == dgvData.Columns[8].Index)
             {
-                if (this.restrict == "on")
+                if (this.Restriction == "on")
                 {
                     if (new RecordsBaseInfoBLL().GetModel(idNo).PopulationType.Contains("8"))
                     {

@@ -13,7 +13,7 @@ using System.Text.RegularExpressions;
 using System.IO;
 using System.Configuration;
 
-namespace RecordManagement
+namespace ArchiveInfo
 {
     public partial class PhysicalQueryForm : ChildContentForm, IChildForm, IChildModel<RecordsBaseInfoModel>
     {

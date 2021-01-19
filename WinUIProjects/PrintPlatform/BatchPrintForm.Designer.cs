@@ -93,7 +93,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtIdNum);
             this.groupBox1.Font = new System.Drawing.Font("宋体", 15F);
-            this.groupBox1.Location = new System.Drawing.Point(51, 17);
+            this.groupBox1.Location = new System.Drawing.Point(31, 17);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1251, 103);
             this.groupBox1.TabIndex = 102;
@@ -275,9 +275,9 @@
             // btnQuery
             // 
             this.btnQuery.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnQuery.Location = new System.Drawing.Point(1308, 38);
+            this.btnQuery.Location = new System.Drawing.Point(1288, 28);
             this.btnQuery.Name = "btnQuery";
-            this.btnQuery.Size = new System.Drawing.Size(86, 82);
+            this.btnQuery.Size = new System.Drawing.Size(86, 92);
             this.btnQuery.TabIndex = 104;
             this.btnQuery.Text = "查询";
             this.btnQuery.UseVisualStyleBackColor = true;
@@ -286,9 +286,9 @@
             // btnPrint
             // 
             this.btnPrint.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnPrint.Location = new System.Drawing.Point(1400, 38);
+            this.btnPrint.Location = new System.Drawing.Point(1380, 28);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(86, 82);
+            this.btnPrint.Size = new System.Drawing.Size(86, 92);
             this.btnPrint.TabIndex = 105;
             this.btnPrint.Text = "打印";
             this.btnPrint.UseVisualStyleBackColor = true;
@@ -298,7 +298,7 @@
             // 
             this.lbTotalCount.AutoSize = true;
             this.lbTotalCount.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbTotalCount.Location = new System.Drawing.Point(640, 617);
+            this.lbTotalCount.Location = new System.Drawing.Point(620, 617);
             this.lbTotalCount.Name = "lbTotalCount";
             this.lbTotalCount.Size = new System.Drawing.Size(59, 19);
             this.lbTotalCount.TabIndex = 114;
@@ -308,7 +308,7 @@
             // 
             this.lbPages.AutoSize = true;
             this.lbPages.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbPages.Location = new System.Drawing.Point(1136, 623);
+            this.lbPages.Location = new System.Drawing.Point(1116, 623);
             this.lbPages.Name = "lbPages";
             this.lbPages.Size = new System.Drawing.Size(58, 19);
             this.lbPages.TabIndex = 111;
@@ -316,7 +316,7 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(1337, 612);
+            this.btnNext.Location = new System.Drawing.Point(1317, 612);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(94, 36);
             this.btnNext.TabIndex = 110;
@@ -326,7 +326,7 @@
             // 
             // btnFront
             // 
-            this.btnFront.Location = new System.Drawing.Point(1237, 612);
+            this.btnFront.Location = new System.Drawing.Point(1217, 612);
             this.btnFront.Name = "btnFront";
             this.btnFront.Size = new System.Drawing.Size(94, 36);
             this.btnFront.TabIndex = 109;
@@ -363,7 +363,7 @@
             this.身份证,
             this.Column8,
             this.Column7});
-            this.dgvData.Location = new System.Drawing.Point(52, 126);
+            this.dgvData.Location = new System.Drawing.Point(32, 126);
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
             this.dgvData.RowTemplate.Height = 33;
@@ -456,7 +456,7 @@
             // 
             // btnSelectAll
             // 
-            this.btnSelectAll.Location = new System.Drawing.Point(52, 600);
+            this.btnSelectAll.Location = new System.Drawing.Point(32, 600);
             this.btnSelectAll.Name = "btnSelectAll";
             this.btnSelectAll.Size = new System.Drawing.Size(108, 36);
             this.btnSelectAll.TabIndex = 116;
@@ -466,7 +466,7 @@
             // 
             // btnCancelAll
             // 
-            this.btnCancelAll.Location = new System.Drawing.Point(174, 600);
+            this.btnCancelAll.Location = new System.Drawing.Point(154, 600);
             this.btnCancelAll.Name = "btnCancelAll";
             this.btnCancelAll.Size = new System.Drawing.Size(108, 36);
             this.btnCancelAll.TabIndex = 117;
@@ -477,7 +477,7 @@
             // BatchPrintForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1386, 680);
+            this.ClientSize = new System.Drawing.Size(1500, 680);
             this.Controls.Add(this.lbTotalCount);
             this.Controls.Add(this.btnCancelAll);
             this.Controls.Add(this.btnSelectAll);

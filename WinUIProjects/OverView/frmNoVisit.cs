@@ -27,7 +27,7 @@ namespace OverView
         private BindingSource bds;
         private List<RecordsBaseInfoModel> findModels { get; set; }
         private DataTable dt_user;
-        private string restrict = ConfigurationManager.AppSettings["Restrict"];
+        private string Restriction = ConfigurationManager.AppSettings["Restriction"];
         private DataTable dtTmp;
 
         public frmNoVisit()

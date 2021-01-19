@@ -1,4 +1,4 @@
-namespace RecordManagement
+namespace ArchiveInfo
 {
     using System;
     using System.ComponentModel;
@@ -9,6 +9,7 @@ namespace RecordManagement
     {
         private IContainer components;
         private MainFormUserControl MainFormUserControl1;
+        private MainItemUserControl mainItemUserControl;
 
         public Form1()
         {
@@ -27,24 +28,24 @@ namespace RecordManagement
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.MainFormUserControl1 = new RecordManagement.MainFormUserControl();
+            this.mainItemUserControl = new ArchiveInfo.MainItemUserControl();
             this.SuspendLayout();
             // 
             // MainFormUserControl1
             // 
-            this.MainFormUserControl1.BackColor = System.Drawing.Color.White;
-            this.MainFormUserControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MainFormUserControl1.BackgroundImage")));
-            this.MainFormUserControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MainFormUserControl1.IDCardNo = "36050219360726464X";
-            this.MainFormUserControl1.Location = new System.Drawing.Point(5, 5);
-            this.MainFormUserControl1.Name = "MainFormUserControl1";
-            this.MainFormUserControl1.Size = new System.Drawing.Size(1200, 534);
-            this.MainFormUserControl1.TabIndex = 0;
+            this.mainItemUserControl.BackColor = System.Drawing.Color.White;
+            this.mainItemUserControl.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MainFormUserControl1.BackgroundImage")));
+            this.mainItemUserControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mainItemUserControl.IDCardNo = "36050219360726464X";
+            this.mainItemUserControl.Location = new System.Drawing.Point(5, 5);
+            this.mainItemUserControl.Name = "MainFormUserControl1";
+            this.mainItemUserControl.Size = new System.Drawing.Size(1200, 534);
+            this.mainItemUserControl.TabIndex = 0;
             // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(1264, 600);
-            this.Controls.Add(this.MainFormUserControl1);
+            this.Controls.Add(this.mainItemUserControl);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);

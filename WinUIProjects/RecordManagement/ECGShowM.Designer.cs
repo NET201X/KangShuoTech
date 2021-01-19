@@ -1,4 +1,4 @@
-﻿namespace RecordManagement
+﻿namespace ArchiveInfo
 {
     partial class ECGShowM
     {

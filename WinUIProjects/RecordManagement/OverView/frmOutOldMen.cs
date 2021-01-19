@@ -4,7 +4,7 @@ using KangShuoTech.DataAccessProjects.Model;
 using KangShuoTech.Utilities.Common;
 using KangShuoTech.Utilities.CommonUI;
 
-namespace RecordManagement.OverView
+namespace ArchiveInfo.OverView
 {
     using System;
     using System.ComponentModel;
@@ -20,7 +20,7 @@ namespace RecordManagement.OverView
     using System.Windows.Forms;
     using System.Collections.Generic;
     using System.Text.RegularExpressions;
-    using RecordManagement;
+    using ArchiveInfo;
 
     public partial class frmOutOldMen : ChildContentForm, IChildForm, IChildModel<RecordsBaseInfoModel>
     {

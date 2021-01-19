@@ -15,7 +15,7 @@ namespace OverView
         public DoctorQueryFactory()
         {
             this.ItemParamters = new List<ItemParamters>();
-            this.ItemParamters.Add(new ItemParamters("医师查询", new Image[] { Resources.btnyishichaxun01, Resources.btnyishichaxun01, Resources.btnyishichaxun01 }));
+            this.ItemParamters.Add(new ItemParamters("医生查询", new Image[] { Resources.btnyishichaxun01, Resources.btnyishichaxun01, Resources.btnyishichaxun01 }));
         }
 
         public override IChildForm CreateChildForm(string name)
@@ -25,7 +25,7 @@ namespace OverView
 
             if (str != null)
             {
-                if (str == "医师查询")
+                if (str == "医生查询")
                 {
                     form = new frmDoctorQuery();
                     (form as IChildModel<RecordsBaseInfoModel>).Model = ((IParentModel<RecordsBaseInfoModel>)this.MControler.IParentFrm).Model;
@@ -52,7 +52,7 @@ namespace OverView
         {
             get
             {
-                return "医师查询";
+                return "医生查询";
             }
             set
             {

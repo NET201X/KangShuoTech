@@ -131,7 +131,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 
             //获取字段类型
             string SqlGetType = string.Format("SELECT column_name,column_comment,data_type,CHARACTER_MAXIMUM_LENGTH,NUMERIC_PRECISION,NUMERIC_SCALE " +
-                "FROM information_schema.columns WHERE table_name = '{0}' AND table_schema = 'qcpaddb' AND column_name='{1}'", TableName, OptionName);
+                "FROM information_schema.columns WHERE table_name = '{0}' AND table_schema = 'kangshuo_db' AND column_name='{1}'", TableName, OptionName);
 
             DataTable dt = MySQLHelper.Query(SqlGetType).Tables[0];
 

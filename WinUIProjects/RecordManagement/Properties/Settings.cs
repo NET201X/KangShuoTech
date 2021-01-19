@@ -1,4 +1,4 @@
-namespace RecordManagement.Properties
+namespace ArchiveInfo.Properties
 {
     using System;
     using System.CodeDom.Compiler;

@@ -14,7 +14,7 @@ namespace MedicalService
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             ConfigHelper.Init();
-            Application.Run((Form)new Controler(new MDIParentForm("130925201108107018"), new DataListSeachFactory()).IParentFrm);
+            Application.Run((Form)new Controler(new MDIParentForm("36050219360726464X"), new ReceiveTreatFactory()).IParentFrm);
         }
     }
 }

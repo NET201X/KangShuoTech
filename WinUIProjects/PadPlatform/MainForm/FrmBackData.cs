@@ -10,7 +10,7 @@ using System.IO;
 using System.Diagnostics;
 using Microsoft.Win32;
 
-namespace PadPlatform
+namespace KangShuo
 {
     public partial class FrmBackData : Form
     {
@@ -53,9 +53,9 @@ namespace PadPlatform
                     default:
                         break;
                 }
-                string DataName = strPath + "qcpaddb" + strWeek + ".sql";
-                //string DataName = strPath + "qcpaddb" + Convert.ToDateTime(DateTime.Now.Date).ToString("yyyyMMdd")+".sql"; 
-                string command = string.Format("mysqldump -h {0} -u {1} -p{2} {3} > {4}", "localhost", "root", "qckj", "qcpaddb", DataName);
+                string DataName = strPath + "KangShuo_db" + strWeek + ".sql";
+                //string DataName = strPath + "KangShuo_db" + Convert.ToDateTime(DateTime.Now.Date).ToString("yyyyMMdd")+".sql"; 
+                string command = string.Format("mysqldump -h {0} -u {1} -p{2} {3} > {4}", "localhost", "root", "qckj", "KangShuo_db", DataName);
                 StartCmd(command);
             }
             catch (Exception ex)

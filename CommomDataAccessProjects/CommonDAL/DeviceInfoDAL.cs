@@ -15,7 +15,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             builder.Append("INSERT INTO ARCHIVE_DEVICEINFO(");
             builder.Append("DeviceType,DeviceName,Value1,Value2,Value3,Value4,Value5,Value6,Value7,Value8,Value9,Value10,Value11,Value12,Value13,IsUpload,UpdateData,IDCardNo");
 
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_DEVICEINFO' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='BarCode'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_DEVICEINFO' AND TABLE_SCHEMA='kangshuo_db' AND COLUMN_NAME='BarCode'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;

@@ -1,7 +1,7 @@
 using KangShuoTech.DataAccessProjects.Model;
 using KangShuoTech.Utilities.Common;
 
-namespace PadPlatform
+namespace KangShuo
 {
     using System;
     using System.Runtime.InteropServices;

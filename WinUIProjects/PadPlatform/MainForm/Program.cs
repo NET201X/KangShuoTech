@@ -1,6 +1,6 @@
 using System.Windows.Forms;
 
-namespace PadPlatform
+namespace KangShuo
 {
     using System;
     using System.Diagnostics;

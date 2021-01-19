@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtpCreatedDateEd = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -91,10 +91,10 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtIdNum);
-            this.groupBox1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox1.Location = new System.Drawing.Point(72, 14);
+            this.groupBox1.Font = new System.Drawing.Font("宋体", 15F);
+            this.groupBox1.Location = new System.Drawing.Point(63, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1033, 118);
+            this.groupBox1.Size = new System.Drawing.Size(1043, 103);
             this.groupBox1.TabIndex = 127;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "查询条件";
@@ -102,26 +102,26 @@
             // dtpCreatedDateEd
             // 
             this.dtpCreatedDateEd.Enabled = false;
-            this.dtpCreatedDateEd.Location = new System.Drawing.Point(758, 80);
+            this.dtpCreatedDateEd.Location = new System.Drawing.Point(859, 70);
             this.dtpCreatedDateEd.Name = "dtpCreatedDateEd";
-            this.dtpCreatedDateEd.Size = new System.Drawing.Size(154, 23);
+            this.dtpCreatedDateEd.Size = new System.Drawing.Size(177, 30);
             this.dtpCreatedDateEd.TabIndex = 17;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(734, 85);
+            this.label2.Location = new System.Drawing.Point(827, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(21, 14);
+            this.label2.Size = new System.Drawing.Size(29, 20);
             this.label2.TabIndex = 16;
             this.label2.Text = "—";
             // 
             // ckxCreatedDate
             // 
             this.ckxCreatedDate.AutoSize = true;
-            this.ckxCreatedDate.Location = new System.Drawing.Point(471, 82);
+            this.ckxCreatedDate.Location = new System.Drawing.Point(526, 73);
             this.ckxCreatedDate.Name = "ckxCreatedDate";
-            this.ckxCreatedDate.Size = new System.Drawing.Size(89, 18);
+            this.ckxCreatedDate.Size = new System.Drawing.Size(118, 24);
             this.ckxCreatedDate.TabIndex = 15;
             this.ckxCreatedDate.Text = "建档日期:";
             this.ckxCreatedDate.UseVisualStyleBackColor = true;
@@ -130,36 +130,36 @@
             // dtpCreatedDateSt
             // 
             this.dtpCreatedDateSt.Enabled = false;
-            this.dtpCreatedDateSt.Location = new System.Drawing.Point(579, 80);
+            this.dtpCreatedDateSt.Location = new System.Drawing.Point(647, 70);
             this.dtpCreatedDateSt.Name = "dtpCreatedDateSt";
-            this.dtpCreatedDateSt.Size = new System.Drawing.Size(154, 23);
+            this.dtpCreatedDateSt.Size = new System.Drawing.Size(177, 30);
             this.dtpCreatedDateSt.TabIndex = 14;
             // 
             // cbxUser
             // 
             this.cbxUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxUser.FormattingEnabled = true;
-            this.cbxUser.Location = new System.Drawing.Point(815, 32);
+            this.cbxUser.Location = new System.Drawing.Point(863, 23);
             this.cbxUser.Name = "cbxUser";
-            this.cbxUser.Size = new System.Drawing.Size(194, 22);
+            this.cbxUser.Size = new System.Drawing.Size(170, 28);
             this.cbxUser.TabIndex = 12;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(744, 35);
+            this.label4.Font = new System.Drawing.Font("宋体", 15F);
+            this.label4.Location = new System.Drawing.Point(778, 27);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 14);
+            this.label4.Size = new System.Drawing.Size(79, 20);
             this.label4.TabIndex = 11;
             this.label4.Text = "建档人:";
             // 
             // ckCheckDate
             // 
             this.ckCheckDate.AutoSize = true;
-            this.ckCheckDate.Location = new System.Drawing.Point(11, 82);
+            this.ckCheckDate.Location = new System.Drawing.Point(5, 73);
             this.ckCheckDate.Name = "ckCheckDate";
-            this.ckCheckDate.Size = new System.Drawing.Size(89, 18);
+            this.ckCheckDate.Size = new System.Drawing.Size(118, 24);
             this.ckCheckDate.TabIndex = 10;
             this.ckCheckDate.Text = "体检日期:";
             this.ckCheckDate.UseVisualStyleBackColor = true;
@@ -168,72 +168,72 @@
             // dtpEd
             // 
             this.dtpEd.Enabled = false;
-            this.dtpEd.Location = new System.Drawing.Point(298, 80);
+            this.dtpEd.Location = new System.Drawing.Point(329, 70);
             this.dtpEd.Name = "dtpEd";
-            this.dtpEd.Size = new System.Drawing.Size(154, 23);
+            this.dtpEd.Size = new System.Drawing.Size(177, 30);
             this.dtpEd.TabIndex = 8;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(274, 85);
+            this.label5.Location = new System.Drawing.Point(301, 75);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(21, 14);
+            this.label5.Size = new System.Drawing.Size(29, 20);
             this.label5.TabIndex = 7;
             this.label5.Text = "—";
             // 
             // dtpSt
             // 
             this.dtpSt.Enabled = false;
-            this.dtpSt.Location = new System.Drawing.Point(120, 80);
+            this.dtpSt.Location = new System.Drawing.Point(124, 70);
             this.dtpSt.Name = "dtpSt";
-            this.dtpSt.Size = new System.Drawing.Size(154, 23);
+            this.dtpSt.Size = new System.Drawing.Size(177, 30);
             this.dtpSt.TabIndex = 6;
             // 
             // tbAddr
             // 
-            this.tbAddr.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tbAddr.Location = new System.Drawing.Point(431, 31);
+            this.tbAddr.Font = new System.Drawing.Font("宋体", 15F);
+            this.tbAddr.Location = new System.Drawing.Point(478, 23);
             this.tbAddr.MaxLength = 20;
             this.tbAddr.Name = "tbAddr";
-            this.tbAddr.Size = new System.Drawing.Size(299, 23);
+            this.tbAddr.Size = new System.Drawing.Size(262, 30);
             this.tbAddr.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(376, 35);
+            this.label3.Font = new System.Drawing.Font("宋体", 15F);
+            this.label3.Location = new System.Drawing.Point(413, 28);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 14);
+            this.label3.Size = new System.Drawing.Size(59, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "住址:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(5, 35);
+            this.label1.Font = new System.Drawing.Font("宋体", 15F);
+            this.label1.Location = new System.Drawing.Point(15, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 14);
+            this.label1.Size = new System.Drawing.Size(139, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "姓名或身份证:";
             // 
             // txtIdNum
             // 
-            this.txtIdNum.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtIdNum.Location = new System.Drawing.Point(123, 32);
+            this.txtIdNum.Font = new System.Drawing.Font("宋体", 15F);
+            this.txtIdNum.Location = new System.Drawing.Point(160, 23);
             this.txtIdNum.MaxLength = 18;
             this.txtIdNum.Name = "txtIdNum";
-            this.txtIdNum.Size = new System.Drawing.Size(242, 23);
+            this.txtIdNum.Size = new System.Drawing.Size(212, 30);
             this.txtIdNum.TabIndex = 1;
             // 
             // btnPrintM
             // 
             this.btnPrintM.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Bold);
-            this.btnPrintM.Location = new System.Drawing.Point(1112, 38);
+            this.btnPrintM.Location = new System.Drawing.Point(1112, 20);
             this.btnPrintM.Name = "btnPrintM";
-            this.btnPrintM.Size = new System.Drawing.Size(98, 94);
+            this.btnPrintM.Size = new System.Drawing.Size(86, 95);
             this.btnPrintM.TabIndex = 134;
             this.btnPrintM.Text = "打印";
             this.btnPrintM.UseVisualStyleBackColor = true;
@@ -242,9 +242,9 @@
             // btnQuery
             // 
             this.btnQuery.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnQuery.Location = new System.Drawing.Point(1223, 38);
+            this.btnQuery.Location = new System.Drawing.Point(1209, 20);
             this.btnQuery.Name = "btnQuery";
-            this.btnQuery.Size = new System.Drawing.Size(98, 94);
+            this.btnQuery.Size = new System.Drawing.Size(86, 95);
             this.btnQuery.TabIndex = 128;
             this.btnQuery.Text = "查询";
             this.btnQuery.UseVisualStyleBackColor = true;
@@ -257,14 +257,14 @@
             this.dgvData.AllowUserToResizeRows = false;
             this.dgvData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvData.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -277,20 +277,20 @@
             this.Column8,
             this.Column7,
             this.MID});
-            this.dgvData.Location = new System.Drawing.Point(72, 138);
+            this.dgvData.Location = new System.Drawing.Point(63, 132);
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
             this.dgvData.RowTemplate.Height = 23;
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvData.Size = new System.Drawing.Size(1414, 465);
+            this.dgvData.Size = new System.Drawing.Size(1237, 407);
             this.dgvData.TabIndex = 129;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             // 
             // Column1
             // 
             this.Column1.DataPropertyName = "CustomerName";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle12;
             this.Column1.FillWeight = 18.10922F;
             this.Column1.HeaderText = "姓名";
             this.Column1.Name = "Column1";
@@ -299,8 +299,8 @@
             // Column2
             // 
             this.Column2.DataPropertyName = "Sex";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle13;
             this.Column2.FillWeight = 16.88153F;
             this.Column2.HeaderText = "性别";
             this.Column2.Name = "Column2";
@@ -310,8 +310,8 @@
             // Column3
             // 
             this.Column3.DataPropertyName = "Nation";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle14;
             this.Column3.FillWeight = 16.88153F;
             this.Column3.HeaderText = "民族";
             this.Column3.Name = "Column3";
@@ -320,8 +320,8 @@
             // 身份证
             // 
             this.身份证.DataPropertyName = "IDCardNo";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.身份证.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.身份证.DefaultCellStyle = dataGridViewCellStyle15;
             this.身份证.FillWeight = 33.76306F;
             this.身份证.HeaderText = "身份证";
             this.身份证.Name = "身份证";
@@ -330,8 +330,8 @@
             // Column4
             // 
             this.Column4.DataPropertyName = "Birthday";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle16;
             this.Column4.FillWeight = 25.32229F;
             this.Column4.HeaderText = "生日";
             this.Column4.Name = "Column4";
@@ -340,8 +340,8 @@
             // Column6
             // 
             this.Column6.DataPropertyName = "Phone";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle17;
             this.Column6.FillWeight = 33.76306F;
             this.Column6.HeaderText = "电话";
             this.Column6.Name = "Column6";
@@ -350,8 +350,8 @@
             // Column5
             // 
             this.Column5.DataPropertyName = "HouseHoldAddress";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle18;
             this.Column5.FillWeight = 95.36802F;
             this.Column5.HeaderText = "住址";
             this.Column5.Name = "Column5";
@@ -361,8 +361,8 @@
             // Column8
             // 
             this.Column8.DataPropertyName = "Conclusion";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle19;
             this.Column8.FillWeight = 29.54268F;
             this.Column8.HeaderText = "心电图结论";
             this.Column8.Name = "Column8";
@@ -371,8 +371,8 @@
             // Column7
             // 
             this.Column7.DataPropertyName = "MIDName";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle20;
             this.Column7.FillWeight = 29.54268F;
             this.Column7.HeaderText = "心电图";
             this.Column7.Name = "Column7";
@@ -391,18 +391,19 @@
             // lbPages
             // 
             this.lbPages.AutoSize = true;
-            this.lbPages.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbPages.Location = new System.Drawing.Point(958, 623);
+            this.lbPages.Font = new System.Drawing.Font("宋体", 15F);
+            this.lbPages.Location = new System.Drawing.Point(838, 562);
             this.lbPages.Name = "lbPages";
-            this.lbPages.Size = new System.Drawing.Size(58, 19);
+            this.lbPages.Size = new System.Drawing.Size(59, 20);
             this.lbPages.TabIndex = 130;
             this.lbPages.Text = "1/1页";
             // 
             // btnFront
             // 
-            this.btnFront.Location = new System.Drawing.Point(1099, 615);
+            this.btnFront.Font = new System.Drawing.Font("宋体", 15F);
+            this.btnFront.Location = new System.Drawing.Point(962, 555);
             this.btnFront.Name = "btnFront";
-            this.btnFront.Size = new System.Drawing.Size(107, 41);
+            this.btnFront.Size = new System.Drawing.Size(94, 36);
             this.btnFront.TabIndex = 131;
             this.btnFront.Text = "上一页";
             this.btnFront.UseVisualStyleBackColor = true;
@@ -410,9 +411,10 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(1214, 615);
+            this.btnNext.Font = new System.Drawing.Font("宋体", 15F);
+            this.btnNext.Location = new System.Drawing.Point(1062, 555);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(107, 41);
+            this.btnNext.Size = new System.Drawing.Size(94, 36);
             this.btnNext.TabIndex = 132;
             this.btnNext.Text = "下一页";
             this.btnNext.UseVisualStyleBackColor = true;
@@ -421,18 +423,18 @@
             // lbTotalCount
             // 
             this.lbTotalCount.AutoSize = true;
-            this.lbTotalCount.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbTotalCount.Location = new System.Drawing.Point(790, 623);
+            this.lbTotalCount.Font = new System.Drawing.Font("宋体", 15F);
+            this.lbTotalCount.Location = new System.Drawing.Point(691, 562);
             this.lbTotalCount.Name = "lbTotalCount";
-            this.lbTotalCount.Size = new System.Drawing.Size(97, 19);
+            this.lbTotalCount.Size = new System.Drawing.Size(99, 20);
             this.lbTotalCount.TabIndex = 133;
             this.lbTotalCount.Text = "     条数";
             // 
             // frmECGPrintM
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1460, 731);
+            this.ClientSize = new System.Drawing.Size(1342, 640);
             this.Controls.Add(this.btnPrintM);
             this.Controls.Add(this.lbTotalCount);
             this.Controls.Add(this.btnNext);

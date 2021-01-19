@@ -9,14 +9,14 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ApplicationIcon>logo.ico</ApplicationIcon>
     <AssemblyKeyContainerName />
-    <AssemblyName>RecordManagement</AssemblyName>
+    <AssemblyName>ArchiveInfo</AssemblyName>
     <AssemblyOriginatorKeyFile />
     <DefaultClientScript>JScript</DefaultClientScript>
     <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
     <DelaySign>false</DelaySign>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>RecordManagement</RootNamespace>
+    <RootNamespace>ArchiveInfo</RootNamespace>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <StartupObject />
     <FileUpgradeFlags>
@@ -238,7 +238,11 @@
     <Compile Include="PhysicalQueryForm.Designer.cs">
       <DependentUpon>PhysicalQueryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Resources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="QueryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -608,12 +612,19 @@
     <None Include="Resources\btnzangqigongneng00.png" />
     <None Include="Resources\btnzangqigongneng01.png" />
     <Content Include="logo.ico" />
+    <Content Include="Resources\btnjiatingxinxi01.png" />
+    <Content Include="Resources\btntijianxinxi00.png" />
+    <Content Include="Resources\btntijianxinxi01.png" />
+    <Content Include="Resources\bttijianxinxi00.png" />
     <Content Include="Resources\Middle.png" />
     <None Include="Resources\本地查询.png" />
     <None Include="Resources\列表统计.png" />
     <None Include="Resources\漏项统计.png" />
-    <None Include="Resources\医师查询.png" />
     <None Include="Resources\档案查询小.png" />
+    <None Include="Resources\同步数据.png" />
+    <Content Include="Resources\医生查询.png" />
+    <Content Include="Resources\签字维护.png" />
+    <Content Include="Resources\签字维护0.png" />
     <Content Include="Resources\糖尿病.png" />
     <Content Include="Resources\肿瘤报告卡.png" />
     <Content Include="Resources\脑 冠报告卡.png" />

@@ -1,4 +1,4 @@
-﻿namespace RecordManagement
+﻿namespace ArchiveInfo
 {
     partial class ShowHW
     {
@@ -116,7 +116,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.Image = global::RecordManagement.Properties.Resources.ComTest;
+            this.button3.Image = global::ArchiveInfo.Properties.Resources.ComTest;
             this.button3.Location = new System.Drawing.Point(21, 14);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(68, 68);
@@ -127,7 +127,7 @@
             // btnDrop
             // 
             this.btnDrop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnDrop.Image = global::RecordManagement.Properties.Resources.ComExit;
+            this.btnDrop.Image = global::ArchiveInfo.Properties.Resources.ComExit;
             this.btnDrop.Location = new System.Drawing.Point(580, 14);
             this.btnDrop.Name = "btnDrop";
             this.btnDrop.Size = new System.Drawing.Size(68, 68);
@@ -138,7 +138,7 @@
             // btnSave
             // 
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnSave.Image = global::RecordManagement.Properties.Resources.ComSave;
+            this.btnSave.Image = global::ArchiveInfo.Properties.Resources.ComSave;
             this.btnSave.Location = new System.Drawing.Point(480, 14);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(68, 68);

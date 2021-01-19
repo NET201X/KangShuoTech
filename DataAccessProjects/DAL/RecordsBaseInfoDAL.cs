@@ -462,8 +462,8 @@ namespace KangShuoTech.DataAccessProjects.DAL
 
         public int DelTheMan(string idcard)
         {
-            // List<string> list = MySQLHelper.GetList("select table_name from information_schema.tables where  table_schema='qcpaddb' order by table_name");
-            List<string> list = MySQLHelper.GetList("select table_name from information_schema.tables where  table_schema='qcpaddb'and table_name ='tbl_barcode_day' order by table_name");
+            // List<string> list = MySQLHelper.GetList("select table_name from information_schema.tables where  table_schema='kangshuo_db' order by table_name");
+            List<string> list = MySQLHelper.GetList("select table_name from information_schema.tables where  table_schema='kangshuo_db'and table_name ='tbl_barcode_day' order by table_name");
             ArrayList sQLStringList = new ArrayList();
             //list.Remove("android_metadata");
             //list.Remove("sqlite_sequence");

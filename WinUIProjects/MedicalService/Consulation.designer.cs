@@ -109,7 +109,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(15, 24);
+            this.label9.Location = new System.Drawing.Point(20, 26);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(99, 20);
             this.label9.TabIndex = 24;
@@ -119,13 +119,13 @@
             // 
             this.tbResponsibilityDoctor.Location = new System.Drawing.Point(144, 21);
             this.tbResponsibilityDoctor.Name = "tbResponsibilityDoctor";
-            this.tbResponsibilityDoctor.Size = new System.Drawing.Size(208, 30);
+            this.tbResponsibilityDoctor.Size = new System.Drawing.Size(365, 30);
             this.tbResponsibilityDoctor.TabIndex = 0;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(679, 26);
+            this.label10.Location = new System.Drawing.Point(679, 28);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(99, 20);
             this.label10.TabIndex = 26;
@@ -143,7 +143,7 @@
             this.tbCreateUnitName.Location = new System.Drawing.Point(144, 96);
             this.tbCreateUnitName.Name = "tbCreateUnitName";
             this.tbCreateUnitName.ReadOnly = true;
-            this.tbCreateUnitName.Size = new System.Drawing.Size(209, 30);
+            this.tbCreateUnitName.Size = new System.Drawing.Size(365, 30);
             this.tbCreateUnitName.TabIndex = 4;
             // 
             // dtpCreatTime
@@ -158,7 +158,7 @@
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(15, 106);
+            this.label11.Location = new System.Drawing.Point(19, 101);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(99, 20);
             this.label11.TabIndex = 183;
@@ -169,13 +169,13 @@
             this.tbCreateMenName.Location = new System.Drawing.Point(144, 59);
             this.tbCreateMenName.Name = "tbCreateMenName";
             this.tbCreateMenName.ReadOnly = true;
-            this.tbCreateMenName.Size = new System.Drawing.Size(208, 30);
+            this.tbCreateMenName.Size = new System.Drawing.Size(365, 30);
             this.tbCreateMenName.TabIndex = 2;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(679, 66);
+            this.label14.Location = new System.Drawing.Point(679, 64);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(99, 20);
             this.label14.TabIndex = 181;
@@ -186,7 +186,7 @@
             this.label22.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("宋体", 15F);
-            this.label22.Location = new System.Drawing.Point(15, 65);
+            this.label22.Location = new System.Drawing.Point(19, 64);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(99, 20);
             this.label22.TabIndex = 185;

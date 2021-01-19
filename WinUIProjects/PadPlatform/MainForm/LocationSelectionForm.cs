@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 
-namespace PadPlatform
+namespace KangShuo
 {
     public class LocationSelectionForm : Form
     {
@@ -659,7 +659,7 @@ namespace PadPlatform
             // btnOk
             // 
             this.btnOk.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnOk.Image = global::PadPlatform.Properties.Resources.btndenglu;
+            this.btnOk.Image = global::KangShuo.Properties.Resources.btndenglu;
             this.btnOk.Location = new System.Drawing.Point(223, 342);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(97, 46);
@@ -874,7 +874,7 @@ namespace PadPlatform
             // btnQuit
             // 
             this.btnQuit.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnQuit.Image = global::PadPlatform.Properties.Resources.btntuichu;
+            this.btnQuit.Image = global::KangShuo.Properties.Resources.btntuichu;
             this.btnQuit.Location = new System.Drawing.Point(466, 342);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(97, 46);
@@ -1025,7 +1025,7 @@ namespace PadPlatform
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::PadPlatform.Properties.Resources.logindialogbg;
+            this.BackgroundImage = global::KangShuo.Properties.Resources.logindialogbg;
             this.ClientSize = new System.Drawing.Size(870, 422);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);

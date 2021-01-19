@@ -102,10 +102,10 @@
             // 
             // tbCreateMenName
             // 
-            this.tbCreateMenName.Location = new System.Drawing.Point(617, 415);
+            this.tbCreateMenName.Location = new System.Drawing.Point(697, 415);
             this.tbCreateMenName.Name = "tbCreateMenName";
             this.tbCreateMenName.ReadOnly = true;
-            this.tbCreateMenName.Size = new System.Drawing.Size(200, 30);
+            this.tbCreateMenName.Size = new System.Drawing.Size(344, 30);
             this.tbCreateMenName.TabIndex = 7;
             // 
             // label22
@@ -113,7 +113,7 @@
             this.label22.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("宋体", 15F);
-            this.label22.Location = new System.Drawing.Point(10, 422);
+            this.label22.Location = new System.Drawing.Point(86, 422);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(99, 20);
             this.label22.TabIndex = 179;
@@ -122,15 +122,15 @@
             // dtCreatTime
             // 
             this.dtCreatTime.Enabled = false;
-            this.dtCreatTime.Location = new System.Drawing.Point(130, 455);
+            this.dtCreatTime.Location = new System.Drawing.Point(193, 459);
             this.dtCreatTime.Name = "dtCreatTime";
-            this.dtCreatTime.Size = new System.Drawing.Size(218, 30);
+            this.dtCreatTime.Size = new System.Drawing.Size(181, 30);
             this.dtCreatTime.TabIndex = 8;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(10, 462);
+            this.label14.Location = new System.Drawing.Point(86, 462);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(99, 20);
             this.label14.TabIndex = 12;
@@ -138,24 +138,24 @@
             // 
             // dtReceiveDate
             // 
-            this.dtReceiveDate.Location = new System.Drawing.Point(617, 371);
+            this.dtReceiveDate.Location = new System.Drawing.Point(697, 371);
             this.dtReceiveDate.Name = "dtReceiveDate";
             this.dtReceiveDate.Size = new System.Drawing.Size(200, 30);
             this.dtReceiveDate.TabIndex = 5;
             // 
             // tbCreateUnitName
             // 
-            this.tbCreateUnitName.Location = new System.Drawing.Point(130, 409);
+            this.tbCreateUnitName.Location = new System.Drawing.Point(193, 416);
             this.tbCreateUnitName.Name = "tbCreateUnitName";
             this.tbCreateUnitName.ReadOnly = true;
-            this.tbCreateUnitName.Size = new System.Drawing.Size(218, 30);
+            this.tbCreateUnitName.Size = new System.Drawing.Size(332, 30);
             this.tbCreateUnitName.TabIndex = 6;
             // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(512, 422);
+            this.label5.Location = new System.Drawing.Point(592, 422);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(99, 20);
             this.label5.TabIndex = 176;
@@ -164,7 +164,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(511, 376);
+            this.label13.Location = new System.Drawing.Point(591, 376);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(99, 20);
             this.label13.TabIndex = 10;
@@ -172,15 +172,15 @@
             // 
             // tbDoctor
             // 
-            this.tbDoctor.Location = new System.Drawing.Point(130, 368);
+            this.tbDoctor.Location = new System.Drawing.Point(193, 373);
             this.tbDoctor.Name = "tbDoctor";
-            this.tbDoctor.Size = new System.Drawing.Size(218, 30);
+            this.tbDoctor.Size = new System.Drawing.Size(332, 30);
             this.tbDoctor.TabIndex = 4;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(10, 378);
+            this.label12.Location = new System.Drawing.Point(86, 378);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(99, 20);
             this.label12.TabIndex = 8;
@@ -198,11 +198,11 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(85, 299);
+            this.label11.Location = new System.Drawing.Point(86, 305);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(109, 20);
+            this.label11.Size = new System.Drawing.Size(99, 20);
             this.label11.TabIndex = 6;
-            this.label11.Text = "处置计划：";
+            this.label11.Text = "处置计划:";
             // 
             // tbAssessment
             // 
@@ -216,11 +216,11 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(85, 223);
+            this.label9.Location = new System.Drawing.Point(86, 217);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(109, 20);
+            this.label9.Size = new System.Drawing.Size(99, 20);
             this.label9.TabIndex = 4;
-            this.label9.Text = "评     估:";
+            this.label9.Text = "评    估:";
             // 
             // tbObjectiveData
             // 
@@ -236,9 +236,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(5, 132);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(189, 20);
+            this.label7.Size = new System.Drawing.Size(179, 20);
             this.label7.TabIndex = 2;
-            this.label7.Text = "就诊者的客观资料：";
+            this.label7.Text = "就诊者的客观资料:";
             // 
             // tbSubjectData
             // 
@@ -254,9 +254,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(6, 45);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(189, 20);
+            this.label6.Size = new System.Drawing.Size(179, 20);
             this.label6.TabIndex = 0;
-            this.label6.Text = "就诊者的主观资料：";
+            this.label6.Text = "就诊者的主观资料:";
             // 
             // groupBox1
             // 

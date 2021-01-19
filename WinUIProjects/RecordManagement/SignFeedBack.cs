@@ -16,7 +16,7 @@ using AxHWPenSignLib;
 using System.Threading;
 using System.Configuration;
 
-namespace RecordManagement
+namespace ArchiveInfo
 {
     public partial class SignFeedBack : ChildContentForm, IChildForm, IChildModel<RecordsBaseInfoModel>
     {

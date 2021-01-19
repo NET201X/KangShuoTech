@@ -1,4 +1,4 @@
-﻿namespace RecordManagement.OverView
+﻿namespace ArchiveInfo.OverView
 {
     partial class frmOutBaseInfo
     {

@@ -1,6 +1,6 @@
 using KangShuoTech.DataAccessProjects.Model;
 
-namespace RecordManagement
+namespace ArchiveInfo
 {
     using System.Reflection;
     using System.Windows.Forms;

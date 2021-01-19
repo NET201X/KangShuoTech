@@ -1,5 +1,5 @@
 ﻿using KangShuoTech.Utilities.Common;
-namespace RecordManagement
+namespace ArchiveInfo
 {
     using System;
     using System.Collections.Generic;

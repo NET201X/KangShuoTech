@@ -11,7 +11,7 @@ using KangShuoTech.DataAccessProjects.Model;
 using System.Text.RegularExpressions;
 using KangShuoTech.DataAccessProjects.BLL;
 
-namespace RecordManagement
+namespace ArchiveInfo
 {
     public partial class FamilyListQueryForm : ChildContentForm, IChildForm, IChildModel<RecordsBaseInfoModel>
     {

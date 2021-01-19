@@ -1,9 +1,9 @@
 using KangShuoTech.DataAccessProjects.Model;
 using KangShuoTech.Utilities.CommonUI;
 
-namespace RecordManagement
+namespace ArchiveInfo
 {
-    using RecordManagement.Properties;
+    using ArchiveInfo.Properties;
     
     using System.Collections.Generic;
     using System.Windows.Forms;

@@ -4,7 +4,7 @@ using KangShuoTech.Utilities.Common;
 using KangShuoTech.Utilities.CommonControl;
 using Utilities.BlueToothTools.MsBluetooth;
 
-namespace PadPlatform
+namespace KangShuo
 {
     using NetFwTypeLib;
     using System;
@@ -298,7 +298,7 @@ namespace PadPlatform
 
             if (aex.ShowDialog() == DialogResult.OK)
             {
-                //pictureBox1.BackgroundImage = global::PadPlatform.Properties.Resources._2秒;
+                //pictureBox1.BackgroundImage = global::KangShuo.Properties.Resources._2秒;
                 pValue = aex.areaOrg.TownName;
                 orgCode = aex.areaOrg.OrgCode;
                 orgName = aex.areaOrg.OrgName;
@@ -589,7 +589,7 @@ namespace PadPlatform
                     if (obj2["Caption"].ToString().Contains("POS/Pad Printers"))
                     {
                         flag = true;
-                        PadForm.PrinterPNPDeviceID = (obj2.Properties["PNPDeviceID"].Value == null) ? "NULL \r\n" : obj2.Properties["PNPDeviceID"].Value.ToString();
+                        //PadForm.PrinterPNPDeviceID = (obj2.Properties["PNPDeviceID"].Value == null) ? "NULL \r\n" : obj2.Properties["PNPDeviceID"].Value.ToString();
                         object obj3 = obj2["ConfigManagerErrorCode"];
 
                         if ((obj3 == null) || !(obj3.ToString() != "0"))
@@ -983,7 +983,7 @@ namespace PadPlatform
             // 
             // SystemDetectionForm
             // 
-            this.BackgroundImage = global::PadPlatform.Properties.Resources.loginbg;
+            this.BackgroundImage = global::KangShuo.Properties.Resources.loginbg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 741);
             this.Controls.Add(this.lbCard);

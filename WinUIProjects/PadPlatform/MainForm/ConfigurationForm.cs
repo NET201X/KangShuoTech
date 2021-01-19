@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using System.Xml;
 using KangShuoTech.Utilities.Common;
 
-namespace PadPlatform
+namespace KangShuo
 {
     public class ConfigurationForm : Form
     {

@@ -925,7 +925,7 @@ namespace CommonUtilities.SQL
             // 数据库名称
             string BackData = ConfigHelper.GetSetNode("BackData");
 
-            if (BackData == "") BackData = "qcpaddb";
+            if (BackData == "") BackData = "kangshuo_db";
 
             String connetStr = "Server=124.128.220.82;Database=" + BackData + ";Uid=root;Pwd=qckj;port=3306;";
 

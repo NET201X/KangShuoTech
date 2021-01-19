@@ -11,7 +11,7 @@ using KangShuoTech.Utilities.CommunicationData;
 using KangShuoTech.Utilities.CommonControl;
 using System.Configuration;
 
-namespace RecordManagement
+namespace ArchiveInfo
 {
     public partial class ShowHW : Form
     {

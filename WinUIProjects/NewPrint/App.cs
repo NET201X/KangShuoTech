@@ -16,6 +16,7 @@ namespace NewPrint
         {
             ConfigHelper.Init();
             string args = e.Args[0];
+            //string args = "36050219360726464X";
             //string args = "370101195008158899;370101199211111111";
             //string args = "汇出&体检报告&AND B.CheckDate BETWEEN '2020-04-20' AND '2020-04-20'";
 

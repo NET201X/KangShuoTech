@@ -1,7 +1,7 @@
 using KangShuoTech.Utilities.Common;
 using KangShuoTech.Utilities.CommonControl;
 
-namespace PadPlatform
+namespace KangShuo
 {
     using System;
     using System.ComponentModel;

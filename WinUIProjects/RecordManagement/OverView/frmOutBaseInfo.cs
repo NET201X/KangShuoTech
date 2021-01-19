@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 using System.Drawing;
 using KangShuoTech.Utilities.Common;
 
-namespace RecordManagement.OverView
+namespace ArchiveInfo.OverView
 {
     public partial class frmOutBaseInfo : ChildContentForm, IChildForm, IChildModel<RecordsBaseInfoModel>
     {

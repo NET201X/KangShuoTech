@@ -16,7 +16,7 @@ namespace MedicalService
             this.ItemParamters = new List<ItemParamters>();
             this.ItemParamters.Add(new ItemParamters("接诊记录", new Image[] { Resources.btnjiezhen00, Resources.btnjiezhen01, Resources.btnjiezhen01 }));
             this.ItemParamters.Add(new ItemParamters("会诊记录", new Image[] { Resources.btnhuizhen00, Resources.btnhuizhen01, Resources.btnhuizhen01 }));
-            this.ItemParamters.Add(new ItemParamters("转诊记录", new Image[] { Resources.btnjiezhen00, Resources.btnzhuanzhen00, Resources.btnzhuanzhen01 }));
+            this.ItemParamters.Add(new ItemParamters("转诊记录", new Image[] { Resources.btnzhuanzhen00, Resources.btnzhuanzhen01, Resources.btnzhuanzhen01 }));
         }
 
         public override IChildForm CreateChildForm(string name)

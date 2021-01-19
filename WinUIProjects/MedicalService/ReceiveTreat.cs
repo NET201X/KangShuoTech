@@ -23,11 +23,11 @@ namespace MedicalService
         {
             return ChildFormStatus.NoErrorInput;
         }
-       
+
         public bool SaveModelToDB()
         {
             ReceiveTreatBaseInfoBLL receive_info = new ReceiveTreatBaseInfoBLL();
-            int result=receive_info.Add(this.ClinicalModel);
+            int result = receive_info.Add(this.ClinicalModel);
             if (result == 0)
             {
                 return false;
@@ -50,7 +50,7 @@ namespace MedicalService
             this.ClinicalModel.ObjectiveData = tbObjectiveData.Text.Trim();
             this.ClinicalModel.Assessment = tbAssessment.Text.Trim();
             this.ClinicalModel.ManagePlane = tbManagePlane.Text.Trim();
-   
+
         }
 
         public void InitEveryThing()
@@ -63,7 +63,7 @@ namespace MedicalService
             this.tbCreateMenName.Text = this.Model.CreateMenName;
             this.tbDoctor.Text = this.Model.Doctor;
             this.tbCreateUnitName.Text = this.Model.CreateUnitName;
-           
+
             if (this.Model.Sex == "1")
             {
                 this.tbSex.Text = "男";
@@ -73,19 +73,19 @@ namespace MedicalService
                 this.tbSex.Text = "女";
             }
 
- 
+
             this.EveryThingIsOk = true;
         }
         private void ClinicalAddForm_Load(object sender, EventArgs e)
         {
-            
+
             if (!this.EveryThingIsOk)
             {
                 this.InitEveryThing();
             }
         }
 
-       
+
         public bool EveryThingIsOk { get; set; }
 
         public bool HaveToSave { get; set; }
@@ -100,6 +100,6 @@ namespace MedicalService
         {
 
         }
- 
+
     }
 }

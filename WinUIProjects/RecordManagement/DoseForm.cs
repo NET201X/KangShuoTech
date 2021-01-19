@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using KangShuoTech.Utilities.Common;
 
-namespace RecordManagement
+namespace ArchiveInfo
 {
     public partial class DoseForm : Form
     {

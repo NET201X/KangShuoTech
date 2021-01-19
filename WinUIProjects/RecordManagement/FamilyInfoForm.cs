@@ -4,7 +4,7 @@ using KangShuoTech.Utilities.Common;
 using KangShuoTech.Utilities.CommonControl;
 using KangShuoTech.Utilities.CommonUI;
 
-namespace RecordManagement
+namespace ArchiveInfo
 {
     using CommonControl;
     

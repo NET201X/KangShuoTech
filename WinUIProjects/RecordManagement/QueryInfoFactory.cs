@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using KangShuoTech.Utilities.CommonUI;
-using RecordManagement.Properties;
+using ArchiveInfo.Properties;
 using System.Drawing;
 using KangShuoTech.DataAccessProjects.Model;
 using System.Windows.Forms;
 
-namespace RecordManagement
+namespace ArchiveInfo
 {
     internal class QueryInfoFactory : ChildFormFactory
     {

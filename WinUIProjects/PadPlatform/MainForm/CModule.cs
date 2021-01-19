@@ -1,6 +1,6 @@
 using KangShuoTech.Utilities.CommonUI;
 
-namespace PadPlatform
+namespace KangShuo
 {
     using System;
     using System.Reflection;

@@ -22,12 +22,11 @@ using KangShuoTech.Utilities.Common;
 using KangShuoTech.Utilities.CommonControl;
 using KangShuoTech.Utilities.CommonUI;
 using KangShuoTech.Utilities.CommunicationData;
-
 using NotifyWindow = TestNotifyWindow.NotifyWindow;
-using PadPlatform.Properties;
+using KangShuo.Properties;
 using System.Linq;
 
-namespace PadPlatform
+namespace KangShuo
 {
     public class PadForm : Form
     {
@@ -50,7 +49,7 @@ namespace PadPlatform
         private Panel panel;
         private Panel panel_parent;
         private SerialPort port1 = new SerialPort();
-        public static string PrinterPNPDeviceID = ConfigurationManager.AppSettings["PrinterPNPDeviceID"];
+        //public static string PrinterPNPDeviceID = ConfigurationManager.AppSettings["PrinterPNPDeviceID"];
         public AbsReadIDCardNo readCard;
         private Panel panelloadModule;
         private PictureBox lblQuit;
@@ -525,7 +524,7 @@ namespace PadPlatform
             // panelWelcome
             // 
             this.panelWelcome.BackColor = System.Drawing.Color.Transparent;
-            this.panelWelcome.BackgroundImage = global::PadPlatform.Properties.Resources.morenbeijing;
+            this.panelWelcome.BackgroundImage = global::KangShuo.Properties.Resources.morenbeijing;
             this.panelWelcome.ForeColor = System.Drawing.Color.Black;
             this.panelWelcome.Location = new System.Drawing.Point(0, 18);
             this.panelWelcome.Name = "panelWelcome";
@@ -593,7 +592,7 @@ namespace PadPlatform
             // lblQuit
             // 
             this.lblQuit.BackColor = System.Drawing.Color.Transparent;
-            this.lblQuit.BackgroundImage = global::PadPlatform.Properties.Resources.btntuichu;
+            this.lblQuit.BackgroundImage = global::KangShuo.Properties.Resources.btntuichu;
             this.lblQuit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.lblQuit.Location = new System.Drawing.Point(1482, 85);
             this.lblQuit.Name = "lblQuit";
@@ -605,7 +604,7 @@ namespace PadPlatform
             // LoginPictureBox
             // 
             this.LoginPictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.LoginPictureBox.BackgroundImage = global::PadPlatform.Properties.Resources.btndenglu;
+            this.LoginPictureBox.BackgroundImage = global::KangShuo.Properties.Resources.btndenglu;
             this.LoginPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.LoginPictureBox.Location = new System.Drawing.Point(1377, 85);
             this.LoginPictureBox.Name = "LoginPictureBox";
@@ -651,7 +650,7 @@ namespace PadPlatform
             // PadForm
             // 
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::PadPlatform.Properties.Resources.Main;
+            this.BackgroundImage = global::KangShuo.Properties.Resources.Main;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1600, 750);
             this.Controls.Add(this.btnModifyPass);

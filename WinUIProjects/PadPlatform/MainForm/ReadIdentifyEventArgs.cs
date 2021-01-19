@@ -1,4 +1,4 @@
-namespace PadPlatform
+namespace KangShuo
 {
     using System;
 

@@ -17,7 +17,7 @@ using System.Xml;
 using KangShuoTech.Utilities.MySQLHelper;
 using System.Configuration;
 
-namespace RecordManagement
+namespace ArchiveInfo
 {
     public class AidExamUserControl : ChildContentForm, IChildForm, IChildModel<RecordsBaseInfoModel>
     {

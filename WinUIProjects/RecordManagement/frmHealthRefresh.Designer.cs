@@ -1,4 +1,4 @@
-﻿namespace RecordManagement
+﻿namespace ArchiveInfo
 {
     partial class frmHealthRefresh
     {
@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHealthRefresh));
             this.labUploadnum = new System.Windows.Forms.Label();
             this.labCountnum = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.btndataupload = new System.Windows.Forms.Button();
             this.datePn = new System.Windows.Forms.Panel();
             this.dtpend = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpstart = new System.Windows.Forms.DateTimePicker();
             this.ckbcheckdate = new System.Windows.Forms.CheckBox();
+            this.pictureBoxDataupload = new System.Windows.Forms.PictureBox();
             this.datePn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDataupload)).BeginInit();
             this.SuspendLayout();
             // 
             // labUploadnum
@@ -86,16 +86,6 @@
             this.progressBar1.Size = new System.Drawing.Size(479, 20);
             this.progressBar1.TabIndex = 22;
             this.progressBar1.Visible = false;
-            // 
-            // btndataupload
-            // 
-            this.btndataupload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btndataupload.BackgroundImage")));
-            this.btndataupload.Location = new System.Drawing.Point(5, 137);
-            this.btndataupload.Name = "btndataupload";
-            this.btndataupload.Size = new System.Drawing.Size(479, 100);
-            this.btndataupload.TabIndex = 21;
-            this.btndataupload.UseVisualStyleBackColor = true;
-            this.btndataupload.Click += new System.EventHandler(this.btndataupload_Click);
             // 
             // datePn
             // 
@@ -143,16 +133,26 @@
             this.ckbcheckdate.UseVisualStyleBackColor = true;
             this.ckbcheckdate.CheckedChanged += new System.EventHandler(this.ckbcheckdate_CheckedChanged);
             // 
+            // pictureBoxDataupload
+            // 
+            this.pictureBoxDataupload.Image = global::ArchiveInfo.Properties.Resources.同步数据;
+            this.pictureBoxDataupload.Location = new System.Drawing.Point(103, 159);
+            this.pictureBoxDataupload.Name = "pictureBoxDataupload";
+            this.pictureBoxDataupload.Size = new System.Drawing.Size(267, 60);
+            this.pictureBoxDataupload.TabIndex = 27;
+            this.pictureBoxDataupload.TabStop = false;
+            this.pictureBoxDataupload.Click += new System.EventHandler(this.pictureBoxDataupload_Click);
+            // 
             // frmHealthRefresh
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(488, 239);
+            this.Controls.Add(this.pictureBoxDataupload);
             this.Controls.Add(this.labUploadnum);
             this.Controls.Add(this.labCountnum);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.btndataupload);
             this.Controls.Add(this.datePn);
             this.Controls.Add(this.ckbcheckdate);
             this.Font = new System.Drawing.Font("宋体", 13F);
@@ -163,6 +163,7 @@
             this.Text = "健康评价刷新";
             this.datePn.ResumeLayout(false);
             this.datePn.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDataupload)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,11 +176,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ProgressBar progressBar1;
-        public System.Windows.Forms.Button btndataupload;
         private System.Windows.Forms.Panel datePn;
         private System.Windows.Forms.DateTimePicker dtpend;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpstart;
         private System.Windows.Forms.CheckBox ckbcheckdate;
+        private System.Windows.Forms.PictureBox pictureBoxDataupload;
     }
 }

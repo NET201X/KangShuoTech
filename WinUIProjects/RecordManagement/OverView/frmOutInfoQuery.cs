@@ -2,7 +2,7 @@
 using KangShuoTech.DataAccessProjects.Model;
 using KangShuoTech.Utilities.CommonUI;
 
-namespace RecordManagement.OverView
+namespace ArchiveInfo.OverView
 {
     using System;
     using System.Data;

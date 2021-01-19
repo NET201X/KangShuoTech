@@ -1,9 +1,9 @@
 ﻿using KangShuoTech.DataAccessProjects.Model;
 using KangShuoTech.Utilities.CommonUI;
 
-namespace RecordManagement
+namespace ArchiveInfo
 {
-    using RecordManagement.Properties;
+    using ArchiveInfo.Properties;
 
     using System.Collections.Generic;
     using System.Windows.Forms;
@@ -14,7 +14,7 @@ namespace RecordManagement
         public SignMaintFactory()
         {
             this.ItemParamters = new List<ItemParamters>();
-            this.ItemParamters.Add(new ItemParamters("签字维护", new Image[] { Resources.btnqianziweihu00, Resources.btnqianiweihu01, Resources.btnqianiweihu01 }));
+            this.ItemParamters.Add(new ItemParamters("签字维护", new Image[] { Resources.btnqianziweihu00, Resources.btnqianziweihu01, Resources.btnqianziweihu01 }));
             
         }
 

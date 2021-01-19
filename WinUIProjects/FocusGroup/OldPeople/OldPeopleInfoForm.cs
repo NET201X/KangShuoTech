@@ -605,9 +605,9 @@ namespace FocusGroup.OldPeople
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(70, 12);
+            this.groupBox1.Location = new System.Drawing.Point(70, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1393, 656);
+            this.groupBox1.Size = new System.Drawing.Size(1393, 662);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -616,7 +616,7 @@ namespace FocusGroup.OldPeople
             // 
             this.lkYs.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lkYs.AutoSize = true;
-            this.lkYs.Location = new System.Drawing.Point(1203, 527);
+            this.lkYs.Location = new System.Drawing.Point(1203, 575);
             this.lkYs.Name = "lkYs";
             this.lkYs.Size = new System.Drawing.Size(89, 20);
             this.lkYs.TabIndex = 256;
@@ -627,7 +627,7 @@ namespace FocusGroup.OldPeople
             // picSignYs
             // 
             this.picSignYs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(248)))), ((int)(((byte)(200)))));
-            this.picSignYs.Location = new System.Drawing.Point(1003, 512);
+            this.picSignYs.Location = new System.Drawing.Point(1003, 557);
             this.picSignYs.Name = "picSignYs";
             this.picSignYs.Size = new System.Drawing.Size(192, 54);
             this.picSignYs.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -639,7 +639,7 @@ namespace FocusGroup.OldPeople
             // 
             this.label69.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label69.AutoSize = true;
-            this.label69.Location = new System.Drawing.Point(898, 531);
+            this.label69.Location = new System.Drawing.Point(898, 575);
             this.label69.Name = "label69";
             this.label69.Size = new System.Drawing.Size(99, 20);
             this.label69.TabIndex = 253;
@@ -650,7 +650,7 @@ namespace FocusGroup.OldPeople
             this.txbNextVisitAim.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txbNextVisitAim.ForeColor = System.Drawing.Color.Black;
             this.txbNextVisitAim.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txbNextVisitAim.Location = new System.Drawing.Point(156, 576);
+            this.txbNextVisitAim.Location = new System.Drawing.Point(156, 614);
             this.txbNextVisitAim.MaxLength = 20;
             this.txbNextVisitAim.Name = "txbNextVisitAim";
             this.txbNextVisitAim.Size = new System.Drawing.Size(339, 30);
@@ -661,7 +661,7 @@ namespace FocusGroup.OldPeople
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("宋体", 15F);
-            this.label7.Location = new System.Drawing.Point(12, 583);
+            this.label7.Location = new System.Drawing.Point(12, 620);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(139, 20);
             this.label7.TabIndex = 140;
@@ -669,7 +669,7 @@ namespace FocusGroup.OldPeople
             // 
             // dtpCheckdate
             // 
-            this.dtpCheckdate.Location = new System.Drawing.Point(666, 531);
+            this.dtpCheckdate.Location = new System.Drawing.Point(666, 565);
             this.dtpCheckdate.Name = "dtpCheckdate";
             this.dtpCheckdate.Size = new System.Drawing.Size(180, 30);
             this.dtpCheckdate.TabIndex = 3;
@@ -679,7 +679,7 @@ namespace FocusGroup.OldPeople
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("宋体", 15F);
-            this.label6.Location = new System.Drawing.Point(561, 539);
+            this.label6.Location = new System.Drawing.Point(561, 571);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(99, 20);
             this.label6.TabIndex = 138;
@@ -687,7 +687,7 @@ namespace FocusGroup.OldPeople
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(1181, 608);
+            this.btnCancel.Location = new System.Drawing.Point(1181, 618);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(86, 34);
             this.btnCancel.TabIndex = 7;
@@ -698,7 +698,7 @@ namespace FocusGroup.OldPeople
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(1068, 608);
+            this.btnOK.Location = new System.Drawing.Point(1068, 618);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(86, 34);
             this.btnOK.TabIndex = 6;
@@ -712,7 +712,7 @@ namespace FocusGroup.OldPeople
             this.tbDoctor.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tbDoctor.ForeColor = System.Drawing.Color.Black;
             this.tbDoctor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.tbDoctor.Location = new System.Drawing.Point(156, 535);
+            this.tbDoctor.Location = new System.Drawing.Point(156, 566);
             this.tbDoctor.MaxLength = 20;
             this.tbDoctor.Name = "tbDoctor";
             this.tbDoctor.Size = new System.Drawing.Size(172, 30);
@@ -723,7 +723,7 @@ namespace FocusGroup.OldPeople
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("宋体", 15F);
-            this.label4.Location = new System.Drawing.Point(52, 541);
+            this.label4.Location = new System.Drawing.Point(52, 573);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 20);
             this.label4.TabIndex = 133;
@@ -731,7 +731,7 @@ namespace FocusGroup.OldPeople
             // 
             // dtpNextF
             // 
-            this.dtpNextF.Location = new System.Drawing.Point(666, 570);
+            this.dtpNextF.Location = new System.Drawing.Point(666, 610);
             this.dtpNextF.Name = "dtpNextF";
             this.dtpNextF.Size = new System.Drawing.Size(180, 30);
             this.dtpNextF.TabIndex = 5;
@@ -741,7 +741,7 @@ namespace FocusGroup.OldPeople
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("宋体", 15F);
-            this.label3.Location = new System.Drawing.Point(521, 579);
+            this.label3.Location = new System.Drawing.Point(521, 616);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(139, 20);
             this.label3.TabIndex = 131;
@@ -752,7 +752,7 @@ namespace FocusGroup.OldPeople
             this.tbTotal.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tbTotal.ForeColor = System.Drawing.Color.Black;
             this.tbTotal.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.tbTotal.Location = new System.Drawing.Point(414, 535);
+            this.tbTotal.Location = new System.Drawing.Point(414, 566);
             this.tbTotal.MaxLength = 3;
             this.tbTotal.Name = "tbTotal";
             this.tbTotal.ReadOnly = true;
@@ -764,7 +764,7 @@ namespace FocusGroup.OldPeople
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("宋体", 15F);
-            this.label2.Location = new System.Drawing.Point(337, 539);
+            this.label2.Location = new System.Drawing.Point(337, 571);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 20);
             this.label2.TabIndex = 129;
@@ -805,7 +805,7 @@ namespace FocusGroup.OldPeople
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1348, 452);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1348, 502);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -813,7 +813,7 @@ namespace FocusGroup.OldPeople
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 15F);
-            this.label1.Location = new System.Drawing.Point(52, 396);
+            this.label1.Location = new System.Drawing.Point(52, 441);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 20);
             this.label1.TabIndex = 128;
@@ -826,11 +826,11 @@ namespace FocusGroup.OldPeople
             this.tbTolet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbTolet.Font = new System.Drawing.Font("宋体", 12F);
             this.tbTolet.ForeColor = System.Drawing.Color.Black;
-            this.tbTolet.Location = new System.Drawing.Point(378, 274);
+            this.tbTolet.Location = new System.Drawing.Point(378, 304);
             this.tbTolet.Multiline = true;
             this.tbTolet.Name = "tbTolet";
             this.tbTolet.ReadOnly = true;
-            this.tbTolet.Size = new System.Drawing.Size(966, 83);
+            this.tbTolet.Size = new System.Drawing.Size(966, 93);
             this.tbTolet.TabIndex = 126;
             // 
             // tbDressing
@@ -840,11 +840,11 @@ namespace FocusGroup.OldPeople
             this.tbDressing.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbDressing.Font = new System.Drawing.Font("宋体", 12F);
             this.tbDressing.ForeColor = System.Drawing.Color.Black;
-            this.tbDressing.Location = new System.Drawing.Point(378, 184);
+            this.tbDressing.Location = new System.Drawing.Point(378, 204);
             this.tbDressing.Multiline = true;
             this.tbDressing.Name = "tbDressing";
             this.tbDressing.ReadOnly = true;
-            this.tbDressing.Size = new System.Drawing.Size(966, 83);
+            this.tbDressing.Size = new System.Drawing.Size(966, 93);
             this.tbDressing.TabIndex = 125;
             // 
             // tbGroming
@@ -854,11 +854,11 @@ namespace FocusGroup.OldPeople
             this.tbGroming.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbGroming.Font = new System.Drawing.Font("宋体", 12F);
             this.tbGroming.ForeColor = System.Drawing.Color.Black;
-            this.tbGroming.Location = new System.Drawing.Point(378, 94);
+            this.tbGroming.Location = new System.Drawing.Point(378, 104);
             this.tbGroming.Multiline = true;
             this.tbGroming.Name = "tbGroming";
             this.tbGroming.ReadOnly = true;
-            this.tbGroming.Size = new System.Drawing.Size(966, 83);
+            this.tbGroming.Size = new System.Drawing.Size(966, 93);
             this.tbGroming.TabIndex = 124;
             // 
             // cbTolet
@@ -866,7 +866,7 @@ namespace FocusGroup.OldPeople
             this.cbTolet.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbTolet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTolet.FormattingEnabled = true;
-            this.cbTolet.Location = new System.Drawing.Point(158, 305);
+            this.cbTolet.Location = new System.Drawing.Point(158, 336);
             this.cbTolet.Name = "cbTolet";
             this.cbTolet.Size = new System.Drawing.Size(183, 28);
             this.cbTolet.TabIndex = 3;
@@ -876,7 +876,7 @@ namespace FocusGroup.OldPeople
             this.cbDinner.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbDinner.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDinner.FormattingEnabled = true;
-            this.cbDinner.Location = new System.Drawing.Point(158, 35);
+            this.cbDinner.Location = new System.Drawing.Point(158, 36);
             this.cbDinner.Name = "cbDinner";
             this.cbDinner.Size = new System.Drawing.Size(183, 28);
             this.cbDinner.TabIndex = 0;
@@ -886,7 +886,7 @@ namespace FocusGroup.OldPeople
             this.cbDressing.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbDressing.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDressing.FormattingEnabled = true;
-            this.cbDressing.Location = new System.Drawing.Point(158, 215);
+            this.cbDressing.Location = new System.Drawing.Point(158, 236);
             this.cbDressing.Name = "cbDressing";
             this.cbDressing.Size = new System.Drawing.Size(183, 28);
             this.cbDressing.TabIndex = 2;
@@ -896,7 +896,7 @@ namespace FocusGroup.OldPeople
             this.label19.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("宋体", 15F);
-            this.label19.Location = new System.Drawing.Point(52, 305);
+            this.label19.Location = new System.Drawing.Point(52, 340);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(99, 20);
             this.label19.TabIndex = 111;
@@ -907,7 +907,7 @@ namespace FocusGroup.OldPeople
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("宋体", 15F);
-            this.label16.Location = new System.Drawing.Point(52, 215);
+            this.label16.Location = new System.Drawing.Point(52, 240);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(99, 20);
             this.label16.TabIndex = 111;
@@ -918,7 +918,7 @@ namespace FocusGroup.OldPeople
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("宋体", 15F);
-            this.label10.Location = new System.Drawing.Point(52, 35);
+            this.label10.Location = new System.Drawing.Point(52, 40);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(99, 20);
             this.label10.TabIndex = 0;
@@ -929,7 +929,7 @@ namespace FocusGroup.OldPeople
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("宋体", 15F);
-            this.label13.Location = new System.Drawing.Point(52, 125);
+            this.label13.Location = new System.Drawing.Point(52, 140);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(99, 20);
             this.label13.TabIndex = 100;
@@ -940,7 +940,7 @@ namespace FocusGroup.OldPeople
             this.cbGromming.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbGromming.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGromming.FormattingEnabled = true;
-            this.cbGromming.Location = new System.Drawing.Point(158, 125);
+            this.cbGromming.Location = new System.Drawing.Point(158, 136);
             this.cbGromming.Name = "cbGromming";
             this.cbGromming.Size = new System.Drawing.Size(183, 28);
             this.cbGromming.TabIndex = 1;
@@ -956,7 +956,7 @@ namespace FocusGroup.OldPeople
             this.tbDinner.Multiline = true;
             this.tbDinner.Name = "tbDinner";
             this.tbDinner.ReadOnly = true;
-            this.tbDinner.Size = new System.Drawing.Size(966, 83);
+            this.tbDinner.Size = new System.Drawing.Size(966, 93);
             this.tbDinner.TabIndex = 97;
             // 
             // cbAct
@@ -964,7 +964,7 @@ namespace FocusGroup.OldPeople
             this.cbAct.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbAct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAct.FormattingEnabled = true;
-            this.cbAct.Location = new System.Drawing.Point(158, 396);
+            this.cbAct.Location = new System.Drawing.Point(158, 437);
             this.cbAct.Name = "cbAct";
             this.cbAct.Size = new System.Drawing.Size(183, 28);
             this.cbAct.TabIndex = 4;
@@ -975,11 +975,11 @@ namespace FocusGroup.OldPeople
             this.tableLayoutPanel1.SetColumnSpan(this.tbActivity, 4);
             this.tbActivity.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbActivity.Font = new System.Drawing.Font("宋体", 12F);
-            this.tbActivity.Location = new System.Drawing.Point(378, 364);
+            this.tbActivity.Location = new System.Drawing.Point(378, 404);
             this.tbActivity.Multiline = true;
             this.tbActivity.Name = "tbActivity";
             this.tbActivity.ReadOnly = true;
-            this.tbActivity.Size = new System.Drawing.Size(966, 84);
+            this.tbActivity.Size = new System.Drawing.Size(966, 94);
             this.tbActivity.TabIndex = 129;
             // 
             // label5
@@ -987,7 +987,7 @@ namespace FocusGroup.OldPeople
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("宋体", 15F);
-            this.label5.Location = new System.Drawing.Point(6, 19);
+            this.label5.Location = new System.Drawing.Point(6, 22);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(1379, 20);
             this.label5.TabIndex = 137;

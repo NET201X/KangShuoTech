@@ -1,8 +1,8 @@
 
-using PadPlatform.Properties;
+using KangShuo.Properties;
 using KangShuoTech.Utilities.Common;
 
-namespace PadPlatform
+namespace KangShuo
 {
     using System;
     using System.Collections;

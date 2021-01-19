@@ -27,7 +27,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             builder.Append("PhysicalID,IDCardNo,HB,WBC,PLT,PRO,GLU,KET,BLD,FPGL,ECG,ALBUMIN,FOB,HBALC,HBSAG,SGPT,GOT,BP,TBIL,CB,SCR,BUN,PC,HYPE,TC,TG,LowCho,HeiCho,");
             builder.Append("CHESTX,BCHAO,BloodOther,UrineOther,Other,CERVIX,GT,ECGEx,CHESTXEx,BCHAOEx,CERVIXEx,FPGDL,OutKey,UA,BCHAOther,BCHAOtherEx,BloodType,RH,TP,AG,IBIL");
 
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_ASSISTCHECK' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='ALP'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_ASSISTCHECK' AND TABLE_SCHEMA='kangshuo_db' AND COLUMN_NAME='ALP'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;
@@ -337,7 +337,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                 sb.Append("ALY_N='" + model.ALY_N + "',");
             }
 
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_BLOODTEST' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='NRBC_N'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_BLOODTEST' AND TABLE_SCHEMA='kangshuo_db' AND COLUMN_NAME='NRBC_N'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;
@@ -387,7 +387,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 
             StringBuilder sb = new StringBuilder();
 
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_BLOODTEST' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='BarCode'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_BLOODTEST' AND TABLE_SCHEMA='kangshuo_db' AND COLUMN_NAME='BarCode'";
 
             object single = MySQLHelper.GetSingle(table);
 
@@ -538,7 +538,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                 sb.Append("ALY_N='" + model.ALY_N + "',");
             }
 
-            table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_BLOODTEST' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='NRBC_N'";
+            table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_BLOODTEST' AND TABLE_SCHEMA='kangshuo_db' AND COLUMN_NAME='NRBC_N'";
 
             single = MySQLHelper.GetSingle(table);
             int count = 0;
@@ -706,7 +706,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                     else if (model.HBSAG.Trim() == ("-") || model.HBSAG.Contains("1")) model.HBSAG = "1";
                     else if (model.HBSAG.Trim() == ("+-") || model.HBSAG.Contains("3")) model.HBSAG = "3";
 
-                    string t = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_ASSISTCHECK' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='HBSAG'";
+                    string t = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_ASSISTCHECK' AND TABLE_SCHEMA='kangshuo_db' AND COLUMN_NAME='HBSAG'";
 
                     object s = MySQLHelper.GetSingle(t);
                     int c = 0;
@@ -724,7 +724,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                     else if (model.HBEAG.Trim() == ("-") || model.HBEAG.Contains("1")) model.HBEAG = "1";
                     else if (model.HBEAG.Trim() == ("+-") || model.HBEAG.Contains("3")) model.HBEAG = "3";
 
-                    string t = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_ASSISTCHECK' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='HBEAG'";
+                    string t = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_ASSISTCHECK' AND TABLE_SCHEMA='kangshuo_db' AND COLUMN_NAME='HBEAG'";
 
                     object s = MySQLHelper.GetSingle(t);
                     int c = 0;
@@ -743,7 +743,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                     else if (model.HBEAB.Trim() == ("-") || model.HBEAB.Contains("1")) model.HBEAB = "1";
                     else if (model.HBEAB.Trim() == ("+-") || model.HBEAB.Contains("3")) model.HBEAB = "3";
 
-                    string t = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_ASSISTCHECK' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='HBEAB'";
+                    string t = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_ASSISTCHECK' AND TABLE_SCHEMA='kangshuo_db' AND COLUMN_NAME='HBEAB'";
 
                     object s = MySQLHelper.GetSingle(t);
                     int c = 0;
@@ -761,7 +761,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                     else if (model.HBCAB.Trim() == ("-") || model.HBCAB.Contains("1")) model.HBCAB = "1";
                     else if (model.HBCAB.Trim() == ("+-") || model.HBCAB.Contains("3")) model.HBCAB = "3";
 
-                    string t = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_ASSISTCHECK' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='HBCAB'";
+                    string t = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_ASSISTCHECK' AND TABLE_SCHEMA='kangshuo_db' AND COLUMN_NAME='HBCAB'";
 
                     object s = MySQLHelper.GetSingle(t);
                     int c = 0;
@@ -779,7 +779,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                     else if (model.HBSAB.Trim() == ("-") || model.HBSAB.Contains("1")) model.HBSAB = "1";
                     else if (model.HBSAB.Trim() == ("+-") || model.HBSAB.Contains("3")) model.HBSAB = "3";
 
-                    string t = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_ASSISTCHECK' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='HBSAB'";
+                    string t = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_ASSISTCHECK' AND TABLE_SCHEMA='kangshuo_db' AND COLUMN_NAME='HBSAB'";
 
                     object s = MySQLHelper.GetSingle(t);
                     int c = 0;
@@ -823,7 +823,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                     sb.Append("CA='" + model.CA + "',");
                 }
 
-                string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_ASSISTCHECK' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='ALP'";
+                string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_ASSISTCHECK' AND TABLE_SCHEMA='kangshuo_db' AND COLUMN_NAME='ALP'";
 
                 object single = MySQLHelper.GetSingle(table);
                 int count = 0;
@@ -1067,7 +1067,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                     sb.Append("CA='" + model.CA + "',");
                 }
 
-                string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_ASSISTCHECK' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='ALP'";
+                string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_ASSISTCHECK' AND TABLE_SCHEMA='kangshuo_db' AND COLUMN_NAME='ALP'";
 
                 object single = MySQLHelper.GetSingle(table);
                 int count = 0;

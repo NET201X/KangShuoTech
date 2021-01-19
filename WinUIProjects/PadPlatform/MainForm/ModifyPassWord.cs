@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using KangShuoTech.DataAccessProjects.Model;
 using KangShuoTech.DataAccessProjects.BLL;
 
-namespace PadPlatform
+namespace KangShuo
 {
     public partial class ModifyPassWord : Form
     {

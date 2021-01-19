@@ -661,7 +661,7 @@ namespace FocusGroup.elderInfo
             // 
             // btnResult
             // 
-            this.btnResult.Location = new System.Drawing.Point(902, 589);
+            this.btnResult.Location = new System.Drawing.Point(902, 626);
             this.btnResult.Name = "btnResult";
             this.btnResult.Size = new System.Drawing.Size(106, 38);
             this.btnResult.TabIndex = 1;
@@ -678,12 +678,12 @@ namespace FocusGroup.elderInfo
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 21);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1280, 581);
+            this.dataGridView1.Size = new System.Drawing.Size(1487, 581);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
@@ -695,43 +695,47 @@ namespace FocusGroup.elderInfo
             this.panel1.Controls.Add(this.dtpTypeDate);
             this.panel1.Controls.Add(this.label22);
             this.panel1.Controls.Add(this.tableLayoutPanel1);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(20, 21);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1247, 581);
+            this.panel1.Size = new System.Drawing.Size(1467, 581);
             this.panel1.TabIndex = 2;
             this.panel1.Visible = false;
             // 
             // tbDoctor
             // 
-            this.tbDoctor.Location = new System.Drawing.Point(867, 453);
+            this.tbDoctor.Font = new System.Drawing.Font("宋体", 15F);
+            this.tbDoctor.Location = new System.Drawing.Point(541, 533);
             this.tbDoctor.MaxLength = 20;
             this.tbDoctor.Name = "tbDoctor";
             this.tbDoctor.ReadOnly = true;
-            this.tbDoctor.Size = new System.Drawing.Size(226, 23);
+            this.tbDoctor.Size = new System.Drawing.Size(226, 30);
             this.tbDoctor.TabIndex = 10;
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(791, 459);
+            this.label23.Font = new System.Drawing.Font("宋体", 15F);
+            this.label23.Location = new System.Drawing.Point(440, 539);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(70, 14);
+            this.label23.Size = new System.Drawing.Size(99, 20);
             this.label23.TabIndex = 9;
             this.label23.Text = "医生签名:";
             // 
             // dtpTypeDate
             // 
-            this.dtpTypeDate.Location = new System.Drawing.Point(555, 453);
+            this.dtpTypeDate.Font = new System.Drawing.Font("宋体", 15F);
+            this.dtpTypeDate.Location = new System.Drawing.Point(231, 533);
             this.dtpTypeDate.Name = "dtpTypeDate";
-            this.dtpTypeDate.Size = new System.Drawing.Size(200, 23);
+            this.dtpTypeDate.Size = new System.Drawing.Size(200, 30);
             this.dtpTypeDate.TabIndex = 8;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(479, 459);
+            this.label22.Font = new System.Drawing.Font("宋体", 15F);
+            this.label22.Location = new System.Drawing.Point(128, 539);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(70, 14);
+            this.label22.Size = new System.Drawing.Size(99, 20);
             this.label22.TabIndex = 7;
             this.label22.Text = "填表日期:";
             // 
@@ -748,8 +752,8 @@ namespace FocusGroup.elderInfo
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 356F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
             this.tableLayoutPanel1.Controls.Add(this.panel9, 9, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel8, 8, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel7, 7, 1);
@@ -780,35 +784,39 @@ namespace FocusGroup.elderInfo
             this.tableLayoutPanel1.Controls.Add(this.panel10, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel19, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label9, 9, 0);
+            this.tableLayoutPanel1.Font = new System.Drawing.Font("宋体", 15F);
             this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(126, 47);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(126, 48);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(967, 395);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 210F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1257, 468);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // panel9
             // 
+            this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel9.Controls.Add(this.rdPinghe_QYes);
             this.panel9.Controls.Add(this.rdPinghe_Yes);
             this.panel9.Controls.Add(this.tbPingheScore);
             this.panel9.Controls.Add(this.label20);
-            this.panel9.Location = new System.Drawing.Point(870, 52);
+            this.panel9.Location = new System.Drawing.Point(1131, 52);
             this.panel9.Margin = new System.Windows.Forms.Padding(0);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(95, 90);
+            this.panel9.Size = new System.Drawing.Size(125, 150);
             this.panel9.TabIndex = 38;
             // 
             // rdPinghe_QYes
             // 
             this.rdPinghe_QYes.AutoSize = true;
             this.rdPinghe_QYes.Enabled = false;
-            this.rdPinghe_QYes.Location = new System.Drawing.Point(6, 58);
+            this.rdPinghe_QYes.Location = new System.Drawing.Point(12, 86);
             this.rdPinghe_QYes.Name = "rdPinghe_QYes";
-            this.rdPinghe_QYes.Size = new System.Drawing.Size(67, 18);
+            this.rdPinghe_QYes.Size = new System.Drawing.Size(87, 24);
             this.rdPinghe_QYes.TabIndex = 3;
             this.rdPinghe_QYes.TabStop = true;
             this.rdPinghe_QYes.Text = "基本是";
@@ -818,9 +826,9 @@ namespace FocusGroup.elderInfo
             // 
             this.rdPinghe_Yes.AutoSize = true;
             this.rdPinghe_Yes.Enabled = false;
-            this.rdPinghe_Yes.Location = new System.Drawing.Point(6, 34);
+            this.rdPinghe_Yes.Location = new System.Drawing.Point(12, 49);
             this.rdPinghe_Yes.Name = "rdPinghe_Yes";
-            this.rdPinghe_Yes.Size = new System.Drawing.Size(39, 18);
+            this.rdPinghe_Yes.Size = new System.Drawing.Size(47, 24);
             this.rdPinghe_Yes.TabIndex = 2;
             this.rdPinghe_Yes.TabStop = true;
             this.rdPinghe_Yes.Text = "是";
@@ -828,18 +836,18 @@ namespace FocusGroup.elderInfo
             // 
             // tbPingheScore
             // 
-            this.tbPingheScore.Location = new System.Drawing.Point(44, 5);
+            this.tbPingheScore.Location = new System.Drawing.Point(65, 12);
             this.tbPingheScore.Name = "tbPingheScore";
             this.tbPingheScore.ReadOnly = true;
-            this.tbPingheScore.Size = new System.Drawing.Size(44, 23);
+            this.tbPingheScore.Size = new System.Drawing.Size(44, 30);
             this.tbPingheScore.TabIndex = 1;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(3, 9);
+            this.label20.Location = new System.Drawing.Point(4, 16);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(42, 14);
+            this.label20.Size = new System.Drawing.Size(59, 20);
             this.label20.TabIndex = 0;
             this.label20.Text = "得分:";
             // 
@@ -861,7 +869,7 @@ namespace FocusGroup.elderInfo
             this.rdTebing_QYes.Enabled = false;
             this.rdTebing_QYes.Location = new System.Drawing.Point(6, 58);
             this.rdTebing_QYes.Name = "rdTebing_QYes";
-            this.rdTebing_QYes.Size = new System.Drawing.Size(67, 18);
+            this.rdTebing_QYes.Size = new System.Drawing.Size(87, 24);
             this.rdTebing_QYes.TabIndex = 3;
             this.rdTebing_QYes.TabStop = true;
             this.rdTebing_QYes.Text = "倾向是";
@@ -873,7 +881,7 @@ namespace FocusGroup.elderInfo
             this.rdTebing_Yes.Enabled = false;
             this.rdTebing_Yes.Location = new System.Drawing.Point(6, 34);
             this.rdTebing_Yes.Name = "rdTebing_Yes";
-            this.rdTebing_Yes.Size = new System.Drawing.Size(39, 18);
+            this.rdTebing_Yes.Size = new System.Drawing.Size(47, 24);
             this.rdTebing_Yes.TabIndex = 2;
             this.rdTebing_Yes.TabStop = true;
             this.rdTebing_Yes.Text = "是";
@@ -884,7 +892,7 @@ namespace FocusGroup.elderInfo
             this.tbTebingScore.Location = new System.Drawing.Point(44, 5);
             this.tbTebingScore.Name = "tbTebingScore";
             this.tbTebingScore.ReadOnly = true;
-            this.tbTebingScore.Size = new System.Drawing.Size(44, 23);
+            this.tbTebingScore.Size = new System.Drawing.Size(44, 30);
             this.tbTebingScore.TabIndex = 1;
             // 
             // label19
@@ -892,7 +900,7 @@ namespace FocusGroup.elderInfo
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(3, 9);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(42, 14);
+            this.label19.Size = new System.Drawing.Size(59, 20);
             this.label19.TabIndex = 0;
             this.label19.Text = "得分:";
             // 
@@ -914,7 +922,7 @@ namespace FocusGroup.elderInfo
             this.rdQiyu_QYes.Enabled = false;
             this.rdQiyu_QYes.Location = new System.Drawing.Point(6, 58);
             this.rdQiyu_QYes.Name = "rdQiyu_QYes";
-            this.rdQiyu_QYes.Size = new System.Drawing.Size(67, 18);
+            this.rdQiyu_QYes.Size = new System.Drawing.Size(87, 24);
             this.rdQiyu_QYes.TabIndex = 3;
             this.rdQiyu_QYes.TabStop = true;
             this.rdQiyu_QYes.Text = "倾向是";
@@ -926,7 +934,7 @@ namespace FocusGroup.elderInfo
             this.rdQiyu_Yes.Enabled = false;
             this.rdQiyu_Yes.Location = new System.Drawing.Point(6, 34);
             this.rdQiyu_Yes.Name = "rdQiyu_Yes";
-            this.rdQiyu_Yes.Size = new System.Drawing.Size(39, 18);
+            this.rdQiyu_Yes.Size = new System.Drawing.Size(47, 24);
             this.rdQiyu_Yes.TabIndex = 2;
             this.rdQiyu_Yes.TabStop = true;
             this.rdQiyu_Yes.Text = "是";
@@ -937,7 +945,7 @@ namespace FocusGroup.elderInfo
             this.tbQiyuScore.Location = new System.Drawing.Point(44, 5);
             this.tbQiyuScore.Name = "tbQiyuScore";
             this.tbQiyuScore.ReadOnly = true;
-            this.tbQiyuScore.Size = new System.Drawing.Size(44, 23);
+            this.tbQiyuScore.Size = new System.Drawing.Size(44, 30);
             this.tbQiyuScore.TabIndex = 1;
             // 
             // label18
@@ -945,7 +953,7 @@ namespace FocusGroup.elderInfo
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(3, 9);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(42, 14);
+            this.label18.Size = new System.Drawing.Size(59, 20);
             this.label18.TabIndex = 0;
             this.label18.Text = "得分:";
             // 
@@ -967,7 +975,7 @@ namespace FocusGroup.elderInfo
             this.rdXueyu_QYes.Enabled = false;
             this.rdXueyu_QYes.Location = new System.Drawing.Point(6, 58);
             this.rdXueyu_QYes.Name = "rdXueyu_QYes";
-            this.rdXueyu_QYes.Size = new System.Drawing.Size(67, 18);
+            this.rdXueyu_QYes.Size = new System.Drawing.Size(87, 24);
             this.rdXueyu_QYes.TabIndex = 3;
             this.rdXueyu_QYes.TabStop = true;
             this.rdXueyu_QYes.Text = "倾向是";
@@ -979,7 +987,7 @@ namespace FocusGroup.elderInfo
             this.rdXueyu_Yes.Enabled = false;
             this.rdXueyu_Yes.Location = new System.Drawing.Point(6, 34);
             this.rdXueyu_Yes.Name = "rdXueyu_Yes";
-            this.rdXueyu_Yes.Size = new System.Drawing.Size(39, 18);
+            this.rdXueyu_Yes.Size = new System.Drawing.Size(47, 24);
             this.rdXueyu_Yes.TabIndex = 2;
             this.rdXueyu_Yes.TabStop = true;
             this.rdXueyu_Yes.Text = "是";
@@ -990,7 +998,7 @@ namespace FocusGroup.elderInfo
             this.tbXueyuScore.Location = new System.Drawing.Point(44, 5);
             this.tbXueyuScore.Name = "tbXueyuScore";
             this.tbXueyuScore.ReadOnly = true;
-            this.tbXueyuScore.Size = new System.Drawing.Size(44, 23);
+            this.tbXueyuScore.Size = new System.Drawing.Size(44, 30);
             this.tbXueyuScore.TabIndex = 1;
             // 
             // label17
@@ -998,7 +1006,7 @@ namespace FocusGroup.elderInfo
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(3, 9);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(42, 14);
+            this.label17.Size = new System.Drawing.Size(59, 20);
             this.label17.TabIndex = 0;
             this.label17.Text = "得分:";
             // 
@@ -1020,7 +1028,7 @@ namespace FocusGroup.elderInfo
             this.rdShire_QYes.Enabled = false;
             this.rdShire_QYes.Location = new System.Drawing.Point(6, 58);
             this.rdShire_QYes.Name = "rdShire_QYes";
-            this.rdShire_QYes.Size = new System.Drawing.Size(67, 18);
+            this.rdShire_QYes.Size = new System.Drawing.Size(87, 24);
             this.rdShire_QYes.TabIndex = 3;
             this.rdShire_QYes.TabStop = true;
             this.rdShire_QYes.Text = "倾向是";
@@ -1032,7 +1040,7 @@ namespace FocusGroup.elderInfo
             this.rdShire_Yes.Enabled = false;
             this.rdShire_Yes.Location = new System.Drawing.Point(6, 34);
             this.rdShire_Yes.Name = "rdShire_Yes";
-            this.rdShire_Yes.Size = new System.Drawing.Size(39, 18);
+            this.rdShire_Yes.Size = new System.Drawing.Size(47, 24);
             this.rdShire_Yes.TabIndex = 2;
             this.rdShire_Yes.TabStop = true;
             this.rdShire_Yes.Text = "是";
@@ -1043,7 +1051,7 @@ namespace FocusGroup.elderInfo
             this.tbShireScore.Location = new System.Drawing.Point(44, 5);
             this.tbShireScore.Name = "tbShireScore";
             this.tbShireScore.ReadOnly = true;
-            this.tbShireScore.Size = new System.Drawing.Size(44, 23);
+            this.tbShireScore.Size = new System.Drawing.Size(44, 30);
             this.tbShireScore.TabIndex = 1;
             // 
             // label16
@@ -1051,7 +1059,7 @@ namespace FocusGroup.elderInfo
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(3, 9);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(42, 14);
+            this.label16.Size = new System.Drawing.Size(59, 20);
             this.label16.TabIndex = 0;
             this.label16.Text = "得分:";
             // 
@@ -1073,7 +1081,7 @@ namespace FocusGroup.elderInfo
             this.rdTanshi_QYes.Enabled = false;
             this.rdTanshi_QYes.Location = new System.Drawing.Point(6, 58);
             this.rdTanshi_QYes.Name = "rdTanshi_QYes";
-            this.rdTanshi_QYes.Size = new System.Drawing.Size(67, 18);
+            this.rdTanshi_QYes.Size = new System.Drawing.Size(87, 24);
             this.rdTanshi_QYes.TabIndex = 3;
             this.rdTanshi_QYes.TabStop = true;
             this.rdTanshi_QYes.Text = "倾向是";
@@ -1085,7 +1093,7 @@ namespace FocusGroup.elderInfo
             this.rdTanshi_Yes.Enabled = false;
             this.rdTanshi_Yes.Location = new System.Drawing.Point(6, 34);
             this.rdTanshi_Yes.Name = "rdTanshi_Yes";
-            this.rdTanshi_Yes.Size = new System.Drawing.Size(39, 18);
+            this.rdTanshi_Yes.Size = new System.Drawing.Size(47, 24);
             this.rdTanshi_Yes.TabIndex = 2;
             this.rdTanshi_Yes.TabStop = true;
             this.rdTanshi_Yes.Text = "是";
@@ -1096,7 +1104,7 @@ namespace FocusGroup.elderInfo
             this.tbTanshiScore.Location = new System.Drawing.Point(44, 5);
             this.tbTanshiScore.Name = "tbTanshiScore";
             this.tbTanshiScore.ReadOnly = true;
-            this.tbTanshiScore.Size = new System.Drawing.Size(44, 23);
+            this.tbTanshiScore.Size = new System.Drawing.Size(44, 30);
             this.tbTanshiScore.TabIndex = 1;
             // 
             // label15
@@ -1104,7 +1112,7 @@ namespace FocusGroup.elderInfo
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(3, 9);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(42, 14);
+            this.label15.Size = new System.Drawing.Size(59, 20);
             this.label15.TabIndex = 0;
             this.label15.Text = "得分:";
             // 
@@ -1126,7 +1134,7 @@ namespace FocusGroup.elderInfo
             this.rdYinxu_QYes.Enabled = false;
             this.rdYinxu_QYes.Location = new System.Drawing.Point(6, 58);
             this.rdYinxu_QYes.Name = "rdYinxu_QYes";
-            this.rdYinxu_QYes.Size = new System.Drawing.Size(67, 18);
+            this.rdYinxu_QYes.Size = new System.Drawing.Size(87, 24);
             this.rdYinxu_QYes.TabIndex = 3;
             this.rdYinxu_QYes.TabStop = true;
             this.rdYinxu_QYes.Text = "倾向是";
@@ -1138,7 +1146,7 @@ namespace FocusGroup.elderInfo
             this.rdYinxu_Yes.Enabled = false;
             this.rdYinxu_Yes.Location = new System.Drawing.Point(6, 34);
             this.rdYinxu_Yes.Name = "rdYinxu_Yes";
-            this.rdYinxu_Yes.Size = new System.Drawing.Size(39, 18);
+            this.rdYinxu_Yes.Size = new System.Drawing.Size(47, 24);
             this.rdYinxu_Yes.TabIndex = 2;
             this.rdYinxu_Yes.TabStop = true;
             this.rdYinxu_Yes.Text = "是";
@@ -1149,7 +1157,7 @@ namespace FocusGroup.elderInfo
             this.tbYinxuScore.Location = new System.Drawing.Point(44, 5);
             this.tbYinxuScore.Name = "tbYinxuScore";
             this.tbYinxuScore.ReadOnly = true;
-            this.tbYinxuScore.Size = new System.Drawing.Size(44, 23);
+            this.tbYinxuScore.Size = new System.Drawing.Size(44, 30);
             this.tbYinxuScore.TabIndex = 1;
             // 
             // label14
@@ -1157,7 +1165,7 @@ namespace FocusGroup.elderInfo
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(3, 9);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(42, 14);
+            this.label14.Size = new System.Drawing.Size(59, 20);
             this.label14.TabIndex = 0;
             this.label14.Text = "得分:";
             // 
@@ -1179,7 +1187,7 @@ namespace FocusGroup.elderInfo
             this.rdYangxu_QYes.Enabled = false;
             this.rdYangxu_QYes.Location = new System.Drawing.Point(6, 58);
             this.rdYangxu_QYes.Name = "rdYangxu_QYes";
-            this.rdYangxu_QYes.Size = new System.Drawing.Size(67, 18);
+            this.rdYangxu_QYes.Size = new System.Drawing.Size(87, 24);
             this.rdYangxu_QYes.TabIndex = 3;
             this.rdYangxu_QYes.TabStop = true;
             this.rdYangxu_QYes.Text = "倾向是";
@@ -1191,7 +1199,7 @@ namespace FocusGroup.elderInfo
             this.rdYangxu_Yes.Enabled = false;
             this.rdYangxu_Yes.Location = new System.Drawing.Point(6, 34);
             this.rdYangxu_Yes.Name = "rdYangxu_Yes";
-            this.rdYangxu_Yes.Size = new System.Drawing.Size(39, 18);
+            this.rdYangxu_Yes.Size = new System.Drawing.Size(47, 24);
             this.rdYangxu_Yes.TabIndex = 2;
             this.rdYangxu_Yes.TabStop = true;
             this.rdYangxu_Yes.Text = "是";
@@ -1202,7 +1210,7 @@ namespace FocusGroup.elderInfo
             this.tbYangxuSorce.Location = new System.Drawing.Point(44, 5);
             this.tbYangxuSorce.Name = "tbYangxuSorce";
             this.tbYangxuSorce.ReadOnly = true;
-            this.tbYangxuSorce.Size = new System.Drawing.Size(44, 23);
+            this.tbYangxuSorce.Size = new System.Drawing.Size(44, 30);
             this.tbYangxuSorce.TabIndex = 1;
             // 
             // label13
@@ -1210,7 +1218,7 @@ namespace FocusGroup.elderInfo
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(3, 9);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(42, 14);
+            this.label13.Size = new System.Drawing.Size(59, 20);
             this.label13.TabIndex = 0;
             this.label13.Text = "得分:";
             // 
@@ -1223,28 +1231,28 @@ namespace FocusGroup.elderInfo
             this.panel18.Controls.Add(this.ckPinghe3);
             this.panel18.Controls.Add(this.ckPinghe2);
             this.panel18.Controls.Add(this.ckPinghe1);
-            this.panel18.Location = new System.Drawing.Point(870, 143);
+            this.panel18.Location = new System.Drawing.Point(1131, 203);
             this.panel18.Margin = new System.Windows.Forms.Padding(0);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(95, 247);
+            this.panel18.Size = new System.Drawing.Size(125, 264);
             this.panel18.TabIndex = 30;
             // 
             // tbPinghe
             // 
-            this.tbPinghe.Location = new System.Drawing.Point(6, 152);
+            this.tbPinghe.Location = new System.Drawing.Point(5, 193);
             this.tbPinghe.MaxLength = 100;
             this.tbPinghe.Multiline = true;
             this.tbPinghe.Name = "tbPinghe";
             this.tbPinghe.ReadOnly = true;
-            this.tbPinghe.Size = new System.Drawing.Size(82, 92);
+            this.tbPinghe.Size = new System.Drawing.Size(103, 61);
             this.tbPinghe.TabIndex = 9;
             // 
             // ckPingheOth
             // 
             this.ckPingheOth.AutoSize = true;
-            this.ckPingheOth.Location = new System.Drawing.Point(6, 128);
+            this.ckPingheOth.Location = new System.Drawing.Point(6, 162);
             this.ckPingheOth.Name = "ckPingheOth";
-            this.ckPingheOth.Size = new System.Drawing.Size(54, 18);
+            this.ckPingheOth.Size = new System.Drawing.Size(68, 24);
             this.ckPingheOth.TabIndex = 8;
             this.ckPingheOth.Text = "其他";
             this.ckPingheOth.UseVisualStyleBackColor = true;
@@ -1252,9 +1260,9 @@ namespace FocusGroup.elderInfo
             // ckPinghe5
             // 
             this.ckPinghe5.AutoSize = true;
-            this.ckPinghe5.Location = new System.Drawing.Point(6, 104);
+            this.ckPinghe5.Location = new System.Drawing.Point(6, 133);
             this.ckPinghe5.Name = "ckPinghe5";
-            this.ckPinghe5.Size = new System.Drawing.Size(82, 18);
+            this.ckPinghe5.Size = new System.Drawing.Size(108, 24);
             this.ckPinghe5.TabIndex = 7;
             this.ckPinghe5.Text = "穴位保健";
             this.ckPinghe5.UseVisualStyleBackColor = true;
@@ -1262,9 +1270,9 @@ namespace FocusGroup.elderInfo
             // ckPinghe4
             // 
             this.ckPinghe4.AutoSize = true;
-            this.ckPinghe4.Location = new System.Drawing.Point(6, 80);
+            this.ckPinghe4.Location = new System.Drawing.Point(6, 104);
             this.ckPinghe4.Name = "ckPinghe4";
-            this.ckPinghe4.Size = new System.Drawing.Size(82, 18);
+            this.ckPinghe4.Size = new System.Drawing.Size(108, 24);
             this.ckPinghe4.TabIndex = 6;
             this.ckPinghe4.Text = "运动保健";
             this.ckPinghe4.UseVisualStyleBackColor = true;
@@ -1272,9 +1280,9 @@ namespace FocusGroup.elderInfo
             // ckPinghe3
             // 
             this.ckPinghe3.AutoSize = true;
-            this.ckPinghe3.Location = new System.Drawing.Point(6, 56);
+            this.ckPinghe3.Location = new System.Drawing.Point(6, 74);
             this.ckPinghe3.Name = "ckPinghe3";
-            this.ckPinghe3.Size = new System.Drawing.Size(82, 18);
+            this.ckPinghe3.Size = new System.Drawing.Size(108, 24);
             this.ckPinghe3.TabIndex = 5;
             this.ckPinghe3.Text = "起居调摄";
             this.ckPinghe3.UseVisualStyleBackColor = true;
@@ -1282,9 +1290,9 @@ namespace FocusGroup.elderInfo
             // ckPinghe2
             // 
             this.ckPinghe2.AutoSize = true;
-            this.ckPinghe2.Location = new System.Drawing.Point(6, 32);
+            this.ckPinghe2.Location = new System.Drawing.Point(6, 41);
             this.ckPinghe2.Name = "ckPinghe2";
-            this.ckPinghe2.Size = new System.Drawing.Size(82, 18);
+            this.ckPinghe2.Size = new System.Drawing.Size(108, 24);
             this.ckPinghe2.TabIndex = 4;
             this.ckPinghe2.Text = "饮食调养";
             this.ckPinghe2.UseVisualStyleBackColor = true;
@@ -1294,7 +1302,7 @@ namespace FocusGroup.elderInfo
             this.ckPinghe1.AutoSize = true;
             this.ckPinghe1.Location = new System.Drawing.Point(6, 8);
             this.ckPinghe1.Name = "ckPinghe1";
-            this.ckPinghe1.Size = new System.Drawing.Size(82, 18);
+            this.ckPinghe1.Size = new System.Drawing.Size(108, 24);
             this.ckPinghe1.TabIndex = 3;
             this.ckPinghe1.Text = "情志调摄";
             this.ckPinghe1.UseVisualStyleBackColor = true;
@@ -1308,7 +1316,7 @@ namespace FocusGroup.elderInfo
             this.panel17.Controls.Add(this.ckTebing3);
             this.panel17.Controls.Add(this.ckTebing2);
             this.panel17.Controls.Add(this.ckTebing1);
-            this.panel17.Location = new System.Drawing.Point(774, 143);
+            this.panel17.Location = new System.Drawing.Point(774, 203);
             this.panel17.Margin = new System.Windows.Forms.Padding(0);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(95, 247);
@@ -1321,7 +1329,7 @@ namespace FocusGroup.elderInfo
             this.tbTebing.Multiline = true;
             this.tbTebing.Name = "tbTebing";
             this.tbTebing.ReadOnly = true;
-            this.tbTebing.Size = new System.Drawing.Size(82, 92);
+            this.tbTebing.Size = new System.Drawing.Size(103, 61);
             this.tbTebing.TabIndex = 9;
             // 
             // ckTebingOth
@@ -1329,7 +1337,7 @@ namespace FocusGroup.elderInfo
             this.ckTebingOth.AutoSize = true;
             this.ckTebingOth.Location = new System.Drawing.Point(6, 128);
             this.ckTebingOth.Name = "ckTebingOth";
-            this.ckTebingOth.Size = new System.Drawing.Size(54, 18);
+            this.ckTebingOth.Size = new System.Drawing.Size(68, 24);
             this.ckTebingOth.TabIndex = 8;
             this.ckTebingOth.Text = "其他";
             this.ckTebingOth.UseVisualStyleBackColor = true;
@@ -1339,7 +1347,7 @@ namespace FocusGroup.elderInfo
             this.ckTebing5.AutoSize = true;
             this.ckTebing5.Location = new System.Drawing.Point(6, 104);
             this.ckTebing5.Name = "ckTebing5";
-            this.ckTebing5.Size = new System.Drawing.Size(82, 18);
+            this.ckTebing5.Size = new System.Drawing.Size(108, 24);
             this.ckTebing5.TabIndex = 7;
             this.ckTebing5.Text = "穴位保健";
             this.ckTebing5.UseVisualStyleBackColor = true;
@@ -1349,7 +1357,7 @@ namespace FocusGroup.elderInfo
             this.ckTebing4.AutoSize = true;
             this.ckTebing4.Location = new System.Drawing.Point(6, 80);
             this.ckTebing4.Name = "ckTebing4";
-            this.ckTebing4.Size = new System.Drawing.Size(82, 18);
+            this.ckTebing4.Size = new System.Drawing.Size(108, 24);
             this.ckTebing4.TabIndex = 6;
             this.ckTebing4.Text = "运动保健";
             this.ckTebing4.UseVisualStyleBackColor = true;
@@ -1359,7 +1367,7 @@ namespace FocusGroup.elderInfo
             this.ckTebing3.AutoSize = true;
             this.ckTebing3.Location = new System.Drawing.Point(6, 56);
             this.ckTebing3.Name = "ckTebing3";
-            this.ckTebing3.Size = new System.Drawing.Size(82, 18);
+            this.ckTebing3.Size = new System.Drawing.Size(108, 24);
             this.ckTebing3.TabIndex = 5;
             this.ckTebing3.Text = "起居调摄";
             this.ckTebing3.UseVisualStyleBackColor = true;
@@ -1369,7 +1377,7 @@ namespace FocusGroup.elderInfo
             this.ckTebing2.AutoSize = true;
             this.ckTebing2.Location = new System.Drawing.Point(6, 32);
             this.ckTebing2.Name = "ckTebing2";
-            this.ckTebing2.Size = new System.Drawing.Size(82, 18);
+            this.ckTebing2.Size = new System.Drawing.Size(108, 24);
             this.ckTebing2.TabIndex = 4;
             this.ckTebing2.Text = "饮食调养";
             this.ckTebing2.UseVisualStyleBackColor = true;
@@ -1379,7 +1387,7 @@ namespace FocusGroup.elderInfo
             this.ckTebing1.AutoSize = true;
             this.ckTebing1.Location = new System.Drawing.Point(6, 8);
             this.ckTebing1.Name = "ckTebing1";
-            this.ckTebing1.Size = new System.Drawing.Size(82, 18);
+            this.ckTebing1.Size = new System.Drawing.Size(108, 24);
             this.ckTebing1.TabIndex = 3;
             this.ckTebing1.Text = "情志调摄";
             this.ckTebing1.UseVisualStyleBackColor = true;
@@ -1393,7 +1401,7 @@ namespace FocusGroup.elderInfo
             this.panel16.Controls.Add(this.ckQiyu3);
             this.panel16.Controls.Add(this.ckQiyu2);
             this.panel16.Controls.Add(this.ckQiyu1);
-            this.panel16.Location = new System.Drawing.Point(678, 143);
+            this.panel16.Location = new System.Drawing.Point(678, 203);
             this.panel16.Margin = new System.Windows.Forms.Padding(0);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(95, 247);
@@ -1406,7 +1414,7 @@ namespace FocusGroup.elderInfo
             this.tbQiyu.Multiline = true;
             this.tbQiyu.Name = "tbQiyu";
             this.tbQiyu.ReadOnly = true;
-            this.tbQiyu.Size = new System.Drawing.Size(82, 92);
+            this.tbQiyu.Size = new System.Drawing.Size(103, 61);
             this.tbQiyu.TabIndex = 9;
             // 
             // ckQiyuOth
@@ -1414,7 +1422,7 @@ namespace FocusGroup.elderInfo
             this.ckQiyuOth.AutoSize = true;
             this.ckQiyuOth.Location = new System.Drawing.Point(6, 128);
             this.ckQiyuOth.Name = "ckQiyuOth";
-            this.ckQiyuOth.Size = new System.Drawing.Size(54, 18);
+            this.ckQiyuOth.Size = new System.Drawing.Size(68, 24);
             this.ckQiyuOth.TabIndex = 8;
             this.ckQiyuOth.Text = "其他";
             this.ckQiyuOth.UseVisualStyleBackColor = true;
@@ -1424,7 +1432,7 @@ namespace FocusGroup.elderInfo
             this.ckQiyu5.AutoSize = true;
             this.ckQiyu5.Location = new System.Drawing.Point(6, 104);
             this.ckQiyu5.Name = "ckQiyu5";
-            this.ckQiyu5.Size = new System.Drawing.Size(82, 18);
+            this.ckQiyu5.Size = new System.Drawing.Size(108, 24);
             this.ckQiyu5.TabIndex = 7;
             this.ckQiyu5.Text = "穴位保健";
             this.ckQiyu5.UseVisualStyleBackColor = true;
@@ -1434,7 +1442,7 @@ namespace FocusGroup.elderInfo
             this.ckQiyu4.AutoSize = true;
             this.ckQiyu4.Location = new System.Drawing.Point(6, 80);
             this.ckQiyu4.Name = "ckQiyu4";
-            this.ckQiyu4.Size = new System.Drawing.Size(82, 18);
+            this.ckQiyu4.Size = new System.Drawing.Size(108, 24);
             this.ckQiyu4.TabIndex = 6;
             this.ckQiyu4.Text = "运动保健";
             this.ckQiyu4.UseVisualStyleBackColor = true;
@@ -1444,7 +1452,7 @@ namespace FocusGroup.elderInfo
             this.ckQiyu3.AutoSize = true;
             this.ckQiyu3.Location = new System.Drawing.Point(6, 56);
             this.ckQiyu3.Name = "ckQiyu3";
-            this.ckQiyu3.Size = new System.Drawing.Size(82, 18);
+            this.ckQiyu3.Size = new System.Drawing.Size(108, 24);
             this.ckQiyu3.TabIndex = 5;
             this.ckQiyu3.Text = "起居调摄";
             this.ckQiyu3.UseVisualStyleBackColor = true;
@@ -1454,7 +1462,7 @@ namespace FocusGroup.elderInfo
             this.ckQiyu2.AutoSize = true;
             this.ckQiyu2.Location = new System.Drawing.Point(6, 32);
             this.ckQiyu2.Name = "ckQiyu2";
-            this.ckQiyu2.Size = new System.Drawing.Size(82, 18);
+            this.ckQiyu2.Size = new System.Drawing.Size(108, 24);
             this.ckQiyu2.TabIndex = 4;
             this.ckQiyu2.Text = "饮食调养";
             this.ckQiyu2.UseVisualStyleBackColor = true;
@@ -1464,7 +1472,7 @@ namespace FocusGroup.elderInfo
             this.ckQiyu1.AutoSize = true;
             this.ckQiyu1.Location = new System.Drawing.Point(6, 8);
             this.ckQiyu1.Name = "ckQiyu1";
-            this.ckQiyu1.Size = new System.Drawing.Size(82, 18);
+            this.ckQiyu1.Size = new System.Drawing.Size(108, 24);
             this.ckQiyu1.TabIndex = 3;
             this.ckQiyu1.Text = "情志调摄";
             this.ckQiyu1.UseVisualStyleBackColor = true;
@@ -1478,7 +1486,7 @@ namespace FocusGroup.elderInfo
             this.panel15.Controls.Add(this.ckXueyu3);
             this.panel15.Controls.Add(this.ckXueyu2);
             this.panel15.Controls.Add(this.ckXueyu1);
-            this.panel15.Location = new System.Drawing.Point(582, 143);
+            this.panel15.Location = new System.Drawing.Point(582, 203);
             this.panel15.Margin = new System.Windows.Forms.Padding(0);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(95, 247);
@@ -1491,7 +1499,7 @@ namespace FocusGroup.elderInfo
             this.tbXueyu.Multiline = true;
             this.tbXueyu.Name = "tbXueyu";
             this.tbXueyu.ReadOnly = true;
-            this.tbXueyu.Size = new System.Drawing.Size(82, 92);
+            this.tbXueyu.Size = new System.Drawing.Size(103, 61);
             this.tbXueyu.TabIndex = 9;
             // 
             // ckXueyuOth
@@ -1499,7 +1507,7 @@ namespace FocusGroup.elderInfo
             this.ckXueyuOth.AutoSize = true;
             this.ckXueyuOth.Location = new System.Drawing.Point(6, 128);
             this.ckXueyuOth.Name = "ckXueyuOth";
-            this.ckXueyuOth.Size = new System.Drawing.Size(54, 18);
+            this.ckXueyuOth.Size = new System.Drawing.Size(68, 24);
             this.ckXueyuOth.TabIndex = 8;
             this.ckXueyuOth.Text = "其他";
             this.ckXueyuOth.UseVisualStyleBackColor = true;
@@ -1509,7 +1517,7 @@ namespace FocusGroup.elderInfo
             this.ckXueyu5.AutoSize = true;
             this.ckXueyu5.Location = new System.Drawing.Point(6, 104);
             this.ckXueyu5.Name = "ckXueyu5";
-            this.ckXueyu5.Size = new System.Drawing.Size(82, 18);
+            this.ckXueyu5.Size = new System.Drawing.Size(108, 24);
             this.ckXueyu5.TabIndex = 7;
             this.ckXueyu5.Text = "穴位保健";
             this.ckXueyu5.UseVisualStyleBackColor = true;
@@ -1519,7 +1527,7 @@ namespace FocusGroup.elderInfo
             this.ckXueyu4.AutoSize = true;
             this.ckXueyu4.Location = new System.Drawing.Point(6, 80);
             this.ckXueyu4.Name = "ckXueyu4";
-            this.ckXueyu4.Size = new System.Drawing.Size(82, 18);
+            this.ckXueyu4.Size = new System.Drawing.Size(108, 24);
             this.ckXueyu4.TabIndex = 6;
             this.ckXueyu4.Text = "运动保健";
             this.ckXueyu4.UseVisualStyleBackColor = true;
@@ -1529,7 +1537,7 @@ namespace FocusGroup.elderInfo
             this.ckXueyu3.AutoSize = true;
             this.ckXueyu3.Location = new System.Drawing.Point(6, 56);
             this.ckXueyu3.Name = "ckXueyu3";
-            this.ckXueyu3.Size = new System.Drawing.Size(82, 18);
+            this.ckXueyu3.Size = new System.Drawing.Size(108, 24);
             this.ckXueyu3.TabIndex = 5;
             this.ckXueyu3.Text = "起居调摄";
             this.ckXueyu3.UseVisualStyleBackColor = true;
@@ -1539,7 +1547,7 @@ namespace FocusGroup.elderInfo
             this.ckXueyu2.AutoSize = true;
             this.ckXueyu2.Location = new System.Drawing.Point(6, 32);
             this.ckXueyu2.Name = "ckXueyu2";
-            this.ckXueyu2.Size = new System.Drawing.Size(82, 18);
+            this.ckXueyu2.Size = new System.Drawing.Size(108, 24);
             this.ckXueyu2.TabIndex = 4;
             this.ckXueyu2.Text = "饮食调养";
             this.ckXueyu2.UseVisualStyleBackColor = true;
@@ -1549,7 +1557,7 @@ namespace FocusGroup.elderInfo
             this.ckXueyu1.AutoSize = true;
             this.ckXueyu1.Location = new System.Drawing.Point(6, 8);
             this.ckXueyu1.Name = "ckXueyu1";
-            this.ckXueyu1.Size = new System.Drawing.Size(82, 18);
+            this.ckXueyu1.Size = new System.Drawing.Size(108, 24);
             this.ckXueyu1.TabIndex = 3;
             this.ckXueyu1.Text = "情志调摄";
             this.ckXueyu1.UseVisualStyleBackColor = true;
@@ -1563,7 +1571,7 @@ namespace FocusGroup.elderInfo
             this.panel14.Controls.Add(this.ckShire3);
             this.panel14.Controls.Add(this.ckShire2);
             this.panel14.Controls.Add(this.ckShire1);
-            this.panel14.Location = new System.Drawing.Point(486, 143);
+            this.panel14.Location = new System.Drawing.Point(486, 203);
             this.panel14.Margin = new System.Windows.Forms.Padding(0);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(95, 247);
@@ -1576,7 +1584,7 @@ namespace FocusGroup.elderInfo
             this.tbShire.Multiline = true;
             this.tbShire.Name = "tbShire";
             this.tbShire.ReadOnly = true;
-            this.tbShire.Size = new System.Drawing.Size(82, 92);
+            this.tbShire.Size = new System.Drawing.Size(103, 61);
             this.tbShire.TabIndex = 9;
             // 
             // ckShireOth
@@ -1584,7 +1592,7 @@ namespace FocusGroup.elderInfo
             this.ckShireOth.AutoSize = true;
             this.ckShireOth.Location = new System.Drawing.Point(6, 128);
             this.ckShireOth.Name = "ckShireOth";
-            this.ckShireOth.Size = new System.Drawing.Size(54, 18);
+            this.ckShireOth.Size = new System.Drawing.Size(68, 24);
             this.ckShireOth.TabIndex = 8;
             this.ckShireOth.Text = "其他";
             this.ckShireOth.UseVisualStyleBackColor = true;
@@ -1594,7 +1602,7 @@ namespace FocusGroup.elderInfo
             this.ckShire5.AutoSize = true;
             this.ckShire5.Location = new System.Drawing.Point(6, 104);
             this.ckShire5.Name = "ckShire5";
-            this.ckShire5.Size = new System.Drawing.Size(82, 18);
+            this.ckShire5.Size = new System.Drawing.Size(108, 24);
             this.ckShire5.TabIndex = 7;
             this.ckShire5.Text = "穴位保健";
             this.ckShire5.UseVisualStyleBackColor = true;
@@ -1604,7 +1612,7 @@ namespace FocusGroup.elderInfo
             this.ckShire4.AutoSize = true;
             this.ckShire4.Location = new System.Drawing.Point(6, 80);
             this.ckShire4.Name = "ckShire4";
-            this.ckShire4.Size = new System.Drawing.Size(82, 18);
+            this.ckShire4.Size = new System.Drawing.Size(108, 24);
             this.ckShire4.TabIndex = 6;
             this.ckShire4.Text = "运动保健";
             this.ckShire4.UseVisualStyleBackColor = true;
@@ -1614,7 +1622,7 @@ namespace FocusGroup.elderInfo
             this.ckShire3.AutoSize = true;
             this.ckShire3.Location = new System.Drawing.Point(6, 56);
             this.ckShire3.Name = "ckShire3";
-            this.ckShire3.Size = new System.Drawing.Size(82, 18);
+            this.ckShire3.Size = new System.Drawing.Size(108, 24);
             this.ckShire3.TabIndex = 5;
             this.ckShire3.Text = "起居调摄";
             this.ckShire3.UseVisualStyleBackColor = true;
@@ -1624,7 +1632,7 @@ namespace FocusGroup.elderInfo
             this.ckShire2.AutoSize = true;
             this.ckShire2.Location = new System.Drawing.Point(6, 32);
             this.ckShire2.Name = "ckShire2";
-            this.ckShire2.Size = new System.Drawing.Size(82, 18);
+            this.ckShire2.Size = new System.Drawing.Size(108, 24);
             this.ckShire2.TabIndex = 4;
             this.ckShire2.Text = "饮食调养";
             this.ckShire2.UseVisualStyleBackColor = true;
@@ -1634,7 +1642,7 @@ namespace FocusGroup.elderInfo
             this.ckShire1.AutoSize = true;
             this.ckShire1.Location = new System.Drawing.Point(6, 8);
             this.ckShire1.Name = "ckShire1";
-            this.ckShire1.Size = new System.Drawing.Size(82, 18);
+            this.ckShire1.Size = new System.Drawing.Size(108, 24);
             this.ckShire1.TabIndex = 3;
             this.ckShire1.Text = "情志调摄";
             this.ckShire1.UseVisualStyleBackColor = true;
@@ -1648,7 +1656,7 @@ namespace FocusGroup.elderInfo
             this.panel13.Controls.Add(this.ckTans3);
             this.panel13.Controls.Add(this.ckTans2);
             this.panel13.Controls.Add(this.ckTans1);
-            this.panel13.Location = new System.Drawing.Point(390, 143);
+            this.panel13.Location = new System.Drawing.Point(390, 203);
             this.panel13.Margin = new System.Windows.Forms.Padding(0);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(95, 247);
@@ -1661,7 +1669,7 @@ namespace FocusGroup.elderInfo
             this.tbTanshi.Multiline = true;
             this.tbTanshi.Name = "tbTanshi";
             this.tbTanshi.ReadOnly = true;
-            this.tbTanshi.Size = new System.Drawing.Size(82, 92);
+            this.tbTanshi.Size = new System.Drawing.Size(103, 61);
             this.tbTanshi.TabIndex = 9;
             // 
             // ckTans1Oth
@@ -1669,7 +1677,7 @@ namespace FocusGroup.elderInfo
             this.ckTans1Oth.AutoSize = true;
             this.ckTans1Oth.Location = new System.Drawing.Point(6, 128);
             this.ckTans1Oth.Name = "ckTans1Oth";
-            this.ckTans1Oth.Size = new System.Drawing.Size(54, 18);
+            this.ckTans1Oth.Size = new System.Drawing.Size(68, 24);
             this.ckTans1Oth.TabIndex = 8;
             this.ckTans1Oth.Text = "其他";
             this.ckTans1Oth.UseVisualStyleBackColor = true;
@@ -1679,7 +1687,7 @@ namespace FocusGroup.elderInfo
             this.ckTans5.AutoSize = true;
             this.ckTans5.Location = new System.Drawing.Point(6, 104);
             this.ckTans5.Name = "ckTans5";
-            this.ckTans5.Size = new System.Drawing.Size(82, 18);
+            this.ckTans5.Size = new System.Drawing.Size(108, 24);
             this.ckTans5.TabIndex = 7;
             this.ckTans5.Text = "穴位保健";
             this.ckTans5.UseVisualStyleBackColor = true;
@@ -1689,7 +1697,7 @@ namespace FocusGroup.elderInfo
             this.ckTans4.AutoSize = true;
             this.ckTans4.Location = new System.Drawing.Point(6, 80);
             this.ckTans4.Name = "ckTans4";
-            this.ckTans4.Size = new System.Drawing.Size(82, 18);
+            this.ckTans4.Size = new System.Drawing.Size(108, 24);
             this.ckTans4.TabIndex = 6;
             this.ckTans4.Text = "运动保健";
             this.ckTans4.UseVisualStyleBackColor = true;
@@ -1699,7 +1707,7 @@ namespace FocusGroup.elderInfo
             this.ckTans3.AutoSize = true;
             this.ckTans3.Location = new System.Drawing.Point(6, 56);
             this.ckTans3.Name = "ckTans3";
-            this.ckTans3.Size = new System.Drawing.Size(82, 18);
+            this.ckTans3.Size = new System.Drawing.Size(108, 24);
             this.ckTans3.TabIndex = 5;
             this.ckTans3.Text = "起居调摄";
             this.ckTans3.UseVisualStyleBackColor = true;
@@ -1709,7 +1717,7 @@ namespace FocusGroup.elderInfo
             this.ckTans2.AutoSize = true;
             this.ckTans2.Location = new System.Drawing.Point(6, 32);
             this.ckTans2.Name = "ckTans2";
-            this.ckTans2.Size = new System.Drawing.Size(82, 18);
+            this.ckTans2.Size = new System.Drawing.Size(108, 24);
             this.ckTans2.TabIndex = 4;
             this.ckTans2.Text = "饮食调养";
             this.ckTans2.UseVisualStyleBackColor = true;
@@ -1719,7 +1727,7 @@ namespace FocusGroup.elderInfo
             this.ckTans1.AutoSize = true;
             this.ckTans1.Location = new System.Drawing.Point(6, 8);
             this.ckTans1.Name = "ckTans1";
-            this.ckTans1.Size = new System.Drawing.Size(82, 18);
+            this.ckTans1.Size = new System.Drawing.Size(108, 24);
             this.ckTans1.TabIndex = 3;
             this.ckTans1.Text = "情志调摄";
             this.ckTans1.UseVisualStyleBackColor = true;
@@ -1733,7 +1741,7 @@ namespace FocusGroup.elderInfo
             this.panel12.Controls.Add(this.ckYinxu3);
             this.panel12.Controls.Add(this.ckYinxu2);
             this.panel12.Controls.Add(this.ckYinxu1);
-            this.panel12.Location = new System.Drawing.Point(294, 143);
+            this.panel12.Location = new System.Drawing.Point(294, 203);
             this.panel12.Margin = new System.Windows.Forms.Padding(0);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(95, 247);
@@ -1746,7 +1754,7 @@ namespace FocusGroup.elderInfo
             this.tbYinxu.Multiline = true;
             this.tbYinxu.Name = "tbYinxu";
             this.tbYinxu.ReadOnly = true;
-            this.tbYinxu.Size = new System.Drawing.Size(82, 92);
+            this.tbYinxu.Size = new System.Drawing.Size(103, 61);
             this.tbYinxu.TabIndex = 9;
             // 
             // ckYinxuOth
@@ -1754,7 +1762,7 @@ namespace FocusGroup.elderInfo
             this.ckYinxuOth.AutoSize = true;
             this.ckYinxuOth.Location = new System.Drawing.Point(6, 128);
             this.ckYinxuOth.Name = "ckYinxuOth";
-            this.ckYinxuOth.Size = new System.Drawing.Size(54, 18);
+            this.ckYinxuOth.Size = new System.Drawing.Size(68, 24);
             this.ckYinxuOth.TabIndex = 8;
             this.ckYinxuOth.Text = "其他";
             this.ckYinxuOth.UseVisualStyleBackColor = true;
@@ -1764,7 +1772,7 @@ namespace FocusGroup.elderInfo
             this.ckYinxu5.AutoSize = true;
             this.ckYinxu5.Location = new System.Drawing.Point(6, 104);
             this.ckYinxu5.Name = "ckYinxu5";
-            this.ckYinxu5.Size = new System.Drawing.Size(82, 18);
+            this.ckYinxu5.Size = new System.Drawing.Size(108, 24);
             this.ckYinxu5.TabIndex = 7;
             this.ckYinxu5.Text = "穴位保健";
             this.ckYinxu5.UseVisualStyleBackColor = true;
@@ -1774,7 +1782,7 @@ namespace FocusGroup.elderInfo
             this.ckYinxu4.AutoSize = true;
             this.ckYinxu4.Location = new System.Drawing.Point(6, 80);
             this.ckYinxu4.Name = "ckYinxu4";
-            this.ckYinxu4.Size = new System.Drawing.Size(82, 18);
+            this.ckYinxu4.Size = new System.Drawing.Size(108, 24);
             this.ckYinxu4.TabIndex = 6;
             this.ckYinxu4.Text = "运动保健";
             this.ckYinxu4.UseVisualStyleBackColor = true;
@@ -1784,7 +1792,7 @@ namespace FocusGroup.elderInfo
             this.ckYinxu3.AutoSize = true;
             this.ckYinxu3.Location = new System.Drawing.Point(6, 56);
             this.ckYinxu3.Name = "ckYinxu3";
-            this.ckYinxu3.Size = new System.Drawing.Size(82, 18);
+            this.ckYinxu3.Size = new System.Drawing.Size(108, 24);
             this.ckYinxu3.TabIndex = 5;
             this.ckYinxu3.Text = "起居调摄";
             this.ckYinxu3.UseVisualStyleBackColor = true;
@@ -1794,7 +1802,7 @@ namespace FocusGroup.elderInfo
             this.ckYinxu2.AutoSize = true;
             this.ckYinxu2.Location = new System.Drawing.Point(6, 32);
             this.ckYinxu2.Name = "ckYinxu2";
-            this.ckYinxu2.Size = new System.Drawing.Size(82, 18);
+            this.ckYinxu2.Size = new System.Drawing.Size(108, 24);
             this.ckYinxu2.TabIndex = 4;
             this.ckYinxu2.Text = "饮食调养";
             this.ckYinxu2.UseVisualStyleBackColor = true;
@@ -1804,7 +1812,7 @@ namespace FocusGroup.elderInfo
             this.ckYinxu1.AutoSize = true;
             this.ckYinxu1.Location = new System.Drawing.Point(6, 8);
             this.ckYinxu1.Name = "ckYinxu1";
-            this.ckYinxu1.Size = new System.Drawing.Size(82, 18);
+            this.ckYinxu1.Size = new System.Drawing.Size(108, 24);
             this.ckYinxu1.TabIndex = 3;
             this.ckYinxu1.Text = "情志调摄";
             this.ckYinxu1.UseVisualStyleBackColor = true;
@@ -1818,7 +1826,7 @@ namespace FocusGroup.elderInfo
             this.panel11.Controls.Add(this.ckYangxu3);
             this.panel11.Controls.Add(this.ckYangxu2);
             this.panel11.Controls.Add(this.ckYangxu1);
-            this.panel11.Location = new System.Drawing.Point(198, 143);
+            this.panel11.Location = new System.Drawing.Point(198, 203);
             this.panel11.Margin = new System.Windows.Forms.Padding(0);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(95, 247);
@@ -1831,7 +1839,7 @@ namespace FocusGroup.elderInfo
             this.tbYangxu.Multiline = true;
             this.tbYangxu.Name = "tbYangxu";
             this.tbYangxu.ReadOnly = true;
-            this.tbYangxu.Size = new System.Drawing.Size(82, 92);
+            this.tbYangxu.Size = new System.Drawing.Size(103, 61);
             this.tbYangxu.TabIndex = 9;
             // 
             // ckYangxuOth
@@ -1839,7 +1847,7 @@ namespace FocusGroup.elderInfo
             this.ckYangxuOth.AutoSize = true;
             this.ckYangxuOth.Location = new System.Drawing.Point(6, 128);
             this.ckYangxuOth.Name = "ckYangxuOth";
-            this.ckYangxuOth.Size = new System.Drawing.Size(54, 18);
+            this.ckYangxuOth.Size = new System.Drawing.Size(68, 24);
             this.ckYangxuOth.TabIndex = 8;
             this.ckYangxuOth.Text = "其他";
             this.ckYangxuOth.UseVisualStyleBackColor = true;
@@ -1849,7 +1857,7 @@ namespace FocusGroup.elderInfo
             this.ckYangxu5.AutoSize = true;
             this.ckYangxu5.Location = new System.Drawing.Point(6, 104);
             this.ckYangxu5.Name = "ckYangxu5";
-            this.ckYangxu5.Size = new System.Drawing.Size(82, 18);
+            this.ckYangxu5.Size = new System.Drawing.Size(108, 24);
             this.ckYangxu5.TabIndex = 7;
             this.ckYangxu5.Text = "穴位保健";
             this.ckYangxu5.UseVisualStyleBackColor = true;
@@ -1859,7 +1867,7 @@ namespace FocusGroup.elderInfo
             this.ckYangxu4.AutoSize = true;
             this.ckYangxu4.Location = new System.Drawing.Point(6, 80);
             this.ckYangxu4.Name = "ckYangxu4";
-            this.ckYangxu4.Size = new System.Drawing.Size(82, 18);
+            this.ckYangxu4.Size = new System.Drawing.Size(108, 24);
             this.ckYangxu4.TabIndex = 6;
             this.ckYangxu4.Text = "运动保健";
             this.ckYangxu4.UseVisualStyleBackColor = true;
@@ -1869,7 +1877,7 @@ namespace FocusGroup.elderInfo
             this.ckYangxu3.AutoSize = true;
             this.ckYangxu3.Location = new System.Drawing.Point(6, 56);
             this.ckYangxu3.Name = "ckYangxu3";
-            this.ckYangxu3.Size = new System.Drawing.Size(82, 18);
+            this.ckYangxu3.Size = new System.Drawing.Size(108, 24);
             this.ckYangxu3.TabIndex = 5;
             this.ckYangxu3.Text = "起居调摄";
             this.ckYangxu3.UseVisualStyleBackColor = true;
@@ -1879,7 +1887,7 @@ namespace FocusGroup.elderInfo
             this.ckYangxu2.AutoSize = true;
             this.ckYangxu2.Location = new System.Drawing.Point(6, 32);
             this.ckYangxu2.Name = "ckYangxu2";
-            this.ckYangxu2.Size = new System.Drawing.Size(82, 18);
+            this.ckYangxu2.Size = new System.Drawing.Size(108, 24);
             this.ckYangxu2.TabIndex = 4;
             this.ckYangxu2.Text = "饮食调养";
             this.ckYangxu2.UseVisualStyleBackColor = true;
@@ -1889,7 +1897,7 @@ namespace FocusGroup.elderInfo
             this.ckYangxu1.AutoSize = true;
             this.ckYangxu1.Location = new System.Drawing.Point(6, 8);
             this.ckYangxu1.Name = "ckYangxu1";
-            this.ckYangxu1.Size = new System.Drawing.Size(82, 18);
+            this.ckYangxu1.Size = new System.Drawing.Size(108, 24);
             this.ckYangxu1.TabIndex = 3;
             this.ckYangxu1.Text = "情志调摄";
             this.ckYangxu1.UseVisualStyleBackColor = true;
@@ -1898,10 +1906,10 @@ namespace FocusGroup.elderInfo
             // 
             this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label21.Location = new System.Drawing.Point(4, 254);
+            this.label21.Font = new System.Drawing.Font("宋体", 15F);
+            this.label21.Location = new System.Drawing.Point(4, 315);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(94, 28);
+            this.label21.Size = new System.Drawing.Size(94, 40);
             this.label21.TabIndex = 21;
             this.label21.Text = "中医药保健指导";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1910,10 +1918,10 @@ namespace FocusGroup.elderInfo
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.Location = new System.Drawing.Point(4, 19);
+            this.label10.Font = new System.Drawing.Font("宋体", 15F);
+            this.label10.Location = new System.Drawing.Point(4, 16);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(94, 14);
+            this.label10.Size = new System.Drawing.Size(94, 20);
             this.label10.TabIndex = 1;
             this.label10.Text = "体质类型";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1922,10 +1930,10 @@ namespace FocusGroup.elderInfo
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(105, 19);
+            this.label1.Font = new System.Drawing.Font("宋体", 15F);
+            this.label1.Location = new System.Drawing.Point(105, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 14);
+            this.label1.Size = new System.Drawing.Size(89, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "气虚质";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1934,10 +1942,10 @@ namespace FocusGroup.elderInfo
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(201, 19);
+            this.label5.Font = new System.Drawing.Font("宋体", 15F);
+            this.label5.Location = new System.Drawing.Point(201, 16);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 14);
+            this.label5.Size = new System.Drawing.Size(89, 20);
             this.label5.TabIndex = 6;
             this.label5.Text = "阳虚质";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1946,10 +1954,10 @@ namespace FocusGroup.elderInfo
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(297, 19);
+            this.label4.Font = new System.Drawing.Font("宋体", 15F);
+            this.label4.Location = new System.Drawing.Point(297, 16);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 14);
+            this.label4.Size = new System.Drawing.Size(89, 20);
             this.label4.TabIndex = 5;
             this.label4.Text = "阴虚质";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1958,10 +1966,10 @@ namespace FocusGroup.elderInfo
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(393, 19);
+            this.label3.Font = new System.Drawing.Font("宋体", 15F);
+            this.label3.Location = new System.Drawing.Point(393, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 14);
+            this.label3.Size = new System.Drawing.Size(89, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "痰湿质";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1970,10 +1978,10 @@ namespace FocusGroup.elderInfo
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(489, 19);
+            this.label2.Font = new System.Drawing.Font("宋体", 15F);
+            this.label2.Location = new System.Drawing.Point(489, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 14);
+            this.label2.Size = new System.Drawing.Size(89, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "湿热质";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1982,10 +1990,10 @@ namespace FocusGroup.elderInfo
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(585, 19);
+            this.label6.Font = new System.Drawing.Font("宋体", 15F);
+            this.label6.Location = new System.Drawing.Point(585, 16);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 14);
+            this.label6.Size = new System.Drawing.Size(89, 20);
             this.label6.TabIndex = 7;
             this.label6.Text = "血瘀质";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1994,10 +2002,10 @@ namespace FocusGroup.elderInfo
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(681, 19);
+            this.label7.Font = new System.Drawing.Font("宋体", 15F);
+            this.label7.Location = new System.Drawing.Point(681, 16);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(89, 14);
+            this.label7.Size = new System.Drawing.Size(89, 20);
             this.label7.TabIndex = 8;
             this.label7.Text = "气郁质";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2006,10 +2014,10 @@ namespace FocusGroup.elderInfo
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.Location = new System.Drawing.Point(777, 19);
+            this.label8.Font = new System.Drawing.Font("宋体", 15F);
+            this.label8.Location = new System.Drawing.Point(777, 16);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 14);
+            this.label8.Size = new System.Drawing.Size(350, 20);
             this.label8.TabIndex = 9;
             this.label8.Text = "特禀质";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2018,10 +2026,10 @@ namespace FocusGroup.elderInfo
             // 
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(4, 90);
+            this.label11.Font = new System.Drawing.Font("宋体", 15F);
+            this.label11.Location = new System.Drawing.Point(4, 117);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(94, 14);
+            this.label11.Size = new System.Drawing.Size(94, 20);
             this.label11.TabIndex = 11;
             this.label11.Text = "体质辨识";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2044,7 +2052,7 @@ namespace FocusGroup.elderInfo
             this.rdQiXu_QYes.Enabled = false;
             this.rdQiXu_QYes.Location = new System.Drawing.Point(6, 58);
             this.rdQiXu_QYes.Name = "rdQiXu_QYes";
-            this.rdQiXu_QYes.Size = new System.Drawing.Size(67, 18);
+            this.rdQiXu_QYes.Size = new System.Drawing.Size(87, 24);
             this.rdQiXu_QYes.TabIndex = 3;
             this.rdQiXu_QYes.TabStop = true;
             this.rdQiXu_QYes.Text = "倾向是";
@@ -2056,7 +2064,7 @@ namespace FocusGroup.elderInfo
             this.rdQiXu_Yes.Enabled = false;
             this.rdQiXu_Yes.Location = new System.Drawing.Point(6, 34);
             this.rdQiXu_Yes.Name = "rdQiXu_Yes";
-            this.rdQiXu_Yes.Size = new System.Drawing.Size(39, 18);
+            this.rdQiXu_Yes.Size = new System.Drawing.Size(47, 24);
             this.rdQiXu_Yes.TabIndex = 2;
             this.rdQiXu_Yes.TabStop = true;
             this.rdQiXu_Yes.Text = "是";
@@ -2067,7 +2075,7 @@ namespace FocusGroup.elderInfo
             this.tbQixuScore.Location = new System.Drawing.Point(44, 5);
             this.tbQixuScore.Name = "tbQixuScore";
             this.tbQixuScore.ReadOnly = true;
-            this.tbQixuScore.Size = new System.Drawing.Size(44, 23);
+            this.tbQixuScore.Size = new System.Drawing.Size(44, 30);
             this.tbQixuScore.TabIndex = 1;
             // 
             // label12
@@ -2075,7 +2083,7 @@ namespace FocusGroup.elderInfo
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(3, 9);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(42, 14);
+            this.label12.Size = new System.Drawing.Size(59, 20);
             this.label12.TabIndex = 0;
             this.label12.Text = "得分:";
             // 
@@ -2088,7 +2096,7 @@ namespace FocusGroup.elderInfo
             this.panel19.Controls.Add(this.ckQixu3);
             this.panel19.Controls.Add(this.ckQixu2);
             this.panel19.Controls.Add(this.ckQixu1);
-            this.panel19.Location = new System.Drawing.Point(102, 143);
+            this.panel19.Location = new System.Drawing.Point(102, 203);
             this.panel19.Margin = new System.Windows.Forms.Padding(0);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(95, 247);
@@ -2101,7 +2109,7 @@ namespace FocusGroup.elderInfo
             this.tbQixu.Multiline = true;
             this.tbQixu.Name = "tbQixu";
             this.tbQixu.ReadOnly = true;
-            this.tbQixu.Size = new System.Drawing.Size(82, 92);
+            this.tbQixu.Size = new System.Drawing.Size(103, 61);
             this.tbQixu.TabIndex = 9;
             // 
             // ckQixuOth
@@ -2109,7 +2117,7 @@ namespace FocusGroup.elderInfo
             this.ckQixuOth.AutoSize = true;
             this.ckQixuOth.Location = new System.Drawing.Point(6, 128);
             this.ckQixuOth.Name = "ckQixuOth";
-            this.ckQixuOth.Size = new System.Drawing.Size(54, 18);
+            this.ckQixuOth.Size = new System.Drawing.Size(68, 24);
             this.ckQixuOth.TabIndex = 8;
             this.ckQixuOth.Text = "其他";
             this.ckQixuOth.UseVisualStyleBackColor = true;
@@ -2119,7 +2127,7 @@ namespace FocusGroup.elderInfo
             this.ckQixu5.AutoSize = true;
             this.ckQixu5.Location = new System.Drawing.Point(6, 104);
             this.ckQixu5.Name = "ckQixu5";
-            this.ckQixu5.Size = new System.Drawing.Size(82, 18);
+            this.ckQixu5.Size = new System.Drawing.Size(108, 24);
             this.ckQixu5.TabIndex = 7;
             this.ckQixu5.Text = "穴位保健";
             this.ckQixu5.UseVisualStyleBackColor = true;
@@ -2129,7 +2137,7 @@ namespace FocusGroup.elderInfo
             this.ckQixu4.AutoSize = true;
             this.ckQixu4.Location = new System.Drawing.Point(6, 80);
             this.ckQixu4.Name = "ckQixu4";
-            this.ckQixu4.Size = new System.Drawing.Size(82, 18);
+            this.ckQixu4.Size = new System.Drawing.Size(108, 24);
             this.ckQixu4.TabIndex = 6;
             this.ckQixu4.Text = "运动保健";
             this.ckQixu4.UseVisualStyleBackColor = true;
@@ -2139,7 +2147,7 @@ namespace FocusGroup.elderInfo
             this.ckQixu3.AutoSize = true;
             this.ckQixu3.Location = new System.Drawing.Point(6, 56);
             this.ckQixu3.Name = "ckQixu3";
-            this.ckQixu3.Size = new System.Drawing.Size(82, 18);
+            this.ckQixu3.Size = new System.Drawing.Size(108, 24);
             this.ckQixu3.TabIndex = 5;
             this.ckQixu3.Text = "起居调摄";
             this.ckQixu3.UseVisualStyleBackColor = true;
@@ -2149,7 +2157,7 @@ namespace FocusGroup.elderInfo
             this.ckQixu2.AutoSize = true;
             this.ckQixu2.Location = new System.Drawing.Point(6, 32);
             this.ckQixu2.Name = "ckQixu2";
-            this.ckQixu2.Size = new System.Drawing.Size(82, 18);
+            this.ckQixu2.Size = new System.Drawing.Size(108, 24);
             this.ckQixu2.TabIndex = 4;
             this.ckQixu2.Text = "饮食调养";
             this.ckQixu2.UseVisualStyleBackColor = true;
@@ -2159,7 +2167,7 @@ namespace FocusGroup.elderInfo
             this.ckQixu1.AutoSize = true;
             this.ckQixu1.Location = new System.Drawing.Point(6, 8);
             this.ckQixu1.Name = "ckQixu1";
-            this.ckQixu1.Size = new System.Drawing.Size(82, 18);
+            this.ckQixu1.Size = new System.Drawing.Size(108, 24);
             this.ckQixu1.TabIndex = 3;
             this.ckQixu1.Text = "情志调摄";
             this.ckQixu1.UseVisualStyleBackColor = true;
@@ -2168,17 +2176,17 @@ namespace FocusGroup.elderInfo
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label9.Location = new System.Drawing.Point(910, 1);
+            this.label9.Font = new System.Drawing.Font("宋体", 15F);
+            this.label9.Location = new System.Drawing.Point(1159, 1);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(49, 50);
+            this.label9.Size = new System.Drawing.Size(69, 50);
             this.label9.TabIndex = 10;
             this.label9.Text = "平和质";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(763, 589);
+            this.btnSave.Location = new System.Drawing.Point(763, 626);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(106, 38);
             this.btnSave.TabIndex = 3;
@@ -2191,7 +2199,7 @@ namespace FocusGroup.elderInfo
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1280, 640);
+            this.ClientSize = new System.Drawing.Size(1540, 680);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnResult);
             this.Controls.Add(this.panel1);

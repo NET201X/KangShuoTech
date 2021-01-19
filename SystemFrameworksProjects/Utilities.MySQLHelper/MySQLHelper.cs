@@ -842,7 +842,7 @@ namespace KangShuoTech.Utilities.MySQLHelper
         /// <returns></returns>
         public static DataSet ServerQuery(string strSql)
         {
-            string connetStr = "Server=124.128.220.82;Database=qcpaddb;Uid=root;Pwd=qckj;port=3306;";
+            string connetStr = "Server=124.128.220.82;Database=kangshuo_db;Uid=root;Pwd=qckj;port=3306;";
 
             using (MySqlConnection connection = new MySqlConnection(connetStr))
             {

@@ -1,4 +1,4 @@
-﻿namespace PadPlatform
+﻿namespace KangShuo
 {
     partial class ModifyPassWord
     {

@@ -32,7 +32,7 @@ namespace FocusGroup
         private PictureBox DiaPictureBox;
         private PictureBox POTPictureBox;
         private PictureBox pictureBox1;
-        private string restrict = ConfigurationManager.AppSettings["Restrict"];
+        private string Restriction = ConfigurationManager.AppSettings["Restriction"];
 
         public event EventHandler Cancel_Click;
 
@@ -223,7 +223,7 @@ namespace FocusGroup
                 new MessageForm("请先刷身份证或输入身份证登录系统！") { StartPosition = FormStartPosition.CenterParent }.ShowDialog();
                 return;
             }
-            if (this.restrict == "on")
+            if (this.Restriction == "on")
             {
                 if (new RecordsBaseInfoBLL().GetModel(this.IDCardNo).PopulationType.Contains("3"))
                 {
@@ -253,7 +253,7 @@ namespace FocusGroup
                 new MessageForm("请先刷身份证或输入身份证登录系统！") { StartPosition = FormStartPosition.CenterParent }.ShowDialog();
                 return;
             }
-            if (this.restrict == "on")
+            if (this.Restriction == "on")
             {
                 if (new RecordsBaseInfoBLL().GetModel(this.IDCardNo).PopulationType.Contains("2"))
                 {
@@ -283,7 +283,7 @@ namespace FocusGroup
                 new MessageForm("请先刷身份证或输入身份证登录系统！") { StartPosition = FormStartPosition.CenterParent }.ShowDialog();
                 return;
             }
-            if (this.restrict == "on")
+            if (this.Restriction == "on")
             {
                 if (new RecordsBaseInfoBLL().GetModel(this.IDCardNo).PopulationType.Contains("4"))
                 {
@@ -322,7 +322,7 @@ namespace FocusGroup
                 new MessageForm("请先刷身份证或输入身份证登录系统！") { StartPosition = FormStartPosition.CenterParent }.ShowDialog();
                 return;
             }
-            if (this.restrict == "on")
+            if (this.Restriction == "on")
             {
                 if (new RecordsBaseInfoBLL().GetModel(this.IDCardNo).PopulationType.Contains("6"))
                 {
@@ -363,7 +363,7 @@ namespace FocusGroup
                 new MessageForm("请先刷身份证或输入身份证登录系统！") { StartPosition = FormStartPosition.CenterParent }.ShowDialog();
                 return;
             }
-            if (this.restrict == "on")
+            if (this.Restriction == "on")
             {
                 if (new RecordsBaseInfoBLL().GetModel(this.IDCardNo).PopulationType.Contains("5"))
                 {
@@ -404,7 +404,7 @@ namespace FocusGroup
                 new MessageForm("请先刷身份证或输入身份证登录系统！") { StartPosition = FormStartPosition.CenterParent }.ShowDialog();
                 return;
             }
-            if (this.restrict == "on")
+            if (this.Restriction == "on")
             {
                 if (new RecordsBaseInfoBLL().GetModel(this.IDCardNo).PopulationType.Contains("9"))
                 {
@@ -444,7 +444,7 @@ namespace FocusGroup
                 new MessageForm("请先刷身份证或输入身份证登录系统！") { StartPosition = FormStartPosition.CenterParent }.ShowDialog();
                 return;
             }
-            if (this.restrict == "on")
+            if (this.Restriction == "on")
             {
                 if (new RecordsBaseInfoBLL().GetModel(this.IDCardNo).PopulationType.Contains("8"))
                 {
@@ -484,7 +484,7 @@ namespace FocusGroup
                 new MessageForm("请先刷身份证或输入身份证登录系统！") { StartPosition = FormStartPosition.CenterParent }.ShowDialog();
                 return;
             }
-            if (this.restrict == "on")
+            if (this.Restriction == "on")
             {
                 if (new RecordsBaseInfoBLL().GetModel(this.IDCardNo).PopulationType.Contains("7"))
                 {
@@ -524,7 +524,7 @@ namespace FocusGroup
                 new MessageForm("请先刷身份证或输入身份证登录系统！") { StartPosition = FormStartPosition.CenterParent }.ShowDialog();
                 return;
             }
-            if (this.restrict == "on")
+            if (this.Restriction == "on")
             {
                 PTBFactory.ID = 0;
                 if (new RecordsBaseInfoBLL().GetModel(this.IDCardNo).PopulationType.Contains("10"))

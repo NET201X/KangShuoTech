@@ -1,6 +1,6 @@
 using KangShuoTech.Utilities.Common;
 
-namespace PadPlatform
+namespace KangShuo
 {
     using Microsoft.Win32;
     using System;

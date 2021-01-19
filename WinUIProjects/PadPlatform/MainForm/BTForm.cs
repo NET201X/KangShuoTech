@@ -9,7 +9,7 @@ using System.Threading;
 using System.Windows.Forms;
 using Utilities.BlueToothTools.MsBluetooth;
 
-namespace PadPlatform
+namespace KangShuo
 {
 
     public class BTForm : Form
@@ -164,103 +164,134 @@ namespace PadPlatform
 
         private void InitializeComponent()
         {
-            this.components = new Container();
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BTForm));
-            this.groupBox1 = new GroupBox();
-            this.tbBTInfo = new TextBox();
-            this.listView1 = new ListView();
-            this.imglistBT = new ImageList(this.components);
-            this.btnBTAuto = new Button();
-            this.btnDelBTDev = new Button();
-            this.btnCancel = new Button();
-            this.tbOut = new TextBox();
-            this.btnRefresh = new Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbBTInfo = new System.Windows.Forms.TextBox();
+            this.imglistBT = new System.Windows.Forms.ImageList(this.components);
+            this.btnBTAuto = new System.Windows.Forms.Button();
+            this.btnDelBTDev = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.tbOut = new System.Windows.Forms.TextBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.groupBox1.SuspendLayout();
-            base.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // groupBox1
+            // 
             this.groupBox1.Controls.Add(this.tbBTInfo);
             this.groupBox1.Controls.Add(this.listView1);
-            this.groupBox1.Font = new Font("宋体", 12f, FontStyle.Regular, GraphicsUnit.Point, 0x86);
-            this.groupBox1.Location = new Point(9, 12);
+            this.groupBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox1.Location = new System.Drawing.Point(9, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new Size(0x279, 0xd1);
+            this.groupBox1.Size = new System.Drawing.Size(633, 209);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "蓝牙设备";
-            this.tbBTInfo.Font = new Font("宋体", 10.5f, FontStyle.Regular, GraphicsUnit.Point, 0x86);
-            this.tbBTInfo.Location = new Point(0x188, 0x10);
+            // 
+            // tbBTInfo
+            // 
+            this.tbBTInfo.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tbBTInfo.Location = new System.Drawing.Point(392, 16);
             this.tbBTInfo.Multiline = true;
             this.tbBTInfo.Name = "tbBTInfo";
             this.tbBTInfo.ReadOnly = true;
-            this.tbBTInfo.Size = new Size(0xeb, 0xbb);
+            this.tbBTInfo.Size = new System.Drawing.Size(235, 187);
             this.tbBTInfo.TabIndex = 7;
-           
-            this.listView1.LargeImageList = this.imglistBT;
-            this.listView1.Location = new Point(6, 0x16);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new Size(380, 0xb3);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.imglistBT.ImageStream = (ImageListStreamer)resources.GetObject("imglistBT.ImageStream");
+            // 
+            // imglistBT
+            // 
+            this.imglistBT.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imglistBT.ImageStream")));
             this.imglistBT.TransparentColor = System.Drawing.Color.Transparent;
             this.imglistBT.Images.SetKeyName(0, "drop kbtobexclient.png");
-            this.btnBTAuto.Font = new Font("宋体", 12f, FontStyle.Regular, GraphicsUnit.Point, 0x86);
-            this.btnBTAuto.Location = new Point(0x1f6, 0x10b);
+            // 
+            // btnBTAuto
+            // 
+            this.btnBTAuto.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnBTAuto.Location = new System.Drawing.Point(502, 267);
             this.btnBTAuto.Name = "btnBTAuto";
-            this.btnBTAuto.Size = new Size(140, 0x22);
+            this.btnBTAuto.Size = new System.Drawing.Size(140, 34);
             this.btnBTAuto.TabIndex = 1;
             this.btnBTAuto.Text = "自动配对";
             this.btnBTAuto.UseVisualStyleBackColor = true;
-            this.btnBTAuto.Click += new EventHandler(this.btnBTAuto_Click);
-            this.btnDelBTDev.Font = new Font("宋体", 12f, FontStyle.Regular, GraphicsUnit.Point, 0x86);
-            this.btnDelBTDev.Location = new Point(0x1f6, 0x133);
+            this.btnBTAuto.Click += new System.EventHandler(this.btnBTAuto_Click);
+            // 
+            // btnDelBTDev
+            // 
+            this.btnDelBTDev.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnDelBTDev.Location = new System.Drawing.Point(502, 307);
             this.btnDelBTDev.Name = "btnDelBTDev";
-            this.btnDelBTDev.Size = new Size(140, 0x22);
+            this.btnDelBTDev.Size = new System.Drawing.Size(140, 34);
             this.btnDelBTDev.TabIndex = 2;
             this.btnDelBTDev.Text = "删除设备";
             this.btnDelBTDev.UseVisualStyleBackColor = true;
-            this.btnDelBTDev.Click += new EventHandler(this.btnDelBTDev_Click);
-            this.btnCancel.Font = new Font("宋体", 12f, FontStyle.Regular, GraphicsUnit.Point, 0x86);
-            this.btnCancel.Location = new Point(0x1f6, 0x15b);
+            this.btnDelBTDev.Click += new System.EventHandler(this.btnDelBTDev_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnCancel.Location = new System.Drawing.Point(502, 347);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new Size(140, 0x22);
+            this.btnCancel.Size = new System.Drawing.Size(140, 34);
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "返回";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new EventHandler(this.btnCancel_Click);
-            this.tbOut.Location = new Point(12, 0xe3);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // tbOut
+            // 
+            this.tbOut.Location = new System.Drawing.Point(12, 227);
             this.tbOut.Multiline = true;
             this.tbOut.Name = "tbOut";
-            this.tbOut.ScrollBars = ScrollBars.Vertical;
-            this.tbOut.Size = new Size(0x1da, 0xa4);
+            this.tbOut.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbOut.Size = new System.Drawing.Size(474, 164);
             this.tbOut.TabIndex = 5;
-            this.btnRefresh.Font = new Font("宋体", 12f, FontStyle.Regular, GraphicsUnit.Point, 0x86);
-            this.btnRefresh.Location = new Point(0x1f6, 0xe3);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnRefresh.Location = new System.Drawing.Point(502, 227);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new Size(140, 0x22);
+            this.btnRefresh.Size = new System.Drawing.Size(140, 34);
             this.btnRefresh.TabIndex = 6;
             this.btnRefresh.Text = "刷新列表";
             this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new EventHandler(this.btnRefresh_Click);
-            base.AutoScaleDimensions = new SizeF(6f, 12f);
-            base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            base.ClientSize = new Size(0x291, 400);
-            base.Controls.Add(this.btnRefresh);
-            base.Controls.Add(this.tbOut);
-            base.Controls.Add(this.btnCancel);
-            base.Controls.Add(this.groupBox1);
-            base.Controls.Add(this.btnDelBTDev);
-            base.Controls.Add(this.btnBTAuto);
-            base.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            base.MaximizeBox = false;
-            base.MinimizeBox = false;
-            base.Name = "BTForm";
-            base.ShowIcon = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.LargeImageList = this.imglistBT;
+            this.listView1.Location = new System.Drawing.Point(6, 22);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(380, 179);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // BTForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(657, 400);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.tbOut);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnDelBTDev);
+            this.Controls.Add(this.btnBTAuto);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "BTForm";
+            this.ShowIcon = false;
             this.Text = "蓝牙";
-            base.Load += new EventHandler(this.BTForm_Load);
+            this.Load += new System.EventHandler(this.BTForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            base.ResumeLayout(false);
-            base.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)

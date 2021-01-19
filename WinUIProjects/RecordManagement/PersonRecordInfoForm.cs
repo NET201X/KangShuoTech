@@ -4,7 +4,7 @@ using KangShuoTech.Utilities.Common;
 using KangShuoTech.Utilities.CommonControl;
 using KangShuoTech.Utilities.CommonUI;
 
-namespace RecordManagement
+namespace ArchiveInfo
 {
     using System;
     using System.Collections.Generic;
@@ -1554,7 +1554,7 @@ namespace RecordManagement
             this.panel3.Controls.Add(this.ckGroup1);
             this.panel3.Location = new System.Drawing.Point(163, 649);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(796, 84);
+            this.panel3.Size = new System.Drawing.Size(796, 76);
             this.panel3.TabIndex = 22;
             // 
             // ckGroup11
@@ -1745,7 +1745,7 @@ namespace RecordManagement
             this.tbHomeAddr.MaxLength = 20;
             this.tbHomeAddr.Name = "tbHomeAddr";
             this.tbHomeAddr.ReadOnly = true;
-            this.tbHomeAddr.Size = new System.Drawing.Size(233, 30);
+            this.tbHomeAddr.Size = new System.Drawing.Size(380, 30);
             this.tbHomeAddr.TabIndex = 0;
             // 
             // label7
@@ -1928,7 +1928,7 @@ namespace RecordManagement
             // 
             this.txtzerenyisheng.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtzerenyisheng.ForeColor = System.Drawing.Color.Black;
-            this.txtzerenyisheng.Location = new System.Drawing.Point(914, 236);
+            this.txtzerenyisheng.Location = new System.Drawing.Point(975, 236);
             this.txtzerenyisheng.MaxLength = 20;
             this.txtzerenyisheng.Name = "txtzerenyisheng";
             this.txtzerenyisheng.ReadOnly = true;
@@ -1939,7 +1939,7 @@ namespace RecordManagement
             // label238
             // 
             this.label238.AutoSize = true;
-            this.label238.Location = new System.Drawing.Point(790, 241);
+            this.label238.Location = new System.Drawing.Point(851, 241);
             this.label238.Name = "label238";
             this.label238.Size = new System.Drawing.Size(99, 20);
             this.label238.TabIndex = 73;
@@ -1952,13 +1952,13 @@ namespace RecordManagement
             this.panel34.Controls.Add(this.radycbw);
             this.panel34.Location = new System.Drawing.Point(495, 232);
             this.panel34.Name = "panel34";
-            this.panel34.Size = new System.Drawing.Size(103, 31);
+            this.panel34.Size = new System.Drawing.Size(120, 35);
             this.panel34.TabIndex = 12;
             // 
             // radycby
             // 
             this.radycby.AutoSize = true;
-            this.radycby.Location = new System.Drawing.Point(56, 6);
+            this.radycby.Location = new System.Drawing.Point(56, 7);
             this.radycby.Name = "radycby";
             this.radycby.Size = new System.Drawing.Size(47, 24);
             this.radycby.TabIndex = 33;
@@ -2011,11 +2011,11 @@ namespace RecordManagement
             // 
             this.txtycb.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtycb.ForeColor = System.Drawing.Color.Black;
-            this.txtycb.Location = new System.Drawing.Point(612, 232);
+            this.txtycb.Location = new System.Drawing.Point(621, 235);
             this.txtycb.MaxLength = 100;
             this.txtycb.Name = "txtycb";
             this.txtycb.ReadOnly = true;
-            this.txtycb.Size = new System.Drawing.Size(169, 30);
+            this.txtycb.Size = new System.Drawing.Size(189, 30);
             this.txtycb.TabIndex = 13;
             // 
             // label193
@@ -2223,7 +2223,7 @@ namespace RecordManagement
             this.txtbenrdh.MaxLength = 15;
             this.txtbenrdh.Name = "txtbenrdh";
             this.txtbenrdh.ReadOnly = true;
-            this.txtbenrdh.Size = new System.Drawing.Size(139, 30);
+            this.txtbenrdh.Size = new System.Drawing.Size(166, 30);
             this.txtbenrdh.TabIndex = 2;
             this.txtbenrdh.TabStop = false;
             this.toolTip1.SetToolTip(this.txtbenrdh, "请在\"封面信息\"中填写用户个人电话");

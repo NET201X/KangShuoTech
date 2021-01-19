@@ -211,7 +211,7 @@ namespace KangShuoTech.DataAccessProjects.DAL
                 return;
             }
             //获取字段类型
-            string SqlgetType = string.Format("select column_name,column_comment,data_type,CHARACTER_MAXIMUM_LENGTH,NUMERIC_PRECISION,NUMERIC_SCALE from information_schema.columns where table_name = '{0}' and table_schema = 'qcpaddb' and column_name='{1}'", TableName, OptionName);
+            string SqlgetType = string.Format("select column_name,column_comment,data_type,CHARACTER_MAXIMUM_LENGTH,NUMERIC_PRECISION,NUMERIC_SCALE from information_schema.columns where table_name = '{0}' and table_schema = 'kangshuo_db' and column_name='{1}'", TableName, OptionName);
             DataTable dt = MySQLHelper.Query(SqlgetType).Tables[0];
             if (dt.Rows.Count > 0)
             {

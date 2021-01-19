@@ -15,7 +15,7 @@ namespace OverView
             ConfigHelper.Init();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run((Form) new Controler(new MDIParentForm("370702197211045118"), new OverViewFactory()).IParentFrm);
+            Application.Run((Form) new Controler(new MDIParentForm("36050219360726464X"), new OverViewFactory()).IParentFrm);
         }
     }
 }

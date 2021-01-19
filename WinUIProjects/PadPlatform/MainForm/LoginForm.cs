@@ -16,7 +16,7 @@ using System.Windows.Forms;
 using KangShuoTech.Utilities.Common;
 using KangShuoTech.Utilities.CommonControl;
 
-namespace PadPlatform
+namespace KangShuo
 {
     public class LoginForm : Form
     {
@@ -709,7 +709,7 @@ namespace PadPlatform
             // 
             // picNetWork
             // 
-            this.picNetWork.Image = global::PadPlatform.Properties.Resources.net_on;
+            this.picNetWork.Image = global::KangShuo.Properties.Resources.net_on;
             this.picNetWork.Location = new System.Drawing.Point(3, 3);
             this.picNetWork.Name = "picNetWork";
             this.picNetWork.Size = new System.Drawing.Size(24, 24);

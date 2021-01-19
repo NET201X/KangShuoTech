@@ -747,9 +747,9 @@ namespace FocusGroup.elderInfo
             // 
             // btnResult
             // 
-            this.btnResult.Location = new System.Drawing.Point(1291, 616);
+            this.btnResult.Location = new System.Drawing.Point(1283, 616);
             this.btnResult.Name = "btnResult";
-            this.btnResult.Size = new System.Drawing.Size(106, 38);
+            this.btnResult.Size = new System.Drawing.Size(120, 40);
             this.btnResult.TabIndex = 2;
             this.btnResult.Text = "计算结果";
             this.btnResult.UseVisualStyleBackColor = true;
@@ -769,7 +769,7 @@ namespace FocusGroup.elderInfo
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1500, 581);
+            this.dataGridView1.Size = new System.Drawing.Size(1467, 581);
             this.dataGridView1.TabIndex = 0;
             // 
             // panel1
@@ -782,13 +782,13 @@ namespace FocusGroup.elderInfo
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Location = new System.Drawing.Point(20, 21);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1500, 581);
+            this.panel1.Size = new System.Drawing.Size(1467, 581);
             this.panel1.TabIndex = 0;
             this.panel1.Visible = false;
             // 
             // tbDoctor
             // 
-            this.tbDoctor.Location = new System.Drawing.Point(951, 534);
+            this.tbDoctor.Location = new System.Drawing.Point(590, 534);
             this.tbDoctor.MaxLength = 20;
             this.tbDoctor.Name = "tbDoctor";
             this.tbDoctor.ReadOnly = true;
@@ -798,7 +798,7 @@ namespace FocusGroup.elderInfo
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(845, 540);
+            this.label23.Location = new System.Drawing.Point(484, 540);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(99, 20);
             this.label23.TabIndex = 9;
@@ -806,15 +806,15 @@ namespace FocusGroup.elderInfo
             // 
             // dtpTypeDate
             // 
-            this.dtpTypeDate.Location = new System.Drawing.Point(595, 534);
+            this.dtpTypeDate.Location = new System.Drawing.Point(234, 534);
             this.dtpTypeDate.Name = "dtpTypeDate";
-            this.dtpTypeDate.Size = new System.Drawing.Size(200, 30);
+            this.dtpTypeDate.Size = new System.Drawing.Size(180, 30);
             this.dtpTypeDate.TabIndex = 2;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(485, 540);
+            this.label22.Location = new System.Drawing.Point(124, 540);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(99, 20);
             this.label22.TabIndex = 7;
@@ -870,8 +870,8 @@ namespace FocusGroup.elderInfo
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 149F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 206F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 210F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1257, 468);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
@@ -884,7 +884,7 @@ namespace FocusGroup.elderInfo
             this.panel9.Location = new System.Drawing.Point(1134, 52);
             this.panel9.Margin = new System.Windows.Forms.Padding(0);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(122, 149);
+            this.panel9.Size = new System.Drawing.Size(120, 150);
             this.panel9.TabIndex = 25;
             // 
             // rdPinghe_QYes
@@ -1292,10 +1292,10 @@ namespace FocusGroup.elderInfo
             this.panel18.Controls.Add(this.ckPinghe3);
             this.panel18.Controls.Add(this.ckPinghe2);
             this.panel18.Controls.Add(this.ckPinghe1);
-            this.panel18.Location = new System.Drawing.Point(1134, 202);
+            this.panel18.Location = new System.Drawing.Point(1134, 203);
             this.panel18.Margin = new System.Windows.Forms.Padding(0);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(122, 265);
+            this.panel18.Size = new System.Drawing.Size(122, 264);
             this.panel18.TabIndex = 26;
             // 
             // tbPinghe
@@ -1377,10 +1377,10 @@ namespace FocusGroup.elderInfo
             this.panel17.Controls.Add(this.ckTebing3);
             this.panel17.Controls.Add(this.ckTebing2);
             this.panel17.Controls.Add(this.ckTebing1);
-            this.panel17.Location = new System.Drawing.Point(1005, 202);
+            this.panel17.Location = new System.Drawing.Point(1005, 203);
             this.panel17.Margin = new System.Windows.Forms.Padding(0);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(125, 265);
+            this.panel17.Size = new System.Drawing.Size(125, 264);
             this.panel17.TabIndex = 23;
             // 
             // tbTebing
@@ -1462,10 +1462,10 @@ namespace FocusGroup.elderInfo
             this.panel16.Controls.Add(this.ckQiyu3);
             this.panel16.Controls.Add(this.ckQiyu2);
             this.panel16.Controls.Add(this.ckQiyu1);
-            this.panel16.Location = new System.Drawing.Point(883, 202);
+            this.panel16.Location = new System.Drawing.Point(883, 203);
             this.panel16.Margin = new System.Windows.Forms.Padding(0);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(121, 265);
+            this.panel16.Size = new System.Drawing.Size(121, 264);
             this.panel16.TabIndex = 20;
             // 
             // tbQiyu
@@ -1547,10 +1547,10 @@ namespace FocusGroup.elderInfo
             this.panel15.Controls.Add(this.ckXueyu3);
             this.panel15.Controls.Add(this.ckXueyu2);
             this.panel15.Controls.Add(this.ckXueyu1);
-            this.panel15.Location = new System.Drawing.Point(757, 202);
+            this.panel15.Location = new System.Drawing.Point(757, 203);
             this.panel15.Margin = new System.Windows.Forms.Padding(0);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(125, 265);
+            this.panel15.Size = new System.Drawing.Size(125, 264);
             this.panel15.TabIndex = 17;
             // 
             // tbXueyu
@@ -1632,10 +1632,10 @@ namespace FocusGroup.elderInfo
             this.panel14.Controls.Add(this.ckShire3);
             this.panel14.Controls.Add(this.ckShire2);
             this.panel14.Controls.Add(this.ckShire1);
-            this.panel14.Location = new System.Drawing.Point(624, 202);
+            this.panel14.Location = new System.Drawing.Point(624, 203);
             this.panel14.Margin = new System.Windows.Forms.Padding(0);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(132, 265);
+            this.panel14.Size = new System.Drawing.Size(132, 264);
             this.panel14.TabIndex = 14;
             // 
             // tbShire
@@ -1717,10 +1717,10 @@ namespace FocusGroup.elderInfo
             this.panel13.Controls.Add(this.ckTans3);
             this.panel13.Controls.Add(this.ckTans2);
             this.panel13.Controls.Add(this.ckTans1);
-            this.panel13.Location = new System.Drawing.Point(489, 202);
+            this.panel13.Location = new System.Drawing.Point(489, 203);
             this.panel13.Margin = new System.Windows.Forms.Padding(0);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(134, 265);
+            this.panel13.Size = new System.Drawing.Size(134, 264);
             this.panel13.TabIndex = 11;
             // 
             // tbTanshi
@@ -1802,10 +1802,10 @@ namespace FocusGroup.elderInfo
             this.panel12.Controls.Add(this.ckYinxu3);
             this.panel12.Controls.Add(this.ckYinxu2);
             this.panel12.Controls.Add(this.ckYinxu1);
-            this.panel12.Location = new System.Drawing.Point(365, 202);
+            this.panel12.Location = new System.Drawing.Point(365, 203);
             this.panel12.Margin = new System.Windows.Forms.Padding(0);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(123, 265);
+            this.panel12.Size = new System.Drawing.Size(123, 264);
             this.panel12.TabIndex = 8;
             // 
             // tbYinxu
@@ -1887,10 +1887,10 @@ namespace FocusGroup.elderInfo
             this.panel11.Controls.Add(this.ckYangxu3);
             this.panel11.Controls.Add(this.ckYangxu2);
             this.panel11.Controls.Add(this.ckYangxu1);
-            this.panel11.Location = new System.Drawing.Point(226, 202);
+            this.panel11.Location = new System.Drawing.Point(226, 203);
             this.panel11.Margin = new System.Windows.Forms.Padding(0);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(138, 265);
+            this.panel11.Size = new System.Drawing.Size(138, 264);
             this.panel11.TabIndex = 5;
             // 
             // tbYangxu
@@ -1968,7 +1968,7 @@ namespace FocusGroup.elderInfo
             this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label21.Location = new System.Drawing.Point(4, 314);
+            this.label21.Location = new System.Drawing.Point(4, 315);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(94, 40);
             this.label21.TabIndex = 21;
@@ -2088,7 +2088,7 @@ namespace FocusGroup.elderInfo
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(4, 116);
+            this.label11.Location = new System.Drawing.Point(4, 117);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(94, 20);
             this.label11.TabIndex = 11;
@@ -2155,10 +2155,10 @@ namespace FocusGroup.elderInfo
             this.panel19.Controls.Add(this.ckQixu3);
             this.panel19.Controls.Add(this.ckQixu2);
             this.panel19.Controls.Add(this.ckQixu1);
-            this.panel19.Location = new System.Drawing.Point(102, 202);
+            this.panel19.Location = new System.Drawing.Point(102, 203);
             this.panel19.Margin = new System.Windows.Forms.Padding(0);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(120, 265);
+            this.panel19.Size = new System.Drawing.Size(120, 264);
             this.panel19.TabIndex = 2;
             // 
             // tbQixu
@@ -2245,9 +2245,9 @@ namespace FocusGroup.elderInfo
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(1089, 616);
+            this.btnSave.Location = new System.Drawing.Point(1145, 616);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(106, 38);
+            this.btnSave.Size = new System.Drawing.Size(120, 40);
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "保存结果";
             this.btnSave.UseVisualStyleBackColor = true;

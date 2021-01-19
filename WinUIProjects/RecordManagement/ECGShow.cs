@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using KangShuoTech.Utilities.MySQLHelper;
 using System.Configuration;
 
-namespace RecordManagement
+namespace ArchiveInfo
 {
     public partial class ECGShow : Form
     {

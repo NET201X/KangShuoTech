@@ -48,7 +48,7 @@ namespace PhotoGraph
 
             if (this.pictureBox1.Image != null)
             {
-                //string path = @"D:\QCSoft\photos\" + this.IDCardNo +  ".jpg";
+                string path = @"D:\QCSoft\photos\" + this.IDCardNo +  ".jpg";
 
                 if (File.Exists(this.SavePath))
                 {

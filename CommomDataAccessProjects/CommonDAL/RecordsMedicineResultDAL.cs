@@ -54,7 +54,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
                                 CharacteristicAdvisingEx=@CharacteristicAdvisingEx ");
 
             // 判断是否存在OutKey栏位，3.0用OutKey做关联
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'OLD_MEDICINE_RESULT' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='OutKey'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'OLD_MEDICINE_RESULT' AND TABLE_SCHEMA='kangshuo_db' AND COLUMN_NAME='OutKey'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;
@@ -134,7 +134,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             builder.Append("BloodStasis=@BloodStasis,QiConstraint=@QiConstraint,");
             builder.Append("Characteristic=@Characteristic ");
 
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_MEDI_PHYS_DIST' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='Tongue'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_MEDI_PHYS_DIST' AND TABLE_SCHEMA='kangshuo_db' AND COLUMN_NAME='Tongue'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;
@@ -180,7 +180,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             builder.Append("CharacteristicAdvisingEx,IsDel,IDCardNo,EffectAssess,Satisfy");
 
             // 判断是否存在OutKey栏位，3.0用OutKey做关联
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'OLD_MEDICINE_RESULT' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='OutKey'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'OLD_MEDICINE_RESULT' AND TABLE_SCHEMA='kangshuo_db' AND COLUMN_NAME='OutKey'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;
@@ -321,7 +321,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             builder.Append("BloodStasis=@BloodStasis,QiConstraint=@QiConstraint,");
             builder.Append("Characteristic=@Characteristic ");
 
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_MEDI_PHYS_DIST' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='Tongue'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_MEDI_PHYS_DIST' AND TABLE_SCHEMA='kangshuo_db' AND COLUMN_NAME='Tongue'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;

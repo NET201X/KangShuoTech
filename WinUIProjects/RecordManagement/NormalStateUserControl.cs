@@ -17,7 +17,7 @@ using System.Data;
 using System.Reflection;
 using System.Configuration;
 
-namespace RecordManagement
+namespace ArchiveInfo
 {
     public class NormalStateUserControl : ChildContentForm, IChildForm, IChildModel<RecordsBaseInfoModel>
     {

@@ -148,7 +148,7 @@ namespace DataUpload
 
             this.Text = WindowTitle;
 
-            btnDataUpload.Top = progressBar1.Top;
+            pictureBoxDataUpload.Top = progressBar1.Top;
             progressBar1.Top = panTotal.Top;
             panTotal.Top = panDeviceType.Top;
             this.Height = 282;
@@ -159,20 +159,20 @@ namespace DataUpload
             if (DataType.Equals("UrineDevice"))
             {
                 chkNewUrine.Visible = true;
-                btnDataUpload2.Top -= 30;
-                btnDataUpload3.Top -= 30;
+                pictureBoxDataUpload2.Top -= 30;
+                pictureBoxDataUpload3.Top -= 30;
                 deviceType = "33";
 
                 #region 根据按钮设置显示按钮
 
                 if (UrineDeviceCount.Equals("2"))
                 {
-                    btnDataUpload2.Visible = true;
+                    pictureBoxDataUpload2.Visible = true;
                     this.Height = 372;
 
                     //else if (UrineDeviceCount.Equals("3"))
                     //{
-                    //    btnDataUpload3.Visible = true;
+                    //    pictureBoxDataUpload3.Visible = true;
                     //    this.Height = 468;
                     //}
                 }
@@ -180,7 +180,7 @@ namespace DataUpload
                 {
                     if (versionNo.Contains("甘肃"))
                     {
-                        btnDataUpload2.Visible = true;
+                        pictureBoxDataUpload2.Visible = true;
                         this.Height = 372;
                     }
                 }
@@ -200,7 +200,7 @@ namespace DataUpload
             {
                 panTotal.Top = 127;
                 progressBar1.Top = 158;
-                btnDataUpload.Top = 187;
+                pictureBoxDataUpload.Top = 187;
                 panDeviceType.Visible = true;
                 rbOne.Text = "一代心电";
                 rbTwo.Text = "二代心电";
@@ -211,21 +211,21 @@ namespace DataUpload
 
                 if (EcgCount.Equals("2"))
                 {
-                    btnDataUpload2.Visible = true;
+                    pictureBoxDataUpload2.Visible = true;
                     this.Height = 405;
                 }
                 else if (EcgCount.Equals("3"))
                 {
-                    btnDataUpload2.Visible = true;
-                    btnDataUpload3.Visible = true;
+                    pictureBoxDataUpload2.Visible = true;
+                    pictureBoxDataUpload3.Visible = true;
                     this.Height = 497;
                 }
                 else
                 {
                     if (versionNo.Contains("新疆"))
                     {
-                        btnDataUpload2.Visible = true;
-                        btnDataUpload3.Visible = true;
+                        pictureBoxDataUpload2.Visible = true;
+                        pictureBoxDataUpload3.Visible = true;
                         this.Height = 497;
                     }
                 }
@@ -237,7 +237,7 @@ namespace DataUpload
             {
                 panTotal.Top = 127;
                 progressBar1.Top = 158;
-                btnDataUpload.Top = 187;
+                pictureBoxDataUpload.Top = 187;
                 panDeviceType.Visible = true;
                 rbOne.Text = "一代B超";
                 rbTwo.Text = "二代B超";
@@ -249,26 +249,26 @@ namespace DataUpload
 
                 if (TypeBCount.Equals("2"))
                 {
-                    btnDataUpload2.Visible = true;
+                    pictureBoxDataUpload2.Visible = true;
                     this.Height = 405;
                 }
                 else if (TypeBCount.Equals("3"))
                 {
-                    btnDataUpload2.Visible = true;
-                    btnDataUpload3.Visible = true;
+                    pictureBoxDataUpload2.Visible = true;
+                    pictureBoxDataUpload3.Visible = true;
                     this.Height = 497;
                 }
                 else
                 {
                     if (versionNo.Contains("新疆"))
                     {
-                        btnDataUpload2.Visible = true;
-                        btnDataUpload3.Visible = true;
+                        pictureBoxDataUpload2.Visible = true;
+                        pictureBoxDataUpload3.Visible = true;
                         this.Height = 497;
                     }
                     else if (versionNo.Contains("重庆"))
                     {
-                        btnDataUpload2.Visible = true;
+                        pictureBoxDataUpload2.Visible = true;
                         this.Height = 405;
                     }
                 }
@@ -280,8 +280,8 @@ namespace DataUpload
             {
                 if (MediphyCount.Equals("2"))
                 {
-                    btnDataUpload2.Visible = true;
-                    btnDataUpload2.Top -= 30;
+                    pictureBoxDataUpload2.Visible = true;
+                    pictureBoxDataUpload2.Top -= 30;
                     this.Height = 372;
                 }
             }
@@ -289,8 +289,8 @@ namespace DataUpload
             else if (DataType.Equals("Biochemical"))
             {
                 rbSocket.Visible = true;
-                btnDataUpload2.Top -= 30;
-                btnDataUpload3.Top -= 30;
+                pictureBoxDataUpload2.Top -= 30;
+                pictureBoxDataUpload3.Top -= 30;
                 type = "0";
 
                 // 是否是为生化同步
@@ -303,7 +303,7 @@ namespace DataUpload
 
                 if (BioCount.Equals("2"))
                 {
-                    btnDataUpload2.Visible = true;
+                    pictureBoxDataUpload2.Visible = true;
                     this.Height = 372;
                 }
                 else
@@ -311,7 +311,7 @@ namespace DataUpload
                     if (versionNo.Contains("重庆") || versionNo.Contains("吉林") || versionNo.Contains("广西") || versionNo.Contains("河北") || versionNo.Contains("贵州") ||
                         versionNo.Contains("山西") || versionNo.Contains("新疆") || versionNo.Contains("云南") || area.Equals("连云港") || area.Equals("南京") || versionNo.Contains("山东"))
                     {
-                        btnDataUpload2.Visible = true;
+                        pictureBoxDataUpload2.Visible = true;
                         this.Height = 372;
                     }
                 }
@@ -322,15 +322,15 @@ namespace DataUpload
             else if (DataType.Equals("BloodCorpuscle"))
             {
                 rbSocket.Visible = true;
-                btnDataUpload2.Top -= 30;
-                btnDataUpload3.Top -= 30;
+                pictureBoxDataUpload2.Top -= 30;
+                pictureBoxDataUpload3.Top -= 30;
                 type = "1";
 
                 #region 根据按钮设置显示按钮
 
                 if (BloodCount.Equals("2"))
                 {
-                    btnDataUpload2.Visible = true;
+                    pictureBoxDataUpload2.Visible = true;
                     this.Height = 372;
                 }
                 else
@@ -338,7 +338,7 @@ namespace DataUpload
                     if (versionNo.Contains("福建") || versionNo.Contains("广西") || versionNo.Contains("山西") ||
                         versionNo.Contains("新疆") || versionNo.Contains("云南") || area.Equals("连云港") || area.Equals("南京") || versionNo.Contains("河北"))
                     {
-                        btnDataUpload2.Visible = true;
+                        pictureBoxDataUpload2.Visible = true;
                         this.Height = 372;
                     }
                 }
@@ -348,15 +348,15 @@ namespace DataUpload
             // 外科
             else if (DataType.Equals("SurgicalData"))
             {
-                btnDataUpload2.Top -= 30;
-                btnDataUpload2.Visible = true;
+                pictureBoxDataUpload2.Top -= 30;
+                pictureBoxDataUpload2.Visible = true;
                 this.Height = 375;
             }
             // 内科
             else if (DataType.Equals("InternalMedicineData"))
             {
-                btnDataUpload2.Top -= 30;
-                btnDataUpload2.Visible = true;
+                pictureBoxDataUpload2.Top -= 30;
+                pictureBoxDataUpload2.Visible = true;
                 this.Height = 375;
             }
             // 随访  隐藏共享、网站同步
@@ -365,368 +365,9 @@ namespace DataUpload
                 label3.Visible = false;
                 panel1.Visible = false;
                 panTotal.Location = new Point(3, 50);
-                btnDataUpload.Location = new Point(3, 100);
+                pictureBoxDataUpload.Location = new Point(3, 100);
                 progressBar1.Location = new Point(3, 80);
                 this.Height = 225;
-            }
-        }
-
-        /// <summary>
-        /// 数据同步
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnDataUpload_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int count = 0, total = 0;
-                btnDataUpload.Enabled = false;
-                labCountnum.Text = "数据统计中，请稍后...";
-
-                #region 新尿机开启端口
-
-                // 新尿机
-                if (chkNewUrine.Checked)
-                {
-                    str = "";
-
-                    if (comm == null || !this.comm.IsOpen)
-                    {
-                        comm = new SerialPort();
-
-                        comm.PortName = config.AppSettings.Settings["EMPUI"].Value;
-                        comm.BaudRate = 9600;
-
-                        try
-                        {
-                            this.comm.Open();
-                            this.comm.DataReceived += new SerialDataReceivedEventHandler(this.comm_DataReceived);
-
-                            Thread.Sleep(200);
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("设备连接失败！" + ex.ToString(), "提示！", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
-
-                    return;
-                }
-
-                #endregion
-
-                string where = dataUploadBusiness.StrWhere(dtpStart.Value.Date, dtpEnd.Value.Date, DataType, deviceType, ckbCheckDate.Checked);
-
-                #region 取得资料笔数
-
-                // 随访同步
-                if (DataType.Equals("frmFollowDataUpdate"))
-                {
-                    where = dataUploadBusiness.StrWhere(dtpStart.Value.Date, dtpEnd.Value.Date, "CheckDate", ckbCheckDate.Checked);
-
-                    dataUploadBusiness.GetDataCount(DataType, where, 1, ref total, ref dtInfo);
-                }
-                else
-                {
-                    // 选择共享方式同步时
-                    if (rbShared.Checked)
-                    {
-                        #region 共享
-
-                        // 生化、血球
-                        if (DataType.Equals("Biochemical") || DataType.Equals("BloodCorpuscle"))
-                        {
-                            where = dataUploadBusiness.StrWhereByAccess(dtpStart.Value.Date, dtpEnd.Value.Date, "TestTime", ckbCheckDate.Checked);
-
-                            dataUploadBusiness.GetDataCount(DataType, where, 1, ref total, ref dtInfo);
-                        }
-                        // 问询
-                        else if (DataType.Equals("MedicalEnquiry"))
-                        {
-                            where = dataUploadBusiness.StrWhere(dtpStart.Value.Date, dtpEnd.Value.Date, "RecordDate", ckbCheckDate.Checked);
-
-                            dataUploadBusiness.GetDataCount(DataType, where, ref total, ref dataUploadModel, ref selfLs, ref medicationSqliteLs,
-                                ref historyModel, ref medicineModel, ref gloomyLs, ref intelligenceLs, ref conditionList, "");
-                        }
-                        // 中医
-                        else if (DataType.Equals("OldHealth"))
-                        {
-                            where = dataUploadBusiness.StrWhere(dtpStart.Value.Date, dtpEnd.Value.Date, "Medicinecn.RecordDate", ckbCheckDate.Checked);
-
-                            dataUploadBusiness.GetDataCount(DataType, where, ref total, ref dataUploadModel, ref selfLs, ref medicationSqliteLs,
-                                ref historyModel, ref medicineModel, ref gloomyLs, ref intelligenceLs, ref conditionList, "btn1");
-                        }
-                        // 心电
-                        else if (DataType.Equals("ECGUpload"))
-                        {
-                            if (rbOne.Checked) dataUploadBusiness.ecgType = "1";
-                            else if (rbTwo.Checked) dataUploadBusiness.ecgType = "2";
-
-                            where = dataUploadBusiness.StrWhere(dtpStart.Value.Date, dtpEnd.Value.Date, "ECGDate", ckbCheckDate.Checked);
-
-                            dataUploadBusiness.GetDataCount(DataType, where, 1, ref total, ref ecgDataModel, ref surgicalModel, ref chestXModel, ref mouthModel);
-                        }
-                        // B超
-                        else if (DataType.Equals("TypeBForm"))
-                        {
-                            // 如果为新版B超
-                            if (isNewTypeB.Equals("Y") || rbTwo.Checked)
-                            {
-                                dataUploadBusiness.isNewTypeB = "Y";
-
-                                where = dataUploadBusiness.StrWhereByAccess(dtpStart.Value.Date, dtpEnd.Value.Date, "jcrq", ckbCheckDate.Checked);
-
-                                dataUploadBusiness.GetDataCount(DataType, where, 1, ref total, ref dtInfo);
-                            }
-                            else
-                            {
-                                dataUploadBusiness.isNewTypeB = "N";
-
-                                dataUploadBusiness.GetDataCount(DataType, "", 1, ref total, ref dtInfo);
-                            }
-                        }
-                        // 外科、内科、五官、X光
-                        else if (DataType.Equals("SurgicalData") || DataType.Equals("InternalMedicineData") || DataType.Equals("MouthData") || DataType.Equals("ChestXData"))
-                        {
-                            // 安徽X光
-                            if (versionNo.Contains("安徽")||DR.Equals("Y") && DataType.Equals("ChestXData"))
-                            {
-                                where = dataUploadBusiness.StrWhereByAccessStringDate(dtpStart.Value.Date, dtpEnd.Value.Date, "mid(TestTime,1,8)", ckbCheckDate.Checked);
-
-                                dataUploadBusiness.GetDataCount(DataType, where, 1, ref total, ref dtInfo);
-                            }
-                            else
-                            {
-                                where = dataUploadBusiness.StrWhere(dtpStart.Value.Date, dtpEnd.Value.Date, "RecordDate", ckbCheckDate.Checked);
-
-                                dataUploadBusiness.GetDataCount(DataType, where, 1, ref total, ref ecgDataModel, ref surgicalModel, ref chestXModel, ref mouthModel);
-                            }
-                        }
-                        // 视力
-                        else if (DataType.Equals("Vsiual"))
-                        {
-                            where = dataUploadBusiness.StrWhereByAccess(dtpStart.Value.Date, dtpEnd.Value.Date, "AddTime", ckbCheckDate.Checked);
-
-                            dataUploadBusiness.GetDataCount(DataType, where, 1, ref total, ref dtInfo);
-                        }
-                        // 血压、身高体重、尿仪、体温体重、血糖
-                        else dataUploadBusiness.GetDataCount(DataType, where, ref total, ref deviceSqliteLs);
-
-                        #endregion
-                    }
-                    // 如果为通信方式时
-                    else if (rbSocket.Checked)
-                    {
-                        #region 通信
-
-                        if (config.AppSettings.Settings.AllKeys.Contains(protocol))
-                        {
-                            string checkType = config.AppSettings.Settings[protocol].Value;
-
-                            if (checkType == "Y") GetDataBySocket();
-                        }
-                        else
-                        {
-                            MessageBox.Show("请先配置Socket通信的地址！", "提示！", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            labCountnum.Text = "0";
-                            btnDataUpload.Enabled = true;
-                            return;
-                        }
-
-                        #endregion
-                    }
-                    else
-                    {
-                        #region 网站
-
-                        dataUploadBusiness.cud = new CombinUploadData();
-
-                        // 写入xml文件，用于分离式Windows Service读取
-                        dataUploadBusiness.SetDataUpload(DataType, deviceType);
-
-                        total = DoSomeThing("Total");
-
-                        Thread.Sleep(1000);
-
-                        #endregion
-                    }
-                }
-
-                #endregion
-
-                if (total == 0)
-                {
-                    MessageBox.Show("查无资料！", "提示！", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    labCountnum.Text = "0";
-                    btnDataUpload.Enabled = true;
-                    return;
-                }
-
-                this.labCountnum.Text = total.ToString();
-                this.progressBar1.Visible = true;
-                this.progressBar1.Minimum = 0;
-                this.progressBar1.Maximum = total;
-                this.progressBar1.BackColor = Color.Green;
-                this.progressBar1.Step = 1;
-
-                Application.DoEvents();
-
-                // 随访同步
-                if (DataType.Equals("frmFollowDataUpdate"))
-                {
-                    dataUploadBusiness.DataUploadByFollow(dtInfo, ref count, progressBar1, null);
-                }
-                else
-                {
-                    // 选择共享方式同步时
-                    if (rbShared.Checked)
-                    {
-                        #region 共享同步
-
-                        // 尿仪
-                        if (DataType.Equals("UrineDevice"))
-                        {
-                            dataUploadBusiness.DataUploadByUrine(deviceSqliteLs, ref count, progressBar1, null);
-                        }
-                        // 血糖
-                        else if (DataType.Equals("BloodSugar"))
-                        {
-                            dataUploadBusiness.DataUploadBySugar(deviceSqliteLs, ref count, progressBar1, null);
-                        }
-                        // 体温体重
-                        else if (DataType.Equals("ThermometerWeight"))
-                        {
-                            dataUploadBusiness.DataUploadByWeight(deviceSqliteLs, ref count, progressBar1, null);
-                        }
-                        // 身高体重
-                        else if (DataType.Equals("HeightWeight"))
-                        {
-                            dataUploadBusiness.DataUploadByHeight(deviceSqliteLs, ref count, progressBar1, null);
-                        }
-                        // 血压
-                        else if (DataType.Equals("BloodPressure"))
-                        {
-                            dataUploadBusiness.DataUploadByPressure(deviceSqliteLs, ref count, progressBar1, null);
-                        }
-                        // 问询
-                        else if (DataType.Equals("MedicalEnquiry"))
-                        {
-                            dataUploadBusiness.DataUploadByMedical(dataUploadModel, selfLs, medicationSqliteLs, historyModel, ref count, progressBar1, null);
-                        }
-                        // 中医
-                        else if (DataType.Equals("OldHealth"))
-                        {
-                            dataUploadBusiness.DataUploadByOld(medicineModel, this.rbWebsite.Checked, selfLs, gloomyLs, intelligenceLs, conditionList, ref count, progressBar1, null);
-                        }
-                        // 心电
-                        else if (DataType.Equals("ECGUpload"))
-                        {
-                            // 一代心电
-                            if (rbOne.Checked) dataUploadBusiness.DataUploadByFirstEcg(ecgDataModel, ref count, progressBar1, null);
-                            else dataUploadBusiness.DataUploadByEcg(ecgDataModel, this.rbWebsite.Checked, "GetECGPng", 1, ref count, progressBar1, null);
-                        }
-                        // B超
-                        else if (DataType.Equals("TypeBForm"))
-                        {
-                            // 如果为新版B超
-                            if (isNewTypeB.Equals("Y") || rbTwo.Checked) dataUploadBusiness.DataUploadByTypeBNew(dtInfo, this.rbWebsite.Checked, "GetBTypeJpg", 1, ref count, progressBar1, null);
-                            else dataUploadBusiness.DataUploadByTypeB(dtInfo, this.rbWebsite.Checked, "GetBTypeJpg", 1, ref count, progressBar1, null);
-                        }
-                        // 生化、血球
-                        else if (DataType.Equals("Biochemical") || DataType.Equals("BloodCorpuscle"))
-                        {
-                            // 新疆同步身高体重
-                            if (versionNo.Contains("新疆")) dataUploadBusiness.DataUploadByHeight(where, DataType);
-
-                            dataUploadBusiness.DataUploadByBlood(dtInfo, ref count, progressBar1, null);
-                        }
-                        // 外科
-                        else if (DataType.Equals("SurgicalData"))
-                        {
-                            dataUploadBusiness.DataUploadBySurgical(surgicalModel, ref count, progressBar1, null);
-                        }
-                        // 内科
-                        else if (DataType.Equals("InternalMedicineData"))
-                        {
-                            dataUploadBusiness.DataUploadByInternal(surgicalModel, ref count, progressBar1, null);
-                        }
-                        // 五官
-                        else if (DataType.Equals("MouthData"))
-                        {
-                            dataUploadBusiness.DataUploadByMouth(mouthModel, ref count, progressBar1, null);
-                        }
-                        // X光
-                        else if (DataType.Equals("ChestXData"))
-                        {                           
-                            // 安徽X光
-                            if (versionNo.Contains("安徽")||DR.Equals("Y")) dataUploadBusiness.DataUploadChestXByAccess(dtInfo, ref count, progressBar1, null);
-                            else dataUploadBusiness.DataUploadByChestX(chestXModel, ref count, progressBar1, null);
-                        }
-                        // 视力
-                        else if (DataType.Equals("Vsiual"))
-                        {
-                            dataUploadBusiness.DataUploadByVsiual(dtInfo, ref count, progressBar1, null);
-                        }
-
-                        #endregion
-                    }
-                    else
-                    {
-                        #region 网站同步
-
-                        for (int i = 0; i < total; i++)
-                        {
-                            Thread.Sleep(50);
-
-                            progressBar1.PerformStep();
-
-                            Application.DoEvents();
-                        }
-
-                        Thread.Sleep(100);
-
-                        count = DoSomeThing("Count");
-
-                        // 读取异常内容
-                        ReadLog(dataUploadBusiness.cud.dtData);
-
-                        #endregion
-                    }
-                }
-
-                Thread.Sleep(100);
-
-                MessageBox.Show("成功匹配：" + count + "条数据！", "提示");
-                this.labUploadnum.Text = count.ToString();
-                this.progressBar1.Minimum = 0;
-                this.progressBar1.Maximum = 0;
-                this.progressBar1.Visible = false;
-                this.btnDataUpload.Enabled = true;
-
-                Application.DoEvents();
-
-                if (dataUploadBusiness.cud.dtData.Rows.Count > 0)
-                {
-                    UploadData ud = new UploadData { dtData = dataUploadBusiness.cud.dtData };
-                    ud.ShowDialog();
-                }
-            }
-            catch (Exception ex)
-            {
-                this.progressBar1.Minimum = 0;
-                this.progressBar1.Maximum = 0;
-                this.progressBar1.Visible = false;
-                this.btnDataUpload.Enabled = true;
-                labCountnum.Text = "异常...";
-
-                if (dataUploadBusiness.cud.dtData.Rows.Count > 0)
-                {
-                    UploadData ud = new UploadData { dtData = dataUploadBusiness.cud.dtData };
-                    ud.ShowDialog();
-                }
-
-                LogHelper.WriteLog(ex.ToString());
             }
         }
 
@@ -735,12 +376,12 @@ namespace DataUpload
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnDataUpload2_Click(object sender, EventArgs e)
+        private void pictureBoxDataUpload2_Click(object sender, EventArgs e)
         {
             try
             {
                 int count = 0, total = 0;
-                btnDataUpload2.Enabled = false;
+                pictureBoxDataUpload2.Enabled = false;
                 labCountnum.Text = "数据统计中，请稍后...";
                 this.labUploadnum.Text = "0";
 
@@ -842,7 +483,7 @@ namespace DataUpload
                 {
                     MessageBox.Show("查无资料！", "提示！", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     labCountnum.Text = "0";
-                    btnDataUpload2.Enabled = true;
+                    pictureBoxDataUpload2.Enabled = true;
                     return;
                 }
 
@@ -946,7 +587,7 @@ namespace DataUpload
                 this.progressBar1.Minimum = 0;
                 this.progressBar1.Maximum = 0;
                 this.progressBar1.Visible = false;
-                this.btnDataUpload2.Enabled = true;
+                this.pictureBoxDataUpload2.Enabled = true;
                 this.labUploadnum.Text = count.ToString();
 
                 Application.DoEvents();
@@ -962,7 +603,7 @@ namespace DataUpload
                 this.progressBar1.Minimum = 0;
                 this.progressBar1.Maximum = 0;
                 this.progressBar1.Visible = false;
-                this.btnDataUpload2.Enabled = true;
+                this.pictureBoxDataUpload2.Enabled = true;
                 labCountnum.Text = "异常...";
 
                 if (dataUploadBusiness.cud.dtData.Rows.Count > 0)
@@ -980,12 +621,12 @@ namespace DataUpload
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnDataUpload3_Click(object sender, EventArgs e)
+        private void pictureBoxDataUpload3_Click(object sender, EventArgs e)
         {
             try
             {
                 int count = 0, total = 0;
-                btnDataUpload3.Enabled = false;
+                pictureBoxDataUpload3.Enabled = false;
                 labCountnum.Text = "数据统计中，请稍后...";
 
                 string where = dataUploadBusiness.StrWhere(dtpStart.Value.Date, dtpEnd.Value.Date, "ECGDate", ckbCheckDate.Checked);
@@ -1052,7 +693,7 @@ namespace DataUpload
                 {
                     MessageBox.Show("查无资料！", "提示！", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     labCountnum.Text = "0";
-                    btnDataUpload3.Enabled = true;
+                    pictureBoxDataUpload3.Enabled = true;
                     return;
                 }
 
@@ -1116,7 +757,7 @@ namespace DataUpload
                 this.progressBar1.Maximum = 0;
                 this.progressBar1.Visible = false;
 
-                this.btnDataUpload3.Enabled = true;
+                this.pictureBoxDataUpload3.Enabled = true;
                 this.labUploadnum.Text = count.ToString();
 
                 Application.DoEvents();
@@ -1132,7 +773,7 @@ namespace DataUpload
                 this.progressBar1.Minimum = 0;
                 this.progressBar1.Maximum = 0;
                 this.progressBar1.Visible = false;
-                this.btnDataUpload3.Enabled = true;
+                this.pictureBoxDataUpload3.Enabled = true;
                 labCountnum.Text = "异常...";
 
                 if (dataUploadBusiness.cud.dtData.Rows.Count > 0)
@@ -1304,7 +945,7 @@ namespace DataUpload
                     {
                         MessageBox.Show("查无资料！", "提示！", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         labCountnum.Text = "0";
-                        btnDataUpload.Enabled = true;
+                        pictureBoxDataUpload.Enabled = true;
                         return;
                     }
 
@@ -1389,7 +1030,7 @@ namespace DataUpload
                     this.Invoke((EventHandler)(delegate
                     {
                         progressBar1.Visible = false;
-                        btnDataUpload.Enabled = true;
+                        pictureBoxDataUpload.Enabled = true;
                         this.labUploadnum.Text = dicUpOK.Count.ToString();
 
                         if (cud.dtData.Rows.Count > 0)
@@ -1483,7 +1124,7 @@ namespace DataUpload
         {
             try
             {
-                btnDataUpload.Enabled = false;
+                pictureBoxDataUpload.Enabled = false;
                 labCountnum.Text = "数据统计中，请稍后...";
                 this.labUploadnum.Text = "0";
 
@@ -1494,7 +1135,7 @@ namespace DataUpload
                 string IP = config.AppSettings.Settings[pIp].Value;
                 string port = config.AppSettings.Settings[pPort].Value;
 
-                btnDataUpload.Enabled = true;
+                pictureBoxDataUpload.Enabled = true;
 
                 socketSend = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 IPAddress ip = IPAddress.Parse(IP);
@@ -1516,6 +1157,360 @@ namespace DataUpload
             catch (Exception)
             {
                 MessageBox.Show("IP或者端口号错误...");
+            }
+        }
+
+        private void pictureBoxDataUpload_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int count = 0, total = 0;
+                pictureBoxDataUpload.Enabled = false;
+                labCountnum.Text = "数据统计中，请稍后...";
+
+                #region 新尿机开启端口
+
+                // 新尿机
+                if (chkNewUrine.Checked)
+                {
+                    str = "";
+
+                    if (comm == null || !this.comm.IsOpen)
+                    {
+                        comm = new SerialPort();
+
+                        comm.PortName = config.AppSettings.Settings["EMPUI"].Value;
+                        comm.BaudRate = 9600;
+
+                        try
+                        {
+                            this.comm.Open();
+                            this.comm.DataReceived += new SerialDataReceivedEventHandler(this.comm_DataReceived);
+
+                            Thread.Sleep(200);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("设备连接失败！" + ex.ToString(), "提示！", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+
+                    return;
+                }
+
+                #endregion
+
+                string where = dataUploadBusiness.StrWhere(dtpStart.Value.Date, dtpEnd.Value.Date, DataType, deviceType, ckbCheckDate.Checked);
+
+                #region 取得资料笔数
+
+                // 随访同步
+                if (DataType.Equals("frmFollowDataUpdate"))
+                {
+                    where = dataUploadBusiness.StrWhere(dtpStart.Value.Date, dtpEnd.Value.Date, "CheckDate", ckbCheckDate.Checked);
+
+                    dataUploadBusiness.GetDataCount(DataType, where, 1, ref total, ref dtInfo);
+                }
+                else
+                {
+                    // 选择共享方式同步时
+                    if (rbShared.Checked)
+                    {
+                        #region 共享
+
+                        // 生化、血球
+                        if (DataType.Equals("Biochemical") || DataType.Equals("BloodCorpuscle"))
+                        {
+                            where = dataUploadBusiness.StrWhereByAccess(dtpStart.Value.Date, dtpEnd.Value.Date, "TestTime", ckbCheckDate.Checked);
+
+                            dataUploadBusiness.GetDataCount(DataType, where, 1, ref total, ref dtInfo);
+                        }
+                        // 问询
+                        else if (DataType.Equals("MedicalEnquiry"))
+                        {
+                            where = dataUploadBusiness.StrWhere(dtpStart.Value.Date, dtpEnd.Value.Date, "RecordDate", ckbCheckDate.Checked);
+
+                            dataUploadBusiness.GetDataCount(DataType, where, ref total, ref dataUploadModel, ref selfLs, ref medicationSqliteLs,
+                                ref historyModel, ref medicineModel, ref gloomyLs, ref intelligenceLs, ref conditionList, "");
+                        }
+                        // 中医
+                        else if (DataType.Equals("OldHealth"))
+                        {
+                            where = dataUploadBusiness.StrWhere(dtpStart.Value.Date, dtpEnd.Value.Date, "Medicinecn.RecordDate", ckbCheckDate.Checked);
+
+                            dataUploadBusiness.GetDataCount(DataType, where, ref total, ref dataUploadModel, ref selfLs, ref medicationSqliteLs,
+                                ref historyModel, ref medicineModel, ref gloomyLs, ref intelligenceLs, ref conditionList, "btn1");
+                        }
+                        // 心电
+                        else if (DataType.Equals("ECGUpload"))
+                        {
+                            if (rbOne.Checked) dataUploadBusiness.ecgType = "1";
+                            else if (rbTwo.Checked) dataUploadBusiness.ecgType = "2";
+
+                            where = dataUploadBusiness.StrWhere(dtpStart.Value.Date, dtpEnd.Value.Date, "ECGDate", ckbCheckDate.Checked);
+
+                            dataUploadBusiness.GetDataCount(DataType, where, 1, ref total, ref ecgDataModel, ref surgicalModel, ref chestXModel, ref mouthModel);
+                        }
+                        // B超
+                        else if (DataType.Equals("TypeBForm"))
+                        {
+                            // 如果为新版B超
+                            if (isNewTypeB.Equals("Y") || rbTwo.Checked)
+                            {
+                                dataUploadBusiness.isNewTypeB = "Y";
+
+                                where = dataUploadBusiness.StrWhereByAccess(dtpStart.Value.Date, dtpEnd.Value.Date, "jcrq", ckbCheckDate.Checked);
+
+                                dataUploadBusiness.GetDataCount(DataType, where, 1, ref total, ref dtInfo);
+                            }
+                            else
+                            {
+                                dataUploadBusiness.isNewTypeB = "N";
+
+                                dataUploadBusiness.GetDataCount(DataType, "", 1, ref total, ref dtInfo);
+                            }
+                        }
+                        // 外科、内科、五官、X光
+                        else if (DataType.Equals("SurgicalData") || DataType.Equals("InternalMedicineData") || DataType.Equals("MouthData") || DataType.Equals("ChestXData"))
+                        {
+                            // 安徽X光
+                            if (versionNo.Contains("安徽") || DR.Equals("Y") && DataType.Equals("ChestXData"))
+                            {
+                                where = dataUploadBusiness.StrWhereByAccessStringDate(dtpStart.Value.Date, dtpEnd.Value.Date, "mid(TestTime,1,8)", ckbCheckDate.Checked);
+
+                                dataUploadBusiness.GetDataCount(DataType, where, 1, ref total, ref dtInfo);
+                            }
+                            else
+                            {
+                                where = dataUploadBusiness.StrWhere(dtpStart.Value.Date, dtpEnd.Value.Date, "RecordDate", ckbCheckDate.Checked);
+
+                                dataUploadBusiness.GetDataCount(DataType, where, 1, ref total, ref ecgDataModel, ref surgicalModel, ref chestXModel, ref mouthModel);
+                            }
+                        }
+                        // 视力
+                        else if (DataType.Equals("Vsiual"))
+                        {
+                            where = dataUploadBusiness.StrWhereByAccess(dtpStart.Value.Date, dtpEnd.Value.Date, "AddTime", ckbCheckDate.Checked);
+
+                            dataUploadBusiness.GetDataCount(DataType, where, 1, ref total, ref dtInfo);
+                        }
+                        // 血压、身高体重、尿仪、体温体重、血糖
+                        else dataUploadBusiness.GetDataCount(DataType, where, ref total, ref deviceSqliteLs);
+
+                        #endregion
+                    }
+                    // 如果为通信方式时
+                    else if (rbSocket.Checked)
+                    {
+                        #region 通信
+
+                        if (config.AppSettings.Settings.AllKeys.Contains(protocol))
+                        {
+                            string checkType = config.AppSettings.Settings[protocol].Value;
+
+                            if (checkType == "Y") GetDataBySocket();
+                        }
+                        else
+                        {
+                            MessageBox.Show("请先配置Socket通信的地址！", "提示！", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            labCountnum.Text = "0";
+                            pictureBoxDataUpload.Enabled = true;
+                            return;
+                        }
+
+                        #endregion
+                    }
+                    else
+                    {
+                        #region 网站
+
+                        dataUploadBusiness.cud = new CombinUploadData();
+
+                        // 写入xml文件，用于分离式Windows Service读取
+                        dataUploadBusiness.SetDataUpload(DataType, deviceType);
+
+                        total = DoSomeThing("Total");
+
+                        Thread.Sleep(1000);
+
+                        #endregion
+                    }
+                }
+
+                #endregion
+
+                if (total == 0)
+                {
+                    MessageBox.Show("查无资料！", "提示！", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    labCountnum.Text = "0";
+                    pictureBoxDataUpload.Enabled = true;
+                    return;
+                }
+
+                this.labCountnum.Text = total.ToString();
+                this.progressBar1.Visible = true;
+                this.progressBar1.Minimum = 0;
+                this.progressBar1.Maximum = total;
+                this.progressBar1.BackColor = Color.Green;
+                this.progressBar1.Step = 1;
+
+                Application.DoEvents();
+
+                // 随访同步
+                if (DataType.Equals("frmFollowDataUpdate"))
+                {
+                    dataUploadBusiness.DataUploadByFollow(dtInfo, ref count, progressBar1, null);
+                }
+                else
+                {
+                    // 选择共享方式同步时
+                    if (rbShared.Checked)
+                    {
+                        #region 共享同步
+
+                        // 尿仪
+                        if (DataType.Equals("UrineDevice"))
+                        {
+                            dataUploadBusiness.DataUploadByUrine(deviceSqliteLs, ref count, progressBar1, null);
+                        }
+                        // 血糖
+                        else if (DataType.Equals("BloodSugar"))
+                        {
+                            dataUploadBusiness.DataUploadBySugar(deviceSqliteLs, ref count, progressBar1, null);
+                        }
+                        // 体温体重
+                        else if (DataType.Equals("ThermometerWeight"))
+                        {
+                            dataUploadBusiness.DataUploadByWeight(deviceSqliteLs, ref count, progressBar1, null);
+                        }
+                        // 身高体重
+                        else if (DataType.Equals("HeightWeight"))
+                        {
+                            dataUploadBusiness.DataUploadByHeight(deviceSqliteLs, ref count, progressBar1, null);
+                        }
+                        // 血压
+                        else if (DataType.Equals("BloodPressure"))
+                        {
+                            dataUploadBusiness.DataUploadByPressure(deviceSqliteLs, ref count, progressBar1, null);
+                        }
+                        // 问询
+                        else if (DataType.Equals("MedicalEnquiry"))
+                        {
+                            dataUploadBusiness.DataUploadByMedical(dataUploadModel, selfLs, medicationSqliteLs, historyModel, ref count, progressBar1, null);
+                        }
+                        // 中医
+                        else if (DataType.Equals("OldHealth"))
+                        {
+                            dataUploadBusiness.DataUploadByOld(medicineModel, this.rbWebsite.Checked, selfLs, gloomyLs, intelligenceLs, conditionList, ref count, progressBar1, null);
+                        }
+                        // 心电
+                        else if (DataType.Equals("ECGUpload"))
+                        {
+                            // 一代心电
+                            if (rbOne.Checked) dataUploadBusiness.DataUploadByFirstEcg(ecgDataModel, ref count, progressBar1, null);
+                            else dataUploadBusiness.DataUploadByEcg(ecgDataModel, this.rbWebsite.Checked, "GetECGPng", 1, ref count, progressBar1, null);
+                        }
+                        // B超
+                        else if (DataType.Equals("TypeBForm"))
+                        {
+                            // 如果为新版B超
+                            if (isNewTypeB.Equals("Y") || rbTwo.Checked) dataUploadBusiness.DataUploadByTypeBNew(dtInfo, this.rbWebsite.Checked, "GetBTypeJpg", 1, ref count, progressBar1, null);
+                            else dataUploadBusiness.DataUploadByTypeB(dtInfo, this.rbWebsite.Checked, "GetBTypeJpg", 1, ref count, progressBar1, null);
+                        }
+                        // 生化、血球
+                        else if (DataType.Equals("Biochemical") || DataType.Equals("BloodCorpuscle"))
+                        {
+                            // 新疆同步身高体重
+                            if (versionNo.Contains("新疆")) dataUploadBusiness.DataUploadByHeight(where, DataType);
+
+                            dataUploadBusiness.DataUploadByBlood(dtInfo, ref count, progressBar1, null);
+                        }
+                        // 外科
+                        else if (DataType.Equals("SurgicalData"))
+                        {
+                            dataUploadBusiness.DataUploadBySurgical(surgicalModel, ref count, progressBar1, null);
+                        }
+                        // 内科
+                        else if (DataType.Equals("InternalMedicineData"))
+                        {
+                            dataUploadBusiness.DataUploadByInternal(surgicalModel, ref count, progressBar1, null);
+                        }
+                        // 五官
+                        else if (DataType.Equals("MouthData"))
+                        {
+                            dataUploadBusiness.DataUploadByMouth(mouthModel, ref count, progressBar1, null);
+                        }
+                        // X光
+                        else if (DataType.Equals("ChestXData"))
+                        {
+                            // 安徽X光
+                            if (versionNo.Contains("安徽") || DR.Equals("Y")) dataUploadBusiness.DataUploadChestXByAccess(dtInfo, ref count, progressBar1, null);
+                            else dataUploadBusiness.DataUploadByChestX(chestXModel, ref count, progressBar1, null);
+                        }
+                        // 视力
+                        else if (DataType.Equals("Vsiual"))
+                        {
+                            dataUploadBusiness.DataUploadByVsiual(dtInfo, ref count, progressBar1, null);
+                        }
+
+                        #endregion
+                    }
+                    else
+                    {
+                        #region 网站同步
+
+                        for (int i = 0; i < total; i++)
+                        {
+                            Thread.Sleep(50);
+
+                            progressBar1.PerformStep();
+
+                            Application.DoEvents();
+                        }
+
+                        Thread.Sleep(100);
+
+                        count = DoSomeThing("Count");
+
+                        // 读取异常内容
+                        ReadLog(dataUploadBusiness.cud.dtData);
+
+                        #endregion
+                    }
+                }
+
+                Thread.Sleep(100);
+
+                MessageBox.Show("成功匹配：" + count + "条数据！", "提示");
+                this.labUploadnum.Text = count.ToString();
+                this.progressBar1.Minimum = 0;
+                this.progressBar1.Maximum = 0;
+                this.progressBar1.Visible = false;
+                this.pictureBoxDataUpload.Enabled = true;
+
+                Application.DoEvents();
+
+                if (dataUploadBusiness.cud.dtData.Rows.Count > 0)
+                {
+                    UploadData ud = new UploadData { dtData = dataUploadBusiness.cud.dtData };
+                    ud.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                this.progressBar1.Minimum = 0;
+                this.progressBar1.Maximum = 0;
+                this.progressBar1.Visible = false;
+                this.pictureBoxDataUpload.Enabled = true;
+                labCountnum.Text = "异常...";
+
+                if (dataUploadBusiness.cud.dtData.Rows.Count > 0)
+                {
+                    UploadData ud = new UploadData { dtData = dataUploadBusiness.cud.dtData };
+                    ud.ShowDialog();
+                }
+
+                LogHelper.WriteLog(ex.ToString());
             }
         }
 

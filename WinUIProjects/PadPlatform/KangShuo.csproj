@@ -9,14 +9,14 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ApplicationIcon>logo.ico</ApplicationIcon>
     <AssemblyKeyContainerName />
-    <AssemblyName>PadPlatform</AssemblyName>
+    <AssemblyName>KangShuo</AssemblyName>
     <AssemblyOriginatorKeyFile />
     <DefaultClientScript>JScript</DefaultClientScript>
     <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
     <DelaySign>false</DelaySign>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>PadPlatform</RootNamespace>
+    <RootNamespace>KangShuo</RootNamespace>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <StartupObject />
     <FileUpgradeFlags>
@@ -342,9 +342,9 @@
       <Project>{DC51B794-314F-4F21-B3DD-D55DE55B0383}</Project>
       <Name>PrintPlatform</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RecordManagement\RecordManagement.csproj">
+    <ProjectReference Include="..\RecordManagement\ArchiveInfo.csproj">
       <Project>{1DAF924B-69F8-4216-B14E-A8B91A98074E}</Project>
-      <Name>RecordManagement</Name>
+      <Name>ArchiveInfo</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

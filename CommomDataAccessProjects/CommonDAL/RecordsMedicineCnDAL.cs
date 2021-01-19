@@ -20,7 +20,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             builder.Append("CreatedBy,CreatedDate,LastUpdateBy,LastUpdateDate,FollowUpDoctor,RecordDate,IsDel");
 
             // 判断是否存在OutKey栏位，3.0用OutKey做关联
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_MEDICINE_CN' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='OutKey'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_MEDICINE_CN' AND TABLE_SCHEMA='kangshuo_db' AND COLUMN_NAME='OutKey'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;
@@ -191,7 +191,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             builder.Append("RecordDate=@RecordDate ");
 
             // 判断是否存在OutKey栏位，3.0用OutKey做关联
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_MEDICINE_CN' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='OutKey'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_MEDICINE_CN' AND TABLE_SCHEMA='kangshuo_db' AND COLUMN_NAME='OutKey'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;

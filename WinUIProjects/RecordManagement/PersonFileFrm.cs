@@ -3,7 +3,7 @@ using KangShuoTech.DataAccessProjects.Model;
 using KangShuoTech.Utilities.CommonUI;
 
 
-namespace RecordManagement
+namespace ArchiveInfo
 {
     using System;
     using System.Collections.Generic;

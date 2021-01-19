@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace RecordManagement
+namespace ArchiveInfo
 {
     public partial class frmFollowDataUpdate : Form
     {

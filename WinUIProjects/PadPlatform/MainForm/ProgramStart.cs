@@ -1,7 +1,7 @@
 using System.Windows.Forms;
 using KangShuoTech.Utilities.Common;
 
-namespace PadPlatform
+namespace KangShuo
 {
     using System;
     using System.Diagnostics;

@@ -3,7 +3,7 @@ using KangShuoTech.DataAccessProjects.Model;
 using KangShuoTech.Utilities.CommonControl;
 using KangShuoTech.Utilities.CommunicationData;
 
-namespace PadPlatform
+namespace KangShuo
 {
     using System;
     using System.Data;

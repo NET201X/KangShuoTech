@@ -21,7 +21,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             builder.Append("YinAdvisingEx,PhlegmdampAdvisingEx,MuggyAdvisingEx,BloodStasisAdvisingEx,QiconstraintAdvisingEx,");
             builder.Append("CharacteristicAdvisingEx,IsDel,IDCardNo");
 
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'OLD_MEDICINE_RESULT' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='Tongue'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'OLD_MEDICINE_RESULT' AND TABLE_SCHEMA='kangshuo_db' AND COLUMN_NAME='Tongue'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;
@@ -194,7 +194,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             builder.Append("QiconstraintAdvisingEx=@QiconstraintAdvisingEx,");
             builder.Append("CharacteristicAdvisingEx=@CharacteristicAdvisingEx ");
 
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'OLD_MEDICINE_RESULT' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='Tongue'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'OLD_MEDICINE_RESULT' AND TABLE_SCHEMA='kangshuo_db' AND COLUMN_NAME='Tongue'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;

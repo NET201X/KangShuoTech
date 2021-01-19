@@ -14,7 +14,7 @@ using KangShuoTech.Utilities.CommonUI;
 using System.IO;
 
 
-namespace RecordManagement
+namespace ArchiveInfo
 {
     public partial class frmHyperSurvey : ChildContentForm, IChildForm, IChildModel<RecordsBaseInfoModel>
     {

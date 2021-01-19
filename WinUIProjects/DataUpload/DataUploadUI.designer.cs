@@ -29,7 +29,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataUploadUI));
             this.ckbCheckDate = new System.Windows.Forms.CheckBox();
             this.datePn = new System.Windows.Forms.Panel();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
@@ -40,24 +39,27 @@
             this.labCountnum = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnDataUpload = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.rbShared = new System.Windows.Forms.RadioButton();
             this.rbSocket = new System.Windows.Forms.RadioButton();
             this.rbWebsite = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.chkNewUrine = new System.Windows.Forms.CheckBox();
-            this.btnDataUpload2 = new System.Windows.Forms.Button();
-            this.btnDataUpload3 = new System.Windows.Forms.Button();
             this.panTotal = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.rbTwo = new System.Windows.Forms.RadioButton();
             this.rbOne = new System.Windows.Forms.RadioButton();
             this.panDeviceType = new System.Windows.Forms.Panel();
+            this.pictureBoxDataUpload3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxDataUpload2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxDataUpload = new System.Windows.Forms.PictureBox();
             this.datePn.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panTotal.SuspendLayout();
             this.panDeviceType.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDataUpload3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDataUpload2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDataUpload)).BeginInit();
             this.SuspendLayout();
             // 
             // ckbCheckDate
@@ -161,18 +163,6 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "共有数据：";
             // 
-            // btnDataUpload
-            // 
-            this.btnDataUpload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDataUpload.BackgroundImage")));
-            this.btnDataUpload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnDataUpload.Location = new System.Drawing.Point(3, 187);
-            this.btnDataUpload.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDataUpload.Name = "btnDataUpload";
-            this.btnDataUpload.Size = new System.Drawing.Size(488, 94);
-            this.btnDataUpload.TabIndex = 7;
-            this.btnDataUpload.UseVisualStyleBackColor = true;
-            this.btnDataUpload.Click += new System.EventHandler(this.btnDataUpload_Click);
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.rbShared);
@@ -239,32 +229,6 @@
             this.chkNewUrine.Visible = false;
             this.chkNewUrine.CheckedChanged += new System.EventHandler(this.chkNewUrine_CheckedChanged);
             // 
-            // btnDataUpload2
-            // 
-            this.btnDataUpload2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDataUpload2.BackgroundImage")));
-            this.btnDataUpload2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnDataUpload2.Location = new System.Drawing.Point(3, 281);
-            this.btnDataUpload2.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDataUpload2.Name = "btnDataUpload2";
-            this.btnDataUpload2.Size = new System.Drawing.Size(488, 94);
-            this.btnDataUpload2.TabIndex = 47;
-            this.btnDataUpload2.UseVisualStyleBackColor = true;
-            this.btnDataUpload2.Visible = false;
-            this.btnDataUpload2.Click += new System.EventHandler(this.btnDataUpload2_Click);
-            // 
-            // btnDataUpload3
-            // 
-            this.btnDataUpload3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDataUpload3.BackgroundImage")));
-            this.btnDataUpload3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnDataUpload3.Location = new System.Drawing.Point(3, 376);
-            this.btnDataUpload3.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDataUpload3.Name = "btnDataUpload3";
-            this.btnDataUpload3.Size = new System.Drawing.Size(488, 94);
-            this.btnDataUpload3.TabIndex = 47;
-            this.btnDataUpload3.UseVisualStyleBackColor = true;
-            this.btnDataUpload3.Visible = false;
-            this.btnDataUpload3.Click += new System.EventHandler(this.btnDataUpload3_Click);
-            // 
             // panTotal
             // 
             this.panTotal.Controls.Add(this.label5);
@@ -319,20 +283,53 @@
             this.panDeviceType.TabIndex = 45;
             this.panDeviceType.Visible = false;
             // 
+            // pictureBoxDataUpload3
+            // 
+            this.pictureBoxDataUpload3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxDataUpload3.Image = global::DataUpload.Properties.Resources.数据同步;
+            this.pictureBoxDataUpload3.Location = new System.Drawing.Point(120, 376);
+            this.pictureBoxDataUpload3.Name = "pictureBoxDataUpload3";
+            this.pictureBoxDataUpload3.Size = new System.Drawing.Size(267, 60);
+            this.pictureBoxDataUpload3.TabIndex = 51;
+            this.pictureBoxDataUpload3.TabStop = false;
+            this.pictureBoxDataUpload3.Click += new System.EventHandler(this.pictureBoxDataUpload3_Click);
+            // 
+            // pictureBoxDataUpload2
+            // 
+            this.pictureBoxDataUpload2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxDataUpload2.Image = global::DataUpload.Properties.Resources.数据同步;
+            this.pictureBoxDataUpload2.Location = new System.Drawing.Point(120, 289);
+            this.pictureBoxDataUpload2.Name = "pictureBoxDataUpload2";
+            this.pictureBoxDataUpload2.Size = new System.Drawing.Size(267, 60);
+            this.pictureBoxDataUpload2.TabIndex = 50;
+            this.pictureBoxDataUpload2.TabStop = false;
+            this.pictureBoxDataUpload2.Click += new System.EventHandler(this.pictureBoxDataUpload2_Click);
+            // 
+            // pictureBoxDataUpload
+            // 
+            this.pictureBoxDataUpload.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxDataUpload.Image = global::DataUpload.Properties.Resources.数据同步;
+            this.pictureBoxDataUpload.Location = new System.Drawing.Point(120, 208);
+            this.pictureBoxDataUpload.Name = "pictureBoxDataUpload";
+            this.pictureBoxDataUpload.Size = new System.Drawing.Size(267, 60);
+            this.pictureBoxDataUpload.TabIndex = 49;
+            this.pictureBoxDataUpload.TabStop = false;
+            this.pictureBoxDataUpload.Click += new System.EventHandler(this.pictureBoxDataUpload_Click);
+            // 
             // DataUploadUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(493, 469);
+            this.Controls.Add(this.pictureBoxDataUpload3);
+            this.Controls.Add(this.pictureBoxDataUpload2);
+            this.Controls.Add(this.pictureBoxDataUpload);
             this.Controls.Add(this.panTotal);
-            this.Controls.Add(this.btnDataUpload3);
-            this.Controls.Add(this.btnDataUpload2);
             this.Controls.Add(this.panDeviceType);
             this.Controls.Add(this.chkNewUrine);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.btnDataUpload);
             this.Controls.Add(this.datePn);
             this.Controls.Add(this.ckbCheckDate);
             this.Font = new System.Drawing.Font("宋体", 11F);
@@ -350,6 +347,9 @@
             this.panTotal.PerformLayout();
             this.panDeviceType.ResumeLayout(false);
             this.panDeviceType.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDataUpload3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDataUpload2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDataUpload)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,7 +363,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpStart;
         private System.Windows.Forms.ProgressBar progressBar1;
-        public System.Windows.Forms.Button btnDataUpload;
         private System.Windows.Forms.Label labUploadnum;
         private System.Windows.Forms.Label labCountnum;
         private System.Windows.Forms.Label label2;
@@ -373,13 +372,14 @@
         private System.Windows.Forms.RadioButton rbWebsite;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox chkNewUrine;
-        public System.Windows.Forms.Button btnDataUpload2;
-        public System.Windows.Forms.Button btnDataUpload3;
         private System.Windows.Forms.Panel panTotal;
         private System.Windows.Forms.RadioButton rbSocket;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RadioButton rbTwo;
         private System.Windows.Forms.RadioButton rbOne;
         private System.Windows.Forms.Panel panDeviceType;
+        private System.Windows.Forms.PictureBox pictureBoxDataUpload;
+        private System.Windows.Forms.PictureBox pictureBoxDataUpload2;
+        private System.Windows.Forms.PictureBox pictureBoxDataUpload3;
     }
 }

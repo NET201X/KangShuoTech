@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Runtime.InteropServices;
 
-namespace RecordManagement
+namespace ArchiveInfo
 {
     public class BITMAPFILEHEADER
     {

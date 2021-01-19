@@ -153,7 +153,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 
         public int DeleteIDCard(string idCardNo)
         {
-            if (BackData == "") BackData = "qcpaddb";
+            if (BackData == "") BackData = "kangshuo_db";
 
             // 取得数据库中所有表名
             List<string> list = MySQLHelper.GetList("SELECT table_name FROM information_schema.tables WHERE table_schema='" + BackData + "' ORDER BY table_name");
@@ -222,7 +222,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 
         public bool Delete(string CreateDateS, string CreateDateE)
         {
-            if (BackData == "") BackData = "qcpaddb";
+            if (BackData == "") BackData = "kangshuo_db";
 
             // 取得数据库中所有表名
             List<string> list = MySQLHelper.GetList("SELECT table_name FROM information_schema.tables WHERE table_schema='" + BackData + "' ORDER BY table_name");

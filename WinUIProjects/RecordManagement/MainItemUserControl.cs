@@ -3,9 +3,9 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using KangShuoTech.Utilities.CommonUI;
 using OverView;
-using RecordManagement.OverView;
+using ArchiveInfo.OverView;
 
-namespace RecordManagement
+namespace ArchiveInfo
 {
     public class MainItemUserControl : UserControl
     {
@@ -49,7 +49,7 @@ namespace RecordManagement
             // pbxVisit
             // 
             this.pbxVisit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxVisit.Image = global::RecordManagement.Properties.Resources.随访提醒;
+            this.pbxVisit.Image = global::ArchiveInfo.Properties.Resources.随访提醒;
             this.pbxVisit.Location = new System.Drawing.Point(686, 191);
             this.pbxVisit.Name = "pbxVisit";
             this.pbxVisit.Size = new System.Drawing.Size(210, 210);
@@ -61,7 +61,7 @@ namespace RecordManagement
             // pbxOut
             // 
             this.pbxOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxOut.Image = global::RecordManagement.Properties.Resources.漏项统计;
+            this.pbxOut.Image = global::ArchiveInfo.Properties.Resources.漏项统计;
             this.pbxOut.Location = new System.Drawing.Point(470, 191);
             this.pbxOut.Name = "pbxOut";
             this.pbxOut.Size = new System.Drawing.Size(210, 210);
@@ -73,7 +73,7 @@ namespace RecordManagement
             // pbxList
             // 
             this.pbxList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxList.Image = global::RecordManagement.Properties.Resources.列表统计;
+            this.pbxList.Image = global::ArchiveInfo.Properties.Resources.列表统计;
             this.pbxList.Location = new System.Drawing.Point(902, 191);
             this.pbxList.Name = "pbxList";
             this.pbxList.Size = new System.Drawing.Size(210, 210);
@@ -85,7 +85,7 @@ namespace RecordManagement
             // pbxDoctor
             // 
             this.pbxDoctor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxDoctor.Image = global::RecordManagement.Properties.Resources.医师查询;
+            this.pbxDoctor.Image = global::ArchiveInfo.Properties.Resources.医生查询;
             this.pbxDoctor.Location = new System.Drawing.Point(254, 191);
             this.pbxDoctor.Name = "pbxDoctor";
             this.pbxDoctor.Size = new System.Drawing.Size(210, 210);
@@ -97,7 +97,7 @@ namespace RecordManagement
             // pbxPregnant
             // 
             this.pbxPregnant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxPregnant.Image = global::RecordManagement.Properties.Resources.本地查询;
+            this.pbxPregnant.Image = global::ArchiveInfo.Properties.Resources.本地查询;
             this.pbxPregnant.Location = new System.Drawing.Point(38, 191);
             this.pbxPregnant.Name = "pbxPregnant";
             this.pbxPregnant.Size = new System.Drawing.Size(210, 210);

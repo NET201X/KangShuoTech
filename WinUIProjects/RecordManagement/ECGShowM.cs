@@ -12,7 +12,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
-namespace RecordManagement
+namespace ArchiveInfo
 {
     public partial class ECGShowM : Form
     {

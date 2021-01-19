@@ -1,7 +1,7 @@
 using Utilities.BlueToothTools.InTheHand.Net.Bluetooth;
 using Utilities.BlueToothTools.MsBluetooth;
 
-namespace PadPlatform
+namespace KangShuo
 {
     using System;
     using System.ComponentModel;

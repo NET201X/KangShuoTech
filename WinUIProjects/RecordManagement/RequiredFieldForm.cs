@@ -1,6 +1,6 @@
 using KangShuoTech.Utilities.Common;
 
-namespace RecordManagement
+namespace ArchiveInfo
 {
     
     using System;

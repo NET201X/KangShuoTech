@@ -3,7 +3,7 @@ using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace PadPlatform
+namespace KangShuo
 {
     internal class AboutBoxForm : Form
     {

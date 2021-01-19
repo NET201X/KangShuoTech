@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RecordManagement.Properties {
+namespace ArchiveInfo.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace RecordManagement.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("RecordManagement.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ArchiveInfo.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -627,9 +627,9 @@ namespace RecordManagement.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap 医师查询 {
+        internal static System.Drawing.Bitmap 医生查询 {
             get {
-                object obj = ResourceManager.GetObject("医师查询", resourceCulture);
+                object obj = ResourceManager.GetObject("医生查询", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -760,6 +760,18 @@ namespace RecordManagement.Properties {
         internal static System.Drawing.Bitmap 高血压调查表 {
             get {
                 object obj = ResourceManager.GetObject("高血压调查表", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 同步数据
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("同步数据", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

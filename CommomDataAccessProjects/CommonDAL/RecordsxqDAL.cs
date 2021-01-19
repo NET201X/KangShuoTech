@@ -18,7 +18,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             builder.Append(" RBC,HCT,MCV,MCH,MCHC,RDW_CV,RDW_SD,MPV,PDW,PCT,TestTime,MID_B,MID_N,P_LCR,");
             builder.Append(" CL,CA,ASTALT,HLR_B,HLR_N,ALY_B,ALY_N,P_LCC");
 
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_BLOODTEST' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='NRBC_N'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_BLOODTEST' AND TABLE_SCHEMA='kangshuo_db' AND COLUMN_NAME='NRBC_N'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;
@@ -147,7 +147,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
             builder.Append(" RBC,HCT,MCV,MCH,MCHC,RDW_CV,RDW_SD,MPV,PDW,PCT,TestTime,MID_B,MID_N,P_LCR,");
             builder.Append(" CL,CA,ASTALT,HLR_B,HLR_N,ALY_B,ALY_N,P_LCC,IDCardNo");
 
-            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_BLOODTEST' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='BarCode'";
+            string table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_BLOODTEST' AND TABLE_SCHEMA='kangshuo_db' AND COLUMN_NAME='BarCode'";
 
             object single = MySQLHelper.GetSingle(table);
             int count = 0;
@@ -156,7 +156,7 @@ namespace KangShuoTech.CommomDataAccessProjects.CommonDAL
 
             if (count > 0) builder.Append(",BarCode ");
 
-            table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_BLOODTEST' AND TABLE_SCHEMA='qcpaddb' AND COLUMN_NAME='NRBC_N'";
+            table = "SELECT COUNT(0) FROM information_schema.columns WHERE TABLE_NAME = 'ARCHIVE_BLOODTEST' AND TABLE_SCHEMA='kangshuo_db' AND COLUMN_NAME='NRBC_N'";
 
             single = MySQLHelper.GetSingle(table);
             count = 0;

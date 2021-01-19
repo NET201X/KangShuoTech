@@ -12,7 +12,7 @@ using KangShuoTech.DataAccessProjects.BLL;
 using KangShuoTech.DataAccessProjects.Model;
 using KangShuoTech.Utilities.Common;
 
-namespace PadPlatform
+namespace KangShuo
 {
     public class ShowErrorMessageForm : Form
     {

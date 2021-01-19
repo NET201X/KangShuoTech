@@ -166,8 +166,8 @@
   <data name="列表统计" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\列表统计.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="医师查询" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\医师查询.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="医生查询" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\医生查询.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="本地查询" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\本地查询.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -318,5 +318,8 @@
   </data>
   <data name="btnzangqigongneng01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnzangqigongneng01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="同步数据" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\同步数据.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

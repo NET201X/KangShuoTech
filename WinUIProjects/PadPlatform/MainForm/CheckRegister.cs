@@ -19,7 +19,7 @@ namespace KangShuo
     internal class CheckRegister
     {
         private static string Key = "flymetothenoon";
-        private static string _uriDeviecId = "SOFTWARE\\QCSoft";
+        private static string _uriDeviecId = "Software\\KangShuo";
 
         private static string fingerPrint = string.Empty;
 
@@ -63,7 +63,7 @@ namespace KangShuo
         {
             string ret = string.Empty;
 
-            if (Is64Bit()) _uriDeviecId = "SOFTWARE\\Wow6432Node\\QCSoft";
+            if (Is64Bit()) _uriDeviecId = "Software\\Wow6432Node\\KangShuo";
 
             using (var obj = Registry.LocalMachine.OpenSubKey(_uriDeviecId, false))
             {
@@ -251,7 +251,7 @@ namespace KangShuo
         public static string Value()
         {
             if (string.IsNullOrEmpty(fingerPrint))
-                fingerPrint = "CPU >> " + cpuId() + "\nBASE >> " + baseId() + "\nDISK >> " + GetHardDiskID();
+                fingerPrint = "DISK==" + GetHardDiskID() + "\nBASE==" + baseId() + "\nCPU==" + cpuId();
 
             return fingerPrint;
         }
@@ -259,7 +259,7 @@ namespace KangShuo
         public static string GetValue()
         {
             if (string.IsNullOrEmpty(fingerPrint))
-                fingerPrint = GetHash("CPU >> " + cpuId() + "\nBASE >> " + baseId() + "\nBIOS >> " + biosId());
+                fingerPrint = "DISK==" + GetHardDiskID() + "\nBASE==" + baseId() + "\nCPU==" + cpuId();
 
             return fingerPrint;
         }

@@ -689,25 +689,7 @@ namespace KangShuo
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            //this.OpenSerialPort();
-
-            //if (formalOrTest == "formal")
-            //{
-            //    this.lbWhat.Text = "演示版 ";
-            //}
-            //else
-            //{
-            //    this.lbWhat.Text = "正式版 ";
-            //}
-
-            //if (orgid.Contains("370112"))
-            //{
-            //    this.lbWhat.Text = "本产品为：" + this.lbWhat.Text;
-            //    this.lbWhat.ForeColor = Color.Red;
-            //}
-
-            //this.lbWhat.Location = new Point(0x400 - (this.lbWhat.Width + 10), this.lbWhat.Location.Y);
-
+           
             //启动数据备份进程
             Process ps = new Process();
             ps.StartInfo.FileName = "BackDates.exe";

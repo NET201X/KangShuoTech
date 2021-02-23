@@ -86,7 +86,6 @@ namespace KangShuo
             if (base.idCardType == "3")
             {
                 int num = 0;
-                //this.CloseJlIdCard(out num);
                 flag = InitmtxIDCard();
             }
             base.IsOk = flag;

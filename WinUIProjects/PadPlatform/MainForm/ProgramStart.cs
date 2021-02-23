@@ -62,7 +62,7 @@ namespace KangShuo
                     // 取得注册信息
                     string regValue = "";
 
-                    string softDirectory = "D:\\QCSoft\\Client\\client.key";
+                    string softDirectory = "C:\\Windows\\KangShuo\\client.key";
 
                     if (File.Exists(softDirectory))
                     {
